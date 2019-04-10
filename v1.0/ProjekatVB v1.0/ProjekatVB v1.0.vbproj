@@ -80,6 +80,24 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Container.Designer.vb">
+      <DependentUpon>Container.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Container.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest.Designer.vb">
+      <DependentUpon>Guest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Guest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledArtikalaGuest.Designer.vb">
+      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PregledArtikalaGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +117,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Container.resx">
+      <DependentUpon>Container.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest.resx">
+      <DependentUpon>Guest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledArtikalaGuest.resx">
+      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
