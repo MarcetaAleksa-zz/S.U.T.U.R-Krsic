@@ -63,6 +63,7 @@ Partial Class Order_Funeral
         Me.Controls.Add(Me.Back_Button)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Order_Funeral"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Panel - Order Funeral"
         Me.ResumeLayout(False)
 

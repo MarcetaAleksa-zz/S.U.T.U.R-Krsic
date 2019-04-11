@@ -148,6 +148,9 @@
     <EmbeddedResource Include="Order_Funeral.resx">
       <DependentUpon>Order_Funeral.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
