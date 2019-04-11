@@ -86,6 +86,12 @@
     <Compile Include="Administrator.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PregledArtikalaGuest.Designer.vb">
+      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PregledArtikalaGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="User.Designer.vb">
       <DependentUpon>User.vb</DependentUpon>
     </Compile>
@@ -96,24 +102,6 @@
       <DependentUpon>Guest.vb</DependentUpon>
     </Compile>
     <Compile Include="Guest.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Container.Designer.vb">
-      <DependentUpon>Container.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Container.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Guest.Designer.vb">
-      <DependentUpon>Guest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Guest.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PregledArtikalaGuest.Designer.vb">
-      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PregledArtikalaGuest.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -139,20 +127,14 @@
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Container.resx">
-      <DependentUpon>Container.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Guest.resx">
-      <DependentUpon>Guest.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PregledArtikalaGuest.resx">
-      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledArtikalaGuest.resx">
+      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

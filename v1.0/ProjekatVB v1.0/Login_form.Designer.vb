@@ -34,27 +34,28 @@ Partial Class Login_form
         '
         Me.Login.Location = New System.Drawing.Point(115, 171)
         Me.Login.Name = "Login"
-        Me.Login.Size = New System.Drawing.Size(163, 44)
+        Me.Login.Size = New System.Drawing.Size(185, 44)
         Me.Login.TabIndex = 0
         Me.Login.Text = "Login"
         Me.Login.UseVisualStyleBackColor = True
         '
         'TextBox1_User
         '
-        Me.TextBox1_User.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox1_User.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBox1_User.Location = New System.Drawing.Point(176, 69)
         Me.TextBox1_User.Name = "TextBox1_User"
-        Me.TextBox1_User.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1_User.Size = New System.Drawing.Size(124, 20)
         Me.TextBox1_User.TabIndex = 1
+        Me.TextBox1_User.Text = "Enter Username here"
         '
         'TextBox2_Pass
         '
-        Me.TextBox2_Pass.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox2_Pass.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBox2_Pass.Location = New System.Drawing.Point(176, 117)
         Me.TextBox2_Pass.Name = "TextBox2_Pass"
-        Me.TextBox2_Pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2_Pass.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2_Pass.Size = New System.Drawing.Size(124, 20)
         Me.TextBox2_Pass.TabIndex = 2
+        Me.TextBox2_Pass.Text = "Enter Password here"
         '
         'Label1_User
         '

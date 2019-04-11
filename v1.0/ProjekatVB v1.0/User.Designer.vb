@@ -25,6 +25,9 @@ Partial Class User
         components = New System.ComponentModel.Container
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form3"
+        Me.Name = "User"
+        Me.Text = "User Panel"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class
