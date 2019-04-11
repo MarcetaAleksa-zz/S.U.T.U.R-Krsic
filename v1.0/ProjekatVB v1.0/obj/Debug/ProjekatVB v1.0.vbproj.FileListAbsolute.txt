@@ -44,3 +44,4 @@ C:\Users\IT\Desktop\Projekat\Panzo\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
 C:\Users\IT\Desktop\Projekat\Panzo\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\IT\Desktop\Projekat\Panzo\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\IT\Desktop\Projekat\Panzo\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.User.resources
+C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.User.resources
