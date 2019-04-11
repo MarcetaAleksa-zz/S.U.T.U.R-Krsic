@@ -1,7 +1,7 @@
-﻿Public Class Administrator
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
+﻿Public Class Order_Funeral
+    Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
-        Login_form.Show()
+        Guest.Show()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()

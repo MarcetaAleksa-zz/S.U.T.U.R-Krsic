@@ -23,44 +23,46 @@ Partial Class Login_form
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_form))
-        Me.Login = New System.Windows.Forms.Button()
-        Me.TextBox1_User = New System.Windows.Forms.TextBox()
-        Me.TextBox2_Pass = New System.Windows.Forms.TextBox()
+        Me.Login_Button = New System.Windows.Forms.Button()
+        Me.Username_Form_Box = New System.Windows.Forms.TextBox()
+        Me.Password_Form_Box = New System.Windows.Forms.TextBox()
         Me.Label1_User = New System.Windows.Forms.Label()
         Me.Label2_Pass = New System.Windows.Forms.Label()
+        Me.Guest_Login = New System.Windows.Forms.Button()
+        Me.Exit_Button = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Login
+        'Login_Button
         '
-        Me.Login.Location = New System.Drawing.Point(115, 171)
-        Me.Login.Name = "Login"
-        Me.Login.Size = New System.Drawing.Size(185, 44)
-        Me.Login.TabIndex = 0
-        Me.Login.Text = "Login"
-        Me.Login.UseVisualStyleBackColor = True
+        Me.Login_Button.Location = New System.Drawing.Point(76, 108)
+        Me.Login_Button.Name = "Login_Button"
+        Me.Login_Button.Size = New System.Drawing.Size(185, 44)
+        Me.Login_Button.TabIndex = 0
+        Me.Login_Button.Text = "Login"
+        Me.Login_Button.UseVisualStyleBackColor = True
         '
-        'TextBox1_User
+        'Username_Form_Box
         '
-        Me.TextBox1_User.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBox1_User.Location = New System.Drawing.Point(176, 69)
-        Me.TextBox1_User.Name = "TextBox1_User"
-        Me.TextBox1_User.Size = New System.Drawing.Size(124, 20)
-        Me.TextBox1_User.TabIndex = 1
-        Me.TextBox1_User.Text = "Enter Username here"
+        Me.Username_Form_Box.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Username_Form_Box.Location = New System.Drawing.Point(76, 23)
+        Me.Username_Form_Box.Name = "Username_Form_Box"
+        Me.Username_Form_Box.Size = New System.Drawing.Size(124, 20)
+        Me.Username_Form_Box.TabIndex = 1
+        Me.Username_Form_Box.Text = "Enter Username here"
         '
-        'TextBox2_Pass
+        'Password_Form_Box
         '
-        Me.TextBox2_Pass.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBox2_Pass.Location = New System.Drawing.Point(176, 117)
-        Me.TextBox2_Pass.Name = "TextBox2_Pass"
-        Me.TextBox2_Pass.Size = New System.Drawing.Size(124, 20)
-        Me.TextBox2_Pass.TabIndex = 2
-        Me.TextBox2_Pass.Text = "Enter Password here"
+        Me.Password_Form_Box.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Password_Form_Box.Location = New System.Drawing.Point(76, 61)
+        Me.Password_Form_Box.Name = "Password_Form_Box"
+        Me.Password_Form_Box.Size = New System.Drawing.Size(124, 20)
+        Me.Password_Form_Box.TabIndex = 2
+        Me.Password_Form_Box.Text = "Enter Password here"
         '
         'Label1_User
         '
         Me.Label1_User.AutoSize = True
-        Me.Label1_User.Location = New System.Drawing.Point(112, 69)
+        Me.Label1_User.Location = New System.Drawing.Point(12, 26)
         Me.Label1_User.Name = "Label1_User"
         Me.Label1_User.Size = New System.Drawing.Size(58, 13)
         Me.Label1_User.TabIndex = 3
@@ -69,22 +71,42 @@ Partial Class Login_form
         'Label2_Pass
         '
         Me.Label2_Pass.AutoSize = True
-        Me.Label2_Pass.Location = New System.Drawing.Point(114, 117)
+        Me.Label2_Pass.Location = New System.Drawing.Point(9, 61)
         Me.Label2_Pass.Name = "Label2_Pass"
         Me.Label2_Pass.Size = New System.Drawing.Size(56, 13)
         Me.Label2_Pass.TabIndex = 4
         Me.Label2_Pass.Text = "Password:"
         '
+        'Guest_Login
+        '
+        Me.Guest_Login.Location = New System.Drawing.Point(12, 111)
+        Me.Guest_Login.Name = "Guest_Login"
+        Me.Guest_Login.Size = New System.Drawing.Size(53, 38)
+        Me.Guest_Login.TabIndex = 5
+        Me.Guest_Login.Text = "Guest"
+        Me.Guest_Login.UseVisualStyleBackColor = True
+        '
+        'Exit_Button
+        '
+        Me.Exit_Button.Location = New System.Drawing.Point(74, 166)
+        Me.Exit_Button.Name = "Exit_Button"
+        Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
+        Me.Exit_Button.TabIndex = 6
+        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.UseVisualStyleBackColor = True
+        '
         'Login_form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(378, 299)
+        Me.ClientSize = New System.Drawing.Size(276, 213)
+        Me.Controls.Add(Me.Exit_Button)
+        Me.Controls.Add(Me.Guest_Login)
         Me.Controls.Add(Me.Label2_Pass)
         Me.Controls.Add(Me.Label1_User)
-        Me.Controls.Add(Me.TextBox2_Pass)
-        Me.Controls.Add(Me.TextBox1_User)
-        Me.Controls.Add(Me.Login)
+        Me.Controls.Add(Me.Password_Form_Box)
+        Me.Controls.Add(Me.Username_Form_Box)
+        Me.Controls.Add(Me.Login_Button)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login_form"
         Me.Text = "Login"
@@ -93,9 +115,11 @@ Partial Class Login_form
 
     End Sub
 
-    Friend WithEvents Login As Button
-    Friend WithEvents TextBox1_User As TextBox
-    Friend WithEvents TextBox2_Pass As TextBox
+    Friend WithEvents Login_Button As Button
+    Friend WithEvents Username_Form_Box As TextBox
+    Friend WithEvents Password_Form_Box As TextBox
     Friend WithEvents Label1_User As Label
     Friend WithEvents Label2_Pass As Label
+    Friend WithEvents Guest_Login As Button
+    Friend WithEvents Exit_Button As Button
 End Class

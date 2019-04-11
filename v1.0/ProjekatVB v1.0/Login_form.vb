@@ -1,54 +1,58 @@
 ﻿Public Class Login_form
-    Private Sub TextBox1_User_Enter(sender As Object, e As EventArgs) Handles TextBox1_User.Enter
-        If (TextBox1_User.Text = "Enter Username here") Then
-            TextBox1_User.Text = ""
+    Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
+        If (Username_Form_Box.Text = "Enter Username here") Then
+            Username_Form_Box.Text = ""
 
-            TextBox1_User.ForeColor = Color.Black
+            Username_Form_Box.ForeColor = Color.Black
         End If
     End Sub
-    Private Sub TextBox1_User_Leave(sender As Object, e As EventArgs) Handles TextBox1_User.Leave
-        If (TextBox1_User.Text = "") Then
-            TextBox1_User.Text = "Enter Username here"
+    Private Sub Username_Form_Box_Leave(sender As Object, e As EventArgs) Handles Username_Form_Box.Leave
+        If (Username_Form_Box.Text = "") Then
+            Username_Form_Box.Text = "Enter Username here"
 
-            TextBox1_User.ForeColor = Color.Gray
+            Username_Form_Box.ForeColor = Color.Gray
         End If
     End Sub
-    Private Sub TextBox2_Pass_Enter(sender As Object, e As EventArgs) Handles TextBox2_Pass.Enter
+    Private Sub Password_Form_Box_Enter(sender As Object, e As EventArgs) Handles Password_Form_Box.Enter
 
-        If (TextBox2_Pass.Text = "Enter Password here") Then
-            TextBox2_Pass.Text = ""
-            TextBox2_Pass.PasswordChar = "*"
-            TextBox2_Pass.ForeColor = Color.Black
-        'End If
-    End Sub
-    Private Sub TextBox2_Pass_Leave(sender As Object, e As EventArgs) Handles TextBox2_Pass.Leave
-
-        If (TextBox2_Pass.Text = "") Then
-            TextBox2_Pass.Text = "Enter Password here"
-            TextBox2_Pass.PasswordChar = ""
-            TextBox2_Pass.ForeColor = Color.Gray
+        If (Password_Form_Box.Text = "Enter Password here") Then
+            Password_Form_Box.Text = ""
+            Password_Form_Box.PasswordChar = "*"
+            Password_Form_Box.ForeColor = Color.Black
         End If
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Login.Click
+    Private Sub Password_Form_Box_Leave(sender As Object, e As EventArgs) Handles Password_Form_Box.Leave
 
-        If (TextBox1_User.Text = "Admin" AndAlso TextBox2_Pass.Text = "Password") Then
-            MessageBox.Show("Dobrodosli u Administratorski Panel")
+        If (Password_Form_Box.Text = "") Then
+            Password_Form_Box.Text = "Enter Password here"
+            Password_Form_Box.PasswordChar = ""
+            Password_Form_Box.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
+
+        If (Username_Form_Box.Text = "Admin" AndAlso Password_Form_Box.Text = "Password") Then
+            MessageBox.Show("Welcome to Administrator Panel")
             Me.Hide()
             Administrator.Show()
-            TextBox2_Pass.Text = ""
-        ElseIf (TextBox1_User.Text = "User" AndAlso TextBox2_Pass.Text = "User") Then
-            MessageBox.Show("Dobrodosli u Korisnicki Panel")
+            Password_Form_Box.Text = ""
+        ElseIf (Username_Form_Box.Text = "User" AndAlso Password_Form_Box.Text = "User") Then
+            MessageBox.Show("Welcome to User Panel")
             Me.Hide()
             User.Show()
-            TextBox2_Pass.Text = ""
-        ElseIf (TextBox1_User.Text = "Guest" AndAlso TextBox2_Pass.Text = "Guest") Then
-            MessageBox.Show("Dobrodosli u Guest Panel")
-            Me.Hide()
-            Guest.Show()
-            TextBox2_Pass.Text = ""
+            Password_Form_Box.Text = ""
         Else
-            MessageBox.Show("Molimo unesite ispravne informacije")
-            TextBox2_Pass.Text = ""
+            MessageBox.Show("Please ")
+            Password_Form_Box.Text = ""
         End If
+    End Sub
+
+    Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
+        MessageBox.Show("Welcome to Guest Panel")
+        Me.Hide()
+        Guest.Show()
+    End Sub
+    Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
+        Me.Close()
     End Sub
 End Class

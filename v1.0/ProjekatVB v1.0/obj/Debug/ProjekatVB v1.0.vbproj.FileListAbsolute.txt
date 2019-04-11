@@ -24,4 +24,6 @@ C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\Projekat
 C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
 C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
-C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.PregledArtikalaGuest.resources
+C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Guest.resources
+C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Display_Goods_Guest.resources
+C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Order_Funeral.resources

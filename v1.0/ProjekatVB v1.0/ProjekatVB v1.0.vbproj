@@ -86,10 +86,16 @@
     <Compile Include="Administrator.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PregledArtikalaGuest.Designer.vb">
-      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
+    <Compile Include="Order_Funeral.Designer.vb">
+      <DependentUpon>Order_Funeral.vb</DependentUpon>
     </Compile>
-    <Compile Include="PregledArtikalaGuest.vb">
+    <Compile Include="Order_Funeral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display_Goods_Guest.Designer.vb">
+      <DependentUpon>Display_Goods_Guest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Display_Goods_Guest.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="User.Designer.vb">
@@ -124,6 +130,9 @@
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Guest.resx">
+      <DependentUpon>Guest.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.vb</DependentUpon>
     </EmbeddedResource>
@@ -133,8 +142,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PregledArtikalaGuest.resx">
-      <DependentUpon>PregledArtikalaGuest.vb</DependentUpon>
+    <EmbeddedResource Include="Display_Goods_Guest.resx">
+      <DependentUpon>Display_Goods_Guest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_Funeral.resx">
+      <DependentUpon>Order_Funeral.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

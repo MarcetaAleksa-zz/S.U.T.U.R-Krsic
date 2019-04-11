@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PregledArtikalaGuest
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Display_Goods_Guest
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class PregledArtikalaGuest
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Display_Goods_Guest))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabSanduci = New System.Windows.Forms.TabPage()
         Me.TabKrstovi = New System.Windows.Forms.TabPage()
@@ -29,7 +30,8 @@ Partial Class PregledArtikalaGuest
         Me.TabSvijece = New System.Windows.Forms.TabPage()
         Me.TabHladnjaca = New System.Windows.Forms.TabPage()
         Me.TabPrevoz = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Back_Button = New System.Windows.Forms.Button()
+        Me.Exit_Button = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,7 +43,7 @@ Partial Class PregledArtikalaGuest
         Me.TabControl1.Controls.Add(Me.TabSvijece)
         Me.TabControl1.Controls.Add(Me.TabHladnjaca)
         Me.TabControl1.Controls.Add(Me.TabPrevoz)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(4, 44)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(776, 426)
@@ -103,24 +105,34 @@ Partial Class PregledArtikalaGuest
         Me.TabPrevoz.Text = "Prevoz"
         Me.TabPrevoz.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Back_Button
         '
-        Me.Button1.Location = New System.Drawing.Point(343, 444)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(74, 27)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Nazad"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
+        Me.Back_Button.Location = New System.Drawing.Point(4, 3)
+        Me.Back_Button.Name = "Back_Button"
+        Me.Back_Button.Size = New System.Drawing.Size(39, 35)
+        Me.Back_Button.TabIndex = 3
+        Me.Back_Button.UseVisualStyleBackColor = True
         '
-        'PregledArtikalaGuest
+        'Exit_Button
+        '
+        Me.Exit_Button.Location = New System.Drawing.Point(49, 3)
+        Me.Exit_Button.Name = "Exit_Button"
+        Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
+        Me.Exit_Button.TabIndex = 4
+        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.UseVisualStyleBackColor = True
+        '
+        'Display_Goods_Guest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(792, 482)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Exit_Button)
+        Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.TabControl1)
-        Me.Name = "PregledArtikalaGuest"
-        Me.Text = "Guest"
+        Me.Name = "Display_Goods_Guest"
+        Me.Text = "Guest Panel"
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -133,5 +145,6 @@ Partial Class PregledArtikalaGuest
     Friend WithEvents TabSvijece As TabPage
     Friend WithEvents TabHladnjaca As TabPage
     Friend WithEvents TabPrevoz As TabPage
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Back_Button As Button
+    Friend WithEvents Exit_Button As Button
 End Class

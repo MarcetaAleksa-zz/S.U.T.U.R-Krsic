@@ -22,66 +22,77 @@ Partial Class Guest
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Guest))
+        Me.Welcome = New System.Windows.Forms.Label()
+        Me.Display_Goods_Button = New System.Windows.Forms.Button()
+        Me.Order_Funeral_Button = New System.Windows.Forms.Button()
+        Me.Exit_Button = New System.Windows.Forms.Button()
+        Me.Back_Button = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label1
+        'Welcome
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(26, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 37)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Dobrodosli!"
+        Me.Welcome.AutoSize = True
+        Me.Welcome.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Welcome.Location = New System.Drawing.Point(26, 9)
+        Me.Welcome.Name = "Welcome"
+        Me.Welcome.Size = New System.Drawing.Size(150, 37)
+        Me.Welcome.TabIndex = 0
+        Me.Welcome.Text = "Welcome"
         '
-        'Button1
+        'Display_Goods_Button
         '
-        Me.Button1.Location = New System.Drawing.Point(7, 77)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(198, 40)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Prikaz artikala"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Display_Goods_Button.Location = New System.Drawing.Point(7, 84)
+        Me.Display_Goods_Button.Name = "Display_Goods_Button"
+        Me.Display_Goods_Button.Size = New System.Drawing.Size(198, 40)
+        Me.Display_Goods_Button.TabIndex = 1
+        Me.Display_Goods_Button.Text = "Display Goods"
+        Me.Display_Goods_Button.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Order_Funeral_Button
         '
-        Me.Button2.Location = New System.Drawing.Point(7, 123)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(198, 40)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Naruzba sahrane"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Order_Funeral_Button.Location = New System.Drawing.Point(7, 140)
+        Me.Order_Funeral_Button.Name = "Order_Funeral_Button"
+        Me.Order_Funeral_Button.Size = New System.Drawing.Size(198, 40)
+        Me.Order_Funeral_Button.TabIndex = 1
+        Me.Order_Funeral_Button.Text = "Order Funeral"
+        Me.Order_Funeral_Button.UseVisualStyleBackColor = True
         '
-        'Button3
+        'Exit_Button
         '
-        Me.Button3.Location = New System.Drawing.Point(47, 169)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(126, 40)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Izlaz"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Exit_Button.Location = New System.Drawing.Point(68, 215)
+        Me.Exit_Button.Name = "Exit_Button"
+        Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
+        Me.Exit_Button.TabIndex = 1
+        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.UseVisualStyleBackColor = True
+        '
+        'Back_Button
+        '
+        Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
+        Me.Back_Button.Location = New System.Drawing.Point(12, 215)
+        Me.Back_Button.Name = "Back_Button"
+        Me.Back_Button.Size = New System.Drawing.Size(39, 35)
+        Me.Back_Button.TabIndex = 2
+        Me.Back_Button.UseVisualStyleBackColor = True
         '
         'Guest
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.Name = "Guest"
-        Me.Text = "Guest Panel"
-        Me.ClientSize = New System.Drawing.Size(226, 234)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(219, 281)
+        Me.Controls.Add(Me.Back_Button)
+        Me.Controls.Add(Me.Exit_Button)
+        Me.Controls.Add(Me.Order_Funeral_Button)
+        Me.Controls.Add(Me.Display_Goods_Button)
+        Me.Controls.Add(Me.Welcome)
         Me.Name = "Guest"
         Me.Text = "Guest Panel"
         Me.ResumeLayout(False)
         Me.PerformLayout()
+
     End Sub
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Welcome As Label
+    Friend WithEvents Display_Goods_Button As Button
+    Friend WithEvents Order_Funeral_Button As Button
+    Friend WithEvents Exit_Button As Button
+    Friend WithEvents Back_Button As Button
 End Class
