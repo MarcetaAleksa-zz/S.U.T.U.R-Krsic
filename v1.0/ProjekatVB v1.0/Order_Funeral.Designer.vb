@@ -25,6 +25,7 @@ Partial Class Order_Funeral
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Order_Funeral))
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.Back_Button = New System.Windows.Forms.Button()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.SuspendLayout()
         '
         'Exit_Button
@@ -45,19 +46,29 @@ Partial Class Order_Funeral
         Me.Back_Button.TabIndex = 3
         Me.Back_Button.UseVisualStyleBackColor = True
         '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.CalendarDimensions = New System.Drawing.Size(3, 2)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(12, 59)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 5
+        '
         'Order_Funeral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.MonthCalendar1)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Order_Funeral"
-        Me.Text = "Order_Funeral"
+        Me.Text = "Guest Panel - Order Funeral"
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Exit_Button As Button
     Friend WithEvents Back_Button As Button
+    Friend WithEvents MonthCalendar1 As MonthCalendar
 End Class

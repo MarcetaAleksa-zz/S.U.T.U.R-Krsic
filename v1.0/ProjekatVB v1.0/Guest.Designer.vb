@@ -78,12 +78,13 @@ Partial Class Guest
         '
         'Guest
         '
-        Me.ClientSize = New System.Drawing.Size(219, 281)
+        Me.ClientSize = New System.Drawing.Size(230, 281)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Order_Funeral_Button)
         Me.Controls.Add(Me.Display_Goods_Button)
         Me.Controls.Add(Me.Welcome)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Guest"
         Me.Text = "Guest Panel"
         Me.ResumeLayout(False)
