@@ -42,8 +42,9 @@
             User.Show()
             Password_Form_Box.Text = ""
         Else
-            MessageBox.Show("Please ")
-            Password_Form_Box.Text = ""
+            MessageBox.Show("Please enter correct Username and Password ")
+            Password_Form_Box.PasswordChar = ""
+            Password_Form_Box.Text = "Enter Password here"
         End If
     End Sub
 

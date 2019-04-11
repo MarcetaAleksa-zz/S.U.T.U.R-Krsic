@@ -54,6 +54,7 @@ Partial Class Administrator
         Me.Controls.Add(Me.Back_Button)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Administrator"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrator Panel"
         Me.ResumeLayout(False)
 
