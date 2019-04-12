@@ -52,14 +52,17 @@ Public Class Login_form
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
             MessageBox.Show("Please enter correct Username and Password")
             Password_Form_Box.PasswordChar = "*"
+            Password_Form_Box.Text = ""
         ElseIf admin_table.Rows.Count() > 0 Then
             MessageBox.Show("Welcome to Administrator Panel")
             Me.Hide()
             Administrator.Show()
+            Password_Form_Box.Text = ""
         ElseIf user_table.Rows.Count() > 0 Then
             MessageBox.Show("Welcome to User Panel")
             Me.Hide()
             User.Show()
+            Password_Form_Box.Text = ""
         End If
     End Sub
 
