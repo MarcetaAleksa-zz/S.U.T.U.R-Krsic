@@ -35,40 +35,31 @@ Public Class Login_form
 
         Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
 
-        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login  where Nalog = @Nalog and Lozinka = @Lozinka", connection)
-        Dim Tip(10)
+        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login  where Tip_Naloga = 'True' and   Nalog = @Nalog and Lozinka = @Lozinka", connection)
+
         command.Parameters.Add("@Nalog", SqlDbType.NChar).Value = Username_Form_Box.Text
 
         command.Parameters.Add("@Lozinka", SqlDbType.VarChar).Value = Password_Form_Box.Text
 
-
-
         Dim adapter As New SqlDataAdapter(command)
 
+        Dim admin_table As New DataTable()
+        adapter.Fill(admin_table)
+        command.CommandText = "SELECT * FROM Projekat.dbo.Login where Tip_Naloga = 'False' and Nalog = @Nalog and Lozinka = @Lozinka"
+        Dim user_table As New DataTable()
+        adapter.Fill(user_table)
 
-        Dim table As New DataTable()
-        adapter.Fill(table)
-
-        If table.Rows.Count() <= 0 Then
+        If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
             MessageBox.Show("Please enter correct Username and Password")
             Password_Form_Box.PasswordChar = "*"
-        Else
-            ' Dim another_command As New SqlCommand("SELECT * FROM Projekat.dbo.Login  where Tip_Naloga = @Tip_Naloga", connection)
-            'command.Parameters.Add("@Tip_Naloga", SqlDbType.Char).Value = Tip
+        ElseIf admin_table.Rows.Count() > 0 Then
+            MessageBox.Show("Welcome to Administrator Panel")
             Me.Hide()
             Administrator.Show()
-
-            'If (Tip("@Nalog") = False) Then
-            ' MessageBox.Show("Welcome to User Panel")
-            'Me.Hide()
-            'User.Show()
-            'Password_Form_Box.Text = ""
-            ' ElseIf (Tip("@Nalog") = True) Then
-            'MessageBox.Show("Welcome to Administrator Panel")
-            'Me.Hide()
-            'Administrator.Show()
-            'Password_Form_Box.Text = ""
-            'End If
+        ElseIf user_table.Rows.Count() > 0 Then
+            MessageBox.Show("Welcome to User Panel")
+            Me.Hide()
+            User.Show()
         End If
     End Sub
 
