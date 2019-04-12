@@ -35,7 +35,7 @@ Public Class Login_form
 
         Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
 
-        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login  where Tip_Naloga = 'True' and   Nalog = @Nalog and Lozinka = @Lozinka", connection)
+        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login  where Tip_Naloga = 'True' and   Nalog = @Nalog and Lozinka = @Lozinka COLLATE Latin1_General_CS_AS", connection)
 
         command.Parameters.Add("@Nalog", SqlDbType.NChar).Value = Username_Form_Box.Text
 
@@ -45,7 +45,7 @@ Public Class Login_form
 
         Dim admin_table As New DataTable()
         adapter.Fill(admin_table)
-        command.CommandText = "SELECT * FROM Projekat.dbo.Login where Tip_Naloga = 'False' and Nalog = @Nalog and Lozinka = @Lozinka"
+        command.CommandText = "SELECT * FROM Projekat.dbo.Login where Tip_Naloga = 'False' and Nalog = @Nalog and Lozinka = @Lozinka COLLATE Latin1_General_CS_AS"
         Dim user_table As New DataTable()
         adapter.Fill(user_table)
 
