@@ -87,4 +87,19 @@ Public Class Login_form
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
     End Sub
+    Private Sub Username_Form_Box_KeyDown(sender As Object, e As KeyEventArgs) Handles Username_Form_Box.KeyDown
+        If (e.KeyCode = Keys.Enter) Then
+            e.SuppressKeyPress = True
+            Call Login_Button_Click(sender, e)
+            'Nakon sto ukucamo username, ako pritisnemo enter pokusavamo se logovati.
+        End If
+
+    End Sub
+    Private Sub Password_Form_Box_KeyDown(sender As Object, e As KeyEventArgs) Handles Password_Form_Box.KeyDown
+        If (e.KeyCode = Keys.Enter) Then
+            e.SuppressKeyPress = True
+            Call Login_Button_Click(sender, e)
+            'Nakon sto ukucamo lozinku pri pritisku entera se logujemo.
+        End If
+    End Sub
 End Class
