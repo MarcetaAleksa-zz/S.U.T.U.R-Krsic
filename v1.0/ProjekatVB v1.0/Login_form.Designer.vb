@@ -30,6 +30,7 @@ Partial Class Login_form
         Me.Label2_Pass = New System.Windows.Forms.Label()
         Me.Guest_Login = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
+        Me.ID_Label = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Login_Button
@@ -95,11 +96,20 @@ Partial Class Login_form
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
+        'ID_Label
+        '
+        Me.ID_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 0.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ID_Label.Location = New System.Drawing.Point(133, 48)
+        Me.ID_Label.Name = "ID_Label"
+        Me.ID_Label.Size = New System.Drawing.Size(10, 10)
+        Me.ID_Label.TabIndex = 7
+        '
         'Login_form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(276, 213)
+        Me.Controls.Add(Me.ID_Label)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Guest_Login)
         Me.Controls.Add(Me.Label2_Pass)
@@ -123,4 +133,5 @@ Partial Class Login_form
     Friend WithEvents Label2_Pass As Label
     Friend WithEvents Guest_Login As Button
     Friend WithEvents Exit_Button As Button
+    Friend WithEvents ID_Label As Label
 End Class

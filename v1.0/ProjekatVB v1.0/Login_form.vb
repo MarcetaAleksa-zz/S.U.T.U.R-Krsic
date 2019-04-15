@@ -44,9 +44,15 @@ Public Class Login_form
         Dim adapter As New SqlDataAdapter(command)
 
         Dim admin_table As New DataTable()
+
         adapter.Fill(admin_table)
+
+
+
         command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'false' and Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
+
         Dim user_table As New DataTable()
+
         adapter.Fill(user_table)
 
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
@@ -55,15 +61,22 @@ Public Class Login_form
             Password_Form_Box.Text = ""
         ElseIf admin_table.Rows.Count() > 0 Then
             MessageBox.Show("Welcome to Administrator Panel")
+            ID_Label.Text = admin_table.Rows(0)(0)
             Me.Hide()
             Administrator.Show()
             Password_Form_Box.Text = ""
         ElseIf user_table.Rows.Count() > 0 Then
             MessageBox.Show("Welcome to User Panel")
+            ID_Label.Text = user_table.Rows(0)(0)
             Me.Hide()
             User.Show()
             Password_Form_Box.Text = ""
         End If
+
+
+
+
+
     End Sub
 
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click

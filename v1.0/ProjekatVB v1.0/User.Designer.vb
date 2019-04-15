@@ -30,35 +30,34 @@ Partial Class User
         Me.TabStorage = New System.Windows.Forms.TabPage()
         Me.TabUserInfo = New System.Windows.Forms.TabPage()
         Me.U_Monthly_Pay_GroupBox = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.U_PB_TextBox = New System.Windows.Forms.TextBox()
         Me.U_OCH_TextBox = New System.Windows.Forms.TextBox()
         Me.U_PBOFWD_TextBox = New System.Windows.Forms.TextBox()
         Me.U_FWD_Button = New System.Windows.Forms.TextBox()
+        Me.DaysInMonth = New System.Windows.Forms.TextBox()
         Me.U_WDIM_TextBox = New System.Windows.Forms.TextBox()
         Me.U_PB_Label = New System.Windows.Forms.Label()
         Me.U_OCH_Label = New System.Windows.Forms.Label()
         Me.U_PBOWD_Label = New System.Windows.Forms.Label()
         Me.U_FWD_Label = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.U_WDIM_Label = New System.Windows.Forms.Label()
         Me.U_Month_Dropdown = New System.Windows.Forms.ComboBox()
-        Me.U_Username_TextBox = New System.Windows.Forms.TextBox()
+        Me.U_Phone_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Possition_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Possition_Label = New System.Windows.Forms.Label()
         Me.U_Name_TextBox = New System.Windows.Forms.TextBox()
-        Me.U_Username_label = New System.Windows.Forms.Label()
+        Me.U_Phone_label = New System.Windows.Forms.Label()
         Me.U_Picture = New System.Windows.Forms.PictureBox()
-        Me.U_Fax_TextBox = New System.Windows.Forms.TextBox()
-        Me.U_Phone_TextBox = New System.Windows.Forms.TextBox()
+        Me.U_Username_TextBox = New System.Windows.Forms.TextBox()
+        Me.U_Birth_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Email_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Surname_TextBox = New System.Windows.Forms.TextBox()
-        Me.U_Fax_Label = New System.Windows.Forms.Label()
-        Me.U_Phone_Label = New System.Windows.Forms.Label()
+        Me.U_Username_Label = New System.Windows.Forms.Label()
+        Me.U_Birth_Label = New System.Windows.Forms.Label()
         Me.U_Email_Label = New System.Windows.Forms.Label()
         Me.U_SName_Label = New System.Windows.Forms.Label()
         Me.U_Name_Label = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DaysInMonth = New System.Windows.Forms.TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
@@ -107,18 +106,18 @@ Partial Class User
         'TabUserInfo
         '
         Me.TabUserInfo.Controls.Add(Me.U_Monthly_Pay_GroupBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Username_TextBox)
+        Me.TabUserInfo.Controls.Add(Me.U_Phone_TextBox)
         Me.TabUserInfo.Controls.Add(Me.U_Possition_TextBox)
         Me.TabUserInfo.Controls.Add(Me.U_Possition_Label)
         Me.TabUserInfo.Controls.Add(Me.U_Name_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Username_label)
+        Me.TabUserInfo.Controls.Add(Me.U_Phone_label)
         Me.TabUserInfo.Controls.Add(Me.U_Picture)
-        Me.TabUserInfo.Controls.Add(Me.U_Fax_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Phone_TextBox)
+        Me.TabUserInfo.Controls.Add(Me.U_Username_TextBox)
+        Me.TabUserInfo.Controls.Add(Me.U_Birth_TextBox)
         Me.TabUserInfo.Controls.Add(Me.U_Email_TextBox)
         Me.TabUserInfo.Controls.Add(Me.U_Surname_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Fax_Label)
-        Me.TabUserInfo.Controls.Add(Me.U_Phone_Label)
+        Me.TabUserInfo.Controls.Add(Me.U_Username_Label)
+        Me.TabUserInfo.Controls.Add(Me.U_Birth_Label)
         Me.TabUserInfo.Controls.Add(Me.U_Email_Label)
         Me.TabUserInfo.Controls.Add(Me.U_SName_Label)
         Me.TabUserInfo.Controls.Add(Me.U_Name_Label)
@@ -132,7 +131,6 @@ Partial Class User
         '
         'U_Monthly_Pay_GroupBox
         '
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.Button1)
         Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.U_PB_TextBox)
         Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.U_OCH_TextBox)
         Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.U_PBOFWD_TextBox)
@@ -152,15 +150,6 @@ Partial Class User
         Me.U_Monthly_Pay_GroupBox.TabIndex = 17
         Me.U_Monthly_Pay_GroupBox.TabStop = False
         Me.U_Monthly_Pay_GroupBox.Text = "Monthly Pay"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(81, 295)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(74, 29)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'U_PB_TextBox
         '
@@ -193,6 +182,14 @@ Partial Class User
         Me.U_FWD_Button.ReadOnly = True
         Me.U_FWD_Button.Size = New System.Drawing.Size(43, 20)
         Me.U_FWD_Button.TabIndex = 23
+        '
+        'DaysInMonth
+        '
+        Me.DaysInMonth.Location = New System.Drawing.Point(183, 53)
+        Me.DaysInMonth.Name = "DaysInMonth"
+        Me.DaysInMonth.ReadOnly = True
+        Me.DaysInMonth.Size = New System.Drawing.Size(43, 20)
+        Me.DaysInMonth.TabIndex = 22
         '
         'U_WDIM_TextBox
         '
@@ -238,6 +235,15 @@ Partial Class User
         Me.U_FWD_Label.TabIndex = 18
         Me.U_FWD_Label.Text = "Fulfilled Work Days:"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 56)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 13)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Days in Month:"
+        '
         'U_WDIM_Label
         '
         Me.U_WDIM_Label.AutoSize = True
@@ -256,13 +262,13 @@ Partial Class User
         Me.U_Month_Dropdown.Size = New System.Drawing.Size(315, 21)
         Me.U_Month_Dropdown.TabIndex = 16
         '
-        'U_Username_TextBox
+        'U_Phone_TextBox
         '
-        Me.U_Username_TextBox.Location = New System.Drawing.Point(93, 211)
-        Me.U_Username_TextBox.Name = "U_Username_TextBox"
-        Me.U_Username_TextBox.ReadOnly = True
-        Me.U_Username_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.U_Username_TextBox.TabIndex = 15
+        Me.U_Phone_TextBox.Location = New System.Drawing.Point(93, 215)
+        Me.U_Phone_TextBox.Name = "U_Phone_TextBox"
+        Me.U_Phone_TextBox.ReadOnly = True
+        Me.U_Phone_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Phone_TextBox.TabIndex = 15
         '
         'U_Possition_TextBox
         '
@@ -275,7 +281,7 @@ Partial Class User
         'U_Possition_Label
         '
         Me.U_Possition_Label.AutoSize = True
-        Me.U_Possition_Label.Location = New System.Drawing.Point(6, 185)
+        Me.U_Possition_Label.Location = New System.Drawing.Point(9, 192)
         Me.U_Possition_Label.Name = "U_Possition_Label"
         Me.U_Possition_Label.Size = New System.Drawing.Size(81, 13)
         Me.U_Possition_Label.TabIndex = 13
@@ -289,38 +295,38 @@ Partial Class User
         Me.U_Name_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.U_Name_TextBox.TabIndex = 12
         '
-        'U_Username_label
+        'U_Phone_label
         '
-        Me.U_Username_label.AutoSize = True
-        Me.U_Username_label.Location = New System.Drawing.Point(29, 211)
-        Me.U_Username_label.Name = "U_Username_label"
-        Me.U_Username_label.Size = New System.Drawing.Size(58, 13)
-        Me.U_Username_label.TabIndex = 11
-        Me.U_Username_label.Text = "Username:"
+        Me.U_Phone_label.AutoSize = True
+        Me.U_Phone_label.Location = New System.Drawing.Point(32, 218)
+        Me.U_Phone_label.Name = "U_Phone_label"
+        Me.U_Phone_label.Size = New System.Drawing.Size(41, 13)
+        Me.U_Phone_label.TabIndex = 11
+        Me.U_Phone_label.Text = "Phone:"
         '
         'U_Picture
         '
-        Me.U_Picture.Location = New System.Drawing.Point(67, 240)
+        Me.U_Picture.Location = New System.Drawing.Point(229, 22)
         Me.U_Picture.Name = "U_Picture"
         Me.U_Picture.Size = New System.Drawing.Size(126, 113)
         Me.U_Picture.TabIndex = 10
         Me.U_Picture.TabStop = False
         '
-        'U_Fax_TextBox
+        'U_Username_TextBox
         '
-        Me.U_Fax_TextBox.Location = New System.Drawing.Point(93, 154)
-        Me.U_Fax_TextBox.Name = "U_Fax_TextBox"
-        Me.U_Fax_TextBox.ReadOnly = True
-        Me.U_Fax_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.U_Fax_TextBox.TabIndex = 9
+        Me.U_Username_TextBox.Location = New System.Drawing.Point(93, 154)
+        Me.U_Username_TextBox.Name = "U_Username_TextBox"
+        Me.U_Username_TextBox.ReadOnly = True
+        Me.U_Username_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Username_TextBox.TabIndex = 9
         '
-        'U_Phone_TextBox
+        'U_Birth_TextBox
         '
-        Me.U_Phone_TextBox.Location = New System.Drawing.Point(93, 122)
-        Me.U_Phone_TextBox.Name = "U_Phone_TextBox"
-        Me.U_Phone_TextBox.ReadOnly = True
-        Me.U_Phone_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.U_Phone_TextBox.TabIndex = 8
+        Me.U_Birth_TextBox.Location = New System.Drawing.Point(93, 122)
+        Me.U_Birth_TextBox.Name = "U_Birth_TextBox"
+        Me.U_Birth_TextBox.ReadOnly = True
+        Me.U_Birth_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Birth_TextBox.TabIndex = 8
         '
         'U_Email_TextBox
         '
@@ -338,28 +344,28 @@ Partial Class User
         Me.U_Surname_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.U_Surname_TextBox.TabIndex = 6
         '
-        'U_Fax_Label
+        'U_Username_Label
         '
-        Me.U_Fax_Label.AutoSize = True
-        Me.U_Fax_Label.Location = New System.Drawing.Point(60, 154)
-        Me.U_Fax_Label.Name = "U_Fax_Label"
-        Me.U_Fax_Label.Size = New System.Drawing.Size(27, 13)
-        Me.U_Fax_Label.TabIndex = 4
-        Me.U_Fax_Label.Text = "Fax:"
+        Me.U_Username_Label.AutoSize = True
+        Me.U_Username_Label.Location = New System.Drawing.Point(32, 161)
+        Me.U_Username_Label.Name = "U_Username_Label"
+        Me.U_Username_Label.Size = New System.Drawing.Size(58, 13)
+        Me.U_Username_Label.TabIndex = 4
+        Me.U_Username_Label.Text = "Username:"
         '
-        'U_Phone_Label
+        'U_Birth_Label
         '
-        Me.U_Phone_Label.AutoSize = True
-        Me.U_Phone_Label.Location = New System.Drawing.Point(46, 125)
-        Me.U_Phone_Label.Name = "U_Phone_Label"
-        Me.U_Phone_Label.Size = New System.Drawing.Size(41, 13)
-        Me.U_Phone_Label.TabIndex = 3
-        Me.U_Phone_Label.Text = "Phone:"
+        Me.U_Birth_Label.AutoSize = True
+        Me.U_Birth_Label.Location = New System.Drawing.Point(59, 129)
+        Me.U_Birth_Label.Name = "U_Birth_Label"
+        Me.U_Birth_Label.Size = New System.Drawing.Size(31, 13)
+        Me.U_Birth_Label.TabIndex = 3
+        Me.U_Birth_Label.Text = "Birth:"
         '
         'U_Email_Label
         '
         Me.U_Email_Label.AutoSize = True
-        Me.U_Email_Label.Location = New System.Drawing.Point(49, 91)
+        Me.U_Email_Label.Location = New System.Drawing.Point(52, 99)
         Me.U_Email_Label.Name = "U_Email_Label"
         Me.U_Email_Label.Size = New System.Drawing.Size(38, 13)
         Me.U_Email_Label.TabIndex = 2
@@ -368,7 +374,7 @@ Partial Class User
         'U_SName_Label
         '
         Me.U_SName_Label.AutoSize = True
-        Me.U_SName_Label.Location = New System.Drawing.Point(29, 58)
+        Me.U_SName_Label.Location = New System.Drawing.Point(38, 62)
         Me.U_SName_Label.Name = "U_SName_Label"
         Me.U_SName_Label.Size = New System.Drawing.Size(52, 13)
         Me.U_SName_Label.TabIndex = 1
@@ -377,28 +383,11 @@ Partial Class User
         'U_Name_Label
         '
         Me.U_Name_Label.AutoSize = True
-        Me.U_Name_Label.Location = New System.Drawing.Point(49, 25)
+        Me.U_Name_Label.Location = New System.Drawing.Point(52, 28)
         Me.U_Name_Label.Name = "U_Name_Label"
         Me.U_Name_Label.Size = New System.Drawing.Size(38, 13)
         Me.U_Name_Label.TabIndex = 0
         Me.U_Name_Label.Text = "Name:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 56)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 13)
-        Me.Label1.TabIndex = 17
-        Me.Label1.Text = "Days in Month:"
-        '
-        'DaysInMonth
-        '
-        Me.DaysInMonth.Location = New System.Drawing.Point(183, 53)
-        Me.DaysInMonth.Name = "DaysInMonth"
-        Me.DaysInMonth.ReadOnly = True
-        Me.DaysInMonth.Size = New System.Drawing.Size(43, 20)
-        Me.DaysInMonth.TabIndex = 22
         '
         'Timer1
         '
@@ -433,18 +422,18 @@ Partial Class User
     Friend WithEvents TabStorage As TabPage
     Friend WithEvents TabUserInfo As TabPage
     Friend WithEvents U_Name_TextBox As TextBox
-    Friend WithEvents U_Username_label As Label
+    Friend WithEvents U_Phone_label As Label
     Friend WithEvents U_Picture As PictureBox
-    Friend WithEvents U_Fax_TextBox As TextBox
-    Friend WithEvents U_Phone_TextBox As TextBox
+    Friend WithEvents U_Username_TextBox As TextBox
+    Friend WithEvents U_Birth_TextBox As TextBox
     Friend WithEvents U_Email_TextBox As TextBox
     Friend WithEvents U_Surname_TextBox As TextBox
-    Friend WithEvents U_Fax_Label As Label
-    Friend WithEvents U_Phone_Label As Label
+    Friend WithEvents U_Username_Label As Label
+    Friend WithEvents U_Birth_Label As Label
     Friend WithEvents U_Email_Label As Label
     Friend WithEvents U_SName_Label As Label
     Friend WithEvents U_Name_Label As Label
-    Friend WithEvents U_Username_TextBox As TextBox
+    Friend WithEvents U_Phone_TextBox As TextBox
     Friend WithEvents U_Possition_TextBox As TextBox
     Friend WithEvents U_Possition_Label As Label
     Friend WithEvents U_Monthly_Pay_GroupBox As GroupBox
@@ -459,7 +448,6 @@ Partial Class User
     Friend WithEvents U_PBOFWD_TextBox As TextBox
     Friend WithEvents U_FWD_Button As TextBox
     Friend WithEvents U_WDIM_TextBox As TextBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents DaysInMonth As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
