@@ -27,6 +27,34 @@ Public Class User
         U_Name_TextBox.Text = U_Name_TextBox.Text
         U_Username_TextBox.Text = Login_form.Username_Form_Box.Text
 
+        'Login_form.Username_Form_Box.Text.ToString()
+        'TextBox1.Text = Login_form.Username_Form_Box.Text
+        'Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        '"SELECT Name FROM NewTable WERE Name='" & My.Settings.Name & "';"
+        ' Login_form.id.ToString()
+        '  MsgBox(Login_form.id)
+        '
+        '   Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Workers where ID = @ID COLLATE Latin1_General_CS_AS", connection)
+        '    command.Parameters.Add("@Name", SqlDbType.VarChar).Value = TextBox1.Text
+        '    command.Parameters.Add("@Surname", SqlDbType.VarChar).Value = TextBox2.Text
+        '    command.Parameters.Add("@Email", SqlDbType.VarChar).Value = TextBox3.Text
+        '   command.Parameters.Add("@Phone", SqlDbType.Char).Value = TextBox4.Text
+        '  command.Parameters.Add("@Birth", SqlDbType.Date).Value = TextBox5.Text
+        'command.Parameters.Add("@Phone", SqlDbType.Char).Value = TextBox4.Text
+        ' command.Parameters.Add("@Username", SqlDbType.VarChar).Value = U_Username_label.Text
+
+
+        'Dim adapter As New SqlDataAdapter(command)
+
+        'Dim table As New DataTable()
+        'MsgBox(TextBox1.Text)
+        'TextBox1.Text = TextBox1.Text
+        'TextBox2.Text = TextBox2.Text
+        'TextBox3.Text = TextBox3.Text
+        'TextBox4.Text = TextBox4.Text
+        'TextBox5.Text = TextBox5.Text
+        'U_Username_label.Text = U_Username_label.Text
+
 
 
 
@@ -37,6 +65,7 @@ Public Class User
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Plate  where BRDUMJ = @BRDUMJ and ISPRDUMJ = @ISPRDUMJ  and PNOISPRD = @PNOISPRD and PVS = @PVS and IBP = @IBP", connection)
+
         If (U_Month_Dropdown.SelectedIndex = 0) Then
             DaysInMonth.Text = "31"
             U_WDIM_TextBox.Text = "28"
