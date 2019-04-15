@@ -11,7 +11,9 @@ Public Class User
     End Sub
 
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Phone_TextBox.Enter
+        'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        'Login_form.ID_Label.Text vuce id sa Login forme iz dbo.Login jer su Login i Workers tabele povezane preko ID-a
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Workers where ID = '" & Login_form.ID_Label.Text & "' COLLATE Latin1_General_CS_AS", connection)
 
 
@@ -20,6 +22,7 @@ Public Class User
 
         Dim user_table As New DataTable()
         adapter.Fill(user_table)
+        'Popunjavanje informacija
         U_Name_TextBox.Text = user_table.Rows(0)(1)
         U_Surname_TextBox.Text = user_table.Rows(0)(2)
         U_Email_TextBox.Text = user_table.Rows(0)(3)
@@ -30,11 +33,11 @@ Public Class User
 
 
     End Sub
-
+    'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Plate  where BRDUMJ = @BRDUMJ and ISPRDUMJ = @ISPRDUMJ  and PNOISPRD = @PNOISPRD and PVS = @PVS and IBP = @IBP", connection)
-
+        'Drop-down koji treba uvesti iz baze
         If (U_Month_Dropdown.SelectedIndex = 0) Then
             DaysInMonth.Text = "31"
             U_WDIM_TextBox.Text = "28"

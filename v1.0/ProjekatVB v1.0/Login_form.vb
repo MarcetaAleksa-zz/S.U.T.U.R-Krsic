@@ -4,19 +4,16 @@ Public Class Login_form
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
         If (Username_Form_Box.Text = "Enter Username here") Then
             Username_Form_Box.Text = ""
-
             Username_Form_Box.ForeColor = Color.Black
         End If
     End Sub
     Private Sub Username_Form_Box_Leave(sender As Object, e As EventArgs) Handles Username_Form_Box.Leave
         If (Username_Form_Box.Text = "") Then
             Username_Form_Box.Text = "Enter Username here"
-
             Username_Form_Box.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub Password_Form_Box_Enter(sender As Object, e As EventArgs) Handles Password_Form_Box.Enter
-
         If (Password_Form_Box.Text = "Enter Password here") Then
             Password_Form_Box.Text = ""
             Password_Form_Box.PasswordChar = "*"
@@ -24,7 +21,6 @@ Public Class Login_form
         End If
     End Sub
     Private Sub Password_Form_Box_Leave(sender As Object, e As EventArgs) Handles Password_Form_Box.Leave
-
         If (Password_Form_Box.Text = "") Then
             Password_Form_Box.Text = "Enter Password here"
             Password_Form_Box.PasswordChar = ""
@@ -34,7 +30,7 @@ Public Class Login_form
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
 
         Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
-
+        'Syntax za dobijanje admin akreditaciju
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS", connection)
 
         command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text
@@ -43,42 +39,46 @@ Public Class Login_form
 
         Dim adapter As New SqlDataAdapter(command)
 
-        Dim admin_table As New DataTable()
+        Dim admin_table As New DataTable()  'unos admin podataka u tabelu, u slucaju da imamo admina
 
         adapter.Fill(admin_table)
 
 
-
+        'syntax za user akreditaciju
         command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'false' and Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
 
-        Dim user_table As New DataTable()
+        Dim user_table As New DataTable() ' unos u user tabelu, u slucaju da se neko prijavio ko je Account_Type = 'false'
+        'Acount_Type = 'True' je Administrator po Bool-u
+        'Account_Type = 'False" je User po iznad navedenoj logici
 
         adapter.Fill(user_table)
 
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
+
             MessageBox.Show("Please enter correct Username and Password")
             Password_Form_Box.PasswordChar = "*"
             Password_Form_Box.Text = ""
+
         ElseIf admin_table.Rows.Count() > 0 Then
+
             MessageBox.Show("Welcome to Administrator Panel")
             ID_Label.Text = admin_table.Rows(0)(0)
+            'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
             Me.Hide()
             Administrator.Show()
             Password_Form_Box.Text = ""
+
         ElseIf user_table.Rows.Count() > 0 Then
+
             MessageBox.Show("Welcome to User Panel")
             ID_Label.Text = user_table.Rows(0)(0)
+            'Dodjela ID-a Labeli kako bi je pozvali u User formi i tako povezali user formu i login formu te Workers i Login tabele iz baze
             Me.Hide()
             User.Show()
             Password_Form_Box.Text = ""
+
         End If
-
-
-
-
-
     End Sub
-
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
         MessageBox.Show("Welcome to Guest Panel")
         Me.Hide()
