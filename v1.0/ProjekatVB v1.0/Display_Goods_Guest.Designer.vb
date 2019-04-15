@@ -131,6 +131,7 @@ Partial Class Display_Goods_Guest
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Display_Goods_Guest"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Panel"

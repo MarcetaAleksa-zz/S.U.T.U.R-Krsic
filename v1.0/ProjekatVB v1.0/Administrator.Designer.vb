@@ -25,6 +25,7 @@ Partial Class Administrator
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Administrator))
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Back_Button
@@ -45,11 +46,21 @@ Partial Class Administrator
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(57, 66)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(126, 35)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Unesi novog radnika"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Administrator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -62,4 +73,5 @@ Partial Class Administrator
 
     Friend WithEvents Back_Button As Button
     Friend WithEvents Exit_Button As Button
+    Friend WithEvents Button1 As Button
 End Class

@@ -50,6 +50,7 @@ Partial Class Order_Funeral
         '
         Me.MonthCalendar1.CalendarDimensions = New System.Drawing.Size(3, 2)
         Me.MonthCalendar1.Location = New System.Drawing.Point(12, 59)
+        Me.MonthCalendar1.MaxSelectionCount = 1
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 5
         '
@@ -57,7 +58,7 @@ Partial Class Order_Funeral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(716, 461)
         Me.Controls.Add(Me.MonthCalendar1)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)

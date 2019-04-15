@@ -62,3 +62,4 @@ C:\Users\IT\Desktop\Projekat\Moj Dio\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.e
 C:\Users\IT\Desktop\Projekat\Moj Dio\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe
 C:\Users\IT\Desktop\Projekat\Moj Dio\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.pdb
 C:\Users\IT\Desktop\Projekat\Moj Dio\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.xml
+C:\Users\IT\Desktop\Projekat\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UnosRadnika.resources
