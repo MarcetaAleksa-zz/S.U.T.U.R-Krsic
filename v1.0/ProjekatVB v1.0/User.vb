@@ -11,14 +11,14 @@ Public Class User
     End Sub
 
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Username_TextBox.Enter
-        Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
-        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Workers  where Name = @Name and Surename = @Surename  and Email = @Email and WorkPossition = @WorkPossition", connection)
+        Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Workers  where Name = @Name and Surname = @Surname  and Email = @Email and Possition = @Possition", connection)
 
         command.Parameters.Add("@Name", SqlDbType.VarChar).Value = U_Name_TextBox.Text
-        command.Parameters.Add("@Surename", SqlDbType.VarChar).Value = U_Surname_TextBox.Text
+        command.Parameters.Add("@Surname", SqlDbType.VarChar).Value = U_Surname_TextBox.Text
         ' command.Parameters.Add("@Phone", SqlDbType.Int).Value = U_Phone_TextBox.ToString
         command.Parameters.Add("@Email", SqlDbType.VarChar).Value = U_Email_TextBox.Text
-        command.Parameters.Add("@WorkPossition", SqlDbType.VarChar).Value = U_Possition_TextBox.Text
+        command.Parameters.Add("@Possition", SqlDbType.VarChar).Value = U_Possition_TextBox.Text
         'command.Parameters.Add("@Fax", SqlDbType.Int).Value = U_Fax_TextBox.ToString
         Dim adapter As New SqlDataAdapter(command)
 
