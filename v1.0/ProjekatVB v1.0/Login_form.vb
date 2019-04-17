@@ -29,7 +29,7 @@ Public Class Login_form
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        Dim connection As New SqlConnection("Server = TESTTHENEXT3\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         'Syntax za dobijanje admin akreditaciju
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS", connection)
 
@@ -101,5 +101,13 @@ Public Class Login_form
             Call Login_Button_Click(sender, e)
             'Nakon sto ukucamo lozinku pri pritisku entera se logujemo.
         End If
+    End Sub
+
+    Private Sub Login_form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint, Panel2.Paint
+
     End Sub
 End Class
