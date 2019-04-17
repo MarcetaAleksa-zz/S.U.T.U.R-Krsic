@@ -53,5 +53,11 @@ VALUES (@ID, 'True', '" & UR_Username_TextBox.Text & "', '" & Correct_Password &
         Finally
             connection.Close()
         End Try
+        For Each Control As Control In Me.Controls
+            If TypeOf Control Is TextBox Then
+                Control.Text = String.Empty
+            End If
+
+        Next
     End Sub
 End Class
