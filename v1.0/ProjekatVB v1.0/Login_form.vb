@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Login_form
+    Public test As Double = 0
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
         If (Username_Form_Box.Text = "Enter Username here") Then
             Username_Form_Box.Text = ""
@@ -28,8 +29,8 @@ Public Class Login_form
         End If
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
-
-        Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
+        Dim connection As New SqlConnection("Server = TESTTHENEXT3\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         'Syntax za dobijanje admin akreditaciju
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS", connection)
 
@@ -55,36 +56,62 @@ Public Class Login_form
 
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
 
-            MessageBox.Show("Please enter correct Username and Password")
+            test = 4
+            MSG_Form.Show()
             Password_Form_Box.PasswordChar = "*"
             Password_Form_Box.Text = ""
 
+
         ElseIf admin_table.Rows.Count() > 0 Then
 
-            MessageBox.Show("Welcome to Administrator Panel")
+            test = 1
+            MSG_Form.Show()
             ID_Label.Text = admin_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
             Me.Hide()
-            Administrator.Show()
             Password_Form_Box.Text = ""
 
         ElseIf user_table.Rows.Count() > 0 Then
 
-            MessageBox.Show("Welcome to User Panel")
+            test = 2
+            MSG_Form.Show()
             ID_Label.Text = user_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je pozvali u User formi i tako povezali user formu i login formu te Workers i Login tabele iz baze
             Me.Hide()
-            User.Show()
             Password_Form_Box.Text = ""
 
         End If
     End Sub
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
-        MessageBox.Show("Welcome to Guest Panel")
+
+        test = 3
+        MSG_Form.Show()
         Me.Hide()
-        Guest.Show()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
+    End Sub
+    Private Sub Username_Form_Box_KeyDown(sender As Object, e As KeyEventArgs) Handles Username_Form_Box.KeyDown
+        If (e.KeyCode = Keys.Enter) Then
+            e.SuppressKeyPress = True
+            Call Login_Button_Click(sender, e)
+            'Nakon sto ukucamo username, ako pritisnemo enter pokusavamo se logovati.
+        End If
+
+    End Sub
+    Private Sub Password_Form_Box_KeyDown(sender As Object, e As KeyEventArgs) Handles Password_Form_Box.KeyDown
+        If (e.KeyCode = Keys.Enter) Then
+            e.SuppressKeyPress = True
+            Call Login_Button_Click(sender, e)
+            'Nakon sto ukucamo lozinku pri pritisku entera se logujemo.
+        End If
+    End Sub
+
+    Private Sub Login_form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint, Panel2.Paint
+
     End Sub
 End Class

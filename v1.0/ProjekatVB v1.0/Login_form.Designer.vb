@@ -26,112 +26,183 @@ Partial Class Login_form
         Me.Login_Button = New System.Windows.Forms.Button()
         Me.Username_Form_Box = New System.Windows.Forms.TextBox()
         Me.Password_Form_Box = New System.Windows.Forms.TextBox()
-        Me.Label1_User = New System.Windows.Forms.Label()
-        Me.Label2_Pass = New System.Windows.Forms.Label()
         Me.Guest_Login = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.ID_Label = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Login_Button
         '
-        Me.Login_Button.Location = New System.Drawing.Point(76, 108)
+        Me.Login_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Login_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Login_Button.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Login_Button.Location = New System.Drawing.Point(92, 187)
         Me.Login_Button.Name = "Login_Button"
-        Me.Login_Button.Size = New System.Drawing.Size(185, 44)
-        Me.Login_Button.TabIndex = 0
+        Me.Login_Button.Size = New System.Drawing.Size(110, 37)
+        Me.Login_Button.TabIndex = 102
         Me.Login_Button.Text = "Login"
-        Me.Login_Button.UseVisualStyleBackColor = True
+        Me.Login_Button.UseVisualStyleBackColor = False
         '
         'Username_Form_Box
         '
+        Me.Username_Form_Box.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Username_Form_Box.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Username_Form_Box.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.Username_Form_Box.Location = New System.Drawing.Point(76, 23)
+        Me.Username_Form_Box.Location = New System.Drawing.Point(45, 7)
         Me.Username_Form_Box.Name = "Username_Form_Box"
-        Me.Username_Form_Box.Size = New System.Drawing.Size(124, 20)
-        Me.Username_Form_Box.TabIndex = 1
+        Me.Username_Form_Box.Size = New System.Drawing.Size(149, 13)
+        Me.Username_Form_Box.TabIndex = 100
         Me.Username_Form_Box.Text = "Enter Username here"
         '
         'Password_Form_Box
         '
+        Me.Password_Form_Box.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Password_Form_Box.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Password_Form_Box.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.Password_Form_Box.Location = New System.Drawing.Point(76, 61)
+        Me.Password_Form_Box.Location = New System.Drawing.Point(45, 6)
         Me.Password_Form_Box.Name = "Password_Form_Box"
-        Me.Password_Form_Box.Size = New System.Drawing.Size(124, 20)
-        Me.Password_Form_Box.TabIndex = 2
+        Me.Password_Form_Box.Size = New System.Drawing.Size(158, 13)
+        Me.Password_Form_Box.TabIndex = 101
         Me.Password_Form_Box.Text = "Enter Password here"
-        '
-        'Label1_User
-        '
-        Me.Label1_User.AutoSize = True
-        Me.Label1_User.Location = New System.Drawing.Point(12, 26)
-        Me.Label1_User.Name = "Label1_User"
-        Me.Label1_User.Size = New System.Drawing.Size(58, 13)
-        Me.Label1_User.TabIndex = 3
-        Me.Label1_User.Text = "Username:"
-        '
-        'Label2_Pass
-        '
-        Me.Label2_Pass.AutoSize = True
-        Me.Label2_Pass.Location = New System.Drawing.Point(9, 61)
-        Me.Label2_Pass.Name = "Label2_Pass"
-        Me.Label2_Pass.Size = New System.Drawing.Size(56, 13)
-        Me.Label2_Pass.TabIndex = 4
-        Me.Label2_Pass.Text = "Password:"
         '
         'Guest_Login
         '
-        Me.Guest_Login.Location = New System.Drawing.Point(12, 111)
+        Me.Guest_Login.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Guest_Login.Location = New System.Drawing.Point(200, 187)
         Me.Guest_Login.Name = "Guest_Login"
-        Me.Guest_Login.Size = New System.Drawing.Size(53, 38)
-        Me.Guest_Login.TabIndex = 5
+        Me.Guest_Login.Size = New System.Drawing.Size(112, 37)
+        Me.Guest_Login.TabIndex = 103
         Me.Guest_Login.Text = "Guest"
-        Me.Guest_Login.UseVisualStyleBackColor = True
+        Me.Guest_Login.UseVisualStyleBackColor = False
         '
         'Exit_Button
         '
-        Me.Exit_Button.Location = New System.Drawing.Point(74, 166)
+        Me.Exit_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Exit_Button.Location = New System.Drawing.Point(92, 230)
         Me.Exit_Button.Name = "Exit_Button"
-        Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
-        Me.Exit_Button.TabIndex = 6
+        Me.Exit_Button.Size = New System.Drawing.Size(220, 24)
+        Me.Exit_Button.TabIndex = 104
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
         'ID_Label
         '
         Me.ID_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 0.1!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ID_Label.Location = New System.Drawing.Point(133, 48)
+        Me.ID_Label.Location = New System.Drawing.Point(118, 126)
         Me.ID_Label.Name = "ID_Label"
         Me.ID_Label.Size = New System.Drawing.Size(10, 10)
         Me.ID_Label.TabIndex = 7
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Username_Form_Box)
+        Me.Panel1.Location = New System.Drawing.Point(92, 110)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(220, 26)
+        Me.Panel1.TabIndex = 199
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Image = Global.ProjekatVB_v1._0.My.Resources.Resources.Webp_net_resizeimage
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(23, 24)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.PictureBox2)
+        Me.Panel2.Controls.Add(Me.Password_Form_Box)
+        Me.Panel2.Location = New System.Drawing.Point(92, 142)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(220, 26)
+        Me.Panel2.TabIndex = 200
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Image = Global.ProjekatVB_v1._0.My.Resources.Resources.Webp1
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(23, 24)
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Location = New System.Drawing.Point(-2, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(405, 68)
+        Me.Panel3.TabIndex = 9
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(137, 25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(140, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "USER LOGIN"
         '
         'Login_form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(276, 213)
+        Me.ClientSize = New System.Drawing.Size(402, 305)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ID_Label)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Guest_Login)
-        Me.Controls.Add(Me.Label2_Pass)
-        Me.Controls.Add(Me.Label1_User)
-        Me.Controls.Add(Me.Password_Form_Box)
-        Me.Controls.Add(Me.Username_Form_Box)
         Me.Controls.Add(Me.Login_Button)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login_form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Login_Button As Button
     Friend WithEvents Username_Form_Box As TextBox
     Friend WithEvents Password_Form_Box As TextBox
-    Friend WithEvents Label1_User As Label
-    Friend WithEvents Label2_Pass As Label
     Friend WithEvents Guest_Login As Button
     Friend WithEvents Exit_Button As Button
     Friend WithEvents ID_Label As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
