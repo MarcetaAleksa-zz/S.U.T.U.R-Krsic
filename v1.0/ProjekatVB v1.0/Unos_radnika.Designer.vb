@@ -193,6 +193,7 @@ Partial Class UnosRadnika
         '
         Me.UR_Password_TextBox.Location = New System.Drawing.Point(251, 200)
         Me.UR_Password_TextBox.Name = "UR_Password_TextBox"
+        Me.UR_Password_TextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.UR_Password_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Password_TextBox.TabIndex = 24
         '
@@ -264,6 +265,7 @@ Partial Class UnosRadnika
         '
         Me.UR_ConfirmPassword_Textbox.Location = New System.Drawing.Point(251, 226)
         Me.UR_ConfirmPassword_Textbox.Name = "UR_ConfirmPassword_Textbox"
+        Me.UR_ConfirmPassword_Textbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.UR_ConfirmPassword_Textbox.Size = New System.Drawing.Size(100, 20)
         Me.UR_ConfirmPassword_Textbox.TabIndex = 24
         '
