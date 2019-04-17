@@ -53,6 +53,7 @@ Partial Class UnosRadnika
         Me.UR_Gender_Textbox = New System.Windows.Forms.Label()
         Me.UR_Male_Button = New System.Windows.Forms.RadioButton()
         Me.UR_Female_Button = New System.Windows.Forms.RadioButton()
+        Me.A_Register_Button = New System.Windows.Forms.Button()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,7 +61,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Phone_TextBox.Location = New System.Drawing.Point(87, 174)
         Me.UR_Phone_TextBox.Name = "UR_Phone_TextBox"
-        Me.UR_Phone_TextBox.ReadOnly = True
         Me.UR_Phone_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Phone_TextBox.TabIndex = 30
         '
@@ -68,7 +68,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Possition_TextBox.Location = New System.Drawing.Point(87, 144)
         Me.UR_Possition_TextBox.Name = "UR_Possition_TextBox"
-        Me.UR_Possition_TextBox.ReadOnly = True
         Me.UR_Possition_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Possition_TextBox.TabIndex = 29
         '
@@ -85,7 +84,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Surname_TextBox.Location = New System.Drawing.Point(87, 84)
         Me.UR_Surname_TextBox.Name = "UR_Surname_TextBox"
-        Me.UR_Surname_TextBox.ReadOnly = True
         Me.UR_Surname_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Surname_TextBox.TabIndex = 27
         '
@@ -113,7 +111,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Username_TextBox.Location = New System.Drawing.Point(251, 169)
         Me.UR_Username_TextBox.Name = "UR_Username_TextBox"
-        Me.UR_Username_TextBox.ReadOnly = True
         Me.UR_Username_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Username_TextBox.TabIndex = 24
         '
@@ -121,7 +118,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Birth_TextBox.Location = New System.Drawing.Point(87, 110)
         Me.UR_Birth_TextBox.Name = "UR_Birth_TextBox"
-        Me.UR_Birth_TextBox.ReadOnly = True
         Me.UR_Birth_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Birth_TextBox.TabIndex = 23
         '
@@ -129,7 +125,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Email_TextBox.Location = New System.Drawing.Point(87, 200)
         Me.UR_Email_TextBox.Name = "UR_Email_TextBox"
-        Me.UR_Email_TextBox.ReadOnly = True
         Me.UR_Email_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Email_TextBox.TabIndex = 22
         '
@@ -137,7 +132,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Name_TextBox.Location = New System.Drawing.Point(87, 54)
         Me.UR_Name_TextBox.Name = "UR_Name_TextBox"
-        Me.UR_Name_TextBox.ReadOnly = True
         Me.UR_Name_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Name_TextBox.TabIndex = 21
         '
@@ -199,7 +193,6 @@ Partial Class UnosRadnika
         '
         Me.UR_Password_TextBox.Location = New System.Drawing.Point(251, 200)
         Me.UR_Password_TextBox.Name = "UR_Password_TextBox"
-        Me.UR_Password_TextBox.ReadOnly = True
         Me.UR_Password_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.UR_Password_TextBox.TabIndex = 24
         '
@@ -271,7 +264,6 @@ Partial Class UnosRadnika
         '
         Me.UR_ConfirmPassword_Textbox.Location = New System.Drawing.Point(251, 226)
         Me.UR_ConfirmPassword_Textbox.Name = "UR_ConfirmPassword_Textbox"
-        Me.UR_ConfirmPassword_Textbox.ReadOnly = True
         Me.UR_ConfirmPassword_Textbox.Size = New System.Drawing.Size(100, 20)
         Me.UR_ConfirmPassword_Textbox.TabIndex = 24
         '
@@ -306,11 +298,21 @@ Partial Class UnosRadnika
         Me.UR_Female_Button.Text = "Female"
         Me.UR_Female_Button.UseVisualStyleBackColor = True
         '
+        'A_Register_Button
+        '
+        Me.A_Register_Button.Location = New System.Drawing.Point(358, 239)
+        Me.A_Register_Button.Name = "A_Register_Button"
+        Me.A_Register_Button.Size = New System.Drawing.Size(75, 23)
+        Me.A_Register_Button.TabIndex = 36
+        Me.A_Register_Button.Text = "Register"
+        Me.A_Register_Button.UseVisualStyleBackColor = True
+        '
         'UnosRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(485, 274)
+        Me.Controls.Add(Me.A_Register_Button)
         Me.Controls.Add(Me.UR_Female_Button)
         Me.Controls.Add(Me.UR_Male_Button)
         Me.Controls.Add(Me.UR_ClearImage_Button)
@@ -376,4 +378,5 @@ Partial Class UnosRadnika
     Friend WithEvents UR_Gender_Textbox As Label
     Friend WithEvents UR_Male_Button As RadioButton
     Friend WithEvents UR_Female_Button As RadioButton
+    Friend WithEvents A_Register_Button As Button
 End Class
