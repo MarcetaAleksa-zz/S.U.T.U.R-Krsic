@@ -25,53 +25,146 @@ Partial Class Administrator
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Administrator))
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ButtonKojiSeNeKoristi = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.VSK_Button = New System.Windows.Forms.Button()
+        Me.UNV_Button = New System.Windows.Forms.Button()
+        Me.Storage_Button = New System.Windows.Forms.Button()
+        Me.Kalendar_Button = New System.Windows.Forms.Button()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Back_Button
         '
         Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
-        Me.Back_Button.Location = New System.Drawing.Point(12, 12)
+        Me.Back_Button.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Back_Button.Location = New System.Drawing.Point(87, 216)
         Me.Back_Button.Name = "Back_Button"
-        Me.Back_Button.Size = New System.Drawing.Size(39, 35)
+        Me.Back_Button.Size = New System.Drawing.Size(40, 40)
         Me.Back_Button.TabIndex = 0
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'Exit_Button
         '
-        Me.Exit_Button.Location = New System.Drawing.Point(57, 12)
+        Me.Exit_Button.Location = New System.Drawing.Point(133, 216)
         Me.Exit_Button.Name = "Exit_Button"
-        Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
+        Me.Exit_Button.Size = New System.Drawing.Size(152, 40)
         Me.Exit_Button.TabIndex = 2
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
-        'Button1
+        'ButtonKojiSeNeKoristi
         '
-        Me.Button1.Location = New System.Drawing.Point(57, 66)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(126, 35)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Unesi novog radnika"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonKojiSeNeKoristi.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.ButtonKojiSeNeKoristi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonKojiSeNeKoristi.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ButtonKojiSeNeKoristi.Location = New System.Drawing.Point(87, 170)
+        Me.ButtonKojiSeNeKoristi.Name = "ButtonKojiSeNeKoristi"
+        Me.ButtonKojiSeNeKoristi.Size = New System.Drawing.Size(198, 40)
+        Me.ButtonKojiSeNeKoristi.TabIndex = 3
+        Me.ButtonKojiSeNeKoristi.UseVisualStyleBackColor = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Location = New System.Drawing.Point(-4, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(405, 68)
+        Me.Panel3.TabIndex = 10
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(75, 25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(259, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "ADMINISTRATOR PANEL"
+        '
+        'VSK_Button
+        '
+        Me.VSK_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.VSK_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.VSK_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.VSK_Button.Location = New System.Drawing.Point(186, 78)
+        Me.VSK_Button.Name = "VSK_Button"
+        Me.VSK_Button.Size = New System.Drawing.Size(99, 40)
+        Me.VSK_Button.TabIndex = 3
+        Me.VSK_Button.Text = "Show all workers"
+        Me.VSK_Button.UseVisualStyleBackColor = False
+        '
+        'UNV_Button
+        '
+        Me.UNV_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.UNV_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.UNV_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.UNV_Button.Location = New System.Drawing.Point(86, 78)
+        Me.UNV_Button.Name = "UNV_Button"
+        Me.UNV_Button.Size = New System.Drawing.Size(99, 40)
+        Me.UNV_Button.TabIndex = 3
+        Me.UNV_Button.Text = "Add new user"
+        Me.UNV_Button.UseVisualStyleBackColor = False
+        '
+        'Storage_Button
+        '
+        Me.Storage_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Storage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Storage_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Storage_Button.Location = New System.Drawing.Point(186, 124)
+        Me.Storage_Button.Name = "Storage_Button"
+        Me.Storage_Button.Size = New System.Drawing.Size(99, 40)
+        Me.Storage_Button.TabIndex = 3
+        Me.Storage_Button.Text = "View Storage"
+        Me.Storage_Button.UseVisualStyleBackColor = False
+        '
+        'Kalendar_Button
+        '
+        Me.Kalendar_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Kalendar_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Kalendar_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Kalendar_Button.Location = New System.Drawing.Point(86, 124)
+        Me.Kalendar_Button.Name = "Kalendar_Button"
+        Me.Kalendar_Button.Size = New System.Drawing.Size(99, 40)
+        Me.Kalendar_Button.TabIndex = 3
+        Me.Kalendar_Button.Text = "Order calendar"
+        Me.Kalendar_Button.UseVisualStyleBackColor = False
         '
         'Administrator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ClientSize = New System.Drawing.Size(386, 266)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Kalendar_Button)
+        Me.Controls.Add(Me.Storage_Button)
+        Me.Controls.Add(Me.UNV_Button)
+        Me.Controls.Add(Me.VSK_Button)
+        Me.Controls.Add(Me.ButtonKojiSeNeKoristi)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Administrator"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrator Panel"
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Back_Button As Button
     Friend WithEvents Exit_Button As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ButtonKojiSeNeKoristi As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents VSK_Button As Button
+    Friend WithEvents UNV_Button As Button
+    Friend WithEvents Storage_Button As Button
+    Friend WithEvents Kalendar_Button As Button
 End Class

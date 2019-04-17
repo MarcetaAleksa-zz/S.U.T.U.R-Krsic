@@ -30,7 +30,7 @@ Public Class UnosRadnika
         Dim Gender As String
         Dim Account_type As String
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        Dim connection As New SqlConnection("Server = TESTTHENEXT3\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
