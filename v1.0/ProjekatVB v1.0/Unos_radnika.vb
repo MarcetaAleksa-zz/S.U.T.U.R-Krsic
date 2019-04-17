@@ -34,16 +34,24 @@ Public Class UnosRadnika
 
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
-        Dim Command As New SqlCommand("Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1", connection)
-
-        Command.CommandText = "INSERT Projekat.dbo.Workers (@ID, Name, Surname, Email, Birth, Username, Possition, Phone);VALUES = ID = @ID'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Possition_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "'"
+        Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
         Else
             MsgBox("Passwords don't match.")
         End If
-        Command.CommandText = "INSERT Projekat.dbo.Login (@ID, @Account_Type, @Username, @Password)"
-        Command.CommandText = "VALUES = @ID, 'True', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "'"
-
+        Try
+            connection.Open()
+            Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
+INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Possition, Phone) 
+VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Possition_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "') 
+INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
+VALUES (@ID, 'True', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "')"
+            Command.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error while inserting record on table..." & ex.Message, "Insert Records")
+        Finally
+            connection.Close()
+        End Try
     End Sub
 End Class

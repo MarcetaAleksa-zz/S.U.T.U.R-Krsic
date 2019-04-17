@@ -62,14 +62,14 @@ Partial Class UnosRadnika
         Me.UR_Phone_TextBox.Location = New System.Drawing.Point(87, 174)
         Me.UR_Phone_TextBox.Name = "UR_Phone_TextBox"
         Me.UR_Phone_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.UR_Phone_TextBox.TabIndex = 30
+        Me.UR_Phone_TextBox.TabIndex = 25
         '
         'UR_Possition_TextBox
         '
         Me.UR_Possition_TextBox.Location = New System.Drawing.Point(87, 144)
         Me.UR_Possition_TextBox.Name = "UR_Possition_TextBox"
         Me.UR_Possition_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.UR_Possition_TextBox.TabIndex = 29
+        Me.UR_Possition_TextBox.TabIndex = 24
         '
         'UR_Possition_Label
         '
@@ -85,7 +85,7 @@ Partial Class UnosRadnika
         Me.UR_Surname_TextBox.Location = New System.Drawing.Point(87, 84)
         Me.UR_Surname_TextBox.Name = "UR_Surname_TextBox"
         Me.UR_Surname_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.UR_Surname_TextBox.TabIndex = 27
+        Me.UR_Surname_TextBox.TabIndex = 22
         '
         'UR_Phone_label
         '
@@ -112,7 +112,7 @@ Partial Class UnosRadnika
         Me.UR_Username_TextBox.Location = New System.Drawing.Point(251, 169)
         Me.UR_Username_TextBox.Name = "UR_Username_TextBox"
         Me.UR_Username_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.UR_Username_TextBox.TabIndex = 24
+        Me.UR_Username_TextBox.TabIndex = 27
         '
         'UR_Birth_TextBox
         '
@@ -126,7 +126,7 @@ Partial Class UnosRadnika
         Me.UR_Email_TextBox.Location = New System.Drawing.Point(87, 200)
         Me.UR_Email_TextBox.Name = "UR_Email_TextBox"
         Me.UR_Email_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.UR_Email_TextBox.TabIndex = 22
+        Me.UR_Email_TextBox.TabIndex = 26
         '
         'UR_Name_TextBox
         '
@@ -195,7 +195,7 @@ Partial Class UnosRadnika
         Me.UR_Password_TextBox.Name = "UR_Password_TextBox"
         Me.UR_Password_TextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.UR_Password_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.UR_Password_TextBox.TabIndex = 24
+        Me.UR_Password_TextBox.TabIndex = 28
         '
         'UR_OpenFileDialog
         '
@@ -267,7 +267,7 @@ Partial Class UnosRadnika
         Me.UR_ConfirmPassword_Textbox.Name = "UR_ConfirmPassword_Textbox"
         Me.UR_ConfirmPassword_Textbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.UR_ConfirmPassword_Textbox.Size = New System.Drawing.Size(100, 20)
-        Me.UR_ConfirmPassword_Textbox.TabIndex = 24
+        Me.UR_ConfirmPassword_Textbox.TabIndex = 29
         '
         'UR_Gender_Textbox
         '
@@ -305,7 +305,7 @@ Partial Class UnosRadnika
         Me.A_Register_Button.Location = New System.Drawing.Point(358, 239)
         Me.A_Register_Button.Name = "A_Register_Button"
         Me.A_Register_Button.Size = New System.Drawing.Size(75, 23)
-        Me.A_Register_Button.TabIndex = 36
+        Me.A_Register_Button.TabIndex = 30
         Me.A_Register_Button.Text = "Register"
         Me.A_Register_Button.UseVisualStyleBackColor = True
         '
