@@ -50,11 +50,16 @@ Partial Class UnosRadnika
         Me.UR_ClearImage_Button = New System.Windows.Forms.Button()
         Me.UR_ConfirmPassword_Label = New System.Windows.Forms.Label()
         Me.UR_ConfirmPassword_Textbox = New System.Windows.Forms.TextBox()
-        Me.UR_Gender_Textbox = New System.Windows.Forms.Label()
         Me.UR_Male_Button = New System.Windows.Forms.RadioButton()
         Me.UR_Female_Button = New System.Windows.Forms.RadioButton()
         Me.A_Register_Button = New System.Windows.Forms.Button()
+        Me.UR_Admin_Button = New System.Windows.Forms.RadioButton()
+        Me.UR_User_Button = New System.Windows.Forms.RadioButton()
+        Me.UR_AT_GroupBox = New System.Windows.Forms.GroupBox()
+        Me.UR_Gender_GroupBox = New System.Windows.Forms.GroupBox()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UR_AT_GroupBox.SuspendLayout()
+        Me.UR_Gender_GroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'UR_Phone_TextBox
@@ -269,30 +274,20 @@ Partial Class UnosRadnika
         Me.UR_ConfirmPassword_Textbox.Size = New System.Drawing.Size(100, 20)
         Me.UR_ConfirmPassword_Textbox.TabIndex = 29
         '
-        'UR_Gender_Textbox
-        '
-        Me.UR_Gender_Textbox.AutoSize = True
-        Me.UR_Gender_Textbox.Location = New System.Drawing.Point(39, 229)
-        Me.UR_Gender_Textbox.Name = "UR_Gender_Textbox"
-        Me.UR_Gender_Textbox.Size = New System.Drawing.Size(45, 13)
-        Me.UR_Gender_Textbox.TabIndex = 18
-        Me.UR_Gender_Textbox.Text = "Gender:"
-        '
         'UR_Male_Button
         '
         Me.UR_Male_Button.AutoSize = True
-        Me.UR_Male_Button.Location = New System.Drawing.Point(87, 229)
+        Me.UR_Male_Button.Location = New System.Drawing.Point(6, 19)
         Me.UR_Male_Button.Name = "UR_Male_Button"
         Me.UR_Male_Button.Size = New System.Drawing.Size(48, 17)
         Me.UR_Male_Button.TabIndex = 35
-        Me.UR_Male_Button.TabStop = True
         Me.UR_Male_Button.Text = "Male"
         Me.UR_Male_Button.UseVisualStyleBackColor = True
         '
         'UR_Female_Button
         '
         Me.UR_Female_Button.AutoSize = True
-        Me.UR_Female_Button.Location = New System.Drawing.Point(87, 252)
+        Me.UR_Female_Button.Location = New System.Drawing.Point(6, 45)
         Me.UR_Female_Button.Name = "UR_Female_Button"
         Me.UR_Female_Button.Size = New System.Drawing.Size(59, 17)
         Me.UR_Female_Button.TabIndex = 35
@@ -309,14 +304,56 @@ Partial Class UnosRadnika
         Me.A_Register_Button.Text = "Register"
         Me.A_Register_Button.UseVisualStyleBackColor = True
         '
+        'UR_Admin_Button
+        '
+        Me.UR_Admin_Button.AutoSize = True
+        Me.UR_Admin_Button.Location = New System.Drawing.Point(6, 19)
+        Me.UR_Admin_Button.Name = "UR_Admin_Button"
+        Me.UR_Admin_Button.Size = New System.Drawing.Size(54, 17)
+        Me.UR_Admin_Button.TabIndex = 35
+        Me.UR_Admin_Button.Text = "Admin"
+        Me.UR_Admin_Button.UseVisualStyleBackColor = True
+        '
+        'UR_User_Button
+        '
+        Me.UR_User_Button.AutoSize = True
+        Me.UR_User_Button.Location = New System.Drawing.Point(6, 39)
+        Me.UR_User_Button.Name = "UR_User_Button"
+        Me.UR_User_Button.Size = New System.Drawing.Size(47, 17)
+        Me.UR_User_Button.TabIndex = 35
+        Me.UR_User_Button.Text = "User"
+        Me.UR_User_Button.UseVisualStyleBackColor = True
+        '
+        'UR_AT_GroupBox
+        '
+        Me.UR_AT_GroupBox.Controls.Add(Me.UR_Admin_Button)
+        Me.UR_AT_GroupBox.Controls.Add(Me.UR_User_Button)
+        Me.UR_AT_GroupBox.Location = New System.Drawing.Point(226, 264)
+        Me.UR_AT_GroupBox.Name = "UR_AT_GroupBox"
+        Me.UR_AT_GroupBox.Size = New System.Drawing.Size(94, 62)
+        Me.UR_AT_GroupBox.TabIndex = 36
+        Me.UR_AT_GroupBox.TabStop = False
+        Me.UR_AT_GroupBox.Text = "Account type:"
+        '
+        'UR_Gender_GroupBox
+        '
+        Me.UR_Gender_GroupBox.Controls.Add(Me.UR_Male_Button)
+        Me.UR_Gender_GroupBox.Controls.Add(Me.UR_Female_Button)
+        Me.UR_Gender_GroupBox.Location = New System.Drawing.Point(56, 255)
+        Me.UR_Gender_GroupBox.Name = "UR_Gender_GroupBox"
+        Me.UR_Gender_GroupBox.Size = New System.Drawing.Size(100, 81)
+        Me.UR_Gender_GroupBox.TabIndex = 37
+        Me.UR_Gender_GroupBox.TabStop = False
+        Me.UR_Gender_GroupBox.Text = "Gender:"
+        '
         'UnosRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(485, 274)
+        Me.ClientSize = New System.Drawing.Size(485, 380)
+        Me.Controls.Add(Me.UR_Gender_GroupBox)
+        Me.Controls.Add(Me.UR_AT_GroupBox)
         Me.Controls.Add(Me.A_Register_Button)
-        Me.Controls.Add(Me.UR_Female_Button)
-        Me.Controls.Add(Me.UR_Male_Button)
         Me.Controls.Add(Me.UR_ClearImage_Button)
         Me.Controls.Add(Me.UR_ChooseImage_Label)
         Me.Controls.Add(Me.UR_NoFile_Label)
@@ -337,7 +374,6 @@ Partial Class UnosRadnika
         Me.Controls.Add(Me.UR_Name_TextBox)
         Me.Controls.Add(Me.UR_Username_Label)
         Me.Controls.Add(Me.UR_Birth_Label)
-        Me.Controls.Add(Me.UR_Gender_Textbox)
         Me.Controls.Add(Me.UR_Email_Label)
         Me.Controls.Add(Me.UR_SName_Label)
         Me.Controls.Add(Me.UR_Name_Label)
@@ -346,6 +382,10 @@ Partial Class UnosRadnika
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Unos radnika"
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UR_AT_GroupBox.ResumeLayout(False)
+        Me.UR_AT_GroupBox.PerformLayout()
+        Me.UR_Gender_GroupBox.ResumeLayout(False)
+        Me.UR_Gender_GroupBox.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -377,8 +417,11 @@ Partial Class UnosRadnika
     Friend WithEvents UR_ClearImage_Button As Button
     Friend WithEvents UR_ConfirmPassword_Label As Label
     Friend WithEvents UR_ConfirmPassword_Textbox As TextBox
-    Friend WithEvents UR_Gender_Textbox As Label
     Friend WithEvents UR_Male_Button As RadioButton
     Friend WithEvents UR_Female_Button As RadioButton
     Friend WithEvents A_Register_Button As Button
+    Friend WithEvents UR_Admin_Button As RadioButton
+    Friend WithEvents UR_User_Button As RadioButton
+    Friend WithEvents UR_AT_GroupBox As GroupBox
+    Friend WithEvents UR_Gender_GroupBox As GroupBox
 End Class

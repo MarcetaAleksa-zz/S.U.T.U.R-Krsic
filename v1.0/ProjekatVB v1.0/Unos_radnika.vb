@@ -19,11 +19,7 @@ Public Class UnosRadnika
             UR_NoFile_Label.Visible = True
             UR_ClearImage_Button.Visible = False
         End If
-        If UR_Male_Button.Checked = True Then
-            UR_Female_Button.Checked = False
-        Else
-            UR_Female_Button.Checked = True
-        End If
+
     End Sub
 
     Private Sub UR_ClearImage_Button_Click(sender As Object, e As EventArgs) Handles UR_ClearImage_Button.Click
@@ -31,22 +27,37 @@ Public Class UnosRadnika
     End Sub
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
         Dim Correct_Password As String
-
+        Dim Gender As String
+        Dim Account_type As String
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("Server = TESTTHENEXT3\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
         Else
             MsgBox("Passwords don't match.")
         End If
+        If UR_Male_Button.Checked = True Then
+            Gender = "Male"
+        ElseIf UR_Female_Button.Checked = True Then
+            Gender = "Female"
+        Else MsgBox("Select Gender")
+        End If
+        If UR_Admin_Button.Checked = True Then
+            Account_type = "True"
+        ElseIf UR_User_Button.Checked = True Then
+            Account_type = "False"
+        Else MsgBox("Select Account Type")
+        End If
+
+
         Try
             connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
-INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Possition, Phone) 
-VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Possition_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "') 
+INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Possition, Phone, Gender) 
+VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Possition_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
-VALUES (@ID, 'True', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "')"
+VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "')"
             Command.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show("Error while inserting record on table..." & ex.Message, "Insert Records")
@@ -59,5 +70,20 @@ VALUES (@ID, 'True', '" & UR_Username_TextBox.Text & "', '" & Correct_Password &
             End If
 
         Next
+    End Sub
+    Private Sub UR_Gender_GroupBox_Enter(sender As Object, e As EventArgs) Handles UR_Gender_GroupBox.Enter
+        If UR_Male_Button.Checked = True Then
+            UR_Female_Button.Checked = False
+        ElseIf UR_Female_Button.Checked = True Then
+            UR_Male_Button.Checked = False
+        End If
+    End Sub
+
+    Private Sub UR_Admin_Button_CheckedChanged(sender As Object, e As EventArgs) Handles UR_Admin_Button.CheckedChanged
+        If UR_Admin_Button.Checked = True Then
+            UR_User_Button.Checked = False
+        ElseIf UR_User_Button.Checked = True Then
+            UR_Admin_Button.Checked = False
+        End If
     End Sub
 End Class
