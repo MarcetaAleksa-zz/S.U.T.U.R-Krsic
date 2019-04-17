@@ -46,6 +46,7 @@ Partial Class Login_form
         '
         Me.Login_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Login_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Login_Button.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Login_Button.Location = New System.Drawing.Point(92, 187)
         Me.Login_Button.Name = "Login_Button"
         Me.Login_Button.Size = New System.Drawing.Size(110, 37)
@@ -147,7 +148,7 @@ Partial Class Login_form
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Image = Global.ProjekatVB_v1._0.My.Resources.Resources.Webp_net_resizeimage__1_
+        Me.PictureBox2.Image = Global.ProjekatVB_v1._0.My.Resources.Resources.Webp1
         Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(23, 24)

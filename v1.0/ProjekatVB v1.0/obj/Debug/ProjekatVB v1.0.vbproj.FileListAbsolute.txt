@@ -99,3 +99,4 @@ C:\Users\testthenext3\Desktop\Projekat VB\Projekat-VB\v1.0\ProjekatVB v1.0\bin\D
 C:\Users\testthenext3\Desktop\Projekat VB\Projekat-VB\v1.0\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe
 C:\Users\testthenext3\Desktop\Projekat VB\Projekat-VB\v1.0\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.pdb
 C:\Users\testthenext3\Desktop\Projekat VB\Projekat-VB\v1.0\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.xml
+C:\Users\testthenext3\Desktop\Projekat VB\Projekat-VB\v1.0\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.MSG_Admin.resources

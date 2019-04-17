@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MSG_Admin.Designer.vb">
+      <DependentUpon>MSG_Admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MSG_Admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Unos_radnika.Designer.vb">
       <DependentUpon>Unos_radnika.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MSG_Admin.resx">
+      <DependentUpon>MSG_Admin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Unos_radnika.resx">
       <DependentUpon>Unos_radnika.vb</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Webp.net-resizeimage %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

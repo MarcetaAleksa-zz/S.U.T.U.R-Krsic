@@ -61,11 +61,10 @@ Public Class Login_form
 
         ElseIf admin_table.Rows.Count() > 0 Then
 
-            MessageBox.Show("Welcome to Administrator Panel")
+            MSG_Admin.Show()
             ID_Label.Text = admin_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
             Me.Hide()
-            Administrator.Show()
             Password_Form_Box.Text = ""
 
         ElseIf user_table.Rows.Count() > 0 Then
