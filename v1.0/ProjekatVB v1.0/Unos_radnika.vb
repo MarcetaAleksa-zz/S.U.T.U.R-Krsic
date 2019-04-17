@@ -30,27 +30,28 @@ Public Class UnosRadnika
         UR_Picture.Image = Nothing 'dugme koje se pojavi samo ako postoji slika i koje brise sliku hehehhehehe
     End Sub
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
+        Dim Correct_Password As String
+
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
-        Dim Command As New SqlCommand("Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1", connection)
-
-        Command.CommandText = "INSERT Projekat.dbo.Workers (@ID, Name, Surname, Email, Birth, Username, Possition, Phone);VALUES = '" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & & "', '" & & "', '" & & "','" & & "'"
-        Command.Parameters.Add("@Name", SqlDbType.VarChar).Value = UR_Name_TextBox.Text
-        Command.Parameters.Add("@Surname", SqlDbType.VarChar).Value = UR_Surname_TextBox.Text
-        Command.Parameters.Add("@Email", SqlDbType.VarChar).Value = UR_Email_TextBox.Text
-        Command.Parameters.Add("@Birth", SqlDbType.Date).Value = UR_Birth_TextBox.Text
-        Command.Parameters.Add("@Username", SqlDbType.VarChar).Value = UR_Username_TextBox.Text
-        Command.Parameters.Add("@Possition", SqlDbType.VarChar).Value = UR_Possition_TextBox.Text
-        'Command.Parameters.Add("@Phone", SqlDbType.Char).Value = UR_Phone_TextBox.Text
-
-        Command.CommandText = "INSERT Projekat.dbo.Login (@ID, @Account_Type, @Username, @Password)"
-        Command.Parameters.Add("@Account_Type", SqlDbType.Bit).Value = UR_Male_Button.Text
-        If ("@Account_Type" = UR_Male_Button.Text) Then
-            Command.Parameters("@Account_Type").Value = "True"
-        Else Command.Parameters("@Account_Type").Value = "False"
+        Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
+        If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
+            Correct_Password = UR_ConfirmPassword_Textbox.Text
+        Else
+            MsgBox("Passwords don't match.")
         End If
-        Command.Parameters.Add("@Password", SqlDbType.VarChar).Value = UR_Password_TextBox.Text
-        Command.CommandText = "VALUES = @ID, @Account_Type, '" & UR_Username_TextBox.Text & "', @Password"
-
+        Try
+            connection.Open()
+            Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
+INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Possition, Phone) 
+VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Possition_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "') 
+INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
+VALUES (@ID, 'True', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "')"
+            Command.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error while inserting record on table..." & ex.Message, "Insert Records")
+        Finally
+            connection.Close()
+        End Try
     End Sub
 End Class
