@@ -73,10 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MSG_Admin.Designer.vb">
-      <DependentUpon>MSG_Admin.vb</DependentUpon>
+    <Compile Include="MSG_Form.Designer.vb">
+      <DependentUpon>MSG_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="MSG_Admin.vb">
+    <Compile Include="MSG_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Unos_radnika.Designer.vb">
@@ -142,8 +142,8 @@
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MSG_Admin.resx">
-      <DependentUpon>MSG_Admin.vb</DependentUpon>
+    <EmbeddedResource Include="MSG_Form.resx">
+      <DependentUpon>MSG_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unos_radnika.resx">
       <DependentUpon>Unos_radnika.vb</DependentUpon>
