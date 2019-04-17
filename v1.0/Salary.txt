@@ -1,0 +1,9 @@
+1	Administrator(IT)	1	22	2640
+1	Administrator(IT)	2	19	2280
+1	Administrator(IT)	3	21	2520
+1	Administrator(IT)	4	22	2640
+2	Administrator(IT)	1	22	2640
+2	Administrator(IT)	2	19	2280
+2	Administrator(IT)	3	21	2520
+2	Administrator(IT)	4	22	2640
+NULL	NULL	NULL	NULL	NULL
