@@ -59,27 +59,30 @@ Partial Class User
         Me.U_SName_Label = New System.Windows.Forms.Label()
         Me.U_Name_Label = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
         Me.U_Monthly_Pay_GroupBox.SuspendLayout()
         CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Back_Button
         '
         Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
-        Me.Back_Button.Location = New System.Drawing.Point(12, 12)
+        Me.Back_Button.Location = New System.Drawing.Point(12, 74)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(39, 35)
-        Me.Back_Button.TabIndex = 3
+        Me.Back_Button.TabIndex = 129
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'Exit_Button
         '
-        Me.Exit_Button.Location = New System.Drawing.Point(57, 12)
+        Me.Exit_Button.Location = New System.Drawing.Point(57, 74)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
-        Me.Exit_Button.TabIndex = 7
+        Me.Exit_Button.TabIndex = 130
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
@@ -87,11 +90,11 @@ Partial Class User
         '
         Me.TabControl1.Controls.Add(Me.TabStorage)
         Me.TabControl1.Controls.Add(Me.TabUserInfo)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 53)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 115)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(776, 385)
-        Me.TabControl1.TabIndex = 8
+        Me.TabControl1.TabIndex = 128
         '
         'TabStorage
         '
@@ -394,14 +397,36 @@ Partial Class User
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1091, 68)
+        Me.Panel3.TabIndex = 10
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(305, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(145, 25)
+        Me.Label2.TabIndex = 66666
+        Me.Label2.Text = "USER PANEL"
+        '
         'User
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(797, 507)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "User"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -412,6 +437,8 @@ Partial Class User
         Me.U_Monthly_Pay_GroupBox.ResumeLayout(False)
         Me.U_Monthly_Pay_GroupBox.PerformLayout()
         CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -451,4 +478,6 @@ Partial Class User
     Friend WithEvents DaysInMonth As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label2 As Label
 End Class

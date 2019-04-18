@@ -33,7 +33,7 @@ Partial Class Order_Funeral
         Me.Exit_Button.Location = New System.Drawing.Point(57, 12)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
-        Me.Exit_Button.TabIndex = 4
+        Me.Exit_Button.TabIndex = 133
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
@@ -43,7 +43,7 @@ Partial Class Order_Funeral
         Me.Back_Button.Location = New System.Drawing.Point(12, 12)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(39, 35)
-        Me.Back_Button.TabIndex = 3
+        Me.Back_Button.TabIndex = 132
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'MonthCalendar1
@@ -52,7 +52,7 @@ Partial Class Order_Funeral
         Me.MonthCalendar1.Location = New System.Drawing.Point(12, 59)
         Me.MonthCalendar1.MaxSelectionCount = 1
         Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 5
+        Me.MonthCalendar1.TabIndex = 131
         '
         'Order_Funeral
         '

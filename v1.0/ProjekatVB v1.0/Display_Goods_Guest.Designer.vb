@@ -32,7 +32,10 @@ Partial Class Display_Goods_Guest
         Me.TabPrevoz = New System.Windows.Forms.TabPage()
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -43,7 +46,7 @@ Partial Class Display_Goods_Guest
         Me.TabControl1.Controls.Add(Me.TabSvijece)
         Me.TabControl1.Controls.Add(Me.TabHladnjaca)
         Me.TabControl1.Controls.Add(Me.TabPrevoz)
-        Me.TabControl1.Location = New System.Drawing.Point(4, 44)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 117)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(776, 426)
@@ -108,7 +111,7 @@ Partial Class Display_Goods_Guest
         'Back_Button
         '
         Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
-        Me.Back_Button.Location = New System.Drawing.Point(4, 3)
+        Me.Back_Button.Location = New System.Drawing.Point(12, 76)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(39, 35)
         Me.Back_Button.TabIndex = 3
@@ -116,26 +119,50 @@ Partial Class Display_Goods_Guest
         '
         'Exit_Button
         '
-        Me.Exit_Button.Location = New System.Drawing.Point(49, 3)
+        Me.Exit_Button.Location = New System.Drawing.Point(57, 76)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
         Me.Exit_Button.TabIndex = 4
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1125, 68)
+        Me.Panel3.TabIndex = 10
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(304, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(152, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Display Goods"
+        '
         'Display_Goods_Guest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(792, 482)
+        Me.ClientSize = New System.Drawing.Size(799, 554)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Display_Goods_Guest"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Panel"
         Me.TabControl1.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -149,4 +176,6 @@ Partial Class Display_Goods_Guest
     Friend WithEvents TabPrevoz As TabPage
     Friend WithEvents Back_Button As Button
     Friend WithEvents Exit_Button As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label1 As Label
 End Class

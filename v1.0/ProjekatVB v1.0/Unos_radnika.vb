@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class UnosRadnika
+    Public brojac As Double = 0
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles UR_ChangePicture_Button.Click
         UR_OpenFileDialog.InitialDirectory = UR_FolderBrowserDialog.SelectedPath
         UR_OpenFileDialog.ShowDialog() 'ovaj klik je na dugme za unos slike, tj kao Browse Picture, ili Choose image i sl, to je taj button
@@ -25,29 +26,37 @@ Public Class UnosRadnika
     Private Sub UR_ClearImage_Button_Click(sender As Object, e As EventArgs) Handles UR_ClearImage_Button.Click
         UR_Picture.Image = Nothing 'dugme koje se pojavi samo ako postoji slika i koje brise sliku hehehhehehe
     End Sub
-    Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click, Clear_Button.Click
+    Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
         Dim Correct_Password As String
         Dim Gender As String
         Dim Account_type As String
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         Dim connection As New SqlConnection("Server = TESTTHENEXT3\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
-        If UR_Password_TextBox1.Text = UR_ConfirmPassword_Textbox1.Text Then
-            Correct_Password = UR_ConfirmPassword_Textbox1.Text
+        If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
+            Correct_Password = UR_ConfirmPassword_Textbox.Text
+            brojac += 1
         Else
             MsgBox("Passwords don't match.")
+            brojac = 0
         End If
         If UR_Male_Button.Checked = True Then
             Gender = "Male"
+            brojac += 1
         ElseIf UR_Female_Button.Checked = True Then
             Gender = "Female"
+            brojac += 1
         Else MsgBox("Select Gender")
+            brojac = 0
         End If
         If UR_Admin_Button.Checked = True Then
             Account_type = "True"
+            brojac += 1
         ElseIf UR_User_Button.Checked = True Then
             Account_type = "False"
+            brojac += 1
         Else MsgBox("Select Account Type")
+            brojac = 0
         End If
 
 
@@ -55,12 +64,14 @@ Public Class UnosRadnika
             connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
 INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Possition, Phone, Gender) 
-VALUES (@ID,'" & UR_Name_TextBo3x.Text & "', '" & UR_Surname_TextBox1.Text & "', '" & UR_Email_TextBox1.Text & "', '" & UR_Birth_TextBox1.Text & "', '" & UR_Username_TextBox1.Text & "', '" & UR_Possition_TextBox1.Text & "', '" & UR_Phone_TextBox1.Text & "', '" & Gender & "') 
+VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Possition_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
-VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox1.Text & "', '" & Correct_Password & "')"
+VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "')"
             Command.ExecuteNonQuery()
+            brojac += 1
         Catch ex As Exception
             MessageBox.Show("Error while inserting record on table..." & ex.Message, "Insert Records")
+            brojac = 0
         Finally
             connection.Close()
         End Try
@@ -70,6 +81,28 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox1.Text & "', '" & C
             End If
 
         Next
+        If brojac >= 4 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
+            UR_Name_TextBox.Text = "Enter Name here"
+            UR_Surname_TextBox.Text = "Enter Surname here"
+            UR_Birth_TextBox.Text = "Enter Birth date here"
+            UR_Possition_TextBox.Text = "Enter Work Position here"
+            UR_Phone_TextBox.Text = "Enter Phone here"
+            UR_Email_TextBox.Text = "Enter E-mail here"
+            UR_Username_TextBox.Text = "Enter Username here"
+            UR_ConfirmPassword_Textbox.Text = "Confirm Password"
+            UR_Password_TextBox.Text = "Enter Password here"
+
+            UR_Name_TextBox.ForeColor = Color.Gray
+            UR_Surname_TextBox.ForeColor = Color.Gray
+            UR_Birth_TextBox.ForeColor = Color.Gray
+            UR_Possition_TextBox.ForeColor = Color.Gray
+            UR_Phone_TextBox.ForeColor = Color.Gray
+            UR_Email_TextBox.ForeColor = Color.Gray
+            UR_Username_TextBox.ForeColor = Color.Gray
+            UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
+            UR_Password_TextBox.ForeColor = Color.Gray
+        End If
+
     End Sub
     Private Sub UR_Gender_GroupBox_Enter(sender As Object, e As EventArgs) Handles UR_Gender_GroupBox.Enter
         If UR_Male_Button.Checked = True Then
@@ -85,5 +118,129 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox1.Text & "', '" & C
         ElseIf UR_User_Button.Checked = True Then
             UR_Admin_Button.Checked = False
         End If
+    End Sub
+
+    Private Sub UR_Name_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Leave
+        If (UR_Name_TextBox.Text = "") Then
+            UR_Name_TextBox.Text = "Enter Name here"
+            UR_Name_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Name_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Enter
+        If (UR_Name_TextBox.Text = "Enter Name here") Then
+            UR_Name_TextBox.Text = ""
+            UR_Name_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub UR_Surname_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Surname_TextBox.Leave
+        If (UR_Surname_TextBox.Text = "") Then
+            UR_Surname_TextBox.Text = "Enter Surname here"
+            UR_Surname_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Surname_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Surname_TextBox.Enter
+        If (UR_Surname_TextBox.Text = "Enter Surname here") Then
+            UR_Surname_TextBox.Text = ""
+            UR_Surname_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub UR_Birth_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Birth_TextBox.Leave
+        If (UR_Birth_TextBox.Text = "") Then
+            UR_Birth_TextBox.Text = "Enter Birth date here"
+            UR_Birth_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Birth_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Birth_TextBox.Enter
+        If (UR_Birth_TextBox.Text = "Enter Birth date here") Then
+            UR_Birth_TextBox.Text = ""
+            UR_Birth_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub UR_Possition_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Possition_TextBox.Leave
+        If (UR_Possition_TextBox.Text = "") Then
+            UR_Possition_TextBox.Text = "Enter Work Position here"
+            UR_Possition_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Possition_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Possition_TextBox.Enter
+        If (UR_Possition_TextBox.Text = "Enter Work Position here") Then
+            UR_Possition_TextBox.Text = ""
+            UR_Possition_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave
+        If (UR_Phone_TextBox.Text = "") Then
+            UR_Phone_TextBox.Text = "Enter Phone here"
+            UR_Phone_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Phone_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Enter
+        If (UR_Phone_TextBox.Text = "Enter Phone here") Then
+            UR_Phone_TextBox.Text = ""
+            UR_Phone_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub UR_Email_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Email_TextBox.Leave
+        If (UR_Email_TextBox.Text = "") Then
+            UR_Email_TextBox.Text = "Enter E-mail here"
+            UR_Email_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Email_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Email_TextBox.Enter
+        If (UR_Email_TextBox.Text = "Enter E-mail here") Then
+            UR_Email_TextBox.Text = ""
+            UR_Email_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub UR_Username_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Username_TextBox.Leave
+        If (UR_Username_TextBox.Text = "") Then
+            UR_Username_TextBox.Text = "Enter Username here"
+            UR_Username_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Username_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Username_TextBox.Enter
+        If (UR_Username_TextBox.Text = "Enter Username here") Then
+            UR_Username_TextBox.Text = ""
+            UR_Username_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub UR_ConfirmPassword_Textbox_Leave(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Leave
+        If (UR_ConfirmPassword_Textbox.Text = "") Then
+            UR_ConfirmPassword_Textbox.Text = "Confirm Password"
+            UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_ConfirmPassword_Textbox_Enter(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Enter
+        If (UR_ConfirmPassword_Textbox.Text = "Confirm Password") Then
+            UR_ConfirmPassword_Textbox.Text = ""
+            UR_ConfirmPassword_Textbox.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub UR_Password_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Password_TextBox.Leave
+        If (UR_Password_TextBox.Text = "") Then
+            UR_Password_TextBox.Text = "Enter Password here"
+            UR_Password_TextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub UR_Password_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Password_TextBox.Enter
+        If (UR_Password_TextBox.Text = "Enter Password here") Then
+            UR_Password_TextBox.Text = ""
+            UR_Password_TextBox.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
+        Me.Hide()
+        Administrator.Show()
     End Sub
 End Class

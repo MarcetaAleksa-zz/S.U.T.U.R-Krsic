@@ -70,7 +70,7 @@ Partial Class MSG_Form
         Me.Button1.Location = New System.Drawing.Point(79, 79)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(96, 29)
-        Me.Button1.TabIndex = 2
+        Me.Button1.TabIndex = 134
         Me.Button1.Text = "OK"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -90,7 +90,7 @@ Partial Class MSG_Form
         Me.Label3.Text = "Please enter correct Username and Password!"
         Me.Label3.Visible = False
         '
-        'MSG_Admin
+        'MSG_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -101,7 +101,7 @@ Partial Class MSG_Form
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "MSG_Admin"
+        Me.Name = "MSG_Form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MSG_ADMIN"
         Me.Panel1.ResumeLayout(False)

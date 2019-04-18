@@ -42,7 +42,7 @@ Partial Class Administrator
         Me.Back_Button.Location = New System.Drawing.Point(87, 216)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(40, 40)
-        Me.Back_Button.TabIndex = 0
+        Me.Back_Button.TabIndex = 110
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'Exit_Button
@@ -50,7 +50,7 @@ Partial Class Administrator
         Me.Exit_Button.Location = New System.Drawing.Point(133, 216)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(152, 40)
-        Me.Exit_Button.TabIndex = 2
+        Me.Exit_Button.TabIndex = 111
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
@@ -62,7 +62,7 @@ Partial Class Administrator
         Me.ButtonKojiSeNeKoristi.Location = New System.Drawing.Point(87, 170)
         Me.ButtonKojiSeNeKoristi.Name = "ButtonKojiSeNeKoristi"
         Me.ButtonKojiSeNeKoristi.Size = New System.Drawing.Size(198, 40)
-        Me.ButtonKojiSeNeKoristi.TabIndex = 3
+        Me.ButtonKojiSeNeKoristi.TabIndex = 109
         Me.ButtonKojiSeNeKoristi.UseVisualStyleBackColor = False
         '
         'Panel3
@@ -93,7 +93,7 @@ Partial Class Administrator
         Me.VSK_Button.Location = New System.Drawing.Point(186, 78)
         Me.VSK_Button.Name = "VSK_Button"
         Me.VSK_Button.Size = New System.Drawing.Size(99, 40)
-        Me.VSK_Button.TabIndex = 3
+        Me.VSK_Button.TabIndex = 106
         Me.VSK_Button.Text = "Show all workers"
         Me.VSK_Button.UseVisualStyleBackColor = False
         '
@@ -105,7 +105,7 @@ Partial Class Administrator
         Me.UNV_Button.Location = New System.Drawing.Point(86, 78)
         Me.UNV_Button.Name = "UNV_Button"
         Me.UNV_Button.Size = New System.Drawing.Size(99, 40)
-        Me.UNV_Button.TabIndex = 3
+        Me.UNV_Button.TabIndex = 105
         Me.UNV_Button.Text = "Add new user"
         Me.UNV_Button.UseVisualStyleBackColor = False
         '
@@ -117,7 +117,7 @@ Partial Class Administrator
         Me.Storage_Button.Location = New System.Drawing.Point(186, 124)
         Me.Storage_Button.Name = "Storage_Button"
         Me.Storage_Button.Size = New System.Drawing.Size(99, 40)
-        Me.Storage_Button.TabIndex = 3
+        Me.Storage_Button.TabIndex = 108
         Me.Storage_Button.Text = "View Storage"
         Me.Storage_Button.UseVisualStyleBackColor = False
         '
@@ -129,7 +129,7 @@ Partial Class Administrator
         Me.Kalendar_Button.Location = New System.Drawing.Point(86, 124)
         Me.Kalendar_Button.Name = "Kalendar_Button"
         Me.Kalendar_Button.Size = New System.Drawing.Size(99, 40)
-        Me.Kalendar_Button.TabIndex = 3
+        Me.Kalendar_Button.TabIndex = 107
         Me.Kalendar_Button.Text = "Order calendar"
         Me.Kalendar_Button.UseVisualStyleBackColor = False
         '

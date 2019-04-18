@@ -106,11 +106,6 @@ Public Class Login_form
             'Nakon sto ukucamo lozinku pri pritisku entera se logujemo.
         End If
     End Sub
-
-    Private Sub Login_form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint, Panel2.Paint
 
     End Sub

@@ -77,7 +77,7 @@ Partial Class UnosRadnika
         Me.UR_Password_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.UR_ConfirmPassword_Textbox = New System.Windows.Forms.TextBox()
-        Me.Clear_Button = New System.Windows.Forms.Button()
+        Me.Back_Button = New System.Windows.Forms.Button()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UR_AT_GroupBox.SuspendLayout()
         Me.UR_Gender_GroupBox.SuspendLayout()
@@ -246,7 +246,7 @@ Partial Class UnosRadnika
         Me.UR_ChangePicture_Button.Location = New System.Drawing.Point(368, 74)
         Me.UR_ChangePicture_Button.Name = "UR_ChangePicture_Button"
         Me.UR_ChangePicture_Button.Size = New System.Drawing.Size(28, 23)
-        Me.UR_ChangePicture_Button.TabIndex = 31
+        Me.UR_ChangePicture_Button.TabIndex = 125
         Me.UR_ChangePicture_Button.TabStop = False
         Me.UR_ChangePicture_Button.UseVisualStyleBackColor = True
         '
@@ -311,7 +311,7 @@ Partial Class UnosRadnika
         Me.UR_Male_Button.Location = New System.Drawing.Point(6, 19)
         Me.UR_Male_Button.Name = "UR_Male_Button"
         Me.UR_Male_Button.Size = New System.Drawing.Size(48, 17)
-        Me.UR_Male_Button.TabIndex = 35
+        Me.UR_Male_Button.TabIndex = 123
         Me.UR_Male_Button.Text = "Male"
         Me.UR_Male_Button.UseVisualStyleBackColor = True
         '
@@ -321,7 +321,7 @@ Partial Class UnosRadnika
         Me.UR_Female_Button.Location = New System.Drawing.Point(6, 39)
         Me.UR_Female_Button.Name = "UR_Female_Button"
         Me.UR_Female_Button.Size = New System.Drawing.Size(59, 17)
-        Me.UR_Female_Button.TabIndex = 35
+        Me.UR_Female_Button.TabIndex = 124
         Me.UR_Female_Button.TabStop = True
         Me.UR_Female_Button.Text = "Female"
         Me.UR_Female_Button.UseVisualStyleBackColor = True
@@ -334,7 +334,7 @@ Partial Class UnosRadnika
         Me.A_Register_Button.Location = New System.Drawing.Point(21, 280)
         Me.A_Register_Button.Name = "A_Register_Button"
         Me.A_Register_Button.Size = New System.Drawing.Size(108, 31)
-        Me.A_Register_Button.TabIndex = 30
+        Me.A_Register_Button.TabIndex = 126
         Me.A_Register_Button.Text = "Register"
         Me.A_Register_Button.UseVisualStyleBackColor = False
         '
@@ -344,7 +344,7 @@ Partial Class UnosRadnika
         Me.UR_Admin_Button.Location = New System.Drawing.Point(6, 19)
         Me.UR_Admin_Button.Name = "UR_Admin_Button"
         Me.UR_Admin_Button.Size = New System.Drawing.Size(54, 17)
-        Me.UR_Admin_Button.TabIndex = 35
+        Me.UR_Admin_Button.TabIndex = 121
         Me.UR_Admin_Button.Text = "Admin"
         Me.UR_Admin_Button.UseVisualStyleBackColor = True
         '
@@ -354,7 +354,7 @@ Partial Class UnosRadnika
         Me.UR_User_Button.Location = New System.Drawing.Point(6, 39)
         Me.UR_User_Button.Name = "UR_User_Button"
         Me.UR_User_Button.Size = New System.Drawing.Size(47, 17)
-        Me.UR_User_Button.TabIndex = 35
+        Me.UR_User_Button.TabIndex = 122
         Me.UR_User_Button.Text = "User"
         Me.UR_User_Button.UseVisualStyleBackColor = True
         '
@@ -417,8 +417,8 @@ Partial Class UnosRadnika
         Me.UR_Name_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Name_TextBox.Name = "UR_Name_TextBox"
         Me.UR_Name_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Name_TextBox.TabIndex = 100
-        Me.UR_Name_TextBox.Text = "Enter Username here"
+        Me.UR_Name_TextBox.TabIndex = 112
+        Me.UR_Name_TextBox.Text = "Enter Name here"
         '
         'Panel2
         '
@@ -437,7 +437,7 @@ Partial Class UnosRadnika
         Me.UR_Surname_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Surname_TextBox.Name = "UR_Surname_TextBox"
         Me.UR_Surname_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Surname_TextBox.TabIndex = 100
+        Me.UR_Surname_TextBox.TabIndex = 113
         Me.UR_Surname_TextBox.Text = "Enter Surname here"
         '
         'Panel4
@@ -457,8 +457,8 @@ Partial Class UnosRadnika
         Me.UR_Birth_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Birth_TextBox.Name = "UR_Birth_TextBox"
         Me.UR_Birth_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Birth_TextBox.TabIndex = 100
-        Me.UR_Birth_TextBox.Text = "Enter Birth here"
+        Me.UR_Birth_TextBox.TabIndex = 114
+        Me.UR_Birth_TextBox.Text = "Enter Birth date here"
         '
         'Panel5
         '
@@ -477,7 +477,7 @@ Partial Class UnosRadnika
         Me.UR_Possition_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Possition_TextBox.Name = "UR_Possition_TextBox"
         Me.UR_Possition_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Possition_TextBox.TabIndex = 100
+        Me.UR_Possition_TextBox.TabIndex = 115
         Me.UR_Possition_TextBox.Text = "Enter Work Position here"
         '
         'Panel6
@@ -497,7 +497,7 @@ Partial Class UnosRadnika
         Me.UR_Phone_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Phone_TextBox.Name = "UR_Phone_TextBox"
         Me.UR_Phone_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Phone_TextBox.TabIndex = 100
+        Me.UR_Phone_TextBox.TabIndex = 116
         Me.UR_Phone_TextBox.Text = "Enter Phone here"
         '
         'Panel7
@@ -517,7 +517,7 @@ Partial Class UnosRadnika
         Me.UR_Email_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Email_TextBox.Name = "UR_Email_TextBox"
         Me.UR_Email_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Email_TextBox.TabIndex = 100
+        Me.UR_Email_TextBox.TabIndex = 117
         Me.UR_Email_TextBox.Text = "Enter E-mail here"
         '
         'Panel9
@@ -537,7 +537,7 @@ Partial Class UnosRadnika
         Me.UR_Username_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Username_TextBox.Name = "UR_Username_TextBox"
         Me.UR_Username_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Username_TextBox.TabIndex = 100
+        Me.UR_Username_TextBox.TabIndex = 118
         Me.UR_Username_TextBox.Text = "Enter Username here"
         '
         'Panel10
@@ -557,7 +557,7 @@ Partial Class UnosRadnika
         Me.UR_Password_TextBox.Location = New System.Drawing.Point(15, 7)
         Me.UR_Password_TextBox.Name = "UR_Password_TextBox"
         Me.UR_Password_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Password_TextBox.TabIndex = 100
+        Me.UR_Password_TextBox.TabIndex = 119
         Me.UR_Password_TextBox.Text = "Enter Password here"
         '
         'Panel11
@@ -577,18 +577,19 @@ Partial Class UnosRadnika
         Me.UR_ConfirmPassword_Textbox.Location = New System.Drawing.Point(15, 7)
         Me.UR_ConfirmPassword_Textbox.Name = "UR_ConfirmPassword_Textbox"
         Me.UR_ConfirmPassword_Textbox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_ConfirmPassword_Textbox.TabIndex = 100
+        Me.UR_ConfirmPassword_Textbox.TabIndex = 120
         Me.UR_ConfirmPassword_Textbox.Text = "Confirm Password"
         '
-        'Clear_Button
+        'Back_Button
         '
-        Me.Clear_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Clear_Button.Location = New System.Drawing.Point(131, 280)
-        Me.Clear_Button.Name = "Clear_Button"
-        Me.Clear_Button.Size = New System.Drawing.Size(108, 31)
-        Me.Clear_Button.TabIndex = 30
-        Me.Clear_Button.Text = "Clear"
-        Me.Clear_Button.UseVisualStyleBackColor = True
+        Me.Back_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Back_Button.Location = New System.Drawing.Point(131, 280)
+        Me.Back_Button.Name = "Back_Button"
+        Me.Back_Button.Size = New System.Drawing.Size(108, 31)
+        Me.Back_Button.TabIndex = 127
+        Me.Back_Button.Text = "Back"
+        Me.Back_Button.UseVisualStyleBackColor = True
         '
         'UnosRadnika
         '
@@ -607,7 +608,7 @@ Partial Class UnosRadnika
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.UR_Gender_GroupBox)
         Me.Controls.Add(Me.UR_AT_GroupBox)
-        Me.Controls.Add(Me.Clear_Button)
+        Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.A_Register_Button)
         Me.Controls.Add(Me.UR_ClearImage_Button)
         Me.Controls.Add(Me.UR_ChooseImage_Label)
@@ -720,5 +721,5 @@ Partial Class UnosRadnika
     Friend WithEvents UR_Password_TextBox As TextBox
     Friend WithEvents Panel11 As Panel
     Friend WithEvents UR_ConfirmPassword_Textbox As TextBox
-    Friend WithEvents Clear_Button As Button
+    Friend WithEvents Back_Button As Button
 End Class
