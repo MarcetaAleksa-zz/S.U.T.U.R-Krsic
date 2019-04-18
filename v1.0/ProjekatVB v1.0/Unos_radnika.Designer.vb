@@ -66,7 +66,7 @@ Partial Class UnosRadnika
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.UR_Birth_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.UR_Possition_TextBox = New System.Windows.Forms.TextBox()
+        Me.UR_Position_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.UR_Phone_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -463,22 +463,22 @@ Partial Class UnosRadnika
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.UR_Possition_TextBox)
+        Me.Panel5.Controls.Add(Me.UR_Position_TextBox)
         Me.Panel5.Location = New System.Drawing.Point(21, 186)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(220, 26)
         Me.Panel5.TabIndex = 200
         '
-        'UR_Possition_TextBox
+        'UR_Position_TextBox
         '
-        Me.UR_Possition_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.UR_Possition_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UR_Possition_TextBox.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.UR_Possition_TextBox.Location = New System.Drawing.Point(15, 7)
-        Me.UR_Possition_TextBox.Name = "UR_Possition_TextBox"
-        Me.UR_Possition_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Possition_TextBox.TabIndex = 115
-        Me.UR_Possition_TextBox.Text = "Enter Work Position here"
+        Me.UR_Position_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.UR_Position_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.UR_Position_TextBox.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.UR_Position_TextBox.Location = New System.Drawing.Point(15, 7)
+        Me.UR_Position_TextBox.Name = "UR_Position_TextBox"
+        Me.UR_Position_TextBox.Size = New System.Drawing.Size(189, 13)
+        Me.UR_Position_TextBox.TabIndex = 115
+        Me.UR_Position_TextBox.Text = "Enter Work Position here"
         '
         'Panel6
         '
@@ -710,7 +710,7 @@ Partial Class UnosRadnika
     Friend WithEvents Panel4 As Panel
     Friend WithEvents UR_Birth_TextBox As TextBox
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents UR_Possition_TextBox As TextBox
+    Friend WithEvents UR_Position_TextBox As TextBox
     Friend WithEvents Panel6 As Panel
     Friend WithEvents UR_Phone_TextBox As TextBox
     Friend WithEvents Panel7 As Panel

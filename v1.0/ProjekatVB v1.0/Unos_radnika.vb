@@ -63,8 +63,8 @@ Public Class UnosRadnika
         Try
             connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
-INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Possition, Phone, Gender) 
-VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Possition_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
+INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Position, Phone, Gender) 
+VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Position_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
 VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "')"
             Command.ExecuteNonQuery()
@@ -85,7 +85,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Co
             UR_Name_TextBox.Text = "Enter Name here"
             UR_Surname_TextBox.Text = "Enter Surname here"
             UR_Birth_TextBox.Text = "Enter Birth date here"
-            UR_Possition_TextBox.Text = "Enter Work Position here"
+            UR_Position_TextBox.Text = "Enter Work Position here"
             UR_Phone_TextBox.Text = "Enter Phone here"
             UR_Email_TextBox.Text = "Enter E-mail here"
             UR_Username_TextBox.Text = "Enter Username here"
@@ -95,7 +95,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Co
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray
             UR_Birth_TextBox.ForeColor = Color.Gray
-            UR_Possition_TextBox.ForeColor = Color.Gray
+            UR_Position_TextBox.ForeColor = Color.Gray
             UR_Phone_TextBox.ForeColor = Color.Gray
             UR_Email_TextBox.ForeColor = Color.Gray
             UR_Username_TextBox.ForeColor = Color.Gray
@@ -159,17 +159,17 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Co
             UR_Birth_TextBox.ForeColor = Color.Black
         End If
     End Sub
-    Private Sub UR_Possition_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Possition_TextBox.Leave
-        If (UR_Possition_TextBox.Text = "") Then
-            UR_Possition_TextBox.Text = "Enter Work Position here"
-            UR_Possition_TextBox.ForeColor = Color.Gray
+    Private Sub UR_Possition_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Position_TextBox.Leave
+        If (UR_Position_TextBox.Text = "") Then
+            UR_Position_TextBox.Text = "Enter Work Position here"
+            UR_Position_TextBox.ForeColor = Color.Gray
         End If
     End Sub
 
-    Private Sub UR_Possition_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Possition_TextBox.Enter
-        If (UR_Possition_TextBox.Text = "Enter Work Position here") Then
-            UR_Possition_TextBox.Text = ""
-            UR_Possition_TextBox.ForeColor = Color.Black
+    Private Sub UR_Possition_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Position_TextBox.Enter
+        If (UR_Position_TextBox.Text = "Enter Work Position here") Then
+            UR_Position_TextBox.Text = ""
+            UR_Position_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave
