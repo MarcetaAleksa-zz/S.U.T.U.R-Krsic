@@ -7,9 +7,8 @@
         Me.Close()
     End Sub
 
-    Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateChanged
-        If (16 = False) Then
-            MessageBox.Show("taken")
-        End If
+    Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
+        Process.Start(My.Application.Info.DirectoryPath + "/Payment.lnk", Price_TextBox.Text)
+
     End Sub
 End Class

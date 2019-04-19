@@ -24,7 +24,8 @@ Partial Class PaymentMethod_From
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaymentMethod_From))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Back_Button = New System.Windows.Forms.Button()
+        Me.Price_Lable = New System.Windows.Forms.Label()
+        Me.Price_TextBox = New System.Windows.Forms.TextBox()
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.Purchase_Button = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -33,6 +34,8 @@ Partial Class PaymentMethod_From
         Me.Visa_RadioButton = New System.Windows.Forms.RadioButton()
         Me.AmericanExpress_RadioButton = New System.Windows.Forms.RadioButton()
         Me.MasterCard_RadioButton = New System.Windows.Forms.RadioButton()
+        Me.Adress_TextBox = New System.Windows.Forms.TextBox()
+        Me.Adress_Label = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,7 +44,10 @@ Partial Class PaymentMethod_From
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Back_Button)
+        Me.GroupBox1.Controls.Add(Me.Adress_Label)
+        Me.GroupBox1.Controls.Add(Me.Adress_TextBox)
+        Me.GroupBox1.Controls.Add(Me.Price_Lable)
+        Me.GroupBox1.Controls.Add(Me.Price_TextBox)
         Me.GroupBox1.Controls.Add(Me.Exit_Button)
         Me.GroupBox1.Controls.Add(Me.Purchase_Button)
         Me.GroupBox1.Controls.Add(Me.PictureBox3)
@@ -58,18 +64,26 @@ Partial Class PaymentMethod_From
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Payment Method"
         '
-        'Back_Button
+        'Price_Lable
         '
-        Me.Back_Button.Location = New System.Drawing.Point(482, 316)
-        Me.Back_Button.Name = "Back_Button"
-        Me.Back_Button.Size = New System.Drawing.Size(150, 50)
-        Me.Back_Button.TabIndex = 8
-        Me.Back_Button.Text = "Back"
-        Me.Back_Button.UseVisualStyleBackColor = True
+        Me.Price_Lable.AutoSize = True
+        Me.Price_Lable.Location = New System.Drawing.Point(590, 53)
+        Me.Price_Lable.Name = "Price_Lable"
+        Me.Price_Lable.Size = New System.Drawing.Size(48, 20)
+        Me.Price_Lable.TabIndex = 11
+        Me.Price_Lable.Text = "Price:"
+        '
+        'Price_TextBox
+        '
+        Me.Price_TextBox.Location = New System.Drawing.Point(644, 50)
+        Me.Price_TextBox.Name = "Price_TextBox"
+        Me.Price_TextBox.ReadOnly = True
+        Me.Price_TextBox.Size = New System.Drawing.Size(100, 26)
+        Me.Price_TextBox.TabIndex = 10
         '
         'Exit_Button
         '
-        Me.Exit_Button.Location = New System.Drawing.Point(289, 316)
+        Me.Exit_Button.Location = New System.Drawing.Point(456, 316)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(150, 50)
         Me.Exit_Button.TabIndex = 7
@@ -151,6 +165,22 @@ Partial Class PaymentMethod_From
         Me.MasterCard_RadioButton.Text = "MasterCard"
         Me.MasterCard_RadioButton.UseVisualStyleBackColor = True
         '
+        'Adress_TextBox
+        '
+        Me.Adress_TextBox.Location = New System.Drawing.Point(402, 136)
+        Me.Adress_TextBox.Name = "Adress_TextBox"
+        Me.Adress_TextBox.Size = New System.Drawing.Size(342, 26)
+        Me.Adress_TextBox.TabIndex = 12
+        '
+        'Adress_Label
+        '
+        Me.Adress_Label.AutoSize = True
+        Me.Adress_Label.Location = New System.Drawing.Point(398, 104)
+        Me.Adress_Label.Name = "Adress_Label"
+        Me.Adress_Label.Size = New System.Drawing.Size(346, 20)
+        Me.Adress_Label.TabIndex = 13
+        Me.Adress_Label.Text = "Enter your street adress for shipment to be sent"
+        '
         'PaymentMethod_From
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -176,7 +206,10 @@ Partial Class PaymentMethod_From
     Friend WithEvents Visa_RadioButton As RadioButton
     Friend WithEvents AmericanExpress_RadioButton As RadioButton
     Friend WithEvents MasterCard_RadioButton As RadioButton
-    Friend WithEvents Back_Button As Button
     Friend WithEvents Exit_Button As Button
     Friend WithEvents Purchase_Button As Button
+    Friend WithEvents Price_TextBox As TextBox
+    Friend WithEvents Price_Lable As Label
+    Friend WithEvents Adress_Label As Label
+    Friend WithEvents Adress_TextBox As TextBox
 End Class

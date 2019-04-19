@@ -1,4 +1,5 @@
 ﻿Public Class PaymentMethod_From
+    Public Price As String
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
     End Sub
@@ -16,5 +17,16 @@
             MasterCard_Form.Show()
             Me.Hide()
         End If
+    End Sub
+    Private Sub PaymentMethod_From_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim recieve As String = Command()
+            Price_TextBox.Text = recieve
+            Price_TextBox.Refresh()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Price = Price_TextBox.Text
+        Price_TextBox.Show()
     End Sub
 End Class

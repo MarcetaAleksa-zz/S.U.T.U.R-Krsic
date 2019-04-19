@@ -25,7 +25,9 @@ Partial Class Order_Funeral
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Order_Funeral))
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.Back_Button = New System.Windows.Forms.Button()
-        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.Purchase_Button = New System.Windows.Forms.Button()
+        Me.Price_Label = New System.Windows.Forms.Label()
+        Me.Price_TextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Exit_Button
@@ -46,20 +48,39 @@ Partial Class Order_Funeral
         Me.Back_Button.TabIndex = 132
         Me.Back_Button.UseVisualStyleBackColor = True
         '
-        'MonthCalendar1
+        'Purchase_Button
         '
-        Me.MonthCalendar1.CalendarDimensions = New System.Drawing.Size(3, 2)
-        Me.MonthCalendar1.Location = New System.Drawing.Point(12, 59)
-        Me.MonthCalendar1.MaxSelectionCount = 1
-        Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 131
+        Me.Purchase_Button.Location = New System.Drawing.Point(270, 220)
+        Me.Purchase_Button.Name = "Purchase_Button"
+        Me.Purchase_Button.Size = New System.Drawing.Size(75, 23)
+        Me.Purchase_Button.TabIndex = 134
+        Me.Purchase_Button.Text = "Purchase"
+        Me.Purchase_Button.UseVisualStyleBackColor = True
+        '
+        'Price_Label
+        '
+        Me.Price_Label.AutoSize = True
+        Me.Price_Label.Location = New System.Drawing.Point(284, 139)
+        Me.Price_Label.Name = "Price_Label"
+        Me.Price_Label.Size = New System.Drawing.Size(31, 13)
+        Me.Price_Label.TabIndex = 135
+        Me.Price_Label.Text = "Price"
+        '
+        'Price_TextBox
+        '
+        Me.Price_TextBox.Location = New System.Drawing.Point(270, 174)
+        Me.Price_TextBox.Name = "Price_TextBox"
+        Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Price_TextBox.TabIndex = 136
         '
         'Order_Funeral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(716, 461)
-        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Controls.Add(Me.Price_TextBox)
+        Me.Controls.Add(Me.Price_Label)
+        Me.Controls.Add(Me.Purchase_Button)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -67,10 +88,13 @@ Partial Class Order_Funeral
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Panel - Order Funeral"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Exit_Button As Button
     Friend WithEvents Back_Button As Button
-    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents Purchase_Button As Button
+    Friend WithEvents Price_Label As Label
+    Friend WithEvents Price_TextBox As TextBox
 End Class
