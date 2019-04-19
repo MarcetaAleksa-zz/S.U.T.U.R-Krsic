@@ -32,8 +32,12 @@ Public Class MasterCard_Form
             Dim payment_table As New DataTable
             adapter.Fill(payment_table)
             Overall_price = payment_table.Rows(0)(0)
-            If
-                    End If
+            If Overall_price > 0 Then
+                ' If
+                'End If
+            Else
+                MsgBox("Innsuficient balance on your credit card.")
+            End If
         End If
 
     End Sub
