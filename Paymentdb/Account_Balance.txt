@@ -1,0 +1,23 @@
+310	Conner.S	Gold Credit Bancshares	Master Card	2500.0000
+391	Amber.L	Grand Market Trust
+	Visa Card	1750.0000
+141	Emmanuel.H	Principal Bank Inc.
+	American Express
+	150.0000
+567	Aditya.J	Gold Credit Bancshares
+	Master Card
+	-50.0000
+549	Ryleigh.R	Gold Credit Bancshares
+	Master Card
+	7862.0000
+372	Saige.P	Grand Market Trust
+	Visa Card	269.0000
+482	Noah.C	Grand Market Trust
+	Visa Card	1853.0000
+475	Madison.W	Principal Bank Inc.
+	American Express
+	1562.0000
+674	Brooklyn.L	Principal Bank Inc.
+	American Express
+	-850.0000
+NULL	NULL	NULL	NULL	NULL
