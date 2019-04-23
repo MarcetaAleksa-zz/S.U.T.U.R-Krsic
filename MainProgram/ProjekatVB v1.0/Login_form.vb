@@ -2,6 +2,10 @@
 
 Public Class Login_form
     Public test As Double = 0
+    'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
+    Public connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+
+
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
         If (Username_Form_Box.Text = "Enter Username here") Then
             Username_Form_Box.Text = ""
@@ -29,14 +33,17 @@ Public Class Login_form
         End If
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
-        'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
-        'Syntax za dobijanje admin akreditaciju
-        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS", connection)
-
+        Encryption.EncryptPass()
+        Dim FileReader As String
+        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + Username_Form_Box.Text + ".txt")
+        Dim encryptkey As String = FileReader
+        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
         command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text
 
-        command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Password_Form_Box.Text
+        command.Parameters.Add("@Password", SqlDbType.VarChar).Value = encryptkey
+        'Syntax za dobijanje admin akreditaciju
+        command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
+
 
 
         Dim adapter As New SqlDataAdapter(command)
