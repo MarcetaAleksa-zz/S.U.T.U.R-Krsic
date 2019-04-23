@@ -24,6 +24,8 @@ Partial Class PaymentMethod_From
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaymentMethod_From))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Adress_Label = New System.Windows.Forms.Label()
+        Me.Adress_TextBox = New System.Windows.Forms.TextBox()
         Me.Price_Lable = New System.Windows.Forms.Label()
         Me.Price_TextBox = New System.Windows.Forms.TextBox()
         Me.Exit_Button = New System.Windows.Forms.Button()
@@ -34,8 +36,8 @@ Partial Class PaymentMethod_From
         Me.Visa_RadioButton = New System.Windows.Forms.RadioButton()
         Me.AmericanExpress_RadioButton = New System.Windows.Forms.RadioButton()
         Me.MasterCard_RadioButton = New System.Windows.Forms.RadioButton()
-        Me.Adress_TextBox = New System.Windows.Forms.TextBox()
-        Me.Adress_Label = New System.Windows.Forms.Label()
+        Me.Email_Label = New System.Windows.Forms.Label()
+        Me.Email_TextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +46,8 @@ Partial Class PaymentMethod_From
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Email_Label)
+        Me.GroupBox1.Controls.Add(Me.Email_TextBox)
         Me.GroupBox1.Controls.Add(Me.Adress_Label)
         Me.GroupBox1.Controls.Add(Me.Adress_TextBox)
         Me.GroupBox1.Controls.Add(Me.Price_Lable)
@@ -63,6 +67,22 @@ Partial Class PaymentMethod_From
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Payment Method"
+        '
+        'Adress_Label
+        '
+        Me.Adress_Label.AutoSize = True
+        Me.Adress_Label.Location = New System.Drawing.Point(398, 104)
+        Me.Adress_Label.Name = "Adress_Label"
+        Me.Adress_Label.Size = New System.Drawing.Size(346, 20)
+        Me.Adress_Label.TabIndex = 13
+        Me.Adress_Label.Text = "Enter your street adress for shipment to be sent"
+        '
+        'Adress_TextBox
+        '
+        Me.Adress_TextBox.Location = New System.Drawing.Point(402, 136)
+        Me.Adress_TextBox.Name = "Adress_TextBox"
+        Me.Adress_TextBox.Size = New System.Drawing.Size(342, 26)
+        Me.Adress_TextBox.TabIndex = 12
         '
         'Price_Lable
         '
@@ -165,21 +185,21 @@ Partial Class PaymentMethod_From
         Me.MasterCard_RadioButton.Text = "MasterCard"
         Me.MasterCard_RadioButton.UseVisualStyleBackColor = True
         '
-        'Adress_TextBox
+        'Email_Label
         '
-        Me.Adress_TextBox.Location = New System.Drawing.Point(402, 136)
-        Me.Adress_TextBox.Name = "Adress_TextBox"
-        Me.Adress_TextBox.Size = New System.Drawing.Size(342, 26)
-        Me.Adress_TextBox.TabIndex = 12
+        Me.Email_Label.AutoSize = True
+        Me.Email_Label.Location = New System.Drawing.Point(558, 183)
+        Me.Email_Label.Name = "Email_Label"
+        Me.Email_Label.Size = New System.Drawing.Size(48, 20)
+        Me.Email_Label.TabIndex = 140
+        Me.Email_Label.Text = "Email"
         '
-        'Adress_Label
+        'Email_TextBox
         '
-        Me.Adress_Label.AutoSize = True
-        Me.Adress_Label.Location = New System.Drawing.Point(398, 104)
-        Me.Adress_Label.Name = "Adress_Label"
-        Me.Adress_Label.Size = New System.Drawing.Size(346, 20)
-        Me.Adress_Label.TabIndex = 13
-        Me.Adress_Label.Text = "Enter your street adress for shipment to be sent"
+        Me.Email_TextBox.Location = New System.Drawing.Point(474, 218)
+        Me.Email_TextBox.Name = "Email_TextBox"
+        Me.Email_TextBox.Size = New System.Drawing.Size(184, 26)
+        Me.Email_TextBox.TabIndex = 139
         '
         'PaymentMethod_From
         '
@@ -212,4 +232,6 @@ Partial Class PaymentMethod_From
     Friend WithEvents Price_Lable As Label
     Friend WithEvents Adress_Label As Label
     Friend WithEvents Adress_TextBox As TextBox
+    Friend WithEvents Email_Label As Label
+    Friend WithEvents Email_TextBox As TextBox
 End Class

@@ -21,10 +21,15 @@ Public Class VisaCard_Form
         Dim adapter As New SqlDataAdapter(command)
         Dim VCC_table As New DataTable() 'visa card check table
 
-        adapter.Fill(VCC_table)
+        Try
+            adapter.Fill(VCC_table)
+        Catch ex As Exception
+        End Try
+
 
         If VCC_table.Rows.Count <= 0 Then
             MsgBox("Please enter correct information.")
+            LogFile.FailedLog()
         ElseIf VCC_table.Rows.Count > 0 Then
 
             command.CommandText = ("SELECT Money From Payment.dbo.Account_Balance where CVV = @CVV")
@@ -37,14 +42,20 @@ Public Class VisaCard_Form
                 connection.Open()
                 Try
                     command.ExecuteNonQuery()
-                    MsgBox("Payment Confirmed.")
+                    PaymentMethod_From.ErrorMsg = MsgBox("Payment Confirmed.")
                     Me.Close()
+                    MsgBox(PaymentMethod_From.ErrorMsg)
+                    LogFile.Log()
                 Catch ex As Exception
-                    MsgBox("There was problem with your payment.")
+                    PaymentMethod_From.ErrorMsg = MsgBox("There was problem with your payment.")
+                    MsgBox(PaymentMethod_From.ErrorMsg)
+                    LogFile.FailedLog()
                 End Try
                 connection.Close()
             Else
-                MsgBox("Innsuficient balance on your credit card.")
+                PaymentMethod_From.ErrorMsg = MsgBox("Innsuficient balance on your credit card.")
+                MsgBox(PaymentMethod_From.ErrorMsg)
+                LogFile.Log()
             End If
             Me.Close()
         End If

@@ -21,11 +21,15 @@ Public Class AmericanExpress_Form
 
         Dim adapter As New SqlDataAdapter(command)
         Dim AEC_table As New DataTable() 'american express check table
+        Try
+            adapter.Fill(AEC_table)
+        Catch ex As Exception
+        End Try
 
-        adapter.Fill(AEC_table)
 
         If AEC_table.Rows.Count <= 0 Then
             MsgBox("Please enter correct information.")
+            LogFile.FailedLog()
         ElseIf AEC_table.Rows.Count > 0 Then
 
             command.CommandText = ("SELECT Money From Payment.dbo.Account_Balance where CVV = @CVV")
@@ -38,14 +42,21 @@ Public Class AmericanExpress_Form
                 connection.Open()
                 Try
                     command.ExecuteNonQuery()
-                    MsgBox("Payment Confirmed.")
+                    LogFile.Log()
+                    PaymentMethod_From.ErrorMsg = MsgBox("Payment Confirmed.")
                     Me.Close()
+                    MsgBox(PaymentMethod_From.ErrorMsg)
                 Catch ex As Exception
-                    MsgBox("There was problem with your payment.")
+                    LogFile.Log()
+                    PaymentMethod_From.ErrorMsg = MsgBox("There was problem with your payment.")
+                    MsgBox(PaymentMethod_From.ErrorMsg)
+                    LogFile.FailedLog()
                 End Try
                 connection.Close()
             Else
-                MsgBox("Innsuficient balance on your credit card.")
+                LogFile.Log()
+                PaymentMethod_From.ErrorMsg = MsgBox("Innsuficient balance on your credit card.")
+                MsgBox(PaymentMethod_From.ErrorMsg)
             End If
             Me.Close()
         End If

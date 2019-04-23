@@ -25,13 +25,13 @@ Partial Class Administrator
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Administrator))
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
-        Me.ButtonKojiSeNeKoristi = New System.Windows.Forms.Button()
+        Me.OrderEquip_Button = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.VSK_Button = New System.Windows.Forms.Button()
         Me.UNV_Button = New System.Windows.Forms.Button()
         Me.Storage_Button = New System.Windows.Forms.Button()
-        Me.Kalendar_Button = New System.Windows.Forms.Button()
+        Me.ViewPurchases_Button = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,16 +54,17 @@ Partial Class Administrator
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
-        'ButtonKojiSeNeKoristi
+        'OrderEquip_Button
         '
-        Me.ButtonKojiSeNeKoristi.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.ButtonKojiSeNeKoristi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonKojiSeNeKoristi.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ButtonKojiSeNeKoristi.Location = New System.Drawing.Point(87, 170)
-        Me.ButtonKojiSeNeKoristi.Name = "ButtonKojiSeNeKoristi"
-        Me.ButtonKojiSeNeKoristi.Size = New System.Drawing.Size(198, 40)
-        Me.ButtonKojiSeNeKoristi.TabIndex = 109
-        Me.ButtonKojiSeNeKoristi.UseVisualStyleBackColor = False
+        Me.OrderEquip_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.OrderEquip_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.OrderEquip_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.OrderEquip_Button.Location = New System.Drawing.Point(87, 170)
+        Me.OrderEquip_Button.Name = "OrderEquip_Button"
+        Me.OrderEquip_Button.Size = New System.Drawing.Size(198, 40)
+        Me.OrderEquip_Button.TabIndex = 109
+        Me.OrderEquip_Button.Text = "Order Equipment"
+        Me.OrderEquip_Button.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -121,17 +122,17 @@ Partial Class Administrator
         Me.Storage_Button.Text = "View Storage"
         Me.Storage_Button.UseVisualStyleBackColor = False
         '
-        'Kalendar_Button
+        'ViewPurchases_Button
         '
-        Me.Kalendar_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Kalendar_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Kalendar_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Kalendar_Button.Location = New System.Drawing.Point(86, 124)
-        Me.Kalendar_Button.Name = "Kalendar_Button"
-        Me.Kalendar_Button.Size = New System.Drawing.Size(99, 40)
-        Me.Kalendar_Button.TabIndex = 107
-        Me.Kalendar_Button.Text = "Order calendar"
-        Me.Kalendar_Button.UseVisualStyleBackColor = False
+        Me.ViewPurchases_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.ViewPurchases_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ViewPurchases_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ViewPurchases_Button.Location = New System.Drawing.Point(86, 124)
+        Me.ViewPurchases_Button.Name = "ViewPurchases_Button"
+        Me.ViewPurchases_Button.Size = New System.Drawing.Size(99, 40)
+        Me.ViewPurchases_Button.TabIndex = 107
+        Me.ViewPurchases_Button.Text = "View Purchases"
+        Me.ViewPurchases_Button.UseVisualStyleBackColor = False
         '
         'Administrator
         '
@@ -140,11 +141,11 @@ Partial Class Administrator
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(386, 266)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Kalendar_Button)
+        Me.Controls.Add(Me.ViewPurchases_Button)
         Me.Controls.Add(Me.Storage_Button)
         Me.Controls.Add(Me.UNV_Button)
         Me.Controls.Add(Me.VSK_Button)
-        Me.Controls.Add(Me.ButtonKojiSeNeKoristi)
+        Me.Controls.Add(Me.OrderEquip_Button)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -160,11 +161,11 @@ Partial Class Administrator
 
     Friend WithEvents Back_Button As Button
     Friend WithEvents Exit_Button As Button
-    Friend WithEvents ButtonKojiSeNeKoristi As Button
+    Friend WithEvents OrderEquip_Button As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents VSK_Button As Button
     Friend WithEvents UNV_Button As Button
     Friend WithEvents Storage_Button As Button
-    Friend WithEvents Kalendar_Button As Button
+    Friend WithEvents ViewPurchases_Button As Button
 End Class

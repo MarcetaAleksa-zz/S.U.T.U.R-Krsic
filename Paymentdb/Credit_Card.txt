@@ -1,22 +1,10 @@
 Master Card	5551764569770236	Conner	Salas	02/28	310
 Visa Card	4740813614701251	Amber	Lewis	05/23	391
-American Express
-	377333620264515	Emmanuel	Harris	12/25
-	141
-Master Card
-	5241990319676045	Aditya	Jackson	02/24
-	567
-Visa Card	4477503358419181	Saige	Parker	06/19
-	372
-American Express
-	345456838433371	Madison	Walker	04/27
-	475
-Master Card
-	5246997400974028	Ryleigh	Robinson	02/28
-	549
-Visa Card	4089042164598698	Noah	Clark	01/28
-	482
-American Express
-	378213882068888	Brooklyn	Lee	06/24
-	674
+American Express	377333620264515	Emmanuel	Harris	12/25	141
+Master Card	5241990319676045	Aditya	Jackson	02/24	567
+Visa Card	4477503358419181	Saige	Parker	06/19	372
+American Express	345456838433371	Madison	Walker	04/27	475
+Master Card	5246997400974028	Ryleigh	Robinson	02/28	549
+Visa Card	4089042164598698	Noah	Clark	01/28	482
+American Express	378213882068888	Brooklyn	Lee	06/24	674
 NULL	NULL	NULL	NULL	NULL	NULL

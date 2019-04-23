@@ -1,0 +1,2 @@
+﻿	CARD TYPE	MONEY AMMOUNT	FIRST NAME		LAST NAME		CREDIT CARD NUMBER			PURCHASE DATE
+Card Type: Master Card; Ammount: 50KM; First Name: Conner; Last Name: Salas; Credit Card Number: 5551764569770236; ;; Purchase attempt: 23-Apr-2019 02:14:52

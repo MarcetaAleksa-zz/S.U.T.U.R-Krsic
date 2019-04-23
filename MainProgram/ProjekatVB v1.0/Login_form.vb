@@ -38,6 +38,7 @@ Public Class Login_form
 
         command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Password_Form_Box.Text
 
+
         Dim adapter As New SqlDataAdapter(command)
 
         Dim admin_table As New DataTable()  'unos admin podataka u tabelu, u slucaju da imamo admina
@@ -55,7 +56,7 @@ Public Class Login_form
         adapter.Fill(user_table)
 
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
-
+            Logs.FailedLog()
             test = 4
             MSG_Form.Show()
             Password_Form_Box.PasswordChar = "*"
@@ -63,7 +64,7 @@ Public Class Login_form
 
 
         ElseIf admin_table.Rows.Count() > 0 Then
-
+            Logs.Log()
             test = 1
             MSG_Form.Show()
             ID_Label.Text = admin_table.Rows(0)(0)
@@ -79,7 +80,7 @@ Public Class Login_form
             'Dodjela ID-a Labeli kako bi je pozvali u User formi i tako povezali user formu i login formu te Workers i Login tabele iz baze
             Me.Hide()
             Password_Form_Box.Text = ""
-
+            Logs.Log()
         End If
     End Sub
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
