@@ -10,7 +10,8 @@ Public Class MasterCard_Form
 
     Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
         Dim Ava_Balance As Integer
-        Dim connection As New SqlConnection("SERVER = TESTTHENEXT2\SQLEXPRESS; Database = Payment; Integrated security = true")
+        'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
+        Dim connection As New SqlConnection("SERVER = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Payment; Integrated security = true")
         Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'MasterCard' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", connection)
 
         command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName_TextBox.Text
@@ -35,7 +36,6 @@ Public Class MasterCard_Form
             Dim payment_table As New DataTable
             adapter.Fill(payment_table)
             Ava_Balance = payment_table.Rows(0)(0)
-            PaymentMethod_From.Price = 50
             If Ava_Balance - PaymentMethod_From.Price > 0 Then
                 Dim New_Balance As Integer = Ava_Balance - PaymentMethod_From.Price
                 command.CommandText = "UPDATE Payment.dbo.Account_Balance SET Money ='" & New_Balance & "' WHERE CVV = @CVV"

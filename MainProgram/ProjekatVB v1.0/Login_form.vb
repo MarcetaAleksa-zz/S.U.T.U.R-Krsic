@@ -3,7 +3,7 @@
 Public Class Login_form
     Public test As Double = 0
     'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-    Public connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+    Public connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
 
 
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
@@ -35,7 +35,9 @@ Public Class Login_form
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
         Encryption.EncryptPass()
         Dim FileReader As String
-        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + Username_Form_Box.Text + ".txt")
+        'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
+        'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
+        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + Username_Form_Box.Text + ".txt")
         Dim encryptkey As String = FileReader
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
         command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text

@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class UnosRadnika
     Public brojac As Double = 0
+    Public Correct_Password As String
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles UR_ChangePicture_Button.Click
         UR_OpenFileDialog.InitialDirectory = UR_FolderBrowserDialog.SelectedPath
         UR_OpenFileDialog.ShowDialog() 'ovaj klik je na dugme za unos slike, tj kao Browse Picture, ili Choose image i sl, to je taj button
@@ -20,18 +21,19 @@ Public Class UnosRadnika
             UR_NoFile_Label.Visible = True
             UR_ClearImage_Button.Visible = False
         End If
-
     End Sub
-
     Private Sub UR_ClearImage_Button_Click(sender As Object, e As EventArgs) Handles UR_ClearImage_Button.Click
         UR_Picture.Image = Nothing 'dugme koje se pojavi samo ako postoji slika i koje brise sliku hehehhehehe
     End Sub
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
-        Dim Correct_Password As String
+        Dim FileReader As String
         Dim Gender As String
         Dim Account_type As String
+        'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
+        'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
+
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
@@ -58,15 +60,16 @@ Public Class UnosRadnika
         Else MsgBox("Select Account Type")
             brojac = 0
         End If
-
-
+        Encryption.EncryptPass()
+        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + UR_Username_TextBox.Text + ".txt")
+        Dim encryptkey As String = FileReader
         Try
             connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
 INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Position, Phone, Gender) 
 VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Position_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
-VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Correct_Password & "')"
+VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & encryptkey & "')"
             Command.ExecuteNonQuery()
             brojac += 1
         Catch ex As Exception

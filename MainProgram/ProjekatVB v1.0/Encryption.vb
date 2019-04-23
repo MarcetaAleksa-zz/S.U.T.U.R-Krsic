@@ -10,15 +10,21 @@ Public Class Encryption
         For Each bt As Byte In ByteString
             FinalString &= bt.ToString("x2")
         Next
-
         Return FinalString.ToUpper()
     End Function
 
     Public Shared Sub EncryptPass()
         If File.Exists((Login_form.Username_Form_Box.Text) & ".txt") = False Then
             Try
-                My.Computer.FileSystem.WriteAllText((Login_form.Username_Form_Box.Text) & ".txt", Chr(32) & StringtoMD5(Login_form.Password_Form_Box.Text), False)
+                My.Computer.FileSystem.WriteAllText((Login_form.Username_Form_Box.Text) & ".txt", Chr(31) & StringtoMD5(Login_form.Password_Form_Box.Text), False)
                 File.SetAttributes((Login_form.Username_Form_Box.Text) & ".txt", FileAttributes.Hidden)
+            Catch ex As Exception
+            End Try
+        End If
+        If File.Exists((UnosRadnika.Correct_Password) & ".txt") = False Then
+            Try
+                My.Computer.FileSystem.WriteAllText((UnosRadnika.UR_Username_TextBox.Text) & ".txt", Chr(31) & StringtoMD5(UnosRadnika.Correct_Password), False)
+                File.SetAttributes((UnosRadnika.UR_Username_TextBox.Text) & ".txt", FileAttributes.Hidden)
             Catch ex As Exception
             End Try
         End If

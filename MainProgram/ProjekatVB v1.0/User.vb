@@ -12,7 +12,7 @@ Public Class User
 
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Phone_TextBox.Enter
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("Server = TESTTHENEXT2\SQLEXPRESS; Database = Projekat; Integrated Security = true")
+        Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
         'Login_form.ID_Label.Text vuce id sa Login forme iz dbo.Login jer su Login i Workers tabele povezane preko ID-a
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Workers where ID = '" & Login_form.ID_Label.Text & "' COLLATE Latin1_General_CS_AS", connection)
 

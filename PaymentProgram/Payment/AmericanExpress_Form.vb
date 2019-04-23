@@ -10,7 +10,8 @@ Public Class AmericanExpress_Form
 
     Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
         Dim Ava_Balance As Integer
-        Dim connection As New SqlConnection("SERVER = TESTTHENEXT2\SQLEXPRESS; Database = Payment; Integrated security = true")
+        'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
+        Dim connection As New SqlConnection("SERVER = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Payment; Integrated security = true")
         Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'AmericanExpress' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", connection)
 
         command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName_TextBox.Text
