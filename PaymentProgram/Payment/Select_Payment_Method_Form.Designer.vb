@@ -24,6 +24,8 @@ Partial Class PaymentMethod_From
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaymentMethod_From))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Email_Label = New System.Windows.Forms.Label()
+        Me.Email_TextBox = New System.Windows.Forms.TextBox()
         Me.Adress_Label = New System.Windows.Forms.Label()
         Me.Adress_TextBox = New System.Windows.Forms.TextBox()
         Me.Price_Lable = New System.Windows.Forms.Label()
@@ -36,8 +38,6 @@ Partial Class PaymentMethod_From
         Me.Visa_RadioButton = New System.Windows.Forms.RadioButton()
         Me.AmericanExpress_RadioButton = New System.Windows.Forms.RadioButton()
         Me.MasterCard_RadioButton = New System.Windows.Forms.RadioButton()
-        Me.Email_Label = New System.Windows.Forms.Label()
-        Me.Email_TextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +67,22 @@ Partial Class PaymentMethod_From
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Payment Method"
+        '
+        'Email_Label
+        '
+        Me.Email_Label.AutoSize = True
+        Me.Email_Label.Location = New System.Drawing.Point(558, 183)
+        Me.Email_Label.Name = "Email_Label"
+        Me.Email_Label.Size = New System.Drawing.Size(48, 20)
+        Me.Email_Label.TabIndex = 140
+        Me.Email_Label.Text = "Email"
+        '
+        'Email_TextBox
+        '
+        Me.Email_TextBox.Location = New System.Drawing.Point(474, 218)
+        Me.Email_TextBox.Name = "Email_TextBox"
+        Me.Email_TextBox.Size = New System.Drawing.Size(184, 26)
+        Me.Email_TextBox.TabIndex = 139
         '
         'Adress_Label
         '
@@ -100,6 +116,7 @@ Partial Class PaymentMethod_From
         Me.Price_TextBox.ReadOnly = True
         Me.Price_TextBox.Size = New System.Drawing.Size(100, 26)
         Me.Price_TextBox.TabIndex = 10
+        Me.Price_TextBox.Text = "0"
         '
         'Exit_Button
         '
@@ -184,22 +201,6 @@ Partial Class PaymentMethod_From
         Me.MasterCard_RadioButton.TabStop = True
         Me.MasterCard_RadioButton.Text = "MasterCard"
         Me.MasterCard_RadioButton.UseVisualStyleBackColor = True
-        '
-        'Email_Label
-        '
-        Me.Email_Label.AutoSize = True
-        Me.Email_Label.Location = New System.Drawing.Point(558, 183)
-        Me.Email_Label.Name = "Email_Label"
-        Me.Email_Label.Size = New System.Drawing.Size(48, 20)
-        Me.Email_Label.TabIndex = 140
-        Me.Email_Label.Text = "Email"
-        '
-        'Email_TextBox
-        '
-        Me.Email_TextBox.Location = New System.Drawing.Point(474, 218)
-        Me.Email_TextBox.Name = "Email_TextBox"
-        Me.Email_TextBox.Size = New System.Drawing.Size(184, 26)
-        Me.Email_TextBox.TabIndex = 139
         '
         'PaymentMethod_From
         '

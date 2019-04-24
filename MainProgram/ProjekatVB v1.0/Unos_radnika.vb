@@ -32,8 +32,7 @@ Public Class UnosRadnika
 
 
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
-        Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
+        Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
             brojac += 1
@@ -65,7 +64,7 @@ Public Class UnosRadnika
         FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + UR_Username_TextBox.Text + ".txt")
         Dim encryptkey As String = FileReader
         Try
-            connection.Open()
+            containerdb.connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
 INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Position, Phone, Gender) 
 VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Position_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
@@ -77,7 +76,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             MessageBox.Show("Error while inserting record on table..." & ex.Message, "Insert Records")
             brojac = 0
         Finally
-            connection.Close()
+            containerdb.connection.Close()
         End Try
         For Each Control As Control In Me.Controls
             If TypeOf Control Is TextBox Then
@@ -219,6 +218,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
     Private Sub UR_ConfirmPassword_Textbox_Leave(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Leave
         If (UR_ConfirmPassword_Textbox.Text = "") Then
             UR_ConfirmPassword_Textbox.Text = "Confirm Password"
+            UR_ConfirmPassword_Textbox.UseSystemPasswordChar = False
             UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
         End If
     End Sub
@@ -226,12 +226,14 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
     Private Sub UR_ConfirmPassword_Textbox_Enter(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Enter
         If (UR_ConfirmPassword_Textbox.Text = "Confirm Password") Then
             UR_ConfirmPassword_Textbox.Text = ""
+            UR_ConfirmPassword_Textbox.UseSystemPasswordChar = True
             UR_ConfirmPassword_Textbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Password_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Password_TextBox.Leave
         If (UR_Password_TextBox.Text = "") Then
             UR_Password_TextBox.Text = "Enter Password here"
+            UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.ForeColor = Color.Gray
         End If
     End Sub
@@ -239,6 +241,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
     Private Sub UR_Password_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Password_TextBox.Enter
         If (UR_Password_TextBox.Text = "Enter Password here") Then
             UR_Password_TextBox.Text = ""
+            UR_Password_TextBox.UseSystemPasswordChar = True
             UR_Password_TextBox.ForeColor = Color.Black
         End If
     End Sub

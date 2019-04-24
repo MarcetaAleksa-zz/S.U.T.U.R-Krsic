@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class VisaCard_Form
+
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click, MyBase.Click
         Me.Close()
     End Sub
@@ -8,10 +9,9 @@ Public Class VisaCard_Form
         Me.Close()
     End Sub
     Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
-        Dim Ava_Balance As Integer
+        Dim Ava_Balance As Double
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("SERVER = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Payment; Integrated security = true")
-        Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'VisaCard' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", connection)
+        Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'Visa' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", databaseconnection.connection)
 
         command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName_TextBox.Text
         command.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastName_TextBox.Text
@@ -20,7 +20,7 @@ Public Class VisaCard_Form
         command.Parameters.Add("@CardNumber", SqlDbType.VarChar).Value = CardNumber_TextBox.Text
 
         Dim adapter As New SqlDataAdapter(command)
-        Dim VCC_table As New DataTable() 'visa card check table
+        Dim VCC_table As New DataTable() 'visa check table
 
         Try
             adapter.Fill(VCC_table)
@@ -40,22 +40,19 @@ Public Class VisaCard_Form
             If Ava_Balance - PaymentMethod_From.Price > 0 Then
                 Dim New_Balance As Integer = Ava_Balance - PaymentMethod_From.Price
                 command.CommandText = "UPDATE Payment.dbo.Account_Balance SET Money ='" & New_Balance & "' WHERE CVV = @CVV"
-                connection.Open()
+                databaseconnection.connection.Open()
                 Try
                     command.ExecuteNonQuery()
                     PaymentMethod_From.ErrorMsg = MsgBox("Payment Confirmed.")
                     Me.Close()
-                    MsgBox(PaymentMethod_From.ErrorMsg)
                     LogFile.Log()
                 Catch ex As Exception
                     PaymentMethod_From.ErrorMsg = MsgBox("There was problem with your payment.")
-                    MsgBox(PaymentMethod_From.ErrorMsg)
                     LogFile.FailedLog()
                 End Try
-                connection.Close()
+                databaseconnection.connection.Close()
             Else
                 PaymentMethod_From.ErrorMsg = MsgBox("Innsuficient balance on your credit card.")
-                MsgBox(PaymentMethod_From.ErrorMsg)
                 LogFile.Log()
             End If
             Me.Close()

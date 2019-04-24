@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="containerdb.vb" />
     <Compile Include="Encryption.vb" />
     <Compile Include="Logs.vb" />
     <Compile Include="MSG_Form.Designer.vb">

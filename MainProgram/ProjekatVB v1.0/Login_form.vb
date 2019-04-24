@@ -1,11 +1,7 @@
 ﻿Imports System.Data.SqlClient
-
 Public Class Login_form
     Public test As Double = 0
     'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-    Public connection As New SqlConnection("Server = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Projekat; Integrated Security = true")
-
-
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
         If (Username_Form_Box.Text = "Enter Username here") Then
             Username_Form_Box.Text = ""
@@ -37,9 +33,9 @@ Public Class Login_form
         Dim FileReader As String
         'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
         'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
-        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + Username_Form_Box.Text + ".txt")
+        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + Username_Form_Box.Text + ".txt")
         Dim encryptkey As String = FileReader
-        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", connection)
+        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
         command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text
 
         command.Parameters.Add("@Password", SqlDbType.VarChar).Value = encryptkey

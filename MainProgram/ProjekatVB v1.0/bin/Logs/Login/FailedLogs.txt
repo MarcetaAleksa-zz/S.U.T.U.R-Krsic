@@ -54,5 +54,7 @@ Username: Simens;; Password: U$$R4Ever;; Date of Attempt: 23-Apr-2019 02:04:45
 Username: NNikolica;; Password: NiKoL@;; Date of Attempt: 23-Apr-2019 02:05:08
 Username: User;; Password: User;; Date of Attempt: 23-Apr-2019 02:05:23
 Username: User;; Password: User;; Date of Attempt: 23-Apr-2019 02:05:42
-Card Type: American Express;  Ammount: 175KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 23-Apr-2019 02:16:49
-Card Type: Master Card; Ammount: 175KM; First Name: Conner; Last Name: Salas; Credit Card Number: 5551764569770236; ;; Purchase attempt: 23-Apr-2019 02:17:20
+
+Username: Joe;; Password: S@ur0n;; Date of Attempt: 24-Apr-2019 08:06:50
+Username: Joe;; Password: S@ur0n;; Date of Attempt: 24-Apr-2019 08:07:06
+Username: Joe;; Password: S@ur0n;; Date of Attempt: 24-Apr-2019 08:16:49

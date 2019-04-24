@@ -9,10 +9,9 @@ Public Class MasterCard_Form
     End Sub
 
     Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
-        Dim Ava_Balance As Integer
+        Dim Ava_Balance As Double
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim connection As New SqlConnection("SERVER = DESKTOP-M1CQQFK\SQLEXPRESS; Database = Payment; Integrated security = true")
-        Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'MasterCard' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", connection)
+        Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'MasterCard' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", databaseconnection.connection)
 
         command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName_TextBox.Text
         command.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastName_TextBox.Text
@@ -39,24 +38,21 @@ Public Class MasterCard_Form
             If Ava_Balance - PaymentMethod_From.Price > 0 Then
                 Dim New_Balance As Integer = Ava_Balance - PaymentMethod_From.Price
                 command.CommandText = "UPDATE Payment.dbo.Account_Balance SET Money ='" & New_Balance & "' WHERE CVV = @CVV"
-                connection.Open()
+                databaseconnection.connection.Open()
                 Try
                     command.ExecuteNonQuery()
                     LogFile.Log()
                     PaymentMethod_From.ErrorMsg = MsgBox("Payment Confirmed.")
                     Me.Close()
-                    MsgBox(PaymentMethod_From.ErrorMsg)
                 Catch ex As Exception
                     LogFile.Log()
                     PaymentMethod_From.ErrorMsg = MsgBox("There was problem with your payment.")
-                    MsgBox(PaymentMethod_From.ErrorMsg)
                     LogFile.FailedLog()
                 End Try
-                connection.Close()
+                databaseconnection.connection.Close()
             Else
                 LogFile.Log()
                 PaymentMethod_From.ErrorMsg = MsgBox("Innsuficient balance on your credit card.")
-                MsgBox(PaymentMethod_From.ErrorMsg)
             End If
             Me.Close()
         End If

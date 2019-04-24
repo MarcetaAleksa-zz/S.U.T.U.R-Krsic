@@ -1,0 +1,2 @@
+﻿Card Type: Master Card; Ammount: 0KM; First Name: ; Last Name: ; Credit Card Number: ; ;; Purchase attempt: 24-Apr-2019 06:36:25
+Card Type: Master Card; Ammount: 0KM; First Name: ; Last Name: ; Credit Card Number: ; ;; Purchase attempt: 24-Apr-2019 06:36:26
