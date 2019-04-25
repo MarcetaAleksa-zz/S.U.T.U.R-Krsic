@@ -1,4 +1,3 @@
-C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache
 C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Administrator.resources
 C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.MSG_Form.resources
 C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UnosRadnika.resources

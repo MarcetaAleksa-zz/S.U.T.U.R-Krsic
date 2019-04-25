@@ -21,7 +21,7 @@ Public Class Encryption
             Catch ex As Exception
             End Try
         End If
-        If File.Exists((UnosRadnika.Correct_Password) & ".txt") = False Then
+        If File.Exists((UnosRadnika.UR_Username_TextBox.Text) & ".txt") = False Then
             Try
                 My.Computer.FileSystem.WriteAllText((UnosRadnika.UR_Username_TextBox.Text) & ".txt", Chr(31) & StringtoMD5(UnosRadnika.Correct_Password), False)
                 File.SetAttributes((UnosRadnika.UR_Username_TextBox.Text) & ".txt", FileAttributes.Hidden)

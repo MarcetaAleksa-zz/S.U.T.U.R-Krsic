@@ -32,6 +32,7 @@ Partial Class Administrator
         Me.UNV_Button = New System.Windows.Forms.Button()
         Me.Storage_Button = New System.Windows.Forms.Button()
         Me.ViewPurchases_Button = New System.Windows.Forms.Button()
+        Me.Logs_Button = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -134,12 +135,22 @@ Partial Class Administrator
         Me.ViewPurchases_Button.Text = "View Purchases"
         Me.ViewPurchases_Button.UseVisualStyleBackColor = False
         '
+        'Logs_Button
+        '
+        Me.Logs_Button.Location = New System.Drawing.Point(12, 86)
+        Me.Logs_Button.Name = "Logs_Button"
+        Me.Logs_Button.Size = New System.Drawing.Size(40, 24)
+        Me.Logs_Button.TabIndex = 113
+        Me.Logs_Button.Text = "Logs"
+        Me.Logs_Button.UseVisualStyleBackColor = True
+        '
         'Administrator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(386, 266)
+        Me.Controls.Add(Me.Logs_Button)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.ViewPurchases_Button)
         Me.Controls.Add(Me.Storage_Button)
@@ -168,4 +179,5 @@ Partial Class Administrator
     Friend WithEvents UNV_Button As Button
     Friend WithEvents Storage_Button As Button
     Friend WithEvents ViewPurchases_Button As Button
+    Friend WithEvents Logs_Button As Button
 End Class

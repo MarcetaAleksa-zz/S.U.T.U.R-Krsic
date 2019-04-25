@@ -29,8 +29,6 @@ Public Class UnosRadnika
         Dim FileReader As String
         Dim Gender As String
         Dim Account_type As String
-
-
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
@@ -58,11 +56,13 @@ Public Class UnosRadnika
         Else MsgBox("Select Account Type")
             brojac = 0
         End If
+        Dim encryptkey As String
         Encryption.EncryptPass()
         'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
         'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
-        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + UR_Username_TextBox.Text + ".txt")
-        Dim encryptkey As String = FileReader
+        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + UR_Username_TextBox.Text + ".txt")
+        encryptkey = FileReader
+
         Try
             containerdb.connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
@@ -73,7 +73,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             Command.ExecuteNonQuery()
             brojac += 1
         Catch ex As Exception
-            MessageBox.Show("Error while inserting record on table..." & ex.Message, "Insert Records")
+            MessageBox.Show("Error while inserting record in the table." + ex.Message)
             brojac = 0
         Finally
             containerdb.connection.Close()
@@ -92,7 +92,9 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Phone_TextBox.Text = "Enter Phone here"
             UR_Email_TextBox.Text = "Enter E-mail here"
             UR_Username_TextBox.Text = "Enter Username here"
+            UR_ConfirmPassword_Textbox.UseSystemPasswordChar = False
             UR_ConfirmPassword_Textbox.Text = "Confirm Password"
+            UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Enter Password here"
 
             UR_Name_TextBox.ForeColor = Color.Gray
