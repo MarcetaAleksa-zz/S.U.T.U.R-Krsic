@@ -8,7 +8,6 @@ Public Class User
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
     End Sub
-
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Phone_TextBox.Enter
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         'Login_form.ID_Label.Text vuce id sa Login forme iz dbo.Login jer su Login i Workers tabele povezane preko ID-a
@@ -25,8 +24,6 @@ Public Class User
         U_Username_TextBox.Text = user_table.Rows(0)(5)
         U_Possition_TextBox.Text = user_table.Rows(0)(6)
         U_Phone_TextBox.Text = user_table.Rows(0)(7)
-
-
     End Sub
     'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

@@ -12,7 +12,6 @@ Public Class Encryption
         Next
         Return FinalString.ToUpper()
     End Function
-
     Public Shared Sub EncryptPass()
         If File.Exists((Login_form.Username_Form_Box.Text) & ".txt") = False Then
             Try

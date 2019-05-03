@@ -2,7 +2,6 @@
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Login_form.test = 1 Then
             Administrator.Show()
@@ -17,11 +16,8 @@
             Me.Hide()
         End If
     End Sub
-
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
     End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If Login_form.test = 1 Then
             Label1.Text = "ADMINISTRATOR PANEL"
@@ -41,8 +37,6 @@
             Label3.Show()
         End If
     End Sub
-
     Private Sub MSG_Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

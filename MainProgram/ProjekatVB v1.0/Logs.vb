@@ -9,8 +9,6 @@
         Log_File.WriteLine("Username: " + Login_form.Username_Form_Box.Text + ";; Password: " + Login_form.Password_Form_Box.Text + ";; Date of Attempt: " + Log_Date)
         Log_File.Close()
     End Sub
-
-
     Public Shared Sub FailedLog()
         Dim Failed_Log As System.IO.StreamWriter
         Dim Log_Date As String

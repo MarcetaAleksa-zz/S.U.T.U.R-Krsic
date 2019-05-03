@@ -89,7 +89,6 @@ Public Class Login_form
         End If
     End Sub
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
-
         test = 3
         MSG_Form.Show()
         Me.Hide()
@@ -111,8 +110,5 @@ Public Class Login_form
             Call Login_Button_Click(sender, e)
             'Nakon sto ukucamo lozinku pri pritisku entera se logujemo.
         End If
-    End Sub
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint, Panel2.Paint
-
     End Sub
 End Class

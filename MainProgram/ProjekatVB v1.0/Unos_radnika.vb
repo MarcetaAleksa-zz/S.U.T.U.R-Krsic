@@ -6,13 +6,11 @@ Public Class UnosRadnika
         UR_OpenFileDialog.InitialDirectory = UR_FolderBrowserDialog.SelectedPath
         UR_OpenFileDialog.ShowDialog() 'ovaj klik je na dugme za unos slike, tj kao Browse Picture, ili Choose image i sl, to je taj button
     End Sub
-
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles UR_OpenFileDialog.FileOk
         Dim myPic As Bitmap
         myPic = New Bitmap(UR_OpenFileDialog.FileName) 'preko ovog unosimo sliku, nasao ja na netu
         UR_Picture.Image = myPic
     End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles UR_Timer.Tick
         If UR_Picture.Image IsNot Nothing Then 'Ovo sam napravio ako korisnik nema sliku da mu izbaci odmah NO FILE, a kada je UBAVI hah onda da nam taj label nestane.
             UR_NoFile_Label.Visible = False 'a timer sam koristio kako bi se stalno provjeravalo je l ima slika ili nema
@@ -62,7 +60,6 @@ Public Class UnosRadnika
         'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
         FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + UR_Username_TextBox.Text + ".txt")
         encryptkey = FileReader
-
         Try
             containerdb.connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
@@ -82,7 +79,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             If TypeOf Control Is TextBox Then
                 Control.Text = String.Empty
             End If
-
         Next
         If brojac >= 4 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
             UR_Name_TextBox.Text = "Enter Name here"
@@ -107,7 +103,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
             UR_Password_TextBox.ForeColor = Color.Gray
         End If
-
     End Sub
     Private Sub UR_Gender_GroupBox_Enter(sender As Object, e As EventArgs) Handles UR_Gender_GroupBox.Enter
         If UR_Male_Button.Checked = True Then
@@ -116,7 +111,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Male_Button.Checked = False
         End If
     End Sub
-
     Private Sub UR_Admin_Button_CheckedChanged(sender As Object, e As EventArgs) Handles UR_Admin_Button.CheckedChanged
         If UR_Admin_Button.Checked = True Then
             UR_User_Button.Checked = False
@@ -124,14 +118,12 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Admin_Button.Checked = False
         End If
     End Sub
-
     Private Sub UR_Name_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Leave
         If (UR_Name_TextBox.Text = "") Then
             UR_Name_TextBox.Text = "Enter Name here"
             UR_Name_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Name_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Enter
         If (UR_Name_TextBox.Text = "Enter Name here") Then
             UR_Name_TextBox.Text = ""
@@ -144,7 +136,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Surname_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Surname_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Surname_TextBox.Enter
         If (UR_Surname_TextBox.Text = "Enter Surname here") Then
             UR_Surname_TextBox.Text = ""
@@ -157,7 +148,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Birth_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Birth_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Birth_TextBox.Enter
         If (UR_Birth_TextBox.Text = "Enter Birth date here") Then
             UR_Birth_TextBox.Text = ""
@@ -170,7 +160,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Position_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Possition_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Position_TextBox.Enter
         If (UR_Position_TextBox.Text = "Enter Work Position here") Then
             UR_Position_TextBox.Text = ""
@@ -183,7 +172,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Phone_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Phone_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Enter
         If (UR_Phone_TextBox.Text = "Enter Phone here") Then
             UR_Phone_TextBox.Text = ""
@@ -196,7 +184,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Email_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Email_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Email_TextBox.Enter
         If (UR_Email_TextBox.Text = "Enter E-mail here") Then
             UR_Email_TextBox.Text = ""
@@ -209,14 +196,12 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Username_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Username_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Username_TextBox.Enter
         If (UR_Username_TextBox.Text = "Enter Username here") Then
             UR_Username_TextBox.Text = ""
             UR_Username_TextBox.ForeColor = Color.Black
         End If
     End Sub
-
     Private Sub UR_ConfirmPassword_Textbox_Leave(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Leave
         If (UR_ConfirmPassword_Textbox.Text = "") Then
             UR_ConfirmPassword_Textbox.Text = "Confirm Password"
@@ -224,7 +209,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_ConfirmPassword_Textbox_Enter(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Enter
         If (UR_ConfirmPassword_Textbox.Text = "Confirm Password") Then
             UR_ConfirmPassword_Textbox.Text = ""
@@ -239,7 +223,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Password_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-
     Private Sub UR_Password_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Password_TextBox.Enter
         If (UR_Password_TextBox.Text = "Enter Password here") Then
             UR_Password_TextBox.Text = ""
@@ -247,7 +230,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_Password_TextBox.ForeColor = Color.Black
         End If
     End Sub
-
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
         Administrator.Show()
