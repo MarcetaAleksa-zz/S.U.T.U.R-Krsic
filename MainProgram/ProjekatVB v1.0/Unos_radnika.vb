@@ -24,7 +24,6 @@ Public Class UnosRadnika
         UR_Picture.Image = Nothing 'dugme koje se pojavi samo ako postoji slika i koje brise sliku hehehhehehe
     End Sub
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
-        Dim FileReader As String
         Dim Gender As String
         Dim Account_type As String
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
@@ -35,6 +34,7 @@ Public Class UnosRadnika
         Else
             MsgBox("Passwords don't match.")
             brojac = 0
+            Encryption.HashStore = Nothing
         End If
         If UR_Male_Button.Checked = True Then
             Gender = "Male"
@@ -54,19 +54,16 @@ Public Class UnosRadnika
         Else MsgBox("Select Account Type")
             brojac = 0
         End If
-        Dim encryptkey As String
         Encryption.EncryptPass()
         'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
         'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
-        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + UR_Username_TextBox.Text + ".txt")
-        encryptkey = FileReader
         Try
             containerdb.connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
 INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Position, Phone, Gender) 
 VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Position_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
-VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & encryptkey & "')"
+VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Encryption.HashStoreUser & "')"
             Command.ExecuteNonQuery()
             brojac += 1
         Catch ex As Exception
@@ -92,6 +89,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & en
             UR_ConfirmPassword_Textbox.Text = "Confirm Password"
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Enter Password here"
+            Encryption.HashStore = Nothing
 
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray

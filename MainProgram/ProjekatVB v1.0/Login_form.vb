@@ -30,7 +30,6 @@ Public Class Login_form
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
         Encryption.EncryptPass()
-
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
         command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text
         command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Encryption.HashStore
