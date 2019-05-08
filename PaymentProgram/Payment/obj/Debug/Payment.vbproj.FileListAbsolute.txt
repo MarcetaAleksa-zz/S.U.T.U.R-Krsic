@@ -12,3 +12,4 @@ C:\Users\IT\Desktop\Projekat\Projekat-VB\PaymentProgram\Payment\obj\Debug\VB_Pro
 C:\Users\IT\Desktop\Projekat\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.exe
 C:\Users\IT\Desktop\Projekat\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.xml
 C:\Users\IT\Desktop\Projekat\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.pdb
+C:\Users\IT\Desktop\Projekat\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.vbprojAssemblyReference.cache

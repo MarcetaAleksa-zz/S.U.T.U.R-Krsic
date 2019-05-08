@@ -1,8 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class Administrator
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
-        ' Logs_Button.Hide()
-        Me.Hide()
+        Me.Close()
         Login_form.Show()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
@@ -14,7 +13,7 @@ Public Class Administrator
     End Sub
     Private Sub ViewPurchases_Button_Click(sender As Object, e As EventArgs) Handles ViewPurchases_Button.Click
     End Sub
-    Private Sub Administrator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Administrator_EnabledChanged(sender As Object, e As EventArgs) Handles MyBase.EnabledChanged
         Dim command As New SqlCommand("SELECT Position FROM Projekat.dbo.Workers where Username = '" & Login_form.Username_Form_Box.Text & "'", containerdb.connection)
         Dim adapter As New SqlDataAdapter(command)
         Dim position_tbl As New DataTable()

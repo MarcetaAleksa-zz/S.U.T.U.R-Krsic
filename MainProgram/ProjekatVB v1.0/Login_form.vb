@@ -17,39 +17,33 @@ Public Class Login_form
     Private Sub Password_Form_Box_Enter(sender As Object, e As EventArgs) Handles Password_Form_Box.Enter
         If (Password_Form_Box.Text = "Enter Password here") Then
             Password_Form_Box.Text = ""
-            Password_Form_Box.PasswordChar = "*"
+            Password_Form_Box.UseSystemPasswordChar = False
             Password_Form_Box.ForeColor = Color.Black
         End If
     End Sub
     Private Sub Password_Form_Box_Leave(sender As Object, e As EventArgs) Handles Password_Form_Box.Leave
         If (Password_Form_Box.Text = "") Then
             Password_Form_Box.Text = "Enter Password here"
-            Password_Form_Box.PasswordChar = ""
+            Password_Form_Box.UseSystemPasswordChar = True
             Password_Form_Box.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
         Encryption.EncryptPass()
-        Dim FileReader As String
-        'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
-        'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
-        FileReader = My.Computer.FileSystem.ReadAllText("C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\" + Username_Form_Box.Text + ".txt")
-        Dim encryptkey As String = FileReader
+
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
         command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text
-
-        command.Parameters.Add("@Password", SqlDbType.VarChar).Value = encryptkey
+        command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Encryption.HashStore
         'Syntax za dobijanje admin akreditaciju
         command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
-
-
 
         Dim adapter As New SqlDataAdapter(command)
 
         Dim admin_table As New DataTable()  'unos admin podataka u tabelu, u slucaju da imamo admina
-
-        adapter.Fill(admin_table)
-
+        Try
+            adapter.Fill(admin_table)
+        Catch ex As exception
+        End Try
 
         'syntax za user akreditaciju
         command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'false' and Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
@@ -58,7 +52,10 @@ Public Class Login_form
         'Acount_Type = 'True' je Administrator po Bool-u
         'Account_Type = 'False" je User po iznad navedenoj logici
 
-        adapter.Fill(user_table)
+        Try
+            adapter.Fill(user_table)
+        Catch ex As Exception
+        End Try
 
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
             Logs.FailedLog()
@@ -66,7 +63,7 @@ Public Class Login_form
             MSG_Form.Show()
             Password_Form_Box.PasswordChar = "*"
             Password_Form_Box.Text = ""
-
+            Encryption.HashStore = Nothing
 
         ElseIf admin_table.Rows.Count() > 0 Then
             Logs.Log()
@@ -76,9 +73,9 @@ Public Class Login_form
             'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
             Me.Hide()
             Password_Form_Box.Text = ""
-
+            Encryption.HashStore = Nothing
         ElseIf user_table.Rows.Count() > 0 Then
-
+            Encryption.HashStore = Nothing
             test = 2
             MSG_Form.Show()
             ID_Label.Text = user_table.Rows(0)(0)

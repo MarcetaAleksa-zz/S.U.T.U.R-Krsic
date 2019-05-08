@@ -3,3 +3,5 @@ Card Type: American Express;  Ammount: 0KM; First Name: Emmanuel; Last Name: Har
 Card Type: American Express;  Ammount: 0KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 24-Apr-2019 06:13:59
 Card Type: American Express;  Ammount: 0KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 24-Apr-2019 06:17:03
 Card Type: American Express;  Ammount: 0KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 24-Apr-2019 06:18:36
+Card Type: Master Card; Ammount: 1750KM; First Name: Aditya; Last Name: Jackson; Credit Card Number: 5241990319676045; ;; Purchase attempt: 03-May-2019 03:30:59
+Card Type: Master Card; Ammount: 650KM; First Name: Conner; Last Name: Salas; Credit Card Number: 5551764569770236; ;; Purchase attempt: 03-May-2019 03:32:48

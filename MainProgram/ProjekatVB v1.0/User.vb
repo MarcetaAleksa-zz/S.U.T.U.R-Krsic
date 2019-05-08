@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class User
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
-        Me.Hide()
+        Me.Close()
         Login_form.Show()
     End Sub
 

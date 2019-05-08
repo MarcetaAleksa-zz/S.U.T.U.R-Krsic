@@ -52,33 +52,36 @@ Partial Class PaymentMethod_From
         Me.Email_TextBox = New System.Windows.Forms.TextBox()
         Me.Adress_Label = New System.Windows.Forms.Label()
         Me.Adress_TextBox = New System.Windows.Forms.TextBox()
-        Me.Price_Lable = New System.Windows.Forms.Label()
-        Me.Price_TextBox = New System.Windows.Forms.TextBox()
-        Me.Exit_Button = New System.Windows.Forms.Button()
-        Me.Purchase_Button = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Price_Lable = New System.Windows.Forms.Label()
+        Me.Price_TextBox = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Exit_Button = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.VisaBox.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -328,7 +331,7 @@ Partial Class PaymentMethod_From
         'Email_Label
         '
         Me.Email_Label.AutoSize = True
-        Me.Email_Label.Location = New System.Drawing.Point(991, 235)
+        Me.Email_Label.Location = New System.Drawing.Point(369, 106)
         Me.Email_Label.Name = "Email_Label"
         Me.Email_Label.Size = New System.Drawing.Size(32, 13)
         Me.Email_Label.TabIndex = 140
@@ -336,15 +339,15 @@ Partial Class PaymentMethod_From
         '
         'Email_TextBox
         '
-        Me.Email_TextBox.Location = New System.Drawing.Point(960, 263)
+        Me.Email_TextBox.Location = New System.Drawing.Point(276, 131)
         Me.Email_TextBox.Name = "Email_TextBox"
-        Me.Email_TextBox.Size = New System.Drawing.Size(184, 20)
+        Me.Email_TextBox.Size = New System.Drawing.Size(225, 20)
         Me.Email_TextBox.TabIndex = 139
         '
         'Adress_Label
         '
         Me.Adress_Label.AutoSize = True
-        Me.Adress_Label.Location = New System.Drawing.Point(936, 168)
+        Me.Adress_Label.Location = New System.Drawing.Point(273, 43)
         Me.Adress_Label.Name = "Adress_Label"
         Me.Adress_Label.Size = New System.Drawing.Size(228, 13)
         Me.Adress_Label.TabIndex = 13
@@ -352,51 +355,18 @@ Partial Class PaymentMethod_From
         '
         'Adress_TextBox
         '
-        Me.Adress_TextBox.Location = New System.Drawing.Point(960, 212)
+        Me.Adress_TextBox.Location = New System.Drawing.Point(276, 69)
         Me.Adress_TextBox.Name = "Adress_TextBox"
-        Me.Adress_TextBox.Size = New System.Drawing.Size(202, 20)
+        Me.Adress_TextBox.Size = New System.Drawing.Size(225, 20)
         Me.Adress_TextBox.TabIndex = 12
-        '
-        'Price_Lable
-        '
-        Me.Price_Lable.AutoSize = True
-        Me.Price_Lable.Location = New System.Drawing.Point(379, 15)
-        Me.Price_Lable.Name = "Price_Lable"
-        Me.Price_Lable.Size = New System.Drawing.Size(34, 13)
-        Me.Price_Lable.TabIndex = 11
-        Me.Price_Lable.Text = "Price:"
-        '
-        'Price_TextBox
-        '
-        Me.Price_TextBox.Location = New System.Drawing.Point(433, 12)
-        Me.Price_TextBox.Name = "Price_TextBox"
-        Me.Price_TextBox.ReadOnly = True
-        Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Price_TextBox.TabIndex = 10
-        Me.Price_TextBox.Text = "0"
-        '
-        'Exit_Button
-        '
-        Me.Exit_Button.Location = New System.Drawing.Point(13, 378)
-        Me.Exit_Button.Name = "Exit_Button"
-        Me.Exit_Button.Size = New System.Drawing.Size(150, 50)
-        Me.Exit_Button.TabIndex = 7
-        Me.Exit_Button.Text = "Exit"
-        Me.Exit_Button.UseVisualStyleBackColor = True
-        '
-        'Purchase_Button
-        '
-        Me.Purchase_Button.Location = New System.Drawing.Point(994, 463)
-        Me.Purchase_Button.Name = "Purchase_Button"
-        Me.Purchase_Button.Size = New System.Drawing.Size(150, 50)
-        Me.Purchase_Button.TabIndex = 6
-        Me.Purchase_Button.Text = "Purchase"
-        Me.Purchase_Button.UseVisualStyleBackColor = True
-        Me.Purchase_Button.Visible = False
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1287, 68)
@@ -423,93 +393,49 @@ Partial Class PaymentMethod_From
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1
         '
-        'Panel6
+        'Price_Lable
         '
-        Me.Panel6.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel6.Controls.Add(Me.Label1)
-        Me.Panel6.Controls.Add(Me.Label2)
-        Me.Panel6.Controls.Add(Me.Label3)
-        Me.Panel6.Controls.Add(Me.Label4)
-        Me.Panel6.Controls.Add(Me.TextBox1)
-        Me.Panel6.Controls.Add(Me.TextBox2)
-        Me.Panel6.Controls.Add(Me.TextBox3)
-        Me.Panel6.Controls.Add(Me.TextBox4)
-        Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Controls.Add(Me.TextBox5)
-        Me.Panel6.Controls.Add(Me.Button3)
-        Me.Panel6.Controls.Add(Me.Price_TextBox)
-        Me.Panel6.Controls.Add(Me.Price_Lable)
-        Me.Panel6.Controls.Add(Me.Button4)
-        Me.Panel6.Location = New System.Drawing.Point(187, 68)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(553, 445)
-        Me.Panel6.TabIndex = 1
+        Me.Price_Lable.AutoSize = True
+        Me.Price_Lable.Font = New System.Drawing.Font("Segoe MDL2 Assets", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Price_Lable.Location = New System.Drawing.Point(31, 315)
+        Me.Price_Lable.Name = "Price_Lable"
+        Me.Price_Lable.Size = New System.Drawing.Size(55, 21)
+        Me.Price_Lable.TabIndex = 11
+        Me.Price_Lable.Text = "PRICE"
         '
-        'Label1
+        'Price_TextBox
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 161)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 13)
-        Me.Label1.TabIndex = 36
-        Me.Label1.Text = "Expiration Date:"
+        Me.Price_TextBox.Location = New System.Drawing.Point(86, 319)
+        Me.Price_TextBox.Name = "Price_TextBox"
+        Me.Price_TextBox.ReadOnly = True
+        Me.Price_TextBox.Size = New System.Drawing.Size(58, 20)
+        Me.Price_TextBox.TabIndex = 10
+        Me.Price_TextBox.Text = "0"
         '
-        'Label2
+        'Button3
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(21, 113)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
-        Me.Label2.TabIndex = 35
-        Me.Label2.Text = "Card Number:"
+        Me.Button3.Location = New System.Drawing.Point(241, 187)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(125, 47)
+        Me.Button3.TabIndex = 26
+        Me.Button3.Text = "Purchase"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'Label3
+        'TextBox5
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(33, 84)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 13)
-        Me.Label3.TabIndex = 34
-        Me.Label3.Text = "Last Name:"
+        Me.TextBox5.Location = New System.Drawing.Point(106, 154)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox5.TabIndex = 27
         '
-        'Label4
+        'Exit_Button
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(33, 54)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 13)
-        Me.Label4.TabIndex = 33
-        Me.Label4.Text = "First Name:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(106, 212)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 32
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(106, 110)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 31
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(106, 77)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 30
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(106, 51)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 29
+        Me.Exit_Button.Location = New System.Drawing.Point(372, 186)
+        Me.Exit_Button.Name = "Exit_Button"
+        Me.Exit_Button.Size = New System.Drawing.Size(142, 46)
+        Me.Exit_Button.TabIndex = 7
+        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -520,49 +446,158 @@ Partial Class PaymentMethod_From
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "CVV:"
         '
-        'TextBox5
+        'TextBox4
         '
-        Me.TextBox5.Location = New System.Drawing.Point(106, 154)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 27
+        Me.TextBox4.Location = New System.Drawing.Point(106, 51)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox4.TabIndex = 29
         '
-        'Button3
+        'TextBox3
         '
-        Me.Button3.Location = New System.Drawing.Point(106, 376)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(166, 47)
-        Me.Button3.TabIndex = 26
-        Me.Button3.Text = "Purchase"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.TextBox3.Location = New System.Drawing.Point(106, 77)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.TabIndex = 30
         '
-        'Button4
+        'TextBox2
         '
-        Me.Button4.Location = New System.Drawing.Point(278, 376)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(183, 47)
-        Me.Button4.TabIndex = 25
-        Me.Button4.Text = "Exit"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.TextBox2.Location = New System.Drawing.Point(106, 110)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 31
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(106, 212)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 32
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(33, 54)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 13)
+        Me.Label4.TabIndex = 33
+        Me.Label4.Text = "First Name:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(33, 84)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(61, 13)
+        Me.Label3.TabIndex = 34
+        Me.Label3.Text = "Last Name:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(21, 113)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 35
+        Me.Label2.Text = "Card Number:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(11, 161)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(82, 13)
+        Me.Label1.TabIndex = 36
+        Me.Label1.Text = "Expiration Date:"
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel6.Controls.Add(Me.Label1)
+        Me.Panel6.Controls.Add(Me.Label2)
+        Me.Panel6.Controls.Add(Me.Label3)
+        Me.Panel6.Controls.Add(Me.Email_Label)
+        Me.Panel6.Controls.Add(Me.Email_TextBox)
+        Me.Panel6.Controls.Add(Me.Label4)
+        Me.Panel6.Controls.Add(Me.TextBox1)
+        Me.Panel6.Controls.Add(Me.TextBox2)
+        Me.Panel6.Controls.Add(Me.TextBox3)
+        Me.Panel6.Controls.Add(Me.Adress_TextBox)
+        Me.Panel6.Controls.Add(Me.Adress_Label)
+        Me.Panel6.Controls.Add(Me.TextBox4)
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Controls.Add(Me.Exit_Button)
+        Me.Panel6.Controls.Add(Me.TextBox5)
+        Me.Panel6.Controls.Add(Me.Button3)
+        Me.Panel6.Location = New System.Drawing.Point(187, 68)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(553, 280)
+        Me.Panel6.TabIndex = 1
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.Label6.Location = New System.Drawing.Point(317, 22)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(115, 25)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "PAYMENT"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label7.Location = New System.Drawing.Point(331, 44)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(85, 18)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "VISA CARD"
+        Me.Label7.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label8.Location = New System.Drawing.Point(316, 44)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(116, 18)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "MASTER CARD"
+        Me.Label8.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label9.Location = New System.Drawing.Point(292, 44)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(160, 18)
+        Me.Label9.TabIndex = 1
+        Me.Label9.Text = "AMERICAN EXPRESS"
+        Me.Label9.Visible = False
         '
         'PaymentMethod_From
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1229, 611)
+        Me.ClientSize = New System.Drawing.Size(750, 356)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Purchase_Button)
-        Me.Controls.Add(Me.Email_Label)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Email_TextBox)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Adress_Label)
-        Me.Controls.Add(Me.Exit_Button)
-        Me.Controls.Add(Me.Adress_TextBox)
+        Me.Controls.Add(Me.Price_TextBox)
+        Me.Controls.Add(Me.Price_Lable)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PaymentMethod_From"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -572,6 +607,8 @@ Partial Class PaymentMethod_From
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
@@ -586,10 +623,6 @@ Partial Class PaymentMethod_From
     Friend WithEvents Visa_RadioButton As RadioButton
     Friend WithEvents AmericanExpress_RadioButton As RadioButton
     Friend WithEvents MasterCard_RadioButton As RadioButton
-    Friend WithEvents Exit_Button As Button
-    Friend WithEvents Purchase_Button As Button
-    Friend WithEvents Price_TextBox As TextBox
-    Friend WithEvents Price_Lable As Label
     Friend WithEvents Adress_Label As Label
     Friend WithEvents Adress_TextBox As TextBox
     Friend WithEvents Email_Label As Label
@@ -615,17 +648,23 @@ Partial Class PaymentMethod_From
     Friend WithEvents Button2 As Button
     Friend WithEvents Back_Button As Button
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Price_Lable As Label
+    Friend WithEvents Price_TextBox As TextBox
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Exit_Button As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
 End Class
