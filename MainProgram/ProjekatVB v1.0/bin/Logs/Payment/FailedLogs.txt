@@ -2,3 +2,7 @@
 Card Type: Master Card; Ammount: 0KM; First Name: ; Last Name: ; Credit Card Number: ; ;; Purchase attempt: 24-Apr-2019 06:36:26
 Card Type: Master Card; Ammount: 650KM; First Name: Conner; Last Name: Salas; Credit Card Number: 5551764569770236; ;; Purchase attempt: 03-May-2019 03:32:34
 Card Type: Master Card; Ammount: 650KM; First Name: Conner; Last Name: Salas; Credit Card Number: 5551764569770236; ;; Purchase attempt: 03-May-2019 03:32:38
+Card Type: Visa; Ammount: 0KM; First Name: ; Last Name: ; Credit Card Number: ; ;; Purchase attempt: 08-May-2019 07:59:20
+Card Type: Visa; Ammount: 0KM; First Name: ; Last Name: ; Credit Card Number: ; ;; Purchase attempt: 08-May-2019 07:59:32
+Card Type: Visa; Ammount: 0KM; First Name: Seige; Last Name: Parker; Credit Card Number: 4477503358419181; ;; Purchase attempt: 08-May-2019 08:07:10
+Card Type: Visa; Ammount: 0KM; First Name: Seige; Last Name: Parker; Credit Card Number: 4477503358419181; ;; Purchase attempt: 08-May-2019 08:07:16
