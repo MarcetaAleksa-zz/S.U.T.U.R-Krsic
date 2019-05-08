@@ -19,6 +19,11 @@ Public Class UnosRadnika
             UR_NoFile_Label.Visible = True
             UR_ClearImage_Button.Visible = False
         End If
+
+        If (UR_Password_TextBox.Text <> "Enter Password here") Then
+            UR_Password_TextBox.ForeColor = Color.Black 'timer da vraca boju fontu jer kada u polje za password(kada je prazno)pritisnem tab i pocnem pisati password on posivi
+        End If
+
     End Sub
     Private Sub UR_ClearImage_Button_Click(sender As Object, e As EventArgs) Handles UR_ClearImage_Button.Click
         UR_Picture.Image = Nothing 'dugme koje se pojavi samo ako postoji slika i koje brise sliku hehehhehehe
@@ -231,5 +236,9 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
         Administrator.Show()
+    End Sub
+
+    Private Sub UnosRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

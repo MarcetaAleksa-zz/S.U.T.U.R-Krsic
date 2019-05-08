@@ -22,6 +22,7 @@ Partial Class Login_form
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_form))
         Me.Login_Button = New System.Windows.Forms.Button()
         Me.Username_Form_Box = New System.Windows.Forms.TextBox()
@@ -35,6 +36,7 @@ Partial Class Login_form
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -50,7 +52,7 @@ Partial Class Login_form
         Me.Login_Button.Location = New System.Drawing.Point(92, 187)
         Me.Login_Button.Name = "Login_Button"
         Me.Login_Button.Size = New System.Drawing.Size(110, 37)
-        Me.Login_Button.TabIndex = 102
+        Me.Login_Button.TabIndex = 3
         Me.Login_Button.Text = "Login"
         Me.Login_Button.UseVisualStyleBackColor = False
         '
@@ -82,7 +84,7 @@ Partial Class Login_form
         Me.Guest_Login.Location = New System.Drawing.Point(200, 187)
         Me.Guest_Login.Name = "Guest_Login"
         Me.Guest_Login.Size = New System.Drawing.Size(112, 37)
-        Me.Guest_Login.TabIndex = 103
+        Me.Guest_Login.TabIndex = 4
         Me.Guest_Login.Text = "Guest"
         Me.Guest_Login.UseVisualStyleBackColor = False
         '
@@ -92,7 +94,7 @@ Partial Class Login_form
         Me.Exit_Button.Location = New System.Drawing.Point(92, 230)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(220, 24)
-        Me.Exit_Button.TabIndex = 104
+        Me.Exit_Button.TabIndex = 5
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
@@ -112,7 +114,7 @@ Partial Class Login_form
         Me.Panel1.Location = New System.Drawing.Point(92, 110)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(220, 26)
-        Me.Panel1.TabIndex = 199
+        Me.Panel1.TabIndex = 1
         '
         'PictureBox1
         '
@@ -132,7 +134,7 @@ Partial Class Login_form
         Me.Panel2.Location = New System.Drawing.Point(92, 142)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(220, 26)
-        Me.Panel2.TabIndex = 200
+        Me.Panel2.TabIndex = 2
         '
         'PictureBox2
         '
@@ -151,7 +153,7 @@ Partial Class Login_form
         Me.Panel3.Location = New System.Drawing.Point(-2, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(405, 68)
-        Me.Panel3.TabIndex = 9
+        Me.Panel3.TabIndex = 6
         '
         'Label1
         '
@@ -163,6 +165,11 @@ Partial Class Login_form
         Me.Label1.Size = New System.Drawing.Size(140, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "USER LOGIN"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1
         '
         'Login_form
         '
@@ -205,4 +212,5 @@ Partial Class Login_form
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Timer1 As Timer
 End Class

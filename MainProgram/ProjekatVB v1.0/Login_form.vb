@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class Login_form
     Public test As Double = 0
+    Public pozicija As Double = 0
     'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
         If (Username_Form_Box.Text = "Enter Username here") Then
@@ -17,14 +18,14 @@ Public Class Login_form
     Private Sub Password_Form_Box_Enter(sender As Object, e As EventArgs) Handles Password_Form_Box.Enter
         If (Password_Form_Box.Text = "Enter Password here") Then
             Password_Form_Box.Text = ""
-            Password_Form_Box.UseSystemPasswordChar = False
+            Password_Form_Box.UseSystemPasswordChar = True
             Password_Form_Box.ForeColor = Color.Black
         End If
     End Sub
     Private Sub Password_Form_Box_Leave(sender As Object, e As EventArgs) Handles Password_Form_Box.Leave
         If (Password_Form_Box.Text = "") Then
             Password_Form_Box.Text = "Enter Password here"
-            Password_Form_Box.UseSystemPasswordChar = True
+            Password_Form_Box.UseSystemPasswordChar = False
             Password_Form_Box.ForeColor = Color.Gray
         End If
     End Sub
@@ -60,7 +61,6 @@ Public Class Login_form
             Logs.FailedLog()
             test = 4
             MSG_Form.Show()
-            Password_Form_Box.PasswordChar = "*"
             Password_Form_Box.Text = ""
             Encryption.HashStore = Nothing
 
@@ -105,6 +105,12 @@ Public Class Login_form
             e.SuppressKeyPress = True
             Call Login_Button_Click(sender, e)
             'Nakon sto ukucamo lozinku pri pritisku entera se logujemo.
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If (Password_Form_Box.Text <> "Enter Password here") Then
+            Password_Form_Box.ForeColor = Color.Black 'timer da vraca boju fontu jer kada u polje za password(kada je prazno)pritisnem tab i pocnem pisati password on posivi
         End If
     End Sub
 End Class

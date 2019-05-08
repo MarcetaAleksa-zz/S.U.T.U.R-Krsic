@@ -69,4 +69,8 @@ Public Class User
             U_WDIM_TextBox.Text = "25"
         End If
     End Sub
+
+    Private Sub U_Picture_Click(sender As Object, e As EventArgs) Handles U_Picture.Click
+
+    End Sub
 End Class

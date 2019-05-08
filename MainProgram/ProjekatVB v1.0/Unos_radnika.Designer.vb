@@ -263,6 +263,7 @@ Partial Class UnosRadnika
         'UR_Timer
         '
         Me.UR_Timer.Enabled = True
+        Me.UR_Timer.Interval = 1
         '
         'UR_ChooseImage_Label
         '
@@ -407,7 +408,7 @@ Partial Class UnosRadnika
         Me.Panel1.Location = New System.Drawing.Point(21, 90)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(220, 26)
-        Me.Panel1.TabIndex = 200
+        Me.Panel1.TabIndex = 1
         '
         'UR_Name_TextBox
         '
@@ -427,7 +428,7 @@ Partial Class UnosRadnika
         Me.Panel2.Location = New System.Drawing.Point(21, 122)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(220, 26)
-        Me.Panel2.TabIndex = 200
+        Me.Panel2.TabIndex = 2
         '
         'UR_Surname_TextBox
         '
@@ -447,7 +448,7 @@ Partial Class UnosRadnika
         Me.Panel4.Location = New System.Drawing.Point(21, 154)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(220, 26)
-        Me.Panel4.TabIndex = 200
+        Me.Panel4.TabIndex = 3
         '
         'UR_Birth_TextBox
         '
@@ -467,7 +468,7 @@ Partial Class UnosRadnika
         Me.Panel5.Location = New System.Drawing.Point(21, 186)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(220, 26)
-        Me.Panel5.TabIndex = 200
+        Me.Panel5.TabIndex = 4
         '
         'UR_Position_TextBox
         '
@@ -487,7 +488,7 @@ Partial Class UnosRadnika
         Me.Panel6.Location = New System.Drawing.Point(21, 218)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(220, 26)
-        Me.Panel6.TabIndex = 200
+        Me.Panel6.TabIndex = 5
         '
         'UR_Phone_TextBox
         '
@@ -507,7 +508,7 @@ Partial Class UnosRadnika
         Me.Panel7.Location = New System.Drawing.Point(21, 250)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(220, 26)
-        Me.Panel7.TabIndex = 200
+        Me.Panel7.TabIndex = 6
         '
         'UR_Email_TextBox
         '
@@ -527,7 +528,7 @@ Partial Class UnosRadnika
         Me.Panel9.Location = New System.Drawing.Point(270, 218)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(220, 26)
-        Me.Panel9.TabIndex = 200
+        Me.Panel9.TabIndex = 7
         '
         'UR_Username_TextBox
         '
@@ -547,7 +548,7 @@ Partial Class UnosRadnika
         Me.Panel10.Location = New System.Drawing.Point(270, 250)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(220, 26)
-        Me.Panel10.TabIndex = 200
+        Me.Panel10.TabIndex = 8
         '
         'UR_Password_TextBox
         '
@@ -567,7 +568,7 @@ Partial Class UnosRadnika
         Me.Panel11.Location = New System.Drawing.Point(270, 282)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(220, 26)
-        Me.Panel11.TabIndex = 200
+        Me.Panel11.TabIndex = 9
         '
         'UR_ConfirmPassword_Textbox
         '

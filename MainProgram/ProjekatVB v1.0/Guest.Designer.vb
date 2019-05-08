@@ -63,7 +63,7 @@ Partial Class Guest
         Me.Order_Funeral_Button.Location = New System.Drawing.Point(103, 159)
         Me.Order_Funeral_Button.Name = "Order_Funeral_Button"
         Me.Order_Funeral_Button.Size = New System.Drawing.Size(198, 40)
-        Me.Order_Funeral_Button.TabIndex = 1
+        Me.Order_Funeral_Button.TabIndex = 2
         Me.Order_Funeral_Button.Text = "Order Funeral"
         Me.Order_Funeral_Button.UseVisualStyleBackColor = False
         '
@@ -72,7 +72,7 @@ Partial Class Guest
         Me.Exit_Button.Location = New System.Drawing.Point(175, 205)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
-        Me.Exit_Button.TabIndex = 1
+        Me.Exit_Button.TabIndex = 4
         Me.Exit_Button.Text = "Exit"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
@@ -82,7 +82,7 @@ Partial Class Guest
         Me.Back_Button.Location = New System.Drawing.Point(103, 205)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(39, 35)
-        Me.Back_Button.TabIndex = 2
+        Me.Back_Button.TabIndex = 3
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'Panel3

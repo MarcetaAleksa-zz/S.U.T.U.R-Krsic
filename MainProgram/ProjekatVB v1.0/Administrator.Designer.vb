@@ -22,6 +22,7 @@ Partial Class Administrator
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Administrator))
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
@@ -33,6 +34,7 @@ Partial Class Administrator
         Me.Storage_Button = New System.Windows.Forms.Button()
         Me.ViewPurchases_Button = New System.Windows.Forms.Button()
         Me.Logs_Button = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,6 +68,7 @@ Partial Class Administrator
         Me.OrderEquip_Button.TabIndex = 109
         Me.OrderEquip_Button.Text = "Order Equipment"
         Me.OrderEquip_Button.UseVisualStyleBackColor = False
+        Me.OrderEquip_Button.Visible = False
         '
         'Panel3
         '
@@ -98,6 +101,7 @@ Partial Class Administrator
         Me.VSK_Button.TabIndex = 106
         Me.VSK_Button.Text = "Show all workers"
         Me.VSK_Button.UseVisualStyleBackColor = False
+        Me.VSK_Button.Visible = False
         '
         'UNV_Button
         '
@@ -110,6 +114,7 @@ Partial Class Administrator
         Me.UNV_Button.TabIndex = 105
         Me.UNV_Button.Text = "Add new user"
         Me.UNV_Button.UseVisualStyleBackColor = False
+        Me.UNV_Button.Visible = False
         '
         'Storage_Button
         '
@@ -122,6 +127,7 @@ Partial Class Administrator
         Me.Storage_Button.TabIndex = 108
         Me.Storage_Button.Text = "View Storage"
         Me.Storage_Button.UseVisualStyleBackColor = False
+        Me.Storage_Button.Visible = False
         '
         'ViewPurchases_Button
         '
@@ -134,15 +140,22 @@ Partial Class Administrator
         Me.ViewPurchases_Button.TabIndex = 107
         Me.ViewPurchases_Button.Text = "View Purchases"
         Me.ViewPurchases_Button.UseVisualStyleBackColor = False
+        Me.ViewPurchases_Button.Visible = False
         '
         'Logs_Button
         '
-        Me.Logs_Button.Location = New System.Drawing.Point(12, 86)
+        Me.Logs_Button.Location = New System.Drawing.Point(291, 78)
         Me.Logs_Button.Name = "Logs_Button"
-        Me.Logs_Button.Size = New System.Drawing.Size(40, 24)
+        Me.Logs_Button.Size = New System.Drawing.Size(39, 176)
         Me.Logs_Button.TabIndex = 113
         Me.Logs_Button.Text = "Logs"
         Me.Logs_Button.UseVisualStyleBackColor = True
+        Me.Logs_Button.Visible = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1
         '
         'Administrator
         '
@@ -180,4 +193,5 @@ Partial Class Administrator
     Friend WithEvents Storage_Button As Button
     Friend WithEvents ViewPurchases_Button As Button
     Friend WithEvents Logs_Button As Button
+    Friend WithEvents Timer1 As Timer
 End Class

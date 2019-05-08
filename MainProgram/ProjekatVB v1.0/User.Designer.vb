@@ -45,27 +45,41 @@ Partial Class User
         Me.U_Month_Dropdown = New System.Windows.Forms.ComboBox()
         Me.U_Phone_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Possition_TextBox = New System.Windows.Forms.TextBox()
-        Me.U_Possition_Label = New System.Windows.Forms.Label()
         Me.U_Name_TextBox = New System.Windows.Forms.TextBox()
-        Me.U_Phone_label = New System.Windows.Forms.Label()
         Me.U_Picture = New System.Windows.Forms.PictureBox()
         Me.U_Username_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Birth_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Email_TextBox = New System.Windows.Forms.TextBox()
         Me.U_Surname_TextBox = New System.Windows.Forms.TextBox()
-        Me.U_Username_Label = New System.Windows.Forms.Label()
-        Me.U_Birth_Label = New System.Windows.Forms.Label()
-        Me.U_Email_Label = New System.Windows.Forms.Label()
-        Me.U_SName_Label = New System.Windows.Forms.Label()
         Me.U_Name_Label = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
         Me.U_Monthly_Pay_GroupBox.SuspendLayout()
         CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         Me.SuspendLayout()
         '
         'Back_Button
@@ -108,21 +122,22 @@ Partial Class User
         '
         'TabUserInfo
         '
+        Me.TabUserInfo.BackColor = System.Drawing.SystemColors.Control
+        Me.TabUserInfo.Controls.Add(Me.Panel9)
+        Me.TabUserInfo.Controls.Add(Me.Panel8)
+        Me.TabUserInfo.Controls.Add(Me.Panel7)
+        Me.TabUserInfo.Controls.Add(Me.Panel6)
+        Me.TabUserInfo.Controls.Add(Me.Panel5)
+        Me.TabUserInfo.Controls.Add(Me.Panel4)
+        Me.TabUserInfo.Controls.Add(Me.Panel2)
         Me.TabUserInfo.Controls.Add(Me.U_Monthly_Pay_GroupBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Phone_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Possition_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Possition_Label)
-        Me.TabUserInfo.Controls.Add(Me.U_Name_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Phone_label)
         Me.TabUserInfo.Controls.Add(Me.U_Picture)
-        Me.TabUserInfo.Controls.Add(Me.U_Username_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Birth_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Email_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Surname_TextBox)
-        Me.TabUserInfo.Controls.Add(Me.U_Username_Label)
-        Me.TabUserInfo.Controls.Add(Me.U_Birth_Label)
-        Me.TabUserInfo.Controls.Add(Me.U_Email_Label)
-        Me.TabUserInfo.Controls.Add(Me.U_SName_Label)
+        Me.TabUserInfo.Controls.Add(Me.Label5)
+        Me.TabUserInfo.Controls.Add(Me.Label8)
+        Me.TabUserInfo.Controls.Add(Me.Label7)
+        Me.TabUserInfo.Controls.Add(Me.Label6)
+        Me.TabUserInfo.Controls.Add(Me.Label4)
+        Me.TabUserInfo.Controls.Add(Me.Label3)
         Me.TabUserInfo.Controls.Add(Me.U_Name_Label)
         Me.TabUserInfo.Location = New System.Drawing.Point(4, 22)
         Me.TabUserInfo.Name = "TabUserInfo"
@@ -130,7 +145,6 @@ Partial Class User
         Me.TabUserInfo.Size = New System.Drawing.Size(768, 359)
         Me.TabUserInfo.TabIndex = 1
         Me.TabUserInfo.Text = "User Information"
-        Me.TabUserInfo.UseVisualStyleBackColor = True
         '
         'U_Monthly_Pay_GroupBox
         '
@@ -267,49 +281,37 @@ Partial Class User
         '
         'U_Phone_TextBox
         '
-        Me.U_Phone_TextBox.Location = New System.Drawing.Point(93, 215)
+        Me.U_Phone_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.U_Phone_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.U_Phone_TextBox.Location = New System.Drawing.Point(12, 6)
         Me.U_Phone_TextBox.Name = "U_Phone_TextBox"
         Me.U_Phone_TextBox.ReadOnly = True
-        Me.U_Phone_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Phone_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Phone_TextBox.TabIndex = 15
         '
         'U_Possition_TextBox
         '
-        Me.U_Possition_TextBox.Location = New System.Drawing.Point(93, 185)
+        Me.U_Possition_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.U_Possition_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.U_Possition_TextBox.Location = New System.Drawing.Point(12, 8)
         Me.U_Possition_TextBox.Name = "U_Possition_TextBox"
         Me.U_Possition_TextBox.ReadOnly = True
-        Me.U_Possition_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Possition_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Possition_TextBox.TabIndex = 14
-        '
-        'U_Possition_Label
-        '
-        Me.U_Possition_Label.AutoSize = True
-        Me.U_Possition_Label.Location = New System.Drawing.Point(9, 192)
-        Me.U_Possition_Label.Name = "U_Possition_Label"
-        Me.U_Possition_Label.Size = New System.Drawing.Size(81, 13)
-        Me.U_Possition_Label.TabIndex = 13
-        Me.U_Possition_Label.Text = "Work Possition:"
         '
         'U_Name_TextBox
         '
-        Me.U_Name_TextBox.Location = New System.Drawing.Point(93, 22)
+        Me.U_Name_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.U_Name_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.U_Name_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Name_TextBox.Name = "U_Name_TextBox"
         Me.U_Name_TextBox.ReadOnly = True
-        Me.U_Name_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Name_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Name_TextBox.TabIndex = 12
-        '
-        'U_Phone_label
-        '
-        Me.U_Phone_label.AutoSize = True
-        Me.U_Phone_label.Location = New System.Drawing.Point(32, 218)
-        Me.U_Phone_label.Name = "U_Phone_label"
-        Me.U_Phone_label.Size = New System.Drawing.Size(41, 13)
-        Me.U_Phone_label.TabIndex = 11
-        Me.U_Phone_label.Text = "Phone:"
         '
         'U_Picture
         '
-        Me.U_Picture.Location = New System.Drawing.Point(229, 22)
+        Me.U_Picture.Location = New System.Drawing.Point(255, 52)
         Me.U_Picture.Name = "U_Picture"
         Me.U_Picture.Size = New System.Drawing.Size(126, 113)
         Me.U_Picture.TabIndex = 10
@@ -317,80 +319,54 @@ Partial Class User
         '
         'U_Username_TextBox
         '
-        Me.U_Username_TextBox.Location = New System.Drawing.Point(93, 154)
+        Me.U_Username_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.U_Username_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.U_Username_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Username_TextBox.Name = "U_Username_TextBox"
         Me.U_Username_TextBox.ReadOnly = True
-        Me.U_Username_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Username_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Username_TextBox.TabIndex = 9
         '
         'U_Birth_TextBox
         '
-        Me.U_Birth_TextBox.Location = New System.Drawing.Point(93, 122)
+        Me.U_Birth_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.U_Birth_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.U_Birth_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Birth_TextBox.Name = "U_Birth_TextBox"
         Me.U_Birth_TextBox.ReadOnly = True
-        Me.U_Birth_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Birth_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Birth_TextBox.TabIndex = 8
         '
         'U_Email_TextBox
         '
-        Me.U_Email_TextBox.Location = New System.Drawing.Point(93, 91)
+        Me.U_Email_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.U_Email_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.U_Email_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Email_TextBox.Name = "U_Email_TextBox"
         Me.U_Email_TextBox.ReadOnly = True
-        Me.U_Email_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Email_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Email_TextBox.TabIndex = 7
         '
         'U_Surname_TextBox
         '
-        Me.U_Surname_TextBox.Location = New System.Drawing.Point(93, 55)
+        Me.U_Surname_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.U_Surname_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.U_Surname_TextBox.Location = New System.Drawing.Point(12, 6)
         Me.U_Surname_TextBox.Name = "U_Surname_TextBox"
         Me.U_Surname_TextBox.ReadOnly = True
-        Me.U_Surname_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.U_Surname_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Surname_TextBox.TabIndex = 6
-        '
-        'U_Username_Label
-        '
-        Me.U_Username_Label.AutoSize = True
-        Me.U_Username_Label.Location = New System.Drawing.Point(32, 161)
-        Me.U_Username_Label.Name = "U_Username_Label"
-        Me.U_Username_Label.Size = New System.Drawing.Size(58, 13)
-        Me.U_Username_Label.TabIndex = 4
-        Me.U_Username_Label.Text = "Username:"
-        '
-        'U_Birth_Label
-        '
-        Me.U_Birth_Label.AutoSize = True
-        Me.U_Birth_Label.Location = New System.Drawing.Point(59, 129)
-        Me.U_Birth_Label.Name = "U_Birth_Label"
-        Me.U_Birth_Label.Size = New System.Drawing.Size(31, 13)
-        Me.U_Birth_Label.TabIndex = 3
-        Me.U_Birth_Label.Text = "Birth:"
-        '
-        'U_Email_Label
-        '
-        Me.U_Email_Label.AutoSize = True
-        Me.U_Email_Label.Location = New System.Drawing.Point(52, 99)
-        Me.U_Email_Label.Name = "U_Email_Label"
-        Me.U_Email_Label.Size = New System.Drawing.Size(38, 13)
-        Me.U_Email_Label.TabIndex = 2
-        Me.U_Email_Label.Text = "E-mail:"
-        '
-        'U_SName_Label
-        '
-        Me.U_SName_Label.AutoSize = True
-        Me.U_SName_Label.Location = New System.Drawing.Point(38, 62)
-        Me.U_SName_Label.Name = "U_SName_Label"
-        Me.U_SName_Label.Size = New System.Drawing.Size(52, 13)
-        Me.U_SName_Label.TabIndex = 1
-        Me.U_SName_Label.Text = "Surname:"
         '
         'U_Name_Label
         '
         Me.U_Name_Label.AutoSize = True
-        Me.U_Name_Label.Location = New System.Drawing.Point(52, 28)
+        Me.U_Name_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.U_Name_Label.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.U_Name_Label.Location = New System.Drawing.Point(53, 56)
         Me.U_Name_Label.Name = "U_Name_Label"
-        Me.U_Name_Label.Size = New System.Drawing.Size(38, 13)
+        Me.U_Name_Label.Size = New System.Drawing.Size(51, 16)
         Me.U_Name_Label.TabIndex = 0
-        Me.U_Name_Label.Text = "Name:"
+        Me.U_Name_Label.Text = "NAME"
         '
         'Timer1
         '
@@ -417,11 +393,140 @@ Partial Class User
         Me.Label2.TabIndex = 66666
         Me.Label2.Text = "USER PANEL"
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.U_Name_TextBox)
+        Me.Panel2.Location = New System.Drawing.Point(110, 52)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(139, 26)
+        Me.Panel2.TabIndex = 18
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(20, 89)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(83, 16)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "SURNAME"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(49, 160)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(54, 16)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "BIRTH"
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.U_Surname_TextBox)
+        Me.Panel4.Location = New System.Drawing.Point(110, 85)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(139, 26)
+        Me.Panel4.TabIndex = 18
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.U_Email_TextBox)
+        Me.Panel5.Location = New System.Drawing.Point(110, 122)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(139, 26)
+        Me.Panel5.TabIndex = 18
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.U_Birth_TextBox)
+        Me.Panel6.Location = New System.Drawing.Point(110, 156)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(139, 26)
+        Me.Panel6.TabIndex = 18
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel7.Controls.Add(Me.U_Username_TextBox)
+        Me.Panel7.Location = New System.Drawing.Point(110, 188)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(139, 26)
+        Me.Panel7.TabIndex = 18
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel8.Controls.Add(Me.U_Possition_TextBox)
+        Me.Panel8.Location = New System.Drawing.Point(110, 220)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(139, 26)
+        Me.Panel8.TabIndex = 18
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.U_Phone_TextBox)
+        Me.Panel9.Location = New System.Drawing.Point(110, 252)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(139, 26)
+        Me.Panel9.TabIndex = 18
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(46, 127)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 16)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "E-MAIL"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(10, 193)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 16)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "USERNAME"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(14, 226)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(89, 16)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "POSSITION"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(33, 257)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(61, 16)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "PHONE"
+        '
         'User
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(797, 507)
+        Me.ClientSize = New System.Drawing.Size(802, 517)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Exit_Button)
@@ -439,6 +544,20 @@ Partial Class User
         CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -449,20 +568,14 @@ Partial Class User
     Friend WithEvents TabStorage As TabPage
     Friend WithEvents TabUserInfo As TabPage
     Friend WithEvents U_Name_TextBox As TextBox
-    Friend WithEvents U_Phone_label As Label
     Friend WithEvents U_Picture As PictureBox
     Friend WithEvents U_Username_TextBox As TextBox
     Friend WithEvents U_Birth_TextBox As TextBox
     Friend WithEvents U_Email_TextBox As TextBox
     Friend WithEvents U_Surname_TextBox As TextBox
-    Friend WithEvents U_Username_Label As Label
-    Friend WithEvents U_Birth_Label As Label
-    Friend WithEvents U_Email_Label As Label
-    Friend WithEvents U_SName_Label As Label
     Friend WithEvents U_Name_Label As Label
     Friend WithEvents U_Phone_TextBox As TextBox
     Friend WithEvents U_Possition_TextBox As TextBox
-    Friend WithEvents U_Possition_Label As Label
     Friend WithEvents U_Monthly_Pay_GroupBox As GroupBox
     Friend WithEvents U_Month_Dropdown As ComboBox
     Friend WithEvents U_PB_Label As Label
@@ -480,4 +593,17 @@ Partial Class User
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label2 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
 End Class
