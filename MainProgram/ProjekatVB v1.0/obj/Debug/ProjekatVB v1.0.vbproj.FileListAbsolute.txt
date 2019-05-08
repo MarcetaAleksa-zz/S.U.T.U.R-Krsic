@@ -16,7 +16,6 @@ C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\P
 C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
 C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
-C:\Users\IT\Desktop\Projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache
 C:\Users\IT\Desktop\Projekat\SadSmoGaUsrali\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe.config
 C:\Users\IT\Desktop\Projekat\SadSmoGaUsrali\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe
 C:\Users\IT\Desktop\Projekat\SadSmoGaUsrali\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.pdb

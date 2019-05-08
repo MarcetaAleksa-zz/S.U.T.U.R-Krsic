@@ -7,13 +7,13 @@ Public Class PaymentMethod_From
     Private Sub PaymentMethod_From_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim recieve As String = Command()
-            ' Price_TextBox.Text = recieve
-            ' Price_TextBox.Refresh()
+            PriceTextBox.Text = recieve
+            PriceTextBox.Refresh()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
         Price = PriceTextBox.Text
-        PriceTextBox.Text = "50"
+        'PriceTextBox.Text = "50"
         PriceTextBox.Show()
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
