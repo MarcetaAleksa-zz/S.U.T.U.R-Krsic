@@ -36,7 +36,7 @@ Public Class AmericanExpress_Form
             Dim payment_table As New DataTable
             adapter.Fill(payment_table)
             Ava_Balance = payment_table.Rows(0)(0)
-            If (Ava_Balance - PaymentMethod_From.Price_TextBox.Text) > 0 Then
+            If (Ava_Balance - PaymentMethod_From.PriceTextBox.Text) > 0 Then
                 Dim New_Balance As Integer = Ava_Balance - PaymentMethod_From.Price
                 command.CommandText = "UPDATE Payment.dbo.Account_Balance SET Money ='" & New_Balance & "' WHERE CVV = @CVV"
                 databaseconnection.connection.Open()
@@ -57,10 +57,6 @@ Public Class AmericanExpress_Form
             End If
             Me.Close()
         End If
-
-    End Sub
-
-    Private Sub AmericanExpress_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

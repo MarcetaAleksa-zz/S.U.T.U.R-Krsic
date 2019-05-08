@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="VisaPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAAL6CAIAAACpUDioAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH4QgKCCge50ALUwAAdflJREFU
@@ -628,7 +628,7 @@
         AAAAR7EQAgAAAICT/v77/wd40TeT+EWrRQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="AmExpPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+gAAAUYCAMAAAAMPwj1AAAABGdBTUEAALGPC/xhBQAAAwBQTFRFAQEB
         /v7+/f39AgICAwMD/Pz8+/v7BAQEBQUF+vr6BgYG+fn5BwcH+Pj4CAgI9/f3CQkJ9vb2CgoK9fX1CwsL
@@ -5909,7 +5909,7 @@
         crkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="MasterCardPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAAJ2CAYAAABPQHtcAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
         nQd4FNf19kcCRHHBDdtUIaGGRLNxwSV2HMeJE6PdFVi20ztx6j/1S+IUYoMxpvfm3h0Sx4XmFuNOE72r
