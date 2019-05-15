@@ -35,3 +35,22 @@ C:\Users\IT\Desktop\Projekat\SadSmoGaUsrali\MainProgram\ProjekatVB v1.0\obj\Debu
 C:\Users\IT\Desktop\Projekat\SadSmoGaUsrali\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
 C:\Users\IT\Desktop\Projekat\SadSmoGaUsrali\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\IT\Desktop\Projekat\SadSmoGaUsrali\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe.config
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.pdb
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.xml
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Administrator.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.MSG_Form.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UnosRadnika.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Guest.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Login_form.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Resources.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Display_Goods_Guest.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Order_Funeral.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.User.resources
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbproj.GenerateResource.cache
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbproj.CoreCompileInputs.cache
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
+C:\Users\Sajtrix\Desktop\Panzin projekat\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
