@@ -52,7 +52,7 @@ Partial Class Guest
         Me.Display_Goods_Button.Name = "Display_Goods_Button"
         Me.Display_Goods_Button.Size = New System.Drawing.Size(198, 40)
         Me.Display_Goods_Button.TabIndex = 1
-        Me.Display_Goods_Button.Text = "Display Goods"
+        Me.Display_Goods_Button.Text = "Artikli"
         Me.Display_Goods_Button.UseVisualStyleBackColor = False
         '
         'Order_Funeral_Button
@@ -64,7 +64,7 @@ Partial Class Guest
         Me.Order_Funeral_Button.Name = "Order_Funeral_Button"
         Me.Order_Funeral_Button.Size = New System.Drawing.Size(198, 40)
         Me.Order_Funeral_Button.TabIndex = 2
-        Me.Order_Funeral_Button.Text = "Order Funeral"
+        Me.Order_Funeral_Button.Text = "Narudžba"
         Me.Order_Funeral_Button.UseVisualStyleBackColor = False
         '
         'Exit_Button
@@ -73,7 +73,7 @@ Partial Class Guest
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
         Me.Exit_Button.TabIndex = 4
-        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.Text = "Izlaz"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
         'Back_Button
@@ -101,9 +101,9 @@ Partial Class Guest
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(129, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(159, 25)
+        Me.Label1.Size = New System.Drawing.Size(146, 25)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "GUEST PANEL"
+        Me.Label1.Text = "GOST PANEL"
         '
         'Guest
         '

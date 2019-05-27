@@ -20,19 +20,19 @@
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If Login_form.test = 1 Then
-            Label1.Text = "ADMINISTRATOR PANEL"
+            Label1.Text = "ADMINISTRATORSKI PANEL"
             Label2.Show()
             Label3.Hide()
         ElseIf Login_form.test = 2 Then
-            Label1.Text = "          USER PANEL"
+            Label1.Text = "          KORISNIČKI PANEL"
             Label2.Show()
             Label3.Hide()
         ElseIf Login_form.test = 3 Then
-            Label1.Text = "          GUEST PANEL"
+            Label1.Text = "          GOST PANEL"
             Label2.Show()
             Label3.Hide()
         ElseIf Login_form.test = 4 Then
-            Label1.Text = "                ERROR"
+            Label1.Text = "                GREŠKA"
             Label2.Hide()
             Label3.Show()
         End If

@@ -53,7 +53,7 @@ Partial Class Login_form
         Me.Login_Button.Name = "Login_Button"
         Me.Login_Button.Size = New System.Drawing.Size(110, 37)
         Me.Login_Button.TabIndex = 3
-        Me.Login_Button.Text = "Login"
+        Me.Login_Button.Text = "Prijava"
         Me.Login_Button.UseVisualStyleBackColor = False
         '
         'Username_Form_Box
@@ -65,7 +65,7 @@ Partial Class Login_form
         Me.Username_Form_Box.Name = "Username_Form_Box"
         Me.Username_Form_Box.Size = New System.Drawing.Size(149, 13)
         Me.Username_Form_Box.TabIndex = 100
-        Me.Username_Form_Box.Text = "Enter Username here"
+        Me.Username_Form_Box.Text = "Unesi korisničko ime ovde"
         '
         'Password_Form_Box
         '
@@ -76,7 +76,7 @@ Partial Class Login_form
         Me.Password_Form_Box.Name = "Password_Form_Box"
         Me.Password_Form_Box.Size = New System.Drawing.Size(158, 13)
         Me.Password_Form_Box.TabIndex = 101
-        Me.Password_Form_Box.Text = "Enter Password here"
+        Me.Password_Form_Box.Text = "Unesi lozinku ovde"
         '
         'Guest_Login
         '
@@ -85,7 +85,7 @@ Partial Class Login_form
         Me.Guest_Login.Name = "Guest_Login"
         Me.Guest_Login.Size = New System.Drawing.Size(112, 37)
         Me.Guest_Login.TabIndex = 4
-        Me.Guest_Login.Text = "Guest"
+        Me.Guest_Login.Text = "Gost"
         Me.Guest_Login.UseVisualStyleBackColor = False
         '
         'Exit_Button
@@ -95,7 +95,7 @@ Partial Class Login_form
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(220, 24)
         Me.Exit_Button.TabIndex = 5
-        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.Text = "Izlaz"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
         'ID_Label
@@ -160,11 +160,11 @@ Partial Class Login_form
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(137, 25)
+        Me.Label1.Location = New System.Drawing.Point(154, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 25)
+        Me.Label1.Size = New System.Drawing.Size(99, 25)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "USER LOGIN"
+        Me.Label1.Text = "PRIJAVA"
         '
         'Timer1
         '

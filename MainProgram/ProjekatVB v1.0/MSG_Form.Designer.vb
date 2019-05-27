@@ -58,9 +58,9 @@ Partial Class MSG_Form
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(88, 49)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 18)
+        Me.Label2.Size = New System.Drawing.Size(84, 18)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Welcome!"
+        Me.Label2.Text = "Dobrodošli!"
         '
         'Button1
         '
@@ -83,11 +83,11 @@ Partial Class MSG_Form
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(-3, 49)
+        Me.Label3.Location = New System.Drawing.Point(28, 52)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(261, 15)
+        Me.Label3.Size = New System.Drawing.Size(192, 15)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Please enter correct Username and Password!"
+        Me.Label3.Text = "Netačno korisničko ime ili lozinka!"
         Me.Label3.Visible = False
         '
         'MSG_Form

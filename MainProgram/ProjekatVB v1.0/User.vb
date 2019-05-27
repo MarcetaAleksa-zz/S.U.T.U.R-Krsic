@@ -73,4 +73,8 @@ Public Class User
     Private Sub U_Picture_Click(sender As Object, e As EventArgs) Handles U_Picture.Click
 
     End Sub
+
+    Private Sub U_OCH_Label_Click(sender As Object, e As EventArgs) Handles U_OCH_Label.Click
+
+    End Sub
 End Class

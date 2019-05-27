@@ -123,7 +123,7 @@ Partial Class Display_Goods_Guest
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
         Me.Exit_Button.TabIndex = 4
-        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.Text = "Izlaz"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
         'Panel3
@@ -140,11 +140,11 @@ Partial Class Display_Goods_Guest
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(304, 23)
+        Me.Label1.Location = New System.Drawing.Point(356, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(152, 25)
+        Me.Label1.Size = New System.Drawing.Size(65, 25)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Display Goods"
+        Me.Label1.Text = "Artikli"
         '
         'Display_Goods_Guest
         '

@@ -20,7 +20,7 @@ Public Class UnosRadnika
             UR_ClearImage_Button.Visible = False
         End If
 
-        If (UR_Password_TextBox.Text <> "Enter Password here") Then
+        If (UR_Password_TextBox.Text <> "Unesi lozinku ovde") Then
             UR_Password_TextBox.ForeColor = Color.Black 'timer da vraca boju fontu jer kada u polje za password(kada je prazno)pritisnem tab i pocnem pisati password on posivi
         End If
 
@@ -37,17 +37,17 @@ Public Class UnosRadnika
             Correct_Password = UR_ConfirmPassword_Textbox.Text
             brojac += 1
         Else
-            MsgBox("Passwords don't match.")
+            MsgBox("Lozinke se ne poklapaju.")
             brojac = 0
             Encryption.HashStore = Nothing
         End If
         If UR_Male_Button.Checked = True Then
-            Gender = "Male"
+            Gender = "Muški"
             brojac += 1
         ElseIf UR_Female_Button.Checked = True Then
-            Gender = "Female"
+            Gender = "Ženski"
             brojac += 1
-        Else MsgBox("Select Gender")
+        Else MsgBox("Pol")
             brojac = 0
         End If
         If UR_Admin_Button.Checked = True Then
@@ -56,7 +56,7 @@ Public Class UnosRadnika
         ElseIf UR_User_Button.Checked = True Then
             Account_type = "False"
             brojac += 1
-        Else MsgBox("Select Account Type")
+        Else MsgBox("Izaberite tip naloga")
             brojac = 0
         End If
         Encryption.EncryptPass()
@@ -72,7 +72,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             Command.ExecuteNonQuery()
             brojac += 1
         Catch ex As Exception
-            MessageBox.Show("Error while inserting record in the table." + ex.Message)
+            MessageBox.Show("Greška prilikom unosa u tabelu." + ex.Message)
             brojac = 0
         Finally
             containerdb.connection.Close()
@@ -83,17 +83,17 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             End If
         Next
         If brojac >= 4 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
-            UR_Name_TextBox.Text = "Enter Name here"
-            UR_Surname_TextBox.Text = "Enter Surname here"
-            UR_Birth_TextBox.Text = "Enter Birth date here"
-            UR_Position_TextBox.Text = "Enter Work Position here"
-            UR_Phone_TextBox.Text = "Enter Phone here"
-            UR_Email_TextBox.Text = "Enter E-mail here"
-            UR_Username_TextBox.Text = "Enter Username here"
+            UR_Name_TextBox.Text = "Unesi ime ovde"
+            UR_Surname_TextBox.Text = "Unesi prezime ovde"
+            UR_Birth_TextBox.Text = "Unesi datum rođenja ovde"
+            UR_Position_TextBox.Text = "Unesi poziciju ovde"
+            UR_Phone_TextBox.Text = "Unesi broj telefona ovde"
+            UR_Email_TextBox.Text = "Unesi E-mail ovde"
+            UR_Username_TextBox.Text = "Unesi korisničko ime ovde"
             UR_ConfirmPassword_Textbox.UseSystemPasswordChar = False
-            UR_ConfirmPassword_Textbox.Text = "Confirm Password"
+            UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
             UR_Password_TextBox.UseSystemPasswordChar = False
-            UR_Password_TextBox.Text = "Enter Password here"
+            UR_Password_TextBox.Text = "Unesi lozinku ovde"
             Encryption.HashStore = Nothing
 
             UR_Name_TextBox.ForeColor = Color.Gray
@@ -123,97 +123,97 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
     End Sub
     Private Sub UR_Name_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Leave
         If (UR_Name_TextBox.Text = "") Then
-            UR_Name_TextBox.Text = "Enter Name here"
+            UR_Name_TextBox.Text = "Unesi ime ovde"
             UR_Name_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Name_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Enter
-        If (UR_Name_TextBox.Text = "Enter Name here") Then
+        If (UR_Name_TextBox.Text = "Unesi ime ovde") Then
             UR_Name_TextBox.Text = ""
             UR_Name_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Surname_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Surname_TextBox.Leave
         If (UR_Surname_TextBox.Text = "") Then
-            UR_Surname_TextBox.Text = "Enter Surname here"
+            UR_Surname_TextBox.Text = "Unesi prezime ovde"
             UR_Surname_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Surname_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Surname_TextBox.Enter
-        If (UR_Surname_TextBox.Text = "Enter Surname here") Then
+        If (UR_Surname_TextBox.Text = "Unesi prezime ovde") Then
             UR_Surname_TextBox.Text = ""
             UR_Surname_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Birth_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Birth_TextBox.Leave
         If (UR_Birth_TextBox.Text = "") Then
-            UR_Birth_TextBox.Text = "Enter Birth date here"
+            UR_Birth_TextBox.Text = "Unesi datum rođenja ovde"
             UR_Birth_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Birth_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Birth_TextBox.Enter
-        If (UR_Birth_TextBox.Text = "Enter Birth date here") Then
+        If (UR_Birth_TextBox.Text = "Unesi datum rođenja ovde") Then
             UR_Birth_TextBox.Text = ""
             UR_Birth_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Possition_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Position_TextBox.Leave
         If (UR_Position_TextBox.Text = "") Then
-            UR_Position_TextBox.Text = "Enter Work Position here"
+            UR_Position_TextBox.Text = "Unesi položaj ovde"
             UR_Position_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Possition_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Position_TextBox.Enter
-        If (UR_Position_TextBox.Text = "Enter Work Position here") Then
+        If (UR_Position_TextBox.Text = "Unesi položaj ovde") Then
             UR_Position_TextBox.Text = ""
             UR_Position_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave
         If (UR_Phone_TextBox.Text = "") Then
-            UR_Phone_TextBox.Text = "Enter Phone here"
+            UR_Phone_TextBox.Text = "Unesi broj telefona ovde"
             UR_Phone_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Phone_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Enter
-        If (UR_Phone_TextBox.Text = "Enter Phone here") Then
+        If (UR_Phone_TextBox.Text = "Unesi broj telefona ovde") Then
             UR_Phone_TextBox.Text = ""
             UR_Phone_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Email_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Email_TextBox.Leave
         If (UR_Email_TextBox.Text = "") Then
-            UR_Email_TextBox.Text = "Enter E-mail here"
+            UR_Email_TextBox.Text = "Unesi E-mail ovde"
             UR_Email_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Email_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Email_TextBox.Enter
-        If (UR_Email_TextBox.Text = "Enter E-mail here") Then
+        If (UR_Email_TextBox.Text = "Unesi E-mail ovde") Then
             UR_Email_TextBox.Text = ""
             UR_Email_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Username_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Username_TextBox.Leave
         If (UR_Username_TextBox.Text = "") Then
-            UR_Username_TextBox.Text = "Enter Username here"
+            UR_Username_TextBox.Text = "Unesi korisničko ime ovde"
             UR_Username_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Username_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Username_TextBox.Enter
-        If (UR_Username_TextBox.Text = "Enter Username here") Then
+        If (UR_Username_TextBox.Text = "Unesi korisničko ime ovde") Then
             UR_Username_TextBox.Text = ""
             UR_Username_TextBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_ConfirmPassword_Textbox_Leave(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Leave
         If (UR_ConfirmPassword_Textbox.Text = "") Then
-            UR_ConfirmPassword_Textbox.Text = "Confirm Password"
+            UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
             UR_ConfirmPassword_Textbox.UseSystemPasswordChar = False
             UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_ConfirmPassword_Textbox_Enter(sender As Object, e As EventArgs) Handles UR_ConfirmPassword_Textbox.Enter
-        If (UR_ConfirmPassword_Textbox.Text = "Confirm Password") Then
+        If (UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku") Then
             UR_ConfirmPassword_Textbox.Text = ""
             UR_ConfirmPassword_Textbox.UseSystemPasswordChar = True
             UR_ConfirmPassword_Textbox.ForeColor = Color.Black
@@ -221,13 +221,13 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
     End Sub
     Private Sub UR_Password_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Password_TextBox.Leave
         If (UR_Password_TextBox.Text = "") Then
-            UR_Password_TextBox.Text = "Enter Password here"
+            UR_Password_TextBox.Text = "Unesi lozinku ovde"
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Password_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Password_TextBox.Enter
-        If (UR_Password_TextBox.Text = "Enter Password here") Then
+        If (UR_Password_TextBox.Text = "Unesi lozinku ovde") Then
             UR_Password_TextBox.Text = ""
             UR_Password_TextBox.UseSystemPasswordChar = True
             UR_Password_TextBox.ForeColor = Color.Black
@@ -236,9 +236,5 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
         Administrator.Show()
-    End Sub
-
-    Private Sub UnosRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

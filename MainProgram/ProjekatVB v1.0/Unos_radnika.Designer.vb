@@ -253,11 +253,11 @@ Partial Class UnosRadnika
         'UR_NoFile_Label
         '
         Me.UR_NoFile_Label.AutoSize = True
-        Me.UR_NoFile_Label.Location = New System.Drawing.Point(313, 144)
+        Me.UR_NoFile_Label.Location = New System.Drawing.Point(304, 147)
         Me.UR_NoFile_Label.Name = "UR_NoFile_Label"
-        Me.UR_NoFile_Label.Size = New System.Drawing.Size(40, 13)
+        Me.UR_NoFile_Label.Size = New System.Drawing.Size(59, 13)
         Me.UR_NoFile_Label.TabIndex = 32
-        Me.UR_NoFile_Label.Text = "No File"
+        Me.UR_NoFile_Label.Text = "Nema slike"
         Me.UR_NoFile_Label.Visible = False
         '
         'UR_Timer
@@ -268,11 +268,11 @@ Partial Class UnosRadnika
         'UR_ChooseImage_Label
         '
         Me.UR_ChooseImage_Label.AutoSize = True
-        Me.UR_ChooseImage_Label.Location = New System.Drawing.Point(288, 79)
+        Me.UR_ChooseImage_Label.Location = New System.Drawing.Point(297, 77)
         Me.UR_ChooseImage_Label.Name = "UR_ChooseImage_Label"
-        Me.UR_ChooseImage_Label.Size = New System.Drawing.Size(77, 13)
+        Me.UR_ChooseImage_Label.Size = New System.Drawing.Size(65, 13)
         Me.UR_ChooseImage_Label.TabIndex = 33
-        Me.UR_ChooseImage_Label.Text = "Choose image:"
+        Me.UR_ChooseImage_Label.Text = "Izaberi sliku:"
         '
         'UR_ClearImage_Button
         '
@@ -311,9 +311,9 @@ Partial Class UnosRadnika
         Me.UR_Male_Button.AutoSize = True
         Me.UR_Male_Button.Location = New System.Drawing.Point(6, 19)
         Me.UR_Male_Button.Name = "UR_Male_Button"
-        Me.UR_Male_Button.Size = New System.Drawing.Size(48, 17)
+        Me.UR_Male_Button.Size = New System.Drawing.Size(53, 17)
         Me.UR_Male_Button.TabIndex = 123
-        Me.UR_Male_Button.Text = "Male"
+        Me.UR_Male_Button.Text = "Muški"
         Me.UR_Male_Button.UseVisualStyleBackColor = True
         '
         'UR_Female_Button
@@ -321,10 +321,10 @@ Partial Class UnosRadnika
         Me.UR_Female_Button.AutoSize = True
         Me.UR_Female_Button.Location = New System.Drawing.Point(6, 39)
         Me.UR_Female_Button.Name = "UR_Female_Button"
-        Me.UR_Female_Button.Size = New System.Drawing.Size(59, 17)
+        Me.UR_Female_Button.Size = New System.Drawing.Size(57, 17)
         Me.UR_Female_Button.TabIndex = 124
         Me.UR_Female_Button.TabStop = True
-        Me.UR_Female_Button.Text = "Female"
+        Me.UR_Female_Button.Text = "Ženski"
         Me.UR_Female_Button.UseVisualStyleBackColor = True
         '
         'A_Register_Button
@@ -336,7 +336,7 @@ Partial Class UnosRadnika
         Me.A_Register_Button.Name = "A_Register_Button"
         Me.A_Register_Button.Size = New System.Drawing.Size(108, 31)
         Me.A_Register_Button.TabIndex = 126
-        Me.A_Register_Button.Text = "Register"
+        Me.A_Register_Button.Text = "Registruj"
         Me.A_Register_Button.UseVisualStyleBackColor = False
         '
         'UR_Admin_Button
@@ -354,9 +354,9 @@ Partial Class UnosRadnika
         Me.UR_User_Button.AutoSize = True
         Me.UR_User_Button.Location = New System.Drawing.Point(6, 39)
         Me.UR_User_Button.Name = "UR_User_Button"
-        Me.UR_User_Button.Size = New System.Drawing.Size(47, 17)
+        Me.UR_User_Button.Size = New System.Drawing.Size(62, 17)
         Me.UR_User_Button.TabIndex = 122
-        Me.UR_User_Button.Text = "User"
+        Me.UR_User_Button.Text = "Korisnik"
         Me.UR_User_Button.UseVisualStyleBackColor = True
         '
         'UR_AT_GroupBox
@@ -368,7 +368,7 @@ Partial Class UnosRadnika
         Me.UR_AT_GroupBox.Size = New System.Drawing.Size(94, 62)
         Me.UR_AT_GroupBox.TabIndex = 36
         Me.UR_AT_GroupBox.TabStop = False
-        Me.UR_AT_GroupBox.Text = "Account type:"
+        Me.UR_AT_GroupBox.Text = "Tip naloga:"
         '
         'UR_Gender_GroupBox
         '
@@ -379,7 +379,7 @@ Partial Class UnosRadnika
         Me.UR_Gender_GroupBox.Size = New System.Drawing.Size(94, 63)
         Me.UR_Gender_GroupBox.TabIndex = 37
         Me.UR_Gender_GroupBox.TabStop = False
-        Me.UR_Gender_GroupBox.Text = "Gender:"
+        Me.UR_Gender_GroupBox.Text = "Pol:"
         '
         'Panel3
         '
@@ -395,11 +395,11 @@ Partial Class UnosRadnika
         Me.AddNewUser_Label.AutoSize = True
         Me.AddNewUser_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddNewUser_Label.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.AddNewUser_Label.Location = New System.Drawing.Point(163, 24)
+        Me.AddNewUser_Label.Location = New System.Drawing.Point(110, 24)
         Me.AddNewUser_Label.Name = "AddNewUser_Label"
-        Me.AddNewUser_Label.Size = New System.Drawing.Size(175, 25)
+        Me.AddNewUser_Label.Size = New System.Drawing.Size(284, 25)
         Me.AddNewUser_Label.TabIndex = 0
-        Me.AddNewUser_Label.Text = "ADD NEW USER"
+        Me.AddNewUser_Label.Text = "DODAJ NOVOG KORISNIKA"
         '
         'Panel1
         '
@@ -419,7 +419,7 @@ Partial Class UnosRadnika
         Me.UR_Name_TextBox.Name = "UR_Name_TextBox"
         Me.UR_Name_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Name_TextBox.TabIndex = 112
-        Me.UR_Name_TextBox.Text = "Enter Name here"
+        Me.UR_Name_TextBox.Text = "Unesi ime ovde"
         '
         'Panel2
         '
@@ -439,7 +439,7 @@ Partial Class UnosRadnika
         Me.UR_Surname_TextBox.Name = "UR_Surname_TextBox"
         Me.UR_Surname_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Surname_TextBox.TabIndex = 113
-        Me.UR_Surname_TextBox.Text = "Enter Surname here"
+        Me.UR_Surname_TextBox.Text = "Unesi prezime ovde"
         '
         'Panel4
         '
@@ -459,7 +459,7 @@ Partial Class UnosRadnika
         Me.UR_Birth_TextBox.Name = "UR_Birth_TextBox"
         Me.UR_Birth_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Birth_TextBox.TabIndex = 114
-        Me.UR_Birth_TextBox.Text = "Enter Birth date here"
+        Me.UR_Birth_TextBox.Text = "Unesi datum rođenja ovde"
         '
         'Panel5
         '
@@ -479,7 +479,7 @@ Partial Class UnosRadnika
         Me.UR_Position_TextBox.Name = "UR_Position_TextBox"
         Me.UR_Position_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Position_TextBox.TabIndex = 115
-        Me.UR_Position_TextBox.Text = "Enter Work Position here"
+        Me.UR_Position_TextBox.Text = "Unesi poziciju ovde"
         '
         'Panel6
         '
@@ -499,7 +499,7 @@ Partial Class UnosRadnika
         Me.UR_Phone_TextBox.Name = "UR_Phone_TextBox"
         Me.UR_Phone_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Phone_TextBox.TabIndex = 116
-        Me.UR_Phone_TextBox.Text = "Enter Phone here"
+        Me.UR_Phone_TextBox.Text = "Unesi broj telefona ovde"
         '
         'Panel7
         '
@@ -519,7 +519,7 @@ Partial Class UnosRadnika
         Me.UR_Email_TextBox.Name = "UR_Email_TextBox"
         Me.UR_Email_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Email_TextBox.TabIndex = 117
-        Me.UR_Email_TextBox.Text = "Enter E-mail here"
+        Me.UR_Email_TextBox.Text = "Unesi E-mail ovde"
         '
         'Panel9
         '
@@ -539,7 +539,7 @@ Partial Class UnosRadnika
         Me.UR_Username_TextBox.Name = "UR_Username_TextBox"
         Me.UR_Username_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Username_TextBox.TabIndex = 118
-        Me.UR_Username_TextBox.Text = "Enter Username here"
+        Me.UR_Username_TextBox.Text = "Unesi korisničko ime ovde"
         '
         'Panel10
         '
@@ -559,7 +559,7 @@ Partial Class UnosRadnika
         Me.UR_Password_TextBox.Name = "UR_Password_TextBox"
         Me.UR_Password_TextBox.Size = New System.Drawing.Size(189, 13)
         Me.UR_Password_TextBox.TabIndex = 119
-        Me.UR_Password_TextBox.Text = "Enter Password here"
+        Me.UR_Password_TextBox.Text = "Unesi lozinku ovde"
         '
         'Panel11
         '
@@ -579,7 +579,7 @@ Partial Class UnosRadnika
         Me.UR_ConfirmPassword_Textbox.Name = "UR_ConfirmPassword_Textbox"
         Me.UR_ConfirmPassword_Textbox.Size = New System.Drawing.Size(189, 13)
         Me.UR_ConfirmPassword_Textbox.TabIndex = 120
-        Me.UR_ConfirmPassword_Textbox.Text = "Confirm Password"
+        Me.UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
         '
         'Back_Button
         '
@@ -589,7 +589,7 @@ Partial Class UnosRadnika
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(108, 31)
         Me.Back_Button.TabIndex = 127
-        Me.Back_Button.Text = "Back"
+        Me.Back_Button.Text = "Nazad"
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'UnosRadnika

@@ -54,7 +54,7 @@ Partial Class Administrator
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(152, 40)
         Me.Exit_Button.TabIndex = 111
-        Me.Exit_Button.Text = "Exit"
+        Me.Exit_Button.Text = "Izlaz"
         Me.Exit_Button.UseVisualStyleBackColor = True
         '
         'OrderEquip_Button
@@ -66,7 +66,7 @@ Partial Class Administrator
         Me.OrderEquip_Button.Name = "OrderEquip_Button"
         Me.OrderEquip_Button.Size = New System.Drawing.Size(198, 40)
         Me.OrderEquip_Button.TabIndex = 109
-        Me.OrderEquip_Button.Text = "Order Equipment"
+        Me.OrderEquip_Button.Text = "Poručiti robu"
         Me.OrderEquip_Button.UseVisualStyleBackColor = False
         Me.OrderEquip_Button.Visible = False
         '
@@ -84,11 +84,11 @@ Partial Class Administrator
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(75, 25)
+        Me.Label1.Location = New System.Drawing.Point(49, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(259, 25)
+        Me.Label1.Size = New System.Drawing.Size(292, 25)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "ADMINISTRATOR PANEL"
+        Me.Label1.Text = "ADMINISTRATORSKI PANEL"
         '
         'VSK_Button
         '
@@ -99,7 +99,7 @@ Partial Class Administrator
         Me.VSK_Button.Name = "VSK_Button"
         Me.VSK_Button.Size = New System.Drawing.Size(99, 40)
         Me.VSK_Button.TabIndex = 106
-        Me.VSK_Button.Text = "Show all workers"
+        Me.VSK_Button.Text = "Radnici"
         Me.VSK_Button.UseVisualStyleBackColor = False
         Me.VSK_Button.Visible = False
         '
@@ -112,7 +112,7 @@ Partial Class Administrator
         Me.UNV_Button.Name = "UNV_Button"
         Me.UNV_Button.Size = New System.Drawing.Size(99, 40)
         Me.UNV_Button.TabIndex = 105
-        Me.UNV_Button.Text = "Add new user"
+        Me.UNV_Button.Text = "Dodaj novog korisnika"
         Me.UNV_Button.UseVisualStyleBackColor = False
         Me.UNV_Button.Visible = False
         '
@@ -125,7 +125,7 @@ Partial Class Administrator
         Me.Storage_Button.Name = "Storage_Button"
         Me.Storage_Button.Size = New System.Drawing.Size(99, 40)
         Me.Storage_Button.TabIndex = 108
-        Me.Storage_Button.Text = "View Storage"
+        Me.Storage_Button.Text = "Skladište"
         Me.Storage_Button.UseVisualStyleBackColor = False
         Me.Storage_Button.Visible = False
         '
@@ -138,7 +138,7 @@ Partial Class Administrator
         Me.ViewPurchases_Button.Name = "ViewPurchases_Button"
         Me.ViewPurchases_Button.Size = New System.Drawing.Size(99, 40)
         Me.ViewPurchases_Button.TabIndex = 107
-        Me.ViewPurchases_Button.Text = "View Purchases"
+        Me.ViewPurchases_Button.Text = "Narudžbe"
         Me.ViewPurchases_Button.UseVisualStyleBackColor = False
         Me.ViewPurchases_Button.Visible = False
         '
