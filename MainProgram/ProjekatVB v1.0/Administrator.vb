@@ -54,4 +54,9 @@ Public Class Administrator
         End If
 
     End Sub
+
+    Private Sub Storage_Button_Click(sender As Object, e As EventArgs) Handles Storage_Button.Click
+        Me.Close()
+        Display_Goods_Guest.Show()
+    End Sub
 End Class

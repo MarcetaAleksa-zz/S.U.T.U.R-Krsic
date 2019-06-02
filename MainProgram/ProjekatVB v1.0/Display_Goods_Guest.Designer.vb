@@ -22,10 +22,12 @@ Partial Class Display_Goods_Guest
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Display_Goods_Guest))
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Korpica = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPrevoz = New System.Windows.Forms.TabPage()
         Me.Panel34 = New System.Windows.Forms.Panel()
@@ -54,6 +56,7 @@ Partial Class Display_Goods_Guest
         Me.TabSvijece = New System.Windows.Forms.TabPage()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
         Me.Panel23 = New System.Windows.Forms.Panel()
         Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel25 = New System.Windows.Forms.Panel()
@@ -67,6 +70,9 @@ Partial Class Display_Goods_Guest
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
+        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
         Me.PictureBox24 = New System.Windows.Forms.PictureBox()
         Me.TabCvijece = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -103,6 +109,30 @@ Partial Class Display_Goods_Guest
         Me.PictureBox16 = New System.Windows.Forms.PictureBox()
         Me.TabKrstovi = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.KrstCijena8 = New System.Windows.Forms.Label()
+        Me.KrstUkupno8 = New System.Windows.Forms.Label()
+        Me.KrstCijena7 = New System.Windows.Forms.Label()
+        Me.KrstUkupno7 = New System.Windows.Forms.Label()
+        Me.KrstCijena6 = New System.Windows.Forms.Label()
+        Me.KrstUkupno6 = New System.Windows.Forms.Label()
+        Me.KrstCijena5 = New System.Windows.Forms.Label()
+        Me.KrstUkupno5 = New System.Windows.Forms.Label()
+        Me.KrstCijena4 = New System.Windows.Forms.Label()
+        Me.KrstKolicina8 = New System.Windows.Forms.TextBox()
+        Me.KrstUkupno4 = New System.Windows.Forms.Label()
+        Me.KrstKolicina7 = New System.Windows.Forms.TextBox()
+        Me.KrstCijena3 = New System.Windows.Forms.Label()
+        Me.KrstKolicina6 = New System.Windows.Forms.TextBox()
+        Me.KrstUkupno3 = New System.Windows.Forms.Label()
+        Me.KrstKolicina5 = New System.Windows.Forms.TextBox()
+        Me.KrstCijena2 = New System.Windows.Forms.Label()
+        Me.KrstKolicina4 = New System.Windows.Forms.TextBox()
+        Me.KrstUkupno2 = New System.Windows.Forms.Label()
+        Me.KrstKolicina3 = New System.Windows.Forms.TextBox()
+        Me.KrstCijena1 = New System.Windows.Forms.Label()
+        Me.KrstKolicina2 = New System.Windows.Forms.TextBox()
+        Me.KrstUkupno1 = New System.Windows.Forms.Label()
+        Me.KrstKolicina1 = New System.Windows.Forms.TextBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -117,14 +147,14 @@ Partial Class Display_Goods_Guest
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.KrstStanje8 = New System.Windows.Forms.Label()
+        Me.KrstStanje6 = New System.Windows.Forms.Label()
+        Me.KrstStanje7 = New System.Windows.Forms.Label()
+        Me.KrstStanje4 = New System.Windows.Forms.Label()
+        Me.KrstStanje5 = New System.Windows.Forms.Label()
+        Me.KrstStanje2 = New System.Windows.Forms.Label()
+        Me.KrstStanje3 = New System.Windows.Forms.Label()
+        Me.KrstStanje1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
@@ -135,10 +165,18 @@ Partial Class Display_Goods_Guest
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         Me.TabPrevoz.SuspendLayout()
         Me.Panel34.SuspendLayout()
@@ -151,6 +189,10 @@ Partial Class Display_Goods_Guest
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabSvijece.SuspendLayout()
         Me.Panel18.SuspendLayout()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabCvijece.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -173,10 +215,6 @@ Partial Class Display_Goods_Guest
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Back_Button
@@ -200,11 +238,24 @@ Partial Class Display_Goods_Guest
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Korpica)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(-1, -1)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1125, 68)
         Me.Panel3.TabIndex = 10
+        '
+        'Korpica
+        '
+        Me.Korpica.AutoSize = True
+        Me.Korpica.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Korpica.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Korpica.Location = New System.Drawing.Point(640, 25)
+        Me.Korpica.Name = "Korpica"
+        Me.Korpica.Size = New System.Drawing.Size(75, 25)
+        Me.Korpica.TabIndex = 0
+        Me.Korpica.Text = "Korpa:"
+        Me.Korpica.Visible = False
         '
         'Label1
         '
@@ -522,6 +573,16 @@ Partial Class Display_Goods_Guest
         Me.Panel20.Size = New System.Drawing.Size(719, 5)
         Me.Panel20.TabIndex = 10
         '
+        'PictureBox20
+        '
+        Me.PictureBox20.Image = CType(resources.GetObject("PictureBox20.Image"), System.Drawing.Image)
+        Me.PictureBox20.Location = New System.Drawing.Point(9, 401)
+        Me.PictureBox20.Name = "PictureBox20"
+        Me.PictureBox20.Size = New System.Drawing.Size(88, 81)
+        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox20.TabIndex = 12
+        Me.PictureBox20.TabStop = False
+        '
         'Panel23
         '
         Me.Panel23.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -653,6 +714,36 @@ Partial Class Display_Goods_Guest
         Me.Label49.Size = New System.Drawing.Size(98, 25)
         Me.Label49.TabIndex = 11
         Me.Label49.Text = "Voštane"
+        '
+        'PictureBox19
+        '
+        Me.PictureBox19.Image = CType(resources.GetObject("PictureBox19.Image"), System.Drawing.Image)
+        Me.PictureBox19.Location = New System.Drawing.Point(9, 302)
+        Me.PictureBox19.Name = "PictureBox19"
+        Me.PictureBox19.Size = New System.Drawing.Size(88, 81)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox19.TabIndex = 12
+        Me.PictureBox19.TabStop = False
+        '
+        'PictureBox18
+        '
+        Me.PictureBox18.Image = CType(resources.GetObject("PictureBox18.Image"), System.Drawing.Image)
+        Me.PictureBox18.Location = New System.Drawing.Point(9, 204)
+        Me.PictureBox18.Name = "PictureBox18"
+        Me.PictureBox18.Size = New System.Drawing.Size(88, 81)
+        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox18.TabIndex = 12
+        Me.PictureBox18.TabStop = False
+        '
+        'PictureBox17
+        '
+        Me.PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), System.Drawing.Image)
+        Me.PictureBox17.Location = New System.Drawing.Point(9, 104)
+        Me.PictureBox17.Name = "PictureBox17"
+        Me.PictureBox17.Size = New System.Drawing.Size(88, 81)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox17.TabIndex = 12
+        Me.PictureBox17.TabStop = False
         '
         'PictureBox24
         '
@@ -1040,6 +1131,38 @@ Partial Class Display_Goods_Guest
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Button8)
+        Me.Panel1.Controls.Add(Me.Button7)
+        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.Button5)
+        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.KrstCijena8)
+        Me.Panel1.Controls.Add(Me.KrstUkupno8)
+        Me.Panel1.Controls.Add(Me.KrstCijena7)
+        Me.Panel1.Controls.Add(Me.KrstUkupno7)
+        Me.Panel1.Controls.Add(Me.KrstCijena6)
+        Me.Panel1.Controls.Add(Me.KrstUkupno6)
+        Me.Panel1.Controls.Add(Me.KrstCijena5)
+        Me.Panel1.Controls.Add(Me.KrstUkupno5)
+        Me.Panel1.Controls.Add(Me.KrstCijena4)
+        Me.Panel1.Controls.Add(Me.KrstKolicina8)
+        Me.Panel1.Controls.Add(Me.KrstUkupno4)
+        Me.Panel1.Controls.Add(Me.KrstKolicina7)
+        Me.Panel1.Controls.Add(Me.KrstCijena3)
+        Me.Panel1.Controls.Add(Me.KrstKolicina6)
+        Me.Panel1.Controls.Add(Me.KrstUkupno3)
+        Me.Panel1.Controls.Add(Me.KrstKolicina5)
+        Me.Panel1.Controls.Add(Me.KrstCijena2)
+        Me.Panel1.Controls.Add(Me.KrstKolicina4)
+        Me.Panel1.Controls.Add(Me.KrstUkupno2)
+        Me.Panel1.Controls.Add(Me.KrstKolicina3)
+        Me.Panel1.Controls.Add(Me.KrstCijena1)
+        Me.Panel1.Controls.Add(Me.KrstKolicina2)
+        Me.Panel1.Controls.Add(Me.KrstUkupno1)
+        Me.Panel1.Controls.Add(Me.KrstKolicina1)
         Me.Panel1.Controls.Add(Me.Panel8)
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.Panel9)
@@ -1054,14 +1177,14 @@ Partial Class Display_Goods_Guest
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label17)
-        Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Controls.Add(Me.Label16)
-        Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.Label12)
-        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.KrstStanje8)
+        Me.Panel1.Controls.Add(Me.KrstStanje6)
+        Me.Panel1.Controls.Add(Me.KrstStanje7)
+        Me.Panel1.Controls.Add(Me.KrstStanje4)
+        Me.Panel1.Controls.Add(Me.KrstStanje5)
+        Me.Panel1.Controls.Add(Me.KrstStanje2)
+        Me.Panel1.Controls.Add(Me.KrstStanje3)
+        Me.Panel1.Controls.Add(Me.KrstStanje1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.PictureBox8)
         Me.Panel1.Controls.Add(Me.PictureBox6)
@@ -1075,6 +1198,230 @@ Partial Class Display_Goods_Guest
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(748, 397)
         Me.Panel1.TabIndex = 10
+        '
+        'KrstCijena8
+        '
+        Me.KrstCijena8.AutoSize = True
+        Me.KrstCijena8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena8.Location = New System.Drawing.Point(468, 730)
+        Me.KrstCijena8.Name = "KrstCijena8"
+        Me.KrstCijena8.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena8.TabIndex = 15
+        Me.KrstCijena8.Text = "5.50"
+        '
+        'KrstUkupno8
+        '
+        Me.KrstUkupno8.AutoSize = True
+        Me.KrstUkupno8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno8.Location = New System.Drawing.Point(656, 730)
+        Me.KrstUkupno8.Name = "KrstUkupno8"
+        Me.KrstUkupno8.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno8.TabIndex = 14
+        Me.KrstUkupno8.Text = "0"
+        '
+        'KrstCijena7
+        '
+        Me.KrstCijena7.AutoSize = True
+        Me.KrstCijena7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena7.Location = New System.Drawing.Point(468, 634)
+        Me.KrstCijena7.Name = "KrstCijena7"
+        Me.KrstCijena7.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena7.TabIndex = 15
+        Me.KrstCijena7.Text = "5.50"
+        '
+        'KrstUkupno7
+        '
+        Me.KrstUkupno7.AutoSize = True
+        Me.KrstUkupno7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno7.Location = New System.Drawing.Point(656, 634)
+        Me.KrstUkupno7.Name = "KrstUkupno7"
+        Me.KrstUkupno7.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno7.TabIndex = 14
+        Me.KrstUkupno7.Text = "0"
+        '
+        'KrstCijena6
+        '
+        Me.KrstCijena6.AutoSize = True
+        Me.KrstCijena6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena6.Location = New System.Drawing.Point(468, 536)
+        Me.KrstCijena6.Name = "KrstCijena6"
+        Me.KrstCijena6.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena6.TabIndex = 15
+        Me.KrstCijena6.Text = "5.50"
+        '
+        'KrstUkupno6
+        '
+        Me.KrstUkupno6.AutoSize = True
+        Me.KrstUkupno6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno6.Location = New System.Drawing.Point(656, 536)
+        Me.KrstUkupno6.Name = "KrstUkupno6"
+        Me.KrstUkupno6.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno6.TabIndex = 14
+        Me.KrstUkupno6.Text = "0"
+        '
+        'KrstCijena5
+        '
+        Me.KrstCijena5.AutoSize = True
+        Me.KrstCijena5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena5.Location = New System.Drawing.Point(468, 438)
+        Me.KrstCijena5.Name = "KrstCijena5"
+        Me.KrstCijena5.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena5.TabIndex = 15
+        Me.KrstCijena5.Text = "5.50"
+        '
+        'KrstUkupno5
+        '
+        Me.KrstUkupno5.AutoSize = True
+        Me.KrstUkupno5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno5.Location = New System.Drawing.Point(656, 438)
+        Me.KrstUkupno5.Name = "KrstUkupno5"
+        Me.KrstUkupno5.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno5.TabIndex = 14
+        Me.KrstUkupno5.Text = "0"
+        '
+        'KrstCijena4
+        '
+        Me.KrstCijena4.AutoSize = True
+        Me.KrstCijena4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena4.Location = New System.Drawing.Point(468, 337)
+        Me.KrstCijena4.Name = "KrstCijena4"
+        Me.KrstCijena4.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena4.TabIndex = 15
+        Me.KrstCijena4.Text = "5.50"
+        '
+        'KrstKolicina8
+        '
+        Me.KrstKolicina8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina8.Location = New System.Drawing.Point(578, 729)
+        Me.KrstKolicina8.Name = "KrstKolicina8"
+        Me.KrstKolicina8.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina8.TabIndex = 13
+        '
+        'KrstUkupno4
+        '
+        Me.KrstUkupno4.AutoSize = True
+        Me.KrstUkupno4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno4.Location = New System.Drawing.Point(656, 337)
+        Me.KrstUkupno4.Name = "KrstUkupno4"
+        Me.KrstUkupno4.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno4.TabIndex = 14
+        Me.KrstUkupno4.Text = "0"
+        '
+        'KrstKolicina7
+        '
+        Me.KrstKolicina7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina7.Location = New System.Drawing.Point(578, 633)
+        Me.KrstKolicina7.Name = "KrstKolicina7"
+        Me.KrstKolicina7.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina7.TabIndex = 13
+        '
+        'KrstCijena3
+        '
+        Me.KrstCijena3.AutoSize = True
+        Me.KrstCijena3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena3.Location = New System.Drawing.Point(468, 236)
+        Me.KrstCijena3.Name = "KrstCijena3"
+        Me.KrstCijena3.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena3.TabIndex = 15
+        Me.KrstCijena3.Text = "5.50"
+        '
+        'KrstKolicina6
+        '
+        Me.KrstKolicina6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina6.Location = New System.Drawing.Point(578, 535)
+        Me.KrstKolicina6.Name = "KrstKolicina6"
+        Me.KrstKolicina6.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina6.TabIndex = 13
+        '
+        'KrstUkupno3
+        '
+        Me.KrstUkupno3.AutoSize = True
+        Me.KrstUkupno3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno3.Location = New System.Drawing.Point(656, 236)
+        Me.KrstUkupno3.Name = "KrstUkupno3"
+        Me.KrstUkupno3.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno3.TabIndex = 14
+        Me.KrstUkupno3.Text = "0"
+        '
+        'KrstKolicina5
+        '
+        Me.KrstKolicina5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina5.Location = New System.Drawing.Point(578, 437)
+        Me.KrstKolicina5.Name = "KrstKolicina5"
+        Me.KrstKolicina5.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina5.TabIndex = 13
+        '
+        'KrstCijena2
+        '
+        Me.KrstCijena2.AutoSize = True
+        Me.KrstCijena2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena2.Location = New System.Drawing.Point(469, 142)
+        Me.KrstCijena2.Name = "KrstCijena2"
+        Me.KrstCijena2.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena2.TabIndex = 15
+        Me.KrstCijena2.Text = "5.50"
+        '
+        'KrstKolicina4
+        '
+        Me.KrstKolicina4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina4.Location = New System.Drawing.Point(578, 336)
+        Me.KrstKolicina4.Name = "KrstKolicina4"
+        Me.KrstKolicina4.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina4.TabIndex = 13
+        '
+        'KrstUkupno2
+        '
+        Me.KrstUkupno2.AutoSize = True
+        Me.KrstUkupno2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno2.Location = New System.Drawing.Point(657, 142)
+        Me.KrstUkupno2.Name = "KrstUkupno2"
+        Me.KrstUkupno2.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno2.TabIndex = 14
+        Me.KrstUkupno2.Text = "0"
+        '
+        'KrstKolicina3
+        '
+        Me.KrstKolicina3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina3.Location = New System.Drawing.Point(578, 235)
+        Me.KrstKolicina3.Name = "KrstKolicina3"
+        Me.KrstKolicina3.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina3.TabIndex = 13
+        '
+        'KrstCijena1
+        '
+        Me.KrstCijena1.AutoSize = True
+        Me.KrstCijena1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstCijena1.Location = New System.Drawing.Point(469, 42)
+        Me.KrstCijena1.Name = "KrstCijena1"
+        Me.KrstCijena1.Size = New System.Drawing.Size(32, 16)
+        Me.KrstCijena1.TabIndex = 15
+        Me.KrstCijena1.Text = "5.50"
+        '
+        'KrstKolicina2
+        '
+        Me.KrstKolicina2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina2.Location = New System.Drawing.Point(579, 141)
+        Me.KrstKolicina2.Name = "KrstKolicina2"
+        Me.KrstKolicina2.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina2.TabIndex = 13
+        '
+        'KrstUkupno1
+        '
+        Me.KrstUkupno1.AutoSize = True
+        Me.KrstUkupno1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstUkupno1.Location = New System.Drawing.Point(657, 42)
+        Me.KrstUkupno1.Name = "KrstUkupno1"
+        Me.KrstUkupno1.Size = New System.Drawing.Size(16, 16)
+        Me.KrstUkupno1.TabIndex = 14
+        Me.KrstUkupno1.Text = "0"
+        '
+        'KrstKolicina1
+        '
+        Me.KrstKolicina1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.KrstKolicina1.Location = New System.Drawing.Point(579, 41)
+        Me.KrstKolicina1.Name = "KrstKolicina1"
+        Me.KrstKolicina1.Size = New System.Drawing.Size(35, 20)
+        Me.KrstKolicina1.TabIndex = 13
         '
         'Panel8
         '
@@ -1209,93 +1556,93 @@ Partial Class Display_Goods_Guest
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Krst smreka"
         '
-        'Label17
+        'KrstStanje8
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Lime
-        Me.Label17.Location = New System.Drawing.Point(423, 723)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(103, 25)
-        Me.Label17.TabIndex = 11
-        Me.Label17.Text = "Na stanju"
+        Me.KrstStanje8.AutoSize = True
+        Me.KrstStanje8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje8.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje8.Location = New System.Drawing.Point(334, 726)
+        Me.KrstStanje8.Name = "KrstStanje8"
+        Me.KrstStanje8.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje8.TabIndex = 11
+        Me.KrstStanje8.Text = "Na stanju"
         '
-        'Label15
+        'KrstStanje6
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Lime
-        Me.Label15.Location = New System.Drawing.Point(423, 529)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(103, 25)
-        Me.Label15.TabIndex = 11
-        Me.Label15.Text = "Na stanju"
+        Me.KrstStanje6.AutoSize = True
+        Me.KrstStanje6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje6.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje6.Location = New System.Drawing.Point(334, 532)
+        Me.KrstStanje6.Name = "KrstStanje6"
+        Me.KrstStanje6.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje6.TabIndex = 11
+        Me.KrstStanje6.Text = "Na stanju"
         '
-        'Label16
+        'KrstStanje7
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Lime
-        Me.Label16.Location = New System.Drawing.Point(423, 625)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(103, 25)
-        Me.Label16.TabIndex = 11
-        Me.Label16.Text = "Na stanju"
+        Me.KrstStanje7.AutoSize = True
+        Me.KrstStanje7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje7.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje7.Location = New System.Drawing.Point(334, 628)
+        Me.KrstStanje7.Name = "KrstStanje7"
+        Me.KrstStanje7.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje7.TabIndex = 11
+        Me.KrstStanje7.Text = "Na stanju"
         '
-        'Label13
+        'KrstStanje4
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.Lime
-        Me.Label13.Location = New System.Drawing.Point(423, 327)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(103, 25)
-        Me.Label13.TabIndex = 11
-        Me.Label13.Text = "Na stanju"
+        Me.KrstStanje4.AutoSize = True
+        Me.KrstStanje4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje4.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje4.Location = New System.Drawing.Point(334, 330)
+        Me.KrstStanje4.Name = "KrstStanje4"
+        Me.KrstStanje4.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje4.TabIndex = 11
+        Me.KrstStanje4.Text = "Na stanju"
         '
-        'Label14
+        'KrstStanje5
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.Lime
-        Me.Label14.Location = New System.Drawing.Point(423, 431)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(103, 25)
-        Me.Label14.TabIndex = 11
-        Me.Label14.Text = "Na stanju"
+        Me.KrstStanje5.AutoSize = True
+        Me.KrstStanje5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje5.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje5.Location = New System.Drawing.Point(334, 434)
+        Me.KrstStanje5.Name = "KrstStanje5"
+        Me.KrstStanje5.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje5.TabIndex = 11
+        Me.KrstStanje5.Text = "Na stanju"
         '
-        'Label11
+        'KrstStanje2
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Lime
-        Me.Label11.Location = New System.Drawing.Point(423, 133)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(103, 25)
-        Me.Label11.TabIndex = 11
-        Me.Label11.Text = "Na stanju"
+        Me.KrstStanje2.AutoSize = True
+        Me.KrstStanje2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje2.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje2.Location = New System.Drawing.Point(334, 136)
+        Me.KrstStanje2.Name = "KrstStanje2"
+        Me.KrstStanje2.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje2.TabIndex = 11
+        Me.KrstStanje2.Text = "Na stanju"
         '
-        'Label12
+        'KrstStanje3
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Lime
-        Me.Label12.Location = New System.Drawing.Point(423, 229)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(103, 25)
-        Me.Label12.TabIndex = 11
-        Me.Label12.Text = "Na stanju"
+        Me.KrstStanje3.AutoSize = True
+        Me.KrstStanje3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje3.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje3.Location = New System.Drawing.Point(334, 232)
+        Me.KrstStanje3.Name = "KrstStanje3"
+        Me.KrstStanje3.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje3.TabIndex = 11
+        Me.KrstStanje3.Text = "Na stanju"
         '
-        'Label10
+        'KrstStanje1
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Lime
-        Me.Label10.Location = New System.Drawing.Point(423, 35)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(103, 25)
-        Me.Label10.TabIndex = 11
-        Me.Label10.Text = "Na stanju"
+        Me.KrstStanje1.AutoSize = True
+        Me.KrstStanje1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KrstStanje1.ForeColor = System.Drawing.Color.Green
+        Me.KrstStanje1.Location = New System.Drawing.Point(334, 38)
+        Me.KrstStanje1.Name = "KrstStanje1"
+        Me.KrstStanje1.Size = New System.Drawing.Size(76, 20)
+        Me.KrstStanje1.TabIndex = 11
+        Me.KrstStanje1.Text = "Na stanju"
         '
         'Label2
         '
@@ -1400,51 +1747,129 @@ Partial Class Display_Goods_Guest
         Me.TabControl1.Size = New System.Drawing.Size(782, 435)
         Me.TabControl1.TabIndex = 0
         '
-        'PictureBox17
+        'Label35
         '
-        Me.PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), System.Drawing.Image)
-        Me.PictureBox17.Location = New System.Drawing.Point(9, 104)
-        Me.PictureBox17.Name = "PictureBox17"
-        Me.PictureBox17.Size = New System.Drawing.Size(88, 81)
-        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox17.TabIndex = 12
-        Me.PictureBox17.TabStop = False
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(594, 117)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(55, 16)
+        Me.Label35.TabIndex = 15
+        Me.Label35.Text = "Količina"
         '
-        'PictureBox18
+        'Label41
         '
-        Me.PictureBox18.Image = CType(resources.GetObject("PictureBox18.Image"), System.Drawing.Image)
-        Me.PictureBox18.Location = New System.Drawing.Point(9, 204)
-        Me.PictureBox18.Name = "PictureBox18"
-        Me.PictureBox18.Size = New System.Drawing.Size(88, 81)
-        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox18.TabIndex = 12
-        Me.PictureBox18.TabStop = False
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.Location = New System.Drawing.Point(485, 117)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(46, 16)
+        Me.Label41.TabIndex = 16
+        Me.Label41.Text = "Cijena"
         '
-        'PictureBox19
+        'Timer1
         '
-        Me.PictureBox19.Image = CType(resources.GetObject("PictureBox19.Image"), System.Drawing.Image)
-        Me.PictureBox19.Location = New System.Drawing.Point(9, 302)
-        Me.PictureBox19.Name = "PictureBox19"
-        Me.PictureBox19.Size = New System.Drawing.Size(88, 81)
-        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox19.TabIndex = 12
-        Me.PictureBox19.TabStop = False
+        Me.Timer1.Enabled = True
         '
-        'PictureBox20
+        'Button1
         '
-        Me.PictureBox20.Image = CType(resources.GetObject("PictureBox20.Image"), System.Drawing.Image)
-        Me.PictureBox20.Location = New System.Drawing.Point(9, 401)
-        Me.PictureBox20.Name = "PictureBox20"
-        Me.PictureBox20.Size = New System.Drawing.Size(88, 81)
-        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox20.TabIndex = 12
-        Me.PictureBox20.TabStop = False
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button1.Location = New System.Drawing.Point(338, 7)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(72, 28)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Promijeni"
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Location = New System.Drawing.Point(338, 105)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(72, 28)
+        Me.Button2.TabIndex = 16
+        Me.Button2.Text = "Promijeni"
+        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button3.Location = New System.Drawing.Point(338, 202)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(72, 28)
+        Me.Button3.TabIndex = 16
+        Me.Button3.Text = "Promijeni"
+        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
+        '
+        'Button4
+        '
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button4.Location = New System.Drawing.Point(338, 302)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(72, 28)
+        Me.Button4.TabIndex = 16
+        Me.Button4.Text = "Promijeni"
+        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
+        '
+        'Button5
+        '
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button5.Location = New System.Drawing.Point(338, 403)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(72, 28)
+        Me.Button5.TabIndex = 16
+        Me.Button5.Text = "Promijeni"
+        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.Visible = False
+        '
+        'Button6
+        '
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button6.Location = New System.Drawing.Point(338, 501)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(72, 28)
+        Me.Button6.TabIndex = 16
+        Me.Button6.Text = "Promijeni"
+        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.Visible = False
+        '
+        'Button7
+        '
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button7.Location = New System.Drawing.Point(338, 597)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(72, 28)
+        Me.Button7.TabIndex = 16
+        Me.Button7.Text = "Promijeni"
+        Me.Button7.UseVisualStyleBackColor = True
+        Me.Button7.Visible = False
+        '
+        'Button8
+        '
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button8.Location = New System.Drawing.Point(338, 697)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(72, 28)
+        Me.Button8.TabIndex = 16
+        Me.Button8.Text = "Promijeni"
+        Me.Button8.UseVisualStyleBackColor = True
+        Me.Button8.Visible = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
         '
         'Display_Goods_Guest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(806, 569)
+        Me.Controls.Add(Me.Label41)
+        Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
@@ -1470,6 +1895,10 @@ Partial Class Display_Goods_Guest
         Me.TabSvijece.ResumeLayout(False)
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabCvijece.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
@@ -1494,11 +1923,8 @@ Partial Class Display_Goods_Guest
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Back_Button As Button
@@ -1533,14 +1959,14 @@ Partial Class Display_Goods_Guest
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents KrstStanje8 As Label
+    Friend WithEvents KrstStanje6 As Label
+    Friend WithEvents KrstStanje7 As Label
+    Friend WithEvents KrstStanje4 As Label
+    Friend WithEvents KrstStanje5 As Label
+    Friend WithEvents KrstStanje2 As Label
+    Friend WithEvents KrstStanje3 As Label
+    Friend WithEvents KrstStanje1 As Label
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Panel10 As Panel
@@ -1617,4 +2043,41 @@ Partial Class Display_Goods_Guest
     Friend WithEvents PictureBox19 As PictureBox
     Friend WithEvents PictureBox18 As PictureBox
     Friend WithEvents PictureBox17 As PictureBox
+    Friend WithEvents KrstCijena1 As Label
+    Friend WithEvents KrstUkupno1 As Label
+    Friend WithEvents KrstKolicina1 As TextBox
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents KrstCijena8 As Label
+    Friend WithEvents KrstUkupno8 As Label
+    Friend WithEvents KrstCijena7 As Label
+    Friend WithEvents KrstUkupno7 As Label
+    Friend WithEvents KrstCijena6 As Label
+    Friend WithEvents KrstUkupno6 As Label
+    Friend WithEvents KrstCijena5 As Label
+    Friend WithEvents KrstUkupno5 As Label
+    Friend WithEvents KrstCijena4 As Label
+    Friend WithEvents KrstKolicina8 As TextBox
+    Friend WithEvents KrstUkupno4 As Label
+    Friend WithEvents KrstKolicina7 As TextBox
+    Friend WithEvents KrstCijena3 As Label
+    Friend WithEvents KrstKolicina6 As TextBox
+    Friend WithEvents KrstUkupno3 As Label
+    Friend WithEvents KrstKolicina5 As TextBox
+    Friend WithEvents KrstCijena2 As Label
+    Friend WithEvents KrstKolicina4 As TextBox
+    Friend WithEvents KrstUkupno2 As Label
+    Friend WithEvents KrstKolicina3 As TextBox
+    Friend WithEvents KrstKolicina2 As TextBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Korpica As Label
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Timer2 As Timer
 End Class
