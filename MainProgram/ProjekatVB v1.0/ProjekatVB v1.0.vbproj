@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuyList.Designer.vb">
+      <DependentUpon>BuyList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuyList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="containerdb.vb" />
     <Compile Include="Encryption.vb" />
     <Compile Include="Logs.vb" />
@@ -144,6 +150,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuyList.resx">
+      <DependentUpon>BuyList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MSG_Form.resx">
       <DependentUpon>MSG_Form.vb</DependentUpon>
