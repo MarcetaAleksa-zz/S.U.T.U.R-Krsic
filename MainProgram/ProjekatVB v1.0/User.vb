@@ -28,53 +28,110 @@ Public Class User
     'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
-        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Plate  where BRDUMJ = @BRDUMJ and ISPRDUMJ = @ISPRDUMJ  and PNOISPRD = @PNOISPRD and PVS = @PVS and IBP = @IBP", containerdb.connection)
+        Dim MonthID As Integer = 1
+
+        Dim command As New SqlCommand("SELECT *,  Projekat.dbo.Position.BaseSalary * Projekat.dbo.Salary.WorkDays as Plata FROM Projekat.dbo.Salary, Projekat.dbo.Position
+WHERE WorkerID = '" & Login_form.ID_Label.Text & "' and MonthID = @MonthID ", containerdb.connection)
+        command.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+        Dim adapter As New SqlDataAdapter(command)
+        Dim userinfotable As New DataTable()
+        adapter.Fill(userinfotable)
         'Drop-down koji treba uvesti iz baze
+
         If (U_Month_Dropdown.SelectedIndex = 0) Then
-            DaysInMonth.Text = "31"
-            U_WDIM_TextBox.Text = "28"
-            U_WDIM_TextBox.Text = command.Parameters.Add("@BRDUMJ", SqlDbType.Int).Value
+            MonthID = 1
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 1) Then
-            DaysInMonth.Text = "28"
-            U_WDIM_TextBox.Text = "25"
+            MonthID = 2
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 2) Then
-            DaysInMonth.Text = "31"
-            U_WDIM_TextBox.Text = "28"
+            MonthID = 3
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(1)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 3) Then
-            DaysInMonth.Text = "30"
-            U_WDIM_TextBox.Text = "28"
+            MonthID = 4
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 4) Then
-            DaysInMonth.Text = "31"
-            U_WDIM_TextBox.Text = "28"
+            MonthID = 5
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 5) Then
-            DaysInMonth.Text = "30"
-            U_WDIM_TextBox.Text = "27"
+            MonthID = 6
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 6) Then
-            DaysInMonth.Text = "31"
-            U_WDIM_TextBox.Text = "29"
+            MonthID = 7
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 7) Then
-            DaysInMonth.Text = "31"
-            U_WDIM_TextBox.Text = "28"
+            MonthID = 8
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 8) Then
-            DaysInMonth.Text = "30"
-            U_WDIM_TextBox.Text = "25"
+            MonthID = 9
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 9) Then
-            DaysInMonth.Text = "31"
-            U_WDIM_TextBox.Text = "28"
+            MonthID = 10
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 10) Then
-            DaysInMonth.Text = "30"
-            U_WDIM_TextBox.Text = "27"
+            MonthID = 11
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 11) Then
-            DaysInMonth.Text = "31"
-            U_WDIM_TextBox.Text = "25"
+            MonthID = 12
+            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
+            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
+            Dim monada As New SqlDataAdapter(monthcom)
+            Dim monthinfo As New DataTable()
+            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         End If
+
+
     End Sub
 
     Private Sub U_Picture_Click(sender As Object, e As EventArgs) Handles U_Picture.Click
 
     End Sub
 
-    Private Sub U_OCH_Label_Click(sender As Object, e As EventArgs) Handles U_OCH_Label.Click
+    Private Sub U_OCH_Label_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class
