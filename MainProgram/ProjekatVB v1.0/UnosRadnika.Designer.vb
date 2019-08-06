@@ -29,7 +29,6 @@ Partial Class UnosRadnika
         Me.UR_Possition_Label = New System.Windows.Forms.Label()
         Me.UR_Surname_TextBox1 = New System.Windows.Forms.TextBox()
         Me.UR_Phone_label = New System.Windows.Forms.Label()
-        Me.UR_Picture = New System.Windows.Forms.PictureBox()
         Me.UR_Username_TextBox1 = New System.Windows.Forms.TextBox()
         Me.UR_Birth_TextBox1 = New System.Windows.Forms.TextBox()
         Me.UR_Email_TextBox1 = New System.Windows.Forms.TextBox()
@@ -42,12 +41,10 @@ Partial Class UnosRadnika
         Me.UR_Password_Label = New System.Windows.Forms.Label()
         Me.UR_Password_TextBox1 = New System.Windows.Forms.TextBox()
         Me.UR_OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.UR_ChangePicture_Button = New System.Windows.Forms.Button()
         Me.UR_FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.UR_NoFile_Label = New System.Windows.Forms.Label()
         Me.UR_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.UR_ChooseImage_Label = New System.Windows.Forms.Label()
-        Me.UR_ClearImage_Button = New System.Windows.Forms.Button()
         Me.UR_ConfirmPassword_Label = New System.Windows.Forms.Label()
         Me.UR_ConfirmPassword_Textbox1 = New System.Windows.Forms.TextBox()
         Me.UR_Male_Button = New System.Windows.Forms.RadioButton()
@@ -78,7 +75,9 @@ Partial Class UnosRadnika
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.UR_ConfirmPassword_Textbox = New System.Windows.Forms.TextBox()
         Me.Back_Button = New System.Windows.Forms.Button()
-        CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UR_ClearImage_Button = New System.Windows.Forms.Button()
+        Me.UR_ChangePicture_Button = New System.Windows.Forms.Button()
+        Me.UR_Picture = New System.Windows.Forms.PictureBox()
         Me.UR_AT_GroupBox.SuspendLayout()
         Me.UR_Gender_GroupBox.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -91,6 +90,7 @@ Partial Class UnosRadnika
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UR_Phone_TextBox1
@@ -131,17 +131,6 @@ Partial Class UnosRadnika
         Me.UR_Phone_label.Size = New System.Drawing.Size(41, 13)
         Me.UR_Phone_label.TabIndex = 26
         Me.UR_Phone_label.Text = "Phone:"
-        '
-        'UR_Picture
-        '
-        Me.UR_Picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.UR_Picture.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.UR_Picture.Location = New System.Drawing.Point(270, 97)
-        Me.UR_Picture.Name = "UR_Picture"
-        Me.UR_Picture.Size = New System.Drawing.Size(126, 113)
-        Me.UR_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.UR_Picture.TabIndex = 25
-        Me.UR_Picture.TabStop = False
         '
         'UR_Username_TextBox1
         '
@@ -239,17 +228,6 @@ Partial Class UnosRadnika
         Me.UR_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
     " *.png"
         '
-        'UR_ChangePicture_Button
-        '
-        Me.UR_ChangePicture_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UR_ChangePicture_Button.Image = CType(resources.GetObject("UR_ChangePicture_Button.Image"), System.Drawing.Image)
-        Me.UR_ChangePicture_Button.Location = New System.Drawing.Point(368, 74)
-        Me.UR_ChangePicture_Button.Name = "UR_ChangePicture_Button"
-        Me.UR_ChangePicture_Button.Size = New System.Drawing.Size(28, 23)
-        Me.UR_ChangePicture_Button.TabIndex = 125
-        Me.UR_ChangePicture_Button.TabStop = False
-        Me.UR_ChangePicture_Button.UseVisualStyleBackColor = True
-        '
         'UR_NoFile_Label
         '
         Me.UR_NoFile_Label.AutoSize = True
@@ -273,21 +251,6 @@ Partial Class UnosRadnika
         Me.UR_ChooseImage_Label.Size = New System.Drawing.Size(65, 13)
         Me.UR_ChooseImage_Label.TabIndex = 33
         Me.UR_ChooseImage_Label.Text = "Izaberi sliku:"
-        '
-        'UR_ClearImage_Button
-        '
-        Me.UR_ClearImage_Button.BackColor = System.Drawing.Color.Transparent
-        Me.UR_ClearImage_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UR_ClearImage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UR_ClearImage_Button.Image = CType(resources.GetObject("UR_ClearImage_Button.Image"), System.Drawing.Image)
-        Me.UR_ClearImage_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.UR_ClearImage_Button.Location = New System.Drawing.Point(368, 192)
-        Me.UR_ClearImage_Button.Name = "UR_ClearImage_Button"
-        Me.UR_ClearImage_Button.Size = New System.Drawing.Size(28, 18)
-        Me.UR_ClearImage_Button.TabIndex = 34
-        Me.UR_ClearImage_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.UR_ClearImage_Button.UseVisualStyleBackColor = False
-        Me.UR_ClearImage_Button.Visible = False
         '
         'UR_ConfirmPassword_Label
         '
@@ -590,6 +553,43 @@ Partial Class UnosRadnika
         Me.Back_Button.Text = "Nazad"
         Me.Back_Button.UseVisualStyleBackColor = True
         '
+        'UR_ClearImage_Button
+        '
+        Me.UR_ClearImage_Button.BackColor = System.Drawing.Color.Transparent
+        Me.UR_ClearImage_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UR_ClearImage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.UR_ClearImage_Button.Image = CType(resources.GetObject("UR_ClearImage_Button.Image"), System.Drawing.Image)
+        Me.UR_ClearImage_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.UR_ClearImage_Button.Location = New System.Drawing.Point(368, 192)
+        Me.UR_ClearImage_Button.Name = "UR_ClearImage_Button"
+        Me.UR_ClearImage_Button.Size = New System.Drawing.Size(28, 18)
+        Me.UR_ClearImage_Button.TabIndex = 34
+        Me.UR_ClearImage_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.UR_ClearImage_Button.UseVisualStyleBackColor = False
+        Me.UR_ClearImage_Button.Visible = False
+        '
+        'UR_ChangePicture_Button
+        '
+        Me.UR_ChangePicture_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UR_ChangePicture_Button.Image = CType(resources.GetObject("UR_ChangePicture_Button.Image"), System.Drawing.Image)
+        Me.UR_ChangePicture_Button.Location = New System.Drawing.Point(368, 74)
+        Me.UR_ChangePicture_Button.Name = "UR_ChangePicture_Button"
+        Me.UR_ChangePicture_Button.Size = New System.Drawing.Size(28, 23)
+        Me.UR_ChangePicture_Button.TabIndex = 125
+        Me.UR_ChangePicture_Button.TabStop = False
+        Me.UR_ChangePicture_Button.UseVisualStyleBackColor = True
+        '
+        'UR_Picture
+        '
+        Me.UR_Picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.UR_Picture.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.UR_Picture.Location = New System.Drawing.Point(270, 97)
+        Me.UR_Picture.Name = "UR_Picture"
+        Me.UR_Picture.Size = New System.Drawing.Size(126, 113)
+        Me.UR_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.UR_Picture.TabIndex = 25
+        Me.UR_Picture.TabStop = False
+        '
         'UnosRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -637,7 +637,6 @@ Partial Class UnosRadnika
         Me.Name = "UnosRadnika"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Unos radnika"
-        CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UR_AT_GroupBox.ResumeLayout(False)
         Me.UR_AT_GroupBox.PerformLayout()
         Me.UR_Gender_GroupBox.ResumeLayout(False)
@@ -661,6 +660,7 @@ Partial Class UnosRadnika
         Me.Panel10.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
+        CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

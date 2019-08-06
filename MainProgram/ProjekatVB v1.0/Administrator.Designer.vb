@@ -24,7 +24,6 @@ Partial Class Administrator
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Administrator))
-        Me.Back_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.OrderEquip_Button = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -35,18 +34,9 @@ Partial Class Administrator
         Me.NarudzbeButton = New System.Windows.Forms.Button()
         Me.Logs_Button = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Back_Button = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Back_Button
-        '
-        Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
-        Me.Back_Button.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Back_Button.Location = New System.Drawing.Point(87, 216)
-        Me.Back_Button.Name = "Back_Button"
-        Me.Back_Button.Size = New System.Drawing.Size(40, 40)
-        Me.Back_Button.TabIndex = 110
-        Me.Back_Button.UseVisualStyleBackColor = True
         '
         'Exit_Button
         '
@@ -66,7 +56,7 @@ Partial Class Administrator
         Me.OrderEquip_Button.Name = "OrderEquip_Button"
         Me.OrderEquip_Button.Size = New System.Drawing.Size(198, 40)
         Me.OrderEquip_Button.TabIndex = 109
-        Me.OrderEquip_Button.Text = "Poručiti robu"
+        Me.OrderEquip_Button.Text = "Poručiti robu11"
         Me.OrderEquip_Button.UseVisualStyleBackColor = False
         Me.OrderEquip_Button.Visible = False
         '
@@ -138,7 +128,7 @@ Partial Class Administrator
         Me.NarudzbeButton.Name = "NarudzbeButton"
         Me.NarudzbeButton.Size = New System.Drawing.Size(99, 40)
         Me.NarudzbeButton.TabIndex = 107
-        Me.NarudzbeButton.Text = "Narudžbe"
+        Me.NarudzbeButton.Text = "Narudžbe11"
         Me.NarudzbeButton.UseVisualStyleBackColor = False
         Me.NarudzbeButton.Visible = False
         '
@@ -156,6 +146,16 @@ Partial Class Administrator
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1
+        '
+        'Back_Button
+        '
+        Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
+        Me.Back_Button.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Back_Button.Location = New System.Drawing.Point(87, 216)
+        Me.Back_Button.Name = "Back_Button"
+        Me.Back_Button.Size = New System.Drawing.Size(40, 40)
+        Me.Back_Button.TabIndex = 110
+        Me.Back_Button.UseVisualStyleBackColor = True
         '
         'Administrator
         '

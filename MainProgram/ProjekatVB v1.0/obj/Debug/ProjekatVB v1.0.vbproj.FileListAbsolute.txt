@@ -133,3 +133,4 @@ C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\ob
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Prijava.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.pregledRadnika.resources

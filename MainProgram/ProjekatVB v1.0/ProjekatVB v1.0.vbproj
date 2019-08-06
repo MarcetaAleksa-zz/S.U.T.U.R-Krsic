@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pregledRadnika.Designer.vb">
+      <DependentUpon>pregledRadnika.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pregledRadnika.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Kupovina.Designer.vb">
       <DependentUpon>Kupovina.vb</DependentUpon>
     </Compile>
@@ -88,6 +94,11 @@
     </Compile>
     <Compile Include="FormaPoruka.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjekatDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjekatDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UnosRadnika.Designer.vb">
       <DependentUpon>UnosRadnika.vb</DependentUpon>
@@ -152,6 +163,9 @@
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pregledRadnika.resx">
+      <DependentUpon>pregledRadnika.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kupovina.resx">
       <DependentUpon>Kupovina.vb</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +210,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ProjekatDataSet.xsc">
+      <DependentUpon>ProjekatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjekatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjekatDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjekatDataSet.xss">
+      <DependentUpon>ProjekatDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\favicon %281%29.ico" />
   </ItemGroup>
   <ItemGroup>

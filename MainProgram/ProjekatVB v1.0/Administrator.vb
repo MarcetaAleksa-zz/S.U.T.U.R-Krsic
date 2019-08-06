@@ -59,4 +59,9 @@ Public Class Administrator
         Me.Close()
         GostPrikazArtikala.Show()
     End Sub
+
+    Private Sub RadniciButton_Click(sender As Object, e As EventArgs) Handles RadniciButton.Click
+        Me.Close()
+        pregledRadnika.Show()
+    End Sub
 End Class

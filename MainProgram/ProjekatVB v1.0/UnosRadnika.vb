@@ -242,4 +242,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
 
     End Sub
 
+    Private Sub UnosRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
