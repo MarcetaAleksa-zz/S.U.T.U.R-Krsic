@@ -1,4 +1,4 @@
-﻿Public Class BuyList
+﻿Public Class Kupovina
     Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
@@ -18,7 +18,7 @@
 
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Close()
-        Display_Goods_Guest.Show()
+        GostPrikazArtikala.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

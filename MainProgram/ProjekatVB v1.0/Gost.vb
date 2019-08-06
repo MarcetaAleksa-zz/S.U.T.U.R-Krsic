@@ -1,11 +1,11 @@
-﻿Public Class Guest
+﻿Public Class Gost
     Private Sub Display_Goods_Button_Click(sender As Object, e As EventArgs) Handles Display_Goods_Button.Click
         Me.Hide()
-        Display_Goods_Guest.Show()
+        GostPrikazArtikala.Show()
     End Sub
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
-        Login_form.Show()
+        Prijava.Show()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()

@@ -113,3 +113,23 @@ C:\Users\Nutzer\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Deb
 C:\Users\Nutzer\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
 C:\Users\Nutzer\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\Nutzer\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe.config
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.pdb
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.xml
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Administrator.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Kupovina.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.FormaPoruka.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UnosRadnika.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Gost.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Resources.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.GostPrikazArtikala.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Order_Funeral.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Korisnik.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbproj.GenerateResource.cache
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbproj.CoreCompileInputs.cache
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Prijava.resources

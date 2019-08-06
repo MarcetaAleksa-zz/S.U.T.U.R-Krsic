@@ -3,7 +3,7 @@ Public Class Administrator
 
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Close()
-        Login_form.Show()
+        Prijava.Show()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
@@ -15,12 +15,12 @@ Public Class Administrator
     Private Sub ViewPurchases_Button_Click(sender As Object, e As EventArgs) Handles ViewPurchases_Button.Click
     End Sub
     Private Sub Logs_Button_Click(sender As Object, e As EventArgs) Handles Logs_Button.Click
-        Process.Start("C:\\Users\\Nutzer\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
-        Process.Start("C:\\Users\\Nutzer\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt")
+        Process.Start("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
+        Process.Start("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt")
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim command As New SqlCommand("SELECT Position FROM Projekat.dbo.Workers where Username = '" & Login_form.Username_Form_Box.Text & "'", containerdb.connection)
+        Dim command As New SqlCommand("SELECT Position FROM Projekat.dbo.Workers where Username = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
         Dim adapter As New SqlDataAdapter(command)
         Dim position_tbl As New DataTable()
         adapter.Fill(position_tbl)
@@ -32,16 +32,16 @@ Public Class Administrator
             ViewPurchases_Button.Show()
             Storage_Button.Show()
             OrderEquip_Button.Show()
-        ElseIf position = "Manager" Then
+        ElseIf position = "Menadzer" Then
             ViewPurchases_Button.Show()
             Storage_Button.Show()
             OrderEquip_Button.Show()
             VSK_Button.Show()
-        ElseIf position = "Owner" Then
+        ElseIf position = "Vlasnik" Then
             ViewPurchases_Button.Show()
             Storage_Button.Show()
             VSK_Button.Show()
-        ElseIf position = "Accounting" Then
+        ElseIf position = "Racunovodja" Then
             UNV_Button.Show()
             VSK_Button.Show()
         Else
@@ -57,6 +57,6 @@ Public Class Administrator
 
     Private Sub Storage_Button_Click(sender As Object, e As EventArgs) Handles Storage_Button.Click
         Me.Close()
-        Display_Goods_Guest.Show()
+        GostPrikazArtikala.Show()
     End Sub
 End Class

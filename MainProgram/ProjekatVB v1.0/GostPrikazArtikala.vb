@@ -1,9 +1,9 @@
-﻿Public Class Display_Goods_Guest
+﻿Public Class GostPrikazArtikala
     Public Korpa As Double
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
-        If Login_form.test <> 1 Then
-            Guest.Show()
+        If Prijava.test <> 1 Then
+            Gost.Show()
         Else
             Administrator.Show()
         End If
@@ -204,7 +204,7 @@
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        If Login_form.test = 1 Then
+        If Prijava.test = 1 Then
             Button1.Visible = True And Button2.Visible = True And Button3.Visible = True And Button4.Visible = True And Button5.Visible = True And Button6.Visible = True And Button7.Visible = True And Button8.Visible = True And Button9.Visible = False
         Else
             Button1.Visible = False And Button2.Visible = False And Button3.Visible = False And Button4.Visible = False And Button5.Visible = False And Button6.Visible = False And Button7.Visible = False And Button8.Visible = False And Button9.Visible = True
@@ -213,6 +213,6 @@
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         Me.Hide()
-        BuyList.Show()
+        Kupovina.Show()
     End Sub
 End Class

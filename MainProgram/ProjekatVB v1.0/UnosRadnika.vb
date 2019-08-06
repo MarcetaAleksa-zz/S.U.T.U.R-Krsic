@@ -39,7 +39,7 @@ Public Class UnosRadnika
         Else
             MsgBox("Lozinke se ne poklapaju.")
             brojac = 0
-            Encryption.HashStore = Nothing
+            Enkripcija.HashStore = Nothing
         End If
         If UR_Male_Button.Checked = True Then
             Gender = "Muški"
@@ -59,7 +59,7 @@ Public Class UnosRadnika
         Else MsgBox("Izaberite tip naloga")
             brojac = 0
         End If
-        Encryption.EncryptPass()
+        Enkripcija.EncryptPass()
         'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
         'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
         Try
@@ -68,7 +68,7 @@ Public Class UnosRadnika
 INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Position, Phone, Gender) 
 VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Position_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
-VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Encryption.HashStoreUser & "')"
+VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "')"
             Command.ExecuteNonQuery()
             brojac += 1
         Catch ex As Exception
@@ -94,7 +94,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Unesi lozinku ovde"
-            Encryption.HashStore = Nothing
+            Enkripcija.HashStore = Nothing
 
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray

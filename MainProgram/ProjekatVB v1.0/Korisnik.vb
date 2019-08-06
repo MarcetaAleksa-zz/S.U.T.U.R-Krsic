@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
-Public Class User
+Public Class Korisnik
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Close()
-        Login_form.Show()
+        Prijava.Show()
     End Sub
 
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
@@ -11,7 +11,7 @@ Public Class User
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Phone_TextBox.Enter
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         'Login_form.ID_Label.Text vuce id sa Login forme iz dbo.Login jer su Login i Workers tabele povezane preko ID-a
-        Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Workers where ID = '" & Login_form.ID_Label.Text & "' COLLATE Latin1_General_CS_AS", containerdb.connection)
+        Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Workers where ID = '" & Prijava.ID_Label.Text & "' COLLATE Latin1_General_CS_AS", containerdb.connection)
         Dim adapter As New SqlDataAdapter(Command)
 
         Dim user_table As New DataTable()
@@ -31,7 +31,7 @@ Public Class User
         Dim MonthID As Integer = 1
 
         Dim command As New SqlCommand("SELECT *,  Projekat.dbo.Position.BaseSalary * Projekat.dbo.Salary.WorkDays as Plata FROM Projekat.dbo.Salary, Projekat.dbo.Position
-WHERE WorkerID = '" & Login_form.ID_Label.Text & "' and MonthID = @MonthID ", containerdb.connection)
+WHERE WorkerID = '" & Prijava.ID_Label.Text & "' and MonthID = @MonthID ", containerdb.connection)
         command.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
         Dim adapter As New SqlDataAdapter(command)
         Dim userinfotable As New DataTable()

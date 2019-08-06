@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Login_form
+Public Class Prijava
     Public test As Double = 0
     Public pozicija As Double = 0
     'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
@@ -30,10 +30,10 @@ Public Class Login_form
         End If
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
-        Encryption.EncryptPass()
+        Enkripcija.EncryptPass()
         Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
         command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text
-        command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Encryption.HashStore
+        command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Enkripcija.HashStore
         'Syntax za dobijanje admin akreditaciju
         command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
 
@@ -58,35 +58,35 @@ Public Class Login_form
         End Try
 
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
-            Logs.FailedLog()
+            Logovi.FailedLog()
             test = 4
-            MSG_Form.Show()
+            FormaPoruka.Show()
             Password_Form_Box.Text = ""
-            Encryption.HashStore = Nothing
+            Enkripcija.HashStore = Nothing
 
         ElseIf admin_table.Rows.Count() > 0 Then
-            Logs.Log()
+            Logovi.Log()
             test = 1
-            MSG_Form.Show()
+            FormaPoruka.Show()
             ID_Label.Text = admin_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
             Me.Hide()
             Password_Form_Box.Text = ""
-            Encryption.HashStore = Nothing
+            Enkripcija.HashStore = Nothing
         ElseIf user_table.Rows.Count() > 0 Then
-            Encryption.HashStore = Nothing
+            Enkripcija.HashStore = Nothing
             test = 2
-            MSG_Form.Show()
+            FormaPoruka.Show()
             ID_Label.Text = user_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je pozvali u User formi i tako povezali user formu i login formu te Workers i Login tabele iz baze
             Me.Hide()
             Password_Form_Box.Text = ""
-            Logs.Log()
+            Logovi.Log()
         End If
     End Sub
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
         test = 3
-        MSG_Form.Show()
+        FormaPoruka.Show()
         Me.Hide()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click

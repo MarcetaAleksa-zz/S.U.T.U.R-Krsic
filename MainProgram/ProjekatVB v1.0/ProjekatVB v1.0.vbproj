@@ -47,6 +47,7 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -73,32 +74,32 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuyList.Designer.vb">
-      <DependentUpon>BuyList.vb</DependentUpon>
+    <Compile Include="Kupovina.Designer.vb">
+      <DependentUpon>Kupovina.vb</DependentUpon>
     </Compile>
-    <Compile Include="BuyList.vb">
+    <Compile Include="Kupovina.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="containerdb.vb" />
-    <Compile Include="Encryption.vb" />
-    <Compile Include="Logs.vb" />
-    <Compile Include="MSG_Form.Designer.vb">
-      <DependentUpon>MSG_Form.vb</DependentUpon>
+    <Compile Include="Enkripcija.vb" />
+    <Compile Include="Logovi.vb" />
+    <Compile Include="FormaPoruka.Designer.vb">
+      <DependentUpon>FormaPoruka.vb</DependentUpon>
     </Compile>
-    <Compile Include="MSG_Form.vb">
+    <Compile Include="FormaPoruka.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Unos_radnika.Designer.vb">
-      <DependentUpon>Unos_radnika.vb</DependentUpon>
+    <Compile Include="UnosRadnika.Designer.vb">
+      <DependentUpon>UnosRadnika.vb</DependentUpon>
     </Compile>
-    <Compile Include="Unos_radnika.vb">
+    <Compile Include="UnosRadnika.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_form.vb">
+    <Compile Include="Prijava.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_form.Designer.vb">
-      <DependentUpon>Login_form.vb</DependentUpon>
+    <Compile Include="Prijava.Designer.vb">
+      <DependentUpon>Prijava.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Administrator.Designer.vb">
@@ -113,22 +114,22 @@
     <Compile Include="Order_Funeral.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Display_Goods_Guest.Designer.vb">
-      <DependentUpon>Display_Goods_Guest.vb</DependentUpon>
+    <Compile Include="GostPrikazArtikala.Designer.vb">
+      <DependentUpon>GostPrikazArtikala.vb</DependentUpon>
     </Compile>
-    <Compile Include="Display_Goods_Guest.vb">
+    <Compile Include="GostPrikazArtikala.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User.Designer.vb">
-      <DependentUpon>User.vb</DependentUpon>
+    <Compile Include="Korisnik.Designer.vb">
+      <DependentUpon>Korisnik.vb</DependentUpon>
     </Compile>
-    <Compile Include="User.vb">
+    <Compile Include="Korisnik.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Guest.Designer.vb">
-      <DependentUpon>Guest.vb</DependentUpon>
+    <Compile Include="Gost.Designer.vb">
+      <DependentUpon>Gost.vb</DependentUpon>
     </Compile>
-    <Compile Include="Guest.vb">
+    <Compile Include="Gost.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -151,20 +152,20 @@
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuyList.resx">
-      <DependentUpon>BuyList.vb</DependentUpon>
+    <EmbeddedResource Include="Kupovina.resx">
+      <DependentUpon>Kupovina.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MSG_Form.resx">
-      <DependentUpon>MSG_Form.vb</DependentUpon>
+    <EmbeddedResource Include="FormaPoruka.resx">
+      <DependentUpon>FormaPoruka.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Unos_radnika.resx">
-      <DependentUpon>Unos_radnika.vb</DependentUpon>
+    <EmbeddedResource Include="UnosRadnika.resx">
+      <DependentUpon>UnosRadnika.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Guest.resx">
-      <DependentUpon>Guest.vb</DependentUpon>
+    <EmbeddedResource Include="Gost.resx">
+      <DependentUpon>Gost.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_form.resx">
-      <DependentUpon>Login_form.vb</DependentUpon>
+    <EmbeddedResource Include="Prijava.resx">
+      <DependentUpon>Prijava.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -172,14 +173,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Display_Goods_Guest.resx">
-      <DependentUpon>Display_Goods_Guest.vb</DependentUpon>
+    <EmbeddedResource Include="GostPrikazArtikala.resx">
+      <DependentUpon>GostPrikazArtikala.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order_Funeral.resx">
       <DependentUpon>Order_Funeral.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User.resx">
-      <DependentUpon>User.vb</DependentUpon>
+    <EmbeddedResource Include="Korisnik.resx">
+      <DependentUpon>Korisnik.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
