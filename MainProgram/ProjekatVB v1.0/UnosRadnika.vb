@@ -66,7 +66,7 @@ Public Class UnosRadnika
             containerdb.connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
 INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Position, Phone, Gender) 
-VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & UR_Position_TextBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
+VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & URComboBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
 VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "')"
             Command.ExecuteNonQuery()
@@ -86,7 +86,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_Name_TextBox.Text = "Unesi ime ovde"
             UR_Surname_TextBox.Text = "Unesi prezime ovde"
             UR_Birth_TextBox.Text = "Unesi datum rođenja ovde"
-            UR_Position_TextBox.Text = "Unesi poziciju ovde"
+            URComboBox.Text = "Unesi poziciju ovde"
             UR_Phone_TextBox.Text = "Unesi broj telefona ovde"
             UR_Email_TextBox.Text = "Unesi E-mail ovde"
             UR_Username_TextBox.Text = "Unesi korisničko ime ovde"
@@ -99,7 +99,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray
             UR_Birth_TextBox.ForeColor = Color.Gray
-            UR_Position_TextBox.ForeColor = Color.Gray
+            URComboBox.ForeColor = Color.Gray
             UR_Phone_TextBox.ForeColor = Color.Gray
             UR_Email_TextBox.ForeColor = Color.Gray
             UR_Username_TextBox.ForeColor = Color.Gray
@@ -157,16 +157,16 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_Birth_TextBox.ForeColor = Color.Black
         End If
     End Sub
-    Private Sub UR_Possition_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Position_TextBox.Leave
-        If (UR_Position_TextBox.Text = "") Then
-            UR_Position_TextBox.Text = "Unesi položaj ovde"
-            UR_Position_TextBox.ForeColor = Color.Gray
+    Private Sub UR_Possition_TextBox_Leave(sender As Object, e As EventArgs)
+        If (URComboBox.Text = "") Then
+            URComboBox.Text = "Unesi položaj ovde"
+            URComboBox.ForeColor = Color.Gray
         End If
     End Sub
-    Private Sub UR_Possition_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Position_TextBox.Enter
-        If (UR_Position_TextBox.Text = "Unesi položaj ovde") Then
-            UR_Position_TextBox.Text = ""
-            UR_Position_TextBox.ForeColor = Color.Black
+    Private Sub UR_Possition_TextBox_Enter(sender As Object, e As EventArgs)
+        If (URComboBox.Text = "Unesi položaj ovde") Then
+            URComboBox.Text = ""
+            URComboBox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave
@@ -237,4 +237,9 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
         Me.Hide()
         Administrator.Show()
     End Sub
+
+    Private Sub UR_Birth_TextBox_TextChanged(sender As Object, e As EventArgs) Handles UR_Birth_TextBox.TextChanged
+
+    End Sub
+
 End Class

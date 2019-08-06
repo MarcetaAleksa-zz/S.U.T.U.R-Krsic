@@ -66,7 +66,7 @@ Partial Class UnosRadnika
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.UR_Birth_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.UR_Position_TextBox = New System.Windows.Forms.TextBox()
+        Me.URComboBox = New System.Windows.Forms.ComboBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.UR_Phone_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -464,22 +464,20 @@ Partial Class UnosRadnika
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.UR_Position_TextBox)
+        Me.Panel5.Controls.Add(Me.URComboBox)
         Me.Panel5.Location = New System.Drawing.Point(21, 186)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(220, 26)
         Me.Panel5.TabIndex = 4
         '
-        'UR_Position_TextBox
+        'URComboBox
         '
-        Me.UR_Position_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.UR_Position_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UR_Position_TextBox.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.UR_Position_TextBox.Location = New System.Drawing.Point(15, 7)
-        Me.UR_Position_TextBox.Name = "UR_Position_TextBox"
-        Me.UR_Position_TextBox.Size = New System.Drawing.Size(189, 13)
-        Me.UR_Position_TextBox.TabIndex = 115
-        Me.UR_Position_TextBox.Text = "Unesi poziciju ovde"
+        Me.URComboBox.FormattingEnabled = True
+        Me.URComboBox.Items.AddRange(New Object() {"Korisnik", "Administrator", "Racunovodja", "Menadzer", "Vlasnik", "Grobar"})
+        Me.URComboBox.Location = New System.Drawing.Point(3, 2)
+        Me.URComboBox.Name = "URComboBox"
+        Me.URComboBox.Size = New System.Drawing.Size(214, 21)
+        Me.URComboBox.TabIndex = 0
         '
         'Panel6
         '
@@ -653,7 +651,6 @@ Partial Class UnosRadnika
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.Panel7.ResumeLayout(False)
@@ -711,7 +708,6 @@ Partial Class UnosRadnika
     Friend WithEvents Panel4 As Panel
     Friend WithEvents UR_Birth_TextBox As TextBox
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents UR_Position_TextBox As TextBox
     Friend WithEvents Panel6 As Panel
     Friend WithEvents UR_Phone_TextBox As TextBox
     Friend WithEvents Panel7 As Panel
@@ -723,4 +719,5 @@ Partial Class UnosRadnika
     Friend WithEvents Panel11 As Panel
     Friend WithEvents UR_ConfirmPassword_Textbox As TextBox
     Friend WithEvents Back_Button As Button
+    Friend WithEvents URComboBox As ComboBox
 End Class

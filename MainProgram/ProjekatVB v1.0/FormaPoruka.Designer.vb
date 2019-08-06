@@ -26,7 +26,7 @@ Partial Class FormaPoruka
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.OkButton = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -62,17 +62,17 @@ Partial Class FormaPoruka
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Dobrodošli!"
         '
-        'Button1
+        'OkButton
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(79, 79)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(96, 29)
-        Me.Button1.TabIndex = 134
-        Me.Button1.Text = "OK"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.OkButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.OkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.OkButton.Location = New System.Drawing.Point(79, 79)
+        Me.OkButton.Name = "OkButton"
+        Me.OkButton.Size = New System.Drawing.Size(96, 29)
+        Me.OkButton.TabIndex = 134
+        Me.OkButton.Text = "OK"
+        Me.OkButton.UseVisualStyleBackColor = False
         '
         'Timer1
         '
@@ -90,18 +90,18 @@ Partial Class FormaPoruka
         Me.Label3.Text = "Netačno korisničko ime ili lozinka!"
         Me.Label3.Visible = False
         '
-        'MSG_Form
+        'FormaPoruka
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(253, 113)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.OkButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "MSG_Form"
+        Me.Name = "FormaPoruka"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MSG_ADMIN"
         Me.Panel1.ResumeLayout(False)
@@ -114,7 +114,7 @@ Partial Class FormaPoruka
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents OkButton As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label3 As Label
 End Class

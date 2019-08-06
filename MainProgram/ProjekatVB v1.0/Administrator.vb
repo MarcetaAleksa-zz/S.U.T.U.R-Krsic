@@ -8,11 +8,11 @@ Public Class Administrator
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
     End Sub
-    Private Sub UNV_Button_Click(sender As Object, e As EventArgs) Handles UNV_Button.Click
+    Private Sub UNV_Button_Click(sender As Object, e As EventArgs) Handles NoviNalogButton.Click
         UnosRadnika.Show()
         Me.Hide()
     End Sub
-    Private Sub ViewPurchases_Button_Click(sender As Object, e As EventArgs) Handles ViewPurchases_Button.Click
+    Private Sub ViewPurchases_Button_Click(sender As Object, e As EventArgs) Handles NarudzbeButton.Click
     End Sub
     Private Sub Logs_Button_Click(sender As Object, e As EventArgs) Handles Logs_Button.Click
         Process.Start("C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
@@ -27,35 +27,35 @@ Public Class Administrator
         Dim position = position_tbl.Rows(0)(0)
         If position = "Administrator" Then
             Logs_Button.Show()
-            UNV_Button.Show()
-            VSK_Button.Show()
-            ViewPurchases_Button.Show()
-            Storage_Button.Show()
+            NoviNalogButton.Show()
+            RadniciButton.Show()
+            NarudzbeButton.Show()
+            SkladisteButton.Show()
             OrderEquip_Button.Show()
         ElseIf position = "Menadzer" Then
-            ViewPurchases_Button.Show()
-            Storage_Button.Show()
+            NarudzbeButton.Show()
+            SkladisteButton.Show()
             OrderEquip_Button.Show()
-            VSK_Button.Show()
+            RadniciButton.Show()
         ElseIf position = "Vlasnik" Then
-            ViewPurchases_Button.Show()
-            Storage_Button.Show()
-            VSK_Button.Show()
+            NarudzbeButton.Show()
+            SkladisteButton.Show()
+            RadniciButton.Show()
         ElseIf position = "Racunovodja" Then
-            UNV_Button.Show()
-            VSK_Button.Show()
+            NoviNalogButton.Show()
+            RadniciButton.Show()
         Else
             Logs_Button.Hide()
-            UNV_Button.Hide()
-            VSK_Button.Hide()
-            ViewPurchases_Button.Hide()
-            Storage_Button.Hide()
+            NoviNalogButton.Hide()
+            RadniciButton.Hide()
+            NarudzbeButton.Hide()
+            SkladisteButton.Hide()
             OrderEquip_Button.Hide()
         End If
 
     End Sub
 
-    Private Sub Storage_Button_Click(sender As Object, e As EventArgs) Handles Storage_Button.Click
+    Private Sub Storage_Button_Click(sender As Object, e As EventArgs) Handles SkladisteButton.Click
         Me.Close()
         GostPrikazArtikala.Show()
     End Sub

@@ -28,11 +28,11 @@ Partial Class Administrator
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.OrderEquip_Button = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.VSK_Button = New System.Windows.Forms.Button()
-        Me.UNV_Button = New System.Windows.Forms.Button()
-        Me.Storage_Button = New System.Windows.Forms.Button()
-        Me.ViewPurchases_Button = New System.Windows.Forms.Button()
+        Me.LabelZaNaziv = New System.Windows.Forms.Label()
+        Me.RadniciButton = New System.Windows.Forms.Button()
+        Me.NoviNalogButton = New System.Windows.Forms.Button()
+        Me.SkladisteButton = New System.Windows.Forms.Button()
+        Me.NarudzbeButton = New System.Windows.Forms.Button()
         Me.Logs_Button = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
@@ -73,74 +73,74 @@ Partial Class Administrator
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.LabelZaNaziv)
         Me.Panel3.Location = New System.Drawing.Point(-4, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(405, 68)
         Me.Panel3.TabIndex = 10
         '
-        'Label1
+        'LabelZaNaziv
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(49, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(292, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "ADMINISTRATORSKI PANEL"
+        Me.LabelZaNaziv.AutoSize = True
+        Me.LabelZaNaziv.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelZaNaziv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.LabelZaNaziv.Location = New System.Drawing.Point(49, 27)
+        Me.LabelZaNaziv.Name = "LabelZaNaziv"
+        Me.LabelZaNaziv.Size = New System.Drawing.Size(292, 25)
+        Me.LabelZaNaziv.TabIndex = 0
+        Me.LabelZaNaziv.Text = "ADMINISTRATORSKI PANEL"
         '
-        'VSK_Button
+        'RadniciButton
         '
-        Me.VSK_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.VSK_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.VSK_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.VSK_Button.Location = New System.Drawing.Point(186, 78)
-        Me.VSK_Button.Name = "VSK_Button"
-        Me.VSK_Button.Size = New System.Drawing.Size(99, 40)
-        Me.VSK_Button.TabIndex = 106
-        Me.VSK_Button.Text = "Radnici"
-        Me.VSK_Button.UseVisualStyleBackColor = False
-        Me.VSK_Button.Visible = False
+        Me.RadniciButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.RadniciButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RadniciButton.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RadniciButton.Location = New System.Drawing.Point(186, 78)
+        Me.RadniciButton.Name = "RadniciButton"
+        Me.RadniciButton.Size = New System.Drawing.Size(99, 40)
+        Me.RadniciButton.TabIndex = 106
+        Me.RadniciButton.Text = "Radnici"
+        Me.RadniciButton.UseVisualStyleBackColor = False
+        Me.RadniciButton.Visible = False
         '
-        'UNV_Button
+        'NoviNalogButton
         '
-        Me.UNV_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.UNV_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UNV_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.UNV_Button.Location = New System.Drawing.Point(86, 78)
-        Me.UNV_Button.Name = "UNV_Button"
-        Me.UNV_Button.Size = New System.Drawing.Size(99, 40)
-        Me.UNV_Button.TabIndex = 105
-        Me.UNV_Button.Text = "Dodaj novog korisnika"
-        Me.UNV_Button.UseVisualStyleBackColor = False
-        Me.UNV_Button.Visible = False
+        Me.NoviNalogButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.NoviNalogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NoviNalogButton.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.NoviNalogButton.Location = New System.Drawing.Point(86, 78)
+        Me.NoviNalogButton.Name = "NoviNalogButton"
+        Me.NoviNalogButton.Size = New System.Drawing.Size(99, 40)
+        Me.NoviNalogButton.TabIndex = 105
+        Me.NoviNalogButton.Text = "Dodaj novog korisnika"
+        Me.NoviNalogButton.UseVisualStyleBackColor = False
+        Me.NoviNalogButton.Visible = False
         '
-        'Storage_Button
+        'SkladisteButton
         '
-        Me.Storage_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Storage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Storage_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Storage_Button.Location = New System.Drawing.Point(186, 124)
-        Me.Storage_Button.Name = "Storage_Button"
-        Me.Storage_Button.Size = New System.Drawing.Size(99, 40)
-        Me.Storage_Button.TabIndex = 108
-        Me.Storage_Button.Text = "Skladište"
-        Me.Storage_Button.UseVisualStyleBackColor = False
-        Me.Storage_Button.Visible = False
+        Me.SkladisteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.SkladisteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SkladisteButton.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.SkladisteButton.Location = New System.Drawing.Point(186, 124)
+        Me.SkladisteButton.Name = "SkladisteButton"
+        Me.SkladisteButton.Size = New System.Drawing.Size(99, 40)
+        Me.SkladisteButton.TabIndex = 108
+        Me.SkladisteButton.Text = "Skladište"
+        Me.SkladisteButton.UseVisualStyleBackColor = False
+        Me.SkladisteButton.Visible = False
         '
-        'ViewPurchases_Button
+        'NarudzbeButton
         '
-        Me.ViewPurchases_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.ViewPurchases_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ViewPurchases_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ViewPurchases_Button.Location = New System.Drawing.Point(86, 124)
-        Me.ViewPurchases_Button.Name = "ViewPurchases_Button"
-        Me.ViewPurchases_Button.Size = New System.Drawing.Size(99, 40)
-        Me.ViewPurchases_Button.TabIndex = 107
-        Me.ViewPurchases_Button.Text = "Narudžbe"
-        Me.ViewPurchases_Button.UseVisualStyleBackColor = False
-        Me.ViewPurchases_Button.Visible = False
+        Me.NarudzbeButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.NarudzbeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NarudzbeButton.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.NarudzbeButton.Location = New System.Drawing.Point(86, 124)
+        Me.NarudzbeButton.Name = "NarudzbeButton"
+        Me.NarudzbeButton.Size = New System.Drawing.Size(99, 40)
+        Me.NarudzbeButton.TabIndex = 107
+        Me.NarudzbeButton.Text = "Narudžbe"
+        Me.NarudzbeButton.UseVisualStyleBackColor = False
+        Me.NarudzbeButton.Visible = False
         '
         'Logs_Button
         '
@@ -165,10 +165,10 @@ Partial Class Administrator
         Me.ClientSize = New System.Drawing.Size(386, 266)
         Me.Controls.Add(Me.Logs_Button)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.ViewPurchases_Button)
-        Me.Controls.Add(Me.Storage_Button)
-        Me.Controls.Add(Me.UNV_Button)
-        Me.Controls.Add(Me.VSK_Button)
+        Me.Controls.Add(Me.NarudzbeButton)
+        Me.Controls.Add(Me.SkladisteButton)
+        Me.Controls.Add(Me.NoviNalogButton)
+        Me.Controls.Add(Me.RadniciButton)
         Me.Controls.Add(Me.OrderEquip_Button)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
@@ -187,11 +187,11 @@ Partial Class Administrator
     Friend WithEvents Exit_Button As Button
     Friend WithEvents OrderEquip_Button As Button
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents VSK_Button As Button
-    Friend WithEvents UNV_Button As Button
-    Friend WithEvents Storage_Button As Button
-    Friend WithEvents ViewPurchases_Button As Button
+    Friend WithEvents LabelZaNaziv As Label
+    Friend WithEvents RadniciButton As Button
+    Friend WithEvents NoviNalogButton As Button
+    Friend WithEvents SkladisteButton As Button
+    Friend WithEvents NarudzbeButton As Button
     Friend WithEvents Logs_Button As Button
     Friend WithEvents Timer1 As Timer
 End Class

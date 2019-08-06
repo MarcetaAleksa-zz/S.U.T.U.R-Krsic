@@ -30,7 +30,7 @@ Public Class Korisnik
         'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         Dim MonthID As Integer = 1
 
-        Dim command As New SqlCommand("SELECT *,  Projekat.dbo.Position.BaseSalary * Projekat.dbo.Salary.WorkDays as Plata FROM Projekat.dbo.Salary, Projekat.dbo.Position
+        Dim command As New SqlCommand("SELECT *,  Projekat.dbo.Position.SalaryPerhour * Projekat.dbo.Salary.WorkDays as Plata FROM Projekat.dbo.Salary, Projekat.dbo.Position
 WHERE WorkerID = '" & Prijava.ID_Label.Text & "' and MonthID = @MonthID ", containerdb.connection)
         command.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
         Dim adapter As New SqlDataAdapter(command)
