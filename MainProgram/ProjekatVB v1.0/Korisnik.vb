@@ -24,6 +24,7 @@ Public Class Korisnik
         U_Username_TextBox.Text = user_table.Rows(0)(5)
         U_Possition_TextBox.Text = user_table.Rows(0)(6)
         U_Phone_TextBox.Text = user_table.Rows(0)(7)
+        U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Name_TextBox.Text & U_Surname_TextBox.Text & ".jpg ")
     End Sub
     'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -38,12 +39,14 @@ WHERE WorkerID = '" & Prijava.ID_Label.Text & "' and MonthID = @MonthID ", conta
         adapter.Fill(userinfotable)
         'Drop-down koji treba uvesti iz baze
 
+
         If (U_Month_Dropdown.SelectedIndex = 0) Then
             MonthID = 1
             Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
             monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
             Dim monada As New SqlDataAdapter(monthcom)
             Dim monthinfo As New DataTable()
+            monada.Fill(monthinfo)
             U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
         ElseIf (U_Month_Dropdown.SelectedIndex = 1) Then
             MonthID = 2

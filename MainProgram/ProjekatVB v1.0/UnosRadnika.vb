@@ -7,9 +7,9 @@ Public Class UnosRadnika
         UR_OpenFileDialog.ShowDialog() 'ovaj klik je na dugme za unos slike, tj kao Browse Picture, ili Choose image i sl, to je taj button
     End Sub
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles UR_OpenFileDialog.FileOk
-        Dim myPic As Bitmap
-        myPic = New Bitmap(UR_OpenFileDialog.FileName) 'preko ovog unosimo sliku, nasao ja na netu
-        UR_Picture.Image = myPic
+
+        UR_Picture.Image = Image.FromFile(UR_OpenFileDialog.FileName) 'preko ovog unosimo sliku, nasao ja na netu
+
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles UR_Timer.Tick
         If UR_Picture.Image IsNot Nothing Then 'Ovo sam napravio ako korisnik nema sliku da mu izbaci odmah NO FILE, a kada je UBAVI hah onda da nam taj label nestane.
@@ -68,7 +68,23 @@ VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '
 INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
 VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "')"
             Command.ExecuteNonQuery()
+            'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\" & UR_Username_TextBox.Text & ".jpg")
+            Dim x As Integer = UR_Picture.Width
+            Dim y As Integer = UR_Picture.Height
+            Dim bm As New Bitmap(x, y)
+            'Dim nest As String
+            UR_Picture.DrawToBitmap(bm, New Rectangle(0, 0, x, y))
+
+            UR_Picture.Image = bm
+            If ((UR_Name_TextBox.Text <> "Unesi ime ovde" And UR_Surname_TextBox.Text <> "Unesi prezime ovde") Or (UR_Name_TextBox.Text And UR_Surname_TextBox.Text <> "")) Then
+                SaveImage(("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & UR_Name_TextBox.Text & UR_Surname_TextBox.Text & ".jpg"), UR_Picture.Image)
+                UR_Picture.Image = Nothing
+
+            Else
+
+            End If
             brojac += 1
+
         Catch ex As Exception
             MessageBox.Show("Greška prilikom unosa u tabelu." + ex.Message)
             brojac = 0
@@ -93,7 +109,6 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Unesi lozinku ovde"
             Enkripcija.HashStore = Nothing
-
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray
             UR_Birth_TextBox.ForeColor = Color.Gray
@@ -232,7 +247,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
         End If
     End Sub
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
-        Me.Hide()
+        Me.Close()
         Administrator.Show()
     End Sub
 
@@ -243,4 +258,23 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
     Private Sub UnosRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub ProbaDugme_Click(sender As Object, e As EventArgs) Handles probaDugme.Click
+        'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\Images\Nikola.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
+        'Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\Nikola.jpg")
+
+    End Sub
+
+
+
+    Public Sub SaveImage(filename As String, image As Image)
+        Dim path As String = System.IO.Path.Combine(My.Application.Info.DirectoryPath, filename & ".jpg")
+        Dim mySource As New Bitmap(image.Width, image.Height)
+        Dim grfx As Graphics = Graphics.FromImage(mySource)
+        grfx.DrawImageUnscaled(image, Point.Empty)
+        grfx.Dispose()
+        mySource.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg)
+        mySource.Dispose()
+    End Sub
+
 End Class

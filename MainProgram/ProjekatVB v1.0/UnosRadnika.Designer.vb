@@ -78,6 +78,8 @@ Partial Class UnosRadnika
         Me.UR_ClearImage_Button = New System.Windows.Forms.Button()
         Me.UR_ChangePicture_Button = New System.Windows.Forms.Button()
         Me.UR_Picture = New System.Windows.Forms.PictureBox()
+        Me.probaDugme = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.UR_AT_GroupBox.SuspendLayout()
         Me.UR_Gender_GroupBox.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -91,6 +93,7 @@ Partial Class UnosRadnika
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UR_Phone_TextBox1
@@ -590,11 +593,30 @@ Partial Class UnosRadnika
         Me.UR_Picture.TabIndex = 25
         Me.UR_Picture.TabStop = False
         '
+        'probaDugme
+        '
+        Me.probaDugme.Location = New System.Drawing.Point(85, 346)
+        Me.probaDugme.Name = "probaDugme"
+        Me.probaDugme.Size = New System.Drawing.Size(75, 23)
+        Me.probaDugme.TabIndex = 128
+        Me.probaDugme.Text = "proba"
+        Me.probaDugme.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(263, 319)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.TabIndex = 129
+        Me.PictureBox1.TabStop = False
+        '
         'UnosRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(498, 345)
+        Me.ClientSize = New System.Drawing.Size(498, 377)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.probaDugme)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel11)
         Me.Controls.Add(Me.Panel10)
@@ -661,6 +683,7 @@ Partial Class UnosRadnika
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -720,4 +743,6 @@ Partial Class UnosRadnika
     Friend WithEvents UR_ConfirmPassword_Textbox As TextBox
     Friend WithEvents Back_Button As Button
     Friend WithEvents URComboBox As ComboBox
+    Friend WithEvents probaDugme As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
