@@ -31,7 +31,6 @@ Public Class UnosRadnika
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
         Dim Gender As String
         Dim Account_type As String
-        'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
         Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
@@ -60,8 +59,7 @@ Public Class UnosRadnika
             brojac = 0
         End If
         Enkripcija.EncryptPass()
-        'Faks (C:\\Users\\IT\\Desktop\\Projekat\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\)
-        'Kuca C:\\Users\\WorkStation\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Debug\\
+
         Try
             containerdb.connection.Open()
             Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
