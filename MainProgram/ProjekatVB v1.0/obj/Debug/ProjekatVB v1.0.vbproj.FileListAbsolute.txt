@@ -120,7 +120,6 @@ C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bi
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Administrator.resources
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Kupovina.resources
-C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.FormaPoruka.resources
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UnosRadnika.resources
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Gost.resources
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Resources.resources
@@ -134,3 +133,8 @@ C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\ob
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Prijava.resources
 C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.pregledRadnika.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.AdminDobroDosli.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.GostDobroDosli.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UserDobroDosli.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.LoginGreska.resources
+C:\Users\WorkStation\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.DataGridError.resources

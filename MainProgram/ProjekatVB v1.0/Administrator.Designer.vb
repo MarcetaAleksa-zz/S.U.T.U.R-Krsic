@@ -25,7 +25,6 @@ Partial Class Administrator
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Administrator))
         Me.Exit_Button = New System.Windows.Forms.Button()
-        Me.OrderEquip_Button = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.RadniciButton = New System.Windows.Forms.Button()
@@ -46,19 +45,6 @@ Partial Class Administrator
         Me.Exit_Button.TabIndex = 111
         Me.Exit_Button.Text = "Izlaz"
         Me.Exit_Button.UseVisualStyleBackColor = True
-        '
-        'OrderEquip_Button
-        '
-        Me.OrderEquip_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.OrderEquip_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.OrderEquip_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.OrderEquip_Button.Location = New System.Drawing.Point(87, 170)
-        Me.OrderEquip_Button.Name = "OrderEquip_Button"
-        Me.OrderEquip_Button.Size = New System.Drawing.Size(198, 40)
-        Me.OrderEquip_Button.TabIndex = 109
-        Me.OrderEquip_Button.Text = "Poručiti robu11"
-        Me.OrderEquip_Button.UseVisualStyleBackColor = False
-        Me.OrderEquip_Button.Visible = False
         '
         'Panel3
         '
@@ -134,9 +120,9 @@ Partial Class Administrator
         '
         'Logs_Button
         '
-        Me.Logs_Button.Location = New System.Drawing.Point(291, 78)
+        Me.Logs_Button.Location = New System.Drawing.Point(86, 170)
         Me.Logs_Button.Name = "Logs_Button"
-        Me.Logs_Button.Size = New System.Drawing.Size(39, 176)
+        Me.Logs_Button.Size = New System.Drawing.Size(199, 40)
         Me.Logs_Button.TabIndex = 113
         Me.Logs_Button.Text = "Logs"
         Me.Logs_Button.UseVisualStyleBackColor = True
@@ -169,7 +155,6 @@ Partial Class Administrator
         Me.Controls.Add(Me.SkladisteButton)
         Me.Controls.Add(Me.NoviNalogButton)
         Me.Controls.Add(Me.RadniciButton)
-        Me.Controls.Add(Me.OrderEquip_Button)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -185,7 +170,6 @@ Partial Class Administrator
 
     Friend WithEvents Back_Button As Button
     Friend WithEvents Exit_Button As Button
-    Friend WithEvents OrderEquip_Button As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents LabelZaNaziv As Label
     Friend WithEvents RadniciButton As Button

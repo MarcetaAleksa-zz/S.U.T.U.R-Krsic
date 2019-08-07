@@ -16,6 +16,8 @@
             dugmeIzmijeni.Visible = True
             DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
             Me.WorkersTableAdapter.Update(Me.ProjekatDataSet.Workers)
+            PraznaPoljaLabel.Visible = False
+            PonistiIzmjeneDugme.Visible = False
 
 
         End If
@@ -26,12 +28,19 @@
             dugmeIzmijeni.Visible = False
             dugmeSacuvaj.Visible = True
             DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystroke
+            PraznaPoljaLabel.Visible = True
+            PonistiIzmjeneDugme.Visible = True
+
         End If
 
     End Sub
 
     Private Sub DataGridView1_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles DataGridView1.DataError
         e.Cancel = True
-        FormaPoruka.Show()
+        DataGridError.Show()
+    End Sub
+
+    Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
+        Me.WorkersTableAdapter.Fill(Me.ProjekatDataSet.Workers)
     End Sub
 End Class

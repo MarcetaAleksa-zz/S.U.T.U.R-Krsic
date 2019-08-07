@@ -31,11 +31,10 @@ Public Class Administrator
             RadniciButton.Show()
             NarudzbeButton.Show()
             SkladisteButton.Show()
-            OrderEquip_Button.Show()
+
         ElseIf position = "Menadzer" Then
             NarudzbeButton.Show()
             SkladisteButton.Show()
-            OrderEquip_Button.Show()
             RadniciButton.Show()
         ElseIf position = "Vlasnik" Then
             NarudzbeButton.Show()
@@ -50,7 +49,6 @@ Public Class Administrator
             RadniciButton.Hide()
             NarudzbeButton.Hide()
             SkladisteButton.Hide()
-            OrderEquip_Button.Hide()
         End If
 
     End Sub

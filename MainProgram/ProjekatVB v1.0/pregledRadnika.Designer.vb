@@ -40,6 +40,8 @@ Partial Class pregledRadnika
         Me.WorkersTableAdapter = New ProjekatVB_v1._0.ProjekatDataSetTableAdapters.WorkersTableAdapter()
         Me.dugmeIzmijeni = New System.Windows.Forms.Button()
         Me.dugmeSacuvaj = New System.Windows.Forms.Button()
+        Me.PraznaPoljaLabel = New System.Windows.Forms.Label()
+        Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WorkersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +62,7 @@ Partial Class pregledRadnika
         Me.LabelZaNaziv.AutoSize = True
         Me.LabelZaNaziv.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelZaNaziv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.LabelZaNaziv.Location = New System.Drawing.Point(348, 25)
+        Me.LabelZaNaziv.Location = New System.Drawing.Point(330, 25)
         Me.LabelZaNaziv.Name = "LabelZaNaziv"
         Me.LabelZaNaziv.Size = New System.Drawing.Size(210, 25)
         Me.LabelZaNaziv.TabIndex = 0
@@ -171,11 +173,38 @@ Partial Class pregledRadnika
         Me.dugmeSacuvaj.UseVisualStyleBackColor = False
         Me.dugmeSacuvaj.Visible = False
         '
+        'PraznaPoljaLabel
+        '
+        Me.PraznaPoljaLabel.AutoSize = True
+        Me.PraznaPoljaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PraznaPoljaLabel.Location = New System.Drawing.Point(530, 105)
+        Me.PraznaPoljaLabel.Name = "PraznaPoljaLabel"
+        Me.PraznaPoljaLabel.Size = New System.Drawing.Size(251, 12)
+        Me.PraznaPoljaLabel.TabIndex = 129
+        Me.PraznaPoljaLabel.Text = "*Polja:Ime,Korisnicko Ime, Pozicija i Pol, ne smiju biti prazni!"
+        Me.PraznaPoljaLabel.Visible = False
+        '
+        'PonistiIzmjeneDugme
+        '
+        Me.PonistiIzmjeneDugme.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.PonistiIzmjeneDugme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PonistiIzmjeneDugme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PonistiIzmjeneDugme.ForeColor = System.Drawing.SystemColors.Control
+        Me.PonistiIzmjeneDugme.Location = New System.Drawing.Point(173, 74)
+        Me.PonistiIzmjeneDugme.Name = "PonistiIzmjeneDugme"
+        Me.PonistiIzmjeneDugme.Size = New System.Drawing.Size(109, 40)
+        Me.PonistiIzmjeneDugme.TabIndex = 136
+        Me.PonistiIzmjeneDugme.Text = "Ponisti izmjene"
+        Me.PonistiIzmjeneDugme.UseVisualStyleBackColor = False
+        Me.PonistiIzmjeneDugme.Visible = False
+        '
         'pregledRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(818, 450)
+        Me.Controls.Add(Me.PonistiIzmjeneDugme)
+        Me.Controls.Add(Me.PraznaPoljaLabel)
         Me.Controls.Add(Me.dugmeSacuvaj)
         Me.Controls.Add(Me.dugmeIzmijeni)
         Me.Controls.Add(Me.Back_Button)
@@ -192,6 +221,7 @@ Partial Class pregledRadnika
         CType(Me.WorkersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProjekatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -211,4 +241,6 @@ Partial Class pregledRadnika
     Friend WithEvents PhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents dugmeIzmijeni As Button
     Friend WithEvents dugmeSacuvaj As Button
+    Friend WithEvents PraznaPoljaLabel As Label
+    Friend WithEvents PonistiIzmjeneDugme As Button
 End Class

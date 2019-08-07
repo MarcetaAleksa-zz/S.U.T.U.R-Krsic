@@ -74,6 +74,36 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorForms\AdminDobroDosli.Designer.vb">
+      <DependentUpon>AdminDobroDosli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorForms\AdminDobroDosli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorForms\DataGridError.Designer.vb">
+      <DependentUpon>DataGridError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorForms\DataGridError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorForms\GostDobroDosli.Designer.vb">
+      <DependentUpon>GostDobroDosli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorForms\GostDobroDosli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorForms\LoginGreska.Designer.vb">
+      <DependentUpon>LoginGreska.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorForms\LoginGreska.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorForms\UserDobroDosli.Designer.vb">
+      <DependentUpon>UserDobroDosli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorForms\UserDobroDosli.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="pregledRadnika.Designer.vb">
       <DependentUpon>pregledRadnika.vb</DependentUpon>
     </Compile>
@@ -89,12 +119,6 @@
     <Compile Include="containerdb.vb" />
     <Compile Include="Enkripcija.vb" />
     <Compile Include="Logovi.vb" />
-    <Compile Include="FormaPoruka.Designer.vb">
-      <DependentUpon>FormaPoruka.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormaPoruka.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ProjekatDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,14 +187,26 @@
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForms\AdminDobroDosli.resx">
+      <DependentUpon>AdminDobroDosli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForms\DataGridError.resx">
+      <DependentUpon>DataGridError.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForms\GostDobroDosli.resx">
+      <DependentUpon>GostDobroDosli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForms\LoginGreska.resx">
+      <DependentUpon>LoginGreska.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForms\UserDobroDosli.resx">
+      <DependentUpon>UserDobroDosli.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pregledRadnika.resx">
       <DependentUpon>pregledRadnika.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kupovina.resx">
       <DependentUpon>Kupovina.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormaPoruka.resx">
-      <DependentUpon>FormaPoruka.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosRadnika.resx">
       <DependentUpon>UnosRadnika.vb</DependentUpon>

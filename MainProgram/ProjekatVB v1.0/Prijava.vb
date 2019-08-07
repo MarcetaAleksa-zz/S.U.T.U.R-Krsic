@@ -59,15 +59,13 @@ Public Class Prijava
 
         If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
             Logovi.FailedLog()
-            test = 4
-            FormaPoruka.Show()
+            LoginGreska.Show()
             Password_Form_Box.Text = ""
             Enkripcija.HashStore = Nothing
 
         ElseIf admin_table.Rows.Count() > 0 Then
             Logovi.Log()
-            test = 1
-            FormaPoruka.Show()
+            AdminDobroDosli.Show()
             ID_Label.Text = admin_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
             Me.Hide()
@@ -75,8 +73,7 @@ Public Class Prijava
             Enkripcija.HashStore = Nothing
         ElseIf user_table.Rows.Count() > 0 Then
             Enkripcija.HashStore = Nothing
-            test = 2
-            FormaPoruka.Show()
+            UserDobroDosli.Show()
             ID_Label.Text = user_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je pozvali u User formi i tako povezali user formu i login formu te Workers i Login tabele iz baze
             Me.Hide()
@@ -85,8 +82,7 @@ Public Class Prijava
         End If
     End Sub
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
-        test = 3
-        FormaPoruka.Show()
+        GostDobroDosli.Show()
         Me.Hide()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
