@@ -114,7 +114,7 @@ Partial Class Administrator
         Me.NarudzbeButton.Name = "NarudzbeButton"
         Me.NarudzbeButton.Size = New System.Drawing.Size(99, 40)
         Me.NarudzbeButton.TabIndex = 107
-        Me.NarudzbeButton.Text = "Narudžbe11"
+        Me.NarudzbeButton.Text = "Pretraga radnika"
         Me.NarudzbeButton.UseVisualStyleBackColor = False
         Me.NarudzbeButton.Visible = False
         '

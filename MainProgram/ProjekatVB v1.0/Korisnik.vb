@@ -24,7 +24,7 @@ Public Class Korisnik
         U_Username_TextBox.Text = user_table.Rows(0)(5)
         U_Possition_TextBox.Text = user_table.Rows(0)(6)
         U_Phone_TextBox.Text = user_table.Rows(0)(7)
-        U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Name_TextBox.Text & U_Surname_TextBox.Text & ".jpg ")
+        U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
     End Sub
     'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

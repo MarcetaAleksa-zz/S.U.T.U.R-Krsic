@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -119,9 +120,18 @@
     <Compile Include="containerdb.vb" />
     <Compile Include="Enkripcija.vb" />
     <Compile Include="Logovi.vb" />
+    <Compile Include="PretragaRadnika.Designer.vb">
+      <DependentUpon>PretragaRadnika.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PretragaRadnika.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ProjekatDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>ProjekatDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjekatDataSet.vb">
       <DependentUpon>ProjekatDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UnosRadnika.Designer.vb">
@@ -207,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kupovina.resx">
       <DependentUpon>Kupovina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PretragaRadnika.resx">
+      <DependentUpon>PretragaRadnika.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosRadnika.resx">
       <DependentUpon>UnosRadnika.vb</DependentUpon>
