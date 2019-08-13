@@ -50,9 +50,6 @@ Partial Class UnosRadnika
         Me.UR_Male_Button = New System.Windows.Forms.RadioButton()
         Me.UR_Female_Button = New System.Windows.Forms.RadioButton()
         Me.A_Register_Button = New System.Windows.Forms.Button()
-        Me.UR_Admin_Button = New System.Windows.Forms.RadioButton()
-        Me.UR_User_Button = New System.Windows.Forms.RadioButton()
-        Me.UR_AT_GroupBox = New System.Windows.Forms.GroupBox()
         Me.UR_Gender_GroupBox = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.AddNewUser_Label = New System.Windows.Forms.Label()
@@ -78,9 +75,7 @@ Partial Class UnosRadnika
         Me.UR_ClearImage_Button = New System.Windows.Forms.Button()
         Me.UR_ChangePicture_Button = New System.Windows.Forms.Button()
         Me.UR_Picture = New System.Windows.Forms.PictureBox()
-        Me.probaDugme = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.UR_AT_GroupBox.SuspendLayout()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.UR_Gender_GroupBox.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -93,7 +88,6 @@ Partial Class UnosRadnika
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UR_Phone_TextBox1
@@ -305,37 +299,6 @@ Partial Class UnosRadnika
         Me.A_Register_Button.Text = "Registruj"
         Me.A_Register_Button.UseVisualStyleBackColor = False
         '
-        'UR_Admin_Button
-        '
-        Me.UR_Admin_Button.AutoSize = True
-        Me.UR_Admin_Button.Location = New System.Drawing.Point(6, 19)
-        Me.UR_Admin_Button.Name = "UR_Admin_Button"
-        Me.UR_Admin_Button.Size = New System.Drawing.Size(54, 17)
-        Me.UR_Admin_Button.TabIndex = 121
-        Me.UR_Admin_Button.Text = "Admin"
-        Me.UR_Admin_Button.UseVisualStyleBackColor = True
-        '
-        'UR_User_Button
-        '
-        Me.UR_User_Button.AutoSize = True
-        Me.UR_User_Button.Location = New System.Drawing.Point(6, 39)
-        Me.UR_User_Button.Name = "UR_User_Button"
-        Me.UR_User_Button.Size = New System.Drawing.Size(62, 17)
-        Me.UR_User_Button.TabIndex = 122
-        Me.UR_User_Button.Text = "Korisnik"
-        Me.UR_User_Button.UseVisualStyleBackColor = True
-        '
-        'UR_AT_GroupBox
-        '
-        Me.UR_AT_GroupBox.Controls.Add(Me.UR_Admin_Button)
-        Me.UR_AT_GroupBox.Controls.Add(Me.UR_User_Button)
-        Me.UR_AT_GroupBox.Location = New System.Drawing.Point(402, 97)
-        Me.UR_AT_GroupBox.Name = "UR_AT_GroupBox"
-        Me.UR_AT_GroupBox.Size = New System.Drawing.Size(94, 62)
-        Me.UR_AT_GroupBox.TabIndex = 36
-        Me.UR_AT_GroupBox.TabStop = False
-        Me.UR_AT_GroupBox.Text = "Tip naloga:"
-        '
         'UR_Gender_GroupBox
         '
         Me.UR_Gender_GroupBox.Controls.Add(Me.UR_Male_Button)
@@ -371,7 +334,7 @@ Partial Class UnosRadnika
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.Panel1.Controls.Add(Me.UR_Name_TextBox)
-        Me.Panel1.Location = New System.Drawing.Point(21, 90)
+        Me.Panel1.Location = New System.Drawing.Point(21, 78)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(220, 26)
         Me.Panel1.TabIndex = 1
@@ -391,7 +354,7 @@ Partial Class UnosRadnika
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.Panel2.Controls.Add(Me.UR_Surname_TextBox)
-        Me.Panel2.Location = New System.Drawing.Point(21, 122)
+        Me.Panel2.Location = New System.Drawing.Point(21, 110)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(220, 26)
         Me.Panel2.TabIndex = 2
@@ -411,7 +374,7 @@ Partial Class UnosRadnika
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.Panel4.Controls.Add(Me.UR_Birth_TextBox)
-        Me.Panel4.Location = New System.Drawing.Point(21, 154)
+        Me.Panel4.Location = New System.Drawing.Point(21, 142)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(220, 26)
         Me.Panel4.TabIndex = 3
@@ -438,6 +401,8 @@ Partial Class UnosRadnika
         '
         'URComboBox
         '
+        Me.URComboBox.BackColor = System.Drawing.SystemColors.Control
+        Me.URComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.URComboBox.FormattingEnabled = True
         Me.URComboBox.Items.AddRange(New Object() {"Korisnik", "Administrator", "Racunovodja", "Menadzer", "Vlasnik", "Grobar"})
         Me.URComboBox.Location = New System.Drawing.Point(3, 2)
@@ -593,30 +558,20 @@ Partial Class UnosRadnika
         Me.UR_Picture.TabIndex = 25
         Me.UR_Picture.TabStop = False
         '
-        'probaDugme
+        'Label1
         '
-        Me.probaDugme.Location = New System.Drawing.Point(85, 346)
-        Me.probaDugme.Name = "probaDugme"
-        Me.probaDugme.Size = New System.Drawing.Size(75, 23)
-        Me.probaDugme.TabIndex = 128
-        Me.probaDugme.Text = "proba"
-        Me.probaDugme.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(263, 319)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.TabIndex = 129
-        Me.PictureBox1.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(21, 170)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(79, 13)
+        Me.Label1.TabIndex = 33
+        Me.Label1.Text = "Izaberi poziciju:"
         '
         'UnosRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(498, 377)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.probaDugme)
+        Me.ClientSize = New System.Drawing.Size(498, 333)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel11)
         Me.Controls.Add(Me.Panel10)
@@ -628,10 +583,10 @@ Partial Class UnosRadnika
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.UR_Gender_GroupBox)
-        Me.Controls.Add(Me.UR_AT_GroupBox)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.A_Register_Button)
         Me.Controls.Add(Me.UR_ClearImage_Button)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.UR_ChooseImage_Label)
         Me.Controls.Add(Me.UR_NoFile_Label)
         Me.Controls.Add(Me.UR_ChangePicture_Button)
@@ -659,8 +614,6 @@ Partial Class UnosRadnika
         Me.Name = "UnosRadnika"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Unos radnika"
-        Me.UR_AT_GroupBox.ResumeLayout(False)
-        Me.UR_AT_GroupBox.PerformLayout()
         Me.UR_Gender_GroupBox.ResumeLayout(False)
         Me.UR_Gender_GroupBox.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -683,7 +636,6 @@ Partial Class UnosRadnika
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -718,9 +670,6 @@ Partial Class UnosRadnika
     Friend WithEvents UR_Male_Button As RadioButton
     Friend WithEvents UR_Female_Button As RadioButton
     Friend WithEvents A_Register_Button As Button
-    Friend WithEvents UR_Admin_Button As RadioButton
-    Friend WithEvents UR_User_Button As RadioButton
-    Friend WithEvents UR_AT_GroupBox As GroupBox
     Friend WithEvents UR_Gender_GroupBox As GroupBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents AddNewUser_Label As Label
@@ -743,6 +692,5 @@ Partial Class UnosRadnika
     Friend WithEvents UR_ConfirmPassword_Textbox As TextBox
     Friend WithEvents Back_Button As Button
     Friend WithEvents URComboBox As ComboBox
-    Friend WithEvents probaDugme As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
 End Class

@@ -49,14 +49,16 @@ Public Class UnosRadnika
         Else MsgBox("Pol")
             brojac = 0
         End If
-        If UR_Admin_Button.Checked = True Then
+
+        If URComboBox.Text = "Administrator" Or URComboBox.Text = "Menadzer" Or URComboBox.Text = "Vlasnik" Or URComboBox.Text = "Racunovodja" Then
             Account_type = "True"
             brojac += 1
-        ElseIf UR_User_Button.Checked = True Then
+        ElseIf URComboBox.Text = "Korisnik" Or URComboBox.Text = "Grobar" Then
             Account_type = "False"
             brojac += 1
-        Else MsgBox("Izaberite tip naloga")
+        Else
             brojac = 0
+            MsgBox("Boga pitaj sta je")
         End If
         Enkripcija.EncryptPass()
 
@@ -76,8 +78,8 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_Picture.DrawToBitmap(bm, New Rectangle(0, 0, x, y))
 
             UR_Picture.Image = bm
-            If ((UR_Name_TextBox.Text <> "Unesi ime ovde" And UR_Surname_TextBox.Text <> "Unesi prezime ovde") Or (UR_Name_TextBox.Text And UR_Surname_TextBox.Text <> "")) Then
-                SaveImage(("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & UR_Name_TextBox.Text & UR_Surname_TextBox.Text & ".jpg"), UR_Picture.Image)
+            If UR_Username_TextBox.Text <> "Unesi korisničko ime ovde" Then
+                SaveImage(("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
                 UR_Picture.Image = Nothing
 
             Else
@@ -127,13 +129,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_Male_Button.Checked = False
         End If
     End Sub
-    Private Sub UR_Admin_Button_CheckedChanged(sender As Object, e As EventArgs) Handles UR_Admin_Button.CheckedChanged
-        If UR_Admin_Button.Checked = True Then
-            UR_User_Button.Checked = False
-        ElseIf UR_User_Button.Checked = True Then
-            UR_Admin_Button.Checked = False
-        End If
-    End Sub
+
     Private Sub UR_Name_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Leave
         If (UR_Name_TextBox.Text = "") Then
             UR_Name_TextBox.Text = "Unesi ime ovde"
@@ -259,7 +255,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
 
     End Sub
 
-    Private Sub ProbaDugme_Click(sender As Object, e As EventArgs) Handles probaDugme.Click
+    Private Sub ProbaDugme_Click(sender As Object, e As EventArgs)
         'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\Images\Nikola.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
         'Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\Nikola.jpg")
 
