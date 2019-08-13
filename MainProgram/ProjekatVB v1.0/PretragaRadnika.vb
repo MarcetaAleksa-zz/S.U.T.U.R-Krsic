@@ -35,7 +35,7 @@ Public Class PretragaRadnika
             connection.Close()
             ComboBox1.DataSource = ds.Tables(0)
             ComboBox1.ValueMember = "ID"
-            ' ComboBox1.DisplayMember =
+            ComboBox1.DisplayMember = "Name"
 
 
 
@@ -64,6 +64,7 @@ Public Class PretragaRadnika
             U_Possition_TextBox.Text = user_table.Rows(0)(6)
             U_Phone_TextBox.Text = user_table.Rows(0)(7)
             U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            ' marce : aleksandar
         Catch ex As Exception
         End Try
 

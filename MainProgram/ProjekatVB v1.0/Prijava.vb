@@ -2,7 +2,7 @@
 Public Class Prijava
     Public test As Double = 0
     Public pozicija As Double = 0
-    'Konekcija sa bazom DESKTOP-M1CQQFK\SQLEXPRESS (Home PC) TESTTHENEXT2\SQLEXPRESS (College PC)
+    'Konekcija sa bazom NAPOLEON : SPARTAN 
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
         If (Username_Form_Box.Text = "Unesi korisničko ime ovde") Then
             Username_Form_Box.Text = ""
@@ -31,11 +31,14 @@ Public Class Prijava
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
         Enkripcija.EncryptPass()
-        Dim command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
-        command.Parameters.Add("@Username", SqlDbType.NChar).Value = Username_Form_Box.Text
-        command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Enkripcija.HashStore
+        Dim command As New SqlCommand("SELECT * FROM dbo.korisnici", containerdb.connection)
+        command.Parameters.Add("@Korisnicki_id", SqlDbType.NChar).Value = Username_Form_Box.Text
+        command.Parameters.Add("@Lozinka", SqlDbType.VarChar).Value = Enkripcija.HashStore
         'Syntax za dobijanje admin akreditaciju
-        command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'True' and   Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
+        MsgBox(Enkripcija.HashStore)
+
+
+        command.CommandText = "SELECT pozicija_id, * FROM pozicija, dbo.korisnici where pozicija_id <4  and dbo.korisnici.korisnicki_id = @Korisnicki_id and lozinka = @Lozinka COLLATE Latin1_General_CS_AS"
 
         Dim adapter As New SqlDataAdapter(command)
 
@@ -46,7 +49,7 @@ Public Class Prijava
         End Try
 
         'syntax za user akreditaciju
-        command.CommandText = "SELECT * FROM Projekat.dbo.Login where Account_Type = 'false' and Username = @Username and Password = @Password COLLATE Latin1_General_CS_AS"
+        command.CommandText = "SELECT pozicija_id, * FROM pozicija, dbo.korisnici where pozicija_id > 3  and dbo.korisnici.korisnicki_id = @Korisnicki_id and lozinka = @Lozinka COLLATE Latin1_General_CS_AS"
 
         Dim user_table As New DataTable() ' unos u user tabelu, u slucaju da se neko prijavio ko je Account_Type = 'false'
         'Acount_Type = 'True' je Administrator po Bool-u

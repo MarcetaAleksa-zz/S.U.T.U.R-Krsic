@@ -16,33 +16,31 @@ Public Class Administrator
         PretragaRadnika.Show()
     End Sub
     Private Sub Logs_Button_Click(sender As Object, e As EventArgs) Handles Logs_Button.Click
-        Process.Start("C:\\Users\\Aleksandar\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
-        Process.Start("C:\\Users\\Aleksandar\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt")
+        'marce : aleksandar
+        Process.Start("C:\\Users\\marce\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
+        Process.Start("C:\\Users\\marce\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt")
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim command As New SqlCommand("SELECT Position FROM Projekat.dbo.Workers where Username = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
+        Dim command As New SqlCommand("SELECT pozicija_id FROM S.U.T.U.R_Krsic.spoj_tabela where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
         Dim adapter As New SqlDataAdapter(command)
         Dim position_tbl As New DataTable()
         adapter.Fill(position_tbl)
         Dim position = position_tbl.Rows(0)(0)
-        If position = "Administrator" Then
+        If position = 1 Then
             Logs_Button.Show()
             NoviNalogButton.Show()
             RadniciButton.Show()
             NarudzbeButton.Show()
             SkladisteButton.Show()
 
-        ElseIf position = "Menadzer" Then
+        ElseIf position = 2 Then
             NarudzbeButton.Show()
             SkladisteButton.Show()
             RadniciButton.Show()
-        ElseIf position = "Vlasnik" Then
+        ElseIf position = 3 Then
             NarudzbeButton.Show()
             SkladisteButton.Show()
-            RadniciButton.Show()
-        ElseIf position = "Racunovodja" Then
-            NoviNalogButton.Show()
             RadniciButton.Show()
         Else
             Logs_Button.Hide()
