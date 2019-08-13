@@ -69,6 +69,7 @@ Public Class Prijava
             ID_Label.Text = admin_table.Rows(0)(0)
             'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
             Me.Hide()
+            test = 1
             Password_Form_Box.Text = ""
             Enkripcija.HashStore = Nothing
         ElseIf user_table.Rows.Count() > 0 Then
@@ -83,6 +84,7 @@ Public Class Prijava
     End Sub
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
         GostDobroDosli.Show()
+        test = 0
         Me.Hide()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
