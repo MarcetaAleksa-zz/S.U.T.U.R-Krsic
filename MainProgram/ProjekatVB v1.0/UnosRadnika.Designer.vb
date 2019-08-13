@@ -76,6 +76,7 @@ Partial Class UnosRadnika
         Me.UR_ChangePicture_Button = New System.Windows.Forms.Button()
         Me.UR_Picture = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.UR_Gender_GroupBox.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -303,7 +304,7 @@ Partial Class UnosRadnika
         '
         Me.UR_Gender_GroupBox.Controls.Add(Me.UR_Male_Button)
         Me.UR_Gender_GroupBox.Controls.Add(Me.UR_Female_Button)
-        Me.UR_Gender_GroupBox.Location = New System.Drawing.Point(402, 154)
+        Me.UR_Gender_GroupBox.Location = New System.Drawing.Point(402, 117)
         Me.UR_Gender_GroupBox.Name = "UR_Gender_GroupBox"
         Me.UR_Gender_GroupBox.Size = New System.Drawing.Size(94, 63)
         Me.UR_Gender_GroupBox.TabIndex = 37
@@ -524,7 +525,6 @@ Partial Class UnosRadnika
         'UR_ClearImage_Button
         '
         Me.UR_ClearImage_Button.BackColor = System.Drawing.Color.Transparent
-        Me.UR_ClearImage_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.UR_ClearImage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.UR_ClearImage_Button.Image = CType(resources.GetObject("UR_ClearImage_Button.Image"), System.Drawing.Image)
         Me.UR_ClearImage_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -567,11 +567,21 @@ Partial Class UnosRadnika
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "Izaberi poziciju:"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(233, 399)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 128
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'UnosRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(498, 333)
+        Me.ClientSize = New System.Drawing.Size(498, 325)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel11)
         Me.Controls.Add(Me.Panel10)
@@ -693,4 +703,5 @@ Partial Class UnosRadnika
     Friend WithEvents Back_Button As Button
     Friend WithEvents URComboBox As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
 End Class

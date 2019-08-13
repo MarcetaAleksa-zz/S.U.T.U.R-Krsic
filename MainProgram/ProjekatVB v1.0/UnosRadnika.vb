@@ -2,6 +2,7 @@
 Public Class UnosRadnika
     Public brojac As Double = 0
     Public Correct_Password As String
+    Public postojanjeSlike As Double = 0
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles UR_ChangePicture_Button.Click
         UR_OpenFileDialog.InitialDirectory = UR_FolderBrowserDialog.SelectedPath
         UR_OpenFileDialog.ShowDialog() 'ovaj klik je na dugme za unos slike, tj kao Browse Picture, ili Choose image i sl, to je taj button
@@ -9,10 +10,11 @@ Public Class UnosRadnika
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles UR_OpenFileDialog.FileOk
 
         UR_Picture.Image = Image.FromFile(UR_OpenFileDialog.FileName) 'preko ovog unosimo sliku, nasao ja na netu
+        postojanjeSlike = 1
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles UR_Timer.Tick
-        If UR_Picture.Image IsNot Nothing Then 'Ovo sam napravio ako korisnik nema sliku da mu izbaci odmah NO FILE, a kada je UBAVI hah onda da nam taj label nestane.
+        If postojanjeSlike = 1 Then 'Ovo sam napravio ako korisnik nema sliku da mu izbaci odmah NO FILE, a kada je UBAVI hah onda da nam taj label nestane.
             UR_NoFile_Label.Visible = False 'a timer sam koristio kako bi se stalno provjeravalo je l ima slika ili nema
             UR_ClearImage_Button.Visible = True
         Else
@@ -27,6 +29,7 @@ Public Class UnosRadnika
     End Sub
     Private Sub UR_ClearImage_Button_Click(sender As Object, e As EventArgs) Handles UR_ClearImage_Button.Click
         UR_Picture.Image = Nothing 'dugme koje se pojavi samo ako postoji slika i koje brise sliku hehehhehehe
+        postojanjeSlike = 0
     End Sub
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
         Dim Gender As String
@@ -46,7 +49,7 @@ Public Class UnosRadnika
         ElseIf UR_Female_Button.Checked = True Then
             Gender = "Ženski"
             brojac += 1
-        Else MsgBox("Pol")
+        Else MsgBox("Pol") 'napraviti formu poruka za ovaj error
             brojac = 0
         End If
 
@@ -58,7 +61,7 @@ Public Class UnosRadnika
             brojac += 1
         Else
             brojac = 0
-            MsgBox("Boga pitaj sta je")
+            MsgBox("Izaberi tip naloga.") 'napraviti formu poruka za ovaj error
         End If
         Enkripcija.EncryptPass()
 
@@ -78,9 +81,10 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_Picture.DrawToBitmap(bm, New Rectangle(0, 0, x, y))
 
             UR_Picture.Image = bm
-            If UR_Username_TextBox.Text <> "Unesi korisničko ime ovde" Then
+            If UR_Username_TextBox.Text <> "Unesi korisničko ime ovde" And postojanjeSlike = 1 Then
                 SaveImage(("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
                 UR_Picture.Image = Nothing
+                postojanjeSlike = 0
 
             Else
 
@@ -110,6 +114,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
             UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Unesi lozinku ovde"
+            URComboBox.SelectedIndex = -1
             Enkripcija.HashStore = Nothing
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray
@@ -273,4 +278,7 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
         mySource.Dispose()
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        ' URComboBox.SelectedIndex = -1
+    End Sub
 End Class
