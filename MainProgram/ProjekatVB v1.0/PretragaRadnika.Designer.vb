@@ -300,7 +300,7 @@ Partial Class PretragaRadnika
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(159, 85)
+        Me.ComboBox1.Location = New System.Drawing.Point(106, 86)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(159, 21)
         Me.ComboBox1.TabIndex = 34

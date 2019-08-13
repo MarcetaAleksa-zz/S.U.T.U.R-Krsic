@@ -18,6 +18,7 @@ Public Class PretragaRadnika
         Dim command As SqlCommand
         Dim adapter As New SqlDataAdapter()
         Dim ds As New DataSet()
+        Dim dt As New DataTable
         Dim i As Integer = 0
         Dim sql As String = Nothing
         connetionString = "SERVER = DESKTOP-57755HL\SQLEXPRESS; Database = Projekat; Integrated Security = true"
@@ -28,14 +29,19 @@ Public Class PretragaRadnika
             command = New SqlCommand(sql, connection)
             adapter.SelectCommand = command
             adapter.Fill(ds)
+
             adapter.Dispose()
             command.Dispose()
             connection.Close()
             ComboBox1.DataSource = ds.Tables(0)
             ComboBox1.ValueMember = "ID"
-            ComboBox1.DisplayMember = "Name"
+            ' ComboBox1.DisplayMember =
+
+
+
+
         Catch ex As Exception
-            MessageBox.Show("Can not open connection ! ")
+            MessageBox.Show("Can Not open connection ! ")
         End Try
     End Sub
 
@@ -49,15 +55,17 @@ Public Class PretragaRadnika
         Dim user_table As New DataTable()
         adapter.Fill(user_table)
         'Popunjavanje informacija
-        U_Name_TextBox.Text = user_table.Rows(0)(1)
-        U_Surname_TextBox.Text = user_table.Rows(0)(2)
-        U_Email_TextBox.Text = user_table.Rows(0)(3)
-        U_Birth_TextBox.Text = user_table.Rows(0)(4)
-        U_Username_TextBox.Text = user_table.Rows(0)(5)
-        U_Possition_TextBox.Text = user_table.Rows(0)(6)
-        U_Phone_TextBox.Text = user_table.Rows(0)(7)
-        'U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
-
+        Try
+            U_Name_TextBox.Text = user_table.Rows(0)(1)
+            U_Surname_TextBox.Text = user_table.Rows(0)(2)
+            U_Email_TextBox.Text = user_table.Rows(0)(3)
+            U_Birth_TextBox.Text = user_table.Rows(0)(4)
+            U_Username_TextBox.Text = user_table.Rows(0)(5)
+            U_Possition_TextBox.Text = user_table.Rows(0)(6)
+            U_Phone_TextBox.Text = user_table.Rows(0)(7)
+            U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+        Catch ex As Exception
+        End Try
 
 
 
