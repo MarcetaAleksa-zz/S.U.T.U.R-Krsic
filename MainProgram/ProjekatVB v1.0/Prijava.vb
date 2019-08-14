@@ -31,58 +31,34 @@ Public Class Prijava
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
         Enkripcija.EncryptPass()
-        Dim command As New SqlCommand("SELECT * FROM dbo.korisnici", containerdb.connection)
-        command.Parameters.Add("@Korisnicki_id", SqlDbType.NChar).Value = Username_Form_Box.Text
-        command.Parameters.Add("@Lozinka", SqlDbType.VarChar).Value = Enkripcija.HashStore
+
+        Dim tipNaloga As Integer
+        Dim command As New SqlCommand("select st.pozicija_id, kr.korisnicki_id, kr.lozinka from spoj_tabela as st  left join korisnici as kr
+on (st.korisnicki_id = kr.korisnicki_id)
+where kr.korisnicki_id = @korisnicki_id and @lozinka = lozinka COLLATE Latin1_General_CS_AS", containerdb.connection)
+        command.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = Username_Form_Box.Text
+
+        command.Parameters.Add("@lozinka", SqlDbType.VarChar).Value = Enkripcija.HashStore
+
+        ' command.Parameters.Add("@pozicija", SqlDbType.Int).Value = tipNaloga
         'Syntax za dobijanje admin akreditaciju
-        MsgBox(Enkripcija.HashStore)
-
-
-        command.CommandText = "SELECT pozicija_id, * FROM pozicija, dbo.korisnici where pozicija_id <4  and dbo.korisnici.korisnicki_id = @Korisnicki_id and lozinka = @Lozinka COLLATE Latin1_General_CS_AS"
-
+        'unos admin podataka u tabelu, u slucaju da imamo admina
         Dim adapter As New SqlDataAdapter(command)
+        Dim tabela As New DataTable()
 
-        Dim admin_table As New DataTable()  'unos admin podataka u tabelu, u slucaju da imamo admina
-        Try
-            adapter.Fill(admin_table)
-        Catch ex As exception
-        End Try
+        adapter.Fill(tabela)
 
-        'syntax za user akreditaciju
-        command.CommandText = "SELECT pozicija_id, * FROM pozicija, dbo.korisnici where pozicija_id > 3  and dbo.korisnici.korisnicki_id = @Korisnicki_id and lozinka = @Lozinka COLLATE Latin1_General_CS_AS"
-
-        Dim user_table As New DataTable() ' unos u user tabelu, u slucaju da se neko prijavio ko je Account_Type = 'false'
-        'Acount_Type = 'True' je Administrator po Bool-u
-        'Account_Type = 'False" je User po iznad navedenoj logici
-
-        Try
-            adapter.Fill(user_table)
-        Catch ex As Exception
-        End Try
-
-        If admin_table.Rows.Count() <= 0 And user_table.Rows.Count() <= 0 Then
+        If tabela.Rows.Count > 0 Then
+            Logovi.Log()
+            AdminDobroDosli.Show()
+            Me.Hide()
+            Password_Form_Box.Text = ""
+            Enkripcija.HashStore = Nothing
+        Else
             Logovi.FailedLog()
             LoginGreska.Show()
             Password_Form_Box.Text = ""
             Enkripcija.HashStore = Nothing
-
-        ElseIf admin_table.Rows.Count() > 0 Then
-            Logovi.Log()
-            AdminDobroDosli.Show()
-            ID_Label.Text = admin_table.Rows(0)(0)
-            'Dodjela ID-a Labeli kako bi je mogli pozvati u Admin formi kad zatreba.
-            Me.Hide()
-            test = 1
-            Password_Form_Box.Text = ""
-            Enkripcija.HashStore = Nothing
-        ElseIf user_table.Rows.Count() > 0 Then
-            Enkripcija.HashStore = Nothing
-            UserDobroDosli.Show()
-            ID_Label.Text = user_table.Rows(0)(0)
-            'Dodjela ID-a Labeli kako bi je pozvali u User formi i tako povezali user formu i login formu te Workers i Login tabele iz baze
-            Me.Hide()
-            Password_Form_Box.Text = ""
-            Logovi.Log()
         End If
     End Sub
     Private Sub Guest_Login_Click(sender As Object, e As EventArgs) Handles Guest_Login.Click
