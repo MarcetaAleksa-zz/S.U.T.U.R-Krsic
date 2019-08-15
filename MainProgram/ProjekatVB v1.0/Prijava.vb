@@ -128,4 +128,8 @@ where kr.korisnicki_id = @korisnicki_id and @lozinka = lozinka COLLATE Latin1_Ge
             Password_Form_Box.ForeColor = Color.Black 'timer da vraca boju fontu jer kada u polje za password(kada je prazno)pritisnem tab i pocnem pisati password on posivi
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+        Korisnik.Show()
+    End Sub
 End Class

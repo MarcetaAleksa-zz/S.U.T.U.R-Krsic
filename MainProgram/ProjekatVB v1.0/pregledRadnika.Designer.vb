@@ -159,6 +159,7 @@ Partial Class pregledRadnika
         Me.dugmeIzmijeni.TabIndex = 127
         Me.dugmeIzmijeni.Text = "Izmijeni"
         Me.dugmeIzmijeni.UseVisualStyleBackColor = False
+        Me.dugmeIzmijeni.Visible = False
         '
         'dugmeSacuvaj
         '

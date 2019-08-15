@@ -93,6 +93,12 @@
     <Compile Include="ErrorForms\GostDobroDosli.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ErrorForms\GreskaPostojeceKorisnickoIme.Designer.vb">
+      <DependentUpon>GreskaPostojeceKorisnickoIme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorForms\GreskaPostojeceKorisnickoIme.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ErrorForms\LoginGreska.Designer.vb">
       <DependentUpon>LoginGreska.vb</DependentUpon>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorForms\GostDobroDosli.resx">
       <DependentUpon>GostDobroDosli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForms\GreskaPostojeceKorisnickoIme.resx">
+      <DependentUpon>GreskaPostojeceKorisnickoIme.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorForms\LoginGreska.resx">
       <DependentUpon>LoginGreska.vb</DependentUpon>
