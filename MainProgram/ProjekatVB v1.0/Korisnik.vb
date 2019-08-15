@@ -8,27 +8,30 @@ Public Class Korisnik
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
     End Sub
-    Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Phone_TextBox.Enter
+    Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Phone_TextBox.Enter, U_Male_TextBox.Enter
         'Konekcija sa bazom NAPOLEON\SQLEXPRESS (Home PC) 
 
-        Dim Command As New SqlCommand("SELECT * FROM S.U.T.U.R_Krsic.dbo.korisnici = '" & Prijava.ID_Label.Text & "' COLLATE Latin1_General_CS_AS", containerdb.connection)
+        Dim Command As New SqlCommand("SELECT * FROM korisnici where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
         Dim adapter As New SqlDataAdapter(Command)
-
+        '        rom  dbo.spoj_tabela as sp left join pozicija as pz
+        'On (sp.pozicija_id = pz.pozicija_id)
+        'where korisnicki_id = '" & Prijava.ID_Label.Text & "'"
         Dim user_table As New DataTable()
         adapter.Fill(user_table)
         'Popunjavanje informacija
-        U_Username_TextBox.Text = user_table.Rows(0)(1)
-        U_Name_TextBox.Text = user_table.Rows(0)(2)
-        U_Surname_TextBox.Text = user_table.Rows(0)(3)
+        U_Username_TextBox.Text = user_table.Rows(0)(0)
+        U_Name_TextBox.Text = user_table.Rows(0)(1)
+        U_Surname_TextBox.Text = user_table.Rows(0)(2)
         ' adresa stanovanja fali
-        U_Phone_TextBox.Text = user_table.Rows(0)(6)
-        U_Email_TextBox.Text = user_table.Rows(0)(7)
-        U_Birth_TextBox.Text = user_table.Rows(0)(8)
-        ' pol treba dodati
-        'U_Possition_TextBox.Text = user_table.Rows(0)(9) treba napisati kod za dodavnje pozicije
+        U_Phone_TextBox.Text = user_table.Rows(0)(5)
+        U_Email_TextBox.Text = user_table.Rows(0)(6)
+        U_Birth_TextBox.Text = user_table.Rows(0)(7)
+        U_Possition_TextBox.Text = Prijava.imePozicije 'treba napisati kod za dodavnje pozicije
+        U_Male_TextBox.Text = user_table.Rows(0)(8)
+        U_Adresa_TextBox.Text = user_table.Rows(0)(4)
 
         'marce : Aleksandar
-        U_Picture.Image = Image.FromFile("C:\Users\marce\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+        'U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
     End Sub
     'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -44,7 +47,7 @@ where korisnicki_id = '" & Prijava.ID_Label.Text & "'", containerdb.connection)
 
         Dim adapter As New SqlDataAdapter(command)
         Dim userinfotable As New DataTable()
-        adapter.Fill(userinfotable)
+        'adapter.Fill(userinfotable)
         'Drop-down koji treba uvesti iz baze
 
 
@@ -143,6 +146,10 @@ where korisnicki_id = '" & Prijava.ID_Label.Text & "'", containerdb.connection)
     End Sub
 
     Private Sub U_OCH_Label_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TabUserInfo_Click(sender As Object, e As EventArgs) Handles TabUserInfo.Click
 
     End Sub
 End Class
