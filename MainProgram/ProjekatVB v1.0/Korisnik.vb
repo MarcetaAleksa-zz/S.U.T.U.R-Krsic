@@ -39,7 +39,7 @@ Public Class Korisnik
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
     End Sub
-    Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter, U_Phone_TextBox.Enter, U_Male_TextBox.Enter
+    Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter
         'Konekcija sa bazom NAPOLEON\SQLEXPRESS (Home PC) 
         Ciscenje()
     End Sub
@@ -156,11 +156,11 @@ Public Class Korisnik
         PonistiIzmjeneDugme.Visible = True
         Button1.Visible = False
 
-        U_Name_TextBox.Enabled = True
-        U_Surname_TextBox.Enabled = True
-        U_Birth_TextBox.Enabled = True
-        U_Adresa_TextBox.Enabled = True
-        U_Phone_TextBox.Enabled = True
+        U_Name_TextBox.ReadOnly = False
+        U_Surname_TextBox.ReadOnly = False
+        U_Birth_TextBox.ReadOnly = False
+        U_Adresa_TextBox.ReadOnly = False
+        U_Phone_TextBox.ReadOnly = False
 
 
     End Sub
@@ -181,6 +181,11 @@ Public Class Korisnik
             dugmeSacuvaj.Visible = False
             PonistiIzmjeneDugme.Visible = False
             Button1.Visible = True
+            U_Name_TextBox.ReadOnly = True
+            U_Surname_TextBox.ReadOnly = True
+            U_Birth_TextBox.ReadOnly = True
+            U_Adresa_TextBox.ReadOnly = True
+            U_Phone_TextBox.ReadOnly = True
         Catch ex As Exception
             MsgBox("Nesto ne pase")
             Ciscenje()

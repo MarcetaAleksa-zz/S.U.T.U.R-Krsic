@@ -30,6 +30,8 @@ Partial Class Korisnik
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabUserInfo = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.dugmeSacuvaj = New System.Windows.Forms.Button()
         Me.U_NoFile_Label = New System.Windows.Forms.Label()
         Me.Panel40 = New System.Windows.Forms.Panel()
         Me.U_Male_TextBox = New System.Windows.Forms.TextBox()
@@ -39,6 +41,7 @@ Partial Class Korisnik
         Me.U_Possition_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.U_Username_TextBox = New System.Windows.Forms.TextBox()
+        Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.U_Birth_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel42 = New System.Windows.Forms.Panel()
@@ -79,9 +82,6 @@ Partial Class Korisnik
         Me.TabStorage = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
-        Me.dugmeSacuvaj = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
         Me.Panel40.SuspendLayout()
@@ -181,6 +181,31 @@ Partial Class Korisnik
         Me.TabUserInfo.TabIndex = 1
         Me.TabUserInfo.Text = "Informacije o korisniku"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(12, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(109, 35)
+        Me.Button1.TabIndex = 140
+        Me.Button1.Text = "Izmijeni"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'dugmeSacuvaj
+        '
+        Me.dugmeSacuvaj.BackColor = System.Drawing.SystemColors.Control
+        Me.dugmeSacuvaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.dugmeSacuvaj.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.dugmeSacuvaj.Location = New System.Drawing.Point(122, 6)
+        Me.dugmeSacuvaj.Name = "dugmeSacuvaj"
+        Me.dugmeSacuvaj.Size = New System.Drawing.Size(109, 35)
+        Me.dugmeSacuvaj.TabIndex = 138
+        Me.dugmeSacuvaj.Text = "Sacuvaj"
+        Me.dugmeSacuvaj.UseVisualStyleBackColor = False
+        Me.dugmeSacuvaj.Visible = False
+        '
         'U_NoFile_Label
         '
         Me.U_NoFile_Label.AutoSize = True
@@ -205,7 +230,6 @@ Partial Class Korisnik
         '
         Me.U_Male_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Male_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Male_TextBox.Enabled = False
         Me.U_Male_TextBox.Location = New System.Drawing.Point(12, 6)
         Me.U_Male_TextBox.Name = "U_Male_TextBox"
         Me.U_Male_TextBox.ReadOnly = True
@@ -225,9 +249,9 @@ Partial Class Korisnik
         '
         Me.U_Phone_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Phone_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Phone_TextBox.Enabled = False
         Me.U_Phone_TextBox.Location = New System.Drawing.Point(12, 6)
         Me.U_Phone_TextBox.Name = "U_Phone_TextBox"
+        Me.U_Phone_TextBox.ReadOnly = True
         Me.U_Phone_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Phone_TextBox.TabIndex = 15
         '
@@ -244,7 +268,6 @@ Partial Class Korisnik
         '
         Me.U_Possition_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Possition_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Possition_TextBox.Enabled = False
         Me.U_Possition_TextBox.Location = New System.Drawing.Point(12, 8)
         Me.U_Possition_TextBox.Name = "U_Possition_TextBox"
         Me.U_Possition_TextBox.ReadOnly = True
@@ -264,12 +287,25 @@ Partial Class Korisnik
         '
         Me.U_Username_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Username_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Username_TextBox.Enabled = False
         Me.U_Username_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Username_TextBox.Name = "U_Username_TextBox"
         Me.U_Username_TextBox.ReadOnly = True
         Me.U_Username_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Username_TextBox.TabIndex = 9
+        '
+        'PonistiIzmjeneDugme
+        '
+        Me.PonistiIzmjeneDugme.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.PonistiIzmjeneDugme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PonistiIzmjeneDugme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PonistiIzmjeneDugme.ForeColor = System.Drawing.SystemColors.Control
+        Me.PonistiIzmjeneDugme.Location = New System.Drawing.Point(12, 5)
+        Me.PonistiIzmjeneDugme.Name = "PonistiIzmjeneDugme"
+        Me.PonistiIzmjeneDugme.Size = New System.Drawing.Size(109, 35)
+        Me.PonistiIzmjeneDugme.TabIndex = 139
+        Me.PonistiIzmjeneDugme.Text = "Ponisti izmjene"
+        Me.PonistiIzmjeneDugme.UseVisualStyleBackColor = False
+        Me.PonistiIzmjeneDugme.Visible = False
         '
         'Panel6
         '
@@ -284,9 +320,9 @@ Partial Class Korisnik
         '
         Me.U_Birth_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Birth_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Birth_TextBox.Enabled = False
         Me.U_Birth_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Birth_TextBox.Name = "U_Birth_TextBox"
+        Me.U_Birth_TextBox.ReadOnly = True
         Me.U_Birth_TextBox.Size = New System.Drawing.Size(116, 13)
         Me.U_Birth_TextBox.TabIndex = 8
         '
@@ -303,7 +339,6 @@ Partial Class Korisnik
         '
         Me.U_Email_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Email_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Email_TextBox.Enabled = False
         Me.U_Email_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Email_TextBox.Name = "U_Email_TextBox"
         Me.U_Email_TextBox.ReadOnly = True
@@ -323,9 +358,9 @@ Partial Class Korisnik
         '
         Me.U_Adresa_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Adresa_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Adresa_TextBox.Enabled = False
         Me.U_Adresa_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Adresa_TextBox.Name = "U_Adresa_TextBox"
+        Me.U_Adresa_TextBox.ReadOnly = True
         Me.U_Adresa_TextBox.Size = New System.Drawing.Size(216, 13)
         Me.U_Adresa_TextBox.TabIndex = 7
         '
@@ -342,9 +377,9 @@ Partial Class Korisnik
         '
         Me.U_Surname_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Surname_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Surname_TextBox.Enabled = False
         Me.U_Surname_TextBox.Location = New System.Drawing.Point(12, 6)
         Me.U_Surname_TextBox.Name = "U_Surname_TextBox"
+        Me.U_Surname_TextBox.ReadOnly = True
         Me.U_Surname_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Surname_TextBox.TabIndex = 6
         '
@@ -361,9 +396,9 @@ Partial Class Korisnik
         '
         Me.U_Name_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.U_Name_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Name_TextBox.Enabled = False
         Me.U_Name_TextBox.Location = New System.Drawing.Point(12, 7)
         Me.U_Name_TextBox.Name = "U_Name_TextBox"
+        Me.U_Name_TextBox.ReadOnly = True
         Me.U_Name_TextBox.Size = New System.Drawing.Size(115, 13)
         Me.U_Name_TextBox.TabIndex = 12
         '
@@ -684,45 +719,6 @@ Partial Class Korisnik
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(776, 385)
         Me.TabControl1.TabIndex = 128
-        '
-        'PonistiIzmjeneDugme
-        '
-        Me.PonistiIzmjeneDugme.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.PonistiIzmjeneDugme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PonistiIzmjeneDugme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PonistiIzmjeneDugme.ForeColor = System.Drawing.SystemColors.Control
-        Me.PonistiIzmjeneDugme.Location = New System.Drawing.Point(12, 5)
-        Me.PonistiIzmjeneDugme.Name = "PonistiIzmjeneDugme"
-        Me.PonistiIzmjeneDugme.Size = New System.Drawing.Size(109, 35)
-        Me.PonistiIzmjeneDugme.TabIndex = 139
-        Me.PonistiIzmjeneDugme.Text = "Ponisti izmjene"
-        Me.PonistiIzmjeneDugme.UseVisualStyleBackColor = False
-        Me.PonistiIzmjeneDugme.Visible = False
-        '
-        'dugmeSacuvaj
-        '
-        Me.dugmeSacuvaj.BackColor = System.Drawing.SystemColors.Control
-        Me.dugmeSacuvaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.dugmeSacuvaj.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.dugmeSacuvaj.Location = New System.Drawing.Point(122, 6)
-        Me.dugmeSacuvaj.Name = "dugmeSacuvaj"
-        Me.dugmeSacuvaj.Size = New System.Drawing.Size(109, 35)
-        Me.dugmeSacuvaj.TabIndex = 138
-        Me.dugmeSacuvaj.Text = "Sacuvaj"
-        Me.dugmeSacuvaj.UseVisualStyleBackColor = False
-        Me.dugmeSacuvaj.Visible = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(12, 6)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(109, 35)
-        Me.Button1.TabIndex = 140
-        Me.Button1.Text = "Izmijeni"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Korisnik
         '
