@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Korisnik
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,39 +20,40 @@ Partial Class Korisnik
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Korisnik))
-        Me.Back_Button = New System.Windows.Forms.Button()
-        Me.Exit_Button = New System.Windows.Forms.Button()
+        Me.dugmeOdjava = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.korisnickipanelLabel = New System.Windows.Forms.Label()
         Me.TabUserInfo = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.promijenislikuLabel = New System.Windows.Forms.Label()
+        Me.dugmeOtvoriSliku = New System.Windows.Forms.Button()
+        Me.dugmeIzmijeni = New System.Windows.Forms.Button()
         Me.dugmeSacuvaj = New System.Windows.Forms.Button()
-        Me.U_NoFile_Label = New System.Windows.Forms.Label()
-        Me.Panel40 = New System.Windows.Forms.Panel()
-        Me.U_Male_TextBox = New System.Windows.Forms.TextBox()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.U_Phone_TextBox = New System.Windows.Forms.TextBox()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.U_Possition_TextBox = New System.Windows.Forms.TextBox()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.U_Username_TextBox = New System.Windows.Forms.TextBox()
-        Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.U_Birth_TextBox = New System.Windows.Forms.TextBox()
-        Me.Panel42 = New System.Windows.Forms.Panel()
-        Me.U_Email_TextBox = New System.Windows.Forms.TextBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.U_Adresa_TextBox = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.U_Surname_TextBox = New System.Windows.Forms.TextBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.U_Name_TextBox = New System.Windows.Forms.TextBox()
-        Me.U_Monthly_Pay_GroupBox = New System.Windows.Forms.GroupBox()
+        Me.nemaslikeLabel = New System.Windows.Forms.Label()
+        Me.p9 = New System.Windows.Forms.Panel()
+        Me.polaTextBox = New System.Windows.Forms.TextBox()
+        Me.p8 = New System.Windows.Forms.Panel()
+        Me.brojtelefonaTextBox = New System.Windows.Forms.TextBox()
+        Me.p7 = New System.Windows.Forms.Panel()
+        Me.pozicijaTextBox = New System.Windows.Forms.TextBox()
+        Me.p3 = New System.Windows.Forms.Panel()
+        Me.korisnickoimeTextBox = New System.Windows.Forms.TextBox()
+        Me.dugmePonisti = New System.Windows.Forms.Button()
+        Me.p6 = New System.Windows.Forms.Panel()
+        Me.datumrodjenjaTextBox = New System.Windows.Forms.TextBox()
+        Me.p4 = New System.Windows.Forms.Panel()
+        Me.emailTextBox = New System.Windows.Forms.TextBox()
+        Me.p5 = New System.Windows.Forms.Panel()
+        Me.adresaTextBox = New System.Windows.Forms.TextBox()
+        Me.p2 = New System.Windows.Forms.Panel()
+        Me.prezimeTextBox = New System.Windows.Forms.TextBox()
+        Me.p1 = New System.Windows.Forms.Panel()
+        Me.imeTextBox = New System.Windows.Forms.TextBox()
+        Me.mjesecnaplataGrupBox = New System.Windows.Forms.GroupBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.U_PBOFWD_TextBox = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -64,63 +65,56 @@ Partial Class Korisnik
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DaysInMonth = New System.Windows.Forms.TextBox()
-        Me.U_PBOWD_Label = New System.Windows.Forms.Label()
-        Me.U_FWD_Label = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.U_WDIM_Label = New System.Windows.Forms.Label()
-        Me.U_Month_Dropdown = New System.Windows.Forms.ComboBox()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.U_Picture = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.U_Name_Label = New System.Windows.Forms.Label()
+        Me.plataLabel = New System.Windows.Forms.Label()
+        Me.odradjeniradnidaniLabel = New System.Windows.Forms.Label()
+        Me.brojdanaumjesecuLabel = New System.Windows.Forms.Label()
+        Me.radnidaniumjesecuLabel = New System.Windows.Forms.Label()
+        Me.mjeseciComboBox = New System.Windows.Forms.ComboBox()
+        Me.emailLabel = New System.Windows.Forms.Label()
+        Me.slikaPictureBox = New System.Windows.Forms.PictureBox()
+        Me.adresaLabel = New System.Windows.Forms.Label()
+        Me.polLabel = New System.Windows.Forms.Label()
+        Me.brojtelefonaLabel = New System.Windows.Forms.Label()
+        Me.pozicijaLabel = New System.Windows.Forms.Label()
+        Me.korisnickoimeLabel = New System.Windows.Forms.Label()
+        Me.datumrodjenjaLabel = New System.Windows.Forms.Label()
+        Me.prezimeLabel = New System.Windows.Forms.Label()
+        Me.imeLabel = New System.Windows.Forms.Label()
         Me.TabStorage = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.korisnikTab = New System.Windows.Forms.TabControl()
+        Me.U_OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.U_FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.Panel3.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
-        Me.Panel40.SuspendLayout()
-        Me.Panel9.SuspendLayout()
-        Me.Panel8.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel42.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.U_Monthly_Pay_GroupBox.SuspendLayout()
+        Me.p9.SuspendLayout()
+        Me.p8.SuspendLayout()
+        Me.p7.SuspendLayout()
+        Me.p3.SuspendLayout()
+        Me.p6.SuspendLayout()
+        Me.p4.SuspendLayout()
+        Me.p5.SuspendLayout()
+        Me.p2.SuspendLayout()
+        Me.p1.SuspendLayout()
+        Me.mjesecnaplataGrupBox.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabStorage.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabControl1.SuspendLayout()
+        Me.korisnikTab.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Back_Button
+        'dugmeOdjava
         '
-        Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
-        Me.Back_Button.Location = New System.Drawing.Point(12, 74)
-        Me.Back_Button.Name = "Back_Button"
-        Me.Back_Button.Size = New System.Drawing.Size(39, 35)
-        Me.Back_Button.TabIndex = 129
-        Me.Back_Button.UseVisualStyleBackColor = True
-        '
-        'Exit_Button
-        '
-        Me.Exit_Button.Location = New System.Drawing.Point(57, 74)
-        Me.Exit_Button.Name = "Exit_Button"
-        Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
-        Me.Exit_Button.TabIndex = 130
-        Me.Exit_Button.Text = " Nazad"
-        Me.Exit_Button.UseVisualStyleBackColor = True
+        Me.dugmeOdjava.Image = CType(resources.GetObject("dugmeOdjava.Image"), System.Drawing.Image)
+        Me.dugmeOdjava.Location = New System.Drawing.Point(12, 74)
+        Me.dugmeOdjava.Name = "dugmeOdjava"
+        Me.dugmeOdjava.Size = New System.Drawing.Size(39, 35)
+        Me.dugmeOdjava.TabIndex = 129
+        Me.dugmeOdjava.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -130,50 +124,52 @@ Partial Class Korisnik
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.korisnickipanelLabel)
         Me.Panel3.Location = New System.Drawing.Point(-1, -1)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1091, 68)
         Me.Panel3.TabIndex = 10
         '
-        'Label2
+        'korisnickipanelLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(295, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(205, 25)
-        Me.Label2.TabIndex = 66666
-        Me.Label2.Text = "KORISNIČKI PANEL"
+        Me.korisnickipanelLabel.AutoSize = True
+        Me.korisnickipanelLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.korisnickipanelLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.korisnickipanelLabel.Location = New System.Drawing.Point(295, 24)
+        Me.korisnickipanelLabel.Name = "korisnickipanelLabel"
+        Me.korisnickipanelLabel.Size = New System.Drawing.Size(205, 25)
+        Me.korisnickipanelLabel.TabIndex = 66666
+        Me.korisnickipanelLabel.Text = "KORISNIČKI PANEL"
         '
         'TabUserInfo
         '
         Me.TabUserInfo.BackColor = System.Drawing.SystemColors.Control
-        Me.TabUserInfo.Controls.Add(Me.Button1)
+        Me.TabUserInfo.Controls.Add(Me.promijenislikuLabel)
+        Me.TabUserInfo.Controls.Add(Me.dugmeOtvoriSliku)
         Me.TabUserInfo.Controls.Add(Me.dugmeSacuvaj)
-        Me.TabUserInfo.Controls.Add(Me.U_NoFile_Label)
-        Me.TabUserInfo.Controls.Add(Me.Panel40)
-        Me.TabUserInfo.Controls.Add(Me.Panel9)
-        Me.TabUserInfo.Controls.Add(Me.Panel8)
-        Me.TabUserInfo.Controls.Add(Me.Panel7)
-        Me.TabUserInfo.Controls.Add(Me.PonistiIzmjeneDugme)
-        Me.TabUserInfo.Controls.Add(Me.Panel6)
-        Me.TabUserInfo.Controls.Add(Me.Panel42)
-        Me.TabUserInfo.Controls.Add(Me.Panel5)
-        Me.TabUserInfo.Controls.Add(Me.Panel4)
-        Me.TabUserInfo.Controls.Add(Me.Panel2)
-        Me.TabUserInfo.Controls.Add(Me.U_Monthly_Pay_GroupBox)
-        Me.TabUserInfo.Controls.Add(Me.Label50)
-        Me.TabUserInfo.Controls.Add(Me.U_Picture)
-        Me.TabUserInfo.Controls.Add(Me.Label5)
-        Me.TabUserInfo.Controls.Add(Me.Label43)
-        Me.TabUserInfo.Controls.Add(Me.Label8)
-        Me.TabUserInfo.Controls.Add(Me.Label7)
-        Me.TabUserInfo.Controls.Add(Me.Label6)
-        Me.TabUserInfo.Controls.Add(Me.Label4)
-        Me.TabUserInfo.Controls.Add(Me.Label3)
-        Me.TabUserInfo.Controls.Add(Me.U_Name_Label)
+        Me.TabUserInfo.Controls.Add(Me.nemaslikeLabel)
+        Me.TabUserInfo.Controls.Add(Me.p9)
+        Me.TabUserInfo.Controls.Add(Me.p8)
+        Me.TabUserInfo.Controls.Add(Me.p7)
+        Me.TabUserInfo.Controls.Add(Me.p3)
+        Me.TabUserInfo.Controls.Add(Me.p6)
+        Me.TabUserInfo.Controls.Add(Me.p4)
+        Me.TabUserInfo.Controls.Add(Me.p5)
+        Me.TabUserInfo.Controls.Add(Me.p2)
+        Me.TabUserInfo.Controls.Add(Me.p1)
+        Me.TabUserInfo.Controls.Add(Me.mjesecnaplataGrupBox)
+        Me.TabUserInfo.Controls.Add(Me.emailLabel)
+        Me.TabUserInfo.Controls.Add(Me.slikaPictureBox)
+        Me.TabUserInfo.Controls.Add(Me.adresaLabel)
+        Me.TabUserInfo.Controls.Add(Me.polLabel)
+        Me.TabUserInfo.Controls.Add(Me.brojtelefonaLabel)
+        Me.TabUserInfo.Controls.Add(Me.pozicijaLabel)
+        Me.TabUserInfo.Controls.Add(Me.korisnickoimeLabel)
+        Me.TabUserInfo.Controls.Add(Me.datumrodjenjaLabel)
+        Me.TabUserInfo.Controls.Add(Me.prezimeLabel)
+        Me.TabUserInfo.Controls.Add(Me.imeLabel)
+        Me.TabUserInfo.Controls.Add(Me.dugmeIzmijeni)
+        Me.TabUserInfo.Controls.Add(Me.dugmePonisti)
         Me.TabUserInfo.Location = New System.Drawing.Point(4, 22)
         Me.TabUserInfo.Name = "TabUserInfo"
         Me.TabUserInfo.Padding = New System.Windows.Forms.Padding(3)
@@ -181,17 +177,39 @@ Partial Class Korisnik
         Me.TabUserInfo.TabIndex = 1
         Me.TabUserInfo.Text = "Informacije o korisniku"
         '
-        'Button1
+        'promijenislikuLabel
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(12, 6)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(109, 35)
-        Me.Button1.TabIndex = 140
-        Me.Button1.Text = "Izmijeni"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.promijenislikuLabel.AutoSize = True
+        Me.promijenislikuLabel.Location = New System.Drawing.Point(272, 28)
+        Me.promijenislikuLabel.Name = "promijenislikuLabel"
+        Me.promijenislikuLabel.Size = New System.Drawing.Size(76, 13)
+        Me.promijenislikuLabel.TabIndex = 141
+        Me.promijenislikuLabel.Text = "Promijeni sliku:"
+        Me.promijenislikuLabel.Visible = False
+        '
+        'dugmeOtvoriSliku
+        '
+        Me.dugmeOtvoriSliku.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dugmeOtvoriSliku.Image = CType(resources.GetObject("dugmeOtvoriSliku.Image"), System.Drawing.Image)
+        Me.dugmeOtvoriSliku.Location = New System.Drawing.Point(353, 25)
+        Me.dugmeOtvoriSliku.Name = "dugmeOtvoriSliku"
+        Me.dugmeOtvoriSliku.Size = New System.Drawing.Size(28, 23)
+        Me.dugmeOtvoriSliku.TabIndex = 142
+        Me.dugmeOtvoriSliku.TabStop = False
+        Me.dugmeOtvoriSliku.UseVisualStyleBackColor = True
+        Me.dugmeOtvoriSliku.Visible = False
+        '
+        'dugmeIzmijeni
+        '
+        Me.dugmeIzmijeni.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.dugmeIzmijeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.dugmeIzmijeni.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dugmeIzmijeni.Location = New System.Drawing.Point(12, 6)
+        Me.dugmeIzmijeni.Name = "dugmeIzmijeni"
+        Me.dugmeIzmijeni.Size = New System.Drawing.Size(109, 35)
+        Me.dugmeIzmijeni.TabIndex = 140
+        Me.dugmeIzmijeni.Text = "Izmijeni"
+        Me.dugmeIzmijeni.UseVisualStyleBackColor = False
         '
         'dugmeSacuvaj
         '
@@ -206,219 +224,219 @@ Partial Class Korisnik
         Me.dugmeSacuvaj.UseVisualStyleBackColor = False
         Me.dugmeSacuvaj.Visible = False
         '
-        'U_NoFile_Label
+        'nemaslikeLabel
         '
-        Me.U_NoFile_Label.AutoSize = True
-        Me.U_NoFile_Label.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.U_NoFile_Label.Location = New System.Drawing.Point(289, 103)
-        Me.U_NoFile_Label.Name = "U_NoFile_Label"
-        Me.U_NoFile_Label.Size = New System.Drawing.Size(59, 13)
-        Me.U_NoFile_Label.TabIndex = 33
-        Me.U_NoFile_Label.Text = "Nema slike"
-        Me.U_NoFile_Label.Visible = False
+        Me.nemaslikeLabel.AutoSize = True
+        Me.nemaslikeLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.nemaslikeLabel.Location = New System.Drawing.Point(289, 103)
+        Me.nemaslikeLabel.Name = "nemaslikeLabel"
+        Me.nemaslikeLabel.Size = New System.Drawing.Size(59, 13)
+        Me.nemaslikeLabel.TabIndex = 33
+        Me.nemaslikeLabel.Text = "Nema slike"
+        Me.nemaslikeLabel.Visible = False
         '
-        'Panel40
+        'p9
         '
-        Me.Panel40.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel40.Controls.Add(Me.U_Male_TextBox)
-        Me.Panel40.Location = New System.Drawing.Point(110, 330)
-        Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(71, 26)
-        Me.Panel40.TabIndex = 18
+        Me.p9.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p9.Controls.Add(Me.polaTextBox)
+        Me.p9.Location = New System.Drawing.Point(110, 330)
+        Me.p9.Name = "p9"
+        Me.p9.Size = New System.Drawing.Size(71, 26)
+        Me.p9.TabIndex = 18
         '
-        'U_Male_TextBox
+        'polaTextBox
         '
-        Me.U_Male_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Male_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Male_TextBox.Location = New System.Drawing.Point(12, 6)
-        Me.U_Male_TextBox.Name = "U_Male_TextBox"
-        Me.U_Male_TextBox.ReadOnly = True
-        Me.U_Male_TextBox.Size = New System.Drawing.Size(53, 13)
-        Me.U_Male_TextBox.TabIndex = 15
+        Me.polaTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.polaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.polaTextBox.Location = New System.Drawing.Point(12, 6)
+        Me.polaTextBox.Name = "polaTextBox"
+        Me.polaTextBox.ReadOnly = True
+        Me.polaTextBox.Size = New System.Drawing.Size(53, 13)
+        Me.polaTextBox.TabIndex = 15
         '
-        'Panel9
+        'p8
         '
-        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel9.Controls.Add(Me.U_Phone_TextBox)
-        Me.Panel9.Location = New System.Drawing.Point(109, 297)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(139, 26)
-        Me.Panel9.TabIndex = 18
+        Me.p8.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p8.Controls.Add(Me.brojtelefonaTextBox)
+        Me.p8.Location = New System.Drawing.Point(109, 297)
+        Me.p8.Name = "p8"
+        Me.p8.Size = New System.Drawing.Size(139, 26)
+        Me.p8.TabIndex = 18
         '
-        'U_Phone_TextBox
+        'brojtelefonaTextBox
         '
-        Me.U_Phone_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Phone_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Phone_TextBox.Location = New System.Drawing.Point(12, 6)
-        Me.U_Phone_TextBox.Name = "U_Phone_TextBox"
-        Me.U_Phone_TextBox.ReadOnly = True
-        Me.U_Phone_TextBox.Size = New System.Drawing.Size(115, 13)
-        Me.U_Phone_TextBox.TabIndex = 15
+        Me.brojtelefonaTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.brojtelefonaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.brojtelefonaTextBox.Location = New System.Drawing.Point(12, 6)
+        Me.brojtelefonaTextBox.Name = "brojtelefonaTextBox"
+        Me.brojtelefonaTextBox.ReadOnly = True
+        Me.brojtelefonaTextBox.Size = New System.Drawing.Size(115, 13)
+        Me.brojtelefonaTextBox.TabIndex = 15
         '
-        'Panel8
+        'p7
         '
-        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel8.Controls.Add(Me.U_Possition_TextBox)
-        Me.Panel8.Location = New System.Drawing.Point(109, 265)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(139, 26)
-        Me.Panel8.TabIndex = 18
+        Me.p7.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p7.Controls.Add(Me.pozicijaTextBox)
+        Me.p7.Location = New System.Drawing.Point(109, 265)
+        Me.p7.Name = "p7"
+        Me.p7.Size = New System.Drawing.Size(139, 26)
+        Me.p7.TabIndex = 18
         '
-        'U_Possition_TextBox
+        'pozicijaTextBox
         '
-        Me.U_Possition_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Possition_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Possition_TextBox.Location = New System.Drawing.Point(12, 8)
-        Me.U_Possition_TextBox.Name = "U_Possition_TextBox"
-        Me.U_Possition_TextBox.ReadOnly = True
-        Me.U_Possition_TextBox.Size = New System.Drawing.Size(115, 13)
-        Me.U_Possition_TextBox.TabIndex = 14
+        Me.pozicijaTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.pozicijaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.pozicijaTextBox.Location = New System.Drawing.Point(12, 8)
+        Me.pozicijaTextBox.Name = "pozicijaTextBox"
+        Me.pozicijaTextBox.ReadOnly = True
+        Me.pozicijaTextBox.Size = New System.Drawing.Size(115, 13)
+        Me.pozicijaTextBox.TabIndex = 14
         '
-        'Panel7
+        'p3
         '
-        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel7.Controls.Add(Me.U_Username_TextBox)
-        Me.Panel7.Location = New System.Drawing.Point(110, 121)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(139, 26)
-        Me.Panel7.TabIndex = 18
+        Me.p3.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p3.Controls.Add(Me.korisnickoimeTextBox)
+        Me.p3.Location = New System.Drawing.Point(110, 121)
+        Me.p3.Name = "p3"
+        Me.p3.Size = New System.Drawing.Size(139, 26)
+        Me.p3.TabIndex = 18
         '
-        'U_Username_TextBox
+        'korisnickoimeTextBox
         '
-        Me.U_Username_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Username_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Username_TextBox.Location = New System.Drawing.Point(12, 7)
-        Me.U_Username_TextBox.Name = "U_Username_TextBox"
-        Me.U_Username_TextBox.ReadOnly = True
-        Me.U_Username_TextBox.Size = New System.Drawing.Size(115, 13)
-        Me.U_Username_TextBox.TabIndex = 9
+        Me.korisnickoimeTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.korisnickoimeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.korisnickoimeTextBox.Location = New System.Drawing.Point(12, 7)
+        Me.korisnickoimeTextBox.Name = "korisnickoimeTextBox"
+        Me.korisnickoimeTextBox.ReadOnly = True
+        Me.korisnickoimeTextBox.Size = New System.Drawing.Size(115, 13)
+        Me.korisnickoimeTextBox.TabIndex = 9
         '
-        'PonistiIzmjeneDugme
+        'dugmePonisti
         '
-        Me.PonistiIzmjeneDugme.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.PonistiIzmjeneDugme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PonistiIzmjeneDugme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PonistiIzmjeneDugme.ForeColor = System.Drawing.SystemColors.Control
-        Me.PonistiIzmjeneDugme.Location = New System.Drawing.Point(12, 5)
-        Me.PonistiIzmjeneDugme.Name = "PonistiIzmjeneDugme"
-        Me.PonistiIzmjeneDugme.Size = New System.Drawing.Size(109, 35)
-        Me.PonistiIzmjeneDugme.TabIndex = 139
-        Me.PonistiIzmjeneDugme.Text = "Ponisti izmjene"
-        Me.PonistiIzmjeneDugme.UseVisualStyleBackColor = False
-        Me.PonistiIzmjeneDugme.Visible = False
+        Me.dugmePonisti.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.dugmePonisti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.dugmePonisti.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.dugmePonisti.ForeColor = System.Drawing.SystemColors.Control
+        Me.dugmePonisti.Location = New System.Drawing.Point(12, 5)
+        Me.dugmePonisti.Name = "dugmePonisti"
+        Me.dugmePonisti.Size = New System.Drawing.Size(109, 35)
+        Me.dugmePonisti.TabIndex = 139
+        Me.dugmePonisti.Text = "Ponisti izmjene"
+        Me.dugmePonisti.UseVisualStyleBackColor = False
+        Me.dugmePonisti.Visible = False
         '
-        'Panel6
+        'p6
         '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.U_Birth_TextBox)
-        Me.Panel6.Location = New System.Drawing.Point(109, 233)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(139, 26)
-        Me.Panel6.TabIndex = 18
+        Me.p6.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p6.Controls.Add(Me.datumrodjenjaTextBox)
+        Me.p6.Location = New System.Drawing.Point(109, 233)
+        Me.p6.Name = "p6"
+        Me.p6.Size = New System.Drawing.Size(139, 26)
+        Me.p6.TabIndex = 18
         '
-        'U_Birth_TextBox
+        'datumrodjenjaTextBox
         '
-        Me.U_Birth_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Birth_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Birth_TextBox.Location = New System.Drawing.Point(12, 7)
-        Me.U_Birth_TextBox.Name = "U_Birth_TextBox"
-        Me.U_Birth_TextBox.ReadOnly = True
-        Me.U_Birth_TextBox.Size = New System.Drawing.Size(116, 13)
-        Me.U_Birth_TextBox.TabIndex = 8
+        Me.datumrodjenjaTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.datumrodjenjaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.datumrodjenjaTextBox.Location = New System.Drawing.Point(12, 7)
+        Me.datumrodjenjaTextBox.Name = "datumrodjenjaTextBox"
+        Me.datumrodjenjaTextBox.ReadOnly = True
+        Me.datumrodjenjaTextBox.Size = New System.Drawing.Size(116, 13)
+        Me.datumrodjenjaTextBox.TabIndex = 8
         '
-        'Panel42
+        'p4
         '
-        Me.Panel42.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel42.Controls.Add(Me.U_Email_TextBox)
-        Me.Panel42.Location = New System.Drawing.Point(110, 171)
-        Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(231, 26)
-        Me.Panel42.TabIndex = 18
+        Me.p4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p4.Controls.Add(Me.emailTextBox)
+        Me.p4.Location = New System.Drawing.Point(110, 171)
+        Me.p4.Name = "p4"
+        Me.p4.Size = New System.Drawing.Size(231, 26)
+        Me.p4.TabIndex = 18
         '
-        'U_Email_TextBox
+        'emailTextBox
         '
-        Me.U_Email_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Email_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Email_TextBox.Location = New System.Drawing.Point(12, 7)
-        Me.U_Email_TextBox.Name = "U_Email_TextBox"
-        Me.U_Email_TextBox.ReadOnly = True
-        Me.U_Email_TextBox.Size = New System.Drawing.Size(216, 13)
-        Me.U_Email_TextBox.TabIndex = 7
+        Me.emailTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.emailTextBox.Location = New System.Drawing.Point(12, 7)
+        Me.emailTextBox.Name = "emailTextBox"
+        Me.emailTextBox.ReadOnly = True
+        Me.emailTextBox.Size = New System.Drawing.Size(216, 13)
+        Me.emailTextBox.TabIndex = 7
         '
-        'Panel5
+        'p5
         '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.U_Adresa_TextBox)
-        Me.Panel5.Location = New System.Drawing.Point(109, 201)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(231, 26)
-        Me.Panel5.TabIndex = 18
+        Me.p5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p5.Controls.Add(Me.adresaTextBox)
+        Me.p5.Location = New System.Drawing.Point(109, 201)
+        Me.p5.Name = "p5"
+        Me.p5.Size = New System.Drawing.Size(231, 26)
+        Me.p5.TabIndex = 18
         '
-        'U_Adresa_TextBox
+        'adresaTextBox
         '
-        Me.U_Adresa_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Adresa_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Adresa_TextBox.Location = New System.Drawing.Point(12, 7)
-        Me.U_Adresa_TextBox.Name = "U_Adresa_TextBox"
-        Me.U_Adresa_TextBox.ReadOnly = True
-        Me.U_Adresa_TextBox.Size = New System.Drawing.Size(216, 13)
-        Me.U_Adresa_TextBox.TabIndex = 7
+        Me.adresaTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.adresaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.adresaTextBox.Location = New System.Drawing.Point(12, 7)
+        Me.adresaTextBox.Name = "adresaTextBox"
+        Me.adresaTextBox.ReadOnly = True
+        Me.adresaTextBox.Size = New System.Drawing.Size(216, 13)
+        Me.adresaTextBox.TabIndex = 7
         '
-        'Panel4
+        'p2
         '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel4.Controls.Add(Me.U_Surname_TextBox)
-        Me.Panel4.Location = New System.Drawing.Point(110, 85)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(139, 26)
-        Me.Panel4.TabIndex = 18
+        Me.p2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p2.Controls.Add(Me.prezimeTextBox)
+        Me.p2.Location = New System.Drawing.Point(110, 85)
+        Me.p2.Name = "p2"
+        Me.p2.Size = New System.Drawing.Size(139, 26)
+        Me.p2.TabIndex = 18
         '
-        'U_Surname_TextBox
+        'prezimeTextBox
         '
-        Me.U_Surname_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Surname_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Surname_TextBox.Location = New System.Drawing.Point(12, 6)
-        Me.U_Surname_TextBox.Name = "U_Surname_TextBox"
-        Me.U_Surname_TextBox.ReadOnly = True
-        Me.U_Surname_TextBox.Size = New System.Drawing.Size(115, 13)
-        Me.U_Surname_TextBox.TabIndex = 6
+        Me.prezimeTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.prezimeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.prezimeTextBox.Location = New System.Drawing.Point(12, 6)
+        Me.prezimeTextBox.Name = "prezimeTextBox"
+        Me.prezimeTextBox.ReadOnly = True
+        Me.prezimeTextBox.Size = New System.Drawing.Size(115, 13)
+        Me.prezimeTextBox.TabIndex = 6
         '
-        'Panel2
+        'p1
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.U_Name_TextBox)
-        Me.Panel2.Location = New System.Drawing.Point(110, 53)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(139, 26)
-        Me.Panel2.TabIndex = 18
+        Me.p1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.p1.Controls.Add(Me.imeTextBox)
+        Me.p1.Location = New System.Drawing.Point(110, 53)
+        Me.p1.Name = "p1"
+        Me.p1.Size = New System.Drawing.Size(139, 26)
+        Me.p1.TabIndex = 18
         '
-        'U_Name_TextBox
+        'imeTextBox
         '
-        Me.U_Name_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Name_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Name_TextBox.Location = New System.Drawing.Point(12, 7)
-        Me.U_Name_TextBox.Name = "U_Name_TextBox"
-        Me.U_Name_TextBox.ReadOnly = True
-        Me.U_Name_TextBox.Size = New System.Drawing.Size(115, 13)
-        Me.U_Name_TextBox.TabIndex = 12
+        Me.imeTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.imeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.imeTextBox.Location = New System.Drawing.Point(12, 7)
+        Me.imeTextBox.Name = "imeTextBox"
+        Me.imeTextBox.ReadOnly = True
+        Me.imeTextBox.Size = New System.Drawing.Size(115, 13)
+        Me.imeTextBox.TabIndex = 12
         '
-        'U_Monthly_Pay_GroupBox
+        'mjesecnaplataGrupBox
         '
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.Panel12)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.Panel11)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.Panel10)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.Panel1)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.U_PBOWD_Label)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.U_FWD_Label)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.Label1)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.U_WDIM_Label)
-        Me.U_Monthly_Pay_GroupBox.Controls.Add(Me.U_Month_Dropdown)
-        Me.U_Monthly_Pay_GroupBox.Location = New System.Drawing.Point(399, 6)
-        Me.U_Monthly_Pay_GroupBox.Name = "U_Monthly_Pay_GroupBox"
-        Me.U_Monthly_Pay_GroupBox.Size = New System.Drawing.Size(363, 350)
-        Me.U_Monthly_Pay_GroupBox.TabIndex = 17
-        Me.U_Monthly_Pay_GroupBox.TabStop = False
-        Me.U_Monthly_Pay_GroupBox.Text = "Mjesečna plata"
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel12)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel11)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel10)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel1)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.plataLabel)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.odradjeniradnidaniLabel)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.brojdanaumjesecuLabel)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.radnidaniumjesecuLabel)
+        Me.mjesecnaplataGrupBox.Controls.Add(Me.mjeseciComboBox)
+        Me.mjesecnaplataGrupBox.Location = New System.Drawing.Point(399, 6)
+        Me.mjesecnaplataGrupBox.Name = "mjesecnaplataGrupBox"
+        Me.mjesecnaplataGrupBox.Size = New System.Drawing.Size(363, 350)
+        Me.mjesecnaplataGrupBox.TabIndex = 17
+        Me.mjesecnaplataGrupBox.TabStop = False
+        Me.mjesecnaplataGrupBox.Text = "Mjesečna plata"
         '
         'Panel12
         '
@@ -529,167 +547,167 @@ Partial Class Korisnik
         Me.DaysInMonth.Size = New System.Drawing.Size(42, 13)
         Me.DaysInMonth.TabIndex = 22
         '
-        'U_PBOWD_Label
+        'plataLabel
         '
-        Me.U_PBOWD_Label.AutoSize = True
-        Me.U_PBOWD_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.U_PBOWD_Label.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.U_PBOWD_Label.Location = New System.Drawing.Point(169, 169)
-        Me.U_PBOWD_Label.Name = "U_PBOWD_Label"
-        Me.U_PBOWD_Label.Size = New System.Drawing.Size(56, 16)
-        Me.U_PBOWD_Label.TabIndex = 19
-        Me.U_PBOWD_Label.Text = "PLATA"
+        Me.plataLabel.AutoSize = True
+        Me.plataLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.plataLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.plataLabel.Location = New System.Drawing.Point(169, 169)
+        Me.plataLabel.Name = "plataLabel"
+        Me.plataLabel.Size = New System.Drawing.Size(56, 16)
+        Me.plataLabel.TabIndex = 19
+        Me.plataLabel.Text = "PLATA"
         '
-        'U_FWD_Label
+        'odradjeniradnidaniLabel
         '
-        Me.U_FWD_Label.AutoSize = True
-        Me.U_FWD_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.U_FWD_Label.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.U_FWD_Label.Location = New System.Drawing.Point(48, 121)
-        Me.U_FWD_Label.Name = "U_FWD_Label"
-        Me.U_FWD_Label.Size = New System.Drawing.Size(177, 16)
-        Me.U_FWD_Label.TabIndex = 18
-        Me.U_FWD_Label.Text = "ODRAĐENI RADNI DANI"
+        Me.odradjeniradnidaniLabel.AutoSize = True
+        Me.odradjeniradnidaniLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.odradjeniradnidaniLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.odradjeniradnidaniLabel.Location = New System.Drawing.Point(48, 121)
+        Me.odradjeniradnidaniLabel.Name = "odradjeniradnidaniLabel"
+        Me.odradjeniradnidaniLabel.Size = New System.Drawing.Size(177, 16)
+        Me.odradjeniradnidaniLabel.TabIndex = 18
+        Me.odradjeniradnidaniLabel.Text = "ODRAĐENI RADNI DANI"
         '
-        'Label1
+        'brojdanaumjesecuLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(42, 54)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(184, 16)
-        Me.Label1.TabIndex = 17
-        Me.Label1.Text = "BROJ DANA U MJESECU"
+        Me.brojdanaumjesecuLabel.AutoSize = True
+        Me.brojdanaumjesecuLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.brojdanaumjesecuLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.brojdanaumjesecuLabel.Location = New System.Drawing.Point(42, 54)
+        Me.brojdanaumjesecuLabel.Name = "brojdanaumjesecuLabel"
+        Me.brojdanaumjesecuLabel.Size = New System.Drawing.Size(184, 16)
+        Me.brojdanaumjesecuLabel.TabIndex = 17
+        Me.brojdanaumjesecuLabel.Text = "BROJ DANA U MJESECU"
         '
-        'U_WDIM_Label
+        'radnidaniumjesecuLabel
         '
-        Me.U_WDIM_Label.AutoSize = True
-        Me.U_WDIM_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.U_WDIM_Label.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.U_WDIM_Label.Location = New System.Drawing.Point(40, 90)
-        Me.U_WDIM_Label.Name = "U_WDIM_Label"
-        Me.U_WDIM_Label.Size = New System.Drawing.Size(185, 16)
-        Me.U_WDIM_Label.TabIndex = 17
-        Me.U_WDIM_Label.Text = "RADNI DANI U MJESECU"
+        Me.radnidaniumjesecuLabel.AutoSize = True
+        Me.radnidaniumjesecuLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.radnidaniumjesecuLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.radnidaniumjesecuLabel.Location = New System.Drawing.Point(40, 90)
+        Me.radnidaniumjesecuLabel.Name = "radnidaniumjesecuLabel"
+        Me.radnidaniumjesecuLabel.Size = New System.Drawing.Size(185, 16)
+        Me.radnidaniumjesecuLabel.TabIndex = 17
+        Me.radnidaniumjesecuLabel.Text = "RADNI DANI U MJESECU"
         '
-        'U_Month_Dropdown
+        'mjeseciComboBox
         '
-        Me.U_Month_Dropdown.FormattingEnabled = True
-        Me.U_Month_Dropdown.Items.AddRange(New Object() {"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septrembar", "Oktobar", "Novembar", "Decembar"})
-        Me.U_Month_Dropdown.Location = New System.Drawing.Point(6, 19)
-        Me.U_Month_Dropdown.Name = "U_Month_Dropdown"
-        Me.U_Month_Dropdown.Size = New System.Drawing.Size(315, 21)
-        Me.U_Month_Dropdown.TabIndex = 16
+        Me.mjeseciComboBox.FormattingEnabled = True
+        Me.mjeseciComboBox.Items.AddRange(New Object() {"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septrembar", "Oktobar", "Novembar", "Decembar"})
+        Me.mjeseciComboBox.Location = New System.Drawing.Point(6, 19)
+        Me.mjeseciComboBox.Name = "mjeseciComboBox"
+        Me.mjeseciComboBox.Size = New System.Drawing.Size(315, 21)
+        Me.mjeseciComboBox.TabIndex = 16
         '
-        'Label50
+        'emailLabel
         '
-        Me.Label50.AutoSize = True
-        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label50.Location = New System.Drawing.Point(50, 178)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(57, 16)
-        Me.Label50.TabIndex = 0
-        Me.Label50.Text = "E-MAIL"
+        Me.emailLabel.AutoSize = True
+        Me.emailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.emailLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.emailLabel.Location = New System.Drawing.Point(50, 178)
+        Me.emailLabel.Name = "emailLabel"
+        Me.emailLabel.Size = New System.Drawing.Size(57, 16)
+        Me.emailLabel.TabIndex = 0
+        Me.emailLabel.Text = "E-MAIL"
         '
-        'U_Picture
+        'slikaPictureBox
         '
-        Me.U_Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.U_Picture.Location = New System.Drawing.Point(255, 52)
-        Me.U_Picture.Name = "U_Picture"
-        Me.U_Picture.Size = New System.Drawing.Size(126, 113)
-        Me.U_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.U_Picture.TabIndex = 10
-        Me.U_Picture.TabStop = False
+        Me.slikaPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.slikaPictureBox.Location = New System.Drawing.Point(255, 52)
+        Me.slikaPictureBox.Name = "slikaPictureBox"
+        Me.slikaPictureBox.Size = New System.Drawing.Size(126, 113)
+        Me.slikaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.slikaPictureBox.TabIndex = 10
+        Me.slikaPictureBox.TabStop = False
         '
-        'Label5
+        'adresaLabel
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(35, 208)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 16)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "ADRESA"
+        Me.adresaLabel.AutoSize = True
+        Me.adresaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.adresaLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.adresaLabel.Location = New System.Drawing.Point(35, 208)
+        Me.adresaLabel.Name = "adresaLabel"
+        Me.adresaLabel.Size = New System.Drawing.Size(70, 16)
+        Me.adresaLabel.TabIndex = 0
+        Me.adresaLabel.Text = "ADRESA"
         '
-        'Label43
+        'polLabel
         '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label43.Location = New System.Drawing.Point(64, 334)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(37, 16)
-        Me.Label43.TabIndex = 0
-        Me.Label43.Text = "POL"
+        Me.polLabel.AutoSize = True
+        Me.polLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.polLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.polLabel.Location = New System.Drawing.Point(64, 334)
+        Me.polLabel.Name = "polLabel"
+        Me.polLabel.Size = New System.Drawing.Size(37, 16)
+        Me.polLabel.TabIndex = 0
+        Me.polLabel.Text = "POL"
         '
-        'Label8
+        'brojtelefonaLabel
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(25, 302)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 16)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "TELEFON"
+        Me.brojtelefonaLabel.AutoSize = True
+        Me.brojtelefonaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.brojtelefonaLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.brojtelefonaLabel.Location = New System.Drawing.Point(25, 302)
+        Me.brojtelefonaLabel.Name = "brojtelefonaLabel"
+        Me.brojtelefonaLabel.Size = New System.Drawing.Size(77, 16)
+        Me.brojtelefonaLabel.TabIndex = 0
+        Me.brojtelefonaLabel.Text = "TELEFON"
         '
-        'Label7
+        'pozicijaLabel
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(28, 271)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(74, 16)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "POZICIJA"
+        Me.pozicijaLabel.AutoSize = True
+        Me.pozicijaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pozicijaLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.pozicijaLabel.Location = New System.Drawing.Point(28, 271)
+        Me.pozicijaLabel.Name = "pozicijaLabel"
+        Me.pozicijaLabel.Size = New System.Drawing.Size(74, 16)
+        Me.pozicijaLabel.TabIndex = 0
+        Me.pozicijaLabel.Text = "POZICIJA"
         '
-        'Label6
+        'korisnickoimeLabel
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(9, 126)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(94, 16)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "KORISN IME"
+        Me.korisnickoimeLabel.AutoSize = True
+        Me.korisnickoimeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.korisnickoimeLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.korisnickoimeLabel.Location = New System.Drawing.Point(9, 126)
+        Me.korisnickoimeLabel.Name = "korisnickoimeLabel"
+        Me.korisnickoimeLabel.Size = New System.Drawing.Size(94, 16)
+        Me.korisnickoimeLabel.TabIndex = 0
+        Me.korisnickoimeLabel.Text = "KORISN IME"
         '
-        'Label4
+        'datumrodjenjaLabel
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(2, 240)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 16)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "DATUM ROĐ."
+        Me.datumrodjenjaLabel.AutoSize = True
+        Me.datumrodjenjaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.datumrodjenjaLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.datumrodjenjaLabel.Location = New System.Drawing.Point(2, 240)
+        Me.datumrodjenjaLabel.Name = "datumrodjenjaLabel"
+        Me.datumrodjenjaLabel.Size = New System.Drawing.Size(102, 16)
+        Me.datumrodjenjaLabel.TabIndex = 0
+        Me.datumrodjenjaLabel.Text = "DATUM ROĐ."
         '
-        'Label3
+        'prezimeLabel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(31, 91)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 16)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "PREZIME"
+        Me.prezimeLabel.AutoSize = True
+        Me.prezimeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.prezimeLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.prezimeLabel.Location = New System.Drawing.Point(31, 91)
+        Me.prezimeLabel.Name = "prezimeLabel"
+        Me.prezimeLabel.Size = New System.Drawing.Size(74, 16)
+        Me.prezimeLabel.TabIndex = 0
+        Me.prezimeLabel.Text = "PREZIME"
         '
-        'U_Name_Label
+        'imeLabel
         '
-        Me.U_Name_Label.AutoSize = True
-        Me.U_Name_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.U_Name_Label.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.U_Name_Label.Location = New System.Drawing.Point(69, 56)
-        Me.U_Name_Label.Name = "U_Name_Label"
-        Me.U_Name_Label.Size = New System.Drawing.Size(34, 16)
-        Me.U_Name_Label.TabIndex = 0
-        Me.U_Name_Label.Text = "IME"
+        Me.imeLabel.AutoSize = True
+        Me.imeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.imeLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.imeLabel.Location = New System.Drawing.Point(69, 56)
+        Me.imeLabel.Name = "imeLabel"
+        Me.imeLabel.Size = New System.Drawing.Size(34, 16)
+        Me.imeLabel.TabIndex = 0
+        Me.imeLabel.Text = "IME"
         '
         'TabStorage
         '
@@ -710,25 +728,29 @@ Partial Class Korisnik
         Me.DataGridView1.Size = New System.Drawing.Size(755, 349)
         Me.DataGridView1.TabIndex = 0
         '
-        'TabControl1
+        'korisnikTab
         '
-        Me.TabControl1.Controls.Add(Me.TabStorage)
-        Me.TabControl1.Controls.Add(Me.TabUserInfo)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 115)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 385)
-        Me.TabControl1.TabIndex = 128
+        Me.korisnikTab.Controls.Add(Me.TabStorage)
+        Me.korisnikTab.Controls.Add(Me.TabUserInfo)
+        Me.korisnikTab.Location = New System.Drawing.Point(12, 115)
+        Me.korisnikTab.Name = "korisnikTab"
+        Me.korisnikTab.SelectedIndex = 0
+        Me.korisnikTab.Size = New System.Drawing.Size(776, 385)
+        Me.korisnikTab.TabIndex = 128
+        '
+        'U_OpenFileDialog
+        '
+        Me.U_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
+    " *.png"
         '
         'Korisnik
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(802, 517)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.korisnikTab)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Exit_Button)
-        Me.Controls.Add(Me.Back_Button)
+        Me.Controls.Add(Me.dugmeOdjava)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Korisnik"
@@ -738,26 +760,26 @@ Partial Class Korisnik
         Me.Panel3.PerformLayout()
         Me.TabUserInfo.ResumeLayout(False)
         Me.TabUserInfo.PerformLayout()
-        Me.Panel40.ResumeLayout(False)
-        Me.Panel40.PerformLayout()
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel42.ResumeLayout(False)
-        Me.Panel42.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.U_Monthly_Pay_GroupBox.ResumeLayout(False)
-        Me.U_Monthly_Pay_GroupBox.PerformLayout()
+        Me.p9.ResumeLayout(False)
+        Me.p9.PerformLayout()
+        Me.p8.ResumeLayout(False)
+        Me.p8.PerformLayout()
+        Me.p7.ResumeLayout(False)
+        Me.p7.PerformLayout()
+        Me.p3.ResumeLayout(False)
+        Me.p3.PerformLayout()
+        Me.p6.ResumeLayout(False)
+        Me.p6.PerformLayout()
+        Me.p4.ResumeLayout(False)
+        Me.p4.PerformLayout()
+        Me.p5.ResumeLayout(False)
+        Me.p5.PerformLayout()
+        Me.p2.ResumeLayout(False)
+        Me.p2.PerformLayout()
+        Me.p1.ResumeLayout(False)
+        Me.p1.PerformLayout()
+        Me.mjesecnaplataGrupBox.ResumeLayout(False)
+        Me.mjesecnaplataGrupBox.PerformLayout()
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
         Me.Panel11.ResumeLayout(False)
@@ -766,39 +788,38 @@ Partial Class Korisnik
         Me.Panel10.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabStorage.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabControl1.ResumeLayout(False)
+        Me.korisnikTab.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Back_Button As Button
-    Friend WithEvents Exit_Button As Button
+    Friend WithEvents dugmeOdjava As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label2 As Label
+    Friend WithEvents korisnickipanelLabel As Label
     Friend WithEvents TabUserInfo As TabPage
-    Friend WithEvents Panel40 As Panel
-    Friend WithEvents U_Male_TextBox As TextBox
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents U_Phone_TextBox As TextBox
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents U_Possition_TextBox As TextBox
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents U_Username_TextBox As TextBox
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents U_Birth_TextBox As TextBox
-    Friend WithEvents Panel42 As Panel
-    Friend WithEvents U_Email_TextBox As TextBox
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents U_Adresa_TextBox As TextBox
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents U_Surname_TextBox As TextBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents U_Name_TextBox As TextBox
-    Friend WithEvents U_Monthly_Pay_GroupBox As GroupBox
+    Friend WithEvents p9 As Panel
+    Friend WithEvents polaTextBox As TextBox
+    Friend WithEvents p8 As Panel
+    Friend WithEvents brojtelefonaTextBox As TextBox
+    Friend WithEvents p7 As Panel
+    Friend WithEvents pozicijaTextBox As TextBox
+    Friend WithEvents p3 As Panel
+    Friend WithEvents korisnickoimeTextBox As TextBox
+    Friend WithEvents p6 As Panel
+    Friend WithEvents datumrodjenjaTextBox As TextBox
+    Friend WithEvents p4 As Panel
+    Friend WithEvents emailTextBox As TextBox
+    Friend WithEvents p5 As Panel
+    Friend WithEvents adresaTextBox As TextBox
+    Friend WithEvents p2 As Panel
+    Friend WithEvents prezimeTextBox As TextBox
+    Friend WithEvents p1 As Panel
+    Friend WithEvents imeTextBox As TextBox
+    Friend WithEvents mjesecnaplataGrupBox As GroupBox
     Friend WithEvents Panel12 As Panel
     Friend WithEvents U_PBOFWD_TextBox As TextBox
     Friend WithEvents TextBox3 As TextBox
@@ -810,26 +831,30 @@ Partial Class Korisnik
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DaysInMonth As TextBox
-    Friend WithEvents U_PBOWD_Label As Label
-    Friend WithEvents U_FWD_Label As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents U_WDIM_Label As Label
-    Friend WithEvents U_Month_Dropdown As ComboBox
-    Friend WithEvents Label50 As Label
-    Friend WithEvents U_Picture As PictureBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label43 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents U_Name_Label As Label
+    Friend WithEvents plataLabel As Label
+    Friend WithEvents odradjeniradnidaniLabel As Label
+    Friend WithEvents brojdanaumjesecuLabel As Label
+    Friend WithEvents radnidaniumjesecuLabel As Label
+    Friend WithEvents mjeseciComboBox As ComboBox
+    Friend WithEvents emailLabel As Label
+    Friend WithEvents slikaPictureBox As PictureBox
+    Friend WithEvents adresaLabel As Label
+    Friend WithEvents polLabel As Label
+    Friend WithEvents brojtelefonaLabel As Label
+    Friend WithEvents pozicijaLabel As Label
+    Friend WithEvents korisnickoimeLabel As Label
+    Friend WithEvents datumrodjenjaLabel As Label
+    Friend WithEvents prezimeLabel As Label
+    Friend WithEvents imeLabel As Label
     Friend WithEvents TabStorage As TabPage
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents korisnikTab As TabControl
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents U_NoFile_Label As Label
-    Friend WithEvents PonistiIzmjeneDugme As Button
+    Friend WithEvents nemaslikeLabel As Label
+    Friend WithEvents dugmePonisti As Button
     Friend WithEvents dugmeSacuvaj As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents dugmeIzmijeni As Button
+    Friend WithEvents promijenislikuLabel As Label
+    Friend WithEvents dugmeOtvoriSliku As Button
+    Friend WithEvents U_OpenFileDialog As OpenFileDialog
+    Friend WithEvents U_FolderBrowserDialog As FolderBrowserDialog
 End Class

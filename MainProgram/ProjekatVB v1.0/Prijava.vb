@@ -132,4 +132,8 @@ where kr.korisnicki_id = @korisnicki_id and @lozinka = lozinka COLLATE Latin1_Ge
     Private Sub Button1_Click(sender As Object, e As EventArgs) 
         Korisnik.Show()
     End Sub
+
+    Private Sub Prijava_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -2,7 +2,7 @@
     Public Korpa As Double
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
-        If Prijava.test <> 1 Then
+        If Prijava.pozicija < 0 Then
             Gost.Show()
         Else
             Administrator.Show()

@@ -281,4 +281,8 @@ VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & En
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         ' URComboBox.SelectedIndex = -1
     End Sub
+
+    Private Sub UR_ChooseImage_Label_Click(sender As Object, e As EventArgs) Handles UR_ChooseImage_Label.Click
+
+    End Sub
 End Class

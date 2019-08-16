@@ -1,5 +1,8 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.ComponentModel
+Imports System.Data.SqlClient
 Public Class Korisnik
+
+    Dim boja As String = "235, 235, 235"
     Private Function Ciscenje() As Integer
 
         Dim Command As New SqlCommand("SELECT * FROM korisnici where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
@@ -9,34 +12,29 @@ Public Class Korisnik
         adapter.Fill(user_table)
         'Popunjavanje informacija
         Try
-            U_Username_TextBox.Text = user_table.Rows(0)(0)
-            U_Name_TextBox.Text = user_table.Rows(0)(1)
-            U_Surname_TextBox.Text = user_table.Rows(0)(2)
-            U_Phone_TextBox.Text = user_table.Rows(0)(5)
-            U_Email_TextBox.Text = user_table.Rows(0)(6)
-            U_Birth_TextBox.Text = user_table.Rows(0)(7)
-            U_Possition_TextBox.Text = Prijava.imePozicije
-            U_Male_TextBox.Text = user_table.Rows(0)(8)
-            U_Adresa_TextBox.Text = user_table.Rows(0)(4)
+            korisnickoimeTextBox.Text = user_table.Rows(0)(0)
+            imeTextBox.Text = user_table.Rows(0)(1)
+            prezimeTextBox.Text = user_table.Rows(0)(2)
+            brojtelefonaTextBox.Text = user_table.Rows(0)(5)
+            emailTextBox.Text = user_table.Rows(0)(6)
+            datumrodjenjaTextBox.Text = user_table.Rows(0)(7)
+            pozicijaTextBox.Text = Prijava.imePozicije
+            polaTextBox.Text = user_table.Rows(0)(8)
+            adresaTextBox.Text = user_table.Rows(0)(4)
 
             'marce : Aleksandar
-            Try
-                U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
-                U_NoFile_Label.Visible = False
-            Catch ex As Exception
-                U_NoFile_Label.Visible = Enabled
-            End Try
         Catch ex As Exception
         End Try
 
 
     End Function
-    Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
+    Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles dugmeOdjava.Click
         Me.Close()
         Prijava.Show()
     End Sub
 
-    Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
+    Private Sub Exit_Button_Click(sender As Object, e As EventArgs)
+        Prijava.Show()
         Me.Close()
     End Sub
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter
@@ -151,49 +149,92 @@ Public Class Korisnik
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles dugmeIzmijeni.Click
         dugmeSacuvaj.Visible = True
-        PonistiIzmjeneDugme.Visible = True
-        Button1.Visible = False
+        dugmePonisti.Visible = True
+        dugmeIzmijeni.Visible = False
 
-        U_Name_TextBox.ReadOnly = False
-        U_Surname_TextBox.ReadOnly = False
-        U_Birth_TextBox.ReadOnly = False
-        U_Adresa_TextBox.ReadOnly = False
-        U_Phone_TextBox.ReadOnly = False
+        imeTextBox.ReadOnly = False
+        imeTextBox.BackColor = Color.PaleGreen
+        p1.BackColor = Color.PaleGreen
 
+        prezimeTextBox.ReadOnly = False
+        prezimeTextBox.BackColor = Color.PaleGreen
+        p2.BackColor = Color.PaleGreen
+
+        datumrodjenjaTextBox.ReadOnly = False
+        datumrodjenjaTextBox.BackColor = Color.PaleGreen
+        p5.BackColor = Color.PaleGreen
+
+        adresaTextBox.ReadOnly = False
+        adresaTextBox.BackColor = Color.PaleGreen
+        p6.BackColor = Color.PaleGreen
+
+        brojtelefonaTextBox.ReadOnly = False
+        brojtelefonaTextBox.BackColor = Color.PaleGreen
+        p8.BackColor = Color.PaleGreen
+
+        promijenislikuLabel.Visible = True
+        dugmeOtvoriSliku.Visible = True
 
     End Sub
 
     Private Sub DugmeSacuvaj_Click(sender As Object, e As EventArgs) Handles dugmeSacuvaj.Click
-        Try
-            Dim Command As New SqlCommand("SELECT * FROM korisnici where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
-            Dim adapter As New SqlDataAdapter(Command)
-            Dim user_table As New DataTable()
-            Command.CommandText = "UPDATE korisnici SET @korisnicko_ime = korisnicko_ime, @korisnicko_prezime=korisnicko_prezime, @broj_telefona=broj_telefona,@datum_rodjenja=datum_rodjenja, @adresa_stanovanja=adresa_stanovanja
+
+        Dim Command As New SqlCommand("SELECT * FROM korisnici where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(Command)
+        Dim user_table As New DataTable()
+        Command.CommandText = "UPDATE korisnici SET @korisnicko_ime = korisnicko_ime, @korisnicko_prezime=korisnicko_prezime, @broj_telefona=broj_telefona,@datum_rodjenja=datum_rodjenja, @adresa_stanovanja=adresa_stanovanja
                                 WHERE korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'"
-            Command.Parameters.Add("@korisnicko_ime", SqlDbType.Int).Value = U_Name_TextBox.Text
-            Command.Parameters.Add("@korisnicko_prezime", SqlDbType.Int).Value = U_Surname_TextBox.Text
-            Command.Parameters.Add("@broj_telefona", SqlDbType.Int).Value = U_Phone_TextBox.Text
-            Command.Parameters.Add("@datum_rodjenja", SqlDbType.Int).Value = U_Birth_TextBox.Text
-            Command.Parameters.Add("@adresa_stanovanja", SqlDbType.Int).Value = U_Adresa_TextBox.Text
+        Command.Parameters.Add("@korisnicko_ime", SqlDbType.Int).Value = imeTextBox.Text
+        Command.Parameters.Add("@korisnicko_prezime", SqlDbType.Int).Value = prezimeTextBox.Text
+        Command.Parameters.Add("@broj_telefona", SqlDbType.Int).Value = brojtelefonaTextBox.Text
+        Command.Parameters.Add("@datum_rodjenja", SqlDbType.Int).Value = datumrodjenjaTextBox.Text
+        Command.Parameters.Add("@adresa_stanovanja", SqlDbType.Int).Value = adresaTextBox.Text
 
-            dugmeSacuvaj.Visible = False
-            PonistiIzmjeneDugme.Visible = False
-            Button1.Visible = True
-            U_Name_TextBox.ReadOnly = True
-            U_Surname_TextBox.ReadOnly = True
-            U_Birth_TextBox.ReadOnly = True
-            U_Adresa_TextBox.ReadOnly = True
-            U_Phone_TextBox.ReadOnly = True
-        Catch ex As Exception
-            MsgBox("Nesto ne pase")
-            Ciscenje()
+        dugmeSacuvaj.Visible = False
+        dugmePonisti.Visible = False
+        dugmeIzmijeni.Visible = True
 
-        End Try
+
+        imeTextBox.ReadOnly = True
+        imeTextBox.BackColor = Color.FromArgb(235, 235, 235)
+        p1.BackColor = Color.FromArgb(235, 235, 235)
+
+        prezimeTextBox.ReadOnly = True
+        prezimeTextBox.BackColor = Color.FromArgb(235, 235, 235)
+        p2.BackColor = Color.FromArgb(235, 235, 235)
+
+        datumrodjenjaTextBox.ReadOnly = True
+        datumrodjenjaTextBox.ReadOnly = False
+        datumrodjenjaTextBox.BackColor = Color.FromArgb(235, 235, 235)
+        p5.BackColor = Color.FromArgb(235, 235, 235)
+
+        adresaTextBox.ReadOnly = True
+        adresaTextBox.BackColor = Color.FromArgb(235, 235, 235)
+        p6.BackColor = Color.FromArgb(235, 235, 235)
+
+        brojtelefonaTextBox.ReadOnly = True
+        brojtelefonaTextBox.BackColor = Color.FromArgb(235, 235, 235)
+        p8.BackColor = Color.FromArgb(235, 235, 235)
+
+        promijenislikuLabel.Visible = False
+        dugmeOtvoriSliku.Visible = False
+
     End Sub
 
-    Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
+    Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles dugmePonisti.Click
         Ciscenje()
+    End Sub
+
+    Private Sub UR_ChangePicture_Button_Click(sender As Object, e As EventArgs) Handles dugmeOtvoriSliku.Click
+        U_OpenFileDialog.InitialDirectory = U_FolderBrowserDialog.SelectedPath
+        U_OpenFileDialog.ShowDialog()
+    End Sub
+
+    Private Sub U_OpenFileDialog_FileOk(sender As Object, e As CancelEventArgs) Handles U_OpenFileDialog.FileOk
+
+        ' U_Picture.Image = Image.FromFile(U_OpenFileDialog.FileName) '
+
     End Sub
 End Class

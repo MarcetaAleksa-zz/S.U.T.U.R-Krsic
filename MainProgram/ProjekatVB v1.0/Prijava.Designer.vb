@@ -60,7 +60,7 @@ Partial Class Prijava
         '
         Me.Username_Form_Box.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.Username_Form_Box.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Username_Form_Box.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Username_Form_Box.ForeColor = System.Drawing.Color.Gray
         Me.Username_Form_Box.Location = New System.Drawing.Point(45, 7)
         Me.Username_Form_Box.Name = "Username_Form_Box"
         Me.Username_Form_Box.Size = New System.Drawing.Size(149, 13)
@@ -71,7 +71,7 @@ Partial Class Prijava
         '
         Me.Password_Form_Box.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.Password_Form_Box.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Password_Form_Box.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Password_Form_Box.ForeColor = System.Drawing.Color.Gray
         Me.Password_Form_Box.Location = New System.Drawing.Point(45, 6)
         Me.Password_Form_Box.Name = "Password_Form_Box"
         Me.Password_Form_Box.Size = New System.Drawing.Size(158, 13)
