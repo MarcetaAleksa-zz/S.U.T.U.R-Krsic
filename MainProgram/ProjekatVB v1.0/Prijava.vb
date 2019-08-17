@@ -1,12 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Public Class Prijava
-
+    'kako bi mogli u administratoru provjeriti koje 
+    'funkcije koji nalog ima te podesiti formu u skladu sa tim
     Public Shared tipNaloga As Integer
     Public test As Double = 0
     Public pozicija As Double = 0
+    'kako bi provjerili koje je ime pozicije za user-a 
+    ' te da mozemo u bazi vrsiti pretragu i dodjelu imena pozicije 
     Public imePozicije As String
-
-    'Konekcija sa bazom NAPOLEON : SPARTAN 
     Private Sub Username_Form_Box_Enter(sender As Object, e As EventArgs) Handles Username_Form_Box.Enter
         If (Username_Form_Box.Text = "Unesi korisničko ime ovde") Then
             Username_Form_Box.Text = ""
@@ -34,22 +35,29 @@ Public Class Prijava
         End If
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
-        'Enkripcija.EncryptPass()
-        Dim pozicijaija
+        Enkripcija.EncryptPass()
+
+        'varijabla u kojoj dodjeljujemo tip pozicije kako bi mogli razvrstati korisnike na obicne 
+        'korisnikei administratore
+        Dim tipPozicije As Integer
+
+
+        'Uspostava konekcije sa bazom i pretraga korisnika kako bi provjerili da li su kredencijali za 
+        'prijavu ispravni
         Dim command As New SqlCommand("select st.pozicija_id, kr.korisnicki_id, kr.lozinka from spoj_tabela as st  left join korisnici as kr
 on (st.korisnicki_id = kr.korisnicki_id)
-where kr.korisnicki_id = @korisnicki_id and @lozinka = lozinka COLLATE Latin1_General_CS_AS", containerdb.connection)
+where kr.korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS_AS", containerdb.connection)
 
         command.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = Username_Form_Box.Text
+        command.Parameters.Add("@lozinka", SqlDbType.VarChar).Value = Enkripcija.HashStore
 
-        command.Parameters.Add("@lozinka", SqlDbType.VarChar).Value = Password_Form_Box.Text 'Enkripcija.HashStore
         Dim adapter As New SqlDataAdapter(command)
         Dim tabela As New DataTable()
-
         adapter.Fill(tabela)
+
         Try
-            pozicijaija = tabela.Rows(0)(0)
-            Prijava.tipNaloga = pozicijaija
+            tipPozicije = tabela.Rows(0)(0)
+            Prijava.tipNaloga = tipPozicije
         Catch ex As Exception
             LoginGreska.Show()
         End Try
@@ -69,19 +77,15 @@ where kr.korisnicki_id = @korisnicki_id and @lozinka = lozinka COLLATE Latin1_Ge
             Case Else
                 imePozicije = "Kuhar"
         End Select
-        'Syntax za dobijanje admin akreditaciju
-        'unos admin podataka u tabelu, u slucaju da imamo admina
-
-
 
         If tabela.Rows.Count > 0 Then
-            If pozicijaija <= 3 Then
+            If tipPozicije <= 3 Then
                 Logovi.Log()
                 AdminDobroDosli.Show()
                 Enkripcija.HashStore = Nothing
                 Password_Form_Box.Text = ""
                 Me.Hide()
-            ElseIf 3 < pozicijaija Then
+            ElseIf 3 < tipPozicije Then
                 Logovi.Log()
                 UserDobroDosli.Show()
                 Enkripcija.HashStore = Nothing
@@ -110,7 +114,7 @@ where kr.korisnicki_id = @korisnicki_id and @lozinka = lozinka COLLATE Latin1_Ge
         If (e.KeyCode = Keys.Enter) Then
             e.SuppressKeyPress = True
             Call Login_Button_Click(sender, e)
-            'Nakon sto ukucamo username, ako pritisnemo enter pokusavamo se logovati.
+            'Nakon sto ukucamo korisnicko ime, ako pritisnemo enter pokusavamo se logovati.
         End If
 
     End Sub
@@ -125,7 +129,10 @@ where kr.korisnicki_id = @korisnicki_id and @lozinka = lozinka COLLATE Latin1_Ge
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If (Password_Form_Box.Text <> "Unesi lozinku ovde") Then
             Password_Form_Box.UseSystemPasswordChar = True
-            Password_Form_Box.ForeColor = Color.Black 'timer da vraca boju fontu jer kada u polje za password(kada je prazno)pritisnem tab i pocnem pisati password on posivi
+            Password_Form_Box.ForeColor = Color.Black
+            'timer da vraca boju fontu, 
+            'jer kada u polje za lozinku(kada je prazno) pritisnem tab 
+            'i pocnem pisati password on posivi
         End If
     End Sub
 
