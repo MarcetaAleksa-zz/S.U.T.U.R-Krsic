@@ -283,8 +283,4 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
     Private Sub UR_ChooseImage_Label_Click(sender As Object, e As EventArgs) Handles UR_ChooseImage_Label.Click
 
     End Sub
-
-    Private Sub UR_FolderBrowserDialog_HelpRequest(sender As Object, e As EventArgs) Handles UR_FolderBrowserDialog.HelpRequest
-
-    End Sub
 End Class

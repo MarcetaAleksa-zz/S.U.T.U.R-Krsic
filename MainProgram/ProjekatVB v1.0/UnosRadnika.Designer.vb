@@ -226,9 +226,6 @@ Partial Class UnosRadnika
         Me.UR_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
     " *.png"
         '
-        'UR_FolderBrowserDialog
-        '
-        '
         'UR_NoFile_Label
         '
         Me.UR_NoFile_Label.AutoSize = True

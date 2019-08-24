@@ -14,7 +14,6 @@ Public Class Administrator
     End Sub
     Private Sub ViewPurchases_Button_Click(sender As Object, e As EventArgs) Handles NarudzbeButton.Click
         PretragaRadnika.Show()
-        Me.Hide()
     End Sub
     Private Sub Logs_Button_Click(sender As Object, e As EventArgs) Handles Logs_Button.Click
         'promjeniti ime korisnika na marce ili aleksandar (c:\Users\(jedno od ponudjenih imena)\...)

@@ -540,6 +540,3 @@ Username: test;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 02:35:41
 Username: MarLeksa;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 02:36:07
 Username: MarLeksa;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 02:48:10
 Username: MarLeksa;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 02:50:18
-Username: MarLeksa;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 10:10:48
-Username: MarLeksa;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 10:13:49
-Username: MarLeksa;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 10:23:29
