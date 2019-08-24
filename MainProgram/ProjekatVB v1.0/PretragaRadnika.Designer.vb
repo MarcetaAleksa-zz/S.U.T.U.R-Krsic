@@ -50,6 +50,7 @@ Partial Class PretragaRadnika
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.U_Picture = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Nazad = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -299,6 +300,7 @@ Partial Class PretragaRadnika
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(106, 86)
         Me.ComboBox1.Name = "ComboBox1"
@@ -317,11 +319,21 @@ Partial Class PretragaRadnika
         '
         Me.Timer1.Enabled = True
         '
+        'Nazad
+        '
+        Me.Nazad.Location = New System.Drawing.Point(310, 311)
+        Me.Nazad.Name = "Nazad"
+        Me.Nazad.Size = New System.Drawing.Size(75, 23)
+        Me.Nazad.TabIndex = 35
+        Me.Nazad.Text = "Nazad"
+        Me.Nazad.UseVisualStyleBackColor = True
+        '
         'PretragaRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(498, 390)
+        Me.Controls.Add(Me.Nazad)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)
@@ -391,4 +403,5 @@ Partial Class PretragaRadnika
     Friend WithEvents DirectorySearcher1 As DirectoryServices.DirectorySearcher
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Nazad As Button
 End Class

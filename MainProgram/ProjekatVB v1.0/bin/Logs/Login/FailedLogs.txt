@@ -311,3 +311,6 @@ Username: nikolaS;; Password: Unesi lozinku ovde;; Date of Attempt: 16-Aug-2019 
 Username: panzo;; Password: Panzo;; Date of Attempt: 16-Aug-2019 02:53:05
 Username: MarLeksa;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 02:06:04
 Username: Test;; Password: P@$$w0rd;; Date of Attempt: 24-Aug-2019 02:35:00
+Username: MarLeksa;; Password: P"$$w0rd;; Date of Attempt: 24-Aug-2019 10:10:20
+Username: MarLeksa;; Password: P"$$w0rd;; Date of Attempt: 24-Aug-2019 10:10:24
+Username: MarLeksa;; Password: P@$$w-rd;; Date of Attempt: 24-Aug-2019 10:10:31
