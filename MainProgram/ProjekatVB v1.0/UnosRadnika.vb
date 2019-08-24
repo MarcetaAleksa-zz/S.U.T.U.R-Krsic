@@ -34,7 +34,7 @@ Public Class UnosRadnika
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
         Dim Gender As String
         Dim Account_type As String
-        Dim Command As New SqlCommand("SELECT * FROM Projekat.dbo.Login", containerdb.connection)
+        Dim Command As New SqlCommand("SELECT * FROM dbo.korisnici", containerdb.connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
             brojac += 1
@@ -44,10 +44,10 @@ Public Class UnosRadnika
             Enkripcija.HashStore = Nothing
         End If
         If UR_Male_Button.Checked = True Then
-            Gender = "Muški"
+            Gender = "Muski"
             brojac += 1
         ElseIf UR_Female_Button.Checked = True Then
-            Gender = "Ženski"
+            Gender = "Zenski"
             brojac += 1
         Else MsgBox("Pol") 'napraviti formu poruka za ovaj error
             brojac = 0
@@ -67,11 +67,9 @@ Public Class UnosRadnika
 
         Try
             containerdb.connection.Open()
-            Command.CommandText = "Declare @ID int; SET @ID  = (SELECT MAX(id) FROM Projekat.dbo.Workers) + 1;
-INSERT INTO Projekat.dbo.Workers (ID, Name, Surname, Email, Birth, Username, Position, Phone, Gender) 
-VALUES (@ID,'" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & UR_Username_TextBox.Text & "', '" & URComboBox.Text & "', '" & UR_Phone_TextBox.Text & "', '" & Gender & "') 
-INSERT INTO Projekat.dbo.Login(ID, Account_Type, Username, Password) 
-VALUES (@ID, '" & Account_type & "', '" & UR_Username_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "')"
+            Command.CommandText = "INSERT INTO dbo.korisnici (korisnicki_id, ime_korisnika, prezime_korisnika, lozinka,  broj_telefona, email, datum_rodjenja, pol) 
+VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "' , '" & UR_Phone_TextBox.Text & "' , '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & Gender & "')"
+
             Command.ExecuteNonQuery()
             'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\" & UR_Username_TextBox.Text & ".jpg")
             Dim x As Integer = UR_Picture.Width
