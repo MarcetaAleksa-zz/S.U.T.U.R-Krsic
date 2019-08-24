@@ -20,8 +20,8 @@ Public Class PretragaRadnika
         Dim ds As New DataSet()
 
         Try
-            adapter.Fill(tabela)
-            ComboBox1.DataSource = tabela(0)
+            adapter.Fill(ds)
+            ComboBox1.DataSource = ds.Tables(0)
             ComboBox1.ValueMember = "korisnicki_id"
             ComboBox1.DisplayMember = "korisnicko_ime"
         Catch ex As Exception
@@ -40,7 +40,6 @@ Public Class PretragaRadnika
         Try
             adapter.Fill(user_table)
             'Popunjavanje informacija
-
             U_Name_TextBox.Text = user_table.Rows(0)(1)
             U_Surname_TextBox.Text = user_table.Rows(0)(2)
             U_Email_TextBox.Text = user_table.Rows(0)(6)
@@ -56,6 +55,11 @@ Public Class PretragaRadnika
 
 
     End Sub
+
+    Private Sub Nazad_Click(sender As Object, e As EventArgs) Handles Nazad.Click
+        Administrator.Show()
+        Me.Hide()
+    End Sub
 End Class
 
 
@@ -64,4 +68,3 @@ End Class
 
 
 
-'  End Class
