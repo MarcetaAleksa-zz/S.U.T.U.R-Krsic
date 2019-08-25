@@ -22,11 +22,11 @@ Public Class Korisnik
             polaTextBox.Text = user_table.Rows(0)(8)
             adresaTextBox.Text = user_table.Rows(0)(4)
 
-            'marce : Aleksandar
+            'Aleksandar : Aleksandar
         Catch ex As Exception
         End Try
 
-
+        Return Nothing
     End Function
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles dugmeOdjava.Click
         Me.Close()
@@ -38,7 +38,7 @@ Public Class Korisnik
         Me.Close()
     End Sub
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter
-        'Konekcija sa bazom NAPOLEON\SQLEXPRESS (Home PC) 
+        'Konekcija sa bazom SPARTAN\SQLEXPRESS (Home PC) 
         Ciscenje()
     End Sub
     'Treba popraviti.

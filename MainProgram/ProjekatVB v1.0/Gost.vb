@@ -12,6 +12,6 @@
     End Sub
     Private Sub Order_Funeral_Button_Click(sender As Object, e As EventArgs) Handles Order_Funeral_Button.Click
         Me.Hide()
-        Order_Funeral.Show()
+        Narudzva.Show()
     End Sub
 End Class

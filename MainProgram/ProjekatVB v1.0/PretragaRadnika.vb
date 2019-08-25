@@ -7,7 +7,6 @@ Public Class PretragaRadnika
         Dim adapter As New SqlDataAdapter(command)
         Dim tabela As New DataTable()
         Dim ds As New DataSet()
-
         Try
             adapter.Fill(ds)
             ComboBox1.DataSource = ds.Tables(0)
@@ -16,6 +15,8 @@ Public Class PretragaRadnika
         Catch ex As Exception
             MessageBox.Show("Can Not open connection ! ")
         End Try
+
+        ComboBox1.SelectedIndex = -1
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -39,14 +40,15 @@ Public Class PretragaRadnika
             U_Username_TextBox.Text = user_table.Rows(0)(0)
             U_Possition_TextBox.Text = pozicijaTbl.Rows(0)(0)
             U_Phone_TextBox.Text = user_table.Rows(0)(5)
-            U_Picture.Image = Image.FromFile("C:\Users\marce\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
-            ' marce : aleksandar
+            U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            ' Aleksandar : aleksandar
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub Nazad_Click(sender As Object, e As EventArgs) Handles Nazad.Click
+
+    Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Administrator.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class
 

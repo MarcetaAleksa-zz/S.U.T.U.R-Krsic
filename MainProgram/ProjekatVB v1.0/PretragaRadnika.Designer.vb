@@ -23,6 +23,7 @@ Partial Class PretragaRadnika
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PretragaRadnika))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -50,7 +51,7 @@ Partial Class PretragaRadnika
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.U_Picture = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Nazad = New System.Windows.Forms.Button()
+        Me.Back_Button = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -302,9 +303,9 @@ Partial Class PretragaRadnika
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(106, 86)
+        Me.ComboBox1.Location = New System.Drawing.Point(115, 85)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(159, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox1.TabIndex = 34
         '
         'U_Picture
@@ -319,21 +320,22 @@ Partial Class PretragaRadnika
         '
         Me.Timer1.Enabled = True
         '
-        'Nazad
+        'Back_Button
         '
-        Me.Nazad.Location = New System.Drawing.Point(310, 311)
-        Me.Nazad.Name = "Nazad"
-        Me.Nazad.Size = New System.Drawing.Size(75, 23)
-        Me.Nazad.TabIndex = 35
-        Me.Nazad.Text = "Nazad"
-        Me.Nazad.UseVisualStyleBackColor = True
+        Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
+        Me.Back_Button.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Back_Button.Location = New System.Drawing.Point(17, 74)
+        Me.Back_Button.Name = "Back_Button"
+        Me.Back_Button.Size = New System.Drawing.Size(40, 40)
+        Me.Back_Button.TabIndex = 112
+        Me.Back_Button.UseVisualStyleBackColor = True
         '
         'PretragaRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(498, 390)
-        Me.Controls.Add(Me.Nazad)
+        Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)
@@ -403,5 +405,5 @@ Partial Class PretragaRadnika
     Friend WithEvents DirectorySearcher1 As DirectoryServices.DirectorySearcher
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Nazad As Button
+    Friend WithEvents Back_Button As Button
 End Class

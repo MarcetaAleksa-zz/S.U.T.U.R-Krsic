@@ -145,7 +145,7 @@ where kr.korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_G
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
-        pregledRadnika.Show()
+        PrikazSvihRadnika.Show()
 
     End Sub
 

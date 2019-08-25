@@ -1,4 +1,4 @@
-﻿Public Class pregledRadnika
+﻿Public Class PrikazSvihRadnika
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Close()
         Administrator.Show()
@@ -16,7 +16,8 @@
             dugmeSacuvaj.Visible = False
             dugmeIzmijeni.Visible = True
             DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
-            'Me.KorisniciTableAdapter.Update(Me.Radnici.korisnici)
+            ' Me.KorisniciTableAdapter.Update(Me.Radnici.korisnici)
+            '  Me.KorisniciTableAdapter.
             PraznaPoljaLabel.Visible = False
             PonistiIzmjeneDugme.Visible = False
 

@@ -1,4 +1,4 @@
-﻿Public Class Order_Funeral
+﻿Public Class Narudzva
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
         Gost.Show()

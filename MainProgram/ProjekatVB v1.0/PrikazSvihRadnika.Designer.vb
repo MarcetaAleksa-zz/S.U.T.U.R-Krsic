@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class pregledRadnika
+Partial Class PrikazSvihRadnika
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class pregledRadnika
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pregledRadnika))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PrikazSvihRadnika))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.Back_Button = New System.Windows.Forms.Button()
@@ -32,12 +32,6 @@ Partial Class pregledRadnika
         Me.PraznaPoljaLabel = New System.Windows.Forms.Label()
         Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.KorisniciBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RadniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Radnici = New ProjekatVB_v1._0.Radnici()
-        Me.KorisniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.KorisniciTableAdapter = New ProjekatVB_v1._0.RadniciTableAdapters.korisniciTableAdapter()
-        Me.KorisniciBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.KorisnickiidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImepozicijeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImekorisnikaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,6 +41,12 @@ Partial Class pregledRadnika
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DatumrodjenjaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KorisniciBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RadniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Radnici = New ProjekatVB_v1._0.Radnici()
+        Me.KorisniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KorisniciTableAdapter = New ProjekatVB_v1._0.RadniciTableAdapters.korisniciTableAdapter()
+        Me.KorisniciBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KorisniciBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +62,7 @@ Partial Class pregledRadnika
         Me.Panel3.Controls.Add(Me.LabelZaNaziv)
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(891, 68)
+        Me.Panel3.Size = New System.Drawing.Size(1031, 68)
         Me.Panel3.TabIndex = 11
         '
         'LabelZaNaziv
@@ -70,7 +70,7 @@ Partial Class pregledRadnika
         Me.LabelZaNaziv.AutoSize = True
         Me.LabelZaNaziv.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelZaNaziv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.LabelZaNaziv.Location = New System.Drawing.Point(330, 25)
+        Me.LabelZaNaziv.Location = New System.Drawing.Point(413, 26)
         Me.LabelZaNaziv.Name = "LabelZaNaziv"
         Me.LabelZaNaziv.Size = New System.Drawing.Size(210, 25)
         Me.LabelZaNaziv.TabIndex = 0
@@ -97,7 +97,6 @@ Partial Class pregledRadnika
         Me.dugmeIzmijeni.TabIndex = 127
         Me.dugmeIzmijeni.Text = "Izmijeni"
         Me.dugmeIzmijeni.UseVisualStyleBackColor = False
-        Me.dugmeIzmijeni.Visible = False
         '
         'dugmeSacuvaj
         '
@@ -116,11 +115,11 @@ Partial Class pregledRadnika
         '
         Me.PraznaPoljaLabel.AutoSize = True
         Me.PraznaPoljaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PraznaPoljaLabel.Location = New System.Drawing.Point(530, 105)
+        Me.PraznaPoljaLabel.Location = New System.Drawing.Point(721, 138)
         Me.PraznaPoljaLabel.Name = "PraznaPoljaLabel"
-        Me.PraznaPoljaLabel.Size = New System.Drawing.Size(251, 12)
+        Me.PraznaPoljaLabel.Size = New System.Drawing.Size(246, 12)
         Me.PraznaPoljaLabel.TabIndex = 129
-        Me.PraznaPoljaLabel.Text = "*Polja:Ime,Korisnicko Ime, Pozicija i Pol, ne smiju biti prazni!"
+        Me.PraznaPoljaLabel.Text = "*Molimo vas da popunite sva polja prije nego sto nastavite!"
         Me.PraznaPoljaLabel.Visible = False
         '
         'PonistiIzmjeneDugme
@@ -143,39 +142,11 @@ Partial Class pregledRadnika
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KorisnickiidDataGridViewTextBoxColumn, Me.ImepozicijeDataGridViewTextBoxColumn, Me.ImekorisnikaDataGridViewTextBoxColumn, Me.PrezimekorisnikaDataGridViewTextBoxColumn, Me.AdresastanovanjaDataGridViewTextBoxColumn, Me.BrojtelefonaDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.DatumrodjenjaDataGridViewTextBoxColumn, Me.PolDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.KorisniciBindingSource2
-        Me.DataGridView1.Location = New System.Drawing.Point(58, 153)
+        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.DataGridView1.Location = New System.Drawing.Point(27, 153)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(723, 252)
+        Me.DataGridView1.Size = New System.Drawing.Size(945, 252)
         Me.DataGridView1.TabIndex = 137
-        '
-        'KorisniciBindingSource2
-        '
-        Me.KorisniciBindingSource2.DataMember = "korisnici"
-        Me.KorisniciBindingSource2.DataSource = Me.RadniciBindingSource
-        '
-        'RadniciBindingSource
-        '
-        Me.RadniciBindingSource.DataSource = Me.Radnici
-        Me.RadniciBindingSource.Position = 0
-        '
-        'Radnici
-        '
-        Me.Radnici.DataSetName = "Radnici"
-        Me.Radnici.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'KorisniciBindingSource
-        '
-        Me.KorisniciBindingSource.DataMember = "korisnici"
-        Me.KorisniciBindingSource.DataSource = Me.Radnici
-        '
-        'KorisniciTableAdapter
-        '
-        Me.KorisniciTableAdapter.ClearBeforeFill = True
-        '
-        'KorisniciBindingSource1
-        '
-        Me.KorisniciBindingSource1.DataMember = "korisnici"
-        Me.KorisniciBindingSource1.DataSource = Me.Radnici
         '
         'KorisnickiidDataGridViewTextBoxColumn
         '
@@ -234,20 +205,49 @@ Partial Class pregledRadnika
         Me.PolDataGridViewTextBoxColumn.HeaderText = "pol"
         Me.PolDataGridViewTextBoxColumn.Name = "PolDataGridViewTextBoxColumn"
         '
-        'pregledRadnika
+        'KorisniciBindingSource2
+        '
+        Me.KorisniciBindingSource2.DataMember = "korisnici"
+        Me.KorisniciBindingSource2.DataSource = Me.RadniciBindingSource
+        '
+        'RadniciBindingSource
+        '
+        Me.RadniciBindingSource.DataSource = Me.Radnici
+        Me.RadniciBindingSource.Position = 0
+        '
+        'Radnici
+        '
+        Me.Radnici.DataSetName = "Radnici"
+        Me.Radnici.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'KorisniciBindingSource
+        '
+        Me.KorisniciBindingSource.DataMember = "korisnici"
+        Me.KorisniciBindingSource.DataSource = Me.Radnici
+        '
+        'KorisniciTableAdapter
+        '
+        Me.KorisniciTableAdapter.ClearBeforeFill = True
+        '
+        'KorisniciBindingSource1
+        '
+        Me.KorisniciBindingSource1.DataMember = "korisnici"
+        Me.KorisniciBindingSource1.DataSource = Me.Radnici
+        '
+        'PrikazSvihRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(818, 450)
+        Me.ClientSize = New System.Drawing.Size(1024, 450)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PonistiIzmjeneDugme)
-        Me.Controls.Add(Me.dugmeSacuvaj)
         Me.Controls.Add(Me.PraznaPoljaLabel)
         Me.Controls.Add(Me.dugmeIzmijeni)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.dugmeSacuvaj)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "pregledRadnika"
+        Me.Name = "PrikazSvihRadnika"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"

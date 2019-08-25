@@ -68,7 +68,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=NAPOLEON\SQLEXPRESS;Initial Catalog=S.U.T.U.R_Krsic;Integrated Securi"& _ 
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SPARTAN\SQLEXPRESS;Initial Catalog=S.U.T.U.R_Krsic;Integrated Securi"& _ 
             "ty=True")>  _
         Public ReadOnly Property S_U_T_U_R_KrsicConnectionString() As String
             Get
