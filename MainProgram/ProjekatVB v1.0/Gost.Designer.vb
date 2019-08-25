@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Gost
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -30,6 +30,7 @@ Partial Class Gost
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -105,10 +106,19 @@ Partial Class Gost
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "GOST PANEL"
         '
-        'Guest
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(80, 89)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
+        Me.Label2.TabIndex = 11
+        '
+        'Gost
         '
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(402, 305)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.Exit_Button)
@@ -117,7 +127,7 @@ Partial Class Gost
         Me.Controls.Add(Me.Welcome)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Guest"
+        Me.Name = "Gost"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Panel"
         Me.Panel3.ResumeLayout(False)
@@ -133,4 +143,5 @@ Partial Class Gost
     Friend WithEvents Back_Button As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

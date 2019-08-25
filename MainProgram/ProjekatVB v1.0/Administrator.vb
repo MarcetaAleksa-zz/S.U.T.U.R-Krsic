@@ -3,6 +3,7 @@ Public Class Administrator
 
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Close()
+        Prijava.tipNaloga = 404
         Prijava.Show()
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
@@ -58,5 +59,9 @@ Public Class Administrator
     Private Sub RadniciButton_Click(sender As Object, e As EventArgs) Handles RadniciButton.Click
         Me.Hide()
         PrikazSvihRadnika.Show()
+    End Sub
+
+    Private Sub Administrator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

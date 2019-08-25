@@ -72,7 +72,7 @@ Partial Class GostPrikazArtikala
         Me.Korpica.AutoSize = True
         Me.Korpica.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Korpica.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Korpica.Location = New System.Drawing.Point(640, 25)
+        Me.Korpica.Location = New System.Drawing.Point(336, 25)
         Me.Korpica.Name = "Korpica"
         Me.Korpica.Size = New System.Drawing.Size(75, 25)
         Me.Korpica.TabIndex = 0
@@ -84,7 +84,7 @@ Partial Class GostPrikazArtikala
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(356, 25)
+        Me.Label1.Location = New System.Drawing.Point(197, 25)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 25)
         Me.Label1.TabIndex = 0
@@ -100,7 +100,7 @@ Partial Class GostPrikazArtikala
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(668, 73)
+        Me.Button9.Location = New System.Drawing.Point(340, 73)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(126, 35)
         Me.Button9.TabIndex = 4
@@ -136,9 +136,9 @@ Partial Class GostPrikazArtikala
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImeDataGridViewTextBoxColumn, Me.KolicinaDataGridViewTextBoxColumn, Me.CijenaDataGridViewTextBoxColumn, Me.TipproizvodaDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ArtikliBindingSource1
-        Me.DataGridView1.Location = New System.Drawing.Point(230, 158)
+        Me.DataGridView1.Location = New System.Drawing.Point(23, 136)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(445, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(443, 315)
         Me.DataGridView1.TabIndex = 11
         '
         'ArtikliBindingSource1
@@ -151,30 +151,34 @@ Partial Class GostPrikazArtikala
         Me.ImeDataGridViewTextBoxColumn.DataPropertyName = "ime"
         Me.ImeDataGridViewTextBoxColumn.HeaderText = "ime"
         Me.ImeDataGridViewTextBoxColumn.Name = "ImeDataGridViewTextBoxColumn"
+        Me.ImeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'KolicinaDataGridViewTextBoxColumn
         '
         Me.KolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina"
         Me.KolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina"
         Me.KolicinaDataGridViewTextBoxColumn.Name = "KolicinaDataGridViewTextBoxColumn"
+        Me.KolicinaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'CijenaDataGridViewTextBoxColumn
         '
         Me.CijenaDataGridViewTextBoxColumn.DataPropertyName = "cijena"
         Me.CijenaDataGridViewTextBoxColumn.HeaderText = "cijena"
         Me.CijenaDataGridViewTextBoxColumn.Name = "CijenaDataGridViewTextBoxColumn"
+        Me.CijenaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'TipproizvodaDataGridViewTextBoxColumn
         '
         Me.TipproizvodaDataGridViewTextBoxColumn.DataPropertyName = "tip_proizvoda"
         Me.TipproizvodaDataGridViewTextBoxColumn.HeaderText = "tip_proizvoda"
         Me.TipproizvodaDataGridViewTextBoxColumn.Name = "TipproizvodaDataGridViewTextBoxColumn"
+        Me.TipproizvodaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'GostPrikazArtikala
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(806, 569)
+        Me.ClientSize = New System.Drawing.Size(489, 480)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Button9)
@@ -206,9 +210,9 @@ Partial Class GostPrikazArtikala
     Friend WithEvents ArtikliBindingSource As BindingSource
     Friend WithEvents ArtikliTableAdapter As RadniciTableAdapters.ArtikliTableAdapter
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ArtikliBindingSource1 As BindingSource
     Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KolicinaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TipproizvodaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ArtikliBindingSource1 As BindingSource
 End Class

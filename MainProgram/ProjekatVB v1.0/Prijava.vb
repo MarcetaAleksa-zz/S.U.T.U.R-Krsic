@@ -2,7 +2,7 @@
 Public Class Prijava
     'kako bi mogli u administratoru provjeriti koje 
     'funkcije koji nalog ima te podesiti formu u skladu sa tim
-    Public Shared tipNaloga As Integer
+    Public Shared tipNaloga As Integer = 404
     Public test As Double = 0
     Public pozicija As Double = 0
     'kako bi provjerili koje je ime pozicije za user-a 

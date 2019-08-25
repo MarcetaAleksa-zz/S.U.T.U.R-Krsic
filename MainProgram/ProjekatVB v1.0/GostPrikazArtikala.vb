@@ -1,11 +1,11 @@
 ﻿Public Class GostPrikazArtikala
     Public Korpa As Double
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
-        Me.Hide()
-        If Prijava.pozicija = 0 Then
-            Gost.Show()
-        Else
+        Me.Close()
+        If Prijava.tipNaloga <= 3 Then
             Administrator.Show()
+        Else
+            Gost.Show()
 
         End If
     End Sub
@@ -48,6 +48,11 @@
         'TODO: This line of code loads data into the 'Radnici.Artikli' table. You can move, or remove it, as needed.
         Me.ArtikliTableAdapter.Fill(Me.Radnici.Artikli)
         'TODO: This line of code loads data into the 'Radnici.DataTable1' table. You can move, or remove it, as needed.
+
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

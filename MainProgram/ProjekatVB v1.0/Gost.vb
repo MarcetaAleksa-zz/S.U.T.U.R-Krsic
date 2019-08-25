@@ -14,4 +14,8 @@
         Me.Hide()
         Narudzva.Show()
     End Sub
+
+    Private Sub Gost_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
