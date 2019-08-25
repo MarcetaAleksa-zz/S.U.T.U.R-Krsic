@@ -138,6 +138,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Radnici.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Radnici.vb">
+      <DependentUpon>Radnici.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UnosRadnika.Designer.vb">
       <DependentUpon>UnosRadnika.vb</DependentUpon>
     </Compile>

@@ -22,6 +22,7 @@ Partial Class pregledRadnika
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pregledRadnika))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LabelZaNaziv = New System.Windows.Forms.Label()
@@ -30,7 +31,29 @@ Partial Class pregledRadnika
         Me.dugmeSacuvaj = New System.Windows.Forms.Button()
         Me.PraznaPoljaLabel = New System.Windows.Forms.Label()
         Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.KorisniciBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RadniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Radnici = New ProjekatVB_v1._0.Radnici()
+        Me.KorisniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KorisniciTableAdapter = New ProjekatVB_v1._0.RadniciTableAdapters.korisniciTableAdapter()
+        Me.KorisniciBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KorisnickiidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImepozicijeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImekorisnikaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrezimekorisnikaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AdresastanovanjaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BrojtelefonaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DatumrodjenjaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KorisniciBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadniciBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Radnici, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KorisniciBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KorisniciBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -114,14 +137,112 @@ Partial Class pregledRadnika
         Me.PonistiIzmjeneDugme.UseVisualStyleBackColor = False
         Me.PonistiIzmjeneDugme.Visible = False
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KorisnickiidDataGridViewTextBoxColumn, Me.ImepozicijeDataGridViewTextBoxColumn, Me.ImekorisnikaDataGridViewTextBoxColumn, Me.PrezimekorisnikaDataGridViewTextBoxColumn, Me.AdresastanovanjaDataGridViewTextBoxColumn, Me.BrojtelefonaDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.DatumrodjenjaDataGridViewTextBoxColumn, Me.PolDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.KorisniciBindingSource2
+        Me.DataGridView1.Location = New System.Drawing.Point(58, 153)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(723, 252)
+        Me.DataGridView1.TabIndex = 137
+        '
+        'KorisniciBindingSource2
+        '
+        Me.KorisniciBindingSource2.DataMember = "korisnici"
+        Me.KorisniciBindingSource2.DataSource = Me.RadniciBindingSource
+        '
+        'RadniciBindingSource
+        '
+        Me.RadniciBindingSource.DataSource = Me.Radnici
+        Me.RadniciBindingSource.Position = 0
+        '
+        'Radnici
+        '
+        Me.Radnici.DataSetName = "Radnici"
+        Me.Radnici.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'KorisniciBindingSource
+        '
+        Me.KorisniciBindingSource.DataMember = "korisnici"
+        Me.KorisniciBindingSource.DataSource = Me.Radnici
+        '
+        'KorisniciTableAdapter
+        '
+        Me.KorisniciTableAdapter.ClearBeforeFill = True
+        '
+        'KorisniciBindingSource1
+        '
+        Me.KorisniciBindingSource1.DataMember = "korisnici"
+        Me.KorisniciBindingSource1.DataSource = Me.Radnici
+        '
+        'KorisnickiidDataGridViewTextBoxColumn
+        '
+        Me.KorisnickiidDataGridViewTextBoxColumn.DataPropertyName = "korisnicki_id"
+        Me.KorisnickiidDataGridViewTextBoxColumn.HeaderText = "korisnicki_id"
+        Me.KorisnickiidDataGridViewTextBoxColumn.Name = "KorisnickiidDataGridViewTextBoxColumn"
+        Me.KorisnickiidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ImepozicijeDataGridViewTextBoxColumn
+        '
+        Me.ImepozicijeDataGridViewTextBoxColumn.DataPropertyName = "ime_pozicije"
+        Me.ImepozicijeDataGridViewTextBoxColumn.HeaderText = "ime_pozicije"
+        Me.ImepozicijeDataGridViewTextBoxColumn.Name = "ImepozicijeDataGridViewTextBoxColumn"
+        Me.ImepozicijeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ImekorisnikaDataGridViewTextBoxColumn
+        '
+        Me.ImekorisnikaDataGridViewTextBoxColumn.DataPropertyName = "ime_korisnika"
+        Me.ImekorisnikaDataGridViewTextBoxColumn.HeaderText = "ime_korisnika"
+        Me.ImekorisnikaDataGridViewTextBoxColumn.Name = "ImekorisnikaDataGridViewTextBoxColumn"
+        '
+        'PrezimekorisnikaDataGridViewTextBoxColumn
+        '
+        Me.PrezimekorisnikaDataGridViewTextBoxColumn.DataPropertyName = "prezime_korisnika"
+        Me.PrezimekorisnikaDataGridViewTextBoxColumn.HeaderText = "prezime_korisnika"
+        Me.PrezimekorisnikaDataGridViewTextBoxColumn.Name = "PrezimekorisnikaDataGridViewTextBoxColumn"
+        '
+        'AdresastanovanjaDataGridViewTextBoxColumn
+        '
+        Me.AdresastanovanjaDataGridViewTextBoxColumn.DataPropertyName = "adresa_stanovanja"
+        Me.AdresastanovanjaDataGridViewTextBoxColumn.HeaderText = "adresa_stanovanja"
+        Me.AdresastanovanjaDataGridViewTextBoxColumn.Name = "AdresastanovanjaDataGridViewTextBoxColumn"
+        '
+        'BrojtelefonaDataGridViewTextBoxColumn
+        '
+        Me.BrojtelefonaDataGridViewTextBoxColumn.DataPropertyName = "broj_telefona"
+        Me.BrojtelefonaDataGridViewTextBoxColumn.HeaderText = "broj_telefona"
+        Me.BrojtelefonaDataGridViewTextBoxColumn.Name = "BrojtelefonaDataGridViewTextBoxColumn"
+        '
+        'EmailDataGridViewTextBoxColumn
+        '
+        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
+        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DatumrodjenjaDataGridViewTextBoxColumn
+        '
+        Me.DatumrodjenjaDataGridViewTextBoxColumn.DataPropertyName = "datum_rodjenja"
+        Me.DatumrodjenjaDataGridViewTextBoxColumn.HeaderText = "datum_rodjenja"
+        Me.DatumrodjenjaDataGridViewTextBoxColumn.Name = "DatumrodjenjaDataGridViewTextBoxColumn"
+        '
+        'PolDataGridViewTextBoxColumn
+        '
+        Me.PolDataGridViewTextBoxColumn.DataPropertyName = "pol"
+        Me.PolDataGridViewTextBoxColumn.HeaderText = "pol"
+        Me.PolDataGridViewTextBoxColumn.Name = "PolDataGridViewTextBoxColumn"
+        '
         'pregledRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(818, 450)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PonistiIzmjeneDugme)
-        Me.Controls.Add(Me.PraznaPoljaLabel)
         Me.Controls.Add(Me.dugmeSacuvaj)
+        Me.Controls.Add(Me.PraznaPoljaLabel)
         Me.Controls.Add(Me.dugmeIzmijeni)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.Panel3)
@@ -132,6 +253,12 @@ Partial Class pregledRadnika
         Me.Text = "Form1"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KorisniciBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadniciBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Radnici, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KorisniciBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KorisniciBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -144,4 +271,20 @@ Partial Class pregledRadnika
     Friend WithEvents dugmeSacuvaj As Button
     Friend WithEvents PraznaPoljaLabel As Label
     Friend WithEvents PonistiIzmjeneDugme As Button
+    Friend WithEvents Radnici As Radnici
+    Friend WithEvents KorisniciBindingSource As BindingSource
+    Friend WithEvents KorisniciTableAdapter As RadniciTableAdapters.korisniciTableAdapter
+    Friend WithEvents KorisniciBindingSource1 As BindingSource
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents KorisniciBindingSource2 As BindingSource
+    Friend WithEvents RadniciBindingSource As BindingSource
+    Friend WithEvents KorisnickiidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ImepozicijeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ImekorisnikaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrezimekorisnikaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AdresastanovanjaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BrojtelefonaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DatumrodjenjaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PolDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -122,7 +122,7 @@ where kr.korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_G
         If (e.KeyCode = Keys.Enter) Then
             e.SuppressKeyPress = True
             Call Login_Button_Click(sender, e)
-            'Nakon sto ukucamo lozinku pri pritisku entera se logujemo.
+            'Nakon sto ukucamo lozinku pri pritisku entera se prijavljujemo.
         End If
     End Sub
 
@@ -142,5 +142,14 @@ where kr.korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_G
 
     Private Sub Prijava_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
+        pregledRadnika.Show()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
+        Korisnik.Show()
     End Sub
 End Class

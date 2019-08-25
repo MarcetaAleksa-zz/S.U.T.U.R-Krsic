@@ -263,9 +263,6 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
         'Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\Nikola.jpg")
 
     End Sub
-
-
-
     Public Sub SaveImage(filename As String, image As Image)
         Dim path As String = System.IO.Path.Combine(My.Application.Info.DirectoryPath, filename & ".jpg")
         Dim mySource As New Bitmap(image.Width, image.Height)

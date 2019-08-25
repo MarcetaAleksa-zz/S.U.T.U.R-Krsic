@@ -5,6 +5,8 @@
     End Sub
 
     Private Sub pregledRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Radnici.korisnici' table. You can move, or remove it, as needed.
+        Me.KorisniciTableAdapter.Fill(Me.Radnici.korisnici)
         '
 
     End Sub
@@ -13,8 +15,8 @@
         If dugmeSacuvaj.Visible = True Then
             dugmeSacuvaj.Visible = False
             dugmeIzmijeni.Visible = True
-            'DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
-            'Me.WorkersTableAdapter.Update(Me.ProjekatDataSet.Workers)
+            DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
+            'Me.KorisniciTableAdapter.Update(Me.Radnici.korisnici)
             PraznaPoljaLabel.Visible = False
             PonistiIzmjeneDugme.Visible = False
 
@@ -26,7 +28,7 @@
         If dugmeIzmijeni.Visible = True Then
             dugmeIzmijeni.Visible = False
             dugmeSacuvaj.Visible = True
-            ' DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystroke
+            DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystroke
             PraznaPoljaLabel.Visible = True
             PonistiIzmjeneDugme.Visible = True
 
@@ -40,6 +42,6 @@
     End Sub
 
     Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
-        'Me.WorkersTableAdapter.Fill(Me.ProjekatDataSet.Workers)
+        Me.KorisniciTableAdapter.Fill(Me.Radnici.korisnici)
     End Sub
 End Class
