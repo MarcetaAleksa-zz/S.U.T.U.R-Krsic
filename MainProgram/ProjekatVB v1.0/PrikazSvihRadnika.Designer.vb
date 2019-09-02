@@ -43,9 +43,9 @@ Partial Class PrikazSvihRadnika
         Me.PolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.KorisniciBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.RadniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Radnici = New ProjekatVB_v1._0.Radnici()
+        Me.Radnici = New ProjekatVB_v1._0.DataSet1()
         Me.KorisniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.KorisniciTableAdapter = New ProjekatVB_v1._0.RadniciTableAdapters.korisniciTableAdapter()
+        Me.KorisniciTableAdapter = New ProjekatVB_v1._0.DataSet1TableAdapters.korisniciTableAdapter()
         Me.KorisniciBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -271,9 +271,9 @@ Partial Class PrikazSvihRadnika
     Friend WithEvents dugmeSacuvaj As Button
     Friend WithEvents PraznaPoljaLabel As Label
     Friend WithEvents PonistiIzmjeneDugme As Button
-    Friend WithEvents Radnici As Radnici
+    Friend WithEvents Radnici As DataSet1
     Friend WithEvents KorisniciBindingSource As BindingSource
-    Friend WithEvents KorisniciTableAdapter As RadniciTableAdapters.korisniciTableAdapter
+    Friend WithEvents KorisniciTableAdapter As DataSet1TableAdapters.korisniciTableAdapter
     Friend WithEvents KorisniciBindingSource1 As BindingSource
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents KorisniciBindingSource2 As BindingSource

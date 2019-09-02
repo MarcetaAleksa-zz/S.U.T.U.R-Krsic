@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("Radnici"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DataSet1"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class Radnici
+Partial Public Class DataSet1
     Inherits Global.System.Data.DataSet
     
     Private tablekorisnici As korisniciDataTable
@@ -143,7 +143,7 @@ Partial Public Class Radnici
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As Radnici = CType(MyBase.Clone,Radnici)
+        Dim cln As DataSet1 = CType(MyBase.Clone,DataSet1)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -223,9 +223,9 @@ Partial Public Class Radnici
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "Radnici"
+        Me.DataSetName = "DataSet1"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/Radnici.xsd"
+        Me.Namespace = "http://tempuri.org/DataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tablekorisnici = New korisniciDataTable()
@@ -257,7 +257,7 @@ Partial Public Class Radnici
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As Radnici = New Radnici()
+        Dim ds As DataSet1 = New DataSet1()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -622,7 +622,7 @@ Partial Public Class Radnici
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Radnici = New Radnici()
+            Dim ds As DataSet1 = New DataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -694,11 +694,9 @@ Partial Public Class Radnici
         
         Private columnime As Global.System.Data.DataColumn
         
-        Private columnkolicina As Global.System.Data.DataColumn
+        Private columntip_robe As Global.System.Data.DataColumn
         
         Private columncijena As Global.System.Data.DataColumn
-        
-        Private columntip_proizvoda As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -745,9 +743,9 @@ Partial Public Class Radnici
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property kolicinaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property tip_robeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnkolicina
+                Return Me.columntip_robe
             End Get
         End Property
         
@@ -756,14 +754,6 @@ Partial Public Class Radnici
         Public ReadOnly Property cijenaColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columncijena
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property tip_proizvodaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntip_proizvoda
             End Get
         End Property
         
@@ -804,12 +794,18 @@ Partial Public Class Radnici
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddArtikliRow(ByVal ime As String, ByVal kolicina As Short, ByVal cijena As Decimal, ByVal tip_proizvoda As String) As ArtikliRow
+        Public Overloads Function AddArtikliRow(ByVal ime As String, ByVal cijena As Decimal) As ArtikliRow
             Dim rowArtikliRow As ArtikliRow = CType(Me.NewRow,ArtikliRow)
-            Dim columnValuesArray() As Object = New Object() {ime, kolicina, cijena, tip_proizvoda}
+            Dim columnValuesArray() As Object = New Object() {ime, Nothing, cijena}
             rowArtikliRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowArtikliRow)
             Return rowArtikliRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindBytip_robe(ByVal tip_robe As Integer) As ArtikliRow
+            Return CType(Me.Rows.Find(New Object() {tip_robe}),ArtikliRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -830,9 +826,8 @@ Partial Public Class Radnici
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnime = MyBase.Columns("ime")
-            Me.columnkolicina = MyBase.Columns("kolicina")
+            Me.columntip_robe = MyBase.Columns("tip_robe")
             Me.columncijena = MyBase.Columns("cijena")
-            Me.columntip_proizvoda = MyBase.Columns("tip_proizvoda")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -840,14 +835,18 @@ Partial Public Class Radnici
         Private Sub InitClass()
             Me.columnime = New Global.System.Data.DataColumn("ime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnime)
-            Me.columnkolicina = New Global.System.Data.DataColumn("kolicina", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnkolicina)
+            Me.columntip_robe = New Global.System.Data.DataColumn("tip_robe", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntip_robe)
             Me.columncijena = New Global.System.Data.DataColumn("cijena", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncijena)
-            Me.columntip_proizvoda = New Global.System.Data.DataColumn("tip_proizvoda", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntip_proizvoda)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columntip_robe}, true))
             Me.columnime.MaxLength = 9
-            Me.columntip_proizvoda.MaxLength = 9
+            Me.columntip_robe.AutoIncrement = true
+            Me.columntip_robe.AutoIncrementSeed = -1
+            Me.columntip_robe.AutoIncrementStep = -1
+            Me.columntip_robe.AllowDBNull = false
+            Me.columntip_robe.ReadOnly = true
+            Me.columntip_robe.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -915,7 +914,7 @@ Partial Public Class Radnici
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Radnici = New Radnici()
+            Dim ds As DataSet1 = New DataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1236,16 +1235,12 @@ Partial Public Class Radnici
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property kolicina() As Short
+        Public Property tip_robe() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableArtikli.kolicinaColumn),Short)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'kolicina' in table 'Artikli' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableArtikli.tip_robeColumn),Integer)
             End Get
             Set
-                Me(Me.tableArtikli.kolicinaColumn) = value
+                Me(Me.tableArtikli.tip_robeColumn) = value
             End Set
         End Property
         
@@ -1266,21 +1261,6 @@ Partial Public Class Radnici
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property tip_proizvoda() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableArtikli.tip_proizvodaColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'tip_proizvoda' in table 'Artikli' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableArtikli.tip_proizvodaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsimeNull() As Boolean
             Return Me.IsNull(Me.tableArtikli.imeColumn)
         End Function
@@ -1293,18 +1273,6 @@ Partial Public Class Radnici
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IskolicinaNull() As Boolean
-            Return Me.IsNull(Me.tableArtikli.kolicinaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetkolicinaNull()
-            Me(Me.tableArtikli.kolicinaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IscijenaNull() As Boolean
             Return Me.IsNull(Me.tableArtikli.cijenaColumn)
         End Function
@@ -1313,18 +1281,6 @@ Partial Public Class Radnici
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetcijenaNull()
             Me(Me.tableArtikli.cijenaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function Istip_proizvodaNull() As Boolean
-            Return Me.IsNull(Me.tableArtikli.tip_proizvodaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub Settip_proizvodaNull()
-            Me(Me.tableArtikli.tip_proizvodaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1401,7 +1357,7 @@ Partial Public Class Radnici
     End Class
 End Class
 
-Namespace RadniciTableAdapters
+Namespace DataSet1TableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -1546,7 +1502,7 @@ Namespace RadniciTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ProjekatVB_v1._0.My.MySettings.Default.S_U_T_U_R_KrsicConnectionString
+            Me._connection.ConnectionString = Global.ProjekatVB_v1._0.My.MySettings.Default.S_U_T_U_R_KrsicConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1557,8 +1513,8 @@ Namespace RadniciTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT  pz.ime_pozicije, kr.korisnicki_id, kr.ime_korisnika,kr.prezime_korisnika,"& _ 
                 " kr.email, kr.adresa_stanovanja, kr.broj_telefona, kr.datum_rodjenja,  kr.pol FR"& _ 
-                "OM pozicija as pz left join  spoj_tabela as st on (pz.pozicija_id = st.pozicija_"& _ 
-                "id) left join korisnici as kr on (st.korisnicki_id = kr.korisnicki_id) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+                "OM pozicija as pz left join  korisnici as kr on (pz.pozicija_id = kr.radna_pozic"& _ 
+                "ija) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1566,7 +1522,7 @@ Namespace RadniciTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Radnici.korisniciDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.korisniciDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1579,9 +1535,9 @@ Namespace RadniciTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Radnici.korisniciDataTable
+        Public Overloads Overridable Function GetData() As DataSet1.korisniciDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Radnici.korisniciDataTable = New Radnici.korisniciDataTable()
+            Dim dataTable As DataSet1.korisniciDataTable = New DataSet1.korisniciDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1715,9 +1671,8 @@ Namespace RadniciTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Artikli"
             tableMapping.ColumnMappings.Add("ime", "ime")
-            tableMapping.ColumnMappings.Add("kolicina", "kolicina")
+            tableMapping.ColumnMappings.Add("tip_robe", "tip_robe")
             tableMapping.ColumnMappings.Add("cijena", "cijena")
-            tableMapping.ColumnMappings.Add("tip_proizvoda", "tip_proizvoda")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -1725,7 +1680,7 @@ Namespace RadniciTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ProjekatVB_v1._0.My.MySettings.Default.S_U_T_U_R_KrsicConnectionString
+            Me._connection.ConnectionString = Global.ProjekatVB_v1._0.My.MySettings.Default.S_U_T_U_R_KrsicConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1734,8 +1689,8 @@ Namespace RadniciTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "select nop.ime as tip_proizvoda, op.ime, op.kolicina, op.cijena from naziv_opreme"& _ 
-                " as nop left join oprema as op on (op.tip_robe = nop.id_opreme)"
+            Me._commandCollection(0).CommandText = "SELECT no.id_opreme as tip_robe, op.ime, op.cijena from naziv_opreme as no left j"& _ 
+                "oin oprema as op on (op.tip_robe = no.id_opreme)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1743,7 +1698,7 @@ Namespace RadniciTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Radnici.ArtikliDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet1.ArtikliDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1756,9 +1711,9 @@ Namespace RadniciTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Radnici.ArtikliDataTable
+        Public Overloads Overridable Function GetData() As DataSet1.ArtikliDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Radnici.ArtikliDataTable = New Radnici.ArtikliDataTable()
+            Dim dataTable As DataSet1.ArtikliDataTable = New DataSet1.ArtikliDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1833,7 +1788,7 @@ Namespace RadniciTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As Radnici, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1843,7 +1798,7 @@ Namespace RadniciTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As Radnici, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As DataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1853,7 +1808,7 @@ Namespace RadniciTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As Radnici, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1889,7 +1844,7 @@ Namespace RadniciTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As Radnici) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As DataSet1) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

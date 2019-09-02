@@ -44,9 +44,7 @@ Public Class Prijava
 
         'Uspostava konekcije sa bazom i pretraga korisnika kako bi provjerili da li su kredencijali za 
         'prijavu ispravni
-        Dim command As New SqlCommand("select st.pozicija_id, kr.korisnicki_id, kr.lozinka from spoj_tabela as st  left join korisnici as kr
-on (st.korisnicki_id = kr.korisnicki_id)
-where kr.korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS_AS", containerdb.connection)
+        Dim command As New SqlCommand("select radna_pozicija, korisnicki_id, lozinka from korisnici where korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS_AS", containerdb.connection)
 
         command.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = Username_Form_Box.Text
         command.Parameters.Add("@lozinka", SqlDbType.VarChar).Value = Enkripcija.HashStore

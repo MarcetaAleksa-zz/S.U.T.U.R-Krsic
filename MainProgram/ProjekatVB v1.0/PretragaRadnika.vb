@@ -27,7 +27,7 @@ Public Class PretragaRadnika
 
         Dim user_table As New DataTable()
         Dim pozicijaTbl As New DataTable()
-        Dim pozicijaComm As New SqlCommand("SELECT pz.ime_pozicije from pozicija as pz left join spoj_tabela as sp on (sp.pozicija_id = pz.pozicija_id) where sp.korisnicki_id ='" & ComboBox1.SelectedValue & "'", containerdb.connection)
+        Dim pozicijaComm As New SqlCommand("SELECT pz.ime_pozicije from pozicija as pz left join korisnici as kr on (kr.radna_pozicija = pz.pozicija_id) where kr.korisnicki_id ='" & ComboBox1.SelectedValue & "'", containerdb.connection)
         Dim adaptmeagain As New SqlDataAdapter(pozicijaComm)
         Try
             adapter.Fill(user_table)
