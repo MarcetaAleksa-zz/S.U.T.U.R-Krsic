@@ -47,7 +47,7 @@
     Private Sub GostPrikazArtikala_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Radnici.Artikli' table. You can move, or remove it, as needed.
         Try
-            Me.ArtikliTableAdapter.Fill(Me.Radnici.Artikli)
+            'Me.ArtikliTableAdapter.Fill(Me.korisnici.Artikli)
         Catch ex As Exception
         End Try
 
