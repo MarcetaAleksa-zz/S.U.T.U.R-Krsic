@@ -76,13 +76,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.vb">
+    <Compile Include="Radnici.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.vb">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>Radnici.xsd</DependentUpon>
     </Compile>
     <Compile Include="ErrorForms\AdminDobroDosli.Designer.vb">
       <DependentUpon>AdminDobroDosli.vb</DependentUpon>
@@ -199,6 +196,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="_S_U_T_U_R_KrsicDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Administrator.resx">
@@ -257,16 +259,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="Radnici.xsc">
+      <DependentUpon>Radnici.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1.xsd">
+    <None Include="Radnici.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <LastGenOutput>Radnici.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="Radnici.xss">
+      <DependentUpon>Radnici.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -278,6 +280,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="_S_U_T_U_R_KrsicDataSet.xsc">
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_S_U_T_U_R_KrsicDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_S_U_T_U_R_KrsicDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_S_U_T_U_R_KrsicDataSet.xss">
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\favicon %281%29.ico" />

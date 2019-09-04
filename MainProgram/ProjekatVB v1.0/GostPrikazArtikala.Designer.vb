@@ -34,7 +34,7 @@ Partial Class GostPrikazArtikala
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Radnici = New ProjekatVB_v1._0.DataSet1()
         Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        'Me.ArtikliTableAdapter = New ProjekatVB_v1._0.DataSet1TableAdapters.naziv_opremeTableAdapter()
+        Me.ArtikliTableAdapter = New ProjekatVB_v1._0.DataSet1TableAdapters.ArtikliTableAdapter()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ArtikliBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -128,7 +128,7 @@ Partial Class GostPrikazArtikala
         '
         'ArtikliTableAdapter
         '
-        'Me.ArtikliTableAdapter.ClearBeforeFill = True
+        Me.ArtikliTableAdapter.ClearBeforeFill = True
         '
         'DataGridView1
         '
@@ -208,7 +208,7 @@ Partial Class GostPrikazArtikala
     Friend WithEvents Button9 As Button
     Friend WithEvents Radnici As DataSet1
     Friend WithEvents ArtikliBindingSource As BindingSource
-    ' Friend WithEvents ArtikliTableAdapter As DataSet1TableAdapters.naziv_opremeTableAdapter
+    Friend WithEvents ArtikliTableAdapter As DataSet1TableAdapters.ArtikliTableAdapter
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ArtikliBindingSource1 As BindingSource
     Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

@@ -57,7 +57,17 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:ProjekatVB_v1._0.DataSet1.ArtikliDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:ProjekatVB_v1._0.DataSet1.korisniciRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.DataSet1.ArtikliRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -67,7 +77,17 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member>
+<member name="T:ProjekatVB_v1._0.DataSet1.ArtikliRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:ProjekatVB_v1._0.DataSet1TableAdapters.korisniciTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.DataSet1TableAdapters.ArtikliTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -108,6 +128,111 @@ Update Order Option
 </summary>
 </member>
 <member name="T:ProjekatVB_v1._0.DataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.korisniciDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.naziv_opremeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.opremaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.korisniciRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.naziv_opremeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.opremaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.korisniciRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.naziv_opremeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet.opremaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.korisniciTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.naziv_opremeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.opremaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateAll(ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
 <summary>
 Used to sort self-referenced table's rows
 </summary>
