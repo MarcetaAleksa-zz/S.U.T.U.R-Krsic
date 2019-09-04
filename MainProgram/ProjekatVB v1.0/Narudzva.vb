@@ -19,9 +19,11 @@ Public Class Narudzva
 
         adapter.Fill(oprema_table)
 
+
+
         Dim brojacOpreme As Integer = 0
         Dim max1, max2, max3, max4 As Integer
-
+        Dim distance As Integer = 140
         'Dim c As Integer = 80
 
         containerdb.connection.Open()
@@ -62,23 +64,30 @@ Public Class Narudzva
             End Try
         Catch
         End Try
-
+        Label4.Text = brojacOpreme.ToString
         containerdb.connection.Close()
 
 
+        For i = 0 To 5
 
-        'For i = 0 To brojacOpreme + 1
-        '    Dim c As New ComboBox()
+            Dim c As New ComboBox()
 
-        '    With c
-        '        .Location = New System.Drawing.Point(58, 60)
-        '        .Name = "comboBox1" + i.ToString
-        '        .Size = New System.Drawing.Size(245, 25)
-        '        .BackColor = System.Drawing.Color.Orange
-        '        .ForeColor = System.Drawing.Color.Black
+            With c
 
-        '    End With
-        'Next
+
+                .Location = New System.Drawing.Point(58, distance)
+                .Size = New System.Drawing.Size(131, 21)
+                '.Name = "C" + i.ToString
+                Me.Controls.Add(c)
+
+            End With
+            distance = +25
+        Next i
+
+
+    End Sub
+
+    Private Sub Narudzva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

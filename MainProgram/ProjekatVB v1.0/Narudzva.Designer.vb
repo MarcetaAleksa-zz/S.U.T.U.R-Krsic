@@ -82,7 +82,7 @@ Partial Class Narudzva
         '
         'Purchase_Button
         '
-        Me.Purchase_Button.Location = New System.Drawing.Point(598, 403)
+        Me.Purchase_Button.Location = New System.Drawing.Point(423, 386)
         Me.Purchase_Button.Name = "Purchase_Button"
         Me.Purchase_Button.Size = New System.Drawing.Size(75, 23)
         Me.Purchase_Button.TabIndex = 134
@@ -92,7 +92,7 @@ Partial Class Narudzva
         'Price_Label
         '
         Me.Price_Label.AutoSize = True
-        Me.Price_Label.Location = New System.Drawing.Point(619, 355)
+        Me.Price_Label.Location = New System.Drawing.Point(444, 338)
         Me.Price_Label.Name = "Price_Label"
         Me.Price_Label.Size = New System.Drawing.Size(36, 13)
         Me.Price_Label.TabIndex = 135
@@ -100,7 +100,7 @@ Partial Class Narudzva
         '
         'Price_TextBox
         '
-        Me.Price_TextBox.Location = New System.Drawing.Point(586, 379)
+        Me.Price_TextBox.Location = New System.Drawing.Point(411, 362)
         Me.Price_TextBox.Name = "Price_TextBox"
         Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.Price_TextBox.TabIndex = 136
@@ -168,7 +168,7 @@ Partial Class Narudzva
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(58, 140)
+        Me.ComboBox1.Location = New System.Drawing.Point(331, 139)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(131, 21)
         Me.ComboBox1.TabIndex = 138
@@ -181,7 +181,7 @@ Partial Class Narudzva
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(58, 167)
+        Me.ComboBox2.Location = New System.Drawing.Point(331, 166)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(131, 21)
         Me.ComboBox2.TabIndex = 138
@@ -189,7 +189,7 @@ Partial Class Narudzva
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(58, 194)
+        Me.ComboBox3.Location = New System.Drawing.Point(331, 193)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(131, 21)
         Me.ComboBox3.TabIndex = 138
@@ -197,7 +197,7 @@ Partial Class Narudzva
         'ComboBox4
         '
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(58, 221)
+        Me.ComboBox4.Location = New System.Drawing.Point(331, 220)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(131, 21)
         Me.ComboBox4.TabIndex = 138
@@ -282,7 +282,7 @@ Partial Class Narudzva
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(221, 199)
+        Me.Label7.Location = New System.Drawing.Point(221, 200)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(13, 13)
         Me.Label7.TabIndex = 141
@@ -291,7 +291,7 @@ Partial Class Narudzva
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(221, 225)
+        Me.Label8.Location = New System.Drawing.Point(221, 228)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(13, 13)
         Me.Label8.TabIndex = 141
