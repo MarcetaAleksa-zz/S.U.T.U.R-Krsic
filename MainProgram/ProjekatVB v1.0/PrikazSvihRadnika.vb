@@ -5,9 +5,11 @@
     End Sub
 
     Private Sub pregledRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Radnici.korisnici' table. You can move, or remove it, as needed.
-        Me.KorisniciTableAdapter.Fill(Me.Radnici.korisnici)
-        '
+        'TODO: This line of code loads data into the 'Radnici.korisnici' table. You can move, or remove it, as needed.tr
+        Try
+            Me.KorisniciTableAdapter.Fill(Me.Radnici.korisnici)
+        Catch ex As Exception
+        End Try
 
     End Sub
 

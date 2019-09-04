@@ -52,6 +52,8 @@ Partial Class PretragaRadnika
         Me.U_Picture = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Back_Button = New System.Windows.Forms.Button()
+        Me.Brisanje = New System.Windows.Forms.Button()
+        Me.IzbrisiLabel = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -77,7 +79,7 @@ Partial Class PretragaRadnika
         Me.LabelZaNaziv.AutoSize = True
         Me.LabelZaNaziv.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelZaNaziv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.LabelZaNaziv.Location = New System.Drawing.Point(72, 23)
+        Me.LabelZaNaziv.Location = New System.Drawing.Point(134, 24)
         Me.LabelZaNaziv.Name = "LabelZaNaziv"
         Me.LabelZaNaziv.Size = New System.Drawing.Size(225, 25)
         Me.LabelZaNaziv.TabIndex = 0
@@ -330,11 +332,32 @@ Partial Class PretragaRadnika
         Me.Back_Button.TabIndex = 112
         Me.Back_Button.UseVisualStyleBackColor = True
         '
+        'Brisanje
+        '
+        Me.Brisanje.Location = New System.Drawing.Point(446, 74)
+        Me.Brisanje.Name = "Brisanje"
+        Me.Brisanje.Size = New System.Drawing.Size(40, 40)
+        Me.Brisanje.TabIndex = 113
+        Me.Brisanje.UseVisualStyleBackColor = True
+        Me.Brisanje.Visible = False
+        '
+        'IzbrisiLabel
+        '
+        Me.IzbrisiLabel.AutoSize = True
+        Me.IzbrisiLabel.Location = New System.Drawing.Point(359, 85)
+        Me.IzbrisiLabel.Name = "IzbrisiLabel"
+        Me.IzbrisiLabel.Size = New System.Drawing.Size(81, 13)
+        Me.IzbrisiLabel.TabIndex = 114
+        Me.IzbrisiLabel.Text = "Izbrisi korisnika:"
+        Me.IzbrisiLabel.Visible = False
+        '
         'PretragaRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(498, 390)
+        Me.Controls.Add(Me.IzbrisiLabel)
+        Me.Controls.Add(Me.Brisanje)
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Panel9)
@@ -355,6 +378,7 @@ Partial Class PretragaRadnika
         Me.Controls.Add(Me.Panel3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PretragaRadnika"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PretragaRadnika"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -406,4 +430,6 @@ Partial Class PretragaRadnika
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Back_Button As Button
+    Friend WithEvents Brisanje As Button
+    Friend WithEvents IzbrisiLabel As Label
 End Class

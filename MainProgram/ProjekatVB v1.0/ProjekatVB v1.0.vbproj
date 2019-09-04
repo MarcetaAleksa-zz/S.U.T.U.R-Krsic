@@ -131,7 +131,7 @@
     </Compile>
     <Compile Include="containerdb.vb" />
     <Compile Include="Enkripcija.vb" />
-    <Compile Include="Logovi.vb" />
+    <Compile Include="logovi.vb" />
     <Compile Include="PretragaRadnika.Designer.vb">
       <DependentUpon>PretragaRadnika.vb</DependentUpon>
     </Compile>

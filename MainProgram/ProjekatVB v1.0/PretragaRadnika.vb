@@ -29,6 +29,15 @@ Public Class PretragaRadnika
         Dim pozicijaTbl As New DataTable()
         Dim pozicijaComm As New SqlCommand("SELECT pz.ime_pozicije from pozicija as pz left join korisnici as kr on (kr.radna_pozicija = pz.pozicija_id) where kr.korisnicki_id ='" & ComboBox1.SelectedValue & "'", containerdb.connection)
         Dim adaptmeagain As New SqlDataAdapter(pozicijaComm)
+
+        If U_Username_TextBox.Text <> "" Then
+            Brisanje.Visible = True
+            IzbrisiLabel.Visible = True
+        Else
+            IzbrisiLabel.Visible = False
+            Brisanje.Visible = False
+        End If
+
         Try
             adapter.Fill(user_table)
             adaptmeagain.Fill(pozicijaTbl)
@@ -50,6 +59,25 @@ Public Class PretragaRadnika
         Administrator.Show()
         Me.Close()
     End Sub
+
+    Private Sub Brisanje_Click(sender As Object, e As EventArgs) Handles Brisanje.Click
+        Try
+            Dim command As New SqlCommand("delete from korisnici where korisnicki_id = @korisnicki_id ", containerdb.connection)
+            containerdb.connection.Open()
+            command.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = U_Username_TextBox.Text
+            command.ExecuteNonQuery()
+            logovi.BrisanjeKorisnika()
+            containerdb.connection.Close()
+            ComboBox1.SelectedIndex = -1
+            Me.Controls.Clear() 'removes all the controls on the form
+            InitializeComponent() 'load all the controls again
+            PretragaRadnika_Load(e, e)
+            MsgBox("Uspjesno ste izbrisali radnika!")
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class
 
 

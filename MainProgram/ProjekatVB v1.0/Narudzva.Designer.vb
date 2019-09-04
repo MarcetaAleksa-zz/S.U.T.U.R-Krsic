@@ -42,6 +42,22 @@ Partial Class Narudzva
         Me.PhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WorkersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.WorkersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -66,7 +82,7 @@ Partial Class Narudzva
         '
         'Purchase_Button
         '
-        Me.Purchase_Button.Location = New System.Drawing.Point(214, 224)
+        Me.Purchase_Button.Location = New System.Drawing.Point(598, 403)
         Me.Purchase_Button.Name = "Purchase_Button"
         Me.Purchase_Button.Size = New System.Drawing.Size(75, 23)
         Me.Purchase_Button.TabIndex = 134
@@ -76,7 +92,7 @@ Partial Class Narudzva
         'Price_Label
         '
         Me.Price_Label.AutoSize = True
-        Me.Price_Label.Location = New System.Drawing.Point(235, 176)
+        Me.Price_Label.Location = New System.Drawing.Point(619, 355)
         Me.Price_Label.Name = "Price_Label"
         Me.Price_Label.Size = New System.Drawing.Size(36, 13)
         Me.Price_Label.TabIndex = 135
@@ -84,7 +100,7 @@ Partial Class Narudzva
         '
         'Price_TextBox
         '
-        Me.Price_TextBox.Location = New System.Drawing.Point(202, 200)
+        Me.Price_TextBox.Location = New System.Drawing.Point(586, 379)
         Me.Price_TextBox.Name = "Price_TextBox"
         Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.Price_TextBox.TabIndex = 136
@@ -103,7 +119,7 @@ Partial Class Narudzva
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(290, 26)
+        Me.Label1.Location = New System.Drawing.Point(177, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(127, 25)
         Me.Label1.TabIndex = 0
@@ -149,11 +165,158 @@ Partial Class Narudzva
         '
         Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
         '
-        'Order_Funeral
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(58, 140)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(131, 21)
+        Me.ComboBox1.TabIndex = 138
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(58, 167)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(131, 21)
+        Me.ComboBox2.TabIndex = 138
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(58, 194)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(131, 21)
+        Me.ComboBox3.TabIndex = 138
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(58, 221)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(131, 21)
+        Me.ComboBox4.TabIndex = 138
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(273, 140)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(31, 20)
+        Me.TextBox1.TabIndex = 139
+        Me.TextBox1.Text = "0"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(273, 166)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(31, 20)
+        Me.TextBox2.TabIndex = 139
+        Me.TextBox2.Text = "0"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(273, 194)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(31, 20)
+        Me.TextBox3.TabIndex = 139
+        Me.TextBox3.Text = "0"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(273, 220)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(31, 20)
+        Me.TextBox4.TabIndex = 139
+        Me.TextBox4.Text = "0"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(207, 113)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 140
+        Me.Label2.Text = "Cijena:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(262, 114)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.TabIndex = 140
+        Me.Label3.Text = "Kolicina:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(80, 113)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(83, 13)
+        Me.Label4.TabIndex = 140
+        Me.Label4.Text = "Naziv proizvoda"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(221, 144)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(13, 13)
+        Me.Label5.TabIndex = 141
+        Me.Label5.Text = "0"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(221, 172)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(13, 13)
+        Me.Label6.TabIndex = 141
+        Me.Label6.Text = "0"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(221, 199)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(13, 13)
+        Me.Label7.TabIndex = 141
+        Me.Label7.Text = "0"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(221, 225)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(13, 13)
+        Me.Label8.TabIndex = 141
+        Me.Label8.Text = "0"
+        '
+        'Narudzva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(736, 461)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.ComboBox4)
+        Me.Controls.Add(Me.ComboBox3)
+        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Price_TextBox)
         Me.Controls.Add(Me.Price_Label)
@@ -162,7 +325,7 @@ Partial Class Narudzva
         Me.Controls.Add(Me.Back_Button)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Order_Funeral"
+        Me.Name = "Narudzva"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Panel - Order Funeral"
         Me.Panel3.ResumeLayout(False)
@@ -191,4 +354,20 @@ Partial Class Narudzva
     Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GenderDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
 End Class
