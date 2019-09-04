@@ -22,7 +22,7 @@ Public Class Korisnik
             polaTextBox.Text = user_table.Rows(0)(8)
             adresaTextBox.Text = user_table.Rows(0)(4)
 
-            'Aleksandar : Aleksandar
+            'Aleksandar : marce
         Catch ex As Exception
         End Try
 
@@ -44,108 +44,62 @@ Public Class Korisnik
     'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        '        Dim MonthID As Integer = 1
-        '        Dim command As New SqlCommand("IF @dani_u_mj = 31; SET @radni_dani = 22; else if @dani_u_mj = 30; set @radni_dani = 19;
-        'else set @radni_dani = 17; SELECT @ird*pz.radni_sati_po_danu*pz.satnica as plata, * 
-        'from  dbo.spoj_tabela as sp left join pozicija as pz
-        'on (sp.pozicija_id = pz.pozicija_id)
-        'where korisnicki_id = '" & Prijava.ID_Label.Text & "'", containerdb.connection)
-        '        command.Parameters.Add("@Mjesec", SqlDbType.Int).Value = MonthID
-        '        command.Parameters.Add("@radni_dani", SqlDbType.Int).Value = U_WDIM_TextBox.Text
+        Dim Mjesec As Integer = 0
 
-        '        Dim adapter As New SqlDataAdapter(command)
-        '        Dim userinfotable As New DataTable()
-        '        'adapter.Fill(userinfotable)
-        '        'Drop-down koji treba uvesti iz baze
+        Select Case mjeseciComboBox.Text
+            Case "Januar"
+                Mjesec = 0
+            Case "Februar"
+                Mjesec = 1
+            Case "Mart"
+                Mjesec = 2
+            Case "April"
+                Mjesec = 3
+            Case "Maj"
+                Mjesec = 4
+            Case "Jun"
+                Mjesec = 5
+            Case "Jul"
+                Mjesec = 6
+            Case "Avgust"
+                Mjesec = 7
+            Case "Septembar"
+                Mjesec = 8
+            Case "Oktobar"
+                Mjesec = 9
+            Case "Novembar"
+                Mjesec = 10
+            Case "Decembar"
+                Mjesec = 11
+            Case Else
+                Mjesec = 0
+        End Select
 
-
-        '        If (U_Month_Dropdown.SelectedIndex = 0) Then
-        '            MonthID = 1
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            monada.Fill(monthinfo)
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 1) Then
-        '            MonthID = 2
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 2) Then
-        '            MonthID = 3
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(1)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 3) Then
-        '            MonthID = 4
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 4) Then
-        '            MonthID = 5
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 5) Then
-        '            MonthID = 6
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 6) Then
-        '            MonthID = 7
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 7) Then
-        '            MonthID = 8
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 8) Then
-        '            MonthID = 9
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 9) Then
-        '            MonthID = 10
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 10) Then
-        '            MonthID = 11
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        ElseIf (U_Month_Dropdown.SelectedIndex = 11) Then
-        '            MonthID = 12
-        '            Dim monthcom As New SqlCommand("SELECT Projekat.dbo.Month.DaysInMonth FROM Projekat.dbo.Month Where MonthID = @MonthID", containerdb.connection)
-        '            monthcom.Parameters.Add("@MonthID", SqlDbType.Int).Value = MonthID
-        '            Dim monada As New SqlDataAdapter(monthcom)
-        '            Dim monthinfo As New DataTable()
-        '            U_WDIM_TextBox.Text = monthinfo.Rows(0)(0)
-        '        End If
-
+        Dim command As New SqlCommand("DECLARE @pocetni_datum DATETIME = '2019-01-31'  
+Declare @Mjesec Int
+Set @Mjesec = " & Mjesec & "
+declare @trazen_datum DATETIME
+set @trazen_datum = (eomonth (@pocetni_datum, @Mjesec))
+declare @radni_dani int
+set @radni_dani = ( FORMAT(@trazen_datum, 'dd'))
+declare @dana_radjeno int
+IF @radni_dani=31 SET @dana_radjeno = 22; 
+else if @radni_dani=30 set @dana_radjeno = 19;
+else set @dana_radjeno = 17; 
+		SELECT @radni_dani as radni_dani,@dana_radjeno as dana_radjeno, @dana_radjeno*radni_sati_po_danu * satnica as plata
+        from  dbo.pozicija  left join korisnici
+        on (pozicija_id = radna_pozicija)
+        where korisnicki_id '" & Prijava.ID_Label.Text & "'", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(command)
+        Dim platatable As New DataTable()
+        Try
+            adapter.Fill(platatable)
+            DaysInMonth.Text = platatable.Rows(0)(0)
+            U_WDIM_TextBox.Text = platatable.Rows(0)(1)
+            U_PBOFWD_TextBox.Text = platatable.Rows(0)(2)
+        Catch ex As Exception
+            End Try 
+        'Drop-down koji treba uvesti iz baze
 
     End Sub
 
@@ -181,17 +135,21 @@ Public Class Korisnik
 
     Private Sub DugmeSacuvaj_Click(sender As Object, e As EventArgs) Handles dugmeSacuvaj.Click
 
-        Dim Command As New SqlCommand("SELECT * FROM korisnici where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(Command)
-        Dim user_table As New DataTable()
-        Command.CommandText = "UPDATE korisnici SET @korisnicko_ime = korisnicko_ime, @korisnicko_prezime=korisnicko_prezime, @broj_telefona=broj_telefona,@datum_rodjenja=datum_rodjenja, @adresa_stanovanja=adresa_stanovanja
-                                WHERE korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'"
-        Command.Parameters.Add("@korisnicko_ime", SqlDbType.Int).Value = imeTextBox.Text
-        Command.Parameters.Add("@korisnicko_prezime", SqlDbType.Int).Value = prezimeTextBox.Text
-        Command.Parameters.Add("@broj_telefona", SqlDbType.Int).Value = brojtelefonaTextBox.Text
-        Command.Parameters.Add("@datum_rodjenja", SqlDbType.Int).Value = datumrodjenjaTextBox.Text
-        Command.Parameters.Add("@adresa_stanovanja", SqlDbType.Int).Value = adresaTextBox.Text
 
+        Dim Command As New SqlCommand("UPDATE korisnici SET ime_korisnika = @ime_korisnika, prezime_korisnika = @prezime_korisnika, broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanovanja = @adresa_stanovanja
+                                WHERE korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
+        containerdb.connection.Open()
+        Command.Parameters.Add("@ime_korisnika", SqlDbType.VarChar).Value = imeTextBox.Text
+        Command.Parameters.Add("@prezime_korisnika", SqlDbType.VarChar).Value = prezimeTextBox.Text
+        Command.Parameters.Add("@broj_telefona", SqlDbType.VarChar).Value = brojtelefonaTextBox.Text
+        Command.Parameters.Add("@datum_rodjenja", SqlDbType.Date).Value = datumrodjenjaTextBox.Text
+        Command.Parameters.Add("@adresa_stanovanja", SqlDbType.VarChar).Value = adresaTextBox.Text
+        If Command.ExecuteNonQuery() = 1 Then
+            MessageBox.Show("Uspjesno ste izmjenili")
+        Else
+            MessageBox.Show("Izmjene nisu izvrsene")
+        End If
+        containerdb.connection.Close()
         dugmeSacuvaj.Visible = False
         dugmePonisti.Visible = False
         dugmeIzmijeni.Visible = True
@@ -237,4 +195,6 @@ Public Class Korisnik
         ' U_Picture.Image = Image.FromFile(U_OpenFileDialog.FileName) '
 
     End Sub
+
+
 End Class

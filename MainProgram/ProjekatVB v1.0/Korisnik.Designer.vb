@@ -31,7 +31,6 @@ Partial Class Korisnik
         Me.TabUserInfo = New System.Windows.Forms.TabPage()
         Me.promijenislikuLabel = New System.Windows.Forms.Label()
         Me.dugmeOtvoriSliku = New System.Windows.Forms.Button()
-        Me.dugmeIzmijeni = New System.Windows.Forms.Button()
         Me.dugmeSacuvaj = New System.Windows.Forms.Button()
         Me.nemaslikeLabel = New System.Windows.Forms.Label()
         Me.p9 = New System.Windows.Forms.Panel()
@@ -42,7 +41,6 @@ Partial Class Korisnik
         Me.pozicijaTextBox = New System.Windows.Forms.TextBox()
         Me.p3 = New System.Windows.Forms.Panel()
         Me.korisnickoimeTextBox = New System.Windows.Forms.TextBox()
-        Me.dugmePonisti = New System.Windows.Forms.Button()
         Me.p6 = New System.Windows.Forms.Panel()
         Me.datumrodjenjaTextBox = New System.Windows.Forms.TextBox()
         Me.p4 = New System.Windows.Forms.Panel()
@@ -57,16 +55,12 @@ Partial Class Korisnik
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.U_PBOFWD_TextBox = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.U_FWD_Button = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.U_WDIM_TextBox = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DaysInMonth = New System.Windows.Forms.TextBox()
         Me.plataLabel = New System.Windows.Forms.Label()
-        Me.odradjeniradnidaniLabel = New System.Windows.Forms.Label()
         Me.brojdanaumjesecuLabel = New System.Windows.Forms.Label()
         Me.radnidaniumjesecuLabel = New System.Windows.Forms.Label()
         Me.mjeseciComboBox = New System.Windows.Forms.ComboBox()
@@ -80,6 +74,8 @@ Partial Class Korisnik
         Me.datumrodjenjaLabel = New System.Windows.Forms.Label()
         Me.prezimeLabel = New System.Windows.Forms.Label()
         Me.imeLabel = New System.Windows.Forms.Label()
+        Me.dugmeIzmijeni = New System.Windows.Forms.Button()
+        Me.dugmePonisti = New System.Windows.Forms.Button()
         Me.TabStorage = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.korisnikTab = New System.Windows.Forms.TabControl()
@@ -98,7 +94,6 @@ Partial Class Korisnik
         Me.p1.SuspendLayout()
         Me.mjesecnaplataGrupBox.SuspendLayout()
         Me.Panel12.SuspendLayout()
-        Me.Panel11.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,18 +193,6 @@ Partial Class Korisnik
         Me.dugmeOtvoriSliku.TabStop = False
         Me.dugmeOtvoriSliku.UseVisualStyleBackColor = True
         Me.dugmeOtvoriSliku.Visible = False
-        '
-        'dugmeIzmijeni
-        '
-        Me.dugmeIzmijeni.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.dugmeIzmijeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.dugmeIzmijeni.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dugmeIzmijeni.Location = New System.Drawing.Point(12, 6)
-        Me.dugmeIzmijeni.Name = "dugmeIzmijeni"
-        Me.dugmeIzmijeni.Size = New System.Drawing.Size(109, 35)
-        Me.dugmeIzmijeni.TabIndex = 140
-        Me.dugmeIzmijeni.Text = "Izmijeni"
-        Me.dugmeIzmijeni.UseVisualStyleBackColor = False
         '
         'dugmeSacuvaj
         '
@@ -311,20 +294,6 @@ Partial Class Korisnik
         Me.korisnickoimeTextBox.Size = New System.Drawing.Size(115, 13)
         Me.korisnickoimeTextBox.TabIndex = 9
         '
-        'dugmePonisti
-        '
-        Me.dugmePonisti.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.dugmePonisti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.dugmePonisti.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.dugmePonisti.ForeColor = System.Drawing.SystemColors.Control
-        Me.dugmePonisti.Location = New System.Drawing.Point(12, 5)
-        Me.dugmePonisti.Name = "dugmePonisti"
-        Me.dugmePonisti.Size = New System.Drawing.Size(109, 35)
-        Me.dugmePonisti.TabIndex = 139
-        Me.dugmePonisti.Text = "Ponisti izmjene"
-        Me.dugmePonisti.UseVisualStyleBackColor = False
-        Me.dugmePonisti.Visible = False
-        '
         'p6
         '
         Me.p6.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
@@ -423,11 +392,9 @@ Partial Class Korisnik
         'mjesecnaplataGrupBox
         '
         Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel12)
-        Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel11)
         Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel10)
         Me.mjesecnaplataGrupBox.Controls.Add(Me.Panel1)
         Me.mjesecnaplataGrupBox.Controls.Add(Me.plataLabel)
-        Me.mjesecnaplataGrupBox.Controls.Add(Me.odradjeniradnidaniLabel)
         Me.mjesecnaplataGrupBox.Controls.Add(Me.brojdanaumjesecuLabel)
         Me.mjesecnaplataGrupBox.Controls.Add(Me.radnidaniumjesecuLabel)
         Me.mjesecnaplataGrupBox.Controls.Add(Me.mjeseciComboBox)
@@ -443,7 +410,7 @@ Partial Class Korisnik
         Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.Panel12.Controls.Add(Me.U_PBOFWD_TextBox)
         Me.Panel12.Controls.Add(Me.TextBox3)
-        Me.Panel12.Location = New System.Drawing.Point(228, 165)
+        Me.Panel12.Location = New System.Drawing.Point(228, 133)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(62, 26)
         Me.Panel12.TabIndex = 18
@@ -467,36 +434,6 @@ Partial Class Korisnik
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(42, 13)
         Me.TextBox3.TabIndex = 22
-        '
-        'Panel11
-        '
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel11.Controls.Add(Me.U_FWD_Button)
-        Me.Panel11.Controls.Add(Me.TextBox2)
-        Me.Panel11.Location = New System.Drawing.Point(228, 115)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(62, 26)
-        Me.Panel11.TabIndex = 18
-        '
-        'U_FWD_Button
-        '
-        Me.U_FWD_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_FWD_Button.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_FWD_Button.Location = New System.Drawing.Point(10, 7)
-        Me.U_FWD_Button.Name = "U_FWD_Button"
-        Me.U_FWD_Button.ReadOnly = True
-        Me.U_FWD_Button.Size = New System.Drawing.Size(42, 13)
-        Me.U_FWD_Button.TabIndex = 23
-        '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Location = New System.Drawing.Point(10, 7)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(42, 13)
-        Me.TextBox2.TabIndex = 22
         '
         'Panel10
         '
@@ -552,22 +489,11 @@ Partial Class Korisnik
         Me.plataLabel.AutoSize = True
         Me.plataLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.plataLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.plataLabel.Location = New System.Drawing.Point(169, 169)
+        Me.plataLabel.Location = New System.Drawing.Point(166, 138)
         Me.plataLabel.Name = "plataLabel"
         Me.plataLabel.Size = New System.Drawing.Size(56, 16)
         Me.plataLabel.TabIndex = 19
         Me.plataLabel.Text = "PLATA"
-        '
-        'odradjeniradnidaniLabel
-        '
-        Me.odradjeniradnidaniLabel.AutoSize = True
-        Me.odradjeniradnidaniLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.odradjeniradnidaniLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.odradjeniradnidaniLabel.Location = New System.Drawing.Point(48, 121)
-        Me.odradjeniradnidaniLabel.Name = "odradjeniradnidaniLabel"
-        Me.odradjeniradnidaniLabel.Size = New System.Drawing.Size(177, 16)
-        Me.odradjeniradnidaniLabel.TabIndex = 18
-        Me.odradjeniradnidaniLabel.Text = "ODRAĐENI RADNI DANI"
         '
         'brojdanaumjesecuLabel
         '
@@ -593,6 +519,7 @@ Partial Class Korisnik
         '
         'mjeseciComboBox
         '
+        Me.mjeseciComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.mjeseciComboBox.FormattingEnabled = True
         Me.mjeseciComboBox.Items.AddRange(New Object() {"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septrembar", "Oktobar", "Novembar", "Decembar"})
         Me.mjeseciComboBox.Location = New System.Drawing.Point(6, 19)
@@ -709,6 +636,32 @@ Partial Class Korisnik
         Me.imeLabel.TabIndex = 0
         Me.imeLabel.Text = "IME"
         '
+        'dugmeIzmijeni
+        '
+        Me.dugmeIzmijeni.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.dugmeIzmijeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.dugmeIzmijeni.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dugmeIzmijeni.Location = New System.Drawing.Point(12, 6)
+        Me.dugmeIzmijeni.Name = "dugmeIzmijeni"
+        Me.dugmeIzmijeni.Size = New System.Drawing.Size(109, 35)
+        Me.dugmeIzmijeni.TabIndex = 140
+        Me.dugmeIzmijeni.Text = "Izmijeni"
+        Me.dugmeIzmijeni.UseVisualStyleBackColor = False
+        '
+        'dugmePonisti
+        '
+        Me.dugmePonisti.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.dugmePonisti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.dugmePonisti.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.dugmePonisti.ForeColor = System.Drawing.SystemColors.Control
+        Me.dugmePonisti.Location = New System.Drawing.Point(12, 5)
+        Me.dugmePonisti.Name = "dugmePonisti"
+        Me.dugmePonisti.Size = New System.Drawing.Size(109, 35)
+        Me.dugmePonisti.TabIndex = 139
+        Me.dugmePonisti.Text = "Ponisti izmjene"
+        Me.dugmePonisti.UseVisualStyleBackColor = False
+        Me.dugmePonisti.Visible = False
+        '
         'TabStorage
         '
         Me.TabStorage.BackColor = System.Drawing.SystemColors.Control
@@ -782,8 +735,6 @@ Partial Class Korisnik
         Me.mjesecnaplataGrupBox.PerformLayout()
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -823,16 +774,12 @@ Partial Class Korisnik
     Friend WithEvents Panel12 As Panel
     Friend WithEvents U_PBOFWD_TextBox As TextBox
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Panel11 As Panel
-    Friend WithEvents U_FWD_Button As TextBox
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Panel10 As Panel
     Friend WithEvents U_WDIM_TextBox As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DaysInMonth As TextBox
     Friend WithEvents plataLabel As Label
-    Friend WithEvents odradjeniradnidaniLabel As Label
     Friend WithEvents brojdanaumjesecuLabel As Label
     Friend WithEvents radnidaniumjesecuLabel As Label
     Friend WithEvents mjeseciComboBox As ComboBox

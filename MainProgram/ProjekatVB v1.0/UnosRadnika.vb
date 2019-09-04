@@ -33,7 +33,7 @@ Public Class UnosRadnika
     End Sub
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
         Dim Gender As String
-        Dim Account_type As String
+        Dim tip_naloga As Integer
         Dim Command As New SqlCommand("SELECT * FROM dbo.korisnici", containerdb.connection)
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
             Correct_Password = UR_ConfirmPassword_Textbox.Text
@@ -53,22 +53,42 @@ Public Class UnosRadnika
             brojac = 0
         End If
 
-        If URComboBox.Text = "Administrator" Or URComboBox.Text = "Menadzer" Or URComboBox.Text = "Vlasnik" Or URComboBox.Text = "Racunovodja" Then
-            Account_type = "True"
-            brojac += 1
-        ElseIf URComboBox.Text = "Korisnik" Or URComboBox.Text = "Grobar" Then
-            Account_type = "False"
-            brojac += 1
-        Else
-            brojac = 0
-            MsgBox("Izaberi tip naloga.") 'napraviti formu poruka za ovaj error
-        End If
+
+
+        Select Case URComboBox.Text
+            Case "Administrator"
+                tip_naloga = 1
+                brojac += 1
+            Case "Vlasnik"
+                tip_naloga = 2
+                brojac += 1
+            Case "Menadzer"
+                tip_naloga = 3
+                brojac += 1
+            Case "Grobar"
+                tip_naloga = 4
+                brojac += 1
+            Case "Vozac"
+                tip_naloga = 5
+                brojac += 1
+            Case "Kuhar"
+                tip_naloga = 6
+                brojac += 1
+            Case "Konobar"
+                tip_naloga = 7
+                brojac += 1
+            Case Else
+                Debug.WriteLine("Izaberite tip naloga")
+        End Select
+
+
         Enkripcija.EncryptPass()
 
         Try
             containerdb.connection.Open()
-            Command.CommandText = "INSERT INTO dbo.korisnici (korisnicki_id, ime_korisnika, prezime_korisnika, lozinka,  broj_telefona, email, datum_rodjenja, pol) 
-VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "' , '" & UR_Phone_TextBox.Text & "' , '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & Gender & "')"
+            Command.CommandText = "INSERT INTO dbo.korisnici (korisnicki_id, ime_korisnika, prezime_korisnika, lozinka,  broj_telefona, email, datum_rodjenja, pol, radna_pozicija) 
+VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "' , '" & UR_Phone_TextBox.Text & "' , '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & Gender & "', '" & tip_naloga & "')"
+
 
             Command.ExecuteNonQuery()
             'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\" & UR_Username_TextBox.Text & ".jpg")

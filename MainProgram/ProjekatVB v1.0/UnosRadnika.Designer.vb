@@ -408,7 +408,7 @@ Partial Class UnosRadnika
         Me.URComboBox.BackColor = System.Drawing.SystemColors.Control
         Me.URComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.URComboBox.FormattingEnabled = True
-        Me.URComboBox.Items.AddRange(New Object() {"Korisnik", "Administrator", "Racunovodja", "Menadzer", "Vlasnik", "Grobar"})
+        Me.URComboBox.Items.AddRange(New Object() {"Vozac", "Administrator", "Kuhar", "Menadzer", "Vlasnik", "Grobar", "Konobar"})
         Me.URComboBox.Location = New System.Drawing.Point(3, 2)
         Me.URComboBox.Name = "URComboBox"
         Me.URComboBox.Size = New System.Drawing.Size(214, 21)

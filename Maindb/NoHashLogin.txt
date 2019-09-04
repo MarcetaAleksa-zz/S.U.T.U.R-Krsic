@@ -1,12 +1,11 @@
-1	True	Aleksa	P@$$w0rd
-2	True	Aleksandar	P@$$w0rd
-3	False	Joe	S@ur0n
-4	False	Nick	P0tter
-5	False	Edvin	H0gw@rts
-6	False	Rickon	St0rmg@rd
-7	False	Severick	B30gr@d
-8	False	Jon Snow	@rm@tur@
-9	False	Nikolaj	$0vjetRu$ij@
-10	False	Simens	U$$R4Ever
-11	False	NNikolica	NiKoL@
-NULL	NULL	NULL	NULL
+MarLeksa 	P@$$w0rd
+Panzo  		P@$$w0rd
+AmarB 		S@ur0n
+SinisaG 	H0gw@rts
+ElvirL 		H0gw@rts
+HarunH		St0rmg@rd
+IgorG		B30gr@d
+NevenL		@rm@tur@
+PetarK		$0vjetRu$ij@
+SasaB		U$$R4Ever
+NikolaS		NiKoL@
