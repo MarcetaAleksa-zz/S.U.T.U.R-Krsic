@@ -260,10 +260,10 @@ Partial Class PaymentMethod_From
         Me.VisaRadioButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VisaRadioButton.Location = New System.Drawing.Point(12, 188)
         Me.VisaRadioButton.Name = "VisaRadioButton"
-        Me.VisaRadioButton.Size = New System.Drawing.Size(96, 24)
+        Me.VisaRadioButton.Size = New System.Drawing.Size(58, 24)
         Me.VisaRadioButton.TabIndex = 2
         Me.VisaRadioButton.TabStop = True
-        Me.VisaRadioButton.Text = "Visa Card"
+        Me.VisaRadioButton.Text = "Visa"
         Me.VisaRadioButton.UseVisualStyleBackColor = True
         '
         'VisaPictureBox
@@ -349,9 +349,9 @@ Partial Class PaymentMethod_From
         Me.Adress_Label.AutoSize = True
         Me.Adress_Label.Location = New System.Drawing.Point(273, 43)
         Me.Adress_Label.Name = "Adress_Label"
-        Me.Adress_Label.Size = New System.Drawing.Size(228, 13)
+        Me.Adress_Label.Size = New System.Drawing.Size(236, 13)
         Me.Adress_Label.TabIndex = 13
-        Me.Adress_Label.Text = "Enter your street adress for shipment to be sent"
+        Me.Adress_Label.Text = "Adresa na koju zelite da posaljemo nas proizvod:"
         '
         'AdressTextBox
         '
@@ -446,9 +446,9 @@ Partial Class PaymentMethod_From
         Me.PriceLable.Font = New System.Drawing.Font("Segoe MDL2 Assets", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PriceLable.Location = New System.Drawing.Point(31, 315)
         Me.PriceLable.Name = "PriceLable"
-        Me.PriceLable.Size = New System.Drawing.Size(55, 21)
+        Me.PriceLable.Size = New System.Drawing.Size(51, 21)
         Me.PriceLable.TabIndex = 11
-        Me.PriceLable.Text = "PRICE"
+        Me.PriceLable.Text = "Cijena"
         '
         'PriceTextBox
         '
@@ -465,7 +465,7 @@ Partial Class PaymentMethod_From
         Me.PurchaseButton.Name = "PurchaseButton"
         Me.PurchaseButton.Size = New System.Drawing.Size(125, 47)
         Me.PurchaseButton.TabIndex = 26
-        Me.PurchaseButton.Text = "Purchase"
+        Me.PurchaseButton.Text = "Kupite"
         Me.PurchaseButton.UseVisualStyleBackColor = True
         '
         'ExpirationDateTextBox
@@ -481,7 +481,7 @@ Partial Class PaymentMethod_From
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(142, 46)
         Me.ExitButton.TabIndex = 7
-        Me.ExitButton.Text = "Exit"
+        Me.ExitButton.Text = "Izlaz"
         Me.ExitButton.UseVisualStyleBackColor = True
         '
         'Label5
@@ -524,38 +524,38 @@ Partial Class PaymentMethod_From
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(33, 54)
+        Me.Label4.Location = New System.Drawing.Point(58, 54)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 13)
+        Me.Label4.Size = New System.Drawing.Size(27, 13)
         Me.Label4.TabIndex = 33
-        Me.Label4.Text = "First Name:"
+        Me.Label4.Text = "Ime:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(33, 84)
+        Me.Label3.Location = New System.Drawing.Point(38, 84)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 13)
+        Me.Label3.Size = New System.Drawing.Size(47, 13)
         Me.Label3.TabIndex = 34
-        Me.Label3.Text = "Last Name:"
+        Me.Label3.Text = "Prezime:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(21, 113)
+        Me.Label2.Location = New System.Drawing.Point(22, 113)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 35
-        Me.Label2.Text = "Card Number:"
+        Me.Label2.Text = "Broj kartice:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 161)
+        Me.Label1.Location = New System.Drawing.Point(13, 157)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 13)
+        Me.Label1.Size = New System.Drawing.Size(72, 13)
         Me.Label1.TabIndex = 36
-        Me.Label1.Text = "Expiration Date:"
+        Me.Label1.Text = "Datum isteka:"
         '
         'Panel6
         '
