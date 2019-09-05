@@ -150,4 +150,8 @@ Public Class Prijava
     Private Sub Button2_Click(sender As Object, e As EventArgs) 
         Korisnik.Show()
     End Sub
+
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+        proba.Show()
+    End Sub
 End Class

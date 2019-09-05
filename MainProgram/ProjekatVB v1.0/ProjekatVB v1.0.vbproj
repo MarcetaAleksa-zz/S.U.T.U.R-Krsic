@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="proba.Designer.vb">
+      <DependentUpon>proba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="proba.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Radnici.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PretragaRadnika.resx">
       <DependentUpon>PretragaRadnika.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proba.resx">
+      <DependentUpon>proba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosRadnika.resx">
       <DependentUpon>UnosRadnika.vb</DependentUpon>
