@@ -13,7 +13,7 @@ Public Class PretragaRadnika
             ComboBox1.ValueMember = "korisnicki_id"
             ComboBox1.DisplayMember = "korisnicko_ime"
         Catch ex As Exception
-            MessageBox.Show("Can Not open connection ! ")
+            MessageBox.Show("Ne moze ostvariti vezu te ucitati korisnike.")
         End Try
 
         ComboBox1.SelectedIndex = -1
