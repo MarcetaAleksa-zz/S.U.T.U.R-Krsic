@@ -44,61 +44,8 @@ Public Class Korisnik
     'Treba popraviti.
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        Dim Mjesec As Integer = 0
 
-        Select Case mjeseciComboBox.Text
-            Case "Januar"
-                Mjesec = 0
-            Case "Februar"
-                Mjesec = 1
-            Case "Mart"
-                Mjesec = 2
-            Case "April"
-                Mjesec = 3
-            Case "Maj"
-                Mjesec = 4
-            Case "Jun"
-                Mjesec = 5
-            Case "Jul"
-                Mjesec = 6
-            Case "Avgust"
-                Mjesec = 7
-            Case "Septembar"
-                Mjesec = 8
-            Case "Oktobar"
-                Mjesec = 9
-            Case "Novembar"
-                Mjesec = 10
-            Case "Decembar"
-                Mjesec = 11
-            Case Else
-                Mjesec = 0
-        End Select
 
-        Dim command As New SqlCommand("DECLARE @pocetni_datum DATETIME = '2019-01-31'  
-Declare @Mjesec Int
-Set @Mjesec = " & Mjesec & "
-declare @trazen_datum DATETIME
-set @trazen_datum = (eomonth (@pocetni_datum, @Mjesec))
-declare @radni_dani int
-set @radni_dani = ( FORMAT(@trazen_datum, 'dd'))
-declare @dana_radjeno int
-IF @radni_dani=31 SET @dana_radjeno = 22; 
-else if @radni_dani=30 set @dana_radjeno = 19;
-else set @dana_radjeno = 17; 
-		SELECT @radni_dani as radni_dani,@dana_radjeno as dana_radjeno, @dana_radjeno*radni_sati_po_danu * satnica as plata
-        from  dbo.pozicija  left join korisnici
-        on (pozicija_id = radna_pozicija)
-        where korisnicki_id '" & Prijava.ID_Label.Text & "'", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(command)
-        Dim platatable As New DataTable()
-        Try
-            adapter.Fill(platatable)
-            DaysInMonth.Text = platatable.Rows(0)(0)
-            U_WDIM_TextBox.Text = platatable.Rows(0)(1)
-            U_PBOFWD_TextBox.Text = platatable.Rows(0)(2)
-        Catch ex As Exception
-            End Try 
         'Drop-down koji treba uvesti iz baze
 
     End Sub
@@ -196,5 +143,64 @@ else set @dana_radjeno = 17;
 
     End Sub
 
+    Private Sub Korisnik_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+    End Sub
+
+    Private Sub mjeseciComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles mjeseciComboBox.SelectedIndexChanged
+        Dim Mjesec As Integer = 0
+
+        Select Case mjeseciComboBox.Text
+            Case "Januar"
+                Mjesec = 0
+            Case "Februar"
+                Mjesec = 1
+            Case "Mart"
+                Mjesec = 2
+            Case "April"
+                Mjesec = 3
+            Case "Maj"
+                Mjesec = 4
+            Case "Jun"
+                Mjesec = 5
+            Case "Jul"
+                Mjesec = 6
+            Case "Avgust"
+                Mjesec = 7
+            Case "Septembar"
+                Mjesec = 8
+            Case "Oktobar"
+                Mjesec = 9
+            Case "Novembar"
+                Mjesec = 10
+            Case "Decembar"
+                Mjesec = 11
+            Case Else
+                Mjesec = 0
+        End Select
+
+        Dim command As New SqlCommand("DECLARE @pocetni_datum DATETIME = '2019-01-31';
+Declare @Mjesec Int;
+Set @Mjesec = " & Mjesec & ";
+declare @trazen_datum DATETIME;
+set @trazen_datum = (eomonth (@pocetni_datum, @Mjesec));
+declare @radni_dani int;
+set @radni_dani = ( FORMAT(@trazen_datum, 'dd'));
+declare @dana_radjeno int;
+IF @radni_dani=31 SET @dana_radjeno = 22; 
+else if @radni_dani=30 set @dana_radjeno = 19;
+else set @dana_radjeno = 17; 
+SELECT @radni_dani as radni_dani,@dana_radjeno as dana_radjeno, @dana_radjeno*radni_sati_po_danu * satnica as plata
+        from  dbo.pozicija  left join korisnici
+        on (pozicija_id = radna_pozicija)
+        where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "';", containerdb.connection)
+        Dim adapterZaPlate As New SqlDataAdapter(command)
+        Dim tabelaZaPlate As New DataTable()
+
+        adapterZaPlate.Fill(tabelaZaPlate)
+        DaysInMonth.Text = tabelaZaPlate.Rows(0)(0)
+        U_WDIM_TextBox.Text = tabelaZaPlate.Rows(0)(1)
+        U_PBOFWD_TextBox.Text = tabelaZaPlate.Rows(0)(2)
+    End Sub
 End Class
