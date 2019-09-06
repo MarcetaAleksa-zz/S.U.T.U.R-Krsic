@@ -521,7 +521,7 @@ Partial Class Korisnik
         '
         Me.mjeseciComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.mjeseciComboBox.FormattingEnabled = True
-        Me.mjeseciComboBox.Items.AddRange(New Object() {"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septrembar", "Oktobar", "Novembar", "Decembar"})
+        Me.mjeseciComboBox.Items.AddRange(New Object() {"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"})
         Me.mjeseciComboBox.Location = New System.Drawing.Point(6, 19)
         Me.mjeseciComboBox.Name = "mjeseciComboBox"
         Me.mjeseciComboBox.Size = New System.Drawing.Size(315, 21)

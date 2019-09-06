@@ -220,3 +220,4 @@ C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\P
 C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.proba.resources
+C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.proba.resources

@@ -13,7 +13,6 @@ Public Class PaymentMethod_From
             MsgBox(ex.Message)
         End Try
         Price = PriceTextBox.Text
-        'PriceTextBox.Text = "50"
         PriceTextBox.Show()
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -61,163 +60,62 @@ Public Class PaymentMethod_From
     End Sub
     Private Sub PurchaseButton_Click(sender As Object, e As EventArgs) Handles PurchaseButton.Click
         Dim AvaliableBalance As Double
+        Dim tipKartice As String
 
-        If VisaRadioButton.Checked = True Then
+        If VisaRadioButton.Checked Then
+            tipKartice = "Visa"
+        ElseIf AmericanExpressRadioButton.Checked Then
+            tipKartice = "AmericanExpress"
+        Else
+            tipKartice = "MasterCard"
+        End If
 
-            Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'Visa' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", databaseconnection.connection)
+        Dim command As New SqlCommand(" SELECT * FROM kreditne_kartice where tip_kartice = '" & tipKartice & "' and ime_vlasnika = @FirstName 
+and prezime_vlasnika = @LastName and broj_kartice = @CardNumber and CVV = @CVV 
+and datum_isteka = @ExpirationDate", databaseconnection.connection)
 
-            command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstNameTextBox.Text
-            Command.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastNameTextBox.Text
-            Command.Parameters.Add("@CVV", SqlDbType.Int).Value = CVVTextBox.Text
-            Command.Parameters.Add("@ExpirationDate", SqlDbType.VarChar).Value = ExpirationDateTextBox.Text
-            Command.Parameters.Add("@CardNumber", SqlDbType.VarChar).Value = CardNumberTextBox.Text
+        command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstNameTextBox.Text
+        command.Parameters.Add("@lastname", SqlDbType.VarChar).Value = LastNameTextBox.Text
+        command.Parameters.Add("@cvv", SqlDbType.Int).Value = CVVTextBox.Text
+        command.Parameters.Add("@expirationdate", SqlDbType.VarChar).Value = ExpirationDateTextBox.Text
+        command.Parameters.Add("@cardnumber", SqlDbType.VarChar).Value = CardNumberTextBox.Text
+        Dim adapter As New SqlDataAdapter(command)
+        Dim tabela As New DataTable()
 
-            Dim adapter As New SqlDataAdapter(command)
-            Dim VisaTable As New DataTable() 'visa check table
+        adapter.Fill(tabela)
 
-            Try
-                adapter.Fill(VisaTable)
-            Catch ex As Exception
-            End Try
+        If tabela.Rows.Count <= 0 Then
+            MsgBox("Molimo unesite ispravne informacije.")
+            LogFile.FailedLog()
+        ElseIf tabela.Rows.Count > 0 Then
+            command.CommandText = ("SELECT novcani_iznos From stanje_racuna where CVV = @CVV")
+            Dim PaymentTable As New DataTable
+            adapter.Fill(PaymentTable)
+            AvaliableBalance = PaymentTable.Rows(0)(0)
+            If AvaliableBalance - Price > 0 Then
+                Dim NewBalance As Integer = AvaliableBalance - Price
+                command.CommandText = "UPDATE stanje_racuna SET novcani_iznos ='" & NewBalance & "' WHERE CVV = @CVV"
+                databaseconnection.connection.Open()
+                Try
+                    command.ExecuteNonQuery()
+                    MsgBox("Kupovina uspjesna.")
+                    Me.Close()
+                    counter = 3
+                    LogFile.Log()
 
-            If VisaTable.Rows.Count <= 0 Then
-                MsgBox("Please enter correct information.")
-                counter = 3
-                LogFile.FailedLog()
-            ElseIf VisaTable.Rows.Count > 0 Then
-
-                Command.CommandText = ("SELECT Money From Payment.dbo.Account_Balance where CVV = @CVV")
-                Dim PaymentTable As New DataTable
-                adapter.Fill(paymenttable)
-                AvaliableBalance = PaymentTable.Rows(0)(0)
-                If AvaliableBalance - Price > 0 Then
-                    Dim NewBalance As Integer = AvaliableBalance - Price
-                    command.CommandText = "UPDATE Payment.dbo.Account_Balance SET Money ='" & NewBalance & "' WHERE CVV = @CVV"
-                    databaseconnection.connection.Open()
-                    Try
-                        Command.ExecuteNonQuery()
-                        MsgBox("Payment Confirmed.")
-                        Me.Close()
-                        counter = 3
-                        LogFile.Log()
-
-                    Catch ex As Exception
-                        MsgBox("There was problem with your payment.")
-                        counter = 3
-                        LogFile.FailedLog()
-                    End Try
-                    databaseconnection.connection.Close()
-                Else
-                    MsgBox("Innsuficient balance on your credit card.")
+                Catch ex As Exception
+                    MsgBox("Postoji problem sa vasim pokusajem kupovine.")
                     counter = 3
                     LogFile.FailedLog()
-                End If
-                Me.Close()
-            End If
-        ElseIf AmericanExpressRadioButton.Checked = True Then
-            Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'AmericanExpress' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", databaseconnection.connection)
-
-            command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstNameTextBox.Text
-            command.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastNameTextBox.Text
-            command.Parameters.Add("@CVV", SqlDbType.Int).Value = CVVTextBox.Text
-            command.Parameters.Add("@ExpirationDate", SqlDbType.VarChar).Value = ExpirationDateTextBox.Text
-            command.Parameters.Add("@CardNumber", SqlDbType.VarChar).Value = CardNumberTextBox.Text
-
-            Dim adapter As New SqlDataAdapter(Command)
-            Dim AECTable As New DataTable() 'American express check
-
-            Try
-                adapter.Fill(AECTable)
-            Catch ex As Exception
-            End Try
-
-            If AECTable.Rows.Count <= 0 Then
-                MsgBox("Please enter correct information.")
-                counter = 2
+                End Try
+                databaseconnection.connection.Close()
+            Else
+                MsgBox("Nemate dovoljno novca na kartici kako bi izvrsili ovu uplatu.")
+                counter = 3
                 LogFile.FailedLog()
-            ElseIf AECTable.Rows.Count > 0 Then
-
-                command.CommandText = ("SELECT Money From Payment.dbo.Account_Balance where CVV = @CVV")
-                Dim PaymentTable As New DataTable
-                adapter.Fill(PaymentTable)
-                AvaliableBalance = PaymentTable.Rows(0)(0)
-                If AvaliableBalance - Price > 0 Then
-                    Dim NewBalance As Integer = AvaliableBalance - Price
-                    command.CommandText = "UPDATE Payment.dbo.Account_Balance SET Money ='" & NewBalance & "' WHERE CVV = @CVV"
-                    databaseconnection.connection.Open()
-                    Try
-                        command.ExecuteNonQuery()
-                        MsgBox("Payment Confirmed.")
-                        Me.Close()
-                        counter = 2
-                        LogFile.Log()
-
-                    Catch ex As Exception
-                        MsgBox("There was problem with your payment.")
-                        counter = 2
-                        LogFile.FailedLog()
-                    End Try
-                    databaseconnection.connection.Close()
-                Else
-                    MsgBox("Innsuficient balance on your credit card.")
-                    counter = 2
-                    LogFile.FailedLog()
-                End If
-                Me.Close()
             End If
-        ElseIf MasterCardRadioButton.Checked = True Then
-
-            Dim command As New SqlCommand("SELECT * FROM Payment.dbo.CreditCard Where CardType = 'MasterCard' and FirstName = @FirstName and LastName = @LastName and CardNumber = @CardNumber and CVV = @CVV and ExpirationDate = @ExpirationDate ", databaseconnection.connection)
-
-            command.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstNameTextBox.Text
-            command.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastNameTextBox.Text
-            command.Parameters.Add("@CVV", SqlDbType.Int).Value = CVVTextBox.Text
-            command.Parameters.Add("@ExpirationDate", SqlDbType.VarChar).Value = ExpirationDateTextBox.Text
-            command.Parameters.Add("@CardNumber", SqlDbType.VarChar).Value = CardNumberTextBox.Text
-
-            Dim adapter As New SqlDataAdapter(Command)
-            Dim MCTable As New DataTable() 'Master card check
-
-            Try
-                adapter.Fill(MCTable)
-            Catch ex As Exception
-            End Try
-
-            If MCTable.Rows.Count <= 0 Then
-                MsgBox("Please enter correct information.")
-                counter = 2
-                LogFile.FailedLog()
-            ElseIf MCTable.Rows.Count > 0 Then
-
-                command.CommandText = ("SELECT Money From Payment.dbo.Account_Balance where CVV = @CVV")
-                Dim PaymentTable As New DataTable
-                adapter.Fill(PaymentTable)
-                AvaliableBalance = PaymentTable.Rows(0)(0)
-                If AvaliableBalance - Price > 0 Then
-                    Dim NewBalance As Integer = AvaliableBalance - Price
-                    command.CommandText = "UPDATE Payment.dbo.Account_Balance SET Money ='" & NewBalance & "' WHERE CVV = @CVV"
-                    databaseconnection.connection.Open()
-                    Try
-                        command.ExecuteNonQuery()
-                        MsgBox("Payment Confirmed.")
-                        Me.Close()
-                        counter = 1
-                        LogFile.Log()
-
-                    Catch ex As Exception
-                        MsgBox("There was problem with your payment.")
-                        counter = 1
-                        LogFile.FailedLog()
-                    End Try
-                    databaseconnection.connection.Close()
-                Else
-                    MsgBox("Innsuficient balance on your credit card.")
-                    counter = 1
-                    LogFile.FailedLog()
-                End If
-                Me.Close()
-            End If
-
+            Me.Close()
         End If
+
     End Sub
 End Class

@@ -150,6 +150,8 @@ Public Class Korisnik
 
     Private Sub mjeseciComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles mjeseciComboBox.SelectedIndexChanged
         Dim Mjesec As Integer = 0
+        Dim trenutan_datum As DateTime = DateTime.Now
+
 
         Select Case mjeseciComboBox.Text
             Case "Januar"
@@ -179,7 +181,18 @@ Public Class Korisnik
             Case Else
                 Mjesec = 0
         End Select
+        Select Case trenutan_datum.Month
+            Case > (Mjesec + 1)
 
+            Case = (Mjesec + 1)
+                MsgBox("Izabrali ste trenutni mjesec.")
+
+            Case < (Mjesec + 1)
+
+                MsgBox("izabrali ste mjesec koji jos nije nastupio.
+        odatci prikazani ovde su pretpostakva kakva bi vam plata trebala biti u slucaju da odradite u potpunosti date mjesece.")
+
+        End Select
         Dim command As New SqlCommand("DECLARE @pocetni_datum DATETIME = '2019-01-31';
 Declare @Mjesec Int;
 Set @Mjesec = " & Mjesec & ";
