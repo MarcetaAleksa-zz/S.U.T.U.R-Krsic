@@ -42,13 +42,17 @@ Partial Class Narudzva
         Me.PhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WorkersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerTxtBoxSamoBrojevi = New System.Windows.Forms.Timer(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.table = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TimerRacunanIznos = New System.Windows.Forms.Timer(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TimerDaLiJeProslaUplata = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.WorkersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,9 +77,9 @@ Partial Class Narudzva
         '
         'Purchase_Button
         '
-        Me.Purchase_Button.Location = New System.Drawing.Point(398, 74)
+        Me.Purchase_Button.Location = New System.Drawing.Point(400, 76)
         Me.Purchase_Button.Name = "Purchase_Button"
-        Me.Purchase_Button.Size = New System.Drawing.Size(75, 23)
+        Me.Purchase_Button.Size = New System.Drawing.Size(126, 35)
         Me.Purchase_Button.TabIndex = 134
         Me.Purchase_Button.Text = "Naruči"
         Me.Purchase_Button.UseVisualStyleBackColor = True
@@ -83,7 +87,7 @@ Partial Class Narudzva
         'Price_Label
         '
         Me.Price_Label.AutoSize = True
-        Me.Price_Label.Location = New System.Drawing.Point(242, 80)
+        Me.Price_Label.Location = New System.Drawing.Point(226, 88)
         Me.Price_Label.Name = "Price_Label"
         Me.Price_Label.Size = New System.Drawing.Size(36, 13)
         Me.Price_Label.TabIndex = 135
@@ -91,7 +95,7 @@ Partial Class Narudzva
         '
         'Price_TextBox
         '
-        Me.Price_TextBox.Location = New System.Drawing.Point(292, 76)
+        Me.Price_TextBox.Location = New System.Drawing.Point(276, 84)
         Me.Price_TextBox.Name = "Price_TextBox"
         Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.Price_TextBox.TabIndex = 136
@@ -102,7 +106,7 @@ Partial Class Narudzva
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Location = New System.Drawing.Point(0, 1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(510, 68)
+        Me.Panel3.Size = New System.Drawing.Size(554, 68)
         Me.Panel3.TabIndex = 137
         '
         'Label1
@@ -110,7 +114,7 @@ Partial Class Narudzva
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(177, 24)
+        Me.Label1.Location = New System.Drawing.Point(174, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(127, 25)
         Me.Label1.TabIndex = 0
@@ -156,16 +160,16 @@ Partial Class Narudzva
         '
         Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
         '
-        'Timer1
+        'TimerTxtBoxSamoBrojevi
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1
+        Me.TimerTxtBoxSamoBrojevi.Enabled = True
+        Me.TimerTxtBoxSamoBrojevi.Interval = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(289, 124)
+        Me.Label2.Location = New System.Drawing.Point(255, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 140
@@ -175,7 +179,7 @@ Partial Class Narudzva
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(177, 124)
+        Me.Label3.Location = New System.Drawing.Point(159, 124)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 13)
         Me.Label3.TabIndex = 140
@@ -185,7 +189,7 @@ Partial Class Narudzva
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(33, 124)
+        Me.Label4.Location = New System.Drawing.Point(24, 124)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(98, 13)
         Me.Label4.TabIndex = 140
@@ -195,17 +199,18 @@ Partial Class Narudzva
         '
         Me.table.AllowDrop = True
         Me.table.AutoSize = True
-        Me.table.ColumnCount = 4
-        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.24324!))
-        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.86487!))
-        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.34234!))
-        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.54955!))
+        Me.table.ColumnCount = 5
+        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.table.Location = New System.Drawing.Point(17, 150)
         Me.table.Name = "table"
         Me.table.RowCount = 2
         Me.table.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.table.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.table.Size = New System.Drawing.Size(444, 379)
+        Me.table.Size = New System.Drawing.Size(359, 379)
         Me.table.TabIndex = 142
         '
         'Panel1
@@ -214,25 +219,55 @@ Partial Class Narudzva
         Me.Panel1.AutoScroll = True
         Me.Panel1.Location = New System.Drawing.Point(12, 145)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(463, 387)
+        Me.Panel1.Size = New System.Drawing.Size(380, 387)
         Me.Panel1.TabIndex = 143
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(378, 124)
+        Me.Label9.Location = New System.Drawing.Point(336, 124)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 13)
         Me.Label9.TabIndex = 144
         Me.Label9.Text = "Korpa"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(457, 124)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(0, 13)
+        Me.Label5.TabIndex = 145
+        '
+        'TimerRacunanIznos
+        '
+        Me.TimerRacunanIznos.Enabled = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(439, 124)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(41, 13)
+        Me.Label6.TabIndex = 146
+        Me.Label6.Text = "Iznos:"
+        '
+        'TimerDaLiJeProslaUplata
+        '
+        Me.TimerDaLiJeProslaUplata.Enabled = True
+        Me.TimerDaLiJeProslaUplata.Interval = 1
         '
         'Narudzva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(511, 548)
+        Me.ClientSize = New System.Drawing.Size(537, 570)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Price_TextBox)
         Me.Controls.Add(Me.Purchase_Button)
@@ -276,11 +311,15 @@ Partial Class Narudzva
     Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GenderDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents TimerTxtBoxSamoBrojevi As Timer
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents table As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TimerRacunanIznos As Timer
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TimerDaLiJeProslaUplata As Timer
 End Class

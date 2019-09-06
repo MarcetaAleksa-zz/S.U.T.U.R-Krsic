@@ -1,6 +1,14 @@
 ﻿
+
+'kada na paymentu prodje uplata, gdje god je uneseno nesto u txtbox, tu odmah skinuti iz tabele, i update baze odraditi
+
+
+
+
 Imports System.Data.SqlClient
+
 Public Class Narudzva
+    Public Shared Ukupno As Double = 0
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
         Gost.Show()
@@ -9,80 +17,82 @@ Public Class Narudzva
         Me.Close()
     End Sub
     Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
-        Process.Start(My.Application.Info.DirectoryPath + "/Payment.lnk", Price_TextBox.Text)
+
+        If Ukupno = 0 Then
+
+            Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+            Dim adapter As New SqlDataAdapter(Command)
+            Dim oprema_table As New DataTable()
+
+
+            Dim brojacOpreme As Integer = 0
+            Try
+                adapter.Fill(oprema_table)
+                brojacOpreme = oprema_table.Rows.Count
+
+                For Each c As Control In table.Controls
+                    If c.GetType Is GetType(Label) Then
+                        For i = 0 To brojacOpreme
+                            If c.Name = "L3" + i.ToString Then
+                                If c.Text <> "" Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
+                                    Ukupno = Ukupno + c.Text
+                                End If
+
+                            End If
+                        Next i
+                    End If
+                Next
+            Catch ex As Exception
+            End Try
+        Else
+
+        End If
+
+        Process.Start(My.Application.Info.DirectoryPath + "/Payment.lnk", Ukupno)
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        'Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-        'Dim adapter As New SqlDataAdapter(Command)
-        'Dim oprema_table As New DataTable()
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerTxtBoxSamoBrojevi.Tick
 
-        'adapter.Fill(oprema_table)
-
+        Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(Command)
+        Dim oprema_table As New DataTable()
 
 
-        'Dim brojacOpreme As Integer = 0
-        'Dim max1, max2, max3, max4 As Integer
-        'Dim distance As Integer = 140
-        ''Dim c As Integer = 80
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
 
-        'containerdb.connection.Open()
-        'Try
-        '    brojacOpreme = oprema_table.Rows.Count
-        '    Label5.Text = oprema_table.Rows(0)(4)
-        '    Label6.Text = oprema_table.Rows(1)(4)
-        '    Label7.Text = oprema_table.Rows(2)(4)
-        '    Label8.Text = oprema_table.Rows(3)(4)
+            Dim i As Integer = 0
 
-        '    max1 = oprema_table.Rows(0)(2)
-        '    max2 = oprema_table.Rows(1)(2)
-        '    max3 = oprema_table.Rows(2)(2)
-        '    max4 = oprema_table.Rows(3)(2)
-        '    Try
-        '        If CInt(TextBox1.Text) > max1 Then
-        '            TextBox1.Text = max1.ToString
-        '        ElseIf CInt(TextBox1.Text) < 0 Then
-        '            TextBox1.Text = 0
-        '        End If
-
-        '        If CInt(TextBox2.Text) > max2 Then
-        '            TextBox2.Text = max2.ToString
-        '        ElseIf CInt(TextBox2.Text) < 0 Then
-        '            TextBox2.Text = 0
-        '        End If
-        '        If CInt(TextBox3.Text) > max3 Then
-        '            TextBox3.Text = max3.ToString
-        '        ElseIf CInt(TextBox3.Text) < 0 Then
-        '            TextBox3.Text = 0
-        '        End If
-        '        If CInt(TextBox4.Text) > max4 Then
-        '            TextBox4.Text = max4.ToString
-        '        ElseIf CInt(TextBox4.Text) < 0 Then
-        '            TextBox4.Text = 0
-        '        End If
-        '    Catch
-        '    End Try
-        'Catch
-        'End Try
-        'Label4.Text = brojacOpreme.ToString
-        'containerdb.connection.Close()
+            For Each c As Control In table.Controls
+                If c.GetType Is GetType(TextBox) Then
+                    If (System.Text.RegularExpressions.Regex.IsMatch(c.Text, "[^0-9]")) Then ' ovde smo napravili da svi txtbox u table.controls mogu samo brojeve da primaju
+                        c.Text = c.Text.Remove(c.Text.Length - 1)
+                    End If
 
 
-        'For i = 0 To 5
+                End If
+            Next
 
-        '    Dim c As New ComboBox()
+            For Each c As Control In table.Controls
+                If c.GetType Is GetType(TextBox) Then
+                    For i = 0 To brojacOpreme
+                        If c.Name = "t" + i.ToString Then
+                            If c.Text > oprema_table.Rows(i)(2) Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
+                                c.Text = oprema_table.Rows(i)(2)
+                            End If
 
-        '    With c
+                        End If
+                    Next i
+                End If
+            Next
 
 
-        '        .Location = New System.Drawing.Point(58, distance)
-        '        .Size = New System.Drawing.Size(131, 21)
-        '        '.Name = "C" + i.ToString
-        '        Me.Controls.Add(c)
+        Catch ex As Exception
+        End Try
 
-        '    End With
-        '    distance = +25
-        'Next i
+
 
 
     End Sub
@@ -133,39 +143,130 @@ Public Class Narudzva
                 With t
                     .Text = ""
                     .Name = "t" + i.ToString
-
-                    '.TextAlign = ContentAlignment.MiddleCenter 'textbox u koji unosimo koliko zelimo
                     .Visible = True
                     .Size = New Size(35, 2)
-                    .Font = New Font("Microsoft Sans Serif", 9)
+                    .Font = New Font("Microsoft Sans Serif", 9) 'tectbox u koji se unosi kolicina koju zelimo kupiti
                     '.Dock = DockStyle.Fill
                     table.Controls.Add(t, 3, i)
                 End With
-                '   table.Controls.Add(oprema_table.Rows(i)(1), 0, i)
 
-
-                'Dim p As Integer
-                'table.Visible = False
-                'table.SuspendLayout()
-                'p = oprema_table.Rows(i)(1)
-                ''Label9.Text = oprema_table.Rows(i)(1)
-                'table.Controls.Add(oprema_table.Rows(i)(1), 0, i)
-                '
-                'With L
-                '    .Text = p.ToString
-                '    .TextAlign = ContentAlignment.MiddleCenter
-                '    .Visible = True
-                '    .Font = New Font("Microsoft Sans Serif", 9)
-                '    .Dock = DockStyle.Fill
-                '    'tabela.RowStyles.Add(New RowStyle(SizeType.Absolute, 30))
-                '    table.Controls.Add(L, 0, i)
-                'End With
-                'table.ResumeLayout()
-                'table.Visible = True
-
+                Dim L3 As Label = New Label
+                With L3
+                    .Text = ""
+                    .Name = "L3" + i.ToString
+                    .TextAlign = ContentAlignment.MiddleLeft 'label u koji se ispisuje rezultat mnozenja cijene i kolicine
+                    .Visible = True
+                    .Font = New Font("Microsoft Sans Serif", 9)
+                    '.Dock = DockStyle.Fill
+                    table.Controls.Add(L3, 4, i)
+                End With
             Next
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles TimerRacunanIznos.Tick
+        Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(Command)
+        Dim oprema_table As New DataTable()
+
+
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+
+            Dim i As Integer = 0
+            For Each g As Control In table.Controls
+                If g.GetType Is GetType(Label) Then
+                    For i = 0 To brojacOpreme
+                        If g.Name = "L3" + i.ToString Then
+
+
+
+                            For Each d As Control In table.Controls
+                                If d.GetType Is GetType(TextBox) Then
+
+                                    If d.Name = "t" + i.ToString Then
+
+                                        If d.Text = "" Then
+                                            g.Text = ""
+                                        Else
+                                            Dim b As Double
+                                            b = oprema_table.Rows(i)(4)
+                                            g.Text = CInt(d.Text) * b '& " KM"
+                                        End If
+
+
+                                        'a.ToString 'CInt(a) * CInt(b) '"jeremija" 'oprema_table.Rows(i)(2).ToString * oprema_table.Rows(i)(1).ToString                    ''''ovde pokusavam napraviti da sam ispisuje prozivod cijene i zeljene kolicine
+
+                                    End If
+
+                                End If
+                            Next
+
+
+
+                        End If
+                    Next i
+                End If
+            Next
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
+        'Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        'Dim adapter As New SqlDataAdapter(Command)
+        'Dim oprema_table As New DataTable()
+
+
+
+
+        'Dim brojacOpreme As Integer = 0
+        'Try
+        '    adapter.Fill(oprema_table)
+        '    brojacOpreme = oprema_table.Rows.Count
+
+
+        '    Dim i As Integer = 0
+
+
+        '    If zamisljenibroj = 1 Then                                                             U IZRADI JE
+        '    TREBA MI SAMO PAYMENT DA ZAVRSIMO PA SE OVDE VRACAMO
+        '                                                                                            I TREBA NAPRAVITI NA LINIJI 251 i 254 UPDATE BAZU IZ NASE FILOVANE TABELE
+
+
+        '        For Each c As Control In table.Controls
+        '            If c.GetType Is GetType(TextBox) Then
+
+        '                For i = 0 To brojacOpreme
+        '                    If c.Name = "t" + i.ToString Then
+
+        '                        If c.Text <> "0" Then
+        '                            Dim f As Integer = 0
+        '                            Try
+        '                                f = oprema_table.Rows(i)(2)
+        '                                f = f - CInt(c.Text)
+        '                                ' f.updatetobazajebemjojstrinu
+        '                            Catch ex As Exception
+        '                                oprema_table.Rows(i)(2) = 0
+        '                                'oprema_table.UpdateToBazaJebemJojMater
+        '                            End Try
+        '                        End If
+
+        '                    End If
+        '                Next i
+
+        '            End If
+        '        Next
+
+        '    End If
+
+
+
+        'Catch ex As Exception
+        'End Try
     End Sub
 End Class
 
