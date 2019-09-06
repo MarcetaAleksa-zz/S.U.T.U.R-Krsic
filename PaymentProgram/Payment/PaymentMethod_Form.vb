@@ -4,6 +4,7 @@ Public Class PaymentMethod_From
     Public Price As String
     Public counter As Integer = 0
     Public ErrorMsg As String
+    
     Private Sub PaymentMethod_From_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim recieve As String = Command()
@@ -102,6 +103,8 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                     Me.Close()
                     counter = 3
                     LogFile.Log()
+                    'zamisljenibroj=1 znaci uspjeno odradjena kupovina, zamisljeni broj je iz prvog programa, kada je on 1, onda treba odraditi tamo ono
+                    'gdje se skida unijeta kolicina
 
                 Catch ex As Exception
                     MsgBox("Postoji problem sa vasim pokusajem kupovine.")

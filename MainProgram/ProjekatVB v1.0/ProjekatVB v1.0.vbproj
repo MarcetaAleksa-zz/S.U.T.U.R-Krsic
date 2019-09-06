@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogoviForma.Designer.vb">
+      <DependentUpon>LogoviForma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogoviForma.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="proba.Designer.vb">
       <DependentUpon>proba.vb</DependentUpon>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorForms\UserDobroDosli.resx">
       <DependentUpon>UserDobroDosli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogoviForma.resx">
+      <DependentUpon>LogoviForma.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrikazSvihRadnika.resx">
       <DependentUpon>PrikazSvihRadnika.vb</DependentUpon>
