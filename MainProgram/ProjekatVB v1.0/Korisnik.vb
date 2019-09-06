@@ -5,7 +5,8 @@ Public Class Korisnik
     Dim boja As String = "235, 235, 235"
     Private Function Ciscenje() As Integer
 
-        Dim Command As New SqlCommand("SELECT * FROM korisnici where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
+        Dim Command As New SqlCommand("SELECT * FROM korisnici where korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'",
+                                      containerdb.connection)
         Dim adapter As New SqlDataAdapter(Command)
         Dim user_table As New DataTable()
 
@@ -38,18 +39,8 @@ Public Class Korisnik
         Me.Close()
     End Sub
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter
-        'Konekcija sa bazom SPARTAN\SQLEXPRESS (Home PC) 
         Ciscenje()
     End Sub
-    'Treba popraviti.
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-
-
-
-        'Drop-down koji treba uvesti iz baze
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles dugmeIzmijeni.Click
         dugmeSacuvaj.Visible = True
         dugmePonisti.Visible = True
@@ -83,7 +74,8 @@ Public Class Korisnik
     Private Sub DugmeSacuvaj_Click(sender As Object, e As EventArgs) Handles dugmeSacuvaj.Click
 
 
-        Dim Command As New SqlCommand("UPDATE korisnici SET ime_korisnika = @ime_korisnika, prezime_korisnika = @prezime_korisnika, broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanovanja = @adresa_stanovanja
+        Dim Command As New SqlCommand("UPDATE korisnici SET ime_korisnika = @ime_korisnika, prezime_korisnika = @prezime_korisnika, 
+broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanovanja = @adresa_stanovanja
                                 WHERE korisnicki_id = '" & Prijava.Username_Form_Box.Text & "'", containerdb.connection)
         containerdb.connection.Open()
         Command.Parameters.Add("@ime_korisnika", SqlDbType.VarChar).Value = imeTextBox.Text
@@ -144,6 +136,8 @@ Public Class Korisnik
     End Sub
 
     Private Sub Korisnik_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the '_S_U_T_U_R_KrsicDataSet.oprema' table. You can move, or remove it, as needed.
+        'Me.OpremaTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.oprema)
 
 
     End Sub

@@ -41,19 +41,20 @@ Public Class PaymentMethod_From
     End Sub
     Private Sub Email(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim EmailMessage As New MailMessage()
-        'Try
-        ' EmailMessage.From = New MailAddress("grobari@grobari.go")
-        '  EmailMessage.To.Add(Email_TextBox.Text)
-        ' EmailMessage.Subject = "Payment GROBARI DOO"
-        '  EmailMessage.Body = "SO DE SU KA"
-        '  Dim SMTP As New SmtpClient("smtp.gmail.com")
-        '  SMTP.Port = 587
-        '   SMTP.EnableSsl = True
-        '   SMTP.Credentials = New System.Net.NetworkCredential("grobari@grobari.go", "SomePW")
-        '   SMTP.Send(EmailMessage)
-        'Catch ex As Exception
-        '   MsgBox(ex.Message)
-        ' End Try
+        Try
+            EmailMessage.From = New MailAddress("marceta.aleksa@gmail.com")
+            EmailMessage.To.Add("emmanuelharris@gmail.com")
+            EmailMessage.Subject = "S.U.T.U.R Krisic"
+            EmailMessage.Body = "Poštovani, 
+Uspješno ste naručili proizvod..."
+            Dim SMTP As New SmtpClient("smtp.gmail.com")
+            SMTP.Port = 587
+            SMTP.EnableSsl = True
+            SMTP.Credentials = New System.Net.NetworkCredential("marceta.aleksa@gmail.com", "OVD IDE LOZINKA")
+            SMTP.Send(EmailMessage)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()

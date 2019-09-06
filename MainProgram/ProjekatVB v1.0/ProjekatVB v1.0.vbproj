@@ -207,6 +207,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_S_U_T_U_R_KrsicDataSet.vb">
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Administrator.resx">
