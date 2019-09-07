@@ -1,5 +1,5 @@
 ﻿Public Class Gost
-    Private Sub Display_Goods_Button_Click(sender As Object, e As EventArgs) Handles Display_Goods_Button.Click
+    Private Sub Display_Goods_Button_Click(sender As Object, e As EventArgs)
         Me.Hide()
         GostPrikazArtikala.Show()
     End Sub

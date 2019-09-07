@@ -5,10 +5,29 @@
     End Sub
 
     Private Sub pregledRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'NapoleonFIll.PrikazSvihRadnika' table. You can move, or remove it, as needed.
+        'Me.PrikazSvihRadnikaTableAdapter.Fill(Me.NapoleonFIll.PrikazSvihRadnika)
         'TODO: This line of code loads data into the '_S_U_T_U_R_KrsicDataSet.korisnici' table. You can move, or remove it, as needed.
-        Me.KorisniciTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.korisnici)
+
         'TODO: This line of code loads data into the 'Radnici.korisnici' table. You can move, or remove it, as needed.tr
 
+
+        Dim ComputerName As String
+        ComputerName = System.Net.Dns.GetHostName
+
+
+        If ComputerName = "Napoleon" Then
+            Try
+                Me.PrikazSvihRadnikaTableAdapter.Fill(Me.NapoleonFIll.PrikazSvihRadnika)
+            Catch ex As Exception
+
+            End Try
+        ElseIf ComputerName = "Spartan" Then
+            Try
+                Me.KorisniciTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.korisnici)
+            Catch ex As Exception
+            End Try
+        End If
 
     End Sub
 
@@ -45,4 +64,7 @@
 
     Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
     End Sub
+
+
+
 End Class

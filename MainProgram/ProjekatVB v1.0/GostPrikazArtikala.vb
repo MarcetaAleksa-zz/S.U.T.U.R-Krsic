@@ -4,7 +4,13 @@
         Me.Close()
         If Prijava.tipNaloga <= 3 Then
             Administrator.Show()
+            Button9.Visible = False
+
+        ElseIf Prijava.tipNaloga > 3 Then
+            Korisnik.Show()
+            Button9.Visible = False
         Else
+
             Gost.Show()
 
         End If
@@ -45,12 +51,26 @@
     End Sub
 
     Private Sub GostPrikazArtikala_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Radnici.Artikli' table. You can move, or remove it, as needed.
-        Try
-            Me.ArtikliTableAdapter.Fill(Me.Radnici.Artikli)
-        Catch ex As Exception
-        End Try
+        'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
 
+        'TODO: This line of code loads data into the 'Radnici.Artikli' table. You can move, or remove it, as needed.
+
+
+
+        Dim ComputerName As String
+        ComputerName = System.Net.Dns.GetHostName
+        If ComputerName = "Napoleon" Then
+            Try
+                Me.ArtikliTableAdapter1.Fill(Me.NapoleonFIll.Artikli)
+            Catch ex As Exception
+
+            End Try
+        ElseIf ComputerName = "Spartan" Then
+            Try
+                Me.ArtikliTableAdapter.Fill(Me.Radnici.Artikli)
+            Catch ex As Exception
+            End Try
+        End If
         'TODO: This line of code loads data into the 'Radnici.DataTable1' table. You can move, or remove it, as needed.
 
 

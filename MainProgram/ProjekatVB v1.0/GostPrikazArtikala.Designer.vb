@@ -37,15 +37,21 @@ Partial Class GostPrikazArtikala
         Me.ArtikliTableAdapter = New ProjekatVB_v1._0.DataSet1TableAdapters.ArtikliTableAdapter()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ArtikliBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
+        Me.ArtikliBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ArtikliTableAdapter1 = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
+        Me.TableAdapterManager = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
+        Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KolicinaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CijenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipproizvodaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         CType(Me.Radnici, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ArtikliBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Exit_Button
@@ -134,8 +140,8 @@ Partial Class GostPrikazArtikala
         '
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImeDataGridViewTextBoxColumn, Me.KolicinaDataGridViewTextBoxColumn, Me.CijenaDataGridViewTextBoxColumn, Me.TipproizvodaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ArtikliBindingSource1
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TipopremeDataGridViewTextBoxColumn, Me.ImeDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.CijenaDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ArtikliBindingSource2
         Me.DataGridView1.Location = New System.Drawing.Point(23, 136)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(443, 315)
@@ -146,33 +152,53 @@ Partial Class GostPrikazArtikala
         Me.ArtikliBindingSource1.DataMember = "Artikli"
         Me.ArtikliBindingSource1.DataSource = Me.Radnici
         '
+        'NapoleonFIll
+        '
+        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
+        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ArtikliBindingSource2
+        '
+        Me.ArtikliBindingSource2.DataMember = "Artikli"
+        Me.ArtikliBindingSource2.DataSource = Me.NapoleonFIll
+        '
+        'ArtikliTableAdapter1
+        '
+        Me.ArtikliTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'TipopremeDataGridViewTextBoxColumn
+        '
+        Me.TipopremeDataGridViewTextBoxColumn.DataPropertyName = "tip_opreme"
+        Me.TipopremeDataGridViewTextBoxColumn.HeaderText = "tip_opreme"
+        Me.TipopremeDataGridViewTextBoxColumn.Name = "TipopremeDataGridViewTextBoxColumn"
+        Me.TipopremeDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'ImeDataGridViewTextBoxColumn
         '
         Me.ImeDataGridViewTextBoxColumn.DataPropertyName = "ime"
         Me.ImeDataGridViewTextBoxColumn.HeaderText = "ime"
         Me.ImeDataGridViewTextBoxColumn.Name = "ImeDataGridViewTextBoxColumn"
-        Me.ImeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ImeDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'KolicinaDataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn1
         '
-        Me.KolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina"
-        Me.KolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina"
-        Me.KolicinaDataGridViewTextBoxColumn.Name = "KolicinaDataGridViewTextBoxColumn"
-        Me.KolicinaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "kolicina"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "kolicina"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
         'CijenaDataGridViewTextBoxColumn
         '
         Me.CijenaDataGridViewTextBoxColumn.DataPropertyName = "cijena"
         Me.CijenaDataGridViewTextBoxColumn.HeaderText = "cijena"
         Me.CijenaDataGridViewTextBoxColumn.Name = "CijenaDataGridViewTextBoxColumn"
-        Me.CijenaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'TipproizvodaDataGridViewTextBoxColumn
-        '
-        Me.TipproizvodaDataGridViewTextBoxColumn.DataPropertyName = "tip_proizvoda"
-        Me.TipproizvodaDataGridViewTextBoxColumn.HeaderText = "tip_proizvoda"
-        Me.TipproizvodaDataGridViewTextBoxColumn.Name = "TipproizvodaDataGridViewTextBoxColumn"
-        Me.TipproizvodaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.CijenaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'GostPrikazArtikala
         '
@@ -195,6 +221,8 @@ Partial Class GostPrikazArtikala
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtikliBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArtikliBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -211,8 +239,14 @@ Partial Class GostPrikazArtikala
     Friend WithEvents ArtikliTableAdapter As DataSet1TableAdapters.ArtikliTableAdapter
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ArtikliBindingSource1 As BindingSource
-    Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KolicinaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TipproizvodaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NapoleonFIll As NapoleonFIll
+    Friend WithEvents ArtikliBindingSource2 As BindingSource
+    Friend WithEvents ArtikliTableAdapter1 As NapoleonFIllTableAdapters.ArtikliTableAdapter
+    Friend WithEvents TableAdapterManager As NapoleonFIllTableAdapters.TableAdapterManager
+    Friend WithEvents TipopremeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

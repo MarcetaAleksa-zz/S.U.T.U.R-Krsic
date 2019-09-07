@@ -32,10 +32,14 @@ Partial Class PrikazSvihRadnika
         Me.PraznaPoljaLabel = New System.Windows.Forms.Label()
         Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me._S_U_T_U_R_KrsicDataSet = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet()
         Me.KorisniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me._S_U_T_U_R_KrsicDataSet = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet()
         Me.KorisniciTableAdapter = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.korisniciTableAdapter()
         Me.TableAdapterManager = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager()
+        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
+        Me.PrikazSvihRadnikaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PrikazSvihRadnikaTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.PrikazSvihRadnikaTableAdapter()
+        Me.TableAdapterManager1 = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
         Me.KorisnickiidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImekorisnikaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrezimekorisnikaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,11 +48,13 @@ Partial Class PrikazSvihRadnika
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DatumrodjenjaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RadnapozicijaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImepozicijeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KorisniciBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrikazSvihRadnikaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -135,23 +141,23 @@ Partial Class PrikazSvihRadnika
         '
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KorisnickiidDataGridViewTextBoxColumn, Me.ImekorisnikaDataGridViewTextBoxColumn, Me.PrezimekorisnikaDataGridViewTextBoxColumn, Me.AdresastanovanjaDataGridViewTextBoxColumn, Me.BrojtelefonaDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.DatumrodjenjaDataGridViewTextBoxColumn, Me.PolDataGridViewTextBoxColumn, Me.RadnapozicijaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.KorisniciBindingSource
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KorisnickiidDataGridViewTextBoxColumn, Me.ImekorisnikaDataGridViewTextBoxColumn, Me.PrezimekorisnikaDataGridViewTextBoxColumn, Me.AdresastanovanjaDataGridViewTextBoxColumn, Me.BrojtelefonaDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.DatumrodjenjaDataGridViewTextBoxColumn, Me.PolDataGridViewTextBoxColumn, Me.ImepozicijeDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.PrikazSvihRadnikaBindingSource
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(27, 153)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(945, 252)
         Me.DataGridView1.TabIndex = 137
         '
-        '_S_U_T_U_R_KrsicDataSet
-        '
-        Me._S_U_T_U_R_KrsicDataSet.DataSetName = "_S_U_T_U_R_KrsicDataSet"
-        Me._S_U_T_U_R_KrsicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'KorisniciBindingSource
         '
         Me.KorisniciBindingSource.DataMember = "korisnici"
         Me.KorisniciBindingSource.DataSource = Me._S_U_T_U_R_KrsicDataSet
+        '
+        '_S_U_T_U_R_KrsicDataSet
+        '
+        Me._S_U_T_U_R_KrsicDataSet.DataSetName = "_S_U_T_U_R_KrsicDataSet"
+        Me._S_U_T_U_R_KrsicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'KorisniciTableAdapter
         '
@@ -165,12 +171,31 @@ Partial Class PrikazSvihRadnika
         Me.TableAdapterManager.opremaTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'NapoleonFIll
+        '
+        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
+        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PrikazSvihRadnikaBindingSource
+        '
+        Me.PrikazSvihRadnikaBindingSource.DataMember = "PrikazSvihRadnika"
+        Me.PrikazSvihRadnikaBindingSource.DataSource = Me.NapoleonFIll
+        '
+        'PrikazSvihRadnikaTableAdapter
+        '
+        Me.PrikazSvihRadnikaTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'KorisnickiidDataGridViewTextBoxColumn
         '
         Me.KorisnickiidDataGridViewTextBoxColumn.DataPropertyName = "korisnicki_id"
         Me.KorisnickiidDataGridViewTextBoxColumn.HeaderText = "korisnicki_id"
         Me.KorisnickiidDataGridViewTextBoxColumn.Name = "KorisnickiidDataGridViewTextBoxColumn"
-        Me.KorisnickiidDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ImekorisnikaDataGridViewTextBoxColumn
         '
@@ -214,12 +239,11 @@ Partial Class PrikazSvihRadnika
         Me.PolDataGridViewTextBoxColumn.HeaderText = "pol"
         Me.PolDataGridViewTextBoxColumn.Name = "PolDataGridViewTextBoxColumn"
         '
-        'RadnapozicijaDataGridViewTextBoxColumn
+        'ImepozicijeDataGridViewTextBoxColumn
         '
-        Me.RadnapozicijaDataGridViewTextBoxColumn.DataPropertyName = "radna_pozicija"
-        Me.RadnapozicijaDataGridViewTextBoxColumn.HeaderText = "radna_pozicija"
-        Me.RadnapozicijaDataGridViewTextBoxColumn.Name = "RadnapozicijaDataGridViewTextBoxColumn"
-        Me.RadnapozicijaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ImepozicijeDataGridViewTextBoxColumn.DataPropertyName = "ime_pozicije"
+        Me.ImepozicijeDataGridViewTextBoxColumn.HeaderText = "ime_pozicije"
+        Me.ImepozicijeDataGridViewTextBoxColumn.Name = "ImepozicijeDataGridViewTextBoxColumn"
         '
         'PrikazSvihRadnika
         '
@@ -241,8 +265,10 @@ Partial Class PrikazSvihRadnika
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KorisniciBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrikazSvihRadnikaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -260,6 +286,10 @@ Partial Class PrikazSvihRadnika
     Friend WithEvents KorisniciBindingSource As BindingSource
     Friend WithEvents KorisniciTableAdapter As _S_U_T_U_R_KrsicDataSetTableAdapters.korisniciTableAdapter
     Friend WithEvents TableAdapterManager As _S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents NapoleonFIll As NapoleonFIll
+    Friend WithEvents PrikazSvihRadnikaBindingSource As BindingSource
+    Friend WithEvents PrikazSvihRadnikaTableAdapter As NapoleonFIllTableAdapters.PrikazSvihRadnikaTableAdapter
+    Friend WithEvents TableAdapterManager1 As NapoleonFIllTableAdapters.TableAdapterManager
     Friend WithEvents KorisnickiidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ImekorisnikaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrezimekorisnikaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -268,5 +298,5 @@ Partial Class PrikazSvihRadnika
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DatumrodjenjaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PolDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RadnapozicijaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ImepozicijeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

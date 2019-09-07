@@ -30,13 +30,7 @@ Public Class PretragaRadnika
         Dim pozicijaComm As New SqlCommand("SELECT pz.ime_pozicije from pozicija as pz left join korisnici as kr on (kr.radna_pozicija = pz.pozicija_id) where kr.korisnicki_id ='" & ComboBox1.SelectedValue & "'", containerdb.connection)
         Dim adaptmeagain As New SqlDataAdapter(pozicijaComm)
 
-        If U_Username_TextBox.Text <> "" Then
-            Brisanje.Visible = True
-            IzbrisiLabel.Visible = True
-        Else
-            IzbrisiLabel.Visible = False
-            Brisanje.Visible = False
-        End If
+
 
         Try
             adapter.Fill(user_table)
@@ -53,6 +47,29 @@ Public Class PretragaRadnika
             ' Aleksandar : aleksandar
         Catch ex As Exception
         End Try
+        'Mala izmjena je naporavljena, sada je i vlasnik u mogucnosti da brise naloge osim ako je taj naog administratorski
+        If Prijava.tipNaloga = 1 Then
+            If U_Username_TextBox.Text <> "" Then
+                Brisanje.Visible = True
+                IzbrisiLabel.Visible = True
+            Else
+                IzbrisiLabel.Visible = False
+                Brisanje.Visible = False
+            End If
+        Else
+            If U_Username_TextBox.Text <> "" Then
+                If U_Possition_TextBox.Text = "Administrator  " Then
+                    IzbrisiLabel.Visible = False
+                    Brisanje.Visible = False
+                Else
+                    Brisanje.Visible = True
+                    IzbrisiLabel.Visible = True
+                End If
+            Else
+                IzbrisiLabel.Visible = False
+                Brisanje.Visible = False
+            End If
+        End If
     End Sub
 
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click

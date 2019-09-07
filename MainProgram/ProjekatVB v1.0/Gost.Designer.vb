@@ -24,7 +24,6 @@ Partial Class Gost
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Gost))
         Me.Welcome = New System.Windows.Forms.Label()
-        Me.Display_Goods_Button = New System.Windows.Forms.Button()
         Me.Order_Funeral_Button = New System.Windows.Forms.Button()
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.Back_Button = New System.Windows.Forms.Button()
@@ -44,24 +43,12 @@ Partial Class Gost
         Me.Welcome.TabIndex = 0
         Me.Welcome.Text = "Welcome"
         '
-        'Display_Goods_Button
-        '
-        Me.Display_Goods_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Display_Goods_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Display_Goods_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Display_Goods_Button.Location = New System.Drawing.Point(103, 113)
-        Me.Display_Goods_Button.Name = "Display_Goods_Button"
-        Me.Display_Goods_Button.Size = New System.Drawing.Size(198, 40)
-        Me.Display_Goods_Button.TabIndex = 1
-        Me.Display_Goods_Button.Text = "Artikli"
-        Me.Display_Goods_Button.UseVisualStyleBackColor = False
-        '
         'Order_Funeral_Button
         '
         Me.Order_Funeral_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Order_Funeral_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Order_Funeral_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Order_Funeral_Button.Location = New System.Drawing.Point(103, 159)
+        Me.Order_Funeral_Button.Location = New System.Drawing.Point(103, 125)
         Me.Order_Funeral_Button.Name = "Order_Funeral_Button"
         Me.Order_Funeral_Button.Size = New System.Drawing.Size(198, 40)
         Me.Order_Funeral_Button.TabIndex = 2
@@ -123,7 +110,6 @@ Partial Class Gost
         Me.Controls.Add(Me.Back_Button)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Order_Funeral_Button)
-        Me.Controls.Add(Me.Display_Goods_Button)
         Me.Controls.Add(Me.Welcome)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -137,7 +123,6 @@ Partial Class Gost
 
     End Sub
     Friend WithEvents Welcome As Label
-    Friend WithEvents Display_Goods_Button As Button
     Friend WithEvents Order_Funeral_Button As Button
     Friend WithEvents Exit_Button As Button
     Friend WithEvents Back_Button As Button
