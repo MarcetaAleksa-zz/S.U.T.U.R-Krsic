@@ -97,6 +97,7 @@ Partial Class Narudzva
         '
         Me.Price_TextBox.Location = New System.Drawing.Point(276, 84)
         Me.Price_TextBox.Name = "Price_TextBox"
+        Me.Price_TextBox.ReadOnly = True
         Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.Price_TextBox.TabIndex = 136
         '
