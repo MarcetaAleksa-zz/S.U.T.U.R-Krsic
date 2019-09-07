@@ -78,13 +78,13 @@ Public Class Prijava
 
         If tabela.Rows.Count > 0 Then
             If tipPozicije <= 3 Then
-                logovi.Log()
+                logovi.UspjesnaPrijavaLog()
                 AdminDobroDosli.Show()
                 Enkripcija.HashStore = Nothing
                 Password_Form_Box.Text = ""
                 Me.Hide()
             ElseIf 3 < tipPozicije Then
-                logovi.Log()
+                logovi.UspjesnaPrijavaLog()
                 UserDobroDosli.Show()
                 Enkripcija.HashStore = Nothing
                 Password_Form_Box.Text = ""
@@ -93,7 +93,7 @@ Public Class Prijava
                 LoginGreska.Show()
             End If
         Else
-            logovi.FailedLog()
+            logovi.NeuspjesnaPrijavaLog()
             LoginGreska.Show()
             Password_Form_Box.Text = ""
             Enkripcija.HashStore = Nothing
