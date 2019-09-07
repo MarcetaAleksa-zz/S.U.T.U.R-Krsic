@@ -47,6 +47,256 @@ ProjekatVB v1.0
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIll">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIll.PrikazSvihRadnikaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIll.ArtikliDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIll.PrikazSvihRadnikaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIll.ArtikliRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIll.PrikazSvihRadnikaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIll.ArtikliRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIllTableAdapters.PrikazSvihRadnikaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateUpdatedRows(ProjekatVB_v1._0.NapoleonFIll,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateInsertedRows(ProjekatVB_v1._0.NapoleonFIll,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateDeletedRows(ProjekatVB_v1._0.NapoleonFIll,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateAll(ProjekatVB_v1._0.NapoleonFIll)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.korisniciDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.kreditne_karticeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.naziv_opremeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.opremaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.pozicijaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.stanje_racunaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.korisniciRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.kreditne_karticeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.naziv_opremeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.opremaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.pozicijaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.stanje_racunaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.korisniciRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.kreditne_karticeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.naziv_opremeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.opremaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.pozicijaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSet.stanje_racunaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.korisniciTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.kreditne_karticeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.naziv_opremeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.opremaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.pozicijaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.stanje_racunaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(ProjekatVB_v1._0.NapoleonFillDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(ProjekatVB_v1._0.NapoleonFillDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(ProjekatVB_v1._0.NapoleonFillDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager.UpdateAll(ProjekatVB_v1._0.NapoleonFillDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ProjekatVB_v1._0.NapoleonFillDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 <member name="T:ProjekatVB_v1._0.DataSet1">
 <summary>
 Represents a strongly typed in-memory cache of data.

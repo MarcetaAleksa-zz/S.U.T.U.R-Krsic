@@ -34,7 +34,8 @@ Public Class Narudzva
                     If c.GetType Is GetType(Label) Then
                         For i = 0 To brojacOpreme
                             If c.Name = "L3" + i.ToString Then
-                                If c.Text <> "" Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
+                                If c.Text <> "" Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. 
+                                    'Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
                                     Ukupno = Ukupno + c.Text
                                 End If
 

@@ -81,6 +81,14 @@ Partial Class Korisnik
         Me.korisnikTab = New System.Windows.Forms.TabControl()
         Me.U_OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.U_FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
+        Me._S_U_T_U_R_KrsicDataSet = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet()
+        Me.OpremaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.OpremaTableAdapter = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.opremaTableAdapter()
+        Me.TableAdapterManager = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager()
+        Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tip_robe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KolicinaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CijenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
         Me.p9.SuspendLayout()
@@ -100,6 +108,8 @@ Partial Class Korisnik
         Me.TabStorage.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.korisnikTab.SuspendLayout()
+        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OpremaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dugmeOdjava
@@ -675,7 +685,10 @@ Partial Class Korisnik
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImeDataGridViewTextBoxColumn, Me.tip_robe, Me.KolicinaDataGridViewTextBoxColumn, Me.CijenaDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.OpremaBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(7, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(755, 349)
@@ -695,6 +708,55 @@ Partial Class Korisnik
         '
         Me.U_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
     " *.png"
+        '
+        '_S_U_T_U_R_KrsicDataSet
+        '
+        Me._S_U_T_U_R_KrsicDataSet.DataSetName = "_S_U_T_U_R_KrsicDataSet"
+        Me._S_U_T_U_R_KrsicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'OpremaBindingSource
+        '
+        Me.OpremaBindingSource.DataMember = "oprema"
+        Me.OpremaBindingSource.DataSource = Me._S_U_T_U_R_KrsicDataSet
+        '
+        'OpremaTableAdapter
+        '
+        Me.OpremaTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.korisniciTableAdapter = Nothing
+        Me.TableAdapterManager.naziv_opremeTableAdapter = Nothing
+        Me.TableAdapterManager.opremaTableAdapter = Me.OpremaTableAdapter
+        Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'ImeDataGridViewTextBoxColumn
+        '
+        Me.ImeDataGridViewTextBoxColumn.DataPropertyName = "ime"
+        Me.ImeDataGridViewTextBoxColumn.HeaderText = "ime"
+        Me.ImeDataGridViewTextBoxColumn.Name = "ImeDataGridViewTextBoxColumn"
+        Me.ImeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'tip_robe
+        '
+        Me.tip_robe.DataPropertyName = "tip_robe"
+        Me.tip_robe.HeaderText = "tip_robe"
+        Me.tip_robe.Name = "tip_robe"
+        Me.tip_robe.ReadOnly = True
+        '
+        'KolicinaDataGridViewTextBoxColumn
+        '
+        Me.KolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina"
+        Me.KolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina"
+        Me.KolicinaDataGridViewTextBoxColumn.Name = "KolicinaDataGridViewTextBoxColumn"
+        '
+        'CijenaDataGridViewTextBoxColumn
+        '
+        Me.CijenaDataGridViewTextBoxColumn.DataPropertyName = "cijena"
+        Me.CijenaDataGridViewTextBoxColumn.HeaderText = "cijena"
+        Me.CijenaDataGridViewTextBoxColumn.Name = "CijenaDataGridViewTextBoxColumn"
+        Me.CijenaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'Korisnik
         '
@@ -743,6 +805,8 @@ Partial Class Korisnik
         Me.TabStorage.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.korisnikTab.ResumeLayout(False)
+        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OpremaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -804,4 +868,12 @@ Partial Class Korisnik
     Friend WithEvents dugmeOtvoriSliku As Button
     Friend WithEvents U_OpenFileDialog As OpenFileDialog
     Friend WithEvents U_FolderBrowserDialog As FolderBrowserDialog
+    Friend WithEvents _S_U_T_U_R_KrsicDataSet As _S_U_T_U_R_KrsicDataSet
+    Friend WithEvents OpremaBindingSource As BindingSource
+    Friend WithEvents OpremaTableAdapter As _S_U_T_U_R_KrsicDataSetTableAdapters.opremaTableAdapter
+    Friend WithEvents TableAdapterManager As _S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents tip_robe As DataGridViewTextBoxColumn
+    Friend WithEvents KolicinaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

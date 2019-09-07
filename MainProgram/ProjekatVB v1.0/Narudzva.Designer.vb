@@ -27,6 +27,8 @@ Partial Class Narudzva
         Me.Exit_Button = New System.Windows.Forms.Button()
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Purchase_Button = New System.Windows.Forms.Button()
+        Me.Price_Label = New System.Windows.Forms.Label()
+        Me.Price_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -81,6 +83,23 @@ Partial Class Narudzva
         Me.Purchase_Button.TabIndex = 134
         Me.Purchase_Button.Text = "Naruči"
         Me.Purchase_Button.UseVisualStyleBackColor = True
+        '
+        'Price_Label
+        '
+        Me.Price_Label.AutoSize = True
+        Me.Price_Label.Location = New System.Drawing.Point(226, 88)
+        Me.Price_Label.Name = "Price_Label"
+        Me.Price_Label.Size = New System.Drawing.Size(36, 13)
+        Me.Price_Label.TabIndex = 135
+        Me.Price_Label.Text = "Cijena"
+        '
+        'Price_TextBox
+        '
+        Me.Price_TextBox.Location = New System.Drawing.Point(276, 84)
+        Me.Price_TextBox.Name = "Price_TextBox"
+        Me.Price_TextBox.ReadOnly = True
+        Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Price_TextBox.TabIndex = 136
         '
         'Panel3
         '
@@ -251,8 +270,10 @@ Partial Class Narudzva
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Price_TextBox)
         Me.Controls.Add(Me.Purchase_Button)
         Me.Controls.Add(Me.table)
+        Me.Controls.Add(Me.Price_Label)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
@@ -276,6 +297,8 @@ Partial Class Narudzva
     Friend WithEvents Exit_Button As Button
     Friend WithEvents Back_Button As Button
     Friend WithEvents Purchase_Button As Button
+    Friend WithEvents Price_Label As Label
+    Friend WithEvents Price_TextBox As TextBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn

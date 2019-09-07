@@ -41,7 +41,7 @@ Public Class UnosRadnika
         Else
             MsgBox("Lozinke se ne poklapaju.")
             brojac = 0
-            Enkripcija.HashStore = Nothing
+            Enkripcija.HashStoreUser = Nothing
         End If
         If UR_Male_Button.Checked = True Then
             Gender = "Muski"
@@ -134,7 +134,7 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Unesi lozinku ovde"
             URComboBox.SelectedIndex = -1
-            Enkripcija.HashStore = Nothing
+            Enkripcija.HashStoreUser = Nothing
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray
             UR_Birth_TextBox.ForeColor = Color.Gray

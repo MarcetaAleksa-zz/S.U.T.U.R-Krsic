@@ -76,11 +76,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogoviForma.Designer.vb">
-      <DependentUpon>LogoviForma.vb</DependentUpon>
+    <Compile Include="NapoleonFIll.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NapoleonFIll.xsd</DependentUpon>
     </Compile>
-    <Compile Include="LogoviForma.vb">
-      <SubType>Form</SubType>
+    <Compile Include="NapoleonFillDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NapoleonFillDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="proba.Designer.vb">
       <DependentUpon>proba.vb</DependentUpon>
@@ -213,6 +217,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_S_U_T_U_R_KrsicDataSet.vb">
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Administrator.resx">
@@ -235,9 +242,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorForms\UserDobroDosli.resx">
       <DependentUpon>UserDobroDosli.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogoviForma.resx">
-      <DependentUpon>LogoviForma.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrikazSvihRadnika.resx">
       <DependentUpon>PrikazSvihRadnika.vb</DependentUpon>
@@ -277,6 +281,28 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="NapoleonFIll.xsc">
+      <DependentUpon>NapoleonFIll.xsd</DependentUpon>
+    </None>
+    <None Include="NapoleonFIll.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NapoleonFIll.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="NapoleonFIll.xss">
+      <DependentUpon>NapoleonFIll.xsd</DependentUpon>
+    </None>
+    <None Include="NapoleonFillDataSet.xsc">
+      <DependentUpon>NapoleonFillDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NapoleonFillDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NapoleonFillDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NapoleonFillDataSet.xss">
+      <DependentUpon>NapoleonFillDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Radnici.xsc">
       <DependentUpon>Radnici.xsd</DependentUpon>
     </None>

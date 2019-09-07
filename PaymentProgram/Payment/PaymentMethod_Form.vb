@@ -4,7 +4,6 @@ Public Class PaymentMethod_From
     Public Price As String
     Public counter As Integer = 0
     Public ErrorMsg As String
-    
     Private Sub PaymentMethod_From_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim recieve As String = Command()
@@ -40,29 +39,13 @@ Public Class PaymentMethod_From
             Panel4.BackColor = Color.LightGray
         End If
     End Sub
-    Private Sub Email(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim EmailMessage As New MailMessage()
-        'Try
-        ' EmailMessage.From = New MailAddress("grobari@grobari.go")
-        '  EmailMessage.To.Add(Email_TextBox.Text)
-        ' EmailMessage.Subject = "Payment GROBARI DOO"
-        '  EmailMessage.Body = "SO DE SU KA"
-        '  Dim SMTP As New SmtpClient("smtp.gmail.com")
-        '  SMTP.Port = 587
-        '   SMTP.EnableSsl = True
-        '   SMTP.Credentials = New System.Net.NetworkCredential("grobari@grobari.go", "SomePW")
-        '   SMTP.Send(EmailMessage)
-        'Catch ex As Exception
-        '   MsgBox(ex.Message)
-        ' End Try
-    End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
     Private Sub PurchaseButton_Click(sender As Object, e As EventArgs) Handles PurchaseButton.Click
         Dim AvaliableBalance As Double
         Dim tipKartice As String
-
+        Dim EmailMessage As New MailMessage()
         If VisaRadioButton.Checked Then
             tipKartice = "Visa"
         ElseIf AmericanExpressRadioButton.Checked Then
@@ -103,9 +86,23 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                     Me.Close()
                     counter = 3
                     LogFile.Log()
-                    'zamisljenibroj=1 znaci uspjeno odradjena kupovina, zamisljeni broj je iz prvog programa, kada je on 1, onda treba odraditi tamo ono
-                    'gdje se skida unijeta kolicina
-
+                    Try
+                        EmailMessage.From = New MailAddress("s.u.t.u.rkrsic@gmail.com")
+                        EmailMessage.To.Add(EmailTextBox.Text)
+                        EmailMessage.Subject = "S.U.T.U.R Krisic"
+                        EmailMessage.Body = "Poštovani, 
+Vasa narudzba je uspjesna. Proizvodi koje ste narucili ce stici na adresu: " + AdressTextBox.Text + ", u periodu izmedju 7-21 dan. 
+U slucaju dodatnih pitanja nemojte se ustrucavati da nas kontaktirate.
+LP,
+S.U.T.U.R Krsic"
+                        Dim SMTP As New SmtpClient("smtp.gmail.com")
+                        SMTP.Port = 587
+                        SMTP.EnableSsl = True
+                        SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
+                        SMTP.Send(EmailMessage)
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
                 Catch ex As Exception
                     MsgBox("Postoji problem sa vasim pokusajem kupovine.")
                     counter = 3

@@ -228,7 +228,7 @@ SELECT id_robe, ime, kolicina, tip_robe, cijena FROM oprema WHERE (id_robe = @id
   <xs:element name="_S_U_T_U_R_KrsicDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_S_U_T_U_R_KrsicDataSet" msprop:Generator_UserDSName="_S_U_T_U_R_KrsicDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="korisnici" msprop:Generator_TableClassName="korisniciDataTable" msprop:Generator_TableVarName="tablekorisnici" msprop:Generator_TablePropName="korisnici" msprop:Generator_RowDeletingName="korisniciRowDeleting" msprop:Generator_RowChangingName="korisniciRowChanging" msprop:Generator_RowEvHandlerName="korisniciRowChangeEventHandler" msprop:Generator_RowDeletedName="korisniciRowDeleted" msprop:Generator_UserTableName="korisnici" msprop:Generator_RowChangedName="korisniciRowChanged" msprop:Generator_RowEvArgName="korisniciRowChangeEvent" msprop:Generator_RowClassName="korisniciRow">
+        <xs:element name="korisnici" msprop:Generator_TableClassName="korisniciDataTable" msprop:Generator_TableVarName="tablekorisnici" msprop:Generator_RowChangedName="korisniciRowChanged" msprop:Generator_TablePropName="korisnici" msprop:Generator_RowDeletingName="korisniciRowDeleting" msprop:Generator_RowChangingName="korisniciRowChanging" msprop:Generator_RowEvHandlerName="korisniciRowChangeEventHandler" msprop:Generator_RowDeletedName="korisniciRowDeleted" msprop:Generator_RowClassName="korisniciRow" msprop:Generator_UserTableName="korisnici" msprop:Generator_RowEvArgName="korisniciRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="korisnicki_id" msprop:Generator_ColumnVarNameInTable="columnkorisnicki_id" msprop:Generator_ColumnPropNameInRow="korisnicki_id" msprop:Generator_ColumnPropNameInTable="korisnicki_idColumn" msprop:Generator_UserColumnName="korisnicki_id">
@@ -292,7 +292,7 @@ SELECT id_robe, ime, kolicina, tip_robe, cijena FROM oprema WHERE (id_robe = @id
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="naziv_opreme" msprop:Generator_TableClassName="naziv_opremeDataTable" msprop:Generator_TableVarName="tablenaziv_opreme" msprop:Generator_TablePropName="naziv_opreme" msprop:Generator_RowDeletingName="naziv_opremeRowDeleting" msprop:Generator_RowChangingName="naziv_opremeRowChanging" msprop:Generator_RowEvHandlerName="naziv_opremeRowChangeEventHandler" msprop:Generator_RowDeletedName="naziv_opremeRowDeleted" msprop:Generator_UserTableName="naziv_opreme" msprop:Generator_RowChangedName="naziv_opremeRowChanged" msprop:Generator_RowEvArgName="naziv_opremeRowChangeEvent" msprop:Generator_RowClassName="naziv_opremeRow">
+        <xs:element name="naziv_opreme" msprop:Generator_TableClassName="naziv_opremeDataTable" msprop:Generator_TableVarName="tablenaziv_opreme" msprop:Generator_RowChangedName="naziv_opremeRowChanged" msprop:Generator_TablePropName="naziv_opreme" msprop:Generator_RowDeletingName="naziv_opremeRowDeleting" msprop:Generator_RowChangingName="naziv_opremeRowChanging" msprop:Generator_RowEvHandlerName="naziv_opremeRowChangeEventHandler" msprop:Generator_RowDeletedName="naziv_opremeRowDeleted" msprop:Generator_RowClassName="naziv_opremeRow" msprop:Generator_UserTableName="naziv_opreme" msprop:Generator_RowEvArgName="naziv_opremeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_opreme" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_opreme" msprop:Generator_ColumnPropNameInRow="id_opreme" msprop:Generator_ColumnPropNameInTable="id_opremeColumn" msprop:Generator_UserColumnName="id_opreme" type="xs:int" />
@@ -306,7 +306,7 @@ SELECT id_robe, ime, kolicina, tip_robe, cijena FROM oprema WHERE (id_robe = @id
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="oprema" msprop:Generator_TableClassName="opremaDataTable" msprop:Generator_TableVarName="tableoprema" msprop:Generator_TablePropName="oprema" msprop:Generator_RowDeletingName="opremaRowDeleting" msprop:Generator_RowChangingName="opremaRowChanging" msprop:Generator_RowEvHandlerName="opremaRowChangeEventHandler" msprop:Generator_RowDeletedName="opremaRowDeleted" msprop:Generator_UserTableName="oprema" msprop:Generator_RowChangedName="opremaRowChanged" msprop:Generator_RowEvArgName="opremaRowChangeEvent" msprop:Generator_RowClassName="opremaRow">
+        <xs:element name="oprema" msprop:Generator_TableClassName="opremaDataTable" msprop:Generator_TableVarName="tableoprema" msprop:Generator_RowChangedName="opremaRowChanged" msprop:Generator_TablePropName="oprema" msprop:Generator_RowDeletingName="opremaRowDeleting" msprop:Generator_RowChangingName="opremaRowChanging" msprop:Generator_RowEvHandlerName="opremaRowChangeEventHandler" msprop:Generator_RowDeletedName="opremaRowDeleted" msprop:Generator_RowClassName="opremaRow" msprop:Generator_UserTableName="oprema" msprop:Generator_RowEvArgName="opremaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_robe" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_robe" msprop:Generator_ColumnPropNameInRow="id_robe" msprop:Generator_ColumnPropNameInTable="id_robeColumn" msprop:Generator_UserColumnName="id_robe" type="xs:int" />
@@ -340,7 +340,7 @@ SELECT id_robe, ime, kolicina, tip_robe, cijena FROM oprema WHERE (id_robe = @id
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_oprema_naziv_opreme" msdata:parent="naziv_opreme" msdata:child="oprema" msdata:parentkey="id_opreme" msdata:childkey="tip_robe" msprop:Generator_UserChildTable="oprema" msprop:Generator_ChildPropName="GetopremaRows" msprop:Generator_UserRelationName="FK_oprema_naziv_opreme" msprop:Generator_ParentPropName="naziv_opremeRow" msprop:Generator_RelationVarName="relationFK_oprema_naziv_opreme" msprop:Generator_UserParentTable="naziv_opreme" />
+      <msdata:Relationship name="FK_oprema_naziv_opreme" msdata:parent="naziv_opreme" msdata:child="oprema" msdata:parentkey="id_opreme" msdata:childkey="tip_robe" msprop:Generator_UserChildTable="oprema" msprop:Generator_ChildPropName="GetopremaRows" msprop:Generator_UserRelationName="FK_oprema_naziv_opreme" msprop:Generator_RelationVarName="relationFK_oprema_naziv_opreme" msprop:Generator_UserParentTable="naziv_opreme" msprop:Generator_ParentPropName="naziv_opremeRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

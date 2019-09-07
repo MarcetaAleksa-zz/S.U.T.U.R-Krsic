@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NapoleonFIll" targetNamespace="http://tempuri.org/NapoleonFIll.xsd" xmlns:mstns="http://tempuri.org/NapoleonFIll.xsd" xmlns="http://tempuri.org/NapoleonFIll.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="NAPOLEON" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NAPOLEON (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProjekatVB_v1._0.My.MySettings.GlobalReference.Default.NAPOLEON" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PrikazSvihRadnikaTableAdapter" GeneratorDataComponentClassName="PrikazSvihRadnikaTableAdapter" Name="PrikazSvihRadnika" UserDataComponentName="PrikazSvihRadnikaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NAPOLEON (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT korisnicki_id, ime_korisnika, prezime_korisnika, adresa_stanovanja, broj_telefona, email, datum_rodjenja, pol, ime_pozicije FROM dbo.korisnici left join pozicija on (pozicija_id = radna_pozicija)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="korisnicki_id" DataSetColumn="korisnicki_id" />
+              <Mapping SourceColumn="ime_korisnika" DataSetColumn="ime_korisnika" />
+              <Mapping SourceColumn="prezime_korisnika" DataSetColumn="prezime_korisnika" />
+              <Mapping SourceColumn="adresa_stanovanja" DataSetColumn="adresa_stanovanja" />
+              <Mapping SourceColumn="broj_telefona" DataSetColumn="broj_telefona" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="datum_rodjenja" DataSetColumn="datum_rodjenja" />
+              <Mapping SourceColumn="pol" DataSetColumn="pol" />
+              <Mapping SourceColumn="ime_pozicije" DataSetColumn="ime_pozicije" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArtikliTableAdapter" GeneratorDataComponentClassName="ArtikliTableAdapter" Name="Artikli" UserDataComponentName="ArtikliTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NAPOLEON (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select naziv_opreme.ime as tip_opreme, oprema.ime, kolicina, cijena  from oprema left join naziv_opreme on (tip_robe = id_opreme)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="tip_opreme" DataSetColumn="tip_opreme" />
+              <Mapping SourceColumn="ime" DataSetColumn="ime" />
+              <Mapping SourceColumn="kolicina" DataSetColumn="kolicina" />
+              <Mapping SourceColumn="cijena" DataSetColumn="cijena" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NapoleonFIll" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NapoleonFIll" msprop:Generator_UserDSName="NapoleonFIll">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PrikazSvihRadnika" msprop:Generator_TableClassName="PrikazSvihRadnikaDataTable" msprop:Generator_TableVarName="tablePrikazSvihRadnika" msprop:Generator_TablePropName="PrikazSvihRadnika" msprop:Generator_RowDeletingName="PrikazSvihRadnikaRowDeleting" msprop:Generator_RowChangingName="PrikazSvihRadnikaRowChanging" msprop:Generator_RowEvHandlerName="PrikazSvihRadnikaRowChangeEventHandler" msprop:Generator_RowDeletedName="PrikazSvihRadnikaRowDeleted" msprop:Generator_UserTableName="PrikazSvihRadnika" msprop:Generator_RowChangedName="PrikazSvihRadnikaRowChanged" msprop:Generator_RowEvArgName="PrikazSvihRadnikaRowChangeEvent" msprop:Generator_RowClassName="PrikazSvihRadnikaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="korisnicki_id" msprop:Generator_ColumnVarNameInTable="columnkorisnicki_id" msprop:Generator_ColumnPropNameInRow="korisnicki_id" msprop:Generator_ColumnPropNameInTable="korisnicki_idColumn" msprop:Generator_UserColumnName="korisnicki_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ime_korisnika" msprop:Generator_ColumnVarNameInTable="columnime_korisnika" msprop:Generator_ColumnPropNameInRow="ime_korisnika" msprop:Generator_ColumnPropNameInTable="ime_korisnikaColumn" msprop:Generator_UserColumnName="ime_korisnika" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prezime_korisnika" msprop:Generator_ColumnVarNameInTable="columnprezime_korisnika" msprop:Generator_ColumnPropNameInRow="prezime_korisnika" msprop:Generator_ColumnPropNameInTable="prezime_korisnikaColumn" msprop:Generator_UserColumnName="prezime_korisnika" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="adresa_stanovanja" msprop:Generator_ColumnVarNameInTable="columnadresa_stanovanja" msprop:Generator_ColumnPropNameInRow="adresa_stanovanja" msprop:Generator_ColumnPropNameInTable="adresa_stanovanjaColumn" msprop:Generator_UserColumnName="adresa_stanovanja" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="broj_telefona" msprop:Generator_ColumnVarNameInTable="columnbroj_telefona" msprop:Generator_ColumnPropNameInRow="broj_telefona" msprop:Generator_ColumnPropNameInTable="broj_telefonaColumn" msprop:Generator_UserColumnName="broj_telefona" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datum_rodjenja" msprop:Generator_ColumnVarNameInTable="columndatum_rodjenja" msprop:Generator_ColumnPropNameInRow="datum_rodjenja" msprop:Generator_ColumnPropNameInTable="datum_rodjenjaColumn" msprop:Generator_UserColumnName="datum_rodjenja" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pol" msprop:Generator_ColumnVarNameInTable="columnpol" msprop:Generator_ColumnPropNameInRow="pol" msprop:Generator_ColumnPropNameInTable="polColumn" msprop:Generator_UserColumnName="pol" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ime_pozicije" msprop:Generator_ColumnVarNameInTable="columnime_pozicije" msprop:Generator_ColumnPropNameInRow="ime_pozicije" msprop:Generator_ColumnPropNameInTable="ime_pozicijeColumn" msprop:Generator_UserColumnName="ime_pozicije" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Artikli" msprop:Generator_TableClassName="ArtikliDataTable" msprop:Generator_TableVarName="tableArtikli" msprop:Generator_TablePropName="Artikli" msprop:Generator_RowDeletingName="ArtikliRowDeleting" msprop:Generator_RowChangingName="ArtikliRowChanging" msprop:Generator_RowEvHandlerName="ArtikliRowChangeEventHandler" msprop:Generator_RowDeletedName="ArtikliRowDeleted" msprop:Generator_UserTableName="Artikli" msprop:Generator_RowChangedName="ArtikliRowChanged" msprop:Generator_RowEvArgName="ArtikliRowChangeEvent" msprop:Generator_RowClassName="ArtikliRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tip_opreme" msprop:Generator_ColumnVarNameInTable="columntip_opreme" msprop:Generator_ColumnPropNameInRow="tip_opreme" msprop:Generator_ColumnPropNameInTable="tip_opremeColumn" msprop:Generator_UserColumnName="tip_opreme" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ime" msprop:Generator_ColumnVarNameInTable="columnime" msprop:Generator_ColumnPropNameInRow="ime" msprop:Generator_ColumnPropNameInTable="imeColumn" msprop:Generator_UserColumnName="ime">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kolicina" msprop:Generator_ColumnVarNameInTable="columnkolicina" msprop:Generator_ColumnPropNameInRow="kolicina" msprop:Generator_ColumnPropNameInTable="kolicinaColumn" msprop:Generator_UserColumnName="kolicina" type="xs:short" />
+              <xs:element name="cijena" msprop:Generator_ColumnVarNameInTable="columncijena" msprop:Generator_ColumnPropNameInRow="cijena" msprop:Generator_ColumnPropNameInTable="cijenaColumn" msprop:Generator_UserColumnName="cijena" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PrikazSvihRadnika" />
+      <xs:field xpath="mstns:korisnicki_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

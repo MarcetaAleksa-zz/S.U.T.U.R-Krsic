@@ -86,6 +86,17 @@ Namespace My
                 Return CType(Me("S_U_T_U_R_KrsicConnectionString1"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=NAPOLEON\SQLEXPRESS;Initial Catalog=S.U.T.U.R_Krsic;Integrated Securi"& _ 
+            "ty=True")>  _
+        Public ReadOnly Property NAPOLEON() As String
+            Get
+                Return CType(Me("NAPOLEON"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
