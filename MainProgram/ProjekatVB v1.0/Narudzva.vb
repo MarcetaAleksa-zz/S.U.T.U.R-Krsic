@@ -18,7 +18,7 @@ Public Class Narudzva
     End Sub
     Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
 
-        If Ukupno = 0 Then
+        If Ukupno.ToString = "0" Then
 
             Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
             Dim adapter As New SqlDataAdapter(Command)
@@ -49,11 +49,18 @@ Public Class Narudzva
 
         End If
 
-        Process.Start(My.Application.Info.DirectoryPath + "/Payment.lnk", Ukupno)
+        Process.Start(My.Application.Info.DirectoryPath + "/Payment.lnk", CInt(Label8.Text))
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerTxtBoxSamoBrojevi.Tick
-
+        'If Ukupno > 0 Then
+        '    Price_Label.Visible = True
+        '    Label8.Visible = True
+        '    Label8.Text = Ukupno.ToString
+        'Else
+        '    Price_Label.Visible = False
+        '    Label8.Visible = False
+        'End If
         Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(Command)
         Dim oprema_table As New DataTable()
@@ -68,17 +75,18 @@ Public Class Narudzva
 
             For Each c As Control In table.Controls
                 If c.GetType Is GetType(TextBox) Then
-                    If (System.Text.RegularExpressions.Regex.IsMatch(c.Text, "[^0-9]")) Then ' ovde smo napravili da svi txtbox u table.controls mogu samo brojeve da primaju
-                        c.Text = c.Text.Remove(c.Text.Length - 1)
-                    End If
-
+                    For i = 0 To brojacOpreme
+                        If (System.Text.RegularExpressions.Regex.IsMatch(c.Text, "[^0-9]")) Then ' ovde smo napravili da svi txtbox u table.controls mogu samo brojeve da primaju
+                            c.Text = c.Text.Remove(c.Text.Length - 1)
+                        End If
+                    Next i
 
                 End If
             Next
 
             For Each c As Control In table.Controls
                 If c.GetType Is GetType(TextBox) Then
-                    For i = 0 To brojacOpreme
+                    For i = 0 To brojacOpreme                             'ovde imamo bug probija nam preko kolicine ako prvo unesemo kolicinu a da nije prva po redu, tj ne prvi txtbox
                         If c.Name = "t" + i.ToString Then
                             If c.Text > oprema_table.Rows(i)(2) Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
                                 c.Text = oprema_table.Rows(i)(2)
@@ -167,6 +175,7 @@ Public Class Narudzva
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles TimerRacunanIznos.Tick
+        Ukupno = 0
         Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(Command)
         Dim oprema_table As New DataTable()
@@ -196,6 +205,8 @@ Public Class Narudzva
                                             Dim b As Double
                                             b = oprema_table.Rows(i)(4)
                                             g.Text = CInt(d.Text) * b '& " KM"
+                                            Ukupno = +CInt(g.Text)
+
                                         End If
 
 
@@ -217,6 +228,8 @@ Public Class Narudzva
     End Sub
 
     Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
+        '
+
         'Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
         'Dim adapter As New SqlDataAdapter(Command)
         'Dim oprema_table As New DataTable()
@@ -268,6 +281,42 @@ Public Class Narudzva
 
         'Catch ex As Exception
         'End Try
+    End Sub
+
+    Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Ukupno = 0
+        Price_Label.Visible = False
+        Label8.Visible = False
+        Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(Command)
+        Dim oprema_table As New DataTable()
+
+
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+
+            Dim i As Integer = 0
+            For Each g As Control In table.Controls
+                If g.GetType Is GetType(Label) Then
+                    For i = 0 To brojacOpreme
+                        If g.Name = "L3" + i.ToString Then
+
+                            If g.Text <> "" And g.Text <> "0" Then
+                                Ukupno = Ukupno + CInt(g.Text)
+                            End If
+
+
+                        End If
+                    Next i
+                End If
+            Next
+            Price_Label.Visible = True
+            Label8.Visible = True
+            Label8.Text = Ukupno.ToString
+        Catch ex As Exception
+        End Try
     End Sub
 End Class
 

@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormaLogova.Designer.vb">
+      <DependentUpon>FormaLogova.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormaLogova.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NapoleonFIll.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,6 +249,9 @@
     <EmbeddedResource Include="ErrorForms\UserDobroDosli.resx">
       <DependentUpon>UserDobroDosli.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormaLogova.resx">
+      <DependentUpon>FormaLogova.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrikazSvihRadnika.resx">
       <DependentUpon>PrikazSvihRadnika.vb</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +281,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GostPrikazArtikala.resx">
       <DependentUpon>GostPrikazArtikala.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Narudzva.resx">
       <DependentUpon>Narudzva.vb</DependentUpon>

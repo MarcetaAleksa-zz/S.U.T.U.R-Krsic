@@ -21,10 +21,7 @@
         '    table.Controls.Add(L, 0, i)
         'Next
     End Sub
-    Private Function PravljenjeObjekta(j As Integer, i As Integer, l As Label)
 
-
-    End Function
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim L As Label = New Label
         With L

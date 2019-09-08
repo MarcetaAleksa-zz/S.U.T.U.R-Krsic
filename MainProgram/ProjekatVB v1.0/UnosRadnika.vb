@@ -121,7 +121,7 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
             End If
         Next
         If brojac >= 4 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
-            logovi.DodavanjeKorisnikaLog()
+            logovi.DodavanjeKorisnika()
             UR_Name_TextBox.Text = "Unesi ime ovde"
             UR_Surname_TextBox.Text = "Unesi prezime ovde"
             UR_Birth_TextBox.Text = "Unesi datum rođenja ovde"

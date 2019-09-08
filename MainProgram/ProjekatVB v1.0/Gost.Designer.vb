@@ -57,7 +57,7 @@ Partial Class Gost
         '
         'Exit_Button
         '
-        Me.Exit_Button.Location = New System.Drawing.Point(175, 205)
+        Me.Exit_Button.Location = New System.Drawing.Point(175, 171)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
         Me.Exit_Button.TabIndex = 4
@@ -67,7 +67,7 @@ Partial Class Gost
         'Back_Button
         '
         Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
-        Me.Back_Button.Location = New System.Drawing.Point(103, 205)
+        Me.Back_Button.Location = New System.Drawing.Point(103, 171)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(39, 35)
         Me.Back_Button.TabIndex = 3

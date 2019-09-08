@@ -83,7 +83,7 @@ Public Class PretragaRadnika
             containerdb.connection.Open()
             command.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = U_Username_TextBox.Text
             command.ExecuteNonQuery()
-            logovi.BrisanjeKorisnikaLog()
+            logovi.BrisanjeKorisnika()
             containerdb.connection.Close()
             ComboBox1.SelectedIndex = -1
             Me.Controls.Clear() 'removes all the controls on the form

@@ -28,7 +28,6 @@ Partial Class Narudzva
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Purchase_Button = New System.Windows.Forms.Button()
         Me.Price_Label = New System.Windows.Forms.Label()
-        Me.Price_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,6 +52,9 @@ Partial Class Narudzva
         Me.TimerRacunanIznos = New System.Windows.Forms.Timer(Me.components)
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TimerDaLiJeProslaUplata = New System.Windows.Forms.Timer(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.WorkersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -87,24 +89,22 @@ Partial Class Narudzva
         'Price_Label
         '
         Me.Price_Label.AutoSize = True
-        Me.Price_Label.Location = New System.Drawing.Point(226, 88)
+        Me.Price_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Price_Label.ForeColor = System.Drawing.SystemColors.Control
+        Me.Price_Label.Location = New System.Drawing.Point(359, 44)
         Me.Price_Label.Name = "Price_Label"
-        Me.Price_Label.Size = New System.Drawing.Size(36, 13)
+        Me.Price_Label.Size = New System.Drawing.Size(81, 24)
         Me.Price_Label.TabIndex = 135
-        Me.Price_Label.Text = "Cijena"
-        '
-        'Price_TextBox
-        '
-        Me.Price_TextBox.Location = New System.Drawing.Point(276, 84)
-        Me.Price_TextBox.Name = "Price_TextBox"
-        Me.Price_TextBox.ReadOnly = True
-        Me.Price_TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Price_TextBox.TabIndex = 136
+        Me.Price_Label.Text = "Ukupno:"
+        Me.Price_Label.Visible = False
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.Price_Label)
         Me.Panel3.Location = New System.Drawing.Point(0, 1)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(554, 68)
@@ -261,6 +261,32 @@ Partial Class Narudzva
         Me.TimerDaLiJeProslaUplata.Enabled = True
         Me.TimerDaLiJeProslaUplata.Interval = 1
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label7.Location = New System.Drawing.Point(438, 44)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(0, 24)
+        Me.Label7.TabIndex = 136
+        Me.Label7.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label8.Location = New System.Drawing.Point(438, 44)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(0, 24)
+        Me.Label8.TabIndex = 137
+        Me.Label8.Visible = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
         'Narudzva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -270,10 +296,8 @@ Partial Class Narudzva
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Price_TextBox)
         Me.Controls.Add(Me.Purchase_Button)
         Me.Controls.Add(Me.table)
-        Me.Controls.Add(Me.Price_Label)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
@@ -298,7 +322,6 @@ Partial Class Narudzva
     Friend WithEvents Back_Button As Button
     Friend WithEvents Purchase_Button As Button
     Friend WithEvents Price_Label As Label
-    Friend WithEvents Price_TextBox As TextBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
@@ -323,4 +346,7 @@ Partial Class Narudzva
     Friend WithEvents TimerRacunanIznos As Timer
     Friend WithEvents Label6 As Label
     Friend WithEvents TimerDaLiJeProslaUplata As Timer
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Timer1 As Timer
 End Class
