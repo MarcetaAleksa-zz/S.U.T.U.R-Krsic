@@ -67,7 +67,6 @@ Partial Class FormaLogova
         Me.NoviNalogButton.TabIndex = 106
         Me.NoviNalogButton.Text = "Uspjesne prijave"
         Me.NoviNalogButton.UseVisualStyleBackColor = False
-        Me.NoviNalogButton.Visible = False
         '
         'Button1
         '
@@ -80,7 +79,6 @@ Partial Class FormaLogova
         Me.Button1.TabIndex = 106
         Me.Button1.Text = "Neuspjesne prijave"
         Me.Button1.UseVisualStyleBackColor = False
-        Me.Button1.Visible = False
         '
         'Button2
         '
@@ -93,7 +91,6 @@ Partial Class FormaLogova
         Me.Button2.TabIndex = 106
         Me.Button2.Text = "Dodani korisnici"
         Me.Button2.UseVisualStyleBackColor = False
-        Me.Button2.Visible = False
         '
         'Button3
         '
@@ -106,7 +103,6 @@ Partial Class FormaLogova
         Me.Button3.TabIndex = 106
         Me.Button3.Text = "Obrisani korisnici"
         Me.Button3.UseVisualStyleBackColor = False
-        Me.Button3.Visible = False
         '
         'Button4
         '
@@ -119,7 +115,6 @@ Partial Class FormaLogova
         Me.Button4.TabIndex = 106
         Me.Button4.Text = "Uspjesne transakcijie"
         Me.Button4.UseVisualStyleBackColor = False
-        Me.Button4.Visible = False
         '
         'Button5
         '
@@ -132,7 +127,6 @@ Partial Class FormaLogova
         Me.Button5.TabIndex = 106
         Me.Button5.Text = "Neuspjesne transakcije"
         Me.Button5.UseVisualStyleBackColor = False
-        Me.Button5.Visible = False
         '
         'Exit_Button
         '

@@ -139,7 +139,23 @@ Public Class Prijava
     End Sub
 
     Private Sub Prijava_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim ComputerName As String
+        ComputerName = System.Net.Dns.GetHostName
+        If ComputerName = "Napoleon" Then
+            Try
+                Podesavanja.OvoJeBaza = "Napoleon"
+                Podesavanja.OvoJeNalog = "marce"
 
+            Catch ex As Exception
+
+            End Try
+        ElseIf ComputerName = "Spartan" Then
+            Try
+                Podesavanja.OvoJeBaza = "Spartan"
+                Podesavanja.OvoJeNalog = "Aleksandar"
+            Catch ex As Exception
+            End Try
+        End If
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
@@ -153,5 +169,10 @@ Public Class Prijava
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) 
         proba.Show()
+    End Sub
+
+    Private Sub Settings_Click(sender As Object, e As EventArgs) Handles Settings.Click
+        Podesavanja.Show()
+
     End Sub
 End Class

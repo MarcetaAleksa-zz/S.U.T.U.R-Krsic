@@ -37,6 +37,7 @@ Partial Class Prijava
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Settings = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -171,11 +172,21 @@ Partial Class Prijava
         Me.Panel3.Size = New System.Drawing.Size(405, 68)
         Me.Panel3.TabIndex = 6
         '
+        'Settings
+        '
+        Me.Settings.Location = New System.Drawing.Point(319, 230)
+        Me.Settings.Name = "Settings"
+        Me.Settings.Size = New System.Drawing.Size(21, 23)
+        Me.Settings.TabIndex = 8
+        Me.Settings.Text = "S"
+        Me.Settings.UseVisualStyleBackColor = True
+        '
         'Prijava
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(402, 305)
+        Me.Controls.Add(Me.Settings)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -213,4 +224,5 @@ Partial Class Prijava
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents Settings As Button
 End Class

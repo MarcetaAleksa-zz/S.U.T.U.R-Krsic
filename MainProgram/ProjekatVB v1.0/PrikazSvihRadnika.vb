@@ -40,8 +40,6 @@
             ' Me.KorisniciTableAdapter.
             PraznaPoljaLabel.Visible = False
             PonistiIzmjeneDugme.Visible = False
-
-
         End If
     End Sub
 
@@ -63,8 +61,19 @@
     End Sub
 
     Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
+        Dim ComputerName As String
+        ComputerName = System.Net.Dns.GetHostName
+        If ComputerName = "Napoleon" Then
+            Try
+                Me.PrikazSvihRadnikaTableAdapter.Fill(Me.NapoleonFIll.PrikazSvihRadnika)
+            Catch ex As Exception
+
+            End Try
+        ElseIf ComputerName = "Spartan" Then
+            Try
+                Me.KorisniciTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.korisnici)
+            Catch ex As Exception
+            End Try
+        End If
     End Sub
-
-
-
 End Class

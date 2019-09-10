@@ -160,6 +160,12 @@
     <Compile Include="PretragaRadnika.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Podesavanja.Designer.vb">
+      <DependentUpon>Podesavanja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Podesavanja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UnosRadnika.Designer.vb">
       <DependentUpon>UnosRadnika.vb</DependentUpon>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="proba.resx">
       <DependentUpon>proba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Podesavanja.resx">
+      <DependentUpon>Podesavanja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosRadnika.resx">
       <DependentUpon>UnosRadnika.vb</DependentUpon>
