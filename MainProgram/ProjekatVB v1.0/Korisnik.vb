@@ -66,8 +66,8 @@ Public Class Korisnik
         brojtelefonaTextBox.BackColor = Color.PaleGreen
         p8.BackColor = Color.PaleGreen
 
-        promijenislikuLabel.Visible = True
-        dugmeOtvoriSliku.Visible = True
+        '   promijenislikuLabel.Visible = True
+        '  dugmeOtvoriSliku.Visible = True
 
     End Sub
 
@@ -115,8 +115,8 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
         brojtelefonaTextBox.BackColor = Color.FromArgb(235, 235, 235)
         p8.BackColor = Color.FromArgb(235, 235, 235)
 
-        promijenislikuLabel.Visible = False
-        dugmeOtvoriSliku.Visible = False
+        'promijenislikuLabel.Visible = False
+        'dugmeOtvoriSliku.Visible = False
 
     End Sub
 
@@ -184,7 +184,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
             Case < (Mjesec + 1)
 
                 MsgBox("izabrali ste mjesec koji jos nije nastupio.
-        odatci prikazani ovde su pretpostakva kakva bi vam plata trebala biti u slucaju da odradite u potpunosti date mjesece.")
+        Podaci prikazani ovde su pretpostakva kakva bi vam plata trebala biti u slucaju da odradite u potpunosti date mjesece.")
 
         End Select
         Dim command As New SqlCommand("DECLARE @pocetni_datum DATETIME = '2019-01-31';

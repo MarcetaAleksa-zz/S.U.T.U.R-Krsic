@@ -43,7 +43,12 @@ Public Class PretragaRadnika
             U_Username_TextBox.Text = user_table.Rows(0)(0)
             U_Possition_TextBox.Text = pozicijaTbl.Rows(0)(0)
             U_Phone_TextBox.Text = user_table.Rows(0)(5)
-            U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            If System.IO.File.Exists("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
+                U_Picture.Image = Image.FromFile("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            Else
+                U_Picture.Image = Nothing
+            End If
+
             ' Aleksandar : aleksandar
         Catch ex As Exception
         End Try
@@ -95,6 +100,9 @@ Public Class PretragaRadnika
         End Try
     End Sub
 
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+
+    End Sub
 End Class
 
 
