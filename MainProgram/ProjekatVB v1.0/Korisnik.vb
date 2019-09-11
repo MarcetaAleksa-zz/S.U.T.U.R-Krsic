@@ -136,6 +136,8 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
     End Sub
 
     Private Sub Korisnik_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
+        Me.ArtikliTableAdapter.Fill(Me.NapoleonFIll.Artikli)
         'TODO: This line of code loads data into the '_S_U_T_U_R_KrsicDataSet.oprema' table. You can move, or remove it, as needed.
         'Me.OpremaTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.oprema)
 
