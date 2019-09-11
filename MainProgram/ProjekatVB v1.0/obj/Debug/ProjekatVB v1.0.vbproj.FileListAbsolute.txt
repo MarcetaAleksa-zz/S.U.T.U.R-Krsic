@@ -225,4 +225,3 @@ C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debu
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.FormaLogova.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.FormaLogova.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Podesavanja.resources
-C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Podesavanja.resources

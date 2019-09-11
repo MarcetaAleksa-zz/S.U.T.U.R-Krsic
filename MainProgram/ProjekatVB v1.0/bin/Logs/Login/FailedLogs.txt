@@ -359,15 +359,3 @@ Username: NevenK;; Password: @rm@tura;; Date of Attempt: 07-Sep-2019 09:54:40
 Username: NevenK;; Password: P@$$w0rd;; Date of Attempt: 07-Sep-2019 10:03:57
 Username: Unesi korisničko ime ovde;; Password: Unesi lozinku ovde;; Date of Attempt: 08-Sep-2019 03:20:04
 Username: HarunH;; Password: St0rmg@rd;; Date of Attempt: 10-Sep-2019 11:05:56
-Username: Pazno;; Password: P@$$w0rd;; Date of Attempt: 11-Sep-2019 08:34:53
-Username: Pazno;; Password: P@$$w0rd;; Date of Attempt: 11-Sep-2019 08:34:56
-Username: Pazno;; Password: P@$$w0rd;; Date of Attempt: 11-Sep-2019 08:49:21
-Username: Pazno;; Password: P@$$w0rd;; Date of Attempt: 11-Sep-2019 08:49:24
-Username: NevenK;; Password: @rm@tur@;; Date of Attempt: 11-Sep-2019 08:55:50
-Username: NevenK;; Password: @rm@tUr@;; Date of Attempt: 11-Sep-2019 08:56:06
-Username: AmarB;; Password: toGen;; Date of Attempt: 11-Sep-2019 08:56:15
-Username: AmarB;; Password: P@$$w0rd;; Date of Attempt: 11-Sep-2019 08:56:18
-Username: AmarB;; Password: S@ur0n;; Date of Attempt: 11-Sep-2019 08:56:49
-Username: AmarB;; Password: S@ur0n;; Date of Attempt: 11-Sep-2019 08:56:51
-Username: SasaB;; Password: P@$$w0rd;; Date of Attempt: 11-Sep-2019 08:57:44
-Username: SasaB;; Password: P@$$w0rd;; Date of Attempt: 11-Sep-2019 09:03:56

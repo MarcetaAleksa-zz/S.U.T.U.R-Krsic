@@ -54,7 +54,6 @@ Partial Class PretragaRadnika
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.Brisanje = New System.Windows.Forms.Button()
         Me.IzbrisiLabel = New System.Windows.Forms.Label()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -316,7 +315,6 @@ Partial Class PretragaRadnika
         Me.U_Picture.Location = New System.Drawing.Point(260, 122)
         Me.U_Picture.Name = "U_Picture"
         Me.U_Picture.Size = New System.Drawing.Size(126, 113)
-        Me.U_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.U_Picture.TabIndex = 26
         Me.U_Picture.TabStop = False
         '
@@ -352,9 +350,6 @@ Partial Class PretragaRadnika
         Me.IzbrisiLabel.TabIndex = 114
         Me.IzbrisiLabel.Text = "Izbrisi korisnika:"
         Me.IzbrisiLabel.Visible = False
-        '
-        'Timer2
-        '
         '
         'PretragaRadnika
         '
@@ -437,5 +432,4 @@ Partial Class PretragaRadnika
     Friend WithEvents Back_Button As Button
     Friend WithEvents Brisanje As Button
     Friend WithEvents IzbrisiLabel As Label
-    Friend WithEvents Timer2 As Timer
 End Class
