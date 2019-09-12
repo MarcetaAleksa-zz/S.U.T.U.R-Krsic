@@ -34,13 +34,13 @@ Partial Class GostPrikazArtikala
         Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArtikliTableAdapter = New ProjekatVB_v1._0.DataSet1TableAdapters.ArtikliTableAdapter()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
         Me.ArtikliBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
         Me.ArtikliBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArtikliTableAdapter1 = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
         Me.TableAdapterManager = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
-        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
         Me.TableAdapterManager1 = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,11 +51,11 @@ Partial Class GostPrikazArtikala
         CType(Me.Radnici, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Exit_Button
@@ -123,11 +123,21 @@ Partial Class GostPrikazArtikala
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImeDataGridViewTextBoxColumn, Me.TipopremeDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.CijenaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.DataTable1BindingSource
+        Me.DataGridView1.DataSource = Me.ArtikliBindingSource2
         Me.DataGridView1.Location = New System.Drawing.Point(23, 136)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(443, 315)
         Me.DataGridView1.TabIndex = 11
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.SpartanFill
+        '
+        'SpartanFill
+        '
+        Me.SpartanFill.DataSetName = "SpartanFill"
+        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ArtikliBindingSource2
         '
@@ -153,16 +163,6 @@ Partial Class GostPrikazArtikala
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'SpartanFill
-        '
-        Me.SpartanFill.DataSetName = "SpartanFill"
-        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataTable1BindingSource
-        '
-        Me.DataTable1BindingSource.DataMember = "DataTable1"
-        Me.DataTable1BindingSource.DataSource = Me.SpartanFill
         '
         'DataTable1TableAdapter
         '
@@ -217,11 +217,11 @@ Partial Class GostPrikazArtikala
         CType(Me.Radnici, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtikliBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtikliBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

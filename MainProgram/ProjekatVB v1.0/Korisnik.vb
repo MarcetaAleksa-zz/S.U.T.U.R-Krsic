@@ -137,7 +137,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
 
     Private Sub Korisnik_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'SpartanFill.DataTable1' table. You can move, or remove it, as needed.
-        Me.DataTable1TableAdapter.Fill(Me.SpartanFill.DataTable1)
+
 
 
         Dim ComputerName As String

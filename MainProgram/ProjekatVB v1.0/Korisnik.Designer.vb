@@ -78,6 +78,8 @@ Partial Class Korisnik
         Me.dugmePonisti = New System.Windows.Forms.Button()
         Me.TabStorage = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
         Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
         Me.OpremaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -89,12 +91,10 @@ Partial Class Korisnik
         Me.TableAdapterManager = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager()
         Me.ArtikliTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
         Me.TableAdapterManager1 = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
-        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
         Me.TableAdapterManager2 = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
-        Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.KolicinaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CijenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
@@ -115,13 +115,13 @@ Partial Class Korisnik
         CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabStorage.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OpremaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.korisnikTab.SuspendLayout()
-        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dugmeOdjava
@@ -699,12 +699,22 @@ Partial Class Korisnik
         '
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImeDataGridViewTextBoxColumn, Me.TipopremeDataGridViewTextBoxColumn, Me.KolicinaDataGridViewTextBoxColumn, Me.CijenaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.DataTable1BindingSource
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TipopremeDataGridViewTextBoxColumn, Me.ImeDataGridViewTextBoxColumn, Me.KolicinaDataGridViewTextBoxColumn, Me.CijenaDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.ArtikliBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(7, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(755, 349)
         Me.DataGridView1.TabIndex = 0
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.SpartanFill
+        '
+        'SpartanFill
+        '
+        Me.SpartanFill.DataSetName = "SpartanFill"
+        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ArtikliBindingSource
         '
@@ -763,16 +773,6 @@ Partial Class Korisnik
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'SpartanFill
-        '
-        Me.SpartanFill.DataSetName = "SpartanFill"
-        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataTable1BindingSource
-        '
-        Me.DataTable1BindingSource.DataMember = "DataTable1"
-        Me.DataTable1BindingSource.DataSource = Me.SpartanFill
-        '
         'DataTable1TableAdapter
         '
         Me.DataTable1TableAdapter.ClearBeforeFill = True
@@ -783,19 +783,17 @@ Partial Class Korisnik
         Me.TableAdapterManager2.Connection = Nothing
         Me.TableAdapterManager2.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'ImeDataGridViewTextBoxColumn
-        '
-        Me.ImeDataGridViewTextBoxColumn.DataPropertyName = "ime"
-        Me.ImeDataGridViewTextBoxColumn.HeaderText = "ime"
-        Me.ImeDataGridViewTextBoxColumn.Name = "ImeDataGridViewTextBoxColumn"
-        Me.ImeDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'TipopremeDataGridViewTextBoxColumn
         '
         Me.TipopremeDataGridViewTextBoxColumn.DataPropertyName = "tip_opreme"
         Me.TipopremeDataGridViewTextBoxColumn.HeaderText = "tip_opreme"
         Me.TipopremeDataGridViewTextBoxColumn.Name = "TipopremeDataGridViewTextBoxColumn"
-        Me.TipopremeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ImeDataGridViewTextBoxColumn
+        '
+        Me.ImeDataGridViewTextBoxColumn.DataPropertyName = "ime"
+        Me.ImeDataGridViewTextBoxColumn.HeaderText = "ime"
+        Me.ImeDataGridViewTextBoxColumn.Name = "ImeDataGridViewTextBoxColumn"
         '
         'KolicinaDataGridViewTextBoxColumn
         '
@@ -808,7 +806,6 @@ Partial Class Korisnik
         Me.CijenaDataGridViewTextBoxColumn.DataPropertyName = "cijena"
         Me.CijenaDataGridViewTextBoxColumn.HeaderText = "cijena"
         Me.CijenaDataGridViewTextBoxColumn.Name = "CijenaDataGridViewTextBoxColumn"
-        Me.CijenaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'Korisnik
         '
@@ -856,13 +853,13 @@ Partial Class Korisnik
         CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabStorage.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OpremaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.korisnikTab.ResumeLayout(False)
-        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -936,8 +933,8 @@ Partial Class Korisnik
     Friend WithEvents DataTable1BindingSource As BindingSource
     Friend WithEvents DataTable1TableAdapter As SpartanFillTableAdapters.DataTable1TableAdapter
     Friend WithEvents TableAdapterManager2 As SpartanFillTableAdapters.TableAdapterManager
-    Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TipopremeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KolicinaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

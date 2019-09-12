@@ -74,7 +74,7 @@
             End Try
         ElseIf ComputerName = "Spartan" Then
             Try
-                Me.KorisniciTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.korisnici)
+                Me.DataTable2TableAdapter.Fill(Me.SpartanFill.DataTable2)
             Catch ex As Exception
             End Try
         End If
