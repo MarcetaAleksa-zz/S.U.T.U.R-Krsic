@@ -4,11 +4,11 @@
         Me.Close()
         If Prijava.tipNaloga <= 3 Then
             Administrator.Show()
-            Button9.Visible = False
+            'Button9.Visible = False
 
         ElseIf Prijava.tipNaloga > 3 Then
             Korisnik.Show()
-            Button9.Visible = False
+            'Button9.Visible = False
         Else
 
             Gost.Show()
@@ -45,12 +45,14 @@
         'End If
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs)
         Me.Hide()
         Kupovina.Show()
     End Sub
 
     Private Sub GostPrikazArtikala_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'SpartanFill.DataTable1' table. You can move, or remove it, as needed.
+
         'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
 
         'TODO: This line of code loads data into the 'Radnici.Artikli' table. You can move, or remove it, as needed.
@@ -67,7 +69,7 @@
             End Try
         ElseIf ComputerName = "Spartan" Then
             Try
-                Me.ArtikliTableAdapter.Fill(Me.Radnici.Artikli)
+                Me.DataTable1TableAdapter.Fill(Me.SpartanFill.DataTable1)
             Catch ex As Exception
             End Try
         End If

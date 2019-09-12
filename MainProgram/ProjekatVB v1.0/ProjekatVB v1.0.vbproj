@@ -87,9 +87,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NapoleonFIll.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NapoleonFIll.vb">
+      <DependentUpon>NapoleonFIll.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NapoleonFillDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>NapoleonFillDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NapoleonFillDataSet.vb">
       <DependentUpon>NapoleonFillDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="proba.Designer.vb">
@@ -166,6 +172,19 @@
     <Compile Include="Podesavanja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SpartanFill.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpartanFill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SpartanFill.vb">
+      <DependentUpon>SpartanFill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPARTANFillDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPARTANFillDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UnosRadnika.Designer.vb">
       <DependentUpon>UnosRadnika.vb</DependentUpon>
     </Compile>
@@ -231,6 +250,11 @@
     </Compile>
     <Compile Include="_S_U_T_U_R_KrsicDataSet.vb">
       <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_S_U_T_U_R_KrsicDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet1.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -343,6 +367,28 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="SpartanFill.xsc">
+      <DependentUpon>SpartanFill.xsd</DependentUpon>
+    </None>
+    <None Include="SpartanFill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SpartanFill.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="SpartanFill.xss">
+      <DependentUpon>SpartanFill.xsd</DependentUpon>
+    </None>
+    <None Include="SPARTANFillDataSet.xsc">
+      <DependentUpon>SPARTANFillDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SPARTANFillDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPARTANFillDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPARTANFillDataSet.xss">
+      <DependentUpon>SPARTANFillDataSet.xsd</DependentUpon>
+    </None>
     <None Include="_S_U_T_U_R_KrsicDataSet.xsc">
       <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
     </None>
@@ -353,6 +399,17 @@
     </None>
     <None Include="_S_U_T_U_R_KrsicDataSet.xss">
       <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_S_U_T_U_R_KrsicDataSet1.xsc">
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_S_U_T_U_R_KrsicDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_S_U_T_U_R_KrsicDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_S_U_T_U_R_KrsicDataSet1.xss">
+      <DependentUpon>_S_U_T_U_R_KrsicDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

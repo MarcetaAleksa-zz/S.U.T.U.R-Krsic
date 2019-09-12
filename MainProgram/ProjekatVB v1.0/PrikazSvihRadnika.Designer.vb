@@ -32,14 +32,18 @@ Partial Class PrikazSvihRadnika
         Me.PraznaPoljaLabel = New System.Windows.Forms.Label()
         Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.PrikazSvihRadnikaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
         Me.KorisniciBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me._S_U_T_U_R_KrsicDataSet = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet()
         Me.KorisniciTableAdapter = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.korisniciTableAdapter()
         Me.TableAdapterManager = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager()
-        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
-        Me.PrikazSvihRadnikaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PrikazSvihRadnikaTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.PrikazSvihRadnikaTableAdapter()
         Me.TableAdapterManager1 = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
+        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
+        Me.DataTable2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataTable2TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable2TableAdapter()
+        Me.TableAdapterManager2 = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
         Me.KorisnickiidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImekorisnikaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrezimekorisnikaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,10 +55,12 @@ Partial Class PrikazSvihRadnika
         Me.ImepozicijeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrikazSvihRadnikaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KorisniciBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PrikazSvihRadnikaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -142,12 +148,22 @@ Partial Class PrikazSvihRadnika
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KorisnickiidDataGridViewTextBoxColumn, Me.ImekorisnikaDataGridViewTextBoxColumn, Me.PrezimekorisnikaDataGridViewTextBoxColumn, Me.AdresastanovanjaDataGridViewTextBoxColumn, Me.BrojtelefonaDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.DatumrodjenjaDataGridViewTextBoxColumn, Me.PolDataGridViewTextBoxColumn, Me.ImepozicijeDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.PrikazSvihRadnikaBindingSource
+        Me.DataGridView1.DataSource = Me.DataTable2BindingSource
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(27, 153)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(945, 252)
         Me.DataGridView1.TabIndex = 137
+        '
+        'PrikazSvihRadnikaBindingSource
+        '
+        Me.PrikazSvihRadnikaBindingSource.DataMember = "PrikazSvihRadnika"
+        Me.PrikazSvihRadnikaBindingSource.DataSource = Me.NapoleonFIll
+        '
+        'NapoleonFIll
+        '
+        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
+        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'KorisniciBindingSource
         '
@@ -171,16 +187,6 @@ Partial Class PrikazSvihRadnika
         Me.TableAdapterManager.opremaTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'NapoleonFIll
-        '
-        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
-        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PrikazSvihRadnikaBindingSource
-        '
-        Me.PrikazSvihRadnikaBindingSource.DataMember = "PrikazSvihRadnika"
-        Me.PrikazSvihRadnikaBindingSource.DataSource = Me.NapoleonFIll
-        '
         'PrikazSvihRadnikaTableAdapter
         '
         Me.PrikazSvihRadnikaTableAdapter.ClearBeforeFill = True
@@ -190,6 +196,26 @@ Partial Class PrikazSvihRadnika
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SpartanFill
+        '
+        Me.SpartanFill.DataSetName = "SpartanFill"
+        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataTable2BindingSource
+        '
+        Me.DataTable2BindingSource.DataMember = "DataTable2"
+        Me.DataTable2BindingSource.DataSource = Me.SpartanFill
+        '
+        'DataTable2TableAdapter
+        '
+        Me.DataTable2TableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager2
+        '
+        Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager2.Connection = Nothing
+        Me.TableAdapterManager2.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'KorisnickiidDataGridViewTextBoxColumn
         '
@@ -265,10 +291,12 @@ Partial Class PrikazSvihRadnika
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrikazSvihRadnikaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KorisniciBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PrikazSvihRadnikaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -290,6 +318,10 @@ Partial Class PrikazSvihRadnika
     Friend WithEvents PrikazSvihRadnikaBindingSource As BindingSource
     Friend WithEvents PrikazSvihRadnikaTableAdapter As NapoleonFIllTableAdapters.PrikazSvihRadnikaTableAdapter
     Friend WithEvents TableAdapterManager1 As NapoleonFIllTableAdapters.TableAdapterManager
+    Friend WithEvents SpartanFill As SpartanFill
+    Friend WithEvents DataTable2BindingSource As BindingSource
+    Friend WithEvents DataTable2TableAdapter As SpartanFillTableAdapters.DataTable2TableAdapter
+    Friend WithEvents TableAdapterManager2 As SpartanFillTableAdapters.TableAdapterManager
     Friend WithEvents KorisnickiidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ImekorisnikaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrezimekorisnikaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

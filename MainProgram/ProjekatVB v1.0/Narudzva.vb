@@ -84,18 +84,18 @@ Public Class Narudzva
                 End If
             Next
 
-            For Each c As Control In table.Controls
-                If c.GetType Is GetType(TextBox) Then
-                    For i = 0 To brojacOpreme                             'ovde imamo bug probija nam preko kolicine ako prvo unesemo kolicinu a da nije prva po redu, tj ne prvi txtbox
-                        If c.Name = "t" + i.ToString Then
-                            If c.Text > oprema_table.Rows(i)(2) Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
-                                c.Text = oprema_table.Rows(i)(2)
-                            End If
+            'For Each d As Control In table.Controls
+            '    If d.GetType Is GetType(TextBox) Then
+            '        For i = 0 To brojacOpreme                             'ovde imamo bug probija nam preko kolicine ako prvo unesemo kolicinu a da nije prva po redu, tj ne prvi txtbox
+            '            'If d.Name = "t" + i.ToString Then
+            '            If d.Text > oprema_table.Rows(i)(2) Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
+            '                d.Text = oprema_table.Rows(i)(2)
+            '            End If
 
-                        End If
-                    Next i
-                End If
-            Next
+            '            'End If
+            '        Next i
+            '    End If
+            'Next
 
 
         Catch ex As Exception
@@ -318,6 +318,44 @@ Public Class Narudzva
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub Timer2_Tick_1(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Dim Command As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(Command)
+        Dim oprema_table As New DataTable()
+
+
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+
+            Dim i As Integer = 0
+            For Each g As Control In table.Controls
+                If g.GetType Is GetType(TextBox) Then
+                    For i = 0 To brojacOpreme
+                        If g.Name = "t" + i.ToString Then
+                            ' Label16.Text = i.ToString
+                            If CDbl(Val(g.Text)) > oprema_table.Rows(0)(i) Then
+                                g.Text = oprema_table.Rows(0)(i).ToString
+                            End If
+
+
+                        End If
+                    Next i
+                End If
+            Next
+        Catch ex As Exception
+        End Try
+
+    End Sub
 End Class
+
+
+
+'If d.Name = "t" + i.ToString And CDbl(Val(d.Text)) > oprema_table.Rows(0)(i) Then
+''  Label16.Text = i.ToString
+''ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
+'d.Text = oprema_table.Rows(0)(i).ToString
 
 

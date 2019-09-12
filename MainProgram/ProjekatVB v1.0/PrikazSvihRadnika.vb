@@ -5,6 +5,8 @@
     End Sub
 
     Private Sub pregledRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'SpartanFill.DataTable2' table. You can move, or remove it, as needed.
+
         'TODO: This line of code loads data into the 'NapoleonFIll.PrikazSvihRadnika' table. You can move, or remove it, as needed.
         'Me.PrikazSvihRadnikaTableAdapter.Fill(Me.NapoleonFIll.PrikazSvihRadnika)
         'TODO: This line of code loads data into the '_S_U_T_U_R_KrsicDataSet.korisnici' table. You can move, or remove it, as needed.
@@ -24,7 +26,7 @@
             End Try
         ElseIf ComputerName = "Spartan" Then
             Try
-                Me.KorisniciTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.korisnici)
+                Me.DataTable2TableAdapter.Fill(Me.SpartanFill.DataTable2)
             Catch ex As Exception
             End Try
         End If
@@ -36,6 +38,7 @@
             dugmeSacuvaj.Visible = False
             dugmeIzmijeni.Visible = True
             DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
+
             'Me.KorisniciTableAdapter.Update(Me.Radnici.korisnici)
             ' Me.KorisniciTableAdapter.
             PraznaPoljaLabel.Visible = False
