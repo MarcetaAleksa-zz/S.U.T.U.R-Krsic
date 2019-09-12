@@ -78,13 +78,17 @@ Partial Class Korisnik
         Me.dugmePonisti = New System.Windows.Forms.Button()
         Me.TabStorage = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
         Me.korisnikTab = New System.Windows.Forms.TabControl()
         Me.U_OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.U_FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
-        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
-        Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArtikliTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
         Me.NapoleonAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
+        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
+        Me.TableAdapterManager = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
         Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.KolicinaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -107,9 +111,11 @@ Partial Class Korisnik
         CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabStorage.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.korisnikTab.SuspendLayout()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.korisnikTab.SuspendLayout()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dugmeOdjava
@@ -688,11 +694,21 @@ Partial Class Korisnik
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TipopremeDataGridViewTextBoxColumn, Me.ImeDataGridViewTextBoxColumn, Me.KolicinaDataGridViewTextBoxColumn, Me.CijenaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ArtikliBindingSource
+        Me.DataGridView1.DataSource = Me.DataTable1BindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(7, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(755, 349)
         Me.DataGridView1.TabIndex = 0
+        '
+        'ArtikliBindingSource
+        '
+        Me.ArtikliBindingSource.DataMember = "Artikli"
+        Me.ArtikliBindingSource.DataSource = Me.NapoleonFIll
+        '
+        'NapoleonFIll
+        '
+        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
+        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'korisnikTab
         '
@@ -709,16 +725,6 @@ Partial Class Korisnik
         Me.U_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
     " *.png"
         '
-        'NapoleonFIll
-        '
-        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
-        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ArtikliBindingSource
-        '
-        Me.ArtikliBindingSource.DataMember = "Artikli"
-        Me.ArtikliBindingSource.DataSource = Me.NapoleonFIll
-        '
         'ArtikliTableAdapter
         '
         Me.ArtikliTableAdapter.ClearBeforeFill = True
@@ -728,6 +734,26 @@ Partial Class Korisnik
         Me.NapoleonAdapter.BackupDataSetBeforeUpdate = False
         Me.NapoleonAdapter.Connection = Nothing
         Me.NapoleonAdapter.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SpartanFill
+        '
+        Me.SpartanFill.DataSetName = "SpartanFill"
+        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.SpartanFill
+        '
+        'DataTable1TableAdapter
+        '
+        Me.DataTable1TableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'TipopremeDataGridViewTextBoxColumn
         '
@@ -799,9 +825,11 @@ Partial Class Korisnik
         CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabStorage.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.korisnikTab.ResumeLayout(False)
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.korisnikTab.ResumeLayout(False)
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -867,6 +895,10 @@ Partial Class Korisnik
     Friend WithEvents ArtikliBindingSource As BindingSource
     Friend WithEvents ArtikliTableAdapter As NapoleonFIllTableAdapters.ArtikliTableAdapter
     Friend WithEvents NapoleonAdapter As NapoleonFIllTableAdapters.TableAdapterManager
+    Friend WithEvents SpartanFill As SpartanFill
+    Friend WithEvents DataTable1BindingSource As BindingSource
+    Friend WithEvents DataTable1TableAdapter As SpartanFillTableAdapters.DataTable1TableAdapter
+    Friend WithEvents TableAdapterManager As SpartanFillTableAdapters.TableAdapterManager
     Friend WithEvents TipopremeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KolicinaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

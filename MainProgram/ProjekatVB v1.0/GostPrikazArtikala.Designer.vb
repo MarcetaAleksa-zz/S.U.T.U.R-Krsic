@@ -29,20 +29,24 @@ Partial Class GostPrikazArtikala
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Back_Button = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
         Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
         Me.TableAdapterManager1 = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
-        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
-        Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArtikliTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
         Me.NapoleonAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
+        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CijenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Exit_Button
@@ -88,11 +92,21 @@ Partial Class GostPrikazArtikala
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TipopremeDataGridViewTextBoxColumn, Me.ImeDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.CijenaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ArtikliBindingSource
+        Me.DataGridView1.DataSource = Me.DataTable1BindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(23, 136)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(443, 315)
         Me.DataGridView1.TabIndex = 11
+        '
+        'ArtikliBindingSource
+        '
+        Me.ArtikliBindingSource.DataMember = "Artikli"
+        Me.ArtikliBindingSource.DataSource = Me.NapoleonFIll
+        '
+        'NapoleonFIll
+        '
+        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
+        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DataTable1TableAdapter
         '
@@ -104,16 +118,6 @@ Partial Class GostPrikazArtikala
         Me.TableAdapterManager1.Connection = Nothing
         Me.TableAdapterManager1.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'NapoleonFIll
-        '
-        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
-        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ArtikliBindingSource
-        '
-        Me.ArtikliBindingSource.DataMember = "Artikli"
-        Me.ArtikliBindingSource.DataSource = Me.NapoleonFIll
-        '
         'ArtikliTableAdapter
         '
         Me.ArtikliTableAdapter.ClearBeforeFill = True
@@ -123,6 +127,16 @@ Partial Class GostPrikazArtikala
         Me.NapoleonAdapter.BackupDataSetBeforeUpdate = False
         Me.NapoleonAdapter.Connection = Nothing
         Me.NapoleonAdapter.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SpartanFill
+        '
+        Me.SpartanFill.DataSetName = "SpartanFill"
+        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.SpartanFill
         '
         'TipopremeDataGridViewTextBoxColumn
         '
@@ -165,8 +179,10 @@ Partial Class GostPrikazArtikala
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -187,4 +203,6 @@ Partial Class GostPrikazArtikala
     Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataTable1BindingSource As BindingSource
+    Friend WithEvents SpartanFill As SpartanFill
 End Class
