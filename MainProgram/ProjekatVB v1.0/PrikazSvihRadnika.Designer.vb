@@ -142,7 +142,14 @@ Partial Class PrikazSvihRadnika
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KorisnickiidDataGridViewTextBoxColumn, Me.ImekorisnikaDataGridViewTextBoxColumn, Me.PrezimekorisnikaDataGridViewTextBoxColumn, Me.AdresastanovanjaDataGridViewTextBoxColumn, Me.BrojtelefonaDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.DatumrodjenjaDataGridViewTextBoxColumn, Me.PolDataGridViewTextBoxColumn, Me.ImepozicijeDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.DataTable2BindingSource
+        If Podesavanja.OvoJeNalog = "Aleksandar" Then
+            Me.DataGridView1.DataSource = Me.DataTable2BindingSource
+
+        ElseIf Podesavanja.OvoJeNalog = "marce" Then
+            Me.DataGridView1.DataSource = Me.PrikazSvihRadnikaBindingSource
+        End If
+
+
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(27, 153)
         Me.DataGridView1.Name = "DataGridView1"

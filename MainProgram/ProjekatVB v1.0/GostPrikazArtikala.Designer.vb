@@ -28,25 +28,52 @@ Partial Class GostPrikazArtikala
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Back_Button = New System.Windows.Forms.Button()
+
+
+
+
+        'datagrid
+
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
-        Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
-        Me.TableAdapterManager1 = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
-        Me.ArtikliTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
-        Me.NapoleonAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
+
+
         Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+                Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+                Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
+                Me.TableAdapterManager1 = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
+
+                Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
+                Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+                Me.ArtikliTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
+                Me.NapoleonAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
+
+
+
+
+
+
+
+
+
+
+                Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CijenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
+
+
         CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+
+
+
+
+
         Me.SuspendLayout()
         '
         'Exit_Button
@@ -88,11 +115,15 @@ Partial Class GostPrikazArtikala
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'DataGridView1
-        '
-        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TipopremeDataGridViewTextBoxColumn, Me.ImeDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.CijenaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.DataTable1BindingSource
+        If Podesavanja.OvoJeNalog = "Aleksandar" Then
+            Me.DataGridView1.DataSource = Me.DataTable1BindingSource
+
+        ElseIf Podesavanja.OvoJeNalog = "marce" Then
+            Me.DataGridView1.DataSource = Me.ArtikliBindingSource
+        End If
         Me.DataGridView1.Location = New System.Drawing.Point(23, 136)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(443, 315)
@@ -100,6 +131,7 @@ Partial Class GostPrikazArtikala
         '
         'ArtikliBindingSource
         '
+
         Me.ArtikliBindingSource.DataMember = "Artikli"
         Me.ArtikliBindingSource.DataSource = Me.NapoleonFIll
         '
