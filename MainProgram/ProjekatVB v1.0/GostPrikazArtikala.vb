@@ -28,7 +28,7 @@
         End If
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
         'Korpa = CDec(KrstUkupno1.Text) + CDec(KrstUkupno2.Text) + CDec(KrstUkupno3.Text) + CDec(KrstUkupno4.Text) + CDec(KrstUkupno5.Text) + CDec(KrstUkupno6.Text) + CDec(KrstUkupno7.Text) + CDec(KrstUkupno8.Text)
         'If Korpa > 0 Then
         '    Korpica.Text = ("Korpa:" + CStr(Korpa) + " KM ")
@@ -37,7 +37,7 @@
         '    Korpica.Visible = False
         'End If
     End Sub
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs)
         'If Prijava.test = 1 Then
         '    Button1.Visible = True And Button2.Visible = True And Button3.Visible = True And Button4.Visible = True And Button5.Visible = True And Button6.Visible = True And Button7.Visible = True And Button8.Visible = True And Button9.Visible = False
         'Else
@@ -51,6 +51,8 @@
     End Sub
 
     Private Sub GostPrikazArtikala_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
+
         'TODO: This line of code loads data into the 'SpartanFill.DataTable1' table. You can move, or remove it, as needed.
 
         'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
@@ -63,7 +65,7 @@
         ComputerName = System.Net.Dns.GetHostName
         If ComputerName = "Napoleon" Then
             Try
-                Me.ArtikliTableAdapter1.Fill(Me.NapoleonFIll.Artikli)
+                Me.ArtikliTableAdapter.Fill(Me.NapoleonFIll.Artikli)
             Catch ex As Exception
 
             End Try

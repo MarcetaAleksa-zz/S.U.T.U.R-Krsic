@@ -78,21 +78,13 @@ Partial Class Korisnik
         Me.dugmePonisti = New System.Windows.Forms.Button()
         Me.TabStorage = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SpartanFill = New ProjekatVB_v1._0.SpartanFill()
-        Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
-        Me.OpremaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me._S_U_T_U_R_KrsicDataSet = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSet()
         Me.korisnikTab = New System.Windows.Forms.TabControl()
         Me.U_OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.U_FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
-        Me.OpremaTableAdapter = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.opremaTableAdapter()
-        Me.TableAdapterManager = New ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager()
+        Me.NapoleonFIll = New ProjekatVB_v1._0.NapoleonFIll()
+        Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArtikliTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
-        Me.TableAdapterManager1 = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
-        Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
-        Me.TableAdapterManager2 = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
+        Me.NapoleonAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
         Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.KolicinaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -115,13 +107,9 @@ Partial Class Korisnik
         CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabStorage.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OpremaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.korisnikTab.SuspendLayout()
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dugmeOdjava
@@ -706,36 +694,6 @@ Partial Class Korisnik
         Me.DataGridView1.Size = New System.Drawing.Size(755, 349)
         Me.DataGridView1.TabIndex = 0
         '
-        'DataTable1BindingSource
-        '
-        Me.DataTable1BindingSource.DataMember = "DataTable1"
-        Me.DataTable1BindingSource.DataSource = Me.SpartanFill
-        '
-        'SpartanFill
-        '
-        Me.SpartanFill.DataSetName = "SpartanFill"
-        Me.SpartanFill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ArtikliBindingSource
-        '
-        Me.ArtikliBindingSource.DataMember = "Artikli"
-        Me.ArtikliBindingSource.DataSource = Me.NapoleonFIll
-        '
-        'NapoleonFIll
-        '
-        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
-        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'OpremaBindingSource
-        '
-        Me.OpremaBindingSource.DataMember = "oprema"
-        Me.OpremaBindingSource.DataSource = Me._S_U_T_U_R_KrsicDataSet
-        '
-        '_S_U_T_U_R_KrsicDataSet
-        '
-        Me._S_U_T_U_R_KrsicDataSet.DataSetName = "_S_U_T_U_R_KrsicDataSet"
-        Me._S_U_T_U_R_KrsicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'korisnikTab
         '
         Me.korisnikTab.Controls.Add(Me.TabStorage)
@@ -751,37 +709,25 @@ Partial Class Korisnik
         Me.U_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
     " *.png"
         '
-        'OpremaTableAdapter
+        'NapoleonFIll
         '
-        Me.OpremaTableAdapter.ClearBeforeFill = True
+        Me.NapoleonFIll.DataSetName = "NapoleonFIll"
+        Me.NapoleonFIll.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TableAdapterManager
+        'ArtikliBindingSource
         '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.korisniciTableAdapter = Nothing
-        Me.TableAdapterManager.naziv_opremeTableAdapter = Nothing
-        Me.TableAdapterManager.opremaTableAdapter = Me.OpremaTableAdapter
-        Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0._S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.ArtikliBindingSource.DataMember = "Artikli"
+        Me.ArtikliBindingSource.DataSource = Me.NapoleonFIll
         '
         'ArtikliTableAdapter
         '
         Me.ArtikliTableAdapter.ClearBeforeFill = True
         '
-        'TableAdapterManager1
+        'NapoleonAdapter
         '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.Connection = Nothing
-        Me.TableAdapterManager1.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'DataTable1TableAdapter
-        '
-        Me.DataTable1TableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager2
-        '
-        Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager2.Connection = Nothing
-        Me.TableAdapterManager2.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.NapoleonAdapter.BackupDataSetBeforeUpdate = False
+        Me.NapoleonAdapter.Connection = Nothing
+        Me.NapoleonAdapter.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'TipopremeDataGridViewTextBoxColumn
         '
@@ -853,13 +799,9 @@ Partial Class Korisnik
         CType(Me.slikaPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabStorage.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OpremaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._S_U_T_U_R_KrsicDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.korisnikTab.ResumeLayout(False)
+        CType(Me.NapoleonFIll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArtikliBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -921,18 +863,10 @@ Partial Class Korisnik
     Friend WithEvents dugmeOtvoriSliku As Button
     Friend WithEvents U_OpenFileDialog As OpenFileDialog
     Friend WithEvents U_FolderBrowserDialog As FolderBrowserDialog
-    Friend WithEvents _S_U_T_U_R_KrsicDataSet As _S_U_T_U_R_KrsicDataSet
-    Friend WithEvents OpremaBindingSource As BindingSource
-    Friend WithEvents OpremaTableAdapter As _S_U_T_U_R_KrsicDataSetTableAdapters.opremaTableAdapter
-    Friend WithEvents TableAdapterManager As _S_U_T_U_R_KrsicDataSetTableAdapters.TableAdapterManager
     Friend WithEvents NapoleonFIll As NapoleonFIll
     Friend WithEvents ArtikliBindingSource As BindingSource
     Friend WithEvents ArtikliTableAdapter As NapoleonFIllTableAdapters.ArtikliTableAdapter
-    Friend WithEvents TableAdapterManager1 As NapoleonFIllTableAdapters.TableAdapterManager
-    Friend WithEvents SpartanFill As SpartanFill
-    Friend WithEvents DataTable1BindingSource As BindingSource
-    Friend WithEvents DataTable1TableAdapter As SpartanFillTableAdapters.DataTable1TableAdapter
-    Friend WithEvents TableAdapterManager2 As SpartanFillTableAdapters.TableAdapterManager
+    Friend WithEvents NapoleonAdapter As NapoleonFIllTableAdapters.TableAdapterManager
     Friend WithEvents TipopremeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KolicinaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

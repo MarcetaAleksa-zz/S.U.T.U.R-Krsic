@@ -5,6 +5,10 @@
     End Sub
 
     Private Sub pregledRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'NapoleonFIll.PrikazSvihRadnika' table. You can move, or remove it, as needed.
+
+        'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
+
         'TODO: This line of code loads data into the 'SpartanFill.DataTable2' table. You can move, or remove it, as needed.
 
         'TODO: This line of code loads data into the 'NapoleonFIll.PrikazSvihRadnika' table. You can move, or remove it, as needed.
