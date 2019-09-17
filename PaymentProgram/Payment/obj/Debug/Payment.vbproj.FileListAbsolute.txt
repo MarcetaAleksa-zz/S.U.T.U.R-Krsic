@@ -39,3 +39,15 @@ C:\Users\marce\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Pay
 C:\Users\marce\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.exe
 C:\Users\marce\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.xml
 C:\Users\marce\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.pdb
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Debug\Payment.exe.config
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Debug\Payment.exe
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Debug\Payment.pdb
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Debug\Payment.xml
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.vbprojAssemblyReference.cache
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\VB_Projekat2.PaymentMethod_From.resources
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\VB_Projekat2.Resources.resources
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.vbproj.GenerateResource.cache
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.vbproj.CoreCompileInputs.cache
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.exe
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.xml
+C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.pdb

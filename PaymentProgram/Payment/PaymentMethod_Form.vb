@@ -4,16 +4,38 @@ Public Class PaymentMethod_From
     Public Price As String
     Public counter As Integer = 0
     Public ErrorMsg As String
+    Public Potvrda As Integer
+    Public ovojebaza As String
+    Public ovojenalog As String
     Private Sub PaymentMethod_From_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Dim recieve As String = Command()
             PriceTextBox.Text = recieve
             PriceTextBox.Refresh()
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
         Price = PriceTextBox.Text
         PriceTextBox.Show()
+        Dim ComputerName As String
+        ComputerName = System.Net.Dns.GetHostName
+
+        If ComputerName = "Napoleon" Then
+            Try
+                OvoJeBaza = "Napoleon"
+                OvoJeNalog = "marce"
+
+            Catch ex As Exception
+
+            End Try
+        ElseIf ComputerName = "Spartan" Then
+            Try
+                OvoJeBaza = "Spartan"
+                OvoJeNalog = "Aleksandar"
+            Catch ex As Exception
+            End Try
+        End If
+
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If VisaRadioButton.Checked = Enabled Then
@@ -100,18 +122,22 @@ S.U.T.U.R Krsic"
                         SMTP.EnableSsl = True
                         SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                         SMTP.Send(EmailMessage)
+                        Potvrda = 1
+                        Process.Start(My.Application.Info.DirectoryPath + "/Projekat.lnk", Potvrda)
                     Catch ex As Exception
                         MsgBox(ex.Message)
                     End Try
                 Catch ex As Exception
                     MsgBox("Postoji problem sa vasim pokusajem kupovine.")
                     counter = 3
+                    Potvrda = 0
                     LogFile.FailedLog()
                 End Try
                 databaseconnection.connection.Close()
             Else
                 MsgBox("Nemate dovoljno novca na kartici kako bi izvrsili ovu uplatu.")
                 counter = 3
+                Potvrda = 0
                 LogFile.FailedLog()
             End If
             Me.Close()

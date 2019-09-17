@@ -57,6 +57,7 @@ Partial Class Narudzba
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.WorkersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -303,12 +304,16 @@ Partial Class Narudzba
         Me.Label16.TabIndex = 147
         Me.Label16.Text = "Label10"
         '
-        'Narudzva
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        '
+        'Narudzba
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(537, 570)
+        Me.ClientSize = New System.Drawing.Size(537, 587)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -324,7 +329,7 @@ Partial Class Narudzba
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Narudzva"
+        Me.Name = "Narudzba"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Panel - Order Funeral"
         Me.Panel3.ResumeLayout(False)
@@ -368,4 +373,5 @@ Partial Class Narudzba
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Label16 As Label
+    Friend WithEvents Timer3 As Timer
 End Class

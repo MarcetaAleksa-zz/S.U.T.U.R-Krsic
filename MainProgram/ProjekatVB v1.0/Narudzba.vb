@@ -14,8 +14,8 @@ Public Class Narudzba
 
         If Ukupno.ToString = "0" Then
 
-            Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-            Dim adapter As New SqlDataAdapter(Command)
+            Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+            Dim adapter As New SqlDataAdapter(sqlCommand)
             Dim oprema_table As New DataTable()
 
 
@@ -55,8 +55,8 @@ Public Class Narudzba
         '    Price_Label.Visible = False
         '    Label8.Visible = False
         'End If
-        Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(Command)
+        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
 
 
@@ -101,8 +101,8 @@ Public Class Narudzba
     End Sub
 
     Private Sub Narudzva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(Command)
+        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
 
 
@@ -144,7 +144,7 @@ Public Class Narudzba
 
                 Dim t As TextBox = New TextBox
                 With t
-                    .Text = ""
+                    .Text = "0"
                     .Name = "t" + i.ToString
                     .Visible = True
                     .Size = New Size(35, 2)
@@ -170,8 +170,8 @@ Public Class Narudzba
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles TimerRacunanIznos.Tick
         Ukupno = 0
-        Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(Command)
+        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
 
 
@@ -220,69 +220,76 @@ Public Class Narudzba
         Catch ex As Exception
         End Try
     End Sub
-
+    Public potvrda As Integer
     Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
-        '
-
-        'Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-        'Dim adapter As New SqlDataAdapter(Command)
-        'Dim oprema_table As New DataTable()
+        Dim recieve As String = Command()
 
 
+        Try
+            Potvrda = recieve
 
+        Catch ex As Exception
 
-        'Dim brojacOpreme As Integer = 0
-        'Try
-        '    adapter.Fill(oprema_table)
-        '    brojacOpreme = oprema_table.Rows.Count
+        End Try
 
-
-        '    Dim i As Integer = 0
-
-
-        '    If zamisljenibroj = 1 Then                                                             U IZRADI JE
-        '    TREBA MI SAMO PAYMENT DA ZAVRSIMO PA SE OVDE VRACAMO
-        '                                                                                            I TREBA NAPRAVITI NA LINIJI 251 i 254 UPDATE BAZU IZ NASE FILOVANE TABELE
-
-
-        '        For Each c As Control In table.Controls
-        '            If c.GetType Is GetType(TextBox) Then
-
-        '                For i = 0 To brojacOpreme
-        '                    If c.Name = "t" + i.ToString Then
-
-        '                        If c.Text <> "0" Then
-        '                            Dim f As Integer = 0
-        '                            Try
-        '                                f = oprema_table.Rows(i)(2)
-        '                                f = f - CInt(c.Text)
-        '                                ' f.updatetobazajebemjojstrinu
-        '                            Catch ex As Exception
-        '                                oprema_table.Rows(i)(2) = 0
-        '                                'oprema_table.UpdateToBazaJebemJojMater
-        '                            End Try
-        '                        End If
-
-        '                    End If
-        '                Next i
-
-        '            End If
-        '        Next
-
-        '    End If
+        Dim sqlCommand As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
+        Dim oprema_table As New DataTable()
 
 
 
-        'Catch ex As Exception
-        'End Try
+
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+
+
+            Dim i As Integer = 0
+
+
+            If Potvrda = 1 Then
+
+
+                For Each c As Control In table.Controls
+                    If c.GetType Is GetType(TextBox) Then
+
+                        For i = 0 To brojacOpreme
+                            If c.Name = "t" + i.ToString Then
+
+                                If c.Text <> "0" Then
+                                    Dim f As Integer = 0
+                                    Try
+                                        f = oprema_table.Rows(i)(0)
+                                        f = f - CInt(c.Text)
+                                        sqlCommand.CommandText = "UPDATE oprema SET kolicina = " & f & " where id_robe = " & i & ""
+                                        sqlCommand.ExecuteNonQuery()
+                                    Catch ex As Exception
+
+                                    End Try
+                                End If
+
+                            End If
+                        Next i
+
+                    End If
+                Next
+
+            End If
+
+
+
+        Catch ex As Exception
+        End Try
+
     End Sub
 
     Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles Timer1.Tick
         Ukupno = 0
         Price_Label.Visible = False
         Label8.Visible = False
-        Dim Command As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(Command)
+        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
 
 
@@ -313,35 +320,40 @@ Public Class Narudzba
         End Try
     End Sub
 
-    Private Sub Timer2_Tick_1(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         Dim Command As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(Command)
         Dim oprema_table As New DataTable()
+        Dim b As Integer
 
-
-        Dim brojacOpreme As Integer = 0
+        Dim brojacOpreme As Integer
         Try
             adapter.Fill(oprema_table)
             brojacOpreme = oprema_table.Rows.Count
 
-            Dim i As Integer = 0
+            Dim i As Integer
             For Each g As Control In table.Controls
                 If g.GetType Is GetType(TextBox) Then
-                    For i = 0 To brojacOpreme Step 1
-                        MsgBox(i)
+                    For i = 0 To brojacOpreme
                         If g.Name = "t" + i.ToString Then
-                            ' Label16.Text = i.ToString
-                            If CDbl(Val(g.Text)) > oprema_table.Rows(0)(i) Then
-                                g.Text = oprema_table.Rows(0)(i).ToString
+                            If CInt(g.Text) > oprema_table.Rows(i)(0) Then
+                                g.Text = oprema_table.Rows(i)(0).ToString
                             End If
-
 
                         End If
                     Next i
                 End If
             Next
+
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub Timer2_Tick_1(sender As Object, e As EventArgs) Handles Timer2.Tick
+
+        Label16.Text = potvrda
+
+
 
     End Sub
 End Class
