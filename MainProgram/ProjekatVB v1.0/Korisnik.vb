@@ -22,6 +22,13 @@ Public Class Korisnik
             pozicijaTextBox.Text = Prijava.imePozicije
             polaTextBox.Text = user_table.Rows(0)(8)
             adresaTextBox.Text = user_table.Rows(0)(4)
+            'If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog +
+            '                        "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
+            '    U_picture.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog +
+            '                                     "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            'Else
+            '    U_Picture.Image = Nothing
+            'End If
 
         Catch ex As Exception
         End Try
@@ -29,13 +36,28 @@ Public Class Korisnik
         Return Nothing
     End Function
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles dugmeOdjava.Click
+        If Podesavanja.OvoJeNalog = "Aleksandar" Then
+            Try
+
+                Me.DataTable1TableAdapter.Update(Me.SpartanFill.DataTable1)
+
+            Catch ex As Exception
+
+            End Try
+        ElseIf Podesavanja.OvoJeNalog = "marce" Then
+            Try
+
+                Me.ArtikliTableAdapter.Update(Me.NapoleonFIll.Artikli)
+            Catch ex As Exception
+            End Try
+        End If
         Me.Close()
         Prijava.Show()
     End Sub
 
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs)
-        Prijava.Show()
         Me.Close()
+        Prijava.Close()
     End Sub
     Private Sub TabUserInfo_Enter(sender As Object, e As EventArgs) Handles TabUserInfo.Enter
         Ciscenje()
@@ -146,6 +168,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
             Try
 
                 Me.DataTable1TableAdapter.Fill(Me.SpartanFill.DataTable1)
+                Me.DataTable1TableAdapter.Update(Me.SpartanFill.DataTable1)
 
             Catch ex As Exception
 
@@ -160,10 +183,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
 
 
 
-        'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
 
-        'TODO: This line of code loads data into the '_S_U_T_U_R_KrsicDataSet.oprema' table. You can move, or remove it, as needed.
-        'Me.OpremaTableAdapter.Fill(Me._S_U_T_U_R_KrsicDataSet.oprema)
 
 
     End Sub

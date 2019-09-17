@@ -92,6 +92,8 @@ Partial Class Artikli
         ElseIf Podesavanja.OvoJeNalog = "marce" Then
             Me.DataGridView1.DataSource = Me.ArtikliBindingSource
         End If
+
+
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(23, 136)
         Me.DataGridView1.Name = "DataGridView1"
@@ -116,6 +118,8 @@ Partial Class Artikli
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.DataTable1TableAdapter = Nothing
+        Me.TableAdapterManager1.DataTable2TableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'NapoleonFIll

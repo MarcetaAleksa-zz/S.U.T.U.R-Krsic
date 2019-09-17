@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PrikazSvihRadnikaTableAdapter" GeneratorDataComponentClassName="PrikazSvihRadnikaTableAdapter" Name="PrikazSvihRadnika" UserDataComponentName="PrikazSvihRadnikaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NAPOLEON (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="NAPOLEON (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[korisnici] WHERE (([korisnicki_id] = @Original_korisnicki_id) AND ((@IsNull_ime_korisnika = 1 AND [ime_korisnika] IS NULL) OR ([ime_korisnika] = @Original_ime_korisnika)) AND ((@IsNull_prezime_korisnika = 1 AND [prezime_korisnika] IS NULL) OR ([prezime_korisnika] = @Original_prezime_korisnika)) AND ((@IsNull_adresa_stanovanja = 1 AND [adresa_stanovanja] IS NULL) OR ([adresa_stanovanja] = @Original_adresa_stanovanja)) AND ((@IsNull_broj_telefona = 1 AND [broj_telefona] IS NULL) OR ([broj_telefona] = @Original_broj_telefona)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_datum_rodjenja = 1 AND [datum_rodjenja] IS NULL) OR ([datum_rodjenja] = @Original_datum_rodjenja)) AND ((@IsNull_pol = 1 AND [pol] IS NULL) OR ([pol] = @Original_pol)))</CommandText>
@@ -88,7 +88,7 @@ SELECT korisnicki_id, ime_korisnika, prezime_korisnika, adresa_stanovanja, broj_
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArtikliTableAdapter" GeneratorDataComponentClassName="ArtikliTableAdapter" Name="Artikli" UserDataComponentName="ArtikliTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NAPOLEON (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="NAPOLEON (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [oprema] WHERE (([ime] = @Original_ime) AND ([kolicina] = @Original_kolicina) AND ([cijena] = @Original_cijena) AND ([id_robe] = @Original_id_robe))</CommandText>
@@ -110,7 +110,7 @@ FROM            oprema LEFT OUTER JOIN
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>UPDATE       oprema
+                    <CommandText>UPDATE      oprema
 SET                kolicina = @kolicina, cijena = @cijena
 WHERE        (ime = @Original_ime) AND (kolicina = @Original_kolicina) AND (cijena = @Original_cijena);  
 SELECT ime, kolicina, cijena, id_robe FROM oprema WHERE (id_robe = @id_robe)</CommandText>
@@ -142,7 +142,7 @@ SELECT ime, kolicina, cijena, id_robe FROM oprema WHERE (id_robe = @id_robe)</Co
   <xs:element name="NapoleonFIll" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NapoleonFIll" msprop:Generator_UserDSName="NapoleonFIll">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="PrikazSvihRadnika" msprop:Generator_TableClassName="PrikazSvihRadnikaDataTable" msprop:Generator_TableVarName="tablePrikazSvihRadnika" msprop:Generator_TablePropName="PrikazSvihRadnika" msprop:Generator_RowDeletingName="PrikazSvihRadnikaRowDeleting" msprop:Generator_RowChangingName="PrikazSvihRadnikaRowChanging" msprop:Generator_RowEvHandlerName="PrikazSvihRadnikaRowChangeEventHandler" msprop:Generator_RowDeletedName="PrikazSvihRadnikaRowDeleted" msprop:Generator_UserTableName="PrikazSvihRadnika" msprop:Generator_RowChangedName="PrikazSvihRadnikaRowChanged" msprop:Generator_RowEvArgName="PrikazSvihRadnikaRowChangeEvent" msprop:Generator_RowClassName="PrikazSvihRadnikaRow">
+        <xs:element name="PrikazSvihRadnika" msprop:Generator_TableClassName="PrikazSvihRadnikaDataTable" msprop:Generator_TableVarName="tablePrikazSvihRadnika" msprop:Generator_RowChangedName="PrikazSvihRadnikaRowChanged" msprop:Generator_TablePropName="PrikazSvihRadnika" msprop:Generator_RowDeletingName="PrikazSvihRadnikaRowDeleting" msprop:Generator_RowChangingName="PrikazSvihRadnikaRowChanging" msprop:Generator_RowEvHandlerName="PrikazSvihRadnikaRowChangeEventHandler" msprop:Generator_RowDeletedName="PrikazSvihRadnikaRowDeleted" msprop:Generator_RowClassName="PrikazSvihRadnikaRow" msprop:Generator_UserTableName="PrikazSvihRadnika" msprop:Generator_RowEvArgName="PrikazSvihRadnikaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="korisnicki_id" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnkorisnicki_id" msprop:Generator_ColumnPropNameInRow="korisnicki_id" msprop:Generator_ColumnPropNameInTable="korisnicki_idColumn" msprop:Generator_UserColumnName="korisnicki_id">
@@ -199,7 +199,7 @@ SELECT ime, kolicina, cijena, id_robe FROM oprema WHERE (id_robe = @id_robe)</Co
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Artikli" msprop:Generator_TableClassName="ArtikliDataTable" msprop:Generator_TableVarName="tableArtikli" msprop:Generator_TablePropName="Artikli" msprop:Generator_RowDeletingName="ArtikliRowDeleting" msprop:Generator_RowChangingName="ArtikliRowChanging" msprop:Generator_RowEvHandlerName="ArtikliRowChangeEventHandler" msprop:Generator_RowDeletedName="ArtikliRowDeleted" msprop:Generator_UserTableName="Artikli" msprop:Generator_RowChangedName="ArtikliRowChanged" msprop:Generator_RowEvArgName="ArtikliRowChangeEvent" msprop:Generator_RowClassName="ArtikliRow">
+        <xs:element name="Artikli" msprop:Generator_TableClassName="ArtikliDataTable" msprop:Generator_TableVarName="tableArtikli" msprop:Generator_RowChangedName="ArtikliRowChanged" msprop:Generator_TablePropName="Artikli" msprop:Generator_RowDeletingName="ArtikliRowDeleting" msprop:Generator_RowChangingName="ArtikliRowChanging" msprop:Generator_RowEvHandlerName="ArtikliRowChangeEventHandler" msprop:Generator_RowDeletedName="ArtikliRowDeleted" msprop:Generator_RowClassName="ArtikliRow" msprop:Generator_UserTableName="Artikli" msprop:Generator_RowEvArgName="ArtikliRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnime" msprop:Generator_ColumnPropNameInRow="ime" msprop:Generator_ColumnPropNameInTable="imeColumn" msprop:Generator_UserColumnName="ime">

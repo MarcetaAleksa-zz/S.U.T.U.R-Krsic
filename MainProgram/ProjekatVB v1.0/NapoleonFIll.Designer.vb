@@ -2018,10 +2018,10 @@ Namespace NapoleonFIllTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_robe", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_robe", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE       oprema"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                kolicina = @kolicina, cijena = @cijena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
-                "HERE        (ime = @Original_ime) AND (kolicina = @Original_kolicina) AND (cijen"& _ 
-                "a = @Original_cijena);  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ime, kolicina, cijena, id_robe FROM oprema WHER"& _ 
-                "E (id_robe = @id_robe)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE      oprema"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                kolicina = @kolicina, cijena = @cijena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WH"& _ 
+                "ERE        (ime = @Original_ime) AND (kolicina = @Original_kolicina) AND (cijena"& _ 
+                " = @Original_cijena);  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ime, kolicina, cijena, id_robe FROM oprema WHERE"& _ 
+                " (id_robe = @id_robe)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@kolicina", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "kolicina", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cijena", Global.System.Data.SqlDbType.SmallMoney, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "cijena", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

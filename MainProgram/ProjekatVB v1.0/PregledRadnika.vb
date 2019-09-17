@@ -33,7 +33,7 @@
                 End Try
             ElseIf Podesavanja.OvoJeNalog = "Aleksandar" Then
                 Try
-                    'Me.DataTable2TableAdapter.Update(Me.SpartanFill.DataTable2)
+                    Me.DataTable2TableAdapter.Update(Me.SpartanFill.DataTable2)
                 Catch ex As Exception
                 End Try
             End If

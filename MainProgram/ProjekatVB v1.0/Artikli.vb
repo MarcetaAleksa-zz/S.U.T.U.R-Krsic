@@ -14,6 +14,8 @@
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
+        Administrator.Close()
+        Prijava.Close()
     End Sub
     Private Sub kolicina_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Asc(e.KeyChar) <> 8 Then
@@ -70,7 +72,7 @@
             End Try
         ElseIf Podesavanja.OvoJeNalog = "Aleksandar" Then
             Try
-                'Me.DataTable1TableAdapter.Update(Me.SpartanFill.DataTable1)
+                Me.DataTable1TableAdapter.Update(Me.SpartanFill.DataTable1)
             Catch ex As Exception
             End Try
         End If
