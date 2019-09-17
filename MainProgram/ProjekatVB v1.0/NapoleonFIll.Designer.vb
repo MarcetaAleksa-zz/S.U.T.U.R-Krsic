@@ -545,15 +545,19 @@ Partial Public Class NapoleonFIll
             MyBase.Columns.Add(Me.columnime_pozicije)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnkorisnicki_id}, true))
             Me.columnkorisnicki_id.AllowDBNull = false
+            Me.columnkorisnicki_id.ReadOnly = true
             Me.columnkorisnicki_id.Unique = true
             Me.columnkorisnicki_id.MaxLength = 50
             Me.columnime_korisnika.MaxLength = 50
             Me.columnprezime_korisnika.MaxLength = 50
             Me.columnadresa_stanovanja.MaxLength = 60
             Me.columnbroj_telefona.MaxLength = 12
+            Me.columnemail.ReadOnly = true
             Me.columnemail.MaxLength = 50
+            Me.columndatum_rodjenja.ReadOnly = true
+            Me.columnpol.ReadOnly = true
             Me.columnpol.MaxLength = 6
-            Me.columnime_pozicije.MaxLength = 15
+            Me.columnime_pozicije.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -691,13 +695,13 @@ Partial Public Class NapoleonFIll
     Partial Public Class ArtikliDataTable
         Inherits Global.System.Data.TypedTableBase(Of ArtikliRow)
         
-        Private columntip_opreme As Global.System.Data.DataColumn
-        
         Private columnime As Global.System.Data.DataColumn
         
         Private columnkolicina As Global.System.Data.DataColumn
         
         Private columncijena As Global.System.Data.DataColumn
+        
+        Private columntip_opreme As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -736,14 +740,6 @@ Partial Public Class NapoleonFIll
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property tip_opremeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntip_opreme
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property imeColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnime
@@ -763,6 +759,14 @@ Partial Public Class NapoleonFIll
         Public ReadOnly Property cijenaColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columncijena
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property tip_opremeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntip_opreme
             End Get
         End Property
         
@@ -803,9 +807,9 @@ Partial Public Class NapoleonFIll
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddArtikliRow(ByVal tip_opreme As String, ByVal ime As String, ByVal kolicina As Short, ByVal cijena As Decimal) As ArtikliRow
+        Public Overloads Function AddArtikliRow(ByVal ime As String, ByVal kolicina As Short, ByVal cijena As Decimal, ByVal tip_opreme As String) As ArtikliRow
             Dim rowArtikliRow As ArtikliRow = CType(Me.NewRow,ArtikliRow)
-            Dim columnValuesArray() As Object = New Object() {tip_opreme, ime, kolicina, cijena}
+            Dim columnValuesArray() As Object = New Object() {ime, kolicina, cijena, tip_opreme}
             rowArtikliRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowArtikliRow)
             Return rowArtikliRow
@@ -828,28 +832,30 @@ Partial Public Class NapoleonFIll
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columntip_opreme = MyBase.Columns("tip_opreme")
             Me.columnime = MyBase.Columns("ime")
             Me.columnkolicina = MyBase.Columns("kolicina")
             Me.columncijena = MyBase.Columns("cijena")
+            Me.columntip_opreme = MyBase.Columns("tip_opreme")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
-            Me.columntip_opreme = New Global.System.Data.DataColumn("tip_opreme", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntip_opreme)
             Me.columnime = New Global.System.Data.DataColumn("ime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnime)
             Me.columnkolicina = New Global.System.Data.DataColumn("kolicina", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnkolicina)
             Me.columncijena = New Global.System.Data.DataColumn("cijena", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncijena)
-            Me.columntip_opreme.MaxLength = 9
+            Me.columntip_opreme = New Global.System.Data.DataColumn("tip_opreme", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntip_opreme)
             Me.columnime.AllowDBNull = false
+            Me.columnime.ReadOnly = true
             Me.columnime.MaxLength = 20
             Me.columnkolicina.AllowDBNull = false
             Me.columncijena.AllowDBNull = false
+            Me.columntip_opreme.ReadOnly = true
+            Me.columntip_opreme.MaxLength = 9
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1239,21 +1245,6 @@ Partial Public Class NapoleonFIll
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property tip_opreme() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableArtikli.tip_opremeColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'tip_opreme' in table 'Artikli' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableArtikli.tip_opremeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property ime() As String
             Get
                 Return CType(Me(Me.tableArtikli.imeColumn),String)
@@ -1282,6 +1273,21 @@ Partial Public Class NapoleonFIll
             End Get
             Set
                 Me(Me.tableArtikli.cijenaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property tip_opreme() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableArtikli.tip_opremeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tip_opreme' in table 'Artikli' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableArtikli.tip_opremeColumn) = value
             End Set
         End Property
         
@@ -1510,6 +1516,77 @@ Namespace NapoleonFIllTableAdapters
             tableMapping.ColumnMappings.Add("pol", "pol")
             tableMapping.ColumnMappings.Add("ime_pozicije", "ime_pozicije")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[korisnici] WHERE (([korisnicki_id] = @Original_korisnicki_id) "& _ 
+                "AND ((@IsNull_ime_korisnika = 1 AND [ime_korisnika] IS NULL) OR ([ime_korisnika]"& _ 
+                " = @Original_ime_korisnika)) AND ((@IsNull_prezime_korisnika = 1 AND [prezime_ko"& _ 
+                "risnika] IS NULL) OR ([prezime_korisnika] = @Original_prezime_korisnika)) AND (("& _ 
+                "@IsNull_adresa_stanovanja = 1 AND [adresa_stanovanja] IS NULL) OR ([adresa_stano"& _ 
+                "vanja] = @Original_adresa_stanovanja)) AND ((@IsNull_broj_telefona = 1 AND [broj"& _ 
+                "_telefona] IS NULL) OR ([broj_telefona] = @Original_broj_telefona)) AND ((@IsNul"& _ 
+                "l_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_d"& _ 
+                "atum_rodjenja = 1 AND [datum_rodjenja] IS NULL) OR ([datum_rodjenja] = @Original"& _ 
+                "_datum_rodjenja)) AND ((@IsNull_pol = 1 AND [pol] IS NULL) OR ([pol] = @Original"& _ 
+                "_pol)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_korisnicki_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "korisnicki_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_prezime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_prezime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_adresa_stanovanja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "adresa_stanovanja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_adresa_stanovanja", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "adresa_stanovanja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_broj_telefona", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_broj_telefona", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_datum_rodjenja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_datum_rodjenja", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_pol", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pol", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pol", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pol", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[korisnici] SET [korisnicki_id] = @korisnicki_id, [ime_korisnika] = "& _ 
+                "@ime_korisnika, [prezime_korisnika] = @prezime_korisnika, [adresa_stanovanja] = "& _ 
+                "@adresa_stanovanja, [broj_telefona] = @broj_telefona, [email] = @email, [datum_r"& _ 
+                "odjenja] = @datum_rodjenja, [pol] = @pol WHERE (([korisnicki_id] = @Original_kor"& _ 
+                "isnicki_id) AND ((@IsNull_ime_korisnika = 1 AND [ime_korisnika] IS NULL) OR ([im"& _ 
+                "e_korisnika] = @Original_ime_korisnika)) AND ((@IsNull_prezime_korisnika = 1 AND"& _ 
+                " [prezime_korisnika] IS NULL) OR ([prezime_korisnika] = @Original_prezime_korisn"& _ 
+                "ika)) AND ((@IsNull_adresa_stanovanja = 1 AND [adresa_stanovanja] IS NULL) OR (["& _ 
+                "adresa_stanovanja] = @Original_adresa_stanovanja)) AND ((@IsNull_broj_telefona ="& _ 
+                " 1 AND [broj_telefona] IS NULL) OR ([broj_telefona] = @Original_broj_telefona)) "& _ 
+                "AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND"& _ 
+                " ((@IsNull_datum_rodjenja = 1 AND [datum_rodjenja] IS NULL) OR ([datum_rodjenja]"& _ 
+                " = @Original_datum_rodjenja)) AND ((@IsNull_pol = 1 AND [pol] IS NULL) OR ([pol]"& _ 
+                " = @Original_pol)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT korisnicki_id, ime_korisnika, prezime_korisnika, ad"& _ 
+                "resa_stanovanja, broj_telefona, email, datum_rodjenja, pol FROM korisnici WHERE "& _ 
+                "(korisnicki_id = @korisnicki_id)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@korisnicki_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "korisnicki_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@prezime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@adresa_stanovanja", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "adresa_stanovanja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@broj_telefona", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@datum_rodjenja", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pol", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pol", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_korisnicki_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "korisnicki_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_prezime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_prezime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_adresa_stanovanja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "adresa_stanovanja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_adresa_stanovanja", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "adresa_stanovanja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_broj_telefona", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_broj_telefona", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_datum_rodjenja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_datum_rodjenja", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_pol", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pol", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pol", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pol", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1525,9 +1602,11 @@ Namespace NapoleonFIllTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT korisnicki_id, ime_korisnika, prezime_korisnika, adresa_stanovanja, broj_t"& _ 
-                "elefona, email, datum_rodjenja, pol, ime_pozicije FROM dbo.korisnici left join p"& _ 
-                "ozicija on (pozicija_id = radna_pozicija)"
+            Me._commandCollection(0).CommandText = "SELECT        korisnici.korisnicki_id, korisnici.ime_korisnika, korisnici.prezime"& _ 
+                "_korisnika, korisnici.adresa_stanovanja, korisnici.broj_telefona, korisnici.emai"& _ 
+                "l, korisnici.datum_rodjenja, korisnici.pol, pozicija.ime_pozicije"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         "& _ 
+                "   korisnici LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         pozicija ON pozicija.pozi"& _ 
+                "cija_id = korisnici.radna_pozicija"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1553,6 +1632,246 @@ Namespace NapoleonFIllTableAdapters
             Dim dataTable As NapoleonFIll.PrikazSvihRadnikaDataTable = New NapoleonFIll.PrikazSvihRadnikaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As NapoleonFIll.PrikazSvihRadnikaDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As NapoleonFIll) As Integer
+            Return Me.Adapter.Update(dataSet, "PrikazSvihRadnika")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_korisnicki_id As String, ByVal Original_ime_korisnika As String, ByVal Original_prezime_korisnika As String, ByVal Original_adresa_stanovanja As String, ByVal Original_broj_telefona As String, ByVal Original_email As String, ByVal Original_datum_rodjenja As Global.System.Nullable(Of Date), ByVal Original_pol As String) As Integer
+            If (Original_korisnicki_id Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_korisnicki_id")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_korisnicki_id,String)
+            End If
+            If (Original_ime_korisnika Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ime_korisnika,String)
+            End If
+            If (Original_prezime_korisnika Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_prezime_korisnika,String)
+            End If
+            If (Original_adresa_stanovanja Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_adresa_stanovanja,String)
+            End If
+            If (Original_broj_telefona Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_broj_telefona,String)
+            End If
+            If (Original_email Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_email,String)
+            End If
+            If (Original_datum_rodjenja.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_datum_rodjenja.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_pol Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_pol,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal korisnicki_id As String,  _
+                    ByVal ime_korisnika As String,  _
+                    ByVal prezime_korisnika As String,  _
+                    ByVal adresa_stanovanja As String,  _
+                    ByVal broj_telefona As String,  _
+                    ByVal email As String,  _
+                    ByVal datum_rodjenja As Global.System.Nullable(Of Date),  _
+                    ByVal pol As String,  _
+                    ByVal Original_korisnicki_id As String,  _
+                    ByVal Original_ime_korisnika As String,  _
+                    ByVal Original_prezime_korisnika As String,  _
+                    ByVal Original_adresa_stanovanja As String,  _
+                    ByVal Original_broj_telefona As String,  _
+                    ByVal Original_email As String,  _
+                    ByVal Original_datum_rodjenja As Global.System.Nullable(Of Date),  _
+                    ByVal Original_pol As String) As Integer
+            If (korisnicki_id Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("korisnicki_id")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(korisnicki_id,String)
+            End If
+            If (ime_korisnika Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ime_korisnika,String)
+            End If
+            If (prezime_korisnika Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(prezime_korisnika,String)
+            End If
+            If (adresa_stanovanja Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(adresa_stanovanja,String)
+            End If
+            If (broj_telefona Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(broj_telefona,String)
+            End If
+            If (email Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(email,String)
+            End If
+            If (datum_rodjenja.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(datum_rodjenja.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (pol Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(pol,String)
+            End If
+            If (Original_korisnicki_id Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_korisnicki_id")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_korisnicki_id,String)
+            End If
+            If (Original_ime_korisnika Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_ime_korisnika,String)
+            End If
+            If (Original_prezime_korisnika Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_prezime_korisnika,String)
+            End If
+            If (Original_adresa_stanovanja Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_adresa_stanovanja,String)
+            End If
+            If (Original_broj_telefona Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_broj_telefona,String)
+            End If
+            If (Original_email Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_email,String)
+            End If
+            If (Original_datum_rodjenja.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_datum_rodjenja.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_pol Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_pol,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal ime_korisnika As String, ByVal prezime_korisnika As String, ByVal adresa_stanovanja As String, ByVal broj_telefona As String, ByVal email As String, ByVal datum_rodjenja As Global.System.Nullable(Of Date), ByVal pol As String, ByVal Original_korisnicki_id As String, ByVal Original_ime_korisnika As String, ByVal Original_prezime_korisnika As String, ByVal Original_adresa_stanovanja As String, ByVal Original_broj_telefona As String, ByVal Original_email As String, ByVal Original_datum_rodjenja As Global.System.Nullable(Of Date), ByVal Original_pol As String) As Integer
+            Return Me.Update(Original_korisnicki_id, ime_korisnika, prezime_korisnika, adresa_stanovanja, broj_telefona, email, datum_rodjenja, pol, Original_korisnicki_id, Original_ime_korisnika, Original_prezime_korisnika, Original_adresa_stanovanja, Original_broj_telefona, Original_email, Original_datum_rodjenja, Original_pol)
         End Function
     End Class
     
@@ -1683,11 +2002,33 @@ Namespace NapoleonFIllTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Artikli"
-            tableMapping.ColumnMappings.Add("tip_opreme", "tip_opreme")
             tableMapping.ColumnMappings.Add("ime", "ime")
             tableMapping.ColumnMappings.Add("kolicina", "kolicina")
             tableMapping.ColumnMappings.Add("cijena", "cijena")
+            tableMapping.ColumnMappings.Add("tip_opreme", "tip_opreme")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [oprema] WHERE (([ime] = @Original_ime) AND ([kolicina] = @Original_k"& _ 
+                "olicina) AND ([cijena] = @Original_cijena) AND ([id_robe] = @Original_id_robe))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ime", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_kolicina", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "kolicina", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_cijena", Global.System.Data.SqlDbType.SmallMoney, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cijena", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_robe", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_robe", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE       oprema"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                kolicina = @kolicina, cijena = @cijena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
+                "HERE        (ime = @Original_ime) AND (kolicina = @Original_kolicina) AND (cijen"& _ 
+                "a = @Original_cijena);  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ime, kolicina, cijena, id_robe FROM oprema WHER"& _ 
+                "E (id_robe = @id_robe)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@kolicina", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "kolicina", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cijena", Global.System.Data.SqlDbType.SmallMoney, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "cijena", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ime", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "ime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_kolicina", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "kolicina", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_cijena", Global.System.Data.SqlDbType.SmallMoney, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "cijena", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_robe", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_robe", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1703,8 +2044,9 @@ Namespace NapoleonFIllTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "select naziv_opreme.ime as tip_opreme, oprema.ime, kolicina, cijena  from oprema "& _ 
-                "left join naziv_opreme on (tip_robe = id_opreme)"
+            Me._commandCollection(0).CommandText = "SELECT        naziv_opreme.ime AS tip_opreme, oprema.ime, oprema.kolicina, oprema"& _ 
+                ".cijena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            oprema LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         naziv_"& _ 
+                "opreme ON oprema.tip_robe = naziv_opreme.id_opreme"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1731,6 +2073,34 @@ Namespace NapoleonFIllTableAdapters
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As NapoleonFIll.ArtikliDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As NapoleonFIll) As Integer
+            Return Me.Adapter.Update(dataSet, "Artikli")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
     End Class
     
     '''<summary>
@@ -1746,6 +2116,10 @@ Namespace NapoleonFIllTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
+        Private _prikazSvihRadnikaTableAdapter As PrikazSvihRadnikaTableAdapter
+        
+        Private _artikliTableAdapter As ArtikliTableAdapter
+        
         Private _backupDataSetBeforeUpdate As Boolean
         
         Private _connection As Global.System.Data.IDbConnection
@@ -1758,6 +2132,34 @@ Namespace NapoleonFIllTableAdapters
             End Get
             Set
                 Me._updateOrder = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property PrikazSvihRadnikaTableAdapter() As PrikazSvihRadnikaTableAdapter
+            Get
+                Return Me._prikazSvihRadnikaTableAdapter
+            End Get
+            Set
+                Me._prikazSvihRadnikaTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property ArtikliTableAdapter() As ArtikliTableAdapter
+            Get
+                Return Me._artikliTableAdapter
+            End Get
+            Set
+                Me._artikliTableAdapter = value
             End Set
         End Property
         
@@ -1780,6 +2182,14 @@ Namespace NapoleonFIllTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
+                If ((Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._prikazSvihRadnikaTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._prikazSvihRadnikaTableAdapter.Connection
+                End If
+                If ((Not (Me._artikliTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._artikliTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._artikliTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -1793,6 +2203,12 @@ Namespace NapoleonFIllTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
+                If (Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._artikliTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 Return count
             End Get
         End Property
@@ -1804,6 +2220,24 @@ Namespace NapoleonFIllTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As NapoleonFIll, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PrikazSvihRadnika.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._prikazSvihRadnikaTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._artikliTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Artikli.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._artikliTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -1814,6 +2248,22 @@ Namespace NapoleonFIllTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As NapoleonFIll, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.PrikazSvihRadnika.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._prikazSvihRadnikaTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._artikliTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Artikli.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._artikliTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -1824,6 +2274,22 @@ Namespace NapoleonFIllTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As NapoleonFIll, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._artikliTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Artikli.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._artikliTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PrikazSvihRadnika.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._prikazSvihRadnikaTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -1865,6 +2331,16 @@ Namespace NapoleonFIllTableAdapters
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
+            If ((Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._prikazSvihRadnikaTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._artikliTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._artikliTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
@@ -1897,6 +2373,24 @@ Namespace NapoleonFIllTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
+                If (Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._prikazSvihRadnikaTableAdapter, Me._prikazSvihRadnikaTableAdapter.Connection)
+                    Me._prikazSvihRadnikaTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._prikazSvihRadnikaTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._prikazSvihRadnikaTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._prikazSvihRadnikaTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._prikazSvihRadnikaTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._artikliTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._artikliTableAdapter, Me._artikliTableAdapter.Connection)
+                    Me._artikliTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._artikliTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._artikliTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._artikliTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._artikliTableAdapter.Adapter)
+                    End If
+                End If
                 '
                 '---- Perform updates -----------
                 '
@@ -1956,6 +2450,14 @@ Namespace NapoleonFIllTableAdapters
             Finally
                 If workConnOpened Then
                     workConnection.Close
+                End If
+                If (Not (Me._prikazSvihRadnikaTableAdapter) Is Nothing) Then
+                    Me._prikazSvihRadnikaTableAdapter.Connection = CType(revertConnections(Me._prikazSvihRadnikaTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._prikazSvihRadnikaTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._artikliTableAdapter) Is Nothing) Then
+                    Me._artikliTableAdapter.Connection = CType(revertConnections(Me._artikliTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._artikliTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

@@ -23,7 +23,6 @@ Public Class Korisnik
             polaTextBox.Text = user_table.Rows(0)(8)
             adresaTextBox.Text = user_table.Rows(0)(4)
 
-            'Aleksandar : marce
         Catch ex As Exception
         End Try
 
@@ -115,8 +114,8 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
         brojtelefonaTextBox.BackColor = Color.FromArgb(235, 235, 235)
         p8.BackColor = Color.FromArgb(235, 235, 235)
 
-        'promijenislikuLabel.Visible = False
-        'dugmeOtvoriSliku.Visible = False
+
+        dugmeOtvoriSliku.Visible = False
 
     End Sub
 
@@ -131,7 +130,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
 
     Private Sub U_OpenFileDialog_FileOk(sender As Object, e As CancelEventArgs) Handles U_OpenFileDialog.FileOk
 
-        ' U_Picture.Image = Image.FromFile(U_OpenFileDialog.FileName) '
+        'U_Picture.Image = Image.FromFile(U_OpenFileDialog.FileName)
 
     End Sub
 
@@ -142,18 +141,19 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
 
 
 
-        Dim ComputerName As String
-        ComputerName = System.Net.Dns.GetHostName
+
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Try
 
                 Me.DataTable1TableAdapter.Fill(Me.SpartanFill.DataTable1)
+
             Catch ex As Exception
 
             End Try
         ElseIf Podesavanja.OvoJeNalog = "marce" Then
             Try
                 Me.ArtikliTableAdapter.Fill(Me.NapoleonFIll.Artikli)
+                Me.ArtikliTableAdapter.Update(Me.NapoleonFIll.Artikli)
             Catch ex As Exception
             End Try
         End If

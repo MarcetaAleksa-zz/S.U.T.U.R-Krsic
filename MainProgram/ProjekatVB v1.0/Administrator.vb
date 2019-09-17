@@ -20,7 +20,7 @@ Public Class Administrator
     Private Sub Logs_Button_Click(sender As Object, e As EventArgs) Handles Logs_Button.Click
         FormaLogova.Show()
         Me.Hide()
-        'promjeniti ime korisnika na Aleksandar ili aleksandar (c:\Users\(jedno od ponudjenih imena)\...)
+        'promjeniti ime korisnika na Aleksandar ili Aleksandar (c:\Users\(jedno od ponudjenih imena)\...)
         'Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
         'Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt")
     End Sub
@@ -57,12 +57,12 @@ Public Class Administrator
 
     Private Sub Storage_Button_Click(sender As Object, e As EventArgs) Handles SkladisteButton.Click
         Me.Hide()
-        GostPrikazArtikala.Show()
+        Artikli.Show()
     End Sub
 
     Private Sub RadniciButton_Click(sender As Object, e As EventArgs) Handles RadniciButton.Click
         Me.Hide()
-        PrikazSvihRadnika.Show()
+        PregledRadnika.Show()
     End Sub
 
     Private Sub Administrator_Load(sender As Object, e As EventArgs) Handles MyBase.Load

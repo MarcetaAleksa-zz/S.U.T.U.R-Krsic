@@ -153,7 +153,6 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
             UR_Male_Button.Checked = False
         End If
     End Sub
-
     Private Sub UR_Name_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Name_TextBox.Leave
         If (UR_Name_TextBox.Text = "") Then
             UR_Name_TextBox.Text = "Unesi ime ovde"
@@ -270,19 +269,13 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
         Me.Close()
         Administrator.Show()
     End Sub
-
     Private Sub UR_Birth_TextBox_TextChanged(sender As Object, e As EventArgs) Handles UR_Birth_TextBox.TextChanged
-
     End Sub
-
     Private Sub UnosRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
-
     Private Sub ProbaDugme_Click(sender As Object, e As EventArgs)
         'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\Images\Nikola.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
         'Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\Nikola.jpg")
-
     End Sub
     Public Sub SaveImage(filename As String, image As Image)
         Dim path As String = System.IO.Path.Combine(My.Application.Info.DirectoryPath, filename & ".jpg")
@@ -293,16 +286,11 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
         mySource.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg)
         mySource.Dispose()
     End Sub
-
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         ' URComboBox.SelectedIndex = -1
     End Sub
-
     Private Sub UR_ChooseImage_Label_Click(sender As Object, e As EventArgs) Handles UR_ChooseImage_Label.Click
-
     End Sub
-
     Private Sub UR_FolderBrowserDialog_HelpRequest(sender As Object, e As EventArgs) Handles UR_FolderBrowserDialog.HelpRequest
-
     End Sub
 End Class

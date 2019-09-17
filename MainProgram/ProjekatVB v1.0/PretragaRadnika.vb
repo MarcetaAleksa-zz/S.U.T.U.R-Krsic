@@ -43,13 +43,13 @@ Public Class PretragaRadnika
             U_Username_TextBox.Text = user_table.Rows(0)(0)
             U_Possition_TextBox.Text = pozicijaTbl.Rows(0)(0)
             U_Phone_TextBox.Text = user_table.Rows(0)(5)
-            If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog + "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
-                U_Picture.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog + "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog +
+                                     "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
+                U_Picture.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog +
+                                                 "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
             Else
                 U_Picture.Image = Nothing
             End If
-
-            ' Aleksandar : aleksandar
         Catch ex As Exception
         End Try
         'Mala izmjena je naporavljena, sada je i vlasnik u mogucnosti da brise naloge osim ako je taj naog administratorski
@@ -81,7 +81,6 @@ Public Class PretragaRadnika
         Administrator.Show()
         Me.Close()
     End Sub
-
     Private Sub Brisanje_Click(sender As Object, e As EventArgs) Handles Brisanje.Click
         Try
             Dim command As New SqlCommand("delete from korisnici where korisnicki_id = @korisnicki_id ", containerdb.connection)
@@ -91,17 +90,12 @@ Public Class PretragaRadnika
             logovi.BrisanjeKorisnika()
             containerdb.connection.Close()
             ComboBox1.SelectedIndex = -1
-            Me.Controls.Clear() 'removes all the controls on the form
-            InitializeComponent() 'load all the controls again
+            Me.Controls.Clear() 'ukloni sve kontrole sa forme
+            InitializeComponent() 'ponovo ucitaj sve kontrole
             PretragaRadnika_Load(e, e)
             MsgBox("Uspjesno ste izbrisali radnika!")
         Catch ex As Exception
-
         End Try
-    End Sub
-
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-
     End Sub
 End Class
 

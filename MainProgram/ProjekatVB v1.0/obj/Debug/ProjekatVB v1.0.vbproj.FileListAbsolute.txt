@@ -173,13 +173,11 @@ C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debu
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.GostDobroDosli.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.LoginGreska.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UserDobroDosli.resources
-C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Kupovina.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.PretragaRadnika.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UnosRadnika.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Gost.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Prijava.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Resources.resources
-C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.GostPrikazArtikala.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Korisnik.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbproj.GenerateResource.cache
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbproj.CoreCompileInputs.cache
@@ -190,8 +188,6 @@ C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.GreskaPostojeceKorisnickoIme.resources
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.PrikazSvihRadnika.resources
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Narudzva.resources
-C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.PrikazSvihRadnika.resources
-C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Narudzva.resources
 C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe.config
 C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe
 C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.pdb
@@ -221,8 +217,10 @@ C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\P
 C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.proba.resources
 C:\Users\IT\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.proba.resources
-C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.proba.resources
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.FormaLogova.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.FormaLogova.resources
 C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Podesavanja.resources
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Podesavanja.resources
+C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Artikli.resources
+C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Narudzba.resources
+C:\Users\marce\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.PregledRadnika.resources

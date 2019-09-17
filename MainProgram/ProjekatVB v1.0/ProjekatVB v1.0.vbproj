@@ -98,17 +98,6 @@
     <Compile Include="NapoleonFillDataSet.vb">
       <DependentUpon>NapoleonFillDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="proba.Designer.vb">
-      <DependentUpon>proba.vb</DependentUpon>
-    </Compile>
-    <Compile Include="proba.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Radnici.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Radnici.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ErrorForms\AdminDobroDosli.Designer.vb">
       <DependentUpon>AdminDobroDosli.vb</DependentUpon>
     </Compile>
@@ -145,16 +134,10 @@
     <Compile Include="ErrorForms\UserDobroDosli.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrikazSvihRadnika.Designer.vb">
-      <DependentUpon>PrikazSvihRadnika.vb</DependentUpon>
+    <Compile Include="PregledRadnika.Designer.vb">
+      <DependentUpon>PregledRadnika.vb</DependentUpon>
     </Compile>
-    <Compile Include="PrikazSvihRadnika.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Kupovina.Designer.vb">
-      <DependentUpon>Kupovina.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Kupovina.vb">
+    <Compile Include="PregledRadnika.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="containerdb.vb" />
@@ -204,16 +187,16 @@
     <Compile Include="Administrator.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Narudzva.Designer.vb">
-      <DependentUpon>Narudzva.vb</DependentUpon>
+    <Compile Include="Narudzba.Designer.vb">
+      <DependentUpon>Narudzba.vb</DependentUpon>
     </Compile>
-    <Compile Include="Narudzva.vb">
+    <Compile Include="Narudzba.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GostPrikazArtikala.Designer.vb">
-      <DependentUpon>GostPrikazArtikala.vb</DependentUpon>
+    <Compile Include="Artikli.Designer.vb">
+      <DependentUpon>Artikli.vb</DependentUpon>
     </Compile>
-    <Compile Include="GostPrikazArtikala.vb">
+    <Compile Include="Artikli.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Korisnik.Designer.vb">
@@ -243,19 +226,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="_S_U_T_U_R_KrsicDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="_S_U_T_U_R_KrsicDataSet.vb">
-      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="_S_U_T_U_R_KrsicDataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_S_U_T_U_R_KrsicDataSet1.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Administrator.resx">
@@ -282,17 +252,11 @@
     <EmbeddedResource Include="FormaLogova.resx">
       <DependentUpon>FormaLogova.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrikazSvihRadnika.resx">
-      <DependentUpon>PrikazSvihRadnika.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Kupovina.resx">
-      <DependentUpon>Kupovina.vb</DependentUpon>
+    <EmbeddedResource Include="PregledRadnika.resx">
+      <DependentUpon>PregledRadnika.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PretragaRadnika.resx">
       <DependentUpon>PretragaRadnika.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="proba.resx">
-      <DependentUpon>proba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Podesavanja.resx">
       <DependentUpon>Podesavanja.vb</DependentUpon>
@@ -312,12 +276,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GostPrikazArtikala.resx">
-      <DependentUpon>GostPrikazArtikala.vb</DependentUpon>
+    <EmbeddedResource Include="Artikli.resx">
+      <DependentUpon>Artikli.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Narudzva.resx">
-      <DependentUpon>Narudzva.vb</DependentUpon>
+    <EmbeddedResource Include="Narudzba.resx">
+      <DependentUpon>Narudzba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnik.resx">
       <DependentUpon>Korisnik.vb</DependentUpon>
@@ -345,17 +309,6 @@
     </None>
     <None Include="NapoleonFillDataSet.xss">
       <DependentUpon>NapoleonFillDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Radnici.xsc">
-      <DependentUpon>Radnici.xsd</DependentUpon>
-    </None>
-    <None Include="Radnici.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Radnici.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Radnici.xss">
-      <DependentUpon>Radnici.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -388,28 +341,6 @@
     </None>
     <None Include="SPARTANFillDataSet.xss">
       <DependentUpon>SPARTANFillDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_S_U_T_U_R_KrsicDataSet.xsc">
-      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_S_U_T_U_R_KrsicDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_S_U_T_U_R_KrsicDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_S_U_T_U_R_KrsicDataSet.xss">
-      <DependentUpon>_S_U_T_U_R_KrsicDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_S_U_T_U_R_KrsicDataSet1.xsc">
-      <DependentUpon>_S_U_T_U_R_KrsicDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="_S_U_T_U_R_KrsicDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_S_U_T_U_R_KrsicDataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_S_U_T_U_R_KrsicDataSet1.xss">
-      <DependentUpon>_S_U_T_U_R_KrsicDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
