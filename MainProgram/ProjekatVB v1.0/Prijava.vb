@@ -159,19 +159,19 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        Try
-            Dim recieve As String = Command()
-            Narudzba.potvrda = recieve
+        'Try
+        '    Dim recieve As String = Command()
+        '    Narudzba.potvrda = recieve
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If Narudzba.potvrda = 1 Then
-                Narudzba.Show()
-                Me.Hide()
-            End If
-        Catch ex As Exception
-        End Try
+        'End Try
+        'Try
+        '    If Narudzba.potvrda = 1 Then
+        '        Narudzba.Show()
+        '        Me.Hide()
+        '    End If
+        'Catch ex As Exception
+        'End Try
     End Sub
 End Class

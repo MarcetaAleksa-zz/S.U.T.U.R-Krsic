@@ -56,7 +56,6 @@ Partial Class Narudzba
         Me.TimerDaLiJeProslaUplata = New System.Windows.Forms.Timer(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.WorkersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -295,15 +294,6 @@ Partial Class Narudzba
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(237, 102)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(45, 13)
-        Me.Label16.TabIndex = 147
-        Me.Label16.Text = "Label10"
-        '
         'Timer3
         '
         Me.Timer3.Enabled = True
@@ -314,7 +304,6 @@ Partial Class Narudzba
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(537, 587)
-        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label9)
@@ -372,6 +361,5 @@ Partial Class Narudzba
     Friend WithEvents Label7 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
-    Friend WithEvents Label16 As Label
     Friend WithEvents Timer3 As Timer
 End Class

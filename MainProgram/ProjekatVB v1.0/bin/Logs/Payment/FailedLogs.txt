@@ -13,3 +13,7 @@ Card Type: American Express;  Ammount: 50KM; First Name: Emmanuel; Last Name: Ha
 Card Type: American Express;  Ammount: 50KM; First Name: Madison; Last Name: Walker; Credit Card Number: 345456838433371; ;; Purchase attempt: 05-Sep-2019 03:22:22
 Card Type: Visa; Ammount: 50KM; First Name: Amber; Last Name: Lewis; Credit Card Number: 4740813614701251; ;; Purchase attempt: 05-Sep-2019 03:24:50
 Card Type: Visa; Ammount: 50KM; First Name: Amber; Last Name: Lewis; Credit Card Number: 4740813614701251; ;; Purchase attempt: 05-Sep-2019 03:25:07
+Card Type: Visa; Ammount: 70KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 17-Sep-2019 10:40:03
+Card Type: Visa; Ammount: 120KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 17-Sep-2019 10:58:28
+Card Type: Visa; Ammount: 70KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 17-Sep-2019 11:04:09
+Card Type: Visa; Ammount: 70KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 17-Sep-2019 11:06:03

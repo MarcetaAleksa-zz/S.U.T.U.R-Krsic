@@ -1,7 +1,9 @@
 ﻿
 'kada na paymentu prodje uplata, gdje god je uneseno nesto u txtbox, tu odmah skinuti iz tabele, i update baze odraditi
 Imports System.Data.SqlClient
+
 Public Class Narudzba
+    Public Shared potvrda As Integer
     Public Shared Ukupno As Double = 0
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
@@ -47,14 +49,6 @@ Public Class Narudzba
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerTxtBoxSamoBrojevi.Tick
-        'If Ukupno > 0 Then
-        '    Price_Label.Visible = True
-        '    Label8.Visible = True
-        '    Label8.Text = Ukupno.ToString
-        'Else
-        '    Price_Label.Visible = False
-        '    Label8.Visible = False
-        'End If
         Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
@@ -77,21 +71,6 @@ Public Class Narudzba
 
                 End If
             Next
-
-            'For Each d As Control In table.Controls
-            '    If d.GetType Is GetType(TextBox) Then
-            '        For i = 0 To brojacOpreme                             'ovde imamo bug probija nam preko kolicine ako prvo unesemo kolicinu a da nije prva po redu, tj ne prvi txtbox
-            '            'If d.Name = "t" + i.ToString Then
-            '            If d.Text > oprema_table.Rows(i)(2) Then   'ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
-            '                d.Text = oprema_table.Rows(i)(2)
-            '            End If
-
-            '            'End If
-            '        Next i
-            '    End If
-            'Next
-
-
         Catch ex As Exception
         End Try
 
@@ -220,14 +199,10 @@ Public Class Narudzba
         Catch ex As Exception
         End Try
     End Sub
-    Public potvrda As Integer
     Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
-        Dim recieve As String = Command()
-
-
         Try
-            Potvrda = recieve
-
+            Dim recieve As String = Command()
+            Narudzba.potvrda = recieve
         Catch ex As Exception
 
         End Try
@@ -248,7 +223,7 @@ Public Class Narudzba
             Dim i As Integer = 0
 
 
-            If Potvrda = 1 Then
+            If System.IO.File.Exists("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt") = True Then
 
 
                 For Each c As Control In table.Controls
@@ -264,6 +239,8 @@ Public Class Narudzba
                                         f = f - CInt(c.Text)
                                         sqlCommand.CommandText = "UPDATE oprema SET kolicina = " & f & " where id_robe = " & i & ""
                                         sqlCommand.ExecuteNonQuery()
+                                        System.IO.File.Delete("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt")
+
                                     Catch ex As Exception
 
                                     End Try
@@ -324,7 +301,6 @@ Public Class Narudzba
         Dim Command As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(Command)
         Dim oprema_table As New DataTable()
-        Dim b As Integer
 
         Dim brojacOpreme As Integer
         Try
@@ -351,7 +327,7 @@ Public Class Narudzba
 
     Private Sub Timer2_Tick_1(sender As Object, e As EventArgs) Handles Timer2.Tick
 
-        Label16.Text = potvrda
+        Label16.Text = potvrda.ToString
 
 
 

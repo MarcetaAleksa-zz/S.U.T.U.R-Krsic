@@ -37,6 +37,7 @@ Partial Class Artikli
         Me.ArtikliBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArtikliTableAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.ArtikliTableAdapter()
         Me.NapoleonAdapter = New ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager()
+        Me.PonistiIzmjeneDugme = New System.Windows.Forms.Button()
         Me.dugmeIzmijeni = New System.Windows.Forms.Button()
         Me.dugmeSacuvaj = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
@@ -51,7 +52,7 @@ Partial Class Artikli
         '
         Me.Exit_Button.Location = New System.Drawing.Point(57, 76)
         Me.Exit_Button.Name = "Exit_Button"
-        Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
+        Me.Exit_Button.Size = New System.Drawing.Size(126, 40)
         Me.Exit_Button.TabIndex = 4
         Me.Exit_Button.Text = "Izlaz"
         Me.Exit_Button.UseVisualStyleBackColor = True
@@ -81,20 +82,20 @@ Partial Class Artikli
         Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
         Me.Back_Button.Location = New System.Drawing.Point(12, 76)
         Me.Back_Button.Name = "Back_Button"
-        Me.Back_Button.Size = New System.Drawing.Size(39, 35)
+        Me.Back_Button.Size = New System.Drawing.Size(39, 40)
         Me.Back_Button.TabIndex = 3
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'DataGridView1
-        '
+
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Me.DataGridView1.DataSource = Me.DataTable1BindingSource
         ElseIf Podesavanja.OvoJeNalog = "marce" Then
             Me.DataGridView1.DataSource = Me.ArtikliBindingSource
         End If
-
-
+        '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(23, 136)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(443, 315)
@@ -144,15 +145,29 @@ Partial Class Artikli
         Me.NapoleonAdapter.PrikazSvihRadnikaTableAdapter = Nothing
         Me.NapoleonAdapter.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'PonistiIzmjeneDugme
+        '
+        Me.PonistiIzmjeneDugme.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.PonistiIzmjeneDugme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PonistiIzmjeneDugme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PonistiIzmjeneDugme.ForeColor = System.Drawing.SystemColors.Control
+        Me.PonistiIzmjeneDugme.Location = New System.Drawing.Point(304, 76)
+        Me.PonistiIzmjeneDugme.Name = "PonistiIzmjeneDugme"
+        Me.PonistiIzmjeneDugme.Size = New System.Drawing.Size(109, 40)
+        Me.PonistiIzmjeneDugme.TabIndex = 139
+        Me.PonistiIzmjeneDugme.Text = "Ponisti izmjene"
+        Me.PonistiIzmjeneDugme.UseVisualStyleBackColor = False
+        Me.PonistiIzmjeneDugme.Visible = False
+        '
         'dugmeIzmijeni
         '
         Me.dugmeIzmijeni.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.dugmeIzmijeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.dugmeIzmijeni.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dugmeIzmijeni.Location = New System.Drawing.Point(305, 71)
+        Me.dugmeIzmijeni.Location = New System.Drawing.Point(304, 76)
         Me.dugmeIzmijeni.Name = "dugmeIzmijeni"
         Me.dugmeIzmijeni.Size = New System.Drawing.Size(109, 40)
-        Me.dugmeIzmijeni.TabIndex = 127
+        Me.dugmeIzmijeni.TabIndex = 137
         Me.dugmeIzmijeni.Text = "Izmijeni"
         Me.dugmeIzmijeni.UseVisualStyleBackColor = False
         '
@@ -161,10 +176,10 @@ Partial Class Artikli
         Me.dugmeSacuvaj.BackColor = System.Drawing.SystemColors.Control
         Me.dugmeSacuvaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.dugmeSacuvaj.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.dugmeSacuvaj.Location = New System.Drawing.Point(305, 71)
+        Me.dugmeSacuvaj.Location = New System.Drawing.Point(189, 76)
         Me.dugmeSacuvaj.Name = "dugmeSacuvaj"
         Me.dugmeSacuvaj.Size = New System.Drawing.Size(109, 40)
-        Me.dugmeSacuvaj.TabIndex = 129
+        Me.dugmeSacuvaj.TabIndex = 138
         Me.dugmeSacuvaj.Text = "Sacuvaj"
         Me.dugmeSacuvaj.UseVisualStyleBackColor = False
         Me.dugmeSacuvaj.Visible = False
@@ -175,11 +190,12 @@ Partial Class Artikli
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(489, 480)
         Me.Controls.Add(Me.dugmeIzmijeni)
+        Me.Controls.Add(Me.dugmeSacuvaj)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Exit_Button)
         Me.Controls.Add(Me.Back_Button)
-        Me.Controls.Add(Me.dugmeSacuvaj)
+        Me.Controls.Add(Me.PonistiIzmjeneDugme)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Artikli"
@@ -214,6 +230,7 @@ Partial Class Artikli
     Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DataTable1BindingSource As BindingSource
     Friend WithEvents SpartanFill As SpartanFill
+    Friend WithEvents PonistiIzmjeneDugme As Button
     Friend WithEvents dugmeIzmijeni As Button
     Friend WithEvents dugmeSacuvaj As Button
 End Class

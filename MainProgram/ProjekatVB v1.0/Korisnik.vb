@@ -22,13 +22,13 @@ Public Class Korisnik
             pozicijaTextBox.Text = Prijava.imePozicije
             polaTextBox.Text = user_table.Rows(0)(8)
             adresaTextBox.Text = user_table.Rows(0)(4)
-            'If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog +
-            '                        "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
-            '    U_picture.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog +
-            '                                     "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
-            'Else
-            '    U_Picture.Image = Nothing
-            'End If
+            If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog +
+                                    "\Documents\GitHub\Projekat-VB\Image\Users\" & korisnickoimeTextBox.Text & ".jpg") Then
+                slikaPictureBox.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog +
+                                                 "\Documents\GitHub\Projekat-VB\Image\Users\" & korisnickoimeTextBox.Text & ".jpg ")
+            Else
+                slikaPictureBox.Image = Nothing
+            End If
 
         Catch ex As Exception
         End Try

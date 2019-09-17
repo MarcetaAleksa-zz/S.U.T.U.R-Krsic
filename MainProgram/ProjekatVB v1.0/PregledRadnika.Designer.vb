@@ -130,12 +130,13 @@ Partial Class PregledRadnika
         Me.PonistiIzmjeneDugme.Visible = False
         '
         'DataGridView1
-        '
+
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Me.DataGridView1.DataSource = Me.DataTable2BindingSource
         ElseIf Podesavanja.OvoJeNalog = "marce" Then
             Me.DataGridView1.DataSource = Me.PrikazSvihRadnikaBindingSource
         End If
+        '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(27, 153)
@@ -161,6 +162,8 @@ Partial Class PregledRadnika
         '
         Me.TableAdapterManager2.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager2.Connection = Nothing
+        Me.TableAdapterManager2.DataTable1TableAdapter = Nothing
+        Me.TableAdapterManager2.DataTable2TableAdapter = Nothing
         Me.TableAdapterManager2.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'PrikazSvihRadnikaTableAdapter

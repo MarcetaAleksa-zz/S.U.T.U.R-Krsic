@@ -355,6 +355,7 @@ Partial Class PretragaRadnika
         '
         'Timer2
         '
+        Me.Timer2.Enabled = True
         '
         'PretragaRadnika
         '

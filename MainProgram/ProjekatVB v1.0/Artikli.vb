@@ -62,7 +62,7 @@
             End Try
         End If
     End Sub
-    Private Sub DugmeIzmijeni_Click(sender As Object, e As EventArgs) Handles dugmeIzmijeni.Click
+    Private Sub DugmeIzmijeni_Click(sender As Object, e As EventArgs)
         DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystroke
         If Podesavanja.OvoJeNalog = "marce" Then
             Try
@@ -76,6 +76,52 @@
             Catch ex As Exception
             End Try
         End If
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles dugmeIzmijeni.Click
+        If dugmeIzmijeni.Visible = True Then
+            dugmeIzmijeni.Visible = False
+            dugmeSacuvaj.Visible = True
+            DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystroke
+
+            PonistiIzmjeneDugme.Visible = True
+        End If
+    End Sub
+
+    Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
+
+        If Podesavanja.OvoJeNalog = "marce" Then
+            Try
+                Me.ArtikliTableAdapter.Fill(Me.NapoleonFIll.Artikli)
+            Catch ex As Exception
+
+            End Try
+        ElseIf Podesavanja.OvoJeNalog = "Aleksandar" Then
+            Try
+                Me.DataTable1TableAdapter.Fill(Me.SpartanFill.DataTable1)
+            Catch ex As Exception
+            End Try
+        End If
+
+    End Sub
+
+    Private Sub DugmeSacuvaj_Click(sender As Object, e As EventArgs) Handles dugmeSacuvaj.Click
+
+        If Podesavanja.OvoJeNalog = "marce" Then
+                Try
+                    Me.ArtikliTableAdapter.Update(Me.NapoleonFIll.Artikli)
+                Catch ex As Exception
+
+                End Try
+            ElseIf Podesavanja.OvoJeNalog = "Aleksandar" Then
+                Try
+                    Me.DataTable1TableAdapter.Update(Me.SpartanFill.DataTable1)
+                Catch ex As Exception
+                End Try
+            End If
+            DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
+
 
     End Sub
 End Class

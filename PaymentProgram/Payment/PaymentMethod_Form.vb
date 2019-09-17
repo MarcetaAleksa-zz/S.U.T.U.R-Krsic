@@ -1,5 +1,7 @@
 ﻿Imports System.Net.Mail
 Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Text
 Public Class PaymentMethod_From
     Public Price As String
     Public counter As Integer = 0
@@ -12,6 +14,13 @@ Public Class PaymentMethod_From
             Dim recieve As String = Command()
             PriceTextBox.Text = recieve
             PriceTextBox.Refresh()
+            If System.IO.File.Exists("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt") = True Then
+
+                System.IO.File.Delete("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt")
+                'System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Potvrda.txt")
+                ' My.Computer.FileSystem.DeleteFile("c:\Potvrda.txt")
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -104,6 +113,8 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                 databaseconnection.connection.Open()
                 Try
                     command.ExecuteNonQuery()
+
+                    'System.IO.File.Create("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt")
                     MsgBox("Kupovina uspjesna.")
                     Me.Close()
                     counter = 3
@@ -122,8 +133,11 @@ S.U.T.U.R Krsic"
                         SMTP.EnableSsl = True
                         SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                         SMTP.Send(EmailMessage)
-                        Potvrda = 1
-                        Process.Start(My.Application.Info.DirectoryPath + "/Projekat.lnk", Potvrda)
+
+                        'Dim path As String = "c:\Potvrda.txt"
+                        '  Dim fs As FileStream = File.Create(path)
+                        ' Potvrda = 1
+                        'Process.Start(My.Application.Info.DirectoryPath + "/ProjekatVB v1.0.lnk", Potvrda)
                     Catch ex As Exception
                         MsgBox(ex.Message)
                     End Try
