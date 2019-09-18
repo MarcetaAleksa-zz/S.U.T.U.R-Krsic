@@ -33,8 +33,6 @@ Public Class Prijava
     End Sub
     Private Sub Login_Button_Click(sender As Object, e As EventArgs) Handles Login_Button.Click
         Enkripcija.EncryptPass()
-        'varijabla u kojoj dodjeljujemo tip pozicije kako bi mogli razvrstati korisnike na obicne 
-        'korisnikei administratore
         Dim tipPozicije As Integer
         Dim command As New SqlCommand("select radna_pozicija, korisnicki_id, lozinka from korisnici where 
 korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS_AS", containerdb.connection)
@@ -122,8 +120,8 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
     End Sub
 
     Private Sub Prijava_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If System.IO.File.Exists("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt") Then
-            System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+        If System.IO.File.Exists("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt") Then
+            System.IO.File.Delete("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
 
         End If
 

@@ -17,8 +17,6 @@ Public Class PaymentMethod_From
             If System.IO.File.Exists("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt") = True Then
 
                 System.IO.File.Delete("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt")
-                'System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\MainProgram\ProjekatVB v1.0\bin\Potvrda.txt")
-                ' My.Computer.FileSystem.DeleteFile("c:\Potvrda.txt")
             End If
 
         Catch ex As Exception
@@ -116,7 +114,7 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
 
 
                     MsgBox("Kupovina uspjesna.")
-                    ' Me.Close()
+
                     counter = 3
                     LogFile.Log()
                     Try
@@ -133,20 +131,12 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                         SMTP.EnableSsl = True
                         SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                         SMTP.Send(EmailMessage)
-                        System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
-                        'Dim path As String = "c:\Potvrda.txt"
-                        '  Dim fs As FileStream = File.Create(path)
-                        ' Potvrda = 1
-                        'Process.Start(My.Application.Info.DirectoryPath + "/ProjekatVB v1.0.lnk", Potvrda)
+                        System.IO.File.Create("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
                     Catch ex As Exception
-                        MsgBox(ex.Message)
+
                     End Try
                 Catch ex As Exception
-                    MsgBox(ex)
-                    'MsgBox("Postoji problem sa vasim pokusajem kupovine.")
                     counter = 3
-                    Potvrda = 0
-                    LogFile.FailedLog()
                 End Try
                 databaseconnection.connection.Close()
             Else
@@ -155,8 +145,7 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                 Potvrda = 0
                 LogFile.FailedLog()
             End If
-
-            'Me.Close()
+            Me.Close()
         End If
 
     End Sub

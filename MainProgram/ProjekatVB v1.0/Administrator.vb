@@ -21,9 +21,6 @@ Public Class Administrator
     Private Sub Logs_Button_Click(sender As Object, e As EventArgs) Handles Logs_Button.Click
         FormaLogova.Show()
         Me.Hide()
-        'promjeniti ime korisnika na Aleksandar ili Aleksandar (c:\Users\(jedno od ponudjenih imena)\...)
-        'Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
-        'Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt")
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

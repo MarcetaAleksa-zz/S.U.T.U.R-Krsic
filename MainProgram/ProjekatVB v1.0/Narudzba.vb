@@ -227,7 +227,7 @@ Public Class Narudzba
 
 
             'Dim SavePath As String = System.IO.Path.Combine("C: \Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda", "Potvrda.txt")
-            Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
+            Dim SavePath As String = "C:\Users\marce\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
 
 
             If System.IO.File.Exists(SavePath) Then
@@ -247,8 +247,8 @@ Public Class Narudzba
 
                                         drugi = oprema_table.Rows(prvi)(0)
                                         drugi = drugi - CInt(c.Text)
-                                        'sqlCommand.CommandText = "UPDATE oprema SET kolicina = " & drugi & " where id_robe = " & prvi & ""
-                                        'sqlCommand.ExecuteNonQuery()
+                                        sqlCommand.CommandText = "UPDATE oprema set kolicina = " & drugi & " where id_robe = " & prvi & ""
+                                        sqlCommand.ExecuteNonQuery()
                                         'System.IO.File.Delete("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
                                         System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
                                         ' logovi.KupiMEEE() '''ne rade
@@ -259,7 +259,7 @@ Public Class Narudzba
                                         Dim KupiMe As System.IO.StreamWriter
 
                                         Try
-                                            KupiMe = My.Computer.FileSystem.OpenTextFileWriter("C:\\Users\\Aleksandar\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Proba\\FailedLogs.txt", True)
+                                            KupiMe = My.Computer.FileSystem.OpenTextFileWriter("C:\\Users\\marce\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Proba\\FailedLogs.txt", True)
                                             KupiMe.WriteLine("J: " + drugi.ToString + ";;I: " + prvi.ToString)
                                             MsgBox("ovo se nije pokvarilo")
                                         Catch ex As Exception

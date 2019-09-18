@@ -91,7 +91,6 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
 
 
             Command.ExecuteNonQuery()
-            'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\" & UR_Username_TextBox.Text & ".jpg")
             Dim x As Integer = UR_Picture.Width
             Dim y As Integer = UR_Picture.Height
             Dim bm As New Bitmap(x, y)
@@ -100,7 +99,7 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
 
             UR_Picture.Image = bm
             If UR_Username_TextBox.Text <> "Unesi korisničko ime ovde" And postojanjeSlike = 1 Then
-                SaveImage(("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
+                SaveImage(("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
                 UR_Picture.Image = Nothing
                 postojanjeSlike = 0
 

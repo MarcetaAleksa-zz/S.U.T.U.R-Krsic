@@ -87,9 +87,6 @@ Public Class Korisnik
         brojtelefonaTextBox.BackColor = Color.PaleGreen
         p8.BackColor = Color.PaleGreen
 
-        '   promijenislikuLabel.Visible = True
-        '  dugmeOtvoriSliku.Visible = True
-
     End Sub
 
     Private Sub DugmeSacuvaj_Click(sender As Object, e As EventArgs) Handles dugmeSacuvaj.Click
@@ -149,20 +146,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
         U_OpenFileDialog.InitialDirectory = U_FolderBrowserDialog.SelectedPath
         U_OpenFileDialog.ShowDialog()
     End Sub
-
-    Private Sub U_OpenFileDialog_FileOk(sender As Object, e As CancelEventArgs) Handles U_OpenFileDialog.FileOk
-
-        'U_Picture.Image = Image.FromFile(U_OpenFileDialog.FileName)
-
-    End Sub
-
     Private Sub Korisnik_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'SpartanFill.DataTable1' table. You can move, or remove it, as needed.
-        'TODO: This line of code loads data into the 'NapoleonFIll.Artikli' table. You can move, or remove it, as needed.
-        'TODO: This line of code loads data into the 'SpartanFill.DataTable1' table. You can move, or remove it, as needed.
-
-
-
 
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Try
@@ -180,10 +164,6 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
             Catch ex As Exception
             End Try
         End If
-
-
-
-
 
 
     End Sub
