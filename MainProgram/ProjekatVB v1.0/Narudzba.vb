@@ -1,9 +1,10 @@
 ﻿
 'kada na paymentu prodje uplata, gdje god je uneseno nesto u txtbox, tu odmah skinuti iz tabele, i update baze odraditi
 Imports System.Data.SqlClient
+Imports System.IO.TextReader
+
 
 Public Class Narudzba
-    Public Shared potvrda As Integer
     Public Shared Ukupno As Double = 0
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Hide()
@@ -11,6 +12,8 @@ Public Class Narudzba
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
+        Gost.Close()
+        Prijava.Close()
     End Sub
     Private Sub Purchase_Button_Click(sender As Object, e As EventArgs) Handles Purchase_Button.Click
 
@@ -199,10 +202,12 @@ Public Class Narudzba
         Catch ex As Exception
         End Try
     End Sub
+    Public Shared prvi As Integer = 0
+    Public Shared drugi As Integer = 0
     Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
+
         Try
             Dim recieve As String = Command()
-            Narudzba.potvrda = recieve
         Catch ex As Exception
 
         End Try
@@ -220,34 +225,57 @@ Public Class Narudzba
             brojacOpreme = oprema_table.Rows.Count
 
 
-            Dim i As Integer = 0
+
+            'Dim SavePath As String = System.IO.Path.Combine("C: \Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda", "Potvrda.txt")
+            Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
 
 
-            If System.IO.File.Exists("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt") = True Then
-
-
+            If System.IO.File.Exists(SavePath) Then
                 For Each c As Control In table.Controls
                     If c.GetType Is GetType(TextBox) Then
 
-                        For i = 0 To brojacOpreme
-                            If c.Name = "t" + i.ToString Then
+                        For prvi = 0 To brojacOpreme
+                            If c.Name = "t" + prvi.ToString Then
 
                                 If c.Text <> "0" Then
-                                    Dim f As Integer = 0
-                                    Try
-                                        f = oprema_table.Rows(i)(0)
-                                        f = f - CInt(c.Text)
-                                        sqlCommand.CommandText = "UPDATE oprema SET kolicina = " & f & " where id_robe = " & i & ""
-                                        sqlCommand.ExecuteNonQuery()
-                                        System.IO.File.Delete("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt")
+                                    'logovi.KupiMEEE() '
+                                    'drugi = oprema_table.Rows(prvi)(0) '
+                                    'drugi = drugi - CInt(c.Text) '
 
+
+                                    Try
+
+                                        drugi = oprema_table.Rows(prvi)(0)
+                                        drugi = drugi - CInt(c.Text)
+                                        'sqlCommand.CommandText = "UPDATE oprema SET kolicina = " & drugi & " where id_robe = " & prvi & ""
+                                        'sqlCommand.ExecuteNonQuery()
+                                        'System.IO.File.Delete("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+                                        System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+                                        ' logovi.KupiMEEE() '''ne rade
+
+
+
+                                        'start
+                                        Dim KupiMe As System.IO.StreamWriter
+
+                                        Try
+                                            KupiMe = My.Computer.FileSystem.OpenTextFileWriter("C:\\Users\\Aleksandar\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Proba\\FailedLogs.txt", True)
+                                            KupiMe.WriteLine("J: " + drugi.ToString + ";;I: " + prvi.ToString)
+                                            MsgBox("ovo se nije pokvarilo")
+                                        Catch ex As Exception
+                                            MsgBox("ovo se pokvarilo")
+                                        End Try
+                                        'kraj
+
+                                        MsgBox("Desava se")
                                     Catch ex As Exception
 
+                                        MsgBox(" Ne Desava se")
                                     End Try
                                 End If
 
                             End If
-                        Next i
+                        Next prvi
 
                     End If
                 Next

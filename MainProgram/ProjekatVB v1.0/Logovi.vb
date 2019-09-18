@@ -46,4 +46,16 @@
         End Try
 
     End Sub
+    Public Shared Sub KupiMEEE()
+        Dim KupiMe As System.IO.StreamWriter
+
+        Try
+            KupiMe = My.Computer.FileSystem.OpenTextFileWriter("C:\\Users\\Aleksandar\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Proba\\FailedLogs.txt", True)
+            KupiMe.WriteLine("J: " + Narudzba.drugi + ";;I: " + Narudzba.prvi)
+            MsgBox("ovo se nije pokvarilo")
+        Catch ex As Exception
+            MsgBox("ovo se pokvarilo")
+        End Try
+    End Sub
+
 End Class

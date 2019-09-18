@@ -8,6 +8,7 @@ Public Class Administrator
     End Sub
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         Me.Close()
+        Prijava.Close()
     End Sub
     Private Sub UNV_Button_Click(sender As Object, e As EventArgs) Handles NoviNalogButton.Click
         UnosRadnika.Show()

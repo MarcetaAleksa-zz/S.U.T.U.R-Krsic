@@ -122,6 +122,12 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
     End Sub
 
     Private Sub Prijava_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If System.IO.File.Exists("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt") Then
+            System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+
+        End If
+
+
         Dim ComputerName As String
         ComputerName = System.Net.Dns.GetHostName
         If ComputerName = "Napoleon" Then
@@ -139,11 +145,6 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
             Catch ex As Exception
             End Try
         End If
-
-
-
-
-
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
@@ -156,22 +157,5 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
 
     Private Sub Settings_Click(sender As Object, e As EventArgs) Handles Settings.Click
         Podesavanja.Show()
-    End Sub
-
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        'Try
-        '    Dim recieve As String = Command()
-        '    Narudzba.potvrda = recieve
-
-        'Catch ex As Exception
-
-        'End Try
-        'Try
-        '    If Narudzba.potvrda = 1 Then
-        '        Narudzba.Show()
-        '        Me.Hide()
-        '    End If
-        'Catch ex As Exception
-        'End Try
     End Sub
 End Class

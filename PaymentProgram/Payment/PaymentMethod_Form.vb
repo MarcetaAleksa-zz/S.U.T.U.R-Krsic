@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports System.IO
 Imports System.Text
 Public Class PaymentMethod_From
-    Public Price As String
+    Public Price As Double
     Public counter As Integer = 0
     Public ErrorMsg As String
     Public Potvrda As Integer
@@ -24,7 +24,7 @@ Public Class PaymentMethod_From
         Catch ex As Exception
 
         End Try
-        Price = PriceTextBox.Text
+        Price = CDbl(PriceTextBox.Text)
         PriceTextBox.Show()
         Dim ComputerName As String
         ComputerName = System.Net.Dns.GetHostName
@@ -114,9 +114,9 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                 Try
                     command.ExecuteNonQuery()
 
-                    'System.IO.File.Create("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt")
+
                     MsgBox("Kupovina uspjesna.")
-                    Me.Close()
+                    ' Me.Close()
                     counter = 3
                     LogFile.Log()
                     Try
@@ -124,16 +124,16 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                         EmailMessage.To.Add(EmailTextBox.Text)
                         EmailMessage.Subject = "S.U.T.U.R Krisic"
                         EmailMessage.Body = "Poštovani, 
-Vasa narudzba je uspjesna. Proizvodi koje ste narucili ce stici na adresu: " + AdressTextBox.Text + ", u periodu izmedju 7-21 dan. 
-U slucaju dodatnih pitanja nemojte se ustrucavati da nas kontaktirate.
-LP,
-S.U.T.U.R Krsic"
+                    Vasa narudzba je uspjesna. Proizvodi koje ste narucili ce stici na adresu: " + AdressTextBox.Text + ", u periodu izmedju 7-21 dan. 
+                    U slucaju dodatnih pitanja nemojte se ustrucavati da nas kontaktirate.
+                    LP,
+                    S.U.T.U.R Krsic"
                         Dim SMTP As New SmtpClient("smtp.gmail.com")
                         SMTP.Port = 587
                         SMTP.EnableSsl = True
                         SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                         SMTP.Send(EmailMessage)
-
+                        System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
                         'Dim path As String = "c:\Potvrda.txt"
                         '  Dim fs As FileStream = File.Create(path)
                         ' Potvrda = 1
@@ -142,7 +142,8 @@ S.U.T.U.R Krsic"
                         MsgBox(ex.Message)
                     End Try
                 Catch ex As Exception
-                    MsgBox("Postoji problem sa vasim pokusajem kupovine.")
+                    MsgBox(ex)
+                    'MsgBox("Postoji problem sa vasim pokusajem kupovine.")
                     counter = 3
                     Potvrda = 0
                     LogFile.FailedLog()
@@ -154,7 +155,8 @@ S.U.T.U.R Krsic"
                 Potvrda = 0
                 LogFile.FailedLog()
             End If
-            Me.Close()
+
+            'Me.Close()
         End If
 
     End Sub
