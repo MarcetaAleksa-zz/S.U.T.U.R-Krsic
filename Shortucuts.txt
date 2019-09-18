@@ -1,6 +1,0 @@
-Projekat.dbo.Plate
-BRDUMJ - Broj Radnih Dana u Mjesecu
-ISPRDUMJ - Ispunjeni Radni Dani u Mjesecu
-PNOISPRD - Plata Na Osnovu Ispunjenih Radnih Dana u Mjesecu
-PVS - Prekovremeni Sati
-IBP - Isplata Bonus Plate

@@ -327,7 +327,7 @@ Public Class Narudzba
 
     Private Sub Timer2_Tick_1(sender As Object, e As EventArgs) Handles Timer2.Tick
 
-        Label16.Text = potvrda.ToString
+        ' Label16.Text = potvrda.ToString
 
 
 

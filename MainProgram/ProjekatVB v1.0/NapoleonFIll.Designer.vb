@@ -703,6 +703,8 @@ Partial Public Class NapoleonFIll
         
         Private columntip_opreme As Global.System.Data.DataColumn
         
+        Private columnid_robe As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -771,6 +773,14 @@ Partial Public Class NapoleonFIll
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property id_robeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_robe
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -809,10 +819,16 @@ Partial Public Class NapoleonFIll
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overloads Function AddArtikliRow(ByVal ime As String, ByVal kolicina As Short, ByVal cijena As Decimal, ByVal tip_opreme As String) As ArtikliRow
             Dim rowArtikliRow As ArtikliRow = CType(Me.NewRow,ArtikliRow)
-            Dim columnValuesArray() As Object = New Object() {ime, kolicina, cijena, tip_opreme}
+            Dim columnValuesArray() As Object = New Object() {ime, kolicina, cijena, tip_opreme, Nothing}
             rowArtikliRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowArtikliRow)
             Return rowArtikliRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindByid_robe(ByVal id_robe As Integer) As ArtikliRow
+            Return CType(Me.Rows.Find(New Object() {id_robe}),ArtikliRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -836,6 +852,7 @@ Partial Public Class NapoleonFIll
             Me.columnkolicina = MyBase.Columns("kolicina")
             Me.columncijena = MyBase.Columns("cijena")
             Me.columntip_opreme = MyBase.Columns("tip_opreme")
+            Me.columnid_robe = MyBase.Columns("id_robe")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -849,6 +866,9 @@ Partial Public Class NapoleonFIll
             MyBase.Columns.Add(Me.columncijena)
             Me.columntip_opreme = New Global.System.Data.DataColumn("tip_opreme", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntip_opreme)
+            Me.columnid_robe = New Global.System.Data.DataColumn("id_robe", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_robe)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_robe}, true))
             Me.columnime.AllowDBNull = false
             Me.columnime.ReadOnly = true
             Me.columnime.MaxLength = 20
@@ -856,6 +876,12 @@ Partial Public Class NapoleonFIll
             Me.columncijena.AllowDBNull = false
             Me.columntip_opreme.ReadOnly = true
             Me.columntip_opreme.MaxLength = 9
+            Me.columnid_robe.AutoIncrement = true
+            Me.columnid_robe.AutoIncrementSeed = -1
+            Me.columnid_robe.AutoIncrementStep = -1
+            Me.columnid_robe.AllowDBNull = false
+            Me.columnid_robe.ReadOnly = true
+            Me.columnid_robe.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1288,6 +1314,17 @@ Partial Public Class NapoleonFIll
             End Get
             Set
                 Me(Me.tableArtikli.tip_opremeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property id_robe() As Integer
+            Get
+                Return CType(Me(Me.tableArtikli.id_robeColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableArtikli.id_robeColumn) = value
             End Set
         End Property
         
@@ -2006,6 +2043,7 @@ Namespace NapoleonFIllTableAdapters
             tableMapping.ColumnMappings.Add("kolicina", "kolicina")
             tableMapping.ColumnMappings.Add("cijena", "cijena")
             tableMapping.ColumnMappings.Add("tip_opreme", "tip_opreme")
+            tableMapping.ColumnMappings.Add("id_robe", "id_robe")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -2044,9 +2082,9 @@ Namespace NapoleonFIllTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        naziv_opreme.ime AS tip_opreme, oprema.ime, oprema.kolicina, oprema"& _ 
-                ".cijena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            oprema LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         naziv_"& _ 
-                "opreme ON oprema.tip_robe = naziv_opreme.id_opreme"
+            Me._commandCollection(0).CommandText = "SELECT        oprema.id_robe, naziv_opreme.ime AS tip_opreme, oprema.ime, oprema."& _ 
+                "kolicina, oprema.cijena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            oprema LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          naziv_opreme ON oprema.tip_robe = naziv_opreme.id_opreme"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
