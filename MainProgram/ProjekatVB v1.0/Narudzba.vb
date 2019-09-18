@@ -184,10 +184,6 @@ Public Class Narudzba
                                             Ukupno = +CInt(g.Text)
 
                                         End If
-
-
-                                        'a.ToString 'CInt(a) * CInt(b) '"jeremija" 'oprema_table.Rows(i)(2).ToString * oprema_table.Rows(i)(1).ToString                    ''''ovde pokusavam napraviti da sam ispisuje prozivod cijene i zeljene kolicine
-
                                     End If
 
                                 End If
@@ -226,53 +222,37 @@ Public Class Narudzba
 
 
 
-            'Dim SavePath As String = System.IO.Path.Combine("C: \Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda", "Potvrda.txt")
-            Dim SavePath As String = "C:\Users\marce\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
+
+            Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
 
 
             If System.IO.File.Exists(SavePath) Then
                 For Each c As Control In table.Controls
                     If c.GetType Is GetType(TextBox) Then
 
-                        For prvi = 0 To brojacOpreme
-                            If c.Name = "t" + prvi.ToString Then
+                        For prvi = 0 To brojacOpreme Step 1
+                            '     If c.Name = "t" + prvi.ToString Then
+                            Dim x As String
+                            c.Name = "t" + prvi.ToString
+                            x = c.Name
+                            If x = "t" + prvi.ToString And (c.Text <> "0" And c.Text <> "") Then
+                                Dim cetvrti As Integer
+                                drugi = oprema_table.Rows(prvi)(0)
+                                cetvrti = drugi - CInt(c.Text)
+                                Dim treci As Integer
+                                treci = prvi + 1
 
-                                If c.Text <> "0" Then
-                                    'logovi.KupiMEEE() '
-                                    'drugi = oprema_table.Rows(prvi)(0) '
-                                    'drugi = drugi - CInt(c.Text) '
+                                Try
+                                    sqlCommand.CommandText = "UPDATE oprema set kolicina = " & cetvrti & " where id_robe = " & treci & ""
+                                    containerdb.connection.Open()
+                                    sqlCommand.ExecuteNonQuery()
+                                    containerdb.connection.Close()
 
-
-                                    Try
-
-                                        drugi = oprema_table.Rows(prvi)(0)
-                                        drugi = drugi - CInt(c.Text)
-                                        sqlCommand.CommandText = "UPDATE oprema set kolicina = " & drugi & " where id_robe = " & prvi & ""
-                                        sqlCommand.ExecuteNonQuery()
-                                        'System.IO.File.Delete("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
-                                        System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
-                                        ' logovi.KupiMEEE() '''ne rade
-
-
-
-                                        'start
-                                        Dim KupiMe As System.IO.StreamWriter
-
-                                        Try
-                                            KupiMe = My.Computer.FileSystem.OpenTextFileWriter("C:\\Users\\marce\\Documents\\GitHub\\Projekat-VB\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Proba\\FailedLogs.txt", True)
-                                            KupiMe.WriteLine("J: " + drugi.ToString + ";;I: " + prvi.ToString)
-                                            MsgBox("ovo se nije pokvarilo")
-                                        Catch ex As Exception
-                                            MsgBox("ovo se pokvarilo")
-                                        End Try
-                                        'kraj
-
-                                        MsgBox("Desava se")
-                                    Catch ex As Exception
-
-                                        MsgBox(" Ne Desava se")
-                                    End Try
-                                End If
+                                    System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+                                Catch ex As Exception
+                                    MsgBox(ex)
+                                End Try
+                                '        End If
 
                             End If
                         Next prvi

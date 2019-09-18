@@ -19,3 +19,4 @@ Card Type: Visa; Ammount: 70KM; First Name: Emmanuel; Last Name: Harris; Credit 
 Card Type: Visa; Ammount: 70KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 17-Sep-2019 11:06:03
 Card Type: Visa; Ammount: 770KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 18-Sep-2019 04:24:33
 Card Type: Visa; Ammount: 770KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 18-Sep-2019 05:50:01
+Card Type: Visa; Ammount: 7820KM; First Name: Emmanuel; Last Name: Harris; Credit Card Number: 377333620264515; ;; Purchase attempt: 19-Sep-2019 12:13:40

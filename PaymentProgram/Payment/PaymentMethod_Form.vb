@@ -127,13 +127,15 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                     LP,
                     S.U.T.U.R Krsic"
                         Dim SMTP As New SmtpClient("smtp.gmail.com")
-                        SMTP.Port = 587
+                        SMTP.Port = 587S
                         SMTP.EnableSsl = True
                         SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                         SMTP.Send(EmailMessage)
-                        System.IO.File.Create("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
-                    Catch ex As Exception
+                        System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
 
+                    Catch ex As Exception
+                        MsgBox(ex)
+                        Me.Close()
                     End Try
                 Catch ex As Exception
                     counter = 3
@@ -145,8 +147,8 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                 Potvrda = 0
                 LogFile.FailedLog()
             End If
-            Me.Close()
-        End If
 
+        End If
+        Me.Close()
     End Sub
 End Class
