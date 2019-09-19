@@ -75,6 +75,7 @@ Partial Class PaymentMethod_From
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.VisaBox.SuspendLayout()
@@ -583,6 +584,11 @@ Partial Class PaymentMethod_From
         Me.Panel6.Size = New System.Drawing.Size(553, 280)
         Me.Panel6.TabIndex = 1
         '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 12000
+        '
         'PaymentMethod_From
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -667,4 +673,5 @@ Partial Class PaymentMethod_From
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Timer2 As Timer
 End Class

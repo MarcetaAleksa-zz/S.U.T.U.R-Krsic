@@ -202,70 +202,68 @@ Public Class Narudzba
     Public Shared drugi As Integer = 0
     Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
 
-        Try
-            Dim recieve As String = Command()
-        Catch ex As Exception
 
-        End Try
 
-        Dim sqlCommand As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(sqlCommand)
-        Dim oprema_table As New DataTable()
+        'Dim sqlCommand As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
+        'Dim adapter As New SqlDataAdapter(sqlCommand)
+        'Dim oprema_table As New DataTable()
 
 
 
 
-        Dim brojacOpreme As Integer = 0
-        Try
-            adapter.Fill(oprema_table)
-            brojacOpreme = oprema_table.Rows.Count
+        'Dim brojacOpreme As Integer = 0
+        'Try
+        '    adapter.Fill(oprema_table)
+        '    brojacOpreme = oprema_table.Rows.Count
 
 
 
 
-            Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
+        Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
 
 
-            If System.IO.File.Exists(SavePath) Then
-                For Each c As Control In table.Controls
-                    If c.GetType Is GetType(TextBox) Then
+        If System.IO.File.Exists(SavePath) Then
+            '        For Each c As Control In table.Controls
+            '            If c.GetType Is GetType(TextBox) Then
 
-                        For prvi = 0 To brojacOpreme Step 1
-                            '     If c.Name = "t" + prvi.ToString Then
-                            Dim x As String
-                            c.Name = "t" + prvi.ToString
-                            x = c.Name
-                            If x = "t" + prvi.ToString And (c.Text <> "0" And c.Text <> "") Then
-                                Dim cetvrti As Integer
-                                drugi = oprema_table.Rows(prvi)(0)
-                                cetvrti = drugi - CInt(c.Text)
-                                Dim treci As Integer
-                                treci = prvi + 1
+            '                For prvi = 1 To brojacOpreme
+            '                    '     If c.Name = "t" + prvi.ToString Then
+            '                    'Dim x As String
+            '                    'c.Name = "t" + prvi.ToString
+            '                    'x = c.Name
+            '                    'If x = "t" + prvi.ToString And (c.Text <> "0" And c.Text <> "") Then
+            '                    '    Dim cetvrti As Integer
+            '                    '    drugi = oprema_table.Rows(prvi)(0)
+            '                    '    cetvrti = drugi - CInt(c.Text)
+            '                    '    Dim treci As Integer
+            '                    '    treci = prvi + 1
 
-                                Try
-                                    sqlCommand.CommandText = "UPDATE oprema set kolicina = " & cetvrti & " where id_robe = " & treci & ""
-                                    containerdb.connection.Open()
-                                    sqlCommand.ExecuteNonQuery()
-                                    containerdb.connection.Close()
+            '                    '    Try
+            '                    '        sqlCommand.CommandText = "UPDATE oprema set kolicina = " & cetvrti & " where id_robe = " & treci & ""
+            '                    '        containerdb.connection.Open()
+            '                    '        sqlCommand.ExecuteNonQuery()
+            '                    '        containerdb.connection.Close()
 
-                                    System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
-                                Catch ex As Exception
-                                    MsgBox(ex)
-                                End Try
-                                '        End If
+            '                    '      System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+            '                    '    Catch ex As Exception
 
-                            End If
-                        Next prvi
+            '                    MsgBox(prvi)
+            '                    '    End Try
+            '                    '        End If
 
-                    End If
-                Next
+            '                    ' End If
+            '                Next
+            '                System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+            '            End If
+            '        Next
+            Radimo()
+            TimerDaLiJeProslaUplata.Enabled = False
+        End If
 
-            End If
 
 
-
-        Catch ex As Exception
-        End Try
+        'Catch ex As Exception
+        'End Try
 
     End Sub
 
@@ -339,6 +337,50 @@ Public Class Narudzba
 
 
 
+    End Sub
+
+    Public Sub Radimo()
+        Dim sqlCommand As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
+        Dim oprema_table As New DataTable()
+        Dim i As Integer = 0
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+
+            For Each c As Control In table.Controls
+                If c.GetType Is GetType(TextBox) Then
+                    If c.Name = "t" + i.ToString And c.Text <> "0" And c.Text <> "" Then
+                        Dim f As Integer
+                        f = oprema_table.Rows(i)(0)
+                        f = f - CInt(c.Text)
+                        Dim b As Integer
+                        b = i + 1
+
+                        Try
+                            sqlCommand.CommandText = "UPDATE oprema set kolicina = " & f & " where id_robe = " & b & ""
+                            containerdb.connection.Open()
+                            sqlCommand.ExecuteNonQuery()
+                            containerdb.connection.Close()
+
+
+                        Catch ex As Exception
+
+
+                        End Try
+
+                    End If
+                    i = i + 1
+                End If
+
+            Next
+            System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+
+
+
+        Catch ex As Exception
+        End Try
     End Sub
 End Class
 

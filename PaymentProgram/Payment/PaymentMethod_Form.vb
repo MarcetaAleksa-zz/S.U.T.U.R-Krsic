@@ -132,7 +132,7 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                         SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                         SMTP.Send(EmailMessage)
                         System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
-
+                        Me.Close()
                     Catch ex As Exception
                         MsgBox(ex)
                         Me.Close()
@@ -149,6 +149,10 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
             End If
 
         End If
+        Me.Close()
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Me.Close()
     End Sub
 End Class
