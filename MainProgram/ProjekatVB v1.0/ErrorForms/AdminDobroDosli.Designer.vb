@@ -22,11 +22,12 @@ Partial Class AdminDobroDosli
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminDobroDosli))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OkButton = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,6 +40,17 @@ Partial Class AdminDobroDosli
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(255, 41)
         Me.Panel1.TabIndex = 1
+        '
+        'LabelZaNaziv
+        '
+        Me.LabelZaNaziv.AutoSize = True
+        Me.LabelZaNaziv.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelZaNaziv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.LabelZaNaziv.Location = New System.Drawing.Point(27, 13)
+        Me.LabelZaNaziv.Name = "LabelZaNaziv"
+        Me.LabelZaNaziv.Size = New System.Drawing.Size(204, 18)
+        Me.LabelZaNaziv.TabIndex = 138
+        Me.LabelZaNaziv.Text = "ADMINISTRATORSKI PANEL"
         '
         'Label1
         '
@@ -74,17 +86,6 @@ Partial Class AdminDobroDosli
         Me.Label2.TabIndex = 136
         Me.Label2.Text = "Dobrodošli!"
         '
-        'LabelZaNaziv
-        '
-        Me.LabelZaNaziv.AutoSize = True
-        Me.LabelZaNaziv.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelZaNaziv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.LabelZaNaziv.Location = New System.Drawing.Point(27, 13)
-        Me.LabelZaNaziv.Name = "LabelZaNaziv"
-        Me.LabelZaNaziv.Size = New System.Drawing.Size(204, 18)
-        Me.LabelZaNaziv.TabIndex = 138
-        Me.LabelZaNaziv.Text = "ADMINISTRATORSKI PANEL"
-        '
         'AdminDobroDosli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -94,6 +95,7 @@ Partial Class AdminDobroDosli
         Me.Controls.Add(Me.OkButton)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdminDobroDosli"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"

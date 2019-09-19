@@ -383,6 +383,7 @@ Partial Class PretragaRadnika
         Me.Controls.Add(Me.U_Name_Label)
         Me.Controls.Add(Me.Panel3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "PretragaRadnika"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PretragaRadnika"

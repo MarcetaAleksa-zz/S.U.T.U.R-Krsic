@@ -130,13 +130,13 @@ Partial Class PregledRadnika
         Me.PonistiIzmjeneDugme.Visible = False
         '
         'DataGridView1
-
+        '
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Me.DataGridView1.DataSource = Me.DataTable2BindingSource
         ElseIf Podesavanja.OvoJeNalog = "marce" Then
             Me.DataGridView1.DataSource = Me.PrikazSvihRadnikaBindingSource
         End If
-        '
+
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(27, 153)
@@ -201,6 +201,7 @@ Partial Class PregledRadnika
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.dugmeSacuvaj)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "PregledRadnika"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

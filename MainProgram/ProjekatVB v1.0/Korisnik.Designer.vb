@@ -690,7 +690,7 @@ Partial Class Korisnik
         Me.TabStorage.Text = "Skladište"
         '
         'DataGridView1
-        '
+
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Me.DataGridView1.DataSource = Me.DataTable1BindingSource
         ElseIf Podesavanja.OvoJeNalog = "marce" Then

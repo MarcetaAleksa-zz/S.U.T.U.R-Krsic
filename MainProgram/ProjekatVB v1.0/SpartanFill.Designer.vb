@@ -492,8 +492,10 @@ Partial Public Class SpartanFill
             Me.columnid_robe = New Global.System.Data.DataColumn("id_robe", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid_robe)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_robe}, true))
+            Me.columntip_opreme.ReadOnly = true
             Me.columntip_opreme.MaxLength = 9
             Me.columnime.AllowDBNull = false
+            Me.columnime.ReadOnly = true
             Me.columnime.MaxLength = 20
             Me.columnkolicina.AllowDBNull = false
             Me.columncijena.AllowDBNull = false
