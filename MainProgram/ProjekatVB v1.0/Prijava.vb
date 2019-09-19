@@ -142,6 +142,9 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
                 Podesavanja.OvoJeNalog = "Aleksandar"
             Catch ex As Exception
             End Try
+        ElseIf ComputerName = "" Then
+            Podesavanja.OvoJeBaza = ""
+            Podesavanja.OvoJeNalog = ""
         End If
     End Sub
 

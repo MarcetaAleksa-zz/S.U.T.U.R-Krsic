@@ -167,9 +167,6 @@ Public Class Narudzba
                 If g.GetType Is GetType(Label) Then
                     For i = 0 To brojacOpreme
                         If g.Name = "L3" + i.ToString Then
-
-
-
                             For Each d As Control In table.Controls
                                 If d.GetType Is GetType(TextBox) Then
 
@@ -188,9 +185,6 @@ Public Class Narudzba
 
                                 End If
                             Next
-
-
-
                         End If
                     Next i
                 End If
@@ -203,68 +197,13 @@ Public Class Narudzba
     Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
 
 
-
-        'Dim sqlCommand As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
-        'Dim adapter As New SqlDataAdapter(sqlCommand)
-        'Dim oprema_table As New DataTable()
-
-
-
-
-        'Dim brojacOpreme As Integer = 0
-        'Try
-        '    adapter.Fill(oprema_table)
-        '    brojacOpreme = oprema_table.Rows.Count
-
-
-
-
         Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
 
 
         If System.IO.File.Exists(SavePath) Then
-            '        For Each c As Control In table.Controls
-            '            If c.GetType Is GetType(TextBox) Then
-
-            '                For prvi = 1 To brojacOpreme
-            '                    '     If c.Name = "t" + prvi.ToString Then
-            '                    'Dim x As String
-            '                    'c.Name = "t" + prvi.ToString
-            '                    'x = c.Name
-            '                    'If x = "t" + prvi.ToString And (c.Text <> "0" And c.Text <> "") Then
-            '                    '    Dim cetvrti As Integer
-            '                    '    drugi = oprema_table.Rows(prvi)(0)
-            '                    '    cetvrti = drugi - CInt(c.Text)
-            '                    '    Dim treci As Integer
-            '                    '    treci = prvi + 1
-
-            '                    '    Try
-            '                    '        sqlCommand.CommandText = "UPDATE oprema set kolicina = " & cetvrti & " where id_robe = " & treci & ""
-            '                    '        containerdb.connection.Open()
-            '                    '        sqlCommand.ExecuteNonQuery()
-            '                    '        containerdb.connection.Close()
-
-            '                    '      System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
-            '                    '    Catch ex As Exception
-
-            '                    MsgBox(prvi)
-            '                    '    End Try
-            '                    '        End If
-
-            '                    ' End If
-            '                Next
-            '                System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
-            '            End If
-            '        Next
             Radimo()
             TimerDaLiJeProslaUplata.Enabled = False
         End If
-
-
-
-        'Catch ex As Exception
-        'End Try
-
     End Sub
 
     Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -330,15 +269,6 @@ Public Class Narudzba
         Catch ex As Exception
         End Try
     End Sub
-
-    Private Sub Timer2_Tick_1(sender As Object, e As EventArgs) Handles Timer2.Tick
-
-        ' Label16.Text = potvrda.ToString
-
-
-
-    End Sub
-
     Public Sub Radimo()
         Dim sqlCommand As New SqlCommand("SELECT kolicina FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(sqlCommand)
@@ -383,12 +313,4 @@ Public Class Narudzba
         End Try
     End Sub
 End Class
-
-
-
-'If d.Name = "t" + i.ToString And CDbl(Val(d.Text)) > oprema_table.Rows(0)(i) Then
-''  Label16.Text = i.ToString
-''ovde smo napravili da se ne moze unijeti veca kolicina od postojece. Npr imamo 30 buketa, unesemo 30, aloi ako prorbamo 31 ne mozemo
-'d.Text = oprema_table.Rows(0)(i).ToString
-
 
