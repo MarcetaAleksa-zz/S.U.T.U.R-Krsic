@@ -135,7 +135,6 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                         Me.Close()
                     Catch ex As Exception
                         MsgBox(ex)
-                        Me.Close()
                     End Try
                 Catch ex As Exception
                     counter = 3
@@ -149,10 +148,7 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
             End If
 
         End If
-        Me.Close()
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        Me.Close()
-    End Sub
+
 End Class

@@ -262,7 +262,7 @@ Partial Class PaymentMethod_From
         Me.VisaRadioButton.Location = New System.Drawing.Point(12, 188)
         Me.VisaRadioButton.Name = "VisaRadioButton"
         Me.VisaRadioButton.Size = New System.Drawing.Size(58, 24)
-        Me.VisaRadioButton.TabIndex = 2
+        Me.VisaRadioButton.TabIndex = 10
         Me.VisaRadioButton.TabStop = True
         Me.VisaRadioButton.Text = "Visa"
         Me.VisaRadioButton.UseVisualStyleBackColor = True
@@ -284,7 +284,7 @@ Partial Class PaymentMethod_From
         Me.AmericanExpressRadioButton.Location = New System.Drawing.Point(12, 116)
         Me.AmericanExpressRadioButton.Name = "AmericanExpressRadioButton"
         Me.AmericanExpressRadioButton.Size = New System.Drawing.Size(109, 17)
-        Me.AmericanExpressRadioButton.TabIndex = 1
+        Me.AmericanExpressRadioButton.TabIndex = 9
         Me.AmericanExpressRadioButton.TabStop = True
         Me.AmericanExpressRadioButton.Text = "American Express"
         Me.AmericanExpressRadioButton.UseVisualStyleBackColor = True
@@ -296,7 +296,7 @@ Partial Class PaymentMethod_From
         Me.MasterCardRadioButton.Location = New System.Drawing.Point(11, 34)
         Me.MasterCardRadioButton.Name = "MasterCardRadioButton"
         Me.MasterCardRadioButton.Size = New System.Drawing.Size(110, 24)
-        Me.MasterCardRadioButton.TabIndex = 0
+        Me.MasterCardRadioButton.TabIndex = 8
         Me.MasterCardRadioButton.TabStop = True
         Me.MasterCardRadioButton.Text = "MasterCard"
         Me.MasterCardRadioButton.UseVisualStyleBackColor = True
@@ -343,7 +343,7 @@ Partial Class PaymentMethod_From
         Me.EmailTextBox.Location = New System.Drawing.Point(276, 131)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(225, 20)
-        Me.EmailTextBox.TabIndex = 139
+        Me.EmailTextBox.TabIndex = 7
         '
         'Adress_Label
         '
@@ -359,7 +359,7 @@ Partial Class PaymentMethod_From
         Me.AdressTextBox.Location = New System.Drawing.Point(276, 69)
         Me.AdressTextBox.Name = "AdressTextBox"
         Me.AdressTextBox.Size = New System.Drawing.Size(225, 20)
-        Me.AdressTextBox.TabIndex = 12
+        Me.AdressTextBox.TabIndex = 6
         '
         'Panel1
         '
@@ -465,7 +465,7 @@ Partial Class PaymentMethod_From
         Me.PurchaseButton.Location = New System.Drawing.Point(241, 187)
         Me.PurchaseButton.Name = "PurchaseButton"
         Me.PurchaseButton.Size = New System.Drawing.Size(125, 47)
-        Me.PurchaseButton.TabIndex = 26
+        Me.PurchaseButton.TabIndex = 11
         Me.PurchaseButton.Text = "Kupite"
         Me.PurchaseButton.UseVisualStyleBackColor = True
         '
@@ -474,14 +474,14 @@ Partial Class PaymentMethod_From
         Me.ExpirationDateTextBox.Location = New System.Drawing.Point(106, 154)
         Me.ExpirationDateTextBox.Name = "ExpirationDateTextBox"
         Me.ExpirationDateTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ExpirationDateTextBox.TabIndex = 27
+        Me.ExpirationDateTextBox.TabIndex = 4
         '
         'ExitButton
         '
         Me.ExitButton.Location = New System.Drawing.Point(372, 186)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(142, 46)
-        Me.ExitButton.TabIndex = 7
+        Me.ExitButton.TabIndex = 12
         Me.ExitButton.Text = "Izlaz"
         Me.ExitButton.UseVisualStyleBackColor = True
         '
@@ -499,28 +499,28 @@ Partial Class PaymentMethod_From
         Me.FirstNameTextBox.Location = New System.Drawing.Point(106, 51)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.FirstNameTextBox.TabIndex = 29
+        Me.FirstNameTextBox.TabIndex = 1
         '
         'LastNameTextBox
         '
         Me.LastNameTextBox.Location = New System.Drawing.Point(106, 77)
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.LastNameTextBox.TabIndex = 30
+        Me.LastNameTextBox.TabIndex = 2
         '
         'CardNumberTextBox
         '
         Me.CardNumberTextBox.Location = New System.Drawing.Point(106, 110)
         Me.CardNumberTextBox.Name = "CardNumberTextBox"
         Me.CardNumberTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.CardNumberTextBox.TabIndex = 31
+        Me.CardNumberTextBox.TabIndex = 3
         '
         'CVVTextBox
         '
         Me.CVVTextBox.Location = New System.Drawing.Point(106, 212)
         Me.CVVTextBox.Name = "CVVTextBox"
         Me.CVVTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.CVVTextBox.TabIndex = 32
+        Me.CVVTextBox.TabIndex = 5
         '
         'Label4
         '

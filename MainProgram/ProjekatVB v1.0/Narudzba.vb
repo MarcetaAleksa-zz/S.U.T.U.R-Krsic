@@ -48,7 +48,10 @@ Public Class Narudzba
 
         End If
 
-        Process.Start(My.Application.Info.DirectoryPath + "/Payment.lnk", CInt(Label8.Text))
+        If Ukupno.ToString = "0" Then
+        Else
+            Process.Start(My.Application.Info.DirectoryPath + "/Payment.lnk", CDbl(Val(Label8.Text)))
+        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerTxtBoxSamoBrojevi.Tick
@@ -81,8 +84,7 @@ Public Class Narudzba
 
 
     End Sub
-
-    Private Sub Narudzva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub ucitavanje()
         Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
@@ -148,6 +150,9 @@ Public Class Narudzba
             Next
         Catch ex As Exception
         End Try
+    End Sub
+    Private Sub Narudzva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Ucitavanje()
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles TimerRacunanIznos.Tick
@@ -227,7 +232,7 @@ Public Class Narudzba
                         If g.Name = "L3" + i.ToString Then
 
                             If g.Text <> "" And g.Text <> "0" Then
-                                Ukupno = Ukupno + CInt(g.Text)
+                                Ukupno = Ukupno + CDbl(Val(g.Text))
                             End If
 
 
@@ -307,6 +312,8 @@ Public Class Narudzba
             Next
             System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
 
+            table.Controls.Clear()
+            ucitavanje()
 
 
         Catch ex As Exception
