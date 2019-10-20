@@ -133,7 +133,7 @@ Partial Class PregledRadnika
         '
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Me.DataGridView1.DataSource = Me.DataTable2BindingSource
-        ElseIf Podesavanja.OvoJeNalog = "marce" Then
+        ElseIf Podesavanja.OvoJeNalog = "Aleksa" Then
             Me.DataGridView1.DataSource = Me.PrikazSvihRadnikaBindingSource
         End If
 

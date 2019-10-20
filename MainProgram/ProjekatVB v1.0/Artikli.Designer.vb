@@ -90,7 +90,7 @@ Partial Class Artikli
 
         If Podesavanja.OvoJeNalog = "Aleksandar" Then
             Me.DataGridView1.DataSource = Me.DataTable1BindingSource
-        ElseIf Podesavanja.OvoJeNalog = "marce" Then
+        ElseIf Podesavanja.OvoJeNalog = "Aleksa" Then
             Me.DataGridView1.DataSource = Me.ArtikliBindingSource
         End If
         '

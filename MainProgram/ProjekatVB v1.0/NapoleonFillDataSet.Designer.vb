@@ -718,12 +718,14 @@ Partial Public Class NapoleonFillDataSet
             Me.columnkorisnicki_id.AllowDBNull = false
             Me.columnkorisnicki_id.Unique = true
             Me.columnkorisnicki_id.MaxLength = 50
+            Me.columnime_korisnika.AllowDBNull = false
             Me.columnime_korisnika.MaxLength = 50
             Me.columnprezime_korisnika.MaxLength = 50
             Me.columnlozinka.AllowDBNull = false
             Me.columnlozinka.MaxLength = 35
             Me.columnadresa_stanovanja.MaxLength = 60
             Me.columnbroj_telefona.MaxLength = 12
+            Me.columnemail.AllowDBNull = false
             Me.columnemail.MaxLength = 50
             Me.columnpol.MaxLength = 6
             Me.columnradna_pozicija.AllowDBNull = false
@@ -2457,11 +2459,7 @@ Partial Public Class NapoleonFillDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property ime_korisnika() As String
             Get
-                Try 
-                    Return CType(Me(Me.tablekorisnici.ime_korisnikaColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ime_korisnika' in table 'korisnici' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tablekorisnici.ime_korisnikaColumn),String)
             End Get
             Set
                 Me(Me.tablekorisnici.ime_korisnikaColumn) = value
@@ -2528,11 +2526,7 @@ Partial Public Class NapoleonFillDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property email() As String
             Get
-                Try 
-                    Return CType(Me(Me.tablekorisnici.emailColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'email' in table 'korisnici' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tablekorisnici.emailColumn),String)
             End Get
             Set
                 Me(Me.tablekorisnici.emailColumn) = value
@@ -2593,18 +2587,6 @@ Partial Public Class NapoleonFillDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function Isime_korisnikaNull() As Boolean
-            Return Me.IsNull(Me.tablekorisnici.ime_korisnikaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub Setime_korisnikaNull()
-            Me(Me.tablekorisnici.ime_korisnikaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function Isprezime_korisnikaNull() As Boolean
             Return Me.IsNull(Me.tablekorisnici.prezime_korisnikaColumn)
         End Function
@@ -2637,18 +2619,6 @@ Partial Public Class NapoleonFillDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub Setbroj_telefonaNull()
             Me(Me.tablekorisnici.broj_telefonaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsemailNull() As Boolean
-            Return Me.IsNull(Me.tablekorisnici.emailColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetemailNull()
-            Me(Me.tablekorisnici.emailColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3426,20 +3396,17 @@ Namespace NapoleonFillDataSetTableAdapters
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[korisnici] WHERE (([korisnicki_id] = @Original_korisnicki_id) "& _ 
-                "AND ((@IsNull_ime_korisnika = 1 AND [ime_korisnika] IS NULL) OR ([ime_korisnika]"& _ 
-                " = @Original_ime_korisnika)) AND ((@IsNull_prezime_korisnika = 1 AND [prezime_ko"& _ 
-                "risnika] IS NULL) OR ([prezime_korisnika] = @Original_prezime_korisnika)) AND (["& _ 
-                "lozinka] = @Original_lozinka) AND ((@IsNull_adresa_stanovanja = 1 AND [adresa_st"& _ 
-                "anovanja] IS NULL) OR ([adresa_stanovanja] = @Original_adresa_stanovanja)) AND ("& _ 
-                "(@IsNull_broj_telefona = 1 AND [broj_telefona] IS NULL) OR ([broj_telefona] = @O"& _ 
-                "riginal_broj_telefona)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email]"& _ 
-                " = @Original_email)) AND ((@IsNull_datum_rodjenja = 1 AND [datum_rodjenja] IS NU"& _ 
-                "LL) OR ([datum_rodjenja] = @Original_datum_rodjenja)) AND ((@IsNull_pol = 1 AND "& _ 
-                "[pol] IS NULL) OR ([pol] = @Original_pol)) AND ([radna_pozicija] = @Original_rad"& _ 
-                "na_pozicija))"
+                "AND ([ime_korisnika] = @Original_ime_korisnika) AND ((@IsNull_prezime_korisnika "& _ 
+                "= 1 AND [prezime_korisnika] IS NULL) OR ([prezime_korisnika] = @Original_prezime"& _ 
+                "_korisnika)) AND ([lozinka] = @Original_lozinka) AND ((@IsNull_adresa_stanovanja"& _ 
+                " = 1 AND [adresa_stanovanja] IS NULL) OR ([adresa_stanovanja] = @Original_adresa"& _ 
+                "_stanovanja)) AND ((@IsNull_broj_telefona = 1 AND [broj_telefona] IS NULL) OR (["& _ 
+                "broj_telefona] = @Original_broj_telefona)) AND ([email] = @Original_email) AND ("& _ 
+                "(@IsNull_datum_rodjenja = 1 AND [datum_rodjenja] IS NULL) OR ([datum_rodjenja] ="& _ 
+                " @Original_datum_rodjenja)) AND ((@IsNull_pol = 1 AND [pol] IS NULL) OR ([pol] ="& _ 
+                " @Original_pol)) AND ([radna_pozicija] = @Original_radna_pozicija))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_korisnicki_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "korisnicki_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_prezime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_prezime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -3448,7 +3415,6 @@ Namespace NapoleonFillDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_adresa_stanovanja", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "adresa_stanovanja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_broj_telefona", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_broj_telefona", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_datum_rodjenja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_datum_rodjenja", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -3481,20 +3447,19 @@ Namespace NapoleonFillDataSetTableAdapters
                 "@ime_korisnika, [prezime_korisnika] = @prezime_korisnika, [lozinka] = @lozinka, "& _ 
                 "[adresa_stanovanja] = @adresa_stanovanja, [broj_telefona] = @broj_telefona, [ema"& _ 
                 "il] = @email, [datum_rodjenja] = @datum_rodjenja, [pol] = @pol, [radna_pozicija]"& _ 
-                " = @radna_pozicija WHERE (([korisnicki_id] = @Original_korisnicki_id) AND ((@IsN"& _ 
-                "ull_ime_korisnika = 1 AND [ime_korisnika] IS NULL) OR ([ime_korisnika] = @Origin"& _ 
-                "al_ime_korisnika)) AND ((@IsNull_prezime_korisnika = 1 AND [prezime_korisnika] I"& _ 
-                "S NULL) OR ([prezime_korisnika] = @Original_prezime_korisnika)) AND ([lozinka] ="& _ 
-                " @Original_lozinka) AND ((@IsNull_adresa_stanovanja = 1 AND [adresa_stanovanja] "& _ 
-                "IS NULL) OR ([adresa_stanovanja] = @Original_adresa_stanovanja)) AND ((@IsNull_b"& _ 
-                "roj_telefona = 1 AND [broj_telefona] IS NULL) OR ([broj_telefona] = @Original_br"& _ 
-                "oj_telefona)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Origin"& _ 
-                "al_email)) AND ((@IsNull_datum_rodjenja = 1 AND [datum_rodjenja] IS NULL) OR ([d"& _ 
-                "atum_rodjenja] = @Original_datum_rodjenja)) AND ((@IsNull_pol = 1 AND [pol] IS N"& _ 
-                "ULL) OR ([pol] = @Original_pol)) AND ([radna_pozicija] = @Original_radna_pozicij"& _ 
-                "a));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT korisnicki_id, ime_korisnika, prezime_korisnika, lozinka, adresa_st"& _ 
-                "anovanja, broj_telefona, email, datum_rodjenja, pol, radna_pozicija FROM korisni"& _ 
-                "ci WHERE (korisnicki_id = @korisnicki_id)"
+                " = @radna_pozicija WHERE (([korisnicki_id] = @Original_korisnicki_id) AND ([ime_"& _ 
+                "korisnika] = @Original_ime_korisnika) AND ((@IsNull_prezime_korisnika = 1 AND [p"& _ 
+                "rezime_korisnika] IS NULL) OR ([prezime_korisnika] = @Original_prezime_korisnika"& _ 
+                ")) AND ([lozinka] = @Original_lozinka) AND ((@IsNull_adresa_stanovanja = 1 AND ["& _ 
+                "adresa_stanovanja] IS NULL) OR ([adresa_stanovanja] = @Original_adresa_stanovanj"& _ 
+                "a)) AND ((@IsNull_broj_telefona = 1 AND [broj_telefona] IS NULL) OR ([broj_telef"& _ 
+                "ona] = @Original_broj_telefona)) AND ([email] = @Original_email) AND ((@IsNull_d"& _ 
+                "atum_rodjenja = 1 AND [datum_rodjenja] IS NULL) OR ([datum_rodjenja] = @Original"& _ 
+                "_datum_rodjenja)) AND ((@IsNull_pol = 1 AND [pol] IS NULL) OR ([pol] = @Original"& _ 
+                "_pol)) AND ([radna_pozicija] = @Original_radna_pozicija));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT korisnicki_id"& _ 
+                ", ime_korisnika, prezime_korisnika, lozinka, adresa_stanovanja, broj_telefona, e"& _ 
+                "mail, datum_rodjenja, pol, radna_pozicija FROM korisnici WHERE (korisnicki_id = "& _ 
+                "@korisnicki_id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@korisnicki_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "korisnicki_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -3507,7 +3472,6 @@ Namespace NapoleonFillDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pol", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pol", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@radna_pozicija", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "radna_pozicija", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_korisnicki_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "korisnicki_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_prezime_korisnika", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_prezime_korisnika", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prezime_korisnika", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -3516,7 +3480,6 @@ Namespace NapoleonFillDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_adresa_stanovanja", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "adresa_stanovanja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_broj_telefona", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_broj_telefona", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "broj_telefona", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_email", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_email", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_datum_rodjenja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_datum_rodjenja", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datum_rodjenja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -3606,60 +3569,56 @@ Namespace NapoleonFillDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_korisnicki_id,String)
             End If
             If (Original_ime_korisnika Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_ime_korisnika")
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ime_korisnika,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ime_korisnika,String)
             End If
             If (Original_prezime_korisnika Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_prezime_korisnika,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_prezime_korisnika,String)
             End If
             If (Original_lozinka Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_lozinka")
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_lozinka,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_lozinka,String)
             End If
             If (Original_adresa_stanovanja Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_adresa_stanovanja,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_adresa_stanovanja,String)
             End If
             If (Original_broj_telefona Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_broj_telefona,String)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_broj_telefona,String)
             End If
             If (Original_email Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_email")
             Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_email,String)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_email,String)
             End If
             If (Original_datum_rodjenja.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_datum_rodjenja.Value,Date)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_datum_rodjenja.Value,Date)
             Else
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
             If (Original_pol Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(Original_pol,String)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_pol,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_radna_pozicija,Short)
+            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_radna_pozicija,Short)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3686,7 +3645,7 @@ Namespace NapoleonFillDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(korisnicki_id,String)
             End If
             If (ime_korisnika Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("ime_korisnika")
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(ime_korisnika,String)
             End If
@@ -3711,7 +3670,7 @@ Namespace NapoleonFillDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(5).Value = CType(broj_telefona,String)
             End If
             If (email Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("email")
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(email,String)
             End If
@@ -3772,7 +3731,7 @@ Namespace NapoleonFillDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(korisnicki_id,String)
             End If
             If (ime_korisnika Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("ime_korisnika")
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ime_korisnika,String)
             End If
@@ -3797,7 +3756,7 @@ Namespace NapoleonFillDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(broj_telefona,String)
             End If
             If (email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("email")
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(email,String)
             End If
@@ -3818,60 +3777,56 @@ Namespace NapoleonFillDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_korisnicki_id,String)
             End If
             If (Original_ime_korisnika Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_ime_korisnika")
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ime_korisnika,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ime_korisnika,String)
             End If
             If (Original_prezime_korisnika Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_prezime_korisnika,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_prezime_korisnika,String)
             End If
             If (Original_lozinka Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_lozinka")
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_lozinka,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_lozinka,String)
             End If
             If (Original_adresa_stanovanja Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_adresa_stanovanja,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_adresa_stanovanja,String)
             End If
             If (Original_broj_telefona Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_broj_telefona,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_broj_telefona,String)
             End If
             If (Original_email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("Original_email")
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_email,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_email,String)
             End If
             If (Original_datum_rodjenja.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_datum_rodjenja.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_datum_rodjenja.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             End If
             If (Original_pol Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_pol,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_pol,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_radna_pozicija,Short)
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_radna_pozicija,Short)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then

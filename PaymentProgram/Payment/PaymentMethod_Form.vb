@@ -14,9 +14,9 @@ Public Class PaymentMethod_From
             Dim recieve As String = Command()
             PriceTextBox.Text = recieve
             PriceTextBox.Refresh()
-            If System.IO.File.Exists("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt") = True Then
+            If System.IO.File.Exists("C:\Users\" & ovojenalog & "\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Potvrda.txt") = True Then
 
-                System.IO.File.Delete("C:\Users\" & ovojenalog & "\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda.txt")
+                System.IO.File.Delete("C:\Users\" & ovojenalog & "\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Potvrda.txt")
             End If
 
         Catch ex As Exception
@@ -30,7 +30,7 @@ Public Class PaymentMethod_From
         If ComputerName = "Napoleon" Then
             Try
                 OvoJeBaza = "Napoleon"
-                OvoJeNalog = "marce"
+                ovojenalog = "Aleksa"
 
             Catch ex As Exception
 
@@ -131,7 +131,7 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                         SMTP.EnableSsl = True
                         SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                         SMTP.Send(EmailMessage)
-                        System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
+                        System.IO.File.Create("C:\Users\Aleksandar\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt").Dispose()
                         Me.Close()
                     Catch ex As Exception
                         MsgBox(ex)
