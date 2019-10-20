@@ -30,6 +30,7 @@ Partial Class Gost
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,7 +49,7 @@ Partial Class Gost
         Me.Order_Funeral_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Order_Funeral_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Order_Funeral_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Order_Funeral_Button.Location = New System.Drawing.Point(103, 125)
+        Me.Order_Funeral_Button.Location = New System.Drawing.Point(102, 111)
         Me.Order_Funeral_Button.Name = "Order_Funeral_Button"
         Me.Order_Funeral_Button.Size = New System.Drawing.Size(198, 40)
         Me.Order_Funeral_Button.TabIndex = 2
@@ -57,7 +58,7 @@ Partial Class Gost
         '
         'Exit_Button
         '
-        Me.Exit_Button.Location = New System.Drawing.Point(175, 171)
+        Me.Exit_Button.Location = New System.Drawing.Point(174, 203)
         Me.Exit_Button.Name = "Exit_Button"
         Me.Exit_Button.Size = New System.Drawing.Size(126, 35)
         Me.Exit_Button.TabIndex = 4
@@ -67,7 +68,7 @@ Partial Class Gost
         'Back_Button
         '
         Me.Back_Button.Image = CType(resources.GetObject("Back_Button.Image"), System.Drawing.Image)
-        Me.Back_Button.Location = New System.Drawing.Point(103, 171)
+        Me.Back_Button.Location = New System.Drawing.Point(102, 203)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(39, 35)
         Me.Back_Button.TabIndex = 3
@@ -101,10 +102,23 @@ Partial Class Gost
         Me.Label2.Size = New System.Drawing.Size(0, 13)
         Me.Label2.TabIndex = 11
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(102, 157)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(198, 40)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Aplikacija za posao"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Gost
         '
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(402, 305)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Back_Button)
@@ -129,4 +143,5 @@ Partial Class Gost
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class

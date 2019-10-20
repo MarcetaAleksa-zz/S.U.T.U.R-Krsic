@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aplikacijaPosao.Designer.vb">
+      <DependentUpon>aplikacijaPosao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="aplikacijaPosao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormaLogova.Designer.vb">
       <DependentUpon>FormaLogova.vb</DependentUpon>
     </Compile>
@@ -230,6 +236,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="aplikacijaPosao.resx">
+      <DependentUpon>aplikacijaPosao.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorForms\AdminDobroDosli.resx">
       <DependentUpon>AdminDobroDosli.vb</DependentUpon>
