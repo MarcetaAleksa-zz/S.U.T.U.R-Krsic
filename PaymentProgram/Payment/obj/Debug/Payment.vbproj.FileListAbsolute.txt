@@ -51,3 +51,9 @@ C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debu
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.exe
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.xml
 C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\obj\Debug\Payment.pdb
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.vbprojAssemblyReference.cache
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\VB_Projekat2.PaymentMethod_From.resources
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\VB_Projekat2.Resources.resources
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.vbproj.GenerateResource.cache
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.xml
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.pdb

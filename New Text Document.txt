@@ -1,0 +1,3 @@
+-Gost moze da se prijavi za posao i salje se na adninistratorski nalog zahtjev za odobrenje korisnika.
+-Korisnik dobija check in-check-out za bolje racunanje plata
+-Administrator unos novih artikala

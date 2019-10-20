@@ -6,7 +6,7 @@
 
     Private Sub pregledRadnika_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If Podesavanja.OvoJeNalog = "marce" Then
+        If Podesavanja.OvoJeNalog = "Aleksa" Then
             Try
                 Me.PrikazSvihRadnikaTableAdapter.Fill(Me.NapoleonFIll.PrikazSvihRadnika)
             Catch ex As Exception
@@ -25,7 +25,7 @@
             dugmeSacuvaj.Visible = False
             dugmeIzmijeni.Visible = True
             DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
-            If Podesavanja.OvoJeNalog = "marce" Then
+            If Podesavanja.OvoJeNalog = "Aleksa" Then
                 Try
                     Me.PrikazSvihRadnikaTableAdapter.Update(Me.NapoleonFIll.PrikazSvihRadnika)
                 Catch ex As Exception
@@ -59,7 +59,7 @@
 
     Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
 
-        If Podesavanja.OvoJeNalog = "marce" Then
+        If Podesavanja.OvoJeNalog = "Aleksa" Then
             Try
                 Me.PrikazSvihRadnikaTableAdapter.Fill(Me.NapoleonFIll.PrikazSvihRadnika)
             Catch ex As Exception

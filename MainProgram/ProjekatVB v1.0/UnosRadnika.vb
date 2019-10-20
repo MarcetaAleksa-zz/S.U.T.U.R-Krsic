@@ -99,7 +99,7 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
 
             UR_Picture.Image = bm
             If UR_Username_TextBox.Text <> "Unesi korisničko ime ovde" And postojanjeSlike = 1 Then
-                SaveImage(("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\Projekat-VB\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
+                SaveImage(("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
                 UR_Picture.Image = Nothing
                 postojanjeSlike = 0
 
@@ -274,7 +274,7 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
     End Sub
     Private Sub ProbaDugme_Click(sender As Object, e As EventArgs)
         'UR_Picture.Image.Save("C:\Users\Aleksandar\Documents\Images\Nikola.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
-        'Save("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\Images\Nikola.jpg")
+        'Save("C:\Users\Aleksandar\Documents\GitHub\S.U.T.U.R-Krsic\Images\Nikola.jpg")
     End Sub
     Public Sub SaveImage(filename As String, image As Image)
         Dim path As String = System.IO.Path.Combine(My.Application.Info.DirectoryPath, filename & ".jpg")

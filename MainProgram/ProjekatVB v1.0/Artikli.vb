@@ -32,7 +32,7 @@
     Private Sub GostPrikazArtikala_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dugmeIzmijeni.Visible = True
 
-        If Podesavanja.OvoJeNalog = "marce" Then
+        If Podesavanja.OvoJeNalog = "Aleksa" Then
             Try
                 Me.ArtikliTableAdapter.Fill(Me.NapoleonFIll.Artikli)
             Catch ex As Exception
@@ -47,7 +47,7 @@
     End Sub
     Private Sub DugmeIzmijeni_Click(sender As Object, e As EventArgs)
         DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystroke
-        If Podesavanja.OvoJeNalog = "marce" Then
+        If Podesavanja.OvoJeNalog = "Aleksa" Then
             Try
                 Me.ArtikliTableAdapter.Update(Me.NapoleonFIll.Artikli)
             Catch ex As Exception
@@ -74,7 +74,7 @@
 
     Private Sub PonistiIzmjeneDugme_Click(sender As Object, e As EventArgs) Handles PonistiIzmjeneDugme.Click
 
-        If Podesavanja.OvoJeNalog = "marce" Then
+        If Podesavanja.OvoJeNalog = "Aleksa" Then
             Try
                 Me.ArtikliTableAdapter.Fill(Me.NapoleonFIll.Artikli)
             Catch ex As Exception
@@ -91,7 +91,7 @@
 
     Private Sub DugmeSacuvaj_Click(sender As Object, e As EventArgs) Handles dugmeSacuvaj.Click
 
-        If Podesavanja.OvoJeNalog = "marce" Then
+        If Podesavanja.OvoJeNalog = "Aleksa" Then
                 Try
                     Me.ArtikliTableAdapter.Update(Me.NapoleonFIll.Artikli)
                 Catch ex As Exception

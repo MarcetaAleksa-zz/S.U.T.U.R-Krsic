@@ -43,10 +43,8 @@ Public Class PretragaRadnika
             U_Username_TextBox.Text = user_table.Rows(0)(0)
             U_Possition_TextBox.Text = pozicijaTbl.Rows(0)(0)
             U_Phone_TextBox.Text = user_table.Rows(0)(5)
-            If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog +
-                                     "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
-                U_Picture.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog +
-                                                 "\Documents\GitHub\Projekat-VB\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            If System.IO.File.Exists("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
+                U_Picture.Image = Image.FromFile("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
             Else
                 U_Picture.Image = Nothing
             End If

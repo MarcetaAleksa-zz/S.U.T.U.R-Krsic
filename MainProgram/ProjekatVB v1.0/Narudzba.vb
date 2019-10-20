@@ -202,7 +202,7 @@ Public Class Narudzba
     Private Sub TimerDaLiJeProslaUplata_Tick(sender As Object, e As EventArgs) Handles TimerDaLiJeProslaUplata.Tick
 
 
-        Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
+        Dim SavePath As String = "C:\Users\Aleksandar\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt"
 
 
         If System.IO.File.Exists(SavePath) Then
@@ -310,7 +310,7 @@ Public Class Narudzba
                 End If
 
             Next
-            System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+            System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
 
             table.Controls.Clear()
             ucitavanje()

@@ -23,9 +23,9 @@ Public Class Korisnik
             polaTextBox.Text = user_table.Rows(0)(8)
             adresaTextBox.Text = user_table.Rows(0)(4)
             If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog +
-                                    "\Documents\GitHub\Projekat-VB\Image\Users\" & korisnickoimeTextBox.Text & ".jpg") Then
+                                    "\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & korisnickoimeTextBox.Text & ".jpg") Then
                 slikaPictureBox.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog +
-                                                 "\Documents\GitHub\Projekat-VB\Image\Users\" & korisnickoimeTextBox.Text & ".jpg ")
+                                                 "\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & korisnickoimeTextBox.Text & ".jpg ")
             Else
                 slikaPictureBox.Image = Nothing
             End If
@@ -44,7 +44,7 @@ Public Class Korisnik
             Catch ex As Exception
 
             End Try
-        ElseIf Podesavanja.OvoJeNalog = "marce" Then
+        ElseIf Podesavanja.OvoJeNalog = "Aleksa" Then
             Try
 
                 Me.ArtikliTableAdapter.Update(Me.NapoleonFIll.Artikli)
@@ -157,7 +157,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
             Catch ex As Exception
 
             End Try
-        ElseIf Podesavanja.OvoJeNalog = "marce" Then
+        ElseIf Podesavanja.OvoJeNalog = "Aleksa" Then
             Try
                 Me.ArtikliTableAdapter.Fill(Me.NapoleonFIll.Artikli)
                 Me.ArtikliTableAdapter.Update(Me.NapoleonFIll.Artikli)

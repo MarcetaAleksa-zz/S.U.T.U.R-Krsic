@@ -120,8 +120,8 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
     End Sub
 
     Private Sub Prijava_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If System.IO.File.Exists("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt") Then
-            System.IO.File.Delete("C:\Users\Aleksandar\Documents\GitHub\Projekat-VB\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
+        If System.IO.File.Exists("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt") Then
+            System.IO.File.Delete("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Potvrda\Potvrda.txt")
 
         End If
 
@@ -131,7 +131,7 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
         If ComputerName = "Napoleon" Then
             Try
                 Podesavanja.OvoJeBaza = "Napoleon"
-                Podesavanja.OvoJeNalog = "marce"
+                Podesavanja.OvoJeNalog = "Aleksa"
 
             Catch ex As Exception
 
