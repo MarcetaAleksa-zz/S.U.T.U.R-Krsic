@@ -82,10 +82,22 @@
     <Compile Include="aplikacijaPosao.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dodajObrisi_Artikle.Designer.vb">
+      <DependentUpon>dodajObrisi_Artikle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dodajObrisi_Artikle.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormaLogova.Designer.vb">
       <DependentUpon>FormaLogova.vb</DependentUpon>
     </Compile>
     <Compile Include="FormaLogova.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kontrolaSkladista.Designer.vb">
+      <DependentUpon>kontrolaSkladista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="kontrolaSkladista.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NapoleonFIll.Designer.vb">
@@ -240,6 +252,9 @@
     <EmbeddedResource Include="aplikacijaPosao.resx">
       <DependentUpon>aplikacijaPosao.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dodajObrisi_Artikle.resx">
+      <DependentUpon>dodajObrisi_Artikle.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ErrorForms\AdminDobroDosli.resx">
       <DependentUpon>AdminDobroDosli.vb</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaLogova.resx">
       <DependentUpon>FormaLogova.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kontrolaSkladista.resx">
+      <DependentUpon>kontrolaSkladista.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PregledRadnika.resx">
       <DependentUpon>PregledRadnika.vb</DependentUpon>

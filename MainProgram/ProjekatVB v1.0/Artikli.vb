@@ -3,7 +3,7 @@
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
         Me.Close()
         If Prijava.tipNaloga <= 3 Then
-            Administrator.Show()
+            kontrolaSkladista.Show()
         ElseIf Prijava.tipNaloga > 3 Then
             Korisnik.Show()
         Else
