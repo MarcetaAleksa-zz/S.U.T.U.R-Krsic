@@ -136,10 +136,10 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
             Catch ex As Exception
 
             End Try
-        ElseIf ComputerName = "Spartan" Then
+        ElseIf ComputerName = "SPARTAN" Then
             Try
                 Podesavanja.OvoJeBaza = "Spartan"
-                Podesavanja.OvoJeNalog = "Aleksandar"
+                Podesavanja.OvoJeNalog = "Korisnik"
             Catch ex As Exception
             End Try
         ElseIf ComputerName = "" Then
