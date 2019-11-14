@@ -1,4 +1,5 @@
-﻿Public Class aplikacijaPosao
+﻿Imports System.Data.SqlClient
+Public Class aplikacijaPosao
     Public postojanjeSlike As Double = 0
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If CheckBox1.Checked = True Then
@@ -41,6 +42,48 @@
     End Sub
 
     Private Sub A_Register_Button_Click(sender As Object, e As EventArgs) Handles A_Register_Button.Click
+        Dim command As New SqlCommand("select * from s.u.t.u.r_krsic.dbo.registracija", containerdb.connection)
+        Dim counter As Integer = 0
+        If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
+            counter = +1
+        Else
+            MessageBox.Show("Lozinke se ne poklapaju.")
+        End If
+
+        Dim mailcom As New SqlCommand("SELECT email from korisnici where email ='" & UR_Email_TextBox.Text & "'", containerdb.connection)
+        Dim mailadap As New SqlDataAdapter(mailcom)
+        Dim mailtab As New DataTable()
+        mailadap.Fill(mailtab)
+        If mailtab.Rows.Count > 0 Then
+            UR_Email_TextBox.BackColor = Color.FromArgb(255, 0, 0)
+        Else
+            UR_Email_TextBox.BackColor = Color.FromArgb(235, 235, 235)
+            counter = +1
+        End If
+        Dim usercom As New SqlCommand("SELECT korisnicki_id from korisnici where korisnicki_id = '" & UR_Username_TextBox.Text & "'", containerdb.connection)
+        Dim useradap As New SqlDataAdapter(usercom)
+        Dim usertab As New DataTable()
+        useradap.Fill(usertab)
+        If usertab.Rows.Count > 0 Then
+            UR_Username_TextBox.BackColor = Color.FromArgb(255, 0, 0)
+        Else
+            UR_Username_TextBox.BackColor = Color.FromArgb(235, 235, 235)
+            counter += 1
+        End If
+        If counter = 3 Then
+            Try
+                containerdb.connection.Open()
+                command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, adresa_stanovanja)
+values (" & UR_Username_TextBox.Text & ", " & UR_Name_TextBox.Text & ", " & UR_Surname_TextBox.Text & "," & UR_ConfirmPassword_Textbox.Text & "," & UR_Phone_TextBox.Text & "," & UR_Email_TextBox.Text & "," & URComboBox.Text & ", 5 , 'some address',)"
+
+            Catch ex As Exception
+                MessageBox.Show("Greška prilikom unosa u tabelu." + ex.Message)
+            Finally
+                containerdb.connection.Close()
+            End Try
+        Else
+            MessageBox.Show("Molimo provjerite da li ste popunili sva polja ispravno.")
+        End If
         'provjera da li postoji prijava na:
         '1.ovaj mail
         '2.korisnicko ime

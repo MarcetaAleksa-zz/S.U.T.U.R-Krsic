@@ -46,6 +46,7 @@ Partial Class aplikacijaPosao
         Me.A_Register_Button = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.UR_ClearImage_Button = New System.Windows.Forms.Button()
         Me.UR_NoFile_Label = New System.Windows.Forms.Label()
         Me.UR_ChooseImage_Label = New System.Windows.Forms.Label()
         Me.UR_ChangePicture_Button = New System.Windows.Forms.Button()
@@ -59,7 +60,6 @@ Partial Class aplikacijaPosao
         Me.Button1 = New System.Windows.Forms.Button()
         Me.UR_FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.UR_OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.UR_ClearImage_Button = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -329,6 +329,20 @@ Partial Class aplikacijaPosao
         Me.Panel1.TabIndex = 133
         Me.Panel1.Visible = False
         '
+        'UR_ClearImage_Button
+        '
+        Me.UR_ClearImage_Button.BackColor = System.Drawing.Color.Transparent
+        Me.UR_ClearImage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.UR_ClearImage_Button.Image = CType(resources.GetObject("UR_ClearImage_Button.Image"), System.Drawing.Image)
+        Me.UR_ClearImage_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.UR_ClearImage_Button.Location = New System.Drawing.Point(738, 134)
+        Me.UR_ClearImage_Button.Name = "UR_ClearImage_Button"
+        Me.UR_ClearImage_Button.Size = New System.Drawing.Size(28, 18)
+        Me.UR_ClearImage_Button.TabIndex = 137
+        Me.UR_ClearImage_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.UR_ClearImage_Button.UseVisualStyleBackColor = False
+        Me.UR_ClearImage_Button.Visible = False
+        '
         'UR_NoFile_Label
         '
         Me.UR_NoFile_Label.AutoSize = True
@@ -443,20 +457,6 @@ Partial Class aplikacijaPosao
         Me.UR_OpenFileDialog.FileName = "Image"
         Me.UR_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
     " *.png"
-        '
-        'UR_ClearImage_Button
-        '
-        Me.UR_ClearImage_Button.BackColor = System.Drawing.Color.Transparent
-        Me.UR_ClearImage_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UR_ClearImage_Button.Image = CType(resources.GetObject("UR_ClearImage_Button.Image"), System.Drawing.Image)
-        Me.UR_ClearImage_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.UR_ClearImage_Button.Location = New System.Drawing.Point(738, 134)
-        Me.UR_ClearImage_Button.Name = "UR_ClearImage_Button"
-        Me.UR_ClearImage_Button.Size = New System.Drawing.Size(28, 18)
-        Me.UR_ClearImage_Button.TabIndex = 137
-        Me.UR_ClearImage_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.UR_ClearImage_Button.UseVisualStyleBackColor = False
-        Me.UR_ClearImage_Button.Visible = False
         '
         'aplikacijaPosao
         '
