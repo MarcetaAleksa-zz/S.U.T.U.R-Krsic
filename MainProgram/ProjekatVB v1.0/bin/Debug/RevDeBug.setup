@@ -1,0 +1,8 @@
+Repository.Port=42742;
+Repository.Address=127.0.0.1;
+Application.Name=ProjekatVB v1.0;
+SolutionName=ProjekatVB v1.0;
+ConnectivityType=Continuous;
+AuthorizationToken=;
+Release=;
+BacklogSize=1000;

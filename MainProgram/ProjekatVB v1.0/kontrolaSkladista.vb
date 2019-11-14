@@ -14,4 +14,10 @@
         Me.Close()
         Prijava.Close()
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        dodajObrisi_Artikle.Show()
+
+    End Sub
 End Class
