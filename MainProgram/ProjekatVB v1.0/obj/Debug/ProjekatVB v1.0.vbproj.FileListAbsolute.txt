@@ -30,3 +30,33 @@ C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\RdbLog.txt
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe.config
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.exe
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.pdb
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\bin\Debug\ProjekatVB v1.0.xml
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Administrator.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.aplikacijaPosao.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.dodajObrisi_Artikle.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.AdminDobroDosli.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.DataGridError.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.GostDobroDosli.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.GreskaPostojeceKorisnickoIme.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.LoginGreska.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UserDobroDosli.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.FormaLogova.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.kontrolaSkladista.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.PregledRadnika.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.PretragaRadnika.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Podesavanja.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UnosRadnika.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Gost.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Prijava.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Resources.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Artikli.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Narudzba.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.Korisnik.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbproj.GenerateResource.cache
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
