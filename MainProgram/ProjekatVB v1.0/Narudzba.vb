@@ -118,7 +118,9 @@ Public Class Narudzba
 
                 Dim L2 As Label = New Label
                 With L2
-                    .Text = oprema_table.Rows(i)(4)
+                    Dim jjj As Double
+                    jjj = oprema_table.Rows(i)(4)
+                    .Text = jjj.ToString("N2")
                     .TextAlign = ContentAlignment.MiddleCenter 'cijena izvucena u label
                     .Visible = True
                     .Font = New Font("Microsoft Sans Serif", 9)
