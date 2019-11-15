@@ -130,7 +130,7 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
         ComputerName = System.Net.Dns.GetHostName
         If ComputerName = "Napoleon" Then
             Try
-                Podesavanja.OvoJeBaza = "Napoleon"
+                Podesavanja.OvoJeBaza = "napoleon\sqlexpress"
                 Podesavanja.OvoJeNalog = "Aleksa"
 
             Catch ex As Exception

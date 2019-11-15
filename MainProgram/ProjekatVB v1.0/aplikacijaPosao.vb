@@ -45,7 +45,7 @@ Public Class aplikacijaPosao
         Dim command As New SqlCommand("select * from s.u.t.u.r_krsic.dbo.registracija", containerdb.connection)
         Dim counter As Integer = 0
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
-            counter = +1
+            counter += 1
         Else
             MessageBox.Show("Lozinke se ne poklapaju.")
         End If
@@ -58,7 +58,7 @@ Public Class aplikacijaPosao
             UR_Email_TextBox.BackColor = Color.FromArgb(255, 0, 0)
         Else
             UR_Email_TextBox.BackColor = Color.FromArgb(235, 235, 235)
-            counter = +1
+            counter += 1
         End If
         Dim usercom As New SqlCommand("SELECT korisnicki_id from korisnici where korisnicki_id = '" & UR_Username_TextBox.Text & "'", containerdb.connection)
         Dim useradap As New SqlDataAdapter(usercom)
@@ -73,9 +73,12 @@ Public Class aplikacijaPosao
         If counter = 3 Then
             Try
                 containerdb.connection.Open()
-                command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, adresa_stanovanja)
-values (" & UR_Username_TextBox.Text & ", " & UR_Name_TextBox.Text & ", " & UR_Surname_TextBox.Text & "," & UR_ConfirmPassword_Textbox.Text & "," & UR_Phone_TextBox.Text & "," & UR_Email_TextBox.Text & "," & URComboBox.Text & ", 5 , 'some address',)"
+                command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, datum_rodjenja)
+values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & UR_ConfirmPassword_Textbox.Text & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "', 5, '" & UR_Birth_TextBox.Text & "' )"
 
+                command.ExecuteNonQuery()
+                MessageBox.Show("Uspjesno ste aplicirali za posao.")
+                counter += 1
             Catch ex As Exception
                 MessageBox.Show("Greška prilikom unosa u tabelu." + ex.Message)
             Finally
@@ -83,6 +86,36 @@ values (" & UR_Username_TextBox.Text & ", " & UR_Name_TextBox.Text & ", " & UR_S
             End Try
         Else
             MessageBox.Show("Molimo provjerite da li ste popunili sva polja ispravno.")
+        End If
+        For Each Control As Control In Me.Controls
+            If TypeOf Control Is TextBox Then
+                Control.Text = String.Empty
+            End If
+        Next
+        If counter >= 4 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
+            logovi.DodavanjeKorisnika()
+            UR_Name_TextBox.Text = "Unesi ime ovde"
+            UR_Surname_TextBox.Text = "Unesi prezime ovde"
+            UR_Birth_TextBox.Text = "Unesi datum rođenja ovde"
+            URComboBox.Text = "Unesi poziciju ovde"
+            UR_Phone_TextBox.Text = "Unesi broj telefona ovde"
+            UR_Email_TextBox.Text = "Unesi E-mail ovde"
+            UR_Username_TextBox.Text = "Unesi korisničko ime ovde"
+            UR_ConfirmPassword_Textbox.UseSystemPasswordChar = False
+            UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
+            UR_Password_TextBox.UseSystemPasswordChar = False
+            UR_Password_TextBox.Text = "Unesi lozinku ovde"
+            URComboBox.SelectedIndex = -1
+            Enkripcija.HashStoreUser = Nothing
+            UR_Name_TextBox.ForeColor = Color.Gray
+            UR_Surname_TextBox.ForeColor = Color.Gray
+            UR_Birth_TextBox.ForeColor = Color.Gray
+            URComboBox.ForeColor = Color.Gray
+            UR_Phone_TextBox.ForeColor = Color.Gray
+            UR_Email_TextBox.ForeColor = Color.Gray
+            UR_Username_TextBox.ForeColor = Color.Gray
+            UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
+            UR_Password_TextBox.ForeColor = Color.Gray
         End If
         'provjera da li postoji prijava na:
         '1.ovaj mail
