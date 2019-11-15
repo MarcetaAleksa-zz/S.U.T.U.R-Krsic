@@ -30,3 +30,4 @@ C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\RdbLog.txt
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.CheatMenu.resources

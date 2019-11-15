@@ -82,6 +82,12 @@
     <Compile Include="aplikacijaPosao.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CheatMenu.Designer.vb">
+      <DependentUpon>CheatMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheatMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dodajObrisi_Artikle.Designer.vb">
       <DependentUpon>dodajObrisi_Artikle.vb</DependentUpon>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="aplikacijaPosao.resx">
       <DependentUpon>aplikacijaPosao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheatMenu.resx">
+      <DependentUpon>CheatMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dodajObrisi_Artikle.resx">
       <DependentUpon>dodajObrisi_Artikle.vb</DependentUpon>
