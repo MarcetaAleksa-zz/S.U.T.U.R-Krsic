@@ -469,6 +469,7 @@ Partial Class aplikacijaPosao
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "aplikacijaPosao"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "aplikacijaPosao"
