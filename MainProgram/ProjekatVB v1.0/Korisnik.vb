@@ -165,7 +165,7 @@ broj_telefona = @broj_telefona, datum_rodjenja = @datum_rodjenja, adresa_stanova
             End Try
         End If
 
-
+        Dim command As New SqlCommand("Select ")
     End Sub
 
     Private Sub mjeseciComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles mjeseciComboBox.SelectedIndexChanged
@@ -235,5 +235,27 @@ SELECT @radni_dani as radni_dani,@dana_radjeno as dana_radjeno, @dana_radjeno*ra
         DaysInMonth.Text = tabelaZaPlate.Rows(0)(0)
         U_WDIM_TextBox.Text = tabelaZaPlate.Rows(0)(1)
         U_PBOFWD_TextBox.Text = tabelaZaPlate.Rows(0)(2)
+    End Sub
+
+    Private Sub btCheck_Click(sender As Object, e As EventArgs) Handles btCheck.Click
+        btCheck.BackColor = SystemColors.HotTrack
+        btUnCheck.BackColor = SystemColors.Control
+        Dim command As New SqlCommand("declare @vrijeme time
+set @vrijeme = (SELECT SUBSTRING( convert(varchar, getdate(),108),1,5))
+INSERT INTO dbo.prijava(Vrijeme, Korisnik, Prijava)
+values(@vrijeme,'" & Prijava.Username_Form_Box.Text & "', 1)
+", containerdb.connection)
+        command.ExecuteNonQuery()
+    End Sub
+
+    Private Sub btUnCheck_Click(sender As Object, e As EventArgs) Handles btUnCheck.Click
+        btUnCheck.BackColor = SystemColors.HotTrack
+        btCheck.BackColor = SystemColors.Control
+        Dim command As New SqlCommand("declare @vrijeme time
+set @vrijeme = (SELECT SUBSTRING( convert(varchar, getdate(),108),1,5))
+INSERT INTO dbo.prijava(Vrijeme, Korisnik, Prijava)
+values(@vrijeme,'" & Prijava.Username_Form_Box.Text & "', 0)
+", containerdb.connection)
+        command.ExecuteNonQuery()
     End Sub
 End Class

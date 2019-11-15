@@ -89,10 +89,8 @@ Partial Class Korisnik
         Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataTable1TableAdapter = New ProjekatVB_v1._0.SpartanFillTableAdapters.DataTable1TableAdapter()
         Me.TableAdapterManager = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
-        Me.TipopremeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KolicinaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CijenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btCheck = New System.Windows.Forms.Button()
+        Me.btUnCheck = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
         Me.p9.SuspendLayout()
@@ -690,16 +688,8 @@ Partial Class Korisnik
         Me.TabStorage.Text = "Skladište"
         '
         'DataGridView1
-
-        If Podesavanja.OvoJeNalog = "Aleksandar" Then
-            Me.DataGridView1.DataSource = Me.DataTable1BindingSource
-        ElseIf Podesavanja.OvoJeNalog = "Aleksa" Then
-            Me.DataGridView1.DataSource = Me.ArtikliBindingSource
-        End If
-        Me.DataGridView1.AutoGenerateColumns = False
+        '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TipopremeDataGridViewTextBoxColumn, Me.ImeDataGridViewTextBoxColumn, Me.KolicinaDataGridViewTextBoxColumn, Me.CijenaDataGridViewTextBoxColumn})
-
         Me.DataGridView1.Location = New System.Drawing.Point(7, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(755, 349)
@@ -736,8 +726,10 @@ Partial Class Korisnik
         '
         'NapoleonAdapter
         '
+        Me.NapoleonAdapter.ArtikliTableAdapter = Nothing
         Me.NapoleonAdapter.BackupDataSetBeforeUpdate = False
         Me.NapoleonAdapter.Connection = Nothing
+        Me.NapoleonAdapter.PrikazSvihRadnikaTableAdapter = Nothing
         Me.NapoleonAdapter.UpdateOrder = ProjekatVB_v1._0.NapoleonFIllTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'SpartanFill
@@ -758,37 +750,37 @@ Partial Class Korisnik
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DataTable1TableAdapter = Nothing
+        Me.TableAdapterManager.DataTable2TableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'TipopremeDataGridViewTextBoxColumn
+        'btCheck
         '
-        Me.TipopremeDataGridViewTextBoxColumn.DataPropertyName = "tip_opreme"
-        Me.TipopremeDataGridViewTextBoxColumn.HeaderText = "tip_opreme"
-        Me.TipopremeDataGridViewTextBoxColumn.Name = "TipopremeDataGridViewTextBoxColumn"
+        Me.btCheck.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btCheck.Image = CType(resources.GetObject("btCheck.Image"), System.Drawing.Image)
+        Me.btCheck.Location = New System.Drawing.Point(373, 85)
+        Me.btCheck.Name = "btCheck"
+        Me.btCheck.Size = New System.Drawing.Size(23, 24)
+        Me.btCheck.TabIndex = 130
+        Me.btCheck.UseVisualStyleBackColor = False
         '
-        'ImeDataGridViewTextBoxColumn
+        'btUnCheck
         '
-        Me.ImeDataGridViewTextBoxColumn.DataPropertyName = "ime"
-        Me.ImeDataGridViewTextBoxColumn.HeaderText = "ime"
-        Me.ImeDataGridViewTextBoxColumn.Name = "ImeDataGridViewTextBoxColumn"
-        '
-        'KolicinaDataGridViewTextBoxColumn
-        '
-        Me.KolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina"
-        Me.KolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina"
-        Me.KolicinaDataGridViewTextBoxColumn.Name = "KolicinaDataGridViewTextBoxColumn"
-        '
-        'CijenaDataGridViewTextBoxColumn
-        '
-        Me.CijenaDataGridViewTextBoxColumn.DataPropertyName = "cijena"
-        Me.CijenaDataGridViewTextBoxColumn.HeaderText = "cijena"
-        Me.CijenaDataGridViewTextBoxColumn.Name = "CijenaDataGridViewTextBoxColumn"
+        Me.btUnCheck.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btUnCheck.Image = CType(resources.GetObject("btUnCheck.Image"), System.Drawing.Image)
+        Me.btUnCheck.Location = New System.Drawing.Point(402, 86)
+        Me.btUnCheck.Name = "btUnCheck"
+        Me.btUnCheck.Size = New System.Drawing.Size(22, 23)
+        Me.btUnCheck.TabIndex = 131
+        Me.btUnCheck.UseVisualStyleBackColor = False
         '
         'Korisnik
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(802, 517)
+        Me.Controls.Add(Me.btUnCheck)
+        Me.Controls.Add(Me.btCheck)
         Me.Controls.Add(Me.korisnikTab)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.dugmeOdjava)
@@ -908,4 +900,6 @@ Partial Class Korisnik
     Friend WithEvents ImeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KolicinaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btCheck As Button
+    Friend WithEvents btUnCheck As Button
 End Class
