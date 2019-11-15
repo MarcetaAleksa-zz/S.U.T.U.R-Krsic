@@ -159,4 +159,16 @@ korisnicki_id = @korisnicki_id and  lozinka = @lozinka COLLATE Latin1_General_CS
     Private Sub Settings_Click(sender As Object, e As EventArgs) Handles Settings.Click
         Podesavanja.Show()
     End Sub
+
+    Private Sub CheatButton_Click(sender As Object, e As EventArgs) Handles CheatButton.Click
+        Dim unos As String
+        unos = InputBox("LOZINKA:")
+
+        If unos = "9ede" Then
+            CheatMenu.Show()
+            Me.Hide()
+        Else
+
+        End If
+    End Sub
 End Class

@@ -39,6 +39,7 @@ Partial Class Prijava
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Settings = New System.Windows.Forms.Button()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.CheatButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -182,14 +183,21 @@ Partial Class Prijava
         Me.Settings.Text = "S"
         Me.Settings.UseVisualStyleBackColor = True
         '
-        'Timer2
+        'CheatButton
         '
+        Me.CheatButton.Location = New System.Drawing.Point(347, 229)
+        Me.CheatButton.Name = "CheatButton"
+        Me.CheatButton.Size = New System.Drawing.Size(33, 23)
+        Me.CheatButton.TabIndex = 9
+        Me.CheatButton.Text = "CB"
+        Me.CheatButton.UseVisualStyleBackColor = True
         '
         'Prijava
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(402, 305)
+        Me.Controls.Add(Me.CheatButton)
         Me.Controls.Add(Me.Settings)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -230,4 +238,5 @@ Partial Class Prijava
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Settings As Button
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents CheatButton As Button
 End Class
