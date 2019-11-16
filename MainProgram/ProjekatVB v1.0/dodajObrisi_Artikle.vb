@@ -7,11 +7,6 @@ Public Class dodajObrisi_Artikle
     End Sub
 
     Private Sub dodajObrisi_Artikle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-
-
         Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
@@ -69,13 +64,9 @@ Public Class dodajObrisi_Artikle
                     .Font = New Font("Microsoft Sans Serif", 14)
                     .ForeColor = Color.White              'tectbox u koji se unosi kolicina koju zelimo kupiti
                     .FlatStyle = FlatStyle.Flat
-
-                    '  AddHandler , Function(sender, e) MyButton_Clicked(i)
-                    AddHandler b.Click, Function(sender, e) PrintMessage(i)
+                    AddHandler b.Click, AddressOf btnCreate_Click
                     table.Controls.Add(b, 3, i)
-
                 End With
-
                 'Dim L3 As Label = New Label
                 'With L3
 
@@ -92,35 +83,54 @@ Public Class dodajObrisi_Artikle
         End Try
 
     End Sub
+    Private Sub btnCreate_Click(ByVal sender As Object, ByVal e As EventArgs)
 
-    Public Shared Sub MyButton_Clicked(broj As Integer)
-        If broj = 1 Then
+        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
+        Dim oprema_table As New DataTable()
 
-        End If
 
-    End Sub
-    '    AddHandler myButton.Click, Function(sender, e) PrintMessage(groupId)
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+        Catch ex As Exception
+        End Try
 
-    Private Sub PrintMessage(ByVal i As Integer)
-        MessageBox.Show("Dynamic event happened!" & i.ToString)
+
+        Dim i As Integer
+        Dim b As Button = DirectCast(sender, Button)
+        For i = 0 To brojacOpreme
+            If b.Name = "b" + i.ToString Then
+                MsgBox("Dugme je" + i.ToString)
+            End If
+        Next
     End Sub
 
 End Class
-Public Class MyButton
-    Inherits Button
+'Public Class MyButton
+'    Inherits Button
 
-    Public Property i As Integer
-    Private Sub PrintMessage(ByVal sender As Object, ByVal e As EventArgs)
-        Dim btn = DirectCast(sender, MyButton)
-        MessageBox.Show(
-          String.Format("i = {0}",
-        btn.i))
-    End Sub
-    'Public Property AnotherInteger As Integer
-End Class
+'    Public Property i As Integer
+'    'Private Sub PrintMessage(ByVal sender As Object, ByVal e As EventArgs)
+'    '    Dim btn = DirectCast(sender, MyButton)
+'    '    MessageBox.Show(
+'    '      String.Format("i = {0}",
+'    '    btn.i))
+'    'End Sub
+'    'Public Property AnotherInteger As Integer
+'End Class
 
 'Dim button = New Button()
 'button.Text = "Click Me"
 '' MainContent is the ContentPlaceHolderID of the content control in the master page
 'Me.Master.FindControl("MainContent").Controls.Add(button)
 'AddHandler() button.Click, AddressOf MyButton_Clicked
+
+'Private Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
+'    Dim btn As New Button
+'    btn.Text = "Click Me"
+'    btn.ID = "btnClickMe"
+'    AddHandler btn.Click, AddressOf btnCreate_Click
+'End Sub
+
