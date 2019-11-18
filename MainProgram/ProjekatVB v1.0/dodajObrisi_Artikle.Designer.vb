@@ -23,6 +23,7 @@ Partial Class dodajObrisi_Artikle
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dodajObrisi_Artikle))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -32,7 +33,7 @@ Partial Class dodajObrisi_Artikle
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btn = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -136,21 +137,21 @@ Partial Class dodajObrisi_Artikle
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "NAZIV PROIZVODA"
         '
-        'btn
+        'Button1
         '
-        Me.btn.Location = New System.Drawing.Point(78, 75)
-        Me.btn.Name = "btn"
-        Me.btn.Size = New System.Drawing.Size(75, 23)
-        Me.btn.TabIndex = 151
-        Me.btn.Text = "Button1"
-        Me.btn.UseVisualStyleBackColor = True
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(38, 74)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(39, 35)
+        Me.Button1.TabIndex = 144
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'dodajObrisi_Artikle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1032, 735)
-        Me.Controls.Add(Me.btn)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -178,5 +179,5 @@ Partial Class dodajObrisi_Artikle
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents btn As Button
+    Friend WithEvents Button1 As Button
 End Class

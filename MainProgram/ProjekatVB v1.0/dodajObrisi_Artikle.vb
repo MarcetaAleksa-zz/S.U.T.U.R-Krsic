@@ -7,6 +7,38 @@ Public Class dodajObrisi_Artikle
     End Sub
 
     Private Sub dodajObrisi_Artikle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        fun()
+    End Sub
+    Private Sub btnCreate_Click(ByVal sender As Object, ByVal e As EventArgs)
+        'cCreate_Click
+
+        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
+        Dim oprema_table As New DataTable()
+
+
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+        Catch ex As Exception
+        End Try
+
+        Dim i As Integer
+        Dim b As Button = DirectCast(sender, Button)
+        For i = 0 To brojacOpreme
+            If b.Name = "b" + i.ToString Then
+                EditForma.Show()
+                EditForma.Ucitaj(i)
+            End If
+        Next
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        kontrolaSkladista.Show()
+    End Sub
+    Public Sub fun()
         Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
         Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table As New DataTable()
@@ -32,7 +64,8 @@ Public Class dodajObrisi_Artikle
 
                 Dim L1 As Label = New Label
                 With L1
-                    .Text = oprema_table.Rows(i)(2)             'kolicina izvucena u label
+                    .Text = oprema_table.Rows(i)(2)
+                    .Name = "L1" + i.ToString 'kolicina izvucena u label
                     .TextAlign = ContentAlignment.MiddleCenter
                     .Visible = True
                     .Font = New Font("Microsoft Sans Serif", 14)
@@ -83,30 +116,6 @@ Public Class dodajObrisi_Artikle
         End Try
 
     End Sub
-    Private Sub btnCreate_Click(ByVal sender As Object, ByVal e As EventArgs)
-
-        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
-        Dim adapter As New SqlDataAdapter(sqlCommand)
-        Dim oprema_table As New DataTable()
-
-
-        Dim brojacOpreme As Integer = 0
-        Try
-            adapter.Fill(oprema_table)
-            brojacOpreme = oprema_table.Rows.Count
-        Catch ex As Exception
-        End Try
-
-
-        Dim i As Integer
-        Dim b As Button = DirectCast(sender, Button)
-        For i = 0 To brojacOpreme
-            If b.Name = "b" + i.ToString Then
-                MsgBox("Dugme je" + i.ToString)
-            End If
-        Next
-    End Sub
-
 End Class
 'Public Class MyButton
 '    Inherits Button
