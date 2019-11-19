@@ -11,10 +11,12 @@ Public Class EditForma
         Try
             adapter.Fill(oprema_table)
             brojacOpreme = oprema_table.Rows.Count
+            Dim jjj As Double
+            jjj = oprema_table.Rows(i)(4)
 
             t1.Text = oprema_table.Rows(i)(1)
             t2.Text = oprema_table.Rows(i)(2)
-            t3.Text = oprema_table.Rows(i)(4)
+            t3.Text = jjj.ToString("N2")
             ID = oprema_table.Rows(i)(0)
 
         Catch ex As Exception
@@ -52,5 +54,9 @@ WHERE id_robe = '" & ID & "'", containerdb.connection)
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
     End Sub
 End Class

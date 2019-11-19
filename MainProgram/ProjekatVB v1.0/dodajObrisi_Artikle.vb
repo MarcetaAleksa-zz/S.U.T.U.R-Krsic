@@ -8,6 +8,31 @@ Public Class dodajObrisi_Artikle
 
     Private Sub dodajObrisi_Artikle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fun()
+
+    End Sub
+    Private Sub btn1Create_Click(ByVal sender As Object, ByVal e As EventArgs)
+        'cCreate_Click
+
+        Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
+        Dim adapter As New SqlDataAdapter(sqlCommand)
+        Dim oprema_table As New DataTable()
+
+
+        Dim brojacOpreme As Integer = 0
+        Try
+            adapter.Fill(oprema_table)
+            brojacOpreme = oprema_table.Rows.Count
+        Catch ex As Exception
+        End Try
+
+        Dim i As Integer
+        Dim b1 As PictureBox = DirectCast(sender, PictureBox)
+        For i = 0 To brojacOpreme
+            If b1.Name = "b1" + i.ToString Then
+                DeleteForma.Show()
+                DeleteForma.Ucitaj(i)
+            End If
+        Next
     End Sub
     Private Sub btnCreate_Click(ByVal sender As Object, ByVal e As EventArgs)
         'cCreate_Click
@@ -25,7 +50,7 @@ Public Class dodajObrisi_Artikle
         End Try
 
         Dim i As Integer
-        Dim b As Button = DirectCast(sender, Button)
+        Dim b As PictureBox = DirectCast(sender, PictureBox)
         For i = 0 To brojacOpreme
             If b.Name = "b" + i.ToString Then
                 EditForma.Show()
@@ -87,19 +112,42 @@ Public Class dodajObrisi_Artikle
                     table.Controls.Add(L2, 2, i)
                 End With
 
-                Dim b As Button = New Button
+                Dim b As PictureBox = New PictureBox
                 With b
-                    .Text = "EDIT"
+                    '.Text = "EDIT"
                     .Name = "b" + i.ToString
                     .Visible = True
-                    .BackColor = Color.Gray
-                    .Size = New Size(80, 40)
-                    .Font = New Font("Microsoft Sans Serif", 14)
-                    .ForeColor = Color.White              'tectbox u koji se unosi kolicina koju zelimo kupiti
-                    .FlatStyle = FlatStyle.Flat
+                    .Image = My.Resources.edittt2
+                    '.BackColor = Color.Gray
+                    .Size = New Size(40, 40)
+                    .SizeMode = PictureBoxSizeMode.StretchImage
+                    '.Font = New Font("Microsoft Sans Serif", 14)
+                    '.ForeColor = Color.White              'tectbox u koji se unosi kolicina koju zelimo kupiti
+                    '.FlatStyle = FlatStyle.Flat
                     AddHandler b.Click, AddressOf btnCreate_Click
                     table.Controls.Add(b, 3, i)
                 End With
+
+
+                Dim b1 As PictureBox = New PictureBox
+                With b1
+                    ' .Text = "X"
+                    .Name = "b1" + i.ToString
+                    .Visible = True
+                    .Image = My.Resources.slicurina
+                    '.BackColor = Color.Red
+                    .Size = New Size(40, 40)
+                    .SizeMode = PictureBoxSizeMode.StretchImage
+                    '.Font = New Font("Microsoft Sans Serif", 14)
+                    '.ForeColor = Color.Black              'tectbox u koji se unosi kolicina koju zelimo kupiti
+
+                    '  .FlatStyle = FlatStyle.Flat
+                    AddHandler b1.Click, AddressOf btn1Create_Click
+                    table.Controls.Add(b1, 4, i)
+                End With
+
+                Panel1.HorizontalScroll.Enabled = False
+                table.HorizontalScroll.Enabled = False
                 'Dim L3 As Label = New Label
                 'With L3
 
@@ -115,6 +163,10 @@ Public Class dodajObrisi_Artikle
         Catch ex As Exception
         End Try
 
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        DodajForma.Show()
     End Sub
 End Class
 'Public Class MyButton

@@ -30,3 +30,5 @@ C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\o
 C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache
 C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.EditForma.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.DeleteForma.resources
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.DodajForma.resources

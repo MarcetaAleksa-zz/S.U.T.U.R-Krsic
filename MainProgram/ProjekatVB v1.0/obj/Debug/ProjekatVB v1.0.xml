@@ -22,7 +22,32 @@ ProjekatVB v1.0
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:ProjekatVB_v1._0.My.Resources.Resources.ADD">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjekatVB_v1._0.My.Resources.Resources.edittt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjekatVB_v1._0.My.Resources.Resources.edittt2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ProjekatVB_v1._0.My.Resources.Resources.favicon__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjekatVB_v1._0.My.Resources.Resources.Image1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjekatVB_v1._0.My.Resources.Resources.slicurina">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
