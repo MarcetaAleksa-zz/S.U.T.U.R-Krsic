@@ -22,7 +22,7 @@ Public Class PaymentMethod_From
         Catch ex As Exception
 
         End Try
-        Price = CDbl(PriceTextBox.Text)
+        '  Price = CDbl(PriceTextBox.Text)
         PriceTextBox.Show()
         Dim ComputerName As String
         ComputerName = System.Net.Dns.GetHostName

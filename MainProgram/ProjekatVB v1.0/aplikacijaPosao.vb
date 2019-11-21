@@ -74,7 +74,7 @@ Public Class aplikacijaPosao
             Try
                 containerdb.connection.Open()
                 command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, datum_rodjenja)
-values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & UR_ConfirmPassword_Textbox.Text & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "', 5, '" & UR_Birth_TextBox.Text & "' )"
+values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & Enkripcija.HashStorePrijava & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "', 5, '" & UR_Birth_TextBox.Text & "' )"
 
                 command.ExecuteNonQuery()
                 MessageBox.Show("Uspjesno ste aplicirali za posao.")

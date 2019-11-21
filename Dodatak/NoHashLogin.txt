@@ -1,13 +1,13 @@
-MarLeksa 	P@$$w0rd
-Panzo  		P@$$w0rd
-AmarB 		S@ur0n
-SinisaG 	H0gw@rts
-ElvirL 		Br@nden$burg
-HarunH		St0rmg@rd
-IgorG		B30gr@d
-NevenK		@rm@tur@
-PetarK		$0vjetRu$ij@
-SasaB		U$$R4Ever
-NikolaS		NiKoL@
+MarLeksa 	P@$$w0rd radi
+Panzo  		P@$$w0rd ne radi
+AmarB 		S@ur0n ne radi	
+SinisaG 	H0gw@rts ne radi
+ElvirL 		Br@nden$burg Ne radi
+HarunH		St0rmg@rd Ne radi
+IgorG		B30gr@d Radi
+NevenK		@rm@tur@ Radi	
+PetarK		$0vjetRu$ij@ Ne radi
+SasaB		U$$R4Ever Ne radi
+NikolaS		NiKoL@ radi
 
 -aplikacija za posao*gost

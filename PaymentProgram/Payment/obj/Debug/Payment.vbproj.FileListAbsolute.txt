@@ -57,3 +57,10 @@ C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debu
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.vbproj.GenerateResource.cache
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.xml
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.pdb
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Debug\RevDeBug.setup
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Debug\Payment.exe.config
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Debug\Payment.exe
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Debug\Payment.pdb
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\bin\Debug\Payment.xml
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\Payment.exe
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\PaymentProgram\Payment\obj\Debug\RdbLog.txt
