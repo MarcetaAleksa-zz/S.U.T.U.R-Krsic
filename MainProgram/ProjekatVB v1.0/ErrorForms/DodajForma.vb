@@ -71,13 +71,16 @@ Public Class DodajForma
             MsgBox("Greska prilikom unosa!")
         ElseIf checker = 0 Then
             Try
+                Dim lastNum As Integer = 0
+                lastNum = oprema_table.Rows(brojacOpreme - 1)(0) + 1
                 containerdb.connection.Open()
-                sqlCommand.CommandText = "INSERT INTO  dbo.oprema (id_robe, ime,kolicina,tip_robe,cijena) VALUES (" & brojacOpreme + 1 & ",'" & t1.Text & "'," & t2.Text & "," & tip & "," & t3.Text & ")"
+                sqlCommand.CommandText = "INSERT INTO  dbo.oprema (id_robe, ime,kolicina,tip_robe,cijena) VALUES (" & lastNum & ",'" & t1.Text & "'," & t2.Text & "," & tip & "," & t3.Text & ")"
 
                 sqlCommand.ExecuteNonQuery()
+                dodajObrisi_Artikle.Close()
                 Me.Close()
-                kontrolaSkladista.Close()
-                kontrolaSkladista.Show()
+
+                dodajObrisi_Artikle.Show()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             Finally

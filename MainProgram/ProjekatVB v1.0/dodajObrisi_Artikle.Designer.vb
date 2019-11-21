@@ -30,11 +30,11 @@ Partial Class dodajObrisi_Artikle
         Me.table = New System.Windows.Forms.TableLayoutPanel()
         Me.ucitavanje = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -108,6 +108,16 @@ Partial Class dodajObrisi_Artikle
         Me.Panel2.Size = New System.Drawing.Size(734, 51)
         Me.Panel2.TabIndex = 150
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.ProjekatVB_v1._0.My.Resources.Resources.ADD
+        Me.PictureBox1.Location = New System.Drawing.Point(684, 7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(43, 38)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -150,16 +160,6 @@ Partial Class dodajObrisi_Artikle
         Me.Button1.Size = New System.Drawing.Size(32, 51)
         Me.Button1.TabIndex = 144
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.ProjekatVB_v1._0.My.Resources.Resources.ADD
-        Me.PictureBox1.Location = New System.Drawing.Point(684, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(43, 38)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
         '
         'dodajObrisi_Artikle
         '

@@ -168,6 +168,15 @@ Public Class dodajObrisi_Artikle
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         DodajForma.Show()
     End Sub
+
+    Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox1.MouseEnter
+        PictureBox1.BorderStyle = BorderStyle.Fixed3D
+    End Sub
+
+    Private Sub Panel2_MouseEnter(sender As Object, e As EventArgs) Handles table.MouseEnter, Panel3.MouseEnter, Panel2.MouseEnter, Panel1.MouseEnter
+        PictureBox1.BorderStyle = BorderStyle.None
+
+    End Sub
 End Class
 'Public Class MyButton
 '    Inherits Button
