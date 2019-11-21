@@ -48,9 +48,11 @@ Public Class DodajForma
                     checker += 1
                 End If
             Next
+        Catch
+        End Try
 
 
-            If ComboBox1.SelectedIndex = 1 Then
+        If ComboBox1.SelectedIndex = 1 Then
                 tip = 1
             ElseIf ComboBox1.SelectedIndex = 2 Then
                 tip = 2
@@ -65,22 +67,26 @@ Public Class DodajForma
 
 
 
-            If checker > 0 Then
-                MsgBox("Greska prilikom unosa!")
-            ElseIf checker = 0 Then
-                Dim Command As New SqlCommand("INSERT INTO  oprema (ime,kolicina,tip_robe,cijena) VALUES (@ime,@kolicina,@tip,@cijena)", containerdb.connection)
+        If checker > 0 Then
+            MsgBox("Greska prilikom unosa!")
+        ElseIf checker = 0 Then
+            Try
                 containerdb.connection.Open()
-                Command.Parameters.Add("@ime", SqlDbType.VarChar).Value = t1.Text
-                Command.Parameters.Add("@kolicina", SqlDbType.VarChar).Value = t2.Text
-                Command.Parameters.Add("@tip", SqlDbType.VarChar).Value = tip
-                Command.Parameters.Add("@cijena", SqlDbType.VarChar).Value = CDbl(Val(t3.Text))
-                Command.ExecuteNonQuery()
+                sqlCommand.CommandText = "INSERT INTO  dbo.oprema (id_robe, ime,kolicina,tip_robe,cijena) VALUES (" & brojacOpreme + 1 & ",'" & t1.Text & "'," & t2.Text & "," & tip & "," & t3.Text & ")"
 
+                sqlCommand.ExecuteNonQuery()
+                Me.Close()
+                kontrolaSkladista.Close()
+                kontrolaSkladista.Show()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            Finally
                 containerdb.connection.Close()
-            End If
+            End Try
 
-        Catch ex As Exception
-        End Try
+        End If
+
+
 
     End Sub
 
