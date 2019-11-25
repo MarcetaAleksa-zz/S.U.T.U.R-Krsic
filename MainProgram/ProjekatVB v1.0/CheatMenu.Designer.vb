@@ -38,6 +38,7 @@ Partial Class CheatMenu
         Me.btIzbrisiDodaj = New System.Windows.Forms.Button()
         Me.btNazad = New System.Windows.Forms.Button()
         Me.btIzlaz = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btAdmin
@@ -184,11 +185,21 @@ Partial Class CheatMenu
         Me.btIzlaz.Text = "Izlaz"
         Me.btIzlaz.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(555, 323)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "registracija"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'CheatMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btIzlaz)
         Me.Controls.Add(Me.btNazad)
         Me.Controls.Add(Me.btIzbrisiDodaj)
@@ -228,4 +239,5 @@ Partial Class CheatMenu
     Friend WithEvents btIzbrisiDodaj As Button
     Friend WithEvents btNazad As Button
     Friend WithEvents btIzlaz As Button
+    Friend WithEvents Button1 As Button
 End Class

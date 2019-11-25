@@ -176,6 +176,12 @@
     <Compile Include="ErrorForms\UserDobroDosli.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="pregledAplikacija.Designer.vb">
+      <DependentUpon>pregledAplikacija.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pregledAplikacija.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PregledRadnika.Designer.vb">
       <DependentUpon>PregledRadnika.vb</DependentUpon>
     </Compile>
@@ -185,6 +191,12 @@
     <Compile Include="containerdb.vb" />
     <Compile Include="Enkripcija.vb" />
     <Compile Include="logovi.vb" />
+    <Compile Include="pregledRegistracije.Designer.vb">
+      <DependentUpon>pregledRegistracije.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pregledRegistracije.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PretragaRadnika.Designer.vb">
       <DependentUpon>PretragaRadnika.vb</DependentUpon>
     </Compile>
@@ -315,8 +327,14 @@
     <EmbeddedResource Include="kontrolaSkladista.resx">
       <DependentUpon>kontrolaSkladista.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pregledAplikacija.resx">
+      <DependentUpon>pregledAplikacija.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PregledRadnika.resx">
       <DependentUpon>PregledRadnika.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pregledRegistracije.resx">
+      <DependentUpon>pregledRegistracije.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PretragaRadnika.resx">
       <DependentUpon>PretragaRadnika.vb</DependentUpon>
@@ -422,6 +440,7 @@
     <None Include="Resources\Webp.net-resizeimage.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\open pngsss.png" />
     <None Include="Resources\ADD.png" />
     <Content Include="Resources\delete.png" />
     <None Include="Resources\edittt2.png" />

@@ -18,7 +18,6 @@ Public Class DeleteForma
             t2.Text = oprema_table.Rows(i)(2)
             t3.Text = jjj.ToString("N2")
             ID = oprema_table.Rows(i)(0)
-
         Catch ex As Exception
         End Try
 
