@@ -9,10 +9,14 @@ Public Class pregledRegistracije
         Dim adapter As New SqlDataAdapter(sqlCommand)
         Dim oprema_table1 As New DataTable()
 
+        pregledAplikacija.Hide()
+
         adapter.Fill(oprema_table1)
         Try
 
-            'Label1.Text = oprema_table(i)(0)
+            'new Point((int)A.position, objectA.Location.Y);
+
+            LabelZaNaziv.Text = "Aplikacija" & vbNewLine + oprema_table1(i)(1) + " " + oprema_table1(i)(2)
             'MsgBox(oprema_table1.Rows(0)(0))
             TextBox1.Text = oprema_table1.Rows(i)(0)
             ''  MsgBox(oprema_table.Rows(nesto)(0))
@@ -30,12 +34,35 @@ Public Class pregledRegistracije
             '' MsgBox(oprema_table.Rows(nesto)(6))
             TextBox8.Text = oprema_table1.Rows(i)(7)
             'MsgBox(oprema_table.Rows(nesto)(7))
-            TextBox9.Text = oprema_table1.Rows(i)(8)
+            'TextBox9.Text = oprema_table1.Rows(i)(8)
             TextBox10.Text = oprema_table1.Rows(i)(9)
+            UR_Picture.Image = My.Resources.slicurina
+
+            Dim proba As String
+
+            Select Case oprema_table1.Rows(i)(8)
+                Case 3
+                    proba = "Menadzer"
+                Case 4
+                    proba = "Grobar"
+                Case 5
+                    proba = "Vozac"
+                Case 6
+                    proba = "Kuvar"
+                Case 7
+                    proba = "Konobar"
+            End Select
+            TextBox9.Text = proba
+
         Catch ex As Exception
             'MessageBox.Show(ex.Message)
         End Try
         ' novi upit Select * from registracija where kid = string
         'string = oprema_tabela.rows(i)(0)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        pregledAplikacija.Show()
     End Sub
 End Class

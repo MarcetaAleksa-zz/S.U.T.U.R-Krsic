@@ -32,6 +32,7 @@ Public Class Administrator
             RadniciButton.Show()
             NarudzbeButton.Show()
             SkladisteButton.Show()
+            aplikacijePosao.Show()
 
         ElseIf Prijava.tipNaloga = 2 Then 'vlasnik
             Logs_Button.Show()
@@ -49,6 +50,8 @@ Public Class Administrator
             RadniciButton.Hide()
             NarudzbeButton.Hide()
             SkladisteButton.Hide()
+            aplikacijePosao.Hide()
+
         End If
 
     End Sub
@@ -65,5 +68,10 @@ Public Class Administrator
 
     Private Sub Administrator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles aplikacijePosao.Click
+        Me.Hide()
+        pregledAplikacija.Show()
     End Sub
 End Class

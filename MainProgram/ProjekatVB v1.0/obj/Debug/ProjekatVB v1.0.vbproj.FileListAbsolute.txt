@@ -33,3 +33,4 @@ C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\o
 C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.exe
 C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
+C:\Users\Korisnik\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.vbprojAssemblyReference.cache

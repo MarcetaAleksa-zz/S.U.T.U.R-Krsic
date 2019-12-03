@@ -4,7 +4,7 @@ Public Class aplikacijaPosao
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If CheckBox1.Checked = True Then
             Panel1.Visible = True
-            Me.Size = New Size(800, 542)
+            Me.Size = New Size(800, 581)
             Button1.Visible = False
             Me.Location = New Point((Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2)
         Else
@@ -56,6 +56,7 @@ Public Class aplikacijaPosao
         mailadap.Fill(mailtab)
         If mailtab.Rows.Count > 0 Then
             UR_Email_TextBox.BackColor = Color.FromArgb(255, 0, 0)
+            counter = 0
         Else
             UR_Email_TextBox.BackColor = Color.FromArgb(235, 235, 235)
             counter += 1
@@ -66,15 +67,48 @@ Public Class aplikacijaPosao
         useradap.Fill(usertab)
         If usertab.Rows.Count > 0 Then
             UR_Username_TextBox.BackColor = Color.FromArgb(255, 0, 0)
+            counter = 0
         Else
             UR_Username_TextBox.BackColor = Color.FromArgb(235, 235, 235)
             counter += 1
         End If
-        If counter = 3 Then
+
+        Dim tip_naloga As Integer = 0
+
+        Select Case cb1.Text
+            Case "Menadzer"
+                tip_naloga = 3
+                counter += 1
+            Case "Grobar"
+                tip_naloga = 4
+                counter += 1
+            Case "Vozac"
+                tip_naloga = 5
+                counter += 1
+            Case "Kuhar"
+                tip_naloga = 6
+                counter += 1
+            Case "Konobar"
+                tip_naloga = 7
+                counter += 1
+            Case Else
+                Debug.WriteLine("Izaberite poziciju na koju se prijavljujes!")
+                counter = 0
+        End Select
+
+
+        'If AdresaTextBox.Text = "Unesi adresu stanovanja ovde" Then
+        '    counter = 0
+        '    MsgBox("Unesite adresu stanovanja!")
+        'Else
+        '    counter = +1
+        'End If
+
+        If counter >= 4 Then
             Try
                 containerdb.connection.Open()
-                command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, datum_rodjenja)
-values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & Enkripcija.HashStorePrijava & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "', 5, '" & UR_Birth_TextBox.Text & "' )"
+                command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, datum_rodjenja, adresa_stanovanja)
+values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & Enkripcija.HashStorePrijava & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "','" & tip_naloga & "','" & UR_Birth_TextBox.Text & "','" & AdresaTextBox.Text & "' )"
 
                 command.ExecuteNonQuery()
                 MessageBox.Show("Uspjesno ste aplicirali za posao.")
@@ -92,7 +126,7 @@ values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " &
                 Control.Text = String.Empty
             End If
         Next
-        If counter >= 4 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
+        If counter >= 5 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
             logovi.DodavanjeKorisnika()
             UR_Name_TextBox.Text = "Unesi ime ovde"
             UR_Surname_TextBox.Text = "Unesi prezime ovde"
@@ -105,7 +139,9 @@ values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " &
             UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Unesi lozinku ovde"
+            AdresaTextBox.Text = "Unesi adresu stanovanja ovde"
             URComboBox.SelectedIndex = -1
+            cb1.SelectedIndex = -1
             Enkripcija.HashStoreUser = Nothing
             UR_Name_TextBox.ForeColor = Color.Gray
             UR_Surname_TextBox.ForeColor = Color.Gray
@@ -163,13 +199,13 @@ values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " &
         End If
     End Sub
 
-    Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave
+    Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave, AdresaTextBox.Leave
         If (UR_Phone_TextBox.Text = "") Then
             UR_Phone_TextBox.Text = "Unesi broj telefona ovde"
             UR_Phone_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-    Private Sub UR_Phone_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Enter
+    Private Sub UR_Phone_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Enter, AdresaTextBox.Enter
         If (UR_Phone_TextBox.Text = "Unesi broj telefona ovde") Then
             UR_Phone_TextBox.Text = ""
             UR_Phone_TextBox.ForeColor = Color.Black
@@ -246,4 +282,22 @@ values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " &
         UR_Picture.Image = Nothing 'dugme koje se pojavi samo ako postoji slika i koje brise sliku hehehhehehe
         postojanjeSlike = 0
     End Sub
+
+
+
+    Private Sub AdresaTextBox_Leave(sender As Object, e As EventArgs) Handles AdresaTextBox.Leave
+        If (AdresaTextBox.Text = "") Then
+            AdresaTextBox.Text = "Unesi adresu stanovanja ovde"
+            AdresaTextBox.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub AdresaTextBox_Enter(sender As Object, e As EventArgs) Handles AdresaTextBox.Enter
+        If (AdresaTextBox.Text = "Unesi adresu stanovanja ovde") Then
+            AdresaTextBox.Text = ""
+            AdresaTextBox.ForeColor = Color.Black
+        End If
+    End Sub
+
+
+
 End Class

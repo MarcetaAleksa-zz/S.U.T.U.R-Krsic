@@ -68,13 +68,13 @@ Partial Class pregledAplikacija
         Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170.0!))
         Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220.0!))
         Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220.0!))
-        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
         Me.table.Location = New System.Drawing.Point(3, 4)
         Me.table.Name = "table"
         Me.table.RowCount = 2
         Me.table.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.table.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.table.Size = New System.Drawing.Size(681, 384)
+        Me.table.Size = New System.Drawing.Size(682, 384)
         Me.table.TabIndex = 143
         '
         'Panel1
