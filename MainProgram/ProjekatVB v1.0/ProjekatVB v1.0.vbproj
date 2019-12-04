@@ -88,7 +88,6 @@
     <Compile Include="CheatMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Class1.vb" />
     <Compile Include="dodajObrisi_Artikle.Designer.vb">
       <DependentUpon>dodajObrisi_Artikle.vb</DependentUpon>
     </Compile>

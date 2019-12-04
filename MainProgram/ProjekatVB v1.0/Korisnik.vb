@@ -238,6 +238,7 @@ SELECT @radni_dani as radni_dani,@dana_radjeno as dana_radjeno, @dana_radjeno*ra
     End Sub
 
     Private Sub btCheck_Click(sender As Object, e As EventArgs) Handles btCheck.Click
+        containerdb.connection.Open()
         btCheck.BackColor = SystemColors.HotTrack
         btUnCheck.BackColor = SystemColors.Control
         Dim command As New SqlCommand("declare @vrijeme time
@@ -246,9 +247,11 @@ INSERT INTO dbo.prijava(Vrijeme, Korisnik, Prijava)
 values(@vrijeme,'" & Prijava.Username_Form_Box.Text & "', 1)
 ", containerdb.connection)
         command.ExecuteNonQuery()
+        containerdb.connection.Close()
     End Sub
 
     Private Sub btUnCheck_Click(sender As Object, e As EventArgs) Handles btUnCheck.Click
+        containerdb.connection.Open()
         btUnCheck.BackColor = SystemColors.HotTrack
         btCheck.BackColor = SystemColors.Control
         Dim command As New SqlCommand("declare @vrijeme time
@@ -257,6 +260,7 @@ INSERT INTO dbo.prijava(Vrijeme, Korisnik, Prijava)
 values(@vrijeme,'" & Prijava.Username_Form_Box.Text & "', 0)
 ", containerdb.connection)
         command.ExecuteNonQuery()
+        containerdb.connection.Close()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
