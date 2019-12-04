@@ -16,6 +16,19 @@ Public Class LogFile
             Log_File.WriteLine("Card Type: Visa; Ammount: " + PaymentMethod_From.PriceTextBox.Text + "KM; First Name: " + PaymentMethod_From.FirstNameTextBox.Text + "; Last Name: " + PaymentMethod_From.LastNameTextBox.Text + "; Credit Card Number: " + PaymentMethod_From.CardNumberTextBox.Text + "; " + PaymentMethod_From.ErrorMsg + ";; Purchase attempt: " + Log_Date)
         End If
         Log_File.Close()
+
+
+
+
+
+
+
+        'dodaj u bazu uspjenu transakciju!
+
+
+
+
+
     End Sub
     Public Shared Sub FailedLog()
         Dim Failed_Log As System.IO.StreamWriter
@@ -33,5 +46,15 @@ Public Class LogFile
             Failed_Log.WriteLine("Card Type: Visa; Ammount: " + PaymentMethod_From.PriceTextBox.Text + "KM; First Name: " + PaymentMethod_From.FirstNameTextBox.Text + "; Last Name: " + PaymentMethod_From.LastNameTextBox.Text + "; Credit Card Number: " + PaymentMethod_From.CardNumberTextBox.Text + "; " + PaymentMethod_From.ErrorMsg + ";; Purchase attempt: " + Log_Date)
         End If
         Failed_Log.Close()
+
+
+
+
+        'dodaj u bazu neuspjesnu transakciju!
+
+
+
+
+
     End Sub
 End Class

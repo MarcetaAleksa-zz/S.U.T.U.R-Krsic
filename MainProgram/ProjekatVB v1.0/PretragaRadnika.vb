@@ -1,5 +1,6 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
+Imports System.IO
 Public Class PretragaRadnika
     Private Sub PretragaRadnika_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -33,6 +34,13 @@ Public Class PretragaRadnika
 
 
         Try
+
+            For Each c As Control In Me.Controls
+                If c.GetType Is GetType(TextBox) Then
+                    c.Text = ""
+                End If
+            Next
+            U_Picture.Image = Nothing
             adapter.Fill(user_table)
             adaptmeagain.Fill(pozicijaTbl)
             'Popunjavanje informacija
@@ -43,11 +51,19 @@ Public Class PretragaRadnika
             U_Username_TextBox.Text = user_table.Rows(0)(0)
             U_Possition_TextBox.Text = pozicijaTbl.Rows(0)(0)
             U_Phone_TextBox.Text = user_table.Rows(0)(5)
-            If System.IO.File.Exists("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
-                U_Picture.Image = Image.FromFile("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
-            Else
-                U_Picture.Image = Nothing
-            End If
+
+            Dim img() As Byte
+            img = user_table.Rows(0)(10)
+            Dim ms As New MemoryStream(img)
+            U_Picture.Image = Image.FromStream(ms)
+
+
+
+            'If System.IO.File.Exists("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & U_Username_TextBox.Text & ".jpg") Then
+            '    U_Picture.Image = Image.FromFile("C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & U_Username_TextBox.Text & ".jpg ")
+            'Else
+            '    U_Picture.Image = Nothing
+            'End If
         Catch ex As Exception
         End Try
         'Mala izmjena je naporavljena, sada je i vlasnik u mogucnosti da brise naloge osim ako je taj naog administratorski

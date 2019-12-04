@@ -37,9 +37,9 @@ Public Class DeleteForma
         'Command.Parameters.Add("@cijena", SqlDbType.VarChar).Value = CDbl(Val(t3.Text))
 
         If Command.ExecuteNonQuery() = 1 Then
+            dodajObrisi_Artikle.Close()
             MessageBox.Show("Uspjesno ste izbrisali artikal " + t1.Text)
             Me.Close()
-            dodajObrisi_Artikle.Close()
             dodajObrisi_Artikle.Show()
         Else
             MessageBox.Show("Izmjene nisu izvrsene")

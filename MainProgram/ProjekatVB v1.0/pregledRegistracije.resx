@@ -117,4 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH4wQRDggYkApq4gAAA51JREFU
+        SEvll0tIVFEYx+eec+epItmMpoWF5iIFTTO1HNPK56gzo+ZkIqPpKJoLsVCSNi6EIsSF0SYJosgCW7QY
+        EKFZtCmhgjbSpkW16EEvqIyycvp/dq/p7Y7zyFZd+HEv53zf+XnvnPOdo6a0tIQBHgpu9xFmMhktosjz
+        QH74iJmJiZsM9fW1jMQ0qBgKfr9fwxjrEwThLXgN3oQAxcmxj3Q6XTqNE4l4GAP4wXcwH4SP4CugeOKd
+        VqvdpaELA0Yqvo9PVwqKwD4FRVqtuJdz1om4J1K8LM75W/Gt6OhoA41B7Suhi+SIuSfFrqvYl5Bgia6t
+        rVrOb2x08rS0VC3nvBn9T6W4fyvu6elgcXEbTOgfRN97KUZJ6OLy8gPi4GA/6+72sEDi5uZDHJ/dgr5x
+        tH+R+tUITdzScpgXF1uZwaBPNRgM2yheKXY4qrnNVi6i/SzaFqW+QKwttturOL1dVJQpHgMeR8JjcAXP
+        DDM1D7d+3OvwW/KhoRNCTk6WljHh2gpBINTFFRUHxYmJc4LFYjZiTDsCb4NvUtIcZMfQ7gHtoIPAQJm5
+        udkQs8jE7e0tzGrdw9CRjUEuIeiDIikQd00mUxJyJlX6lKwWu1x13Gg0bkbyKXQ+UwQH4wXKYAZyr6r0
+        Kfktnpy8KKDwJ6HRB4JNDjUiEw8Pn2TSUqDfaGVdDZXIxPKnjsWFydKGzocgnDcncXpEYppcDQ127vXe
+        ELBet2KQEQQ9VyT9APRFqEAQ9LyAZTQtfTF5ctGutCA9K/lTTJSV7Rd7eztZRsYOEQH5GPQ6gmkgSnqA
+        L2LHhl6JDaBCvuMPTS4o2E0FhGL9uPcjzyvlKFEXy1RWlope75SA2hsFmQsJd8B5nU4rYOByMA66UdHE
+        gYE+9quALIkXEX8U4ilJFJ5Yxums5mNjpwV8SnNMTMxGiodgVcl0Omu4JJYLCJ00PkvPSkITy7jdTZzq
+        ttomoSJei/DEMv+tmMoqZq8wjaOqyeGwBRPT0qIj0CfwChM0K2xxV1cb1+v12zFzm3CYK7BaC5Z2tDXE
+        82g/Q0sOObVYgjVmc1xMU1NDeOdqwm63sZSUZI3LVS/QuqcTSgDxS2yjPfHxFgMtuY6OVo3H06rBUiUf
+        D1usJIB4Dm9nwzbLaUmq5K2nePkE4sME2jkzc1OgQqSWA9b1jS+Ay6hmW2ZnfUs/g1q8xJI45H/a1ICA
+        Fxbmi9ihcCDUx46Ojghqcasp4T8BtUjdM7Ql9LoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="btUnCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAVVJREFUOE+tkz1Lw1AUho+LYopLl65dCv0BnUt/QKAIThYEx1IntxbpX3Bx6dBZ
+        6uosCllcpA6C4iChCoaqFXFQRHJ63tt7r8lNBgUPPDScc543Xw39e+11u7xVLPJwmfjcW3BIpHqY6bX8
+        8isVDlaIn0R6FskQCeidrBJjR6+nC4NrR0yCkAfhUnYyIbudDp8lFl2S/RsBVwJH60Sba15KcJnV6/za
+        bqtjXAVC4GidCA/JDF0gxnGseGk2VQ8BB4LWiU6XsiKW3gcDK39Ppxw1GnZ2JGj9JwADEJZK/BEEVv4c
+        jzksl+08E4BbQMCVENZq/DWZWPltNOLbQkFJmJvf1C3seJ4NuG+1rBz1eqqXx7aEan3xGi+kadIf+32+
+        833VS2LkYyH1GlEb8ucwAa6YBP8X7GotXRhgwZzJlXHm9Wo1XzZlPqZ9WcaTBjj+1cf09yKaA1n3Ya+M
+        vuN6AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYxJREFUOE9joAkQdNXQkWl2r1GaH74YhEFskBhUGjfg1+UXVF0Tv1LvdOE/vTOF
+        /1EwUEx9bcJKkBqoclQAktA+kHkFQyMa1j6QfQWrIaqrYldi04ANg1wC1QYBIP9hdTYSLr+16L/FuQoI
+        H6gWJUxkGt1r0DUg4957G/+/+fDx/4Hnl//rQ8VAAQvVzsCgNCdsMUwxyBa4TUAM0/zi3bv/mScn/9c9
+        XQAWB8UOVDvYgBUgQUugxkMvrv4/+OIK2BBkzRnHJ/3XPZEPN1hlfsQKqHYGBvk+/1kgQafTNf8vPr8L
+        1nTtzSMkzRNRNIOw/ET/WVDtDAxiKeZpIKeBsMOBcrghIM3pWDSD1ImlWaZBtQOBDJ8QMH4/wSRBhpx9
+        egurZhAGqeXT4hOC6oYAyULbAp1jeXAb9PZmYdUMUiNZYl8A1YYK5Nq8JmgfzIaHNDIGiYHk5Dq8JkCV
+        YweiEQYhaivjrmrtyQBqyAJjEFttddxV0WiDEKgywoDXREpdwFvLD4RBbKgwGmBgAACgEobRA2QwCAAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>52</value>
+  </metadata>
 </root>

@@ -78,6 +78,7 @@ Public Class DodajForma
 
                 sqlCommand.ExecuteNonQuery()
                 dodajObrisi_Artikle.Close()
+                MsgBox("Uspjesno ste dodali artikal " + t1.Text)
                 Me.Close()
 
                 dodajObrisi_Artikle.Show()
