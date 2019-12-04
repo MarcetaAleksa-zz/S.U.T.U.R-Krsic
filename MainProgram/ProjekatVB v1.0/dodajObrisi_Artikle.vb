@@ -61,7 +61,8 @@ Public Class dodajObrisi_Artikle
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
-        kontrolaSkladista.Show()
+        'kontrolaSkladista.Show()
+        Administrator.Show()
     End Sub
     Public Sub fun()
         Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)

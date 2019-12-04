@@ -58,7 +58,8 @@ Public Class Administrator
 
     Private Sub Storage_Button_Click(sender As Object, e As EventArgs) Handles SkladisteButton.Click
         Me.Hide()
-        kontrolaSkladista.Show()
+        'kontrolaSkladista.Show()
+        dodajObrisi_Artikle.Show()
     End Sub
 
     Private Sub RadniciButton_Click(sender As Object, e As EventArgs) Handles RadniciButton.Click
