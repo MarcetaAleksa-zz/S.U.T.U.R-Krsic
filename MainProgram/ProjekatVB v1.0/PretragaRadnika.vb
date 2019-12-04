@@ -50,7 +50,8 @@ Public Class PretragaRadnika
             U_Birth_TextBox.Text = user_table.Rows(0)(7)
             U_Username_TextBox.Text = user_table.Rows(0)(0)
             U_Possition_TextBox.Text = pozicijaTbl.Rows(0)(0)
-            U_Phone_TextBox.Text = user_table.Rows(0)(5)
+            Phone.Text = user_table.Rows(0)(5)
+            Addr.Text = user_table.Rows(0)(4)
 
             Dim img() As Byte
             img = user_table.Rows(0)(10)
@@ -115,6 +116,7 @@ Public Class PretragaRadnika
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
 
     End Sub
+
 End Class
 
 

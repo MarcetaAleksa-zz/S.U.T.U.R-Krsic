@@ -27,7 +27,8 @@ Partial Class PretragaRadnika
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.U_Phone_TextBox = New System.Windows.Forms.TextBox()
+        Me.Phone = New System.Windows.Forms.TextBox()
+        Me.Addr = New System.Windows.Forms.TextBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.U_Possition_TextBox = New System.Windows.Forms.TextBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -55,6 +56,8 @@ Partial Class PretragaRadnika
         Me.Brisanje = New System.Windows.Forms.Button()
         Me.IzbrisiLabel = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -64,6 +67,7 @@ Partial Class PretragaRadnika
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
@@ -89,21 +93,31 @@ Partial Class PretragaRadnika
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel9.Controls.Add(Me.U_Phone_TextBox)
+        Me.Panel9.Controls.Add(Me.Phone)
         Me.Panel9.Location = New System.Drawing.Point(115, 322)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(139, 26)
         Me.Panel9.TabIndex = 27
         '
-        'U_Phone_TextBox
+        'Phone
         '
-        Me.U_Phone_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.U_Phone_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.U_Phone_TextBox.Location = New System.Drawing.Point(12, 6)
-        Me.U_Phone_TextBox.Name = "U_Phone_TextBox"
-        Me.U_Phone_TextBox.ReadOnly = True
-        Me.U_Phone_TextBox.Size = New System.Drawing.Size(115, 13)
-        Me.U_Phone_TextBox.TabIndex = 15
+        Me.Phone.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Phone.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Phone.Location = New System.Drawing.Point(11, 7)
+        Me.Phone.Name = "Phone"
+        Me.Phone.ReadOnly = True
+        Me.Phone.Size = New System.Drawing.Size(112, 13)
+        Me.Phone.TabIndex = 15
+        '
+        'Addr
+        '
+        Me.Addr.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Addr.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Addr.Location = New System.Drawing.Point(11, 6)
+        Me.Addr.Name = "Addr"
+        Me.Addr.ReadOnly = True
+        Me.Addr.Size = New System.Drawing.Size(115, 13)
+        Me.Addr.TabIndex = 15
         '
         'Panel8
         '
@@ -357,11 +371,33 @@ Partial Class PretragaRadnika
         '
         Me.Timer2.Enabled = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Addr)
+        Me.Panel1.Location = New System.Drawing.Point(115, 354)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(139, 26)
+        Me.Panel1.TabIndex = 28
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(38, 359)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 16)
+        Me.Label1.TabIndex = 115
+        Me.Label1.Text = "ADRESA"
+        '
         'PretragaRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(498, 390)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.IzbrisiLabel)
         Me.Controls.Add(Me.Brisanje)
         Me.Controls.Add(Me.Back_Button)
@@ -404,6 +440,8 @@ Partial Class PretragaRadnika
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -412,7 +450,7 @@ Partial Class PretragaRadnika
     Friend WithEvents Panel3 As Panel
     Friend WithEvents LabelZaNaziv As Label
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents U_Phone_TextBox As TextBox
+    Friend WithEvents Addr As TextBox
     Friend WithEvents Panel8 As Panel
     Friend WithEvents U_Possition_TextBox As TextBox
     Friend WithEvents Panel7 As Panel
@@ -440,4 +478,7 @@ Partial Class PretragaRadnika
     Friend WithEvents Brisanje As Button
     Friend WithEvents IzbrisiLabel As Label
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Phone As TextBox
+    Friend WithEvents Label1 As Label
 End Class
