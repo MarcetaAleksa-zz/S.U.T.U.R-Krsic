@@ -60,6 +60,11 @@ Partial Class aplikacijaPosao
         Me.Button1 = New System.Windows.Forms.Button()
         Me.UR_FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.UR_OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.cb1 = New System.Windows.Forms.ComboBox()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.AdresaTextBox = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -72,6 +77,8 @@ Partial Class aplikacijaPosao
         Me.Panel1.SuspendLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel8.SuspendLayout()
+        Me.Panel12.SuspendLayout()
+        Me.Panel13.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
@@ -274,7 +281,7 @@ Partial Class aplikacijaPosao
         '
         Me.Back_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Back_Button.Location = New System.Drawing.Point(374, 291)
+        Me.Back_Button.Location = New System.Drawing.Point(370, 336)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(108, 39)
         Me.Back_Button.TabIndex = 129
@@ -286,7 +293,7 @@ Partial Class aplikacijaPosao
         Me.A_Register_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.A_Register_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.A_Register_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.A_Register_Button.Location = New System.Drawing.Point(264, 291)
+        Me.A_Register_Button.Location = New System.Drawing.Point(260, 336)
         Me.A_Register_Button.Name = "A_Register_Button"
         Me.A_Register_Button.Size = New System.Drawing.Size(108, 39)
         Me.A_Register_Button.TabIndex = 128
@@ -310,7 +317,9 @@ Partial Class aplikacijaPosao
         Me.Panel1.Controls.Add(Me.UR_ChooseImage_Label)
         Me.Panel1.Controls.Add(Me.UR_ChangePicture_Button)
         Me.Panel1.Controls.Add(Me.UR_Picture)
+        Me.Panel1.Controls.Add(Me.Panel12)
         Me.Panel1.Controls.Add(Me.Panel8)
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Back_Button)
@@ -319,13 +328,14 @@ Partial Class aplikacijaPosao
         Me.Panel1.Controls.Add(Me.Panel10)
         Me.Panel1.Controls.Add(Me.Panel9)
         Me.Panel1.Controls.Add(Me.Panel7)
+        Me.Panel1.Controls.Add(Me.Panel13)
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Location = New System.Drawing.Point(3, 168)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(797, 367)
+        Me.Panel1.Size = New System.Drawing.Size(797, 401)
         Me.Panel1.TabIndex = 133
         Me.Panel1.Visible = False
         '
@@ -419,7 +429,7 @@ Partial Class aplikacijaPosao
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(274, 332)
+        Me.Label2.Location = New System.Drawing.Point(270, 377)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(204, 13)
         Me.Label2.TabIndex = 130
@@ -458,11 +468,64 @@ Partial Class aplikacijaPosao
         Me.UR_OpenFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" &
     " *.png"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(335, 218)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(139, 24)
+        Me.Label4.TabIndex = 132
+        Me.Label4.Text = "Izaberi poziciju:"
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel12.Controls.Add(Me.cb1)
+        Me.Panel12.Location = New System.Drawing.Point(339, 244)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(148, 39)
+        Me.Panel12.TabIndex = 131
+        '
+        'cb1
+        '
+        Me.cb1.BackColor = System.Drawing.SystemColors.Control
+        Me.cb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cb1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cb1.FormattingEnabled = True
+        Me.cb1.Items.AddRange(New Object() {"Menadzer", "Grobar", "Vozac", "Kuvar", "Konobar"})
+        Me.cb1.Location = New System.Drawing.Point(3, 2)
+        Me.cb1.Name = "cb1"
+        Me.cb1.Size = New System.Drawing.Size(142, 32)
+        Me.cb1.TabIndex = 0
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel13.Controls.Add(Me.AdresaTextBox)
+        Me.Panel13.Location = New System.Drawing.Point(20, 271)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(279, 39)
+        Me.Panel13.TabIndex = 16
+        '
+        'AdresaTextBox
+        '
+        Me.AdresaTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.AdresaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AdresaTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AdresaTextBox.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.AdresaTextBox.Location = New System.Drawing.Point(15, 7)
+        Me.AdresaTextBox.MaxLength = 20
+        Me.AdresaTextBox.Name = "AdresaTextBox"
+        Me.AdresaTextBox.Size = New System.Drawing.Size(261, 22)
+        Me.AdresaTextBox.TabIndex = 116
+        Me.AdresaTextBox.Text = "Unesi adresu stanovanja ovde"
+        '
         'aplikacijaPosao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 542)
+        Me.ClientSize = New System.Drawing.Size(800, 581)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Panel1)
@@ -495,6 +558,9 @@ Partial Class aplikacijaPosao
         Me.Panel1.PerformLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel8.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -536,4 +602,9 @@ Partial Class aplikacijaPosao
     Friend WithEvents UR_FolderBrowserDialog As FolderBrowserDialog
     Friend WithEvents UR_OpenFileDialog As OpenFileDialog
     Friend WithEvents UR_ClearImage_Button As Button
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents cb1 As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents AdresaTextBox As TextBox
 End Class

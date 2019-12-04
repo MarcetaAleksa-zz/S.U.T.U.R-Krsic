@@ -66,6 +66,10 @@ Public Class pregledAplikacija
                     .Image = My.Resources.open_pngsss
                     '.BackColor = Color.Gray
                     .Size = New Size(40, 40)
+
+                    Dim tooltip As New ToolTip(components)
+                    tooltip.SetToolTip(b, "Otvori aplikaciju")
+
                     .SizeMode = PictureBoxSizeMode.StretchImage
                     '.Font = New Font("Microsoft Sans Serif", 14)
                     '.ForeColor = Color.White              'tectbox u koji se unosi kolicina koju zelimo kupiti
@@ -105,11 +109,11 @@ Public Class pregledAplikacija
                 '    '.Dock = DockStyle.Fill
                 '    table.Controls.Add(L3, 4, i)
                 'End With
+                '    ToolTip ToolTip1 = New ToolTip(components)
+                'ToolTip.SetToolTip(", "This is a textbox tooltip");
             Next
         Catch ex As Exception
         End Try
-
-
 
 
 
@@ -142,10 +146,11 @@ Public Class pregledAplikacija
                 pregledRegistracije.Ucitaj(i)
             End If
         Next
+        Me.Close()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Administrator.Show()
         Me.Close()
+        Administrator.Show()
     End Sub
 End Class

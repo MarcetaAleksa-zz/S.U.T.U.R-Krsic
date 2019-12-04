@@ -20,7 +20,7 @@
     End Sub
 
     Private Sub btKorisnik_Click(sender As Object, e As EventArgs) Handles btKorisnik.Click
-        Prijava.Username_Form_Box.Text = "HarunH"
+        Prijava.Username_Form_Box.Text = "rade"
         Korisnik.Show()
         Me.Hide()
     End Sub

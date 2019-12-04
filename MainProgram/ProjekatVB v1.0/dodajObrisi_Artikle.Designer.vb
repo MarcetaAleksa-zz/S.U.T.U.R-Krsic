@@ -35,6 +35,7 @@ Partial Class dodajObrisi_Artikle
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ToolTip9 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -117,6 +118,7 @@ Partial Class dodajObrisi_Artikle
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
+        Me.ToolTip9.SetToolTip(Me.PictureBox1, "Dodaj novi artikal")
         '
         'Label4
         '
@@ -197,4 +199,5 @@ Partial Class dodajObrisi_Artikle
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ToolTip9 As ToolTip
 End Class
