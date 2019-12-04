@@ -104,13 +104,12 @@ Vasa aplikacija za posao je odbijena.
                 SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
                 SMTP.Send(EmailMessage)
             Catch ex As Exception
-                MsgBox("Greska oko maila! Leksa popravi ovo")
             End Try
 
             Me.Close()
             pregledAplikacija.Show()
         Catch ex As Exception
-            MsgBox(ex)
+
         End Try
     End Sub
 
@@ -127,6 +126,7 @@ VALUES ('" & TextBox1.Text & "','" & TextBox2.Text & "', '" & TextBox3.Text & "'
 
             MsgBox("radi prije onog")
             Command.ExecuteNonQuery()
+            containerdb.connection.Close()
             MsgBox("ne radi prije onog")
             MsgBox("Aplikacija prihvacena!")
             Try
@@ -137,11 +137,13 @@ VALUES ('" & TextBox1.Text & "','" & TextBox2.Text & "', '" & TextBox3.Text & "'
                 containerdb.connection.Close()
             Catch ex As Exception
                 MsgBox("Nije uspijelo izbrisati iz tabele registracija, nakon koje je trebalo dodati u korisnike!")
+                MessageBox.Show(ex.Message)
             End Try
             Me.Close()
             pregledAplikacija.Show()
         Catch ex As Exception
             MsgBox("Aplikacija nije prihvacena! Greska Leksa propravljaj")
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 End Class
