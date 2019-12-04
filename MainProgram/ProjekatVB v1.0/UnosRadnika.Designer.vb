@@ -77,6 +77,9 @@ Partial Class UnosRadnika
         Me.UR_Picture = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.adresa = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.UR_Gender_GroupBox.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -89,6 +92,7 @@ Partial Class UnosRadnika
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
         'UR_Phone_TextBox1
@@ -296,11 +300,12 @@ Partial Class UnosRadnika
         Me.A_Register_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.A_Register_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.A_Register_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.A_Register_Button.Location = New System.Drawing.Point(21, 280)
+        Me.A_Register_Button.Location = New System.Drawing.Point(130, 319)
         Me.A_Register_Button.Name = "A_Register_Button"
         Me.A_Register_Button.Size = New System.Drawing.Size(108, 31)
         Me.A_Register_Button.TabIndex = 126
         Me.A_Register_Button.Text = "Registruj"
+        Me.ToolTip1.SetToolTip(Me.A_Register_Button, "fdghjk")
         Me.A_Register_Button.UseVisualStyleBackColor = False
         '
         'UR_Gender_GroupBox
@@ -518,11 +523,12 @@ Partial Class UnosRadnika
         '
         Me.Back_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Back_Button.Location = New System.Drawing.Point(131, 280)
+        Me.Back_Button.Location = New System.Drawing.Point(240, 319)
         Me.Back_Button.Name = "Back_Button"
         Me.Back_Button.Size = New System.Drawing.Size(108, 31)
         Me.Back_Button.TabIndex = 127
         Me.Back_Button.Text = "Nazad"
+        Me.ToolTip1.SetToolTip(Me.Back_Button, "komnj")
         Me.Back_Button.UseVisualStyleBackColor = True
         '
         'UR_ClearImage_Button
@@ -579,12 +585,33 @@ Partial Class UnosRadnika
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel8.Controls.Add(Me.adresa)
+        Me.Panel8.Location = New System.Drawing.Point(21, 282)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(220, 26)
+        Me.Panel8.TabIndex = 6
+        '
+        'adresa
+        '
+        Me.adresa.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.adresa.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.adresa.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.adresa.Location = New System.Drawing.Point(15, 7)
+        Me.adresa.Name = "adresa"
+        Me.adresa.Size = New System.Drawing.Size(189, 13)
+        Me.adresa.TabIndex = 117
+        Me.adresa.Text = "Unesi adresu ovde"
+        '
         'UnosRadnika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(498, 325)
+        Me.ClientSize = New System.Drawing.Size(498, 362)
         Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel11)
         Me.Controls.Add(Me.Panel10)
@@ -649,6 +676,8 @@ Partial Class UnosRadnika
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         CType(Me.UR_Picture, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -707,4 +736,7 @@ Partial Class UnosRadnika
     Friend WithEvents URComboBox As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents adresa As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

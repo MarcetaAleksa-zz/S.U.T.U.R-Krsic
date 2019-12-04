@@ -1,7 +1,12 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Linq
 Imports System.IO.TextReader
+Imports System.Data
+Imports System.IO
+Imports System.Net.Mail
+
 Public Class pregledRegistracije
+    Public N As Integer
     Private Sub pregledRegistracije_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     End Sub
     Public Sub Ucitaj(i As Integer)
@@ -34,9 +39,11 @@ Public Class pregledRegistracije
             '' MsgBox(oprema_table.Rows(nesto)(6))
             TextBox8.Text = oprema_table1.Rows(i)(7)
             'MsgBox(oprema_table.Rows(nesto)(7))
-            'TextBox9.Text = oprema_table1.Rows(i)(8)
+            N = oprema_table1.Rows(i)(8)
             TextBox10.Text = oprema_table1.Rows(i)(9)
-            UR_Picture.Image = My.Resources.slicurina
+
+
+
 
             Dim proba As String
 
@@ -54,6 +61,12 @@ Public Class pregledRegistracije
             End Select
             TextBox9.Text = proba
 
+
+            Dim img() As Byte
+            img = oprema_table1.Rows(0)(10)
+            Dim ms As New MemoryStream(img)
+            UR_Picture.Image = Image.FromStream(ms)
+
         Catch ex As Exception
             'MessageBox.Show(ex.Message)
         End Try
@@ -64,5 +77,69 @@ Public Class pregledRegistracije
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
         pregledAplikacija.Show()
+    End Sub
+
+    Private Sub btUnCheck_Click(sender As Object, e As EventArgs) Handles btUnCheck.Click
+        Try
+            Dim command As New SqlCommand("delete from registracija where predlozen_ID = @korisnicki_id ", containerdb.connection)
+            containerdb.connection.Open()
+            command.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = TextBox1.Text
+            command.ExecuteNonQuery()
+            containerdb.connection.Close()
+
+            MsgBox("Uspjesno ste izbrisali aplikaciju za posao!")
+            Try
+                Dim EmailMessage As New MailMessage()
+                EmailMessage.From = New MailAddress("s.u.t.u.rkrsic@gmail.com")
+                EmailMessage.To.Add(TextBox7.Text)
+                EmailMessage.Subject = "S.U.T.U.R Krisic"
+                EmailMessage.Body = "Poštovani,
+Vasa aplikacija za posao je odbijena.
+                    U slucaju dodatnih pitanja nemojte se ustrucavati da nas kontaktirate.
+                    LP,
+                    S.U.T.U.R Krsic"
+                Dim SMTP As New SmtpClient("smtp.gmail.com")
+                SMTP.Port = 587S
+                SMTP.EnableSsl = True
+                SMTP.Credentials = New System.Net.NetworkCredential("s.u.t.u.rkrsic@gmail.com", "VisualBasicProjekat123")
+                SMTP.Send(EmailMessage)
+            Catch ex As Exception
+                MsgBox("Greska oko maila! Leksa popravi ovo")
+            End Try
+
+            Me.Close()
+            pregledAplikacija.Show()
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
+    End Sub
+
+    Private Sub btCheck_Click(sender As Object, e As EventArgs) Handles btCheck.Click
+
+
+
+        Try
+            Dim Command As New SqlCommand("SELECT * FROM dbo.korisnici", containerdb.connection)
+            containerdb.connection.Open()
+            Command.CommandText = "INSERT INTO dbo.korisnici (korisnicki_id, ime_korisnika, prezime_korisnika, lozinka,  broj_telefona, email, datum_rodjenja, pol, radna_pozicija, adresa_stanovanja, slika) 
+VALUES ('" & TextBox1.Text & "','" & TextBox2.Text & "', '" & TextBox3.Text & "', '" & TextBox4.Text & "' , '" & TextBox6.Text & "' , '" & TextBox7.Text & "', '" & TextBox10.Text & "', '" & TextBox8.Text & "', '" & N & "' , '" & TextBox5.Text & "', '')" ' treba odraditi insert za sliku pa onda sve radi !
+
+
+            Command.ExecuteNonQuery()
+            MsgBox("Aplikacija prihvacena!")
+            Try
+                Dim command1 As New SqlCommand("delete from registracija where predlozen_ID = @korisnicki_id ", containerdb.connection)
+                containerdb.connection.Open()
+                command1.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = TextBox1.Text
+                command1.ExecuteNonQuery()
+                containerdb.connection.Close()
+            Catch ex As Exception
+                MsgBox("Nije uspijelo izbrisati iz tabele registracija, nakon koje je trebalo dodati u korisnike!")
+            End Try
+            Me.Close()
+            pregledAplikacija.Show()
+        Catch ex As Exception
+            MsgBox("Aplikacija nije prihvacena! Greska Leksa propravljaj")
+        End Try
     End Sub
 End Class

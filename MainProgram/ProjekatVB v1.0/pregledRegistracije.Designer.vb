@@ -26,6 +26,7 @@ Partial Class pregledRegistracije
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pregledRegistracije))
         Me.UR_Picture = New System.Windows.Forms.PictureBox()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
@@ -36,17 +37,16 @@ Partial Class pregledRegistracije
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LabelZaNaziv = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btUnCheck = New System.Windows.Forms.Button()
         Me.btCheck = New System.Windows.Forms.Button()
@@ -89,11 +89,24 @@ Partial Class pregledRegistracije
         'Panel11
         '
         Me.Panel11.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel11.Controls.Add(Me.TextBox8)
+        Me.Panel11.Controls.Add(Me.TextBox10)
         Me.Panel11.Location = New System.Drawing.Point(199, 550)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(279, 39)
         Me.Panel11.TabIndex = 145
+        '
+        'TextBox10
+        '
+        Me.TextBox10.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox10.Location = New System.Drawing.Point(15, 7)
+        Me.TextBox10.MaxLength = 25
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
+        Me.TextBox10.Size = New System.Drawing.Size(251, 22)
+        Me.TextBox10.TabIndex = 119
         '
         'TextBox8
         '
@@ -105,7 +118,7 @@ Partial Class pregledRegistracije
         Me.TextBox8.MaxLength = 25
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(251, 22)
+        Me.TextBox8.Size = New System.Drawing.Size(110, 22)
         Me.TextBox8.TabIndex = 120
         '
         'Panel10
@@ -205,6 +218,19 @@ Partial Class pregledRegistracije
         Me.Panel4.Size = New System.Drawing.Size(279, 39)
         Me.Panel4.TabIndex = 140
         '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.TextBox1.Location = New System.Drawing.Point(15, 7)
+        Me.TextBox1.MaxLength = 25
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(261, 22)
+        Me.TextBox1.TabIndex = 112
+        '
         'TextBox3
         '
         Me.TextBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -233,7 +259,7 @@ Partial Class pregledRegistracije
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.TextBox2.Location = New System.Drawing.Point(18, 9)
+        Me.TextBox2.Location = New System.Drawing.Point(15, 9)
         Me.TextBox2.MaxLength = 25
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
@@ -248,19 +274,6 @@ Partial Class pregledRegistracije
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(279, 39)
         Me.Panel5.TabIndex = 138
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.TextBox1.Location = New System.Drawing.Point(15, 7)
-        Me.TextBox1.MaxLength = 25
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(261, 22)
-        Me.TextBox1.TabIndex = 112
         '
         'Panel3
         '
@@ -308,24 +321,11 @@ Partial Class pregledRegistracije
         'Panel12
         '
         Me.Panel12.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel12.Controls.Add(Me.TextBox10)
+        Me.Panel12.Controls.Add(Me.TextBox8)
         Me.Panel12.Location = New System.Drawing.Point(199, 595)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(139, 39)
         Me.Panel12.TabIndex = 154
-        '
-        'TextBox10
-        '
-        Me.TextBox10.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.TextBox10.Location = New System.Drawing.Point(15, 7)
-        Me.TextBox10.MaxLength = 25
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(110, 22)
-        Me.TextBox10.TabIndex = 119
         '
         'Button1
         '

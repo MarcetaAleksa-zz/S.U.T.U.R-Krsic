@@ -45,7 +45,7 @@ Public Class aplikacijaPosao
         Dim command As New SqlCommand("select * from s.u.t.u.r_krsic.dbo.registracija", containerdb.connection)
         Dim counter As Integer = 0
         If UR_Password_TextBox.Text = UR_ConfirmPassword_Textbox.Text Then
-            counter += 1
+            counter += 1 'brojac je na 1
         Else
             MessageBox.Show("Lozinke se ne poklapaju.")
         End If
@@ -56,10 +56,12 @@ Public Class aplikacijaPosao
         mailadap.Fill(mailtab)
         If mailtab.Rows.Count > 0 Then
             UR_Email_TextBox.BackColor = Color.FromArgb(255, 0, 0)
-            counter = 0
+            MsgBox("Mail je vec postojeci!")
+        ElseIf UR_Email_TextBox.Text = "Unesite E-mail ovde" Then
+            MsgBox("Unesite Vas E-mail!")
         Else
             UR_Email_TextBox.BackColor = Color.FromArgb(235, 235, 235)
-            counter += 1
+            counter += 1 'brojac je na 2
         End If
         Dim usercom As New SqlCommand("SELECT korisnicki_id from korisnici where korisnicki_id = '" & UR_Username_TextBox.Text & "'", containerdb.connection)
         Dim useradap As New SqlDataAdapter(usercom)
@@ -67,10 +69,10 @@ Public Class aplikacijaPosao
         useradap.Fill(usertab)
         If usertab.Rows.Count > 0 Then
             UR_Username_TextBox.BackColor = Color.FromArgb(255, 0, 0)
-            counter = 0
+            MsgBox("Korisnicko ime vec postoji!")
         Else
             UR_Username_TextBox.BackColor = Color.FromArgb(235, 235, 235)
-            counter += 1
+            counter += 1 'brojac je na 3
         End If
 
         Dim tip_naloga As Integer = 0
@@ -88,27 +90,40 @@ Public Class aplikacijaPosao
             Case "Kuhar"
                 tip_naloga = 6
                 counter += 1
-            Case "Konobar"
+            Case "Konobar"                        'brojac je na 4
                 tip_naloga = 7
                 counter += 1
             Case Else
-                Debug.WriteLine("Izaberite poziciju na koju se prijavljujes!")
-                counter = 0
+                MsgBox("Izaberite poziciju na koju se prijavljujete!")
         End Select
 
 
-        'If AdresaTextBox.Text = "Unesi adresu stanovanja ovde" Then
-        '    counter = 0
-        '    MsgBox("Unesite adresu stanovanja!")
-        'Else
-        '    counter = +1
-        'End If
+        If AdresaTextBox.Text = "Unesi adresu stanovanja ovde" Or AdresaTextBox.Text = "" Then
+            MsgBox("Unesite adresu stanovanja!")
+        Else
+            counter += 1                         'brojac je na 5
+        End If
 
-        If counter >= 4 Then
+
+
+        If UR_Name_TextBox.Text = "" Or UR_Name_TextBox.Text = "Unesi ime ovde" Then
+            MsgBox("Unesite Vase ime!")
+        Else
+            counter += 1                           'brojac je na 6
+        End If
+
+
+        If UR_Surname_TextBox.Text = "" Or UR_Surname_TextBox.Text = "Unesi prezime ovde" Then
+            MsgBox("Unesite Vase prezime!")
+        Else
+            counter += 1                           'brojac je na 7
+        End If
+
+        If counter = 7 Then
             Try
                 containerdb.connection.Open()
                 command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, datum_rodjenja, adresa_stanovanja)
-values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & Enkripcija.HashStorePrijava & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "','" & tip_naloga & "','" & UR_Birth_TextBox.Text & "','" & AdresaTextBox.Text & "' )"
+values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & UR_Password_TextBox.Text & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "','" & tip_naloga & "','" & UR_Birth_TextBox.Text & "','" & AdresaTextBox.Text & "' )"
 
                 command.ExecuteNonQuery()
                 MessageBox.Show("Uspjesno ste aplicirali za posao.")
@@ -120,13 +135,14 @@ values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " &
             End Try
         Else
             MessageBox.Show("Molimo provjerite da li ste popunili sva polja ispravno.")
+            counter = 0
         End If
         For Each Control As Control In Me.Controls
             If TypeOf Control Is TextBox Then
                 Control.Text = String.Empty
             End If
         Next
-        If counter >= 5 Then ' ako je brojac narastao n 4, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
+        If counter = 7 Then ' ako je brojac narastao n 7, znaci da su svi uslovi ispunjeni, i da moze ocistiti textboxove, npr, svaki stepen pravilno popunjen ubacuje u brojac +1, ako su svi stepeni ispunjein brojac ce narasti na 4 i onda ce resetovati textboxove
             logovi.DodavanjeKorisnika()
             UR_Name_TextBox.Text = "Unesi ime ovde"
             UR_Surname_TextBox.Text = "Unesi prezime ovde"
@@ -152,6 +168,7 @@ values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " &
             UR_Username_TextBox.ForeColor = Color.Gray
             UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
             UR_Password_TextBox.ForeColor = Color.Gray
+            AdresaTextBox.ForeColor = Color.Gray
         End If
         'provjera da li postoji prijava na:
         '1.ovaj mail
@@ -199,13 +216,13 @@ values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " &
         End If
     End Sub
 
-    Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave, AdresaTextBox.Leave
+    Private Sub UR_Phone_TextBox_Leave(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Leave
         If (UR_Phone_TextBox.Text = "") Then
             UR_Phone_TextBox.Text = "Unesi broj telefona ovde"
             UR_Phone_TextBox.ForeColor = Color.Gray
         End If
     End Sub
-    Private Sub UR_Phone_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Enter, AdresaTextBox.Enter
+    Private Sub UR_Phone_TextBox_Enter(sender As Object, e As EventArgs) Handles UR_Phone_TextBox.Enter
         If (UR_Phone_TextBox.Text = "Unesi broj telefona ovde") Then
             UR_Phone_TextBox.Text = ""
             UR_Phone_TextBox.ForeColor = Color.Black

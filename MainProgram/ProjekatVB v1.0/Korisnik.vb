@@ -1,5 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.SqlClient
+Imports System.Data
+Imports System.IO
 Public Class Korisnik
 
     Dim boja As String = "235, 235, 235"
@@ -22,13 +24,11 @@ Public Class Korisnik
             pozicijaTextBox.Text = Prijava.imePozicije
             polaTextBox.Text = user_table.Rows(0)(8)
             adresaTextBox.Text = user_table.Rows(0)(4)
-            If System.IO.File.Exists("C:\Users\" + Podesavanja.OvoJeNalog +
-                                    "\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & korisnickoimeTextBox.Text & ".jpg") Then
-                slikaPictureBox.Image = Image.FromFile("C:\Users\" + Podesavanja.OvoJeNalog +
-                                                 "\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & korisnickoimeTextBox.Text & ".jpg ")
-            Else
-                slikaPictureBox.Image = Nothing
-            End If
+            Dim img() As Byte
+            img = user_table.Rows(0)(10)
+            Dim ms As New MemoryStream(img)
+            slikaPictureBox.Image = Image.FromStream(ms)
+
 
         Catch ex As Exception
         End Try
@@ -257,5 +257,9 @@ INSERT INTO dbo.prijava(Vrijeme, Korisnik, Prijava)
 values(@vrijeme,'" & Prijava.Username_Form_Box.Text & "', 0)
 ", containerdb.connection)
         command.ExecuteNonQuery()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
     End Sub
 End Class
