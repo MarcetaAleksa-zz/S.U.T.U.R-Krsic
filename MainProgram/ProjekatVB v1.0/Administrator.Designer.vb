@@ -34,8 +34,6 @@ Partial Class Administrator
         Me.Logs_Button = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Back_Button = New System.Windows.Forms.Button()
-        Me.aplikacijePosao = New System.Windows.Forms.Button()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -91,7 +89,6 @@ Partial Class Administrator
         Me.NoviNalogButton.Size = New System.Drawing.Size(99, 40)
         Me.NoviNalogButton.TabIndex = 105
         Me.NoviNalogButton.Text = "Dodaj novog korisnika"
-        Me.ToolTip1.SetToolTip(Me.NoviNalogButton, "Klikni za vise informacija!")
         Me.NoviNalogButton.UseVisualStyleBackColor = False
         Me.NoviNalogButton.Visible = False
         '
@@ -123,15 +120,12 @@ Partial Class Administrator
         '
         'Logs_Button
         '
-        Me.Logs_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Logs_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Logs_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Logs_Button.Location = New System.Drawing.Point(86, 170)
         Me.Logs_Button.Name = "Logs_Button"
-        Me.Logs_Button.Size = New System.Drawing.Size(99, 40)
+        Me.Logs_Button.Size = New System.Drawing.Size(199, 40)
         Me.Logs_Button.TabIndex = 113
         Me.Logs_Button.Text = "Logs"
-        Me.Logs_Button.UseVisualStyleBackColor = False
+        Me.Logs_Button.UseVisualStyleBackColor = True
         Me.Logs_Button.Visible = False
         '
         'Timer1
@@ -149,26 +143,12 @@ Partial Class Administrator
         Me.Back_Button.TabIndex = 110
         Me.Back_Button.UseVisualStyleBackColor = True
         '
-        'aplikacijePosao
-        '
-        Me.aplikacijePosao.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.aplikacijePosao.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.aplikacijePosao.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.aplikacijePosao.Location = New System.Drawing.Point(186, 170)
-        Me.aplikacijePosao.Name = "aplikacijePosao"
-        Me.aplikacijePosao.Size = New System.Drawing.Size(99, 40)
-        Me.aplikacijePosao.TabIndex = 114
-        Me.aplikacijePosao.Text = "Aplikacije za posao"
-        Me.aplikacijePosao.UseVisualStyleBackColor = False
-        Me.aplikacijePosao.Visible = False
-        '
         'Administrator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(386, 266)
-        Me.Controls.Add(Me.aplikacijePosao)
         Me.Controls.Add(Me.Logs_Button)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.NarudzbeButton)
@@ -198,6 +178,4 @@ Partial Class Administrator
     Friend WithEvents NarudzbeButton As Button
     Friend WithEvents Logs_Button As Button
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents aplikacijePosao As Button
-    Friend WithEvents ToolTip1 As ToolTip
 End Class

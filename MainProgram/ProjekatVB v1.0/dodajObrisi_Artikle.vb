@@ -61,8 +61,7 @@ Public Class dodajObrisi_Artikle
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
-        'kontrolaSkladista.Show()
-        Administrator.Show()
+        kontrolaSkladista.Show()
     End Sub
     Public Sub fun()
         Dim sqlCommand As New SqlCommand("SELECT * FROM oprema ", containerdb.connection)
@@ -117,8 +116,6 @@ Public Class dodajObrisi_Artikle
                 With b
                     '.Text = "EDIT"
                     .Name = "b" + i.ToString
-                    Dim tooltip As New ToolTip(components)
-                    tooltip.SetToolTip(b, "Izmijeni")
                     .Visible = True
                     .Image = My.Resources.edittt2
                     '.BackColor = Color.Gray
@@ -136,8 +133,6 @@ Public Class dodajObrisi_Artikle
                 With b1
                     ' .Text = "X"
                     .Name = "b1" + i.ToString
-                    Dim tooltip As New ToolTip(components)
-                    tooltip.SetToolTip(b1, "Izbrisi")
                     .Visible = True
                     .Image = My.Resources.slicurina
                     '.BackColor = Color.Red

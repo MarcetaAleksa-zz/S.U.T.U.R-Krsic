@@ -86,8 +86,8 @@ Public Class UnosRadnika
 
         Try
             containerdb.connection.Open()
-            Command.CommandText = "INSERT INTO dbo.korisnici (korisnicki_id, ime_korisnika, prezime_korisnika, lozinka,  broj_telefona, email, datum_rodjenja, pol, radna_pozicija, adresa_stanovanja) 
-VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "' , '" & UR_Phone_TextBox.Text & "' , '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & Gender & "', '" & tip_naloga & "' , '" & adresa.Text & "')"
+            Command.CommandText = "INSERT INTO dbo.korisnici (korisnicki_id, ime_korisnika, prezime_korisnika, lozinka,  broj_telefona, email, datum_rodjenja, pol, radna_pozicija) 
+VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & UR_Surname_TextBox.Text & "', '" & Enkripcija.HashStoreUser & "' , '" & UR_Phone_TextBox.Text & "' , '" & UR_Email_TextBox.Text & "', '" & UR_Birth_TextBox.Text & "', '" & Gender & "', '" & tip_naloga & "')"
 
 
             Command.ExecuteNonQuery()
@@ -98,15 +98,14 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
             UR_Picture.DrawToBitmap(bm, New Rectangle(0, 0, x, y))
 
             UR_Picture.Image = bm
-            'If UR_Username_TextBox.Text <> "Unesi korisničko ime ovde" And postojanjeSlike = 1 Then
-            '    SaveImage(("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
-            '    UR_Picture.Image = Nothing
-            '    postojanjeSlike = 0
+            If UR_Username_TextBox.Text <> "Unesi korisničko ime ovde" And postojanjeSlike = 1 Then
+                SaveImage(("C:\Users\" & Podesavanja.OvoJeNalog & "\Documents\GitHub\S.U.T.U.R-Krsic\Image\Users\" & UR_Username_TextBox.Text & ".jpg"), UR_Picture.Image)
+                UR_Picture.Image = Nothing
+                postojanjeSlike = 0
 
-            'Else
+            Else
 
-            'End If
-            'ovde odraditi unos u bazu
+            End If
             brojac += 1
 
         Catch ex As Exception
@@ -133,7 +132,6 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
             UR_ConfirmPassword_Textbox.Text = "Potvrdi lozinku"
             UR_Password_TextBox.UseSystemPasswordChar = False
             UR_Password_TextBox.Text = "Unesi lozinku ovde"
-            adresa.Text = "Unesi adresu ovde"
             URComboBox.SelectedIndex = -1
             Enkripcija.HashStoreUser = Nothing
             UR_Name_TextBox.ForeColor = Color.Gray
@@ -145,7 +143,6 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
             UR_Username_TextBox.ForeColor = Color.Gray
             UR_ConfirmPassword_Textbox.ForeColor = Color.Gray
             UR_Password_TextBox.ForeColor = Color.Gray
-            adresa.ForeColor = Color.Gray
         End If
     End Sub
     Private Sub UR_Gender_GroupBox_Enter(sender As Object, e As EventArgs) Handles UR_Gender_GroupBox.Enter
@@ -295,21 +292,4 @@ VALUES ('" & UR_Username_TextBox.Text & "','" & UR_Name_TextBox.Text & "', '" & 
     End Sub
     Private Sub UR_FolderBrowserDialog_HelpRequest(sender As Object, e As EventArgs) Handles UR_FolderBrowserDialog.HelpRequest
     End Sub
-
-
-
-    Private Sub adresa_Leave(sender As Object, e As EventArgs) Handles adresa.Leave
-        If (adresa.Text = "") Then
-            adresa.Text = "Unesi adresu ovde"
-            adresa.ForeColor = Color.Gray
-        End If
-    End Sub
-    Private Sub adresa_Enter(sender As Object, e As EventArgs) Handles adresa.Enter
-        If (adresa.Text = "Unesi adresu ovde") Then
-            adresa.Text = ""
-            adresa.ForeColor = Color.Black
-        End If
-    End Sub
-
-
 End Class

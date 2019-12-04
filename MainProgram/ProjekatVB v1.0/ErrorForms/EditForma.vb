@@ -39,12 +39,12 @@ WHERE id_robe = '" & ID & "'", containerdb.connection)
         Command.Parameters.Add("@cijena", SqlDbType.VarChar).Value = CDbl(Val(t3.Text))
 
         If Command.ExecuteNonQuery() = 1 Then
-            dodajObrisi_Artikle.Close()
-            MessageBox.Show("Uspjesno ste izmjenili")
-            Me.Close()
-            dodajObrisi_Artikle.Show()
-        Else
-            MessageBox.Show("Izmjene nisu izvrsene")
+                MessageBox.Show("Uspjesno ste izmjenili")
+                Me.Close()
+                dodajObrisi_Artikle.Close()
+                dodajObrisi_Artikle.Show()
+            Else
+                MessageBox.Show("Izmjene nisu izvrsene")
             End If
             containerdb.connection.Close()
 

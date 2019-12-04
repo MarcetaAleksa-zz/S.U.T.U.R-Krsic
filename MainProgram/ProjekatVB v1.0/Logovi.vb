@@ -8,10 +8,6 @@
         Log_File = My.Computer.FileSystem.OpenTextFileWriter("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt", True)
         Log_File.WriteLine("Username: " + Prijava.Username_Form_Box.Text + ";; Password: " + Prijava.Password_Form_Box.Text + ";; Date of Attempt: " + Log_Date)
         Log_File.Close()
-
-        'uspjesna prijava, dodaj u bazu
-
-
     End Sub
     Public Shared Sub FailedLog()
         Dim Failed_Log As System.IO.StreamWriter
@@ -22,14 +18,6 @@
         Failed_Log = My.Computer.FileSystem.OpenTextFileWriter("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt", True)
         Failed_Log.WriteLine("Username: " + Prijava.Username_Form_Box.Text + ";; Password: " + Prijava.Password_Form_Box.Text + ";; Date of Attempt: " + Log_Date)
         Failed_Log.Close()
-
-
-
-
-
-        'neuspjesna prijava, dodaj u bazu
-
-
     End Sub
     Public Shared Sub BrisanjeKorisnika()
         Dim Brisanje_Korisnika As System.IO.StreamWriter
@@ -41,10 +29,6 @@
             Brisanje_Korisnika.Close()
         Catch
         End Try
-
-
-        'izbrisani korisnik, dodaj u bazu
-
 
     End Sub
 
@@ -58,10 +42,6 @@
             Dodavanje_Korisnika.Close()
         Catch
         End Try
-
-
-        'dodani korisnik, dodaj u bazu
-
 
     End Sub
 
