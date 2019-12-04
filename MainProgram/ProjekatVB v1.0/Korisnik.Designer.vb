@@ -91,6 +91,14 @@ Partial Class Korisnik
         Me.TableAdapterManager = New ProjekatVB_v1._0.SpartanFillTableAdapters.TableAdapterManager()
         Me.btCheck = New System.Windows.Forms.Button()
         Me.btUnCheck = New System.Windows.Forms.Button()
+        Me.NapoleonFillDataSet1 = New ProjekatVB_v1._0.NapoleonFillDataSet()
+        Me.NapoleonFIll1 = New ProjekatVB_v1._0.NapoleonFIll()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdrobeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         Me.TabUserInfo.SuspendLayout()
         Me.p9.SuspendLayout()
@@ -114,6 +122,9 @@ Partial Class Korisnik
         Me.korisnikTab.SuspendLayout()
         CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NapoleonFillDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NapoleonFIll1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dugmeOdjava
@@ -679,6 +690,7 @@ Partial Class Korisnik
         'TabStorage
         '
         Me.TabStorage.BackColor = System.Drawing.SystemColors.Control
+        Me.TabStorage.Controls.Add(Me.DataGridView2)
         Me.TabStorage.Controls.Add(Me.DataGridView1)
         Me.TabStorage.Location = New System.Drawing.Point(4, 22)
         Me.TabStorage.Name = "TabStorage"
@@ -774,6 +786,60 @@ Partial Class Korisnik
         Me.btUnCheck.TabIndex = 131
         Me.btUnCheck.UseVisualStyleBackColor = False
         '
+        'NapoleonFillDataSet1
+        '
+        Me.NapoleonFillDataSet1.DataSetName = "NapoleonFillDataSet"
+        Me.NapoleonFillDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'NapoleonFIll1
+        '
+        Me.NapoleonFIll1.DataSetName = "NapoleonFIll"
+        Me.NapoleonFIll1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AutoGenerateColumns = False
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.IdrobeDataGridViewTextBoxColumn})
+        Me.DataGridView2.DataSource = Me.ArtikliBindingSource
+        Me.DataGridView2.Location = New System.Drawing.Point(7, 6)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(755, 347)
+        Me.DataGridView2.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ime"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ime"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "kolicina"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "kolicina"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "cijena"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "cijena"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "tip_opreme"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "tip_opreme"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'IdrobeDataGridViewTextBoxColumn
+        '
+        Me.IdrobeDataGridViewTextBoxColumn.DataPropertyName = "id_robe"
+        Me.IdrobeDataGridViewTextBoxColumn.HeaderText = "id_robe"
+        Me.IdrobeDataGridViewTextBoxColumn.Name = "IdrobeDataGridViewTextBoxColumn"
+        Me.IdrobeDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'Korisnik
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -827,6 +893,9 @@ Partial Class Korisnik
         Me.korisnikTab.ResumeLayout(False)
         CType(Me.SpartanFill, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NapoleonFillDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NapoleonFIll1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -902,4 +971,12 @@ Partial Class Korisnik
     Friend WithEvents CijenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btCheck As Button
     Friend WithEvents btUnCheck As Button
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents IdrobeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NapoleonFillDataSet1 As NapoleonFillDataSet
+    Friend WithEvents NapoleonFIll1 As NapoleonFIll
 End Class
