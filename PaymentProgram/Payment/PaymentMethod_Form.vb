@@ -112,7 +112,7 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                 Try
                     command.ExecuteNonQuery()
 
-
+                    databaseconnection.connection.Close()
                     MsgBox("Kupovina uspjesna.")
 
                     counter = 3
@@ -139,7 +139,7 @@ and datum_isteka = @ExpirationDate", databaseconnection.connection)
                 Catch ex As Exception
                     counter = 3
                 End Try
-                databaseconnection.connection.Close()
+
             Else
                 MsgBox("Nemate dovoljno novca na kartici kako bi izvrsili ovu uplatu.")
                 counter = 3

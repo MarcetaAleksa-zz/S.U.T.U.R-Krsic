@@ -1,13 +1,9 @@
 MarLeksa 	P@$$w0rd radi
-Panzo  		P@$$w0rd ne radi
+Panzo  		P@$$w0rd radi
 AmarB 		S@ur0n ne radi	
-SinisaG 	H0gw@rts ne radi
-ElvirL 		Br@nden$burg Ne radi
-HarunH		St0rmg@rd Ne radi
-IgorG		B30gr@d Radi
-NevenK		@rm@tur@ Radi	
-PetarK		$0vjetRu$ij@ Ne radi
-SasaB		U$$R4Ever Ne radi
+SinisaG 	H0gw@rts radi
+HarunH		St0rmg@rd radi
+IgorG		B30gr@d radi
+NevenK		@rm@tur@ radi	
+PetarK		$0vjetRu$ij@ radi
 NikolaS		NiKoL@ radi
-
--aplikacija za posao*gost

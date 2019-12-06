@@ -120,10 +120,11 @@ Public Class aplikacijaPosao
         End If
 
         If counter = 7 Then
+            Enkripcija.EncryptPass()
             Try
-                containerdb.connection.Open()
+            containerdb.connection.Open()
                 command.CommandText = "INSERT INTO dbo.registracija (predlozen_id, ime_korisnika, prezime_korisnika, predlozena_lozinka,  broj_telefona, kontakt_email, pol, radna_pozicija, datum_rodjenja, adresa_stanovanja)
-values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & UR_Password_TextBox.Text & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "','" & tip_naloga & "','" & UR_Birth_TextBox.Text & "','" & AdresaTextBox.Text & "' )"
+values ('" & UR_Username_TextBox.Text & "',' " & UR_Name_TextBox.Text & "',' " & UR_Surname_TextBox.Text & "','" & Enkripcija.HashStorePrijava & "','" & UR_Phone_TextBox.Text & "','" & UR_Email_TextBox.Text & "','" & URComboBox.Text & "','" & tip_naloga & "','" & UR_Birth_TextBox.Text & "','" & AdresaTextBox.Text & "' )"
 
                 command.ExecuteNonQuery()
                 MessageBox.Show("Uspjesno ste aplicirali za posao.")

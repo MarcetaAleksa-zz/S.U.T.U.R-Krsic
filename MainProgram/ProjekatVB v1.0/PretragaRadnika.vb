@@ -102,6 +102,7 @@ Public Class PretragaRadnika
             containerdb.connection.Open()
             command.Parameters.Add("@korisnicki_id", SqlDbType.VarChar).Value = U_Username_TextBox.Text
             command.ExecuteNonQuery()
+            containerdb.connection.Close()
             logovi.BrisanjeKorisnika()
             containerdb.connection.Close()
             ComboBox1.SelectedIndex = -1
@@ -110,6 +111,7 @@ Public Class PretragaRadnika
             PretragaRadnika_Load(e, e)
             MsgBox("Uspjesno ste izbrisali radnika!")
         Catch ex As Exception
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 

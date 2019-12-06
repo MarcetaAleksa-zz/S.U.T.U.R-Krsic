@@ -1,26 +1,31 @@
 ﻿Public Class FormaLogova
     Private Sub NoviNalogButton_Click(sender As Object, e As EventArgs) Handles NoviNalogButton.Click
-        Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\Logs.txt")
+        LogPrijava1.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Login\\FailedLogs.txt")
+        LogPrijave0.Show()
+        Me.Hide()
     End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Users\\DodaniKorisnici.txt")
+        DodaniKorisnici.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Users\\ObrisaniKorisnici.txt")
+        ObrisaniKorisnici.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Payment\\Log.txt")
+        UspjTrans.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Process.Start("C:\\Users\\" + Podesavanja.OvoJeNalog + "\\Documents\\GitHub\\S.U.T.U.R-Krsic\\MainProgram\\ProjekatVB v1.0\\bin\\Logs\\Payment\\FailedLogs.txt")
+        NeuspjTrans.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click

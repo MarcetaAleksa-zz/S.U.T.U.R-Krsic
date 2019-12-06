@@ -94,6 +94,12 @@
     <Compile Include="dodajObrisi_Artikle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DodaniKorisnici.Designer.vb">
+      <DependentUpon>DodaniKorisnici.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DodaniKorisnici.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ErrorForms\DeleteForma.Designer.vb">
       <DependentUpon>DeleteForma.vb</DependentUpon>
     </Compile>
@@ -122,6 +128,18 @@
       <DependentUpon>kontrolaSkladista.vb</DependentUpon>
     </Compile>
     <Compile Include="kontrolaSkladista.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogPrijava1.Designer.vb">
+      <DependentUpon>LogPrijava1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogPrijava1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogPrijave0.Designer.vb">
+      <DependentUpon>LogPrijave0.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogPrijave0.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NapoleonFIll.Designer.vb">
@@ -174,6 +192,18 @@
       <DependentUpon>UserDobroDosli.vb</DependentUpon>
     </Compile>
     <Compile Include="ErrorForms\UserDobroDosli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NeuspjTrans.Designer.vb">
+      <DependentUpon>NeuspjTrans.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NeuspjTrans.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObrisaniKorisnici.Designer.vb">
+      <DependentUpon>ObrisaniKorisnici.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ObrisaniKorisnici.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="pregledAplikacija.Designer.vb">
@@ -280,6 +310,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UspjTrans.Designer.vb">
+      <DependentUpon>UspjTrans.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UspjTrans.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Administrator.resx">
@@ -293,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dodajObrisi_Artikle.resx">
       <DependentUpon>dodajObrisi_Artikle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodaniKorisnici.resx">
+      <DependentUpon>DodaniKorisnici.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorForms\AdminDobroDosli.resx">
       <DependentUpon>AdminDobroDosli.vb</DependentUpon>
@@ -326,6 +365,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="kontrolaSkladista.resx">
       <DependentUpon>kontrolaSkladista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogPrijava1.resx">
+      <DependentUpon>LogPrijava1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogPrijave0.resx">
+      <DependentUpon>LogPrijave0.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NeuspjTrans.resx">
+      <DependentUpon>NeuspjTrans.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObrisaniKorisnici.resx">
+      <DependentUpon>ObrisaniKorisnici.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pregledAplikacija.resx">
       <DependentUpon>pregledAplikacija.vb</DependentUpon>
@@ -366,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnik.resx">
       <DependentUpon>Korisnik.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UspjTrans.resx">
+      <DependentUpon>UspjTrans.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -72,3 +72,9 @@ C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.xml
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB v1.0.pdb
 C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\RdbLog.txt
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.LogPrijava1.resources
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.DodaniKorisnici.resources
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.LogPrijave0.resources
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.NeuspjTrans.resources
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.ObrisaniKorisnici.resources
+C:\Users\Aleksa\Documents\GitHub\S.U.T.U.R-Krsic\MainProgram\ProjekatVB v1.0\obj\Debug\ProjekatVB_v1._0.UspjTrans.resources
